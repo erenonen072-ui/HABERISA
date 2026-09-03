@@ -4,9 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>GÜNORA — Günün Haberleri</title>
+<title>HABERİSTA — Güncel Haberler</title>
 
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -14,132 +15,177 @@
 }
 
 body{
-    font-family:Arial, Helvetica, sans-serif;
+    font-family:Arial,Helvetica,sans-serif;
     background:#f5f7fa;
-    color:#182230;
+    color:#17202d;
 }
 
+/* HEADER */
+
 header{
-    background:#fff;
-    border-bottom:1px solid #e7ebf0;
+    background:#ffffff;
+    border-bottom:1px solid #e5e9ef;
     position:sticky;
     top:0;
     z-index:1000;
 }
 
-.top{
+.header-top{
     max-width:1250px;
-    margin:auto;
     height:78px;
+    margin:auto;
+    padding:0 20px;
+
     display:flex;
     align-items:center;
     justify-content:space-between;
-    padding:0 20px;
+    gap:20px;
 }
+
+/* LOGO */
 
 .logo{
     font-size:31px;
     font-weight:900;
     letter-spacing:-1.5px;
-    color:#182230;
+    color:#17202d;
+    cursor:pointer;
+    white-space:nowrap;
 }
 
 .logo span{
     color:#4f8cff;
 }
 
+/* SEARCH */
+
 .search{
-    width:310px;
-    height:42px;
-    border:1px solid #dfe5ec;
-    border-radius:12px;
+    width:330px;
+    height:43px;
+
     display:flex;
     align-items:center;
+
     padding:0 14px;
-    background:#fafbfc;
+
+    background:#f7f9fb;
+    border:1px solid #e0e6ed;
+    border-radius:12px;
+}
+
+.search-icon{
+    margin-right:9px;
 }
 
 .search input{
+    width:100%;
     border:0;
     outline:0;
     background:transparent;
-    width:100%;
     font-size:14px;
 }
 
-nav{
-    background:#fff;
+/* NAV */
+
+.nav{
     border-top:1px solid #f0f2f5;
+    background:#fff;
 }
 
 .nav-inner{
     max-width:1250px;
     margin:auto;
+
     display:flex;
     gap:7px;
-    overflow-x:auto;
+
     padding:11px 20px;
+
+    overflow-x:auto;
 }
 
-.nav-inner button{
+.nav button{
     border:0;
-    background:#f4f6f9;
-    padding:10px 16px;
-    border-radius:9px;
-    cursor:pointer;
-    font-weight:600;
-    white-space:nowrap;
+    background:#f2f5f8;
+
     color:#475467;
+
+    padding:10px 17px;
+
+    border-radius:9px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    white-space:nowrap;
+
+    transition:.2s;
 }
 
-.nav-inner button:hover,
-.nav-inner button.active{
+.nav button:hover,
+.nav button.active{
     background:#4f8cff;
     color:white;
 }
 
+/* MAIN */
+
 .container{
     max-width:1250px;
-    margin:30px auto;
+    margin:32px auto;
     padding:0 20px;
 }
 
+/* TITLE */
+
 .section-title{
     display:flex;
-    align-items:center;
+    align-items:end;
     justify-content:space-between;
+
     margin-bottom:18px;
 }
 
 .section-title h1{
-    font-size:25px;
+    font-size:26px;
 }
 
 .section-title p{
-    color:#7b8794;
+    color:#8994a3;
     font-size:14px;
 }
+
+/* HERO */
 
 .hero{
     display:grid;
     grid-template-columns:1.7fr 1fr;
     gap:20px;
-    margin-bottom:35px;
+
+    margin-bottom:38px;
 }
 
 .hero-main{
-    position:relative;
     height:440px;
+
+    position:relative;
+
     overflow:hidden;
+
     border-radius:20px;
+
     background:#ddd;
+
     cursor:pointer;
 }
 
 .hero-main img{
     width:100%;
     height:100%;
+
     object-fit:cover;
+
     transition:.4s;
 }
 
@@ -149,34 +195,53 @@ nav{
 
 .hero-overlay{
     position:absolute;
+
     left:0;
     right:0;
     bottom:0;
+
     padding:35px;
-    color:#fff;
-    background:linear-gradient(transparent,rgba(0,0,0,.82));
+
+    color:white;
+
+    background:
+    linear-gradient(
+        transparent,
+        rgba(0,0,0,.85)
+    );
 }
 
 .badge{
     display:inline-block;
+
     background:#4f8cff;
+
+    color:white;
+
     padding:7px 11px;
+
     border-radius:7px;
+
     font-size:12px;
-    font-weight:bold;
+
+    font-weight:800;
+
     margin-bottom:10px;
 }
 
 .hero-overlay h2{
-    font-size:34px;
+    font-size:35px;
     line-height:1.12;
+
     margin-bottom:10px;
 }
 
 .hero-overlay p{
-    opacity:.9;
     line-height:1.5;
+    opacity:.92;
 }
+
+/* SIDE NEWS */
 
 .side-news{
     display:flex;
@@ -185,61 +250,90 @@ nav{
 }
 
 .side-card{
-    background:#fff;
-    border:1px solid #e7ebf0;
+    background:white;
+
+    border:1px solid #e5e9ef;
+
     border-radius:15px;
+
     padding:12px;
+
     display:flex;
+
     gap:13px;
+
     cursor:pointer;
+
     transition:.2s;
 }
 
 .side-card:hover{
     transform:translateY(-2px);
-    box-shadow:0 8px 25px rgba(20,40,70,.08);
+
+    box-shadow:
+    0 10px 28px
+    rgba(20,40,70,.08);
 }
 
 .side-card img{
     width:125px;
     height:100px;
+
     object-fit:cover;
+
     border-radius:10px;
+
+    flex-shrink:0;
+}
+
+.side-card small{
+    color:#8a94a3;
 }
 
 .side-card h3{
     font-size:16px;
     line-height:1.3;
+
     margin:7px 0;
 }
 
-.side-card small{
-    color:#8491a0;
-}
+/* NEWS GRID */
 
 .news-grid{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
+
+    grid-template-columns:
+    repeat(3,1fr);
+
     gap:20px;
 }
 
 .news-card{
     background:white;
-    border:1px solid #e7ebf0;
+
+    border:1px solid #e5e9ef;
+
     border-radius:16px;
+
     overflow:hidden;
+
     cursor:pointer;
+
     transition:.25s;
 }
 
 .news-card:hover{
     transform:translateY(-4px);
-    box-shadow:0 12px 30px rgba(20,40,70,.09);
+
+    box-shadow:
+    0 12px 30px
+    rgba(20,40,70,.09);
 }
 
 .news-card img{
     width:100%;
     height:210px;
+
     object-fit:cover;
 }
 
@@ -249,128 +343,108 @@ nav{
 
 .news-category{
     color:#4f8cff;
+
     font-size:12px;
-    font-weight:bold;
+
+    font-weight:800;
+
     text-transform:uppercase;
 }
 
 .news-card h3{
-    margin:8px 0;
     font-size:19px;
+
     line-height:1.3;
+
+    margin:8px 0;
 }
 
 .news-card p{
     color:#697586;
+
     font-size:14px;
+
     line-height:1.5;
 }
 
 .news-date{
     display:block;
+
     color:#98a2b3;
+
     font-size:12px;
+
     margin-top:13px;
 }
 
+/* EMPTY */
+
 .empty{
-    text-align:center;
-    padding:50px;
-    color:#8a94a3;
     grid-column:1/-1;
+
+    text-align:center;
+
+    padding:60px 20px;
+
+    color:#8a94a3;
 }
 
-.modal{
-    position:fixed;
-    inset:0;
-    background:rgba(10,20,30,.7);
-    display:none;
-    align-items:center;
-    justify-content:center;
-    padding:20px;
-    z-index:2000;
-}
-
-.modal.show{
-    display:flex;
-}
-
-.modal-box{
-    width:min(850px,100%);
-    max-height:90vh;
-    overflow:auto;
-    background:white;
-    border-radius:20px;
-}
-
-.modal-box img{
-    width:100%;
-    max-height:420px;
-    object-fit:cover;
-}
-
-.modal-content{
-    padding:28px;
-}
-
-.modal-content h2{
-    font-size:30px;
-    margin:10px 0 15px;
-}
-
-.modal-content p{
-    line-height:1.8;
-    color:#4b5563;
-    white-space:pre-line;
-}
-
-.close{
-    position:absolute;
-    right:25px;
-    top:20px;
-    width:42px;
-    height:42px;
-    border:0;
-    border-radius:50%;
-    background:white;
-    font-size:24px;
-    cursor:pointer;
-}
+/* FOOTER */
 
 footer{
-    margin-top:60px;
-    background:#fff;
-    border-top:1px solid #e7ebf0;
-    padding:30px 20px;
+    margin-top:65px;
+
+    padding:35px 20px;
+
     text-align:center;
-    color:#8a94a3;
+
+    color:#8994a3;
+
+    background:#fff;
+
+    border-top:1px solid #e5e9ef;
 }
 
+.footer-logo{
+    font-size:21px;
+    font-weight:900;
+
+    color:#17202d;
+
+    margin-bottom:8px;
+}
+
+.footer-logo span{
+    color:#4f8cff;
+}
+
+/* MOBILE */
+
 @media(max-width:900px){
+
     .hero{
         grid-template-columns:1fr;
     }
 
     .news-grid{
-        grid-template-columns:repeat(2,1fr);
+        grid-template-columns:
+        repeat(2,1fr);
     }
 
-    .search{
-        width:220px;
-    }
 }
 
-@media(max-width:600px){
-    .top{
+@media(max-width:650px){
+
+    .header-top{
         height:auto;
+
         padding:15px;
-        gap:12px;
+
         flex-direction:column;
-        align-items:stretch;
     }
 
     .logo{
-        text-align:center;
+        font-size:29px;
     }
 
     .search{
@@ -381,8 +455,12 @@ footer{
         height:350px;
     }
 
+    .hero-overlay{
+        padding:22px;
+    }
+
     .hero-overlay h2{
-        font-size:25px;
+        font-size:26px;
     }
 
     .news-grid{
@@ -391,243 +469,382 @@ footer{
 
     .side-card img{
         width:105px;
+        height:90px;
     }
+
 }
+
 </style>
 </head>
 
 <body>
 
+
+<!-- HEADER -->
+
 <header>
 
-<div class="top">
+    <div class="header-top">
 
-    <div class="logo">
-        GÜN<span>ORA</span>
-    </div>
+        <div
+            class="logo"
+            onclick="window.location.href='index.html'">
 
-    <div class="search">
-        🔎
-        <input
-            id="searchInput"
-            type="text"
-            placeholder="Haberlerde ara..."
-        >
-    </div>
+            HABER<span>İSTA</span>
 
-</div>
+        </div>
 
-<nav>
-    <div class="nav-inner">
 
-        <button class="active" data-category="Tümü">
-            Tümü
-        </button>
+        <div class="search">
 
-        <button data-category="Gündem">
-            Gündem
-        </button>
+            <span class="search-icon">
+                🔎
+            </span>
 
-        <button data-category="Dünya">
-            Dünya
-        </button>
+            <input
+                id="searchInput"
+                type="text"
+                placeholder="Haberlerde ara..."
+            >
 
-        <button data-category="Spor">
-            Spor
-        </button>
-
-        <button data-category="Teknoloji">
-            Teknoloji
-        </button>
-
-        <button data-category="Ekonomi">
-            Ekonomi
-        </button>
-
-        <button data-category="Kültür">
-            Kültür
-        </button>
+        </div>
 
     </div>
-</nav>
+
+
+    <!-- KATEGORİLER -->
+
+    <nav class="nav">
+
+        <div class="nav-inner">
+
+            <button
+                class="active"
+                data-category="Tümü">
+
+                Tümü
+
+            </button>
+
+            <button
+                data-category="Gündem">
+
+                Gündem
+
+            </button>
+
+            <button
+                data-category="Dünya">
+
+                Dünya
+
+            </button>
+
+            <button
+                data-category="Spor">
+
+                Spor
+
+            </button>
+
+            <button
+                data-category="Teknoloji">
+
+                Teknoloji
+
+            </button>
+
+            <button
+                data-category="Ekonomi">
+
+                Ekonomi
+
+            </button>
+
+            <button
+                data-category="Kültür">
+
+                Kültür
+
+            </button>
+
+        </div>
+
+    </nav>
 
 </header>
 
 
+
+<!-- ANA İÇERİK -->
+
 <main class="container">
 
-<section>
 
-<div class="section-title">
-    <div>
-        <h1>Günün Öne Çıkanları</h1>
-        <p>GÜNORA'dan günün önemli gelişmeleri</p>
-    </div>
-</div>
+    <!-- MANŞET -->
+
+    <section>
+
+        <div class="section-title">
+
+            <div>
+
+                <h1>
+                    Günün Öne Çıkanları
+                </h1>
+
+                <p>
+                    HABERİSTA'dan günün önemli gelişmeleri
+                </p>
+
+            </div>
+
+        </div>
 
 
-<div class="hero">
+        <div class="hero">
 
-    <div id="heroMain"></div>
+            <div id="heroMain"></div>
 
-    <div class="side-news" id="sideNews"></div>
+            <div
+                class="side-news"
+                id="sideNews">
+            </div>
 
-</div>
+        </div>
 
-</section>
+    </section>
 
 
-<section>
 
-<div class="section-title">
-    <h1>Son Haberler</h1>
-    <p id="resultCount"></p>
-</div>
+    <!-- HABERLER -->
 
-<div
-    class="news-grid"
-    id="newsGrid">
-</div>
+    <section>
 
-</section>
+        <div class="section-title">
+
+            <h1>
+                Son Haberler
+            </h1>
+
+            <p id="resultCount"></p>
+
+        </div>
+
+
+        <div
+            class="news-grid"
+            id="newsGrid">
+        </div>
+
+    </section>
 
 </main>
 
 
-<div
-    class="modal"
-    id="modal">
 
-    <button
-        class="close"
-        onclick="closeModal()">
-        ×
-    </button>
-
-    <div
-        class="modal-box"
-        id="modalBox">
-    </div>
-
-</div>
-
+<!-- FOOTER -->
 
 <footer>
 
-    <strong>GÜNORA</strong>
-    <br>
-    Güncel haberlerin adresi
+    <div class="footer-logo">
+        HABER<span>İSTA</span>
+    </div>
+
+    <div>
+        Güncel haberlerin adresi
+    </div>
 
 </footer>
 
 
+
+<!-- HABERLER -->
+
 <script src="HABERLER/haberler.js"></script>
+
 
 <script>
 
 let aktifKategori = "Tümü";
+
 let arama = "";
 
 
-/* HABERLERİ GETİR */
+
+/* HABERLERİ AL */
 
 function getNews(){
 
-    if(typeof haberler === "undefined"){
-        console.error("haberler.js bulunamadı!");
+    if(
+        typeof haberler ===
+        "undefined"
+    ){
+
+        console.error(
+            "HABERLER/haberler.js bulunamadı."
+        );
+
         return [];
+
     }
 
     return haberler;
+
 }
 
 
-/* FİLTRE */
+
+/* HABERİ AÇ */
+
+function haberAc(id){
+
+    window.location.href =
+        "haber.html?id=" + id;
+
+}
+
+
+
+/* FİLTRELE */
 
 function filtrele(){
 
-    let sonuc = getNews();
+    let sonuc =
+        getNews();
 
-    if(aktifKategori !== "Tümü"){
-        sonuc = sonuc.filter(haber =>
-            haber.kategori === aktifKategori
-        );
+
+    /* KATEGORİ */
+
+    if(
+        aktifKategori !==
+        "Tümü"
+    ){
+
+        sonuc =
+            sonuc.filter(
+                haber =>
+                haber.kategori ===
+                aktifKategori
+            );
+
     }
 
-    if(arama.trim() !== ""){
+
+    /* ARAMA */
+
+    if(
+        arama.trim() !== ""
+    ){
 
         const kelime =
-            arama.toLocaleLowerCase("tr-TR");
+            arama
+            .toLocaleLowerCase(
+                "tr-TR"
+            );
 
-        sonuc = sonuc.filter(haber =>
 
-            haber.baslik
-                .toLocaleLowerCase("tr-TR")
+        sonuc =
+            sonuc.filter(
+                haber =>
+
+                haber.baslik
+                .toLocaleLowerCase(
+                    "tr-TR"
+                )
                 .includes(kelime)
 
-            ||
+                ||
 
-            haber.aciklama
-                .toLocaleLowerCase("tr-TR")
+                haber.aciklama
+                .toLocaleLowerCase(
+                    "tr-TR"
+                )
                 .includes(kelime)
 
-        );
+            );
 
     }
 
+
     render(sonuc);
+
 }
+
 
 
 /* SAYFAYI OLUŞTUR */
 
-function render(haberlerFiltreli){
+function render(liste){
 
     const hero =
-        document.getElementById("heroMain");
+        document.getElementById(
+            "heroMain"
+        );
 
     const side =
-        document.getElementById("sideNews");
+        document.getElementById(
+            "sideNews"
+        );
 
     const grid =
-        document.getElementById("newsGrid");
+        document.getElementById(
+            "newsGrid"
+        );
 
     const count =
-        document.getElementById("resultCount");
+        document.getElementById(
+            "resultCount"
+        );
 
 
     hero.innerHTML = "";
+
     side.innerHTML = "";
+
     grid.innerHTML = "";
 
 
     count.textContent =
-        haberlerFiltreli.length +
+        liste.length +
         " haber";
 
 
-    if(haberlerFiltreli.length === 0){
+    if(liste.length === 0){
 
         grid.innerHTML = `
+
             <div class="empty">
-                <h2>Haber bulunamadı</h2>
-                <p>Arama veya kategori seçimini değiştirmeyi deneyin.</p>
+
+                <h2>
+                    Haber bulunamadı
+                </h2>
+
+                <p>
+                    Arama veya kategori seçimini değiştirin.
+                </p>
+
             </div>
+
         `;
 
         return;
+
     }
+
 
 
     /* MANŞET */
 
-    const manset = haberlerFiltreli[0];
+    const manset =
+        liste[0];
+
 
     hero.innerHTML = `
 
         <div
             class="hero-main"
-            onclick="openModal(${manset.id})">
+            onclick="haberAc(${manset.id})">
 
             <img
                 src="${manset.gorsel}"
@@ -654,17 +871,19 @@ function render(haberlerFiltreli){
     `;
 
 
+
     /* YAN HABERLER */
 
-    haberlerFiltreli
-        .slice(1,4)
-        .forEach(haber => {
+    liste
+    .slice(1,4)
+    .forEach(
+        haber => {
 
             side.innerHTML += `
 
                 <div
                     class="side-card"
-                    onclick="openModal(${haber.id})">
+                    onclick="haberAc(${haber.id})">
 
                     <img
                         src="${haber.gorsel}"
@@ -690,156 +909,121 @@ function render(haberlerFiltreli){
 
             `;
 
-        });
+        }
+    );
 
 
-    /* KARTLAR */
 
-    haberlerFiltreli.forEach(haber => {
+    /* HABER KARTLARI */
 
-        grid.innerHTML += `
+    liste.forEach(
+        haber => {
 
-            <article
-                class="news-card"
-                onclick="openModal(${haber.id})">
+            grid.innerHTML += `
 
-                <img
-                    src="${haber.gorsel}"
-                    alt="${haber.baslik}">
+                <article
+                    class="news-card"
+                    onclick="haberAc(${haber.id})">
 
-                <div class="news-content">
+                    <img
+                        src="${haber.gorsel}"
+                        alt="${haber.baslik}">
 
-                    <div class="news-category">
-                        ${haber.kategori}
+                    <div class="news-content">
+
+                        <div class="news-category">
+                            ${haber.kategori}
+                        </div>
+
+                        <h3>
+                            ${haber.baslik}
+                        </h3>
+
+                        <p>
+                            ${haber.aciklama}
+                        </p>
+
+                        <span class="news-date">
+                            ${haber.tarih}
+                        </span>
+
                     </div>
 
-                    <h3>
-                        ${haber.baslik}
-                    </h3>
+                </article>
 
-                    <p>
-                        ${haber.aciklama}
-                    </p>
+            `;
 
-                    <span class="news-date">
-                        ${haber.tarih}
-                    </span>
-
-                </div>
-
-            </article>
-
-        `;
-
-    });
+        }
+    );
 
 }
 
 
-/* KATEGORİ */
 
-document.querySelectorAll(".nav-inner button")
-.forEach(button => {
+/* KATEGORİ BUTONLARI */
 
-    button.addEventListener("click", () => {
+document
+.querySelectorAll(
+    ".nav button"
+)
+.forEach(
+    button => {
 
-        document
-            .querySelectorAll(".nav-inner button")
-            .forEach(btn =>
-                btn.classList.remove("active")
-            );
+        button.addEventListener(
+            "click",
+            () => {
 
-        button.classList.add("active");
+                document
+                .querySelectorAll(
+                    ".nav button"
+                )
+                .forEach(
+                    btn =>
+                    btn.classList
+                    .remove(
+                        "active"
+                    )
+                );
 
-        aktifKategori =
-            button.dataset.category;
 
-        filtrele();
+                button.classList
+                .add("active");
 
-    });
 
-});
+                aktifKategori =
+                    button
+                    .dataset
+                    .category;
+
+
+                filtrele();
+
+            }
+        );
+
+    }
+);
+
 
 
 /* ARAMA */
 
 document
-    .getElementById("searchInput")
-    .addEventListener("input", e => {
+.getElementById(
+    "searchInput"
+)
+.addEventListener(
+    "input",
+    e => {
 
-        arama = e.target.value;
+        arama =
+            e.target.value;
 
         filtrele();
 
-    });
+    }
+);
 
-
-/* HABER DETAY */
-
-function openModal(id){
-
-    const haber =
-        getNews().find(h => h.id === id);
-
-    if(!haber) return;
-
-    document
-        .getElementById("modalBox")
-        .innerHTML = `
-
-            <img
-                src="${haber.gorsel}"
-                alt="${haber.baslik}">
-
-            <div class="modal-content">
-
-                <div class="news-category">
-                    ${haber.kategori}
-                </div>
-
-                <h2>
-                    ${haber.baslik}
-                </h2>
-
-                <span class="news-date">
-                    ${haber.tarih}
-                </span>
-
-                <br>
-
-                <p>
-                    ${haber.icerik}
-                </p>
-
-            </div>
-
-        `;
-
-    document
-        .getElementById("modal")
-        .classList.add("show");
-
-}
-
-
-function closeModal(){
-
-    document
-        .getElementById("modal")
-        .classList.remove("show");
-
-}
-
-
-document
-    .getElementById("modal")
-    .addEventListener("click", e => {
-
-        if(e.target.id === "modal"){
-            closeModal();
-        }
-
-    });
 
 
 /* BAŞLAT */
