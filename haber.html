@@ -3,9 +3,13 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>GÜNORA Haber</title>
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>HABERİSTA Haber</title>
 
 <style>
 
@@ -16,133 +20,243 @@
 }
 
 body{
-    font-family:Arial,Helvetica,sans-serif;
+    font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
     background:#f5f7fa;
-    color:#182230;
+
+    color:#17202d;
 }
+
+
+/* HEADER */
 
 header{
     background:white;
-    border-bottom:1px solid #e5e9ef;
+
+    border-bottom:
+    1px solid #e5e9ef;
+
     position:sticky;
+
     top:0;
-    z-index:100;
+
+    z-index:1000;
 }
 
 .header{
     max-width:1100px;
-    margin:auto;
+
     height:75px;
-    padding:0 20px;
+
+    margin:auto;
+
+    padding:
+    0 20px;
 
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
 }
 
+
+/* LOGO */
+
 .logo{
     font-size:30px;
+
     font-weight:900;
+
+    letter-spacing:-1px;
+
+    cursor:pointer;
 }
 
 .logo span{
     color:#4f8cff;
 }
 
+
+/* GERİ */
+
 .back{
     border:0;
+
     background:#f1f4f8;
-    padding:11px 17px;
+
+    color:#344054;
+
+    padding:
+    11px 17px;
+
     border-radius:10px;
+
     cursor:pointer;
-    font-weight:bold;
+
+    font-weight:700;
+
+    transition:.2s;
 }
 
 .back:hover{
     background:#4f8cff;
+
     color:white;
 }
 
+
+/* CONTAINER */
+
 .container{
     max-width:900px;
-    margin:40px auto;
-    padding:0 20px;
+
+    margin:
+    40px auto;
+
+    padding:
+    0 20px;
 }
+
+
+/* ARTICLE */
 
 .article{
     background:white;
-    border:1px solid #e5e9ef;
+
+    border:
+    1px solid #e5e9ef;
+
     border-radius:20px;
+
     overflow:hidden;
 }
 
+
+/* IMAGE */
+
 .article-image{
     width:100%;
+
     height:500px;
-    object-fit:cover;
+
     display:block;
+
+    object-fit:cover;
 }
+
+
+/* CONTENT */
 
 .content{
     padding:35px;
 }
 
+
 .category{
     display:inline-block;
+
     background:#4f8cff;
+
     color:white;
-    padding:7px 12px;
+
+    padding:
+    7px 12px;
+
     border-radius:7px;
+
     font-size:12px;
-    font-weight:bold;
+
+    font-weight:800;
+
     margin-bottom:15px;
 }
 
+
 h1{
-    font-size:42px;
+    font-size:43px;
+
     line-height:1.12;
+
     margin-bottom:15px;
+
+    letter-spacing:-.7px;
 }
+
 
 .date{
     color:#8a94a3;
+
     font-size:14px;
+
     margin-bottom:25px;
 }
+
 
 .description{
     font-size:19px;
+
     line-height:1.7;
+
     color:#4b5563;
+
     margin-bottom:25px;
+
     font-weight:600;
 }
 
+
 .text{
     white-space:pre-line;
+
     font-size:17px;
+
     line-height:1.9;
+
     color:#374151;
 }
 
+
+/* FOOTER */
+
 footer{
     text-align:center;
-    padding:35px;
-    color:#8a94a3;
+
+    padding:
+    35px 20px;
+
+    color:#8994a3;
 }
 
+
+/* MOBILE */
+
 @media(max-width:600px){
+
+    .header{
+        height:auto;
+
+        padding:
+        15px 20px;
+    }
+
+    .logo{
+        font-size:26px;
+    }
 
     .article-image{
         height:280px;
     }
 
     .content{
-        padding:22px;
+        padding:23px;
     }
 
     h1{
-        font-size:29px;
+        font-size:30px;
     }
 
     .description{
@@ -159,70 +273,105 @@ footer{
 
 </head>
 
+
 <body>
+
 
 <header>
 
-<div class="header">
+    <div class="header">
 
-    <div class="logo">
-        GÜN<span>ORA</span>
+        <div
+            class="logo"
+            onclick="window.location.href='index.html'">
+
+            HABER<span>İSTA</span>
+
+        </div>
+
+
+        <button
+            class="back"
+            onclick="history.back()">
+
+            ← Haberler
+
+        </button>
+
     </div>
-
-    <button
-        class="back"
-        onclick="history.back()">
-
-        ← Haberler
-
-    </button>
-
-</div>
 
 </header>
 
 
+
 <main class="container">
 
-<div
-    class="article"
-    id="article">
+    <article
+        class="article"
+        id="article">
 
-</div>
+    </article>
 
 </main>
 
 
+
 <footer>
 
-    <strong>GÜNORA</strong>
+    HABER<span style="color:#4f8cff">
+        İSTA
+    </span>
+
     <br>
+
     Güncel haberlerin adresi
 
 </footer>
 
 
+
 <script src="HABERLER/haberler.js"></script>
+
 
 <script>
 
+/* URL'DEKİ ID */
+
 const params =
-    new URLSearchParams(window.location.search);
+    new URLSearchParams(
+        window.location.search
+    );
+
 
 const id =
-    Number(params.get("id"));
+    Number(
+        params.get("id")
+    );
+
+
+/* HABERİ BUL */
 
 const haber =
-    haberler.find(h => h.id === id);
+    haberler.find(
+        h => h.id === id
+    );
 
+
+/* HABER YOKSA */
 
 if(!haber){
 
-    document.getElementById("article").innerHTML = `
+    document
+    .getElementById(
+        "article"
+    )
+    .innerHTML = `
 
         <div class="content">
 
-            <h1>Haber bulunamadı</h1>
+            <h1>
+                Haber bulunamadı
+            </h1>
 
             <p>
                 Aradığınız haber mevcut değil.
@@ -232,13 +381,23 @@ if(!haber){
 
     `;
 
-}else{
+}
+
+
+/* HABER VARSA */
+
+else{
 
     document.title =
-        haber.baslik + " — GÜNORA";
+        haber.baslik +
+        " — HABERİSTA";
 
 
-    document.getElementById("article").innerHTML = `
+    document
+    .getElementById(
+        "article"
+    )
+    .innerHTML = `
 
         <img
             class="article-image"
@@ -246,23 +405,28 @@ if(!haber){
             alt="${haber.baslik}"
         >
 
+
         <div class="content">
 
             <span class="category">
                 ${haber.kategori}
             </span>
 
+
             <h1>
                 ${haber.baslik}
             </h1>
+
 
             <div class="date">
                 ${haber.tarih}
             </div>
 
+
             <div class="description">
                 ${haber.aciklama}
             </div>
+
 
             <div class="text">
                 ${haber.icerik}
