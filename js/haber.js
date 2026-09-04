@@ -1,17 +1,26 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     const params =
-        new URLSearchParams(window.location.search);
+        new URLSearchParams(
+            window.location.search
+        );
 
     const id =
         Number(params.get("id"));
 
+
     const haber =
-        haberler.find(h => h.id === id);
+        haberler.find(
+            item => item.id === id
+        );
 
 
     const article =
         document.getElementById("article");
+
+
+    const relatedNews =
+        document.getElementById("relatedNews");
 
 
     if (!haber) {
@@ -20,14 +29,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
             <div class="not-found">
 
-                <h1>Haber bulunamadı</h1>
+                <div class="not-found-icon">
+                    📰
+                </div>
+
+                <h1>
+                    Haber bulunamadı
+                </h1>
 
                 <p>
-                    Aradığınız haber mevcut değil veya kaldırılmış olabilir.
+                    Aradığınız haber mevcut değil.
                 </p>
 
                 <a href="index.html">
-                    Ana sayfaya dön
+                    Ana Sayfaya Dön
                 </a>
 
             </div>
@@ -48,17 +63,17 @@ document.addEventListener("DOMContentLoaded", () => {
         <article class="full-article">
 
             <div class="article-category">
-                ${haber.kategori}
+                ${escapeHtml(haber.kategori)}
             </div>
 
 
             <h1 class="article-title">
-                ${haber.baslik}
+                ${escapeHtml(haber.baslik)}
             </h1>
 
 
             <p class="article-spot">
-                ${haber.spot}
+                ${escapeHtml(haber.spot)}
             </p>
 
 
@@ -82,17 +97,22 @@ document.addEventListener("DOMContentLoaded", () => {
             <img
                 class="article-image"
                 src="${haber.resim}"
-                alt="${haber.baslik}"
-                onerror="this.src='https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1400&q=80'"
+                alt="${escapeHtml(haber.baslik)}"
             >
 
 
             <div class="article-content">
 
                 ${haber.icerik
-                    .split("\n")
-                    .filter(x => x.trim())
-                    .map(x => `<p>${x.trim()}</p>`)
+                    .trim()
+                    .split(/\n\s*\n/)
+                    .map(paragraph => `
+                        <p>
+                            ${escapeHtml(
+                                paragraph.trim()
+                            )}
+                        </p>
+                    `)
                     .join("")
                 }
 
@@ -101,10 +121,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
             <div class="article-source">
 
-                <strong>Haberİsta</strong>
+                <strong>
+                    Haberİsta
+                </strong>
 
                 <span>
-                    Bu haber Haberİsta haber merkezi tarafından hazırlanmıştır.
+                    Haber tarihi:
+                    ${haber.tarih}
+                    ${haber.saat}
+                </span>
+
+                <span>
+                    Kaynak:
+                    ${escapeHtml(haber.kaynak)}
                 </span>
 
             </div>
@@ -114,47 +143,186 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
 
 
-    // BENZER HABERLER
-
     const related =
-        document.getElementById("relatedNews");
-
-
-    const similar =
         haberler
-            .filter(h =>
-                h.id !== haber.id &&
-                h.kategori === haber.kategori
+            .filter(item =>
+                item.id !== haber.id &&
+                item.kategori === haber.kategori
             )
             .slice(0, 4);
 
 
-    related.innerHTML =
-        similar
-            .map(h => `
+    if (!related.length) {
+
+        const alternative =
+            haberler
+                .filter(item =>
+                    item.id !== haber.id
+                )
+                .slice(0, 4);
+
+        renderRelated(
+            alternative
+        );
+
+    } else {
+
+        renderRelated(
+            related
+        );
+
+    }
+
+
+    const breaking =
+        document.getElementById(
+            "breakingNews"
+        );
+
+
+    if (breaking) {
+
+        breaking.innerHTML =
+            haberler
+                .slice(0, 6)
+                .map(item => `
+
+                    <span
+                        onclick="openNews(${item.id})"
+                    >
+                        ${escapeHtml(item.baslik)}
+                    </span>
+
+                `)
+                .join("");
+
+    }
+
+
+    const searchBtn =
+        document.getElementById(
+            "searchBtn"
+        );
+
+    const searchInput =
+        document.getElementById(
+            "searchInput"
+        );
+
+
+    function search() {
+
+        const value =
+            searchInput
+                ?.value
+                .trim()
+                .toLocaleLowerCase("tr-TR");
+
+
+        if (!value) {
+            return;
+        }
+
+
+        const result =
+            haberler.find(item => {
+
+                const text =
+                    (
+                        item.baslik +
+                        " " +
+                        item.spot
+                    ).toLocaleLowerCase(
+                        "tr-TR"
+                    );
+
+                return text.includes(value);
+
+            });
+
+
+        if (result) {
+
+            openNews(result.id);
+
+        } else {
+
+            alert(
+                "Aradığınız haber bulunamadı."
+            );
+
+        }
+
+    }
+
+
+    if (searchBtn) {
+
+        searchBtn.addEventListener(
+            "click",
+            search
+        );
+
+    }
+
+
+    if (searchInput) {
+
+        searchInput.addEventListener(
+            "keydown",
+            event => {
+
+                if (event.key === "Enter") {
+                    search();
+                }
+
+            }
+        );
+
+    }
+
+});
+
+
+function renderRelated(list) {
+
+    const relatedNews =
+        document.getElementById(
+            "relatedNews"
+        );
+
+
+    relatedNews.innerHTML =
+        list
+            .map(haber => `
 
                 <article
                     class="news-card"
-                    onclick="openNews(${h.id})"
+                    onclick="openNews(${haber.id})"
                 >
 
                     <div class="news-image">
 
                         <img
-                            src="${h.resim}"
-                            alt="${h.baslik}"
+                            src="${haber.resim}"
+                            alt="${escapeHtml(haber.baslik)}"
+                            loading="lazy"
                         >
+
+                        <span class="category-tag">
+                            ${escapeHtml(haber.kategori)}
+                        </span>
 
                     </div>
 
                     <div class="news-card-content">
 
                         <h3>
-                            ${h.baslik}
+                            ${escapeHtml(haber.baslik)}
                         </h3>
 
                         <p>
-                            ${h.spot}
+                            ${escapeHtml(haber.spot)}
                         </p>
 
                     </div>
@@ -164,35 +332,67 @@ document.addEventListener("DOMContentLoaded", () => {
             `)
             .join("");
 
-
-    // SON DAKİKA
-
-    const breaking =
-        document.getElementById("breakingNews");
-
-
-    if (breaking) {
-
-        breaking.innerHTML =
-            haberler
-                .slice(0, 4)
-                .map(h => `
-
-                    <span onclick="openNews(${h.id})">
-                        ${h.baslik}
-                    </span>
-
-                `)
-                .join(" • ");
-
-    }
-
-});
+}
 
 
 function openNews(id) {
 
     window.location.href =
         `haber.html?id=${id}`;
+
+}
+
+
+function shareNews() {
+
+    if (
+        navigator.share
+    ) {
+
+        navigator.share({
+
+            title:
+                document.title,
+
+            url:
+                window.location.href
+
+        });
+
+    } else {
+
+        copyNewsLink();
+
+    }
+
+}
+
+
+function copyNewsLink() {
+
+    navigator.clipboard
+        ?.writeText(
+            window.location.href
+        )
+        .then(() => {
+
+            alert(
+                "Haber bağlantısı kopyalandı."
+            );
+
+        });
+
+}
+
+
+function escapeHtml(text) {
+
+    const div =
+        document.createElement("div");
+
+    div.textContent =
+        text;
+
+    return div.innerHTML;
 
 }
