@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Haberİsta - Son Dakika Haberleri</title>
-    <meta name="description" content="Türkiye ve dünyadan son dakika haberleri, gündem, ekonomi, spor, teknoloji ve magazin.">
+
+    <meta
+        name="description"
+        content="Haberİsta - Türkiye ve dünyadan son dakika haberleri, gündem, ekonomi, spor, teknoloji ve daha fazlası."
+    >
 
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -14,23 +18,15 @@
 
 <header class="site-header">
 
-    <div class="top-line">
-        <div class="container top-inner">
-            <span id="currentDate"></span>
-
-            <div class="top-links">
-                <a href="#">Son Dakika</a>
-                <a href="#">Gündem</a>
-                <a href="#">Ekonomi</a>
-                <a href="#">Spor</a>
-            </div>
-        </div>
-    </div>
-
     <div class="main-header">
+
         <div class="container header-inner">
 
-            <button class="menu-btn" id="menuBtn">
+            <button
+                class="menu-btn"
+                id="menuBtn"
+                aria-label="Menüyü aç"
+            >
                 ☰
             </button>
 
@@ -38,88 +34,174 @@
                 <span>Haber</span>İsta
             </a>
 
-            <div class="header-actions">
+            <div class="search-box">
 
-                <div class="search-box">
-                    <input
-                        type="text"
-                        id="searchInput"
-                        placeholder="Haber ara..."
-                    >
-                    <button id="searchBtn">🔍</button>
-                </div>
+                <input
+                    type="search"
+                    id="searchInput"
+                    placeholder="Haber ara..."
+                    autocomplete="off"
+                >
+
+                <button
+                    id="searchBtn"
+                    aria-label="Ara"
+                >
+                    🔍
+                </button>
 
             </div>
 
         </div>
+
     </div>
 
+
     <nav class="category-nav">
+
         <div class="container nav-inner">
 
-            <a class="active" href="index.html">Ana Sayfa</a>
-            <a href="#" data-category="Son Dakika">Son Dakika</a>
-            <a href="#" data-category="Gündem">Gündem</a>
-            <a href="#" data-category="Ekonomi">Ekonomi</a>
-            <a href="#" data-category="Spor">Spor</a>
-            <a href="#" data-category="Magazin">Magazin</a>
-            <a href="#" data-category="Dünya">Dünya</a>
-            <a href="#" data-category="Teknoloji">Teknoloji</a>
-            <a href="#" data-category="Sağlık">Sağlık</a>
-            <a href="#" data-category="Kültür Sanat">Kültür Sanat</a>
+            <a
+                href="index.html"
+                class="active"
+                data-category="Tümü"
+            >
+                Ana Sayfa
+            </a>
+
+            <a
+                href="#"
+                data-category="Son Dakika"
+            >
+                Son Dakika
+            </a>
+
+            <a
+                href="#"
+                data-category="Gündem"
+            >
+                Gündem
+            </a>
+
+            <a
+                href="#"
+                data-category="Ekonomi"
+            >
+                Ekonomi
+            </a>
+
+            <a
+                href="#"
+                data-category="Spor"
+            >
+                Spor
+            </a>
+
+            <a
+                href="#"
+                data-category="Magazin"
+            >
+                Magazin
+            </a>
+
+            <a
+                href="#"
+                data-category="Dünya"
+            >
+                Dünya
+            </a>
+
+            <a
+                href="#"
+                data-category="Teknoloji"
+            >
+                Teknoloji
+            </a>
+
+            <a
+                href="#"
+                data-category="Sağlık"
+            >
+                Sağlık
+            </a>
+
+            <a
+                href="#"
+                data-category="Kültür Sanat"
+            >
+                Kültür Sanat
+            </a>
 
         </div>
+
     </nav>
 
 </header>
 
 
 <div class="breaking-bar">
+
     <div class="container breaking-inner">
 
         <div class="breaking-title">
+
             <span class="breaking-dot"></span>
+
             SON DAKİKA
+
         </div>
 
-        <div class="breaking-content" id="breakingNews"></div>
+        <div
+            id="breakingNews"
+            class="breaking-news"
+        ></div>
 
     </div>
+
 </div>
 
 
 <main class="container">
 
-    <!-- MANŞET -->
-
     <section class="hero-section">
 
-        <div class="hero-main" id="heroMain"></div>
+        <div
+            id="heroMain"
+            class="hero-main"
+        ></div>
 
-        <div class="hero-side" id="heroSide"></div>
+        <div
+            id="heroSide"
+            class="hero-side"
+        ></div>
 
     </section>
 
 
-    <!-- REKLAM ALANI -->
+    <div
+        id="searchResultInfo"
+        class="search-result-info"
+    ></div>
 
-    <div class="ad-box">
-        <span>REKLAM</span>
-    </div>
-
-
-    <!-- ANA İÇERİK -->
 
     <div class="content-layout">
 
         <section class="main-column">
 
             <div class="section-header">
-                <h2>Son Haberler</h2>
+
+                <h2 id="sectionTitle">
+                    Son Haberler
+                </h2>
+
                 <span></span>
+
             </div>
 
-            <div class="news-grid" id="newsGrid"></div>
+            <div
+                id="newsGrid"
+                class="news-grid"
+            ></div>
 
         </section>
 
@@ -129,43 +211,35 @@
             <div class="sidebar-box">
 
                 <div class="sidebar-title">
-                    <h3>Çok Okunanlar</h3>
+
+                    <h3>
+                        Çok Okunanlar
+                    </h3>
+
                 </div>
 
-                <div id="popularNews"></div>
+                <div
+                    id="popularNews"
+                    class="popular-news"
+                ></div>
 
             </div>
 
 
-            <div class="sidebar-box finance-box">
+            <div class="sidebar-box">
 
                 <div class="sidebar-title">
-                    <h3>Finans</h3>
+
+                    <h3>
+                        Günün Başlıkları
+                    </h3>
+
                 </div>
 
-                <div class="finance-item">
-                    <span>Dolar</span>
-                    <strong>₺41,20</strong>
-                    <small>▲ %0,42</small>
-                </div>
-
-                <div class="finance-item">
-                    <span>Euro</span>
-                    <strong>₺48,30</strong>
-                    <small>▲ %0,31</small>
-                </div>
-
-                <div class="finance-item">
-                    <span>Altın</span>
-                    <strong>₺4.820</strong>
-                    <small>▲ %0,65</small>
-                </div>
-
-                <div class="finance-item">
-                    <span>Borsa</span>
-                    <strong>11.240</strong>
-                    <small>▲ %0,78</small>
-                </div>
+                <div
+                    id="sidebarHeadlines"
+                    class="sidebar-headlines"
+                ></div>
 
             </div>
 
@@ -174,16 +248,22 @@
     </div>
 
 
-    <!-- KATEGORİLER -->
-
     <section class="category-section">
 
         <div class="section-header">
-            <h2>Gündem</h2>
+
+            <h2>
+                Gündem
+            </h2>
+
             <span></span>
+
         </div>
 
-        <div class="category-grid" id="gundemNews"></div>
+        <div
+            id="gundemNews"
+            class="category-grid"
+        ></div>
 
     </section>
 
@@ -191,11 +271,19 @@
     <section class="category-section">
 
         <div class="section-header">
-            <h2>Spor</h2>
+
+            <h2>
+                Ekonomi
+            </h2>
+
             <span></span>
+
         </div>
 
-        <div class="category-grid" id="sporNews"></div>
+        <div
+            id="ekonomiNews"
+            class="category-grid"
+        ></div>
 
     </section>
 
@@ -203,11 +291,39 @@
     <section class="category-section">
 
         <div class="section-header">
-            <h2>Ekonomi</h2>
+
+            <h2>
+                Spor
+            </h2>
+
             <span></span>
+
         </div>
 
-        <div class="category-grid" id="ekonomiNews"></div>
+        <div
+            id="sporNews"
+            class="category-grid"
+        ></div>
+
+    </section>
+
+
+    <section class="category-section">
+
+        <div class="section-header">
+
+            <h2>
+                Teknoloji
+            </h2>
+
+            <span></span>
+
+        </div>
+
+        <div
+            id="teknolojiNews"
+            class="category-grid"
+        ></div>
 
     </section>
 
@@ -218,64 +334,129 @@
 
     <div class="container footer-grid">
 
-        <div>
+        <div class="footer-about">
+
             <div class="footer-logo">
                 <span>Haber</span>İsta
             </div>
 
             <p>
-                Türkiye ve dünyadan güncel haberleri hızlı,
-                anlaşılır ve tarafsız şekilde takip edin.
+                Türkiye ve dünyadan güncel gelişmeleri
+                takip edebileceğiniz bağımsız haber portalı.
             </p>
+
         </div>
 
 
         <div>
-            <h4>Kategoriler</h4>
-            <a href="#">Gündem</a>
-            <a href="#">Ekonomi</a>
-            <a href="#">Spor</a>
-            <a href="#">Dünya</a>
+
+            <h4>
+                Kategoriler
+            </h4>
+
+            <a href="#" data-category="Gündem">
+                Gündem
+            </a>
+
+            <a href="#" data-category="Ekonomi">
+                Ekonomi
+            </a>
+
+            <a href="#" data-category="Spor">
+                Spor
+            </a>
+
+            <a href="#" data-category="Dünya">
+                Dünya
+            </a>
+
         </div>
 
 
         <div>
-            <h4>Haberİsta</h4>
-            <a href="#">Hakkımızda</a>
-            <a href="#">İletişim</a>
-            <a href="#">Gizlilik</a>
-            <a href="#">Çerez Politikası</a>
+
+            <h4>
+                Haberİsta
+            </h4>
+
+            <a href="#">
+                Hakkımızda
+            </a>
+
+            <a href="#">
+                İletişim
+            </a>
+
+            <a href="#">
+                Gizlilik Politikası
+            </a>
+
+            <a href="#">
+                Çerez Politikası
+            </a>
+
         </div>
 
 
         <div>
-            <h4>Bizi Takip Edin</h4>
+
+            <h4>
+                Sosyal Medya
+            </h4>
 
             <div class="socials">
-                <a href="#">X</a>
-                <a href="#">f</a>
-                <a href="#">◎</a>
-                <a href="#">▶</a>
+
+                <a href="#" aria-label="X">
+                    𝕏
+                </a>
+
+                <a href="#" aria-label="Facebook">
+                    f
+                </a>
+
+                <a href="#" aria-label="Instagram">
+                    ◎
+                </a>
+
+                <a href="#" aria-label="YouTube">
+                    ▶
+                </a>
+
             </div>
+
         </div>
 
     </div>
 
+
     <div class="footer-bottom">
-        © 2026 Haberİsta — Tüm hakları saklıdır.
+
+        <div class="container">
+
+            © 2026 Haberİsta. Tüm hakları saklıdır.
+
+        </div>
+
     </div>
 
 </footer>
 
 
-<div class="cookie-box" id="cookieBox">
+<div
+    id="cookieBox"
+    class="cookie-box"
+>
 
     <div>
-        <strong>🍪 Çerez Kullanımı</strong>
+
+        <strong>
+            Çerez Kullanımı
+        </strong>
 
         <p>
-            Daha iyi bir deneyim sunmak için çerezleri kullanıyoruz.
+            Site deneyimini geliştirmek için gerekli çerezleri kullanıyoruz.
         </p>
+
     </div>
 
     <button id="cookieAccept">
