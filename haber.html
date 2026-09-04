@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
 
     <meta charset="UTF-8">
@@ -11,32 +12,23 @@
 
     <title>Haberİsta</title>
 
-    <link rel="stylesheet" href="css/style.css">
+    <meta
+        name="description"
+        content="Haberİsta haber detay sayfası."
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
 
 </head>
+
 
 <body>
 
 
 <header class="site-header">
-
-    <div class="top-line">
-
-        <div class="container top-inner">
-
-            <span id="currentDate"></span>
-
-            <div class="top-links">
-                <a href="index.html">Ana Sayfa</a>
-                <a href="#">Son Dakika</a>
-                <a href="#">Gündem</a>
-                <a href="#">Spor</a>
-            </div>
-
-        </div>
-
-    </div>
-
 
     <div class="main-header">
 
@@ -44,19 +36,22 @@
 
             <button
                 class="menu-btn"
-                onclick="history.back()"
+                onclick="window.location.href='index.html'"
             >
                 ←
             </button>
 
-            <a href="index.html" class="logo">
+            <a
+                href="index.html"
+                class="logo"
+            >
                 <span>Haber</span>İsta
             </a>
 
             <div class="search-box">
 
                 <input
-                    type="text"
+                    type="search"
                     id="searchInput"
                     placeholder="Haber ara..."
                 >
@@ -76,14 +71,41 @@
 
         <div class="container nav-inner">
 
-            <a href="index.html">Ana Sayfa</a>
-            <a href="#">Son Dakika</a>
-            <a href="#">Gündem</a>
-            <a href="#">Ekonomi</a>
-            <a href="#">Spor</a>
-            <a href="#">Magazin</a>
-            <a href="#">Dünya</a>
-            <a href="#">Teknoloji</a>
+            <a href="index.html">
+                Ana Sayfa
+            </a>
+
+            <a href="index.html#son-dakika">
+                Son Dakika
+            </a>
+
+            <a href="index.html">
+                Gündem
+            </a>
+
+            <a href="index.html">
+                Ekonomi
+            </a>
+
+            <a href="index.html">
+                Spor
+            </a>
+
+            <a href="index.html">
+                Magazin
+            </a>
+
+            <a href="index.html">
+                Dünya
+            </a>
+
+            <a href="index.html">
+                Teknoloji
+            </a>
+
+            <a href="index.html">
+                Sağlık
+            </a>
 
         </div>
 
@@ -97,11 +119,17 @@
     <div class="container breaking-inner">
 
         <div class="breaking-title">
+
             <span class="breaking-dot"></span>
+
             SON DAKİKA
+
         </div>
 
-        <div id="breakingNews"></div>
+        <div
+            id="breakingNews"
+            class="breaking-news"
+        ></div>
 
     </div>
 
@@ -115,30 +143,42 @@
 
     <div class="article-share">
 
-        <strong>Haberi Paylaş</strong>
+        <strong>
+            Haberi Paylaş
+        </strong>
 
-        <button>f</button>
-        <button>𝕏</button>
-        <button>☏</button>
+        <button
+            type="button"
+            onclick="shareNews()"
+        >
+            ↗
+        </button>
 
-    </div>
+        <button
+            type="button"
+            onclick="copyNewsLink()"
+        >
+            🔗
+        </button>
 
-
-    <div class="ad-box article-ad">
-        <span>REKLAM</span>
     </div>
 
 
     <section>
 
         <div class="section-header">
-            <h2>Benzer Haberler</h2>
+
+            <h2>
+                Benzer Haberler
+            </h2>
+
             <span></span>
+
         </div>
 
         <div
-            class="news-grid"
             id="relatedNews"
+            class="news-grid"
         ></div>
 
     </section>
@@ -165,11 +205,21 @@
 
         <div>
 
-            <h4>Haberİsta</h4>
+            <h4>
+                Haberİsta
+            </h4>
 
-            <a href="#">Hakkımızda</a>
-            <a href="#">İletişim</a>
-            <a href="#">Gizlilik</a>
+            <a href="#">
+                Hakkımızda
+            </a>
+
+            <a href="#">
+                İletişim
+            </a>
+
+            <a href="#">
+                Gizlilik Politikası
+            </a>
 
         </div>
 
@@ -177,7 +227,13 @@
 
 
     <div class="footer-bottom">
-        © 2026 Haberİsta
+
+        <div class="container">
+
+            © 2026 Haberİsta
+
+        </div>
+
     </div>
 
 </footer>
