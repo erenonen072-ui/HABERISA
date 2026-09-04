@@ -1,6 +1,7 @@
 /* =========================================================
    HABERİSTA
-   HABER VERİTABANI
+   GERÇEK HABER VERİTABANI
+   Güncelleme: 04.09.2026
    ========================================================= */
 
 const HABERLER = [
@@ -8,204 +9,276 @@ const HABERLER = [
     {
         id: 1,
         kategori: "Gündem",
+        baslik: "KPSS maratonu 6 Eylül'de başlayacak",
+        ozet: "2026 KPSS süreci 6 Eylül Pazar günü Genel Yetenek-Genel Kültür oturumuyla başlayacak.",
+        resim: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1600&q=85",
+        saat: "11:25",
+        tarih: "4 Eylül 2026",
+        kaynak: "Anadolu Ajansı",
+        kaynakUrl: "https://aa.com.tr/",
+        detay: `
+            2026 Kamu Personel Seçme Sınavı (KPSS) maratonu 6 Eylül Pazar günü
+            yapılacak Genel Yetenek-Genel Kültür oturumuyla başlayacak.
 
-        baslik:
-            "Gündemin öne çıkan gelişmeleri HABERİSTA'da",
+            Ölçme, Seçme ve Yerleştirme Merkezi tarafından yürütülen sınav
+            sürecinde adaylar farklı oturumlarda sınavlara girecek.
 
-        ozet:
-            "Türkiye ve dünyadan günün önemli gelişmelerini tek yerde takip edin.",
+            İlk oturumda adayların genel yetenek ve genel kültür alanlarındaki
+            bilgileri ölçülecek. Sınav süreci boyunca adayların sınav giriş
+            belgeleri, sınav saatleri ve sınav merkezleriyle ilgili duyuruları
+            takip etmesi önem taşıyor.
 
-        resim:
-            "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1400&q=85",
+            Sınava girecek adayların sınav günü yaşanabilecek yoğunluğu göz
+            önünde bulundurarak sınav merkezlerinde erken bulunmaları tavsiye
+            ediliyor.
 
-        saat: "15:40"
+            KPSS, kamu kurumlarında görev almak isteyen adaylar açısından
+            Türkiye'deki en önemli merkezi sınavlardan biri olmayı sürdürüyor.
+        `
     },
-
 
     {
         id: 2,
         kategori: "Türkiye",
+        baslik: "Girne'deki gemi kazasında can kaybı 12'ye yükseldi",
+        ozet: "KKTC'nin Girne açıklarında batan yolcu gemisindeki arama kurtarma çalışmalarında iki kişinin daha cansız bedenine ulaşıldı.",
+        resim: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1600&q=85",
+        saat: "11:11",
+        tarih: "4 Eylül 2026",
+        kaynak: "Anadolu Ajansı",
+        kaynakUrl: "https://aa.com.tr/",
+        detay: `
+            Kuzey Kıbrıs Türk Cumhuriyeti'nin Girne kenti açıklarında batan
+            "Filo Jet" isimli yolcu gemisine ilişkin arama kurtarma çalışmaları
+            devam ediyor.
 
-        baslik:
-            "Türkiye gündeminden son gelişmeler",
+            KKTC Başbakanı Ünal Üstel tarafından yapılan açıklamaya göre
+            çalışmalarda iki kişinin daha naaşına ulaşıldı ve kazada hayatını
+            kaybedenlerin sayısı 12'ye yükseldi.
 
-        ozet:
-            "Günün dikkat çeken gelişmeleri ve yapılan açıklamalar HABERİSTA'da.",
+            Bölgede yürütülen çalışmalara Türkiye'den de destek veriliyor.
+            Kurtarma gemileri TCG Işın ve TCG Alemdar, kayıp kişilere ulaşılması
+            ve geminin kara kutusunun çıkarılması amacıyla robotik dalış ve
+            tarama faaliyetlerini sürdürüyor.
 
-        resim:
-            "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=1000&q=85",
+            Ekiplerin çalışmalarında deniz şartları ve geminin bulunduğu derinlik
+            önemli bir faktör olarak öne çıkıyor.
 
-        saat: "15:15"
+            Arama kurtarma faaliyetlerinden gelecek yeni bilgiler doğrultusunda
+            gelişmelerin kamuoyuyla paylaşılması bekleniyor.
+        `
     },
-
 
     {
         id: 3,
         kategori: "Ekonomi",
+        baslik: "Türkiye ile AIIB arasında Marmara için 400 milyon avroluk işbirliği",
+        ozet: "Türkiye ve Asya Altyapı Yatırım Bankası, çevre ve altyapı projelerinde işbirliği anlaşması imzaladı.",
+        resim: "https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1600&q=85",
+        saat: "10:50",
+        tarih: "4 Eylül 2026",
+        kaynak: "Reuters",
+        kaynakUrl: "https://www.reuters.com/",
+        detay: `
+            Türkiye, Asya Altyapı Yatırım Bankası (AIIB) ile çevre, iklim
+            değişikliği ve kentsel altyapı alanlarını kapsayan yeni bir
+            işbirliği anlaşması imzaladı.
 
-        baslik:
-            "Ekonomide bugün takip edilen başlıklar",
+            Anlaşmanın ilk aşamasında Marmara Denizi'nin temizlenmesine yönelik
+            çalışmaların desteklenmesi planlanıyor.
 
-        ozet:
-            "Piyasalarda ve ekonomide günün öne çıkan gelişmeleri.",
+            Projenin yaklaşık 400 milyon avroluk yatırım büyüklüğüne sahip
+            olması ve özellikle ileri biyolojik atık su arıtma tesislerinin
+            geliştirilmesine odaklanması öngörülüyor.
 
-        resim:
-            "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=1000&q=85",
+            Marmara Denizi'nde geçmiş yıllarda görülen müsilaj problemi,
+            bölgedeki atık su arıtma kapasitesinin artırılması konusunu yeniden
+            gündeme getirmişti.
 
-        saat: "14:55"
+            Anlaşmanın çevresel altyapının güçlendirilmesi ve Marmara'nın
+            ekolojik durumunun korunması açısından önemli bir finansman
+            adımı olması bekleniyor.
+        `
     },
-
 
     {
         id: 4,
-        kategori: "Teknoloji",
+        kategori: "Türkiye",
+        baslik: "23 vakıf yükseköğretim kurumu hakkında inceleme başlatıldı",
+        ozet: "Yükseköğretim Denetleme Kurulu, bazı vakıf üniversitelerinde öğrenim ücretlerine ilişkin ihbar ve şikayetler üzerine inceleme başlattı.",
+        resim: "https://images.unsplash.com/photo-1564981797816-1043664bf78d?auto=format&fit=crop&w=1600&q=85",
+        saat: "10:21",
+        tarih: "4 Eylül 2026",
+        kaynak: "Anadolu Ajansı",
+        kaynakUrl: "https://aa.com.tr/",
+        detay: `
+            Yükseköğretim Denetleme Kurulu, 23 vakıf yükseköğretim kurumu
+            hakkında inceleme başlattı.
 
-        baslik:
-            "Teknoloji dünyasında yeni gelişmeler",
+            İncelemenin, hazırlık ve birinci sınıf dışındaki öğrencilerin
+            öğrenim ücretlerinde belirlenen artış sınırlarına uyulmadığına
+            yönelik ihbar ve şikayetler üzerine başlatıldığı bildirildi.
 
-        ozet:
-            "Yeni teknolojiler ve dijital dünyanın gündeminden önemli gelişmeler.",
+            Vakıf yükseköğretim kurumlarında öğrenim ücretleri öğrenciler ve
+            aileler açısından eğitim döneminin en önemli gündem maddelerinden
+            biri olurken, ücret artışlarının mevzuata uygun şekilde yapılması
+            büyük önem taşıyor.
 
-        resim:
-            "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1000&q=85",
+            Denetim sürecinin sonucunda kurumlar hakkında gerekli
+            değerlendirmelerin yapılması bekleniyor.
 
-        saat: "14:30"
+            Konuyla ilgili yeni resmi açıklamalar geldikçe gelişmeler
+            kamuoyuna yansıyacak.
+        `
     },
-
 
     {
         id: 5,
-        kategori: "Spor",
+        kategori: "Gündem",
+        baslik: "Sivas Kongresi'nin 107. yılı: Bağımsızlık iradesi yeniden vurgulandı",
+        ozet: "Sivas Kongresi'nin 107. yıl dönümünde Türkiye'nin bağımsızlık mücadelesindeki tarihi rolü yeniden gündeme geldi.",
+        resim: "https://images.unsplash.com/photo-1523731407965-2430cd12f5e4?auto=format&fit=crop&w=1600&q=85",
+        saat: "10:34",
+        tarih: "4 Eylül 2026",
+        kaynak: "Anadolu Ajansı",
+        kaynakUrl: "https://aa.com.tr/",
+        detay: `
+            Milli Mücadele tarihinin önemli dönüm noktalarından biri olan
+            Sivas Kongresi'nin 107. yıl dönümü bugün çeşitli mesajlarla
+            anılıyor.
 
-        baslik:
-            "Spor gündeminde hareketli saatler",
+            4 Eylül 1919'da başlayan Sivas Kongresi, Milli Mücadele'nin
+            örgütlenmesi ve ulusal bağımsızlık iradesinin ortaya konulması
+            açısından önemli bir yere sahip.
 
-        ozet:
-            "Takımlardan, futbol dünyasından ve spor dünyasından son gelişmeler.",
+            Kongrede alınan kararlar, Anadolu'daki milli direnişin ortak bir
+            hedef etrafında şekillenmesinde etkili oldu.
 
-        resim:
-            "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=1000&q=85",
-
-        saat: "14:05"
+            Yıl dönümü dolayısıyla yayımlanan mesajlarda Sivas Kongresi'nin
+            Türkiye'nin bağımsızlık mücadelesindeki tarihi önemi vurgulandı.
+        `
     },
-
 
     {
         id: 6,
-        kategori: "Dünya",
+        kategori: "Spor",
+        baslik: "Süper Lig'de transfer dönemi bugün sona eriyor",
+        ozet: "2026-2027 sezonunun birinci transfer ve tescil dönemi 4 Eylül Cuma günü tamamlanacak.",
+        resim: "https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&w=1600&q=85",
+        saat: "10:05",
+        tarih: "4 Eylül 2026",
+        kaynak: "Türkiye Futbol Federasyonu",
+        kaynakUrl: "https://www.tff.org/",
+        detay: `
+            Trendyol Süper Lig'de 2026-2027 sezonunun birinci transfer ve
+            tescil dönemi bugün sona eriyor.
 
-        baslik:
-            "Dünyadan günün önemli haberleri",
+            Türkiye Futbol Federasyonu tarafından açıklanan takvime göre
+            transfer dönemi 22 Haziran 2026 tarihinde başladı ve 4 Eylül
+            2026 Cuma günü tamamlanacak.
 
-        ozet:
-            "Uluslararası gündemin öne çıkan gelişmeleri ve son dakika haberleri.",
+            Kulüpler, dönemin son gününde kadrolarını güçlendirmek için
+            transfer çalışmalarını sürdürüyor.
 
-        resim:
-            "https://images.unsplash.com/photo-1521295121783-8a321d551ad2?auto=format&fit=crop&w=1000&q=85",
+            Transfer döneminin sona ermesiyle birlikte kulüplerin sezon
+            içerisindeki kadro planlamaları açısından yeni bir aşamaya
+            geçilecek.
 
-        saat: "13:40"
+            Son gün içerisinde yapılacak resmi transfer duyuruları spor
+            gündeminin en çok takip edilen başlıkları arasında yer alıyor.
+        `
     },
-
 
     {
         id: 7,
-        kategori: "Gündem",
+        kategori: "Dünya",
+        baslik: "Türkiye'den Marmara'nın temizliği için uluslararası finansman adımı",
+        ozet: "Yeni anlaşmayla çevre projeleri ve kentsel altyapının geliştirilmesi hedefleniyor.",
+        resim: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1600&q=85",
+        saat: "09:55",
+        tarih: "4 Eylül 2026",
+        kaynak: "Reuters",
+        kaynakUrl: "https://www.reuters.com/",
+        detay: `
+            Türkiye'nin çevre ve altyapı yatırımlarına yönelik uluslararası
+            finansman arayışında yeni bir anlaşma imzalandı.
 
-        baslik:
-            "Günün gündeminde öne çıkan başlıklar",
+            Asya Altyapı Yatırım Bankası ile yapılan işbirliğinde ilk
+            aşamanın Marmara Denizi'nin temizlenmesine yönelik yatırımlara
+            ayrılması planlanıyor.
 
-        ozet:
-            "Gündemden gelişmeler ve gün içinde yaşanan son dakika haberleri.",
+            Projenin özellikle atık su arıtma kapasitesinin geliştirilmesine
+            odaklanması bekleniyor.
 
-        resim:
-            "https://images.unsplash.com/photo-1495020689067-958852a7765e?auto=format&fit=crop&w=1000&q=85",
-
-        saat: "13:20"
+            Marmara bölgesi Türkiye'nin en yoğun nüfuslu ve sanayileşmiş
+            bölgelerinden biri olduğu için çevresel altyapı yatırımları
+            bölgedeki deniz ekosistemi açısından da önem taşıyor.
+        `
     },
-
 
     {
         id: 8,
-        kategori: "Türkiye",
-
-        baslik:
-            "Türkiye'den günün önemli gelişmeleri",
-
-        ozet:
-            "Yurt genelindeki gelişmelerden öne çıkan haberler.",
-
-        resim:
-            "https://images.unsplash.com/photo-1523731407965-2430cd12f5e4?auto=format&fit=crop&w=1000&q=85",
-
-        saat: "12:55"
-    },
-
-
-    {
-        id: 9,
-        kategori: "Ekonomi",
-
-        baslik:
-            "Piyasalarda günün hareketliliği",
-
-        ozet:
-            "Ekonomi ve finans gündeminde takip edilen son gelişmeler.",
-
-        resim:
-            "https://images.unsplash.com/photo-1559526324-593bc073d938?auto=format&fit=crop&w=1000&q=85",
-
-        saat: "12:30"
-    },
-
-
-    {
-        id: 10,
         kategori: "Teknoloji",
+        baslik: "İstanbul'da yapay zeka destekli 'Avcı' ile siber suçlarla mücadele",
+        ozet: "İstanbul Emniyet Müdürlüğü ekipleri siber suçlarla mücadelede yapay zeka destekli sistemlerden yararlanıyor.",
+        resim: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=85",
+        saat: "09:40",
+        tarih: "4 Eylül 2026",
+        kaynak: "Anadolu Ajansı",
+        kaynakUrl: "https://aa.com.tr/",
+        detay: `
+            İstanbul Emniyet Müdürlüğü Siber Suçlarla Mücadele Şubesi,
+            bilişim sistemleri kullanılarak gerçekleştirilen suçların
+            önlenmesine yönelik çalışmalarını sürdürüyor.
 
-        baslik:
-            "Dijital dünyada dikkat çeken yenilikler",
+            Ekiplerin çalışmalarında internet ortamındaki sanal devriyeden
+            dijital delil incelemelerine kadar farklı yöntemlerden
+            yararlanılıyor.
 
-        ozet:
-            "Teknoloji sektöründen yeni ürünler, gelişmeler ve önemli haberler.",
+            Yapay zeka destekli "Avcı" olarak adlandırılan sistemin de
+            siber suçlarla mücadelede kullanılan teknolojik araçlardan biri
+            olduğu bildirildi.
 
-        resim:
-            "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1000&q=85",
-
-        saat: "12:05"
-    },
-
-
-    {
-        id: 11,
-        kategori: "Spor",
-
-        baslik:
-            "Spor dünyasından son dakika gelişmeleri",
-
-        ozet:
-            "Futbol ve diğer spor branşlarından günün önemli haberleri.",
-
-        resim:
-            "https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&w=1000&q=85",
-
-        saat: "11:40"
-    },
-
-
-    {
-        id: 12,
-        kategori: "Dünya",
-
-        baslik:
-            "Dünya gündeminde bugün neler yaşandı?",
-
-        ozet:
-            "Dünya genelinden son gelişmeler ve uluslararası gündemin önemli başlıkları.",
-
-        resim:
-            "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=1000&q=85",
-
-        saat: "11:15"
+            Dijital ortamda suçların hızlı şekilde değişmesi nedeniyle
+            güvenlik birimleri yeni teknolojiler ve analiz yöntemleri
+            kullanarak çalışmalarını genişletiyor.
+        `
     }
 
 ];
+
+
+/* =========================================================
+   HABER BUL
+   ========================================================= */
+
+function haberBul(id) {
+
+    return HABERLER.find(
+        haber => Number(haber.id) === Number(id)
+    );
+
+}
+
+
+/* =========================================================
+   KATEGORİLER
+   ========================================================= */
+
+const HABER_KATEGORILERI = [
+    "Tümü",
+    ...new Set(
+        HABERLER.map(
+            haber => haber.kategori
+        )
+    )
+];
+
+
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+
+window.HABERLER = HABERLER;
+window.HABER_KATEGORILERI = HABER_KATEGORILERI;
+window.haberBul = haberBul;
