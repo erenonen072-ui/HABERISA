@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Son Dakika Haberleri - Haberİsta</title>
+    <meta name="description" content="Haberİsta son dakika haberleri. Türkiye ve dünyadan en son gelişmeler.">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header class="site-header">
+    <div class="header-inner">
+
+        <a href="index.html" class="logo">
+            Haber<span>İsta</span>
+        </a>
+
+        <div class="header-search">
+            <input type="text" id="searchInput" placeholder="Haber ara...">
+            <button id="searchBtn">⌕</button>
+        </div>
+
+        <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+
+    </div>
+
+    <nav class="main-nav" id="mainNav">
+        <div class="nav-inner">
+            <a href="index.html">Ana Sayfa</a>
+            <a href="son-dakika.html" class="active">Son Dakika</a>
+            <a href="gundem.html">Gündem</a>
+            <a href="ekonomi.html">Ekonomi</a>
+            <a href="spor.html">Spor</a>
+            <a href="magazin.html">Magazin</a>
+            <a href="dunya.html">Dünya</a>
+            <a href="teknoloji.html">Teknoloji</a>
+            <a href="saglik.html">Sağlık</a>
+            <a href="kultur-sanat.html">Kültür Sanat</a>
+        </div>
+    </nav>
+</header>
+
+<div class="breaking-bar">
+    <div class="container breaking-inner">
+        <strong>SON DAKİKA</strong>
+        <div id="breakingNews"></div>
+    </div>
+</div>
+
+<main class="container category-page">
+
+    <div class="page-heading">
+        <div>
+            <span class="page-kicker">HABERİSTA</span>
+            <h1>Son Dakika Haberleri</h1>
+            <p>Türkiye ve dünyadan son dakika gelişmeleri</p>
+        </div>
+    </div>
+
+    <div class="category-layout">
+
+        <section>
+            <div id="categoryNews" class="news-grid"></div>
+        </section>
+
+        <aside class="sidebar">
+
+            <div class="sidebar-box">
+                <div class="sidebar-title">
+                    <span>ÇOK OKUNANLAR</span>
+                </div>
+                <div id="popularNews"></div>
+            </div>
+
+        </aside>
+
+    </div>
+
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <div>
+                <div class="footer-logo">
+                    Haber<span>İsta</span>
+                </div>
+                <p>
+                    Türkiye ve dünyadan gündemi takip edebileceğiniz
+                    bağımsız haber platformu.
+                </p>
+            </div>
+
+            <div>
+                <h3>Kategoriler</h3>
+                <a href="gundem.html">Gündem</a>
+                <a href="ekonomi.html">Ekonomi</a>
+                <a href="spor.html">Spor</a>
+                <a href="dunya.html">Dünya</a>
+            </div>
+
+            <div>
+                <h3>Haberİsta</h3>
+                <a href="hakkimizda.html">Hakkımızda</a>
+                <a href="iletisim.html">İletişim</a>
+                <a href="gizlilik.html">Gizlilik Politikası</a>
+                <a href="cerez-politikasi.html">Çerez Politikası</a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            © 2026 Haberİsta — Tüm hakları saklıdır.
+        </div>
+
+    </div>
+</footer>
+
+<script src="js/haberler.js"></script>
+<script src="js/kategori.js"></script>
+
+</body>
+</html>
