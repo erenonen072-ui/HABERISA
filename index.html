@@ -1,1886 +1,1082 @@
-
 <!DOCTYPE html>
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <title>HABERİSTA — Son Dakika Haberleri</title>
 
-    <meta
-        name="description"
-        content="HABERİSTA - Türkiye ve dünyadan son dakika haberleri, gündem, ekonomi, spor, teknoloji ve daha fazlası."
-    >
+    <meta name="description"
+          content="HABERİSTA son dakika, gündem, ekonomi, spor, teknoloji, dünya ve magazin haberleri.">
 
-    <meta
-        name="theme-color"
-        content="#e30613"
-    >
+    <meta name="theme-color" content="#ffffff">
 
-    <title>HABERİSTA - Son Dakika Haberleri</title>
-
-    <style>
-
-        /* =====================================================
-           RESET
-           ===================================================== */
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family:
-                Arial,
-                Helvetica,
-                sans-serif;
-
-            background: #f4f5f7;
-            color: #171717;
-
-            transition:
-                background .25s,
-                color .25s;
-        }
-
-        button,
-        input {
-            font: inherit;
-        }
-
-        button {
-            cursor: pointer;
-        }
-
-        img {
-            max-width: 100%;
-            display: block;
-        }
-
-
-        /* =====================================================
-           ÜST BİLGİ
-           ===================================================== */
-
-        .topbar {
-            background: #f7f7f7;
-            border-bottom: 1px solid #e5e5e5;
-            font-size: 12px;
-            color: #777;
-        }
-
-        .topbar-inner {
-            width: min(1180px, calc(100% - 30px));
-            margin: auto;
-
-            height: 34px;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .top-links {
-            display: flex;
-            gap: 18px;
-        }
-
-        .top-links span {
-            cursor: pointer;
-        }
-
-
-        /* =====================================================
-           HEADER
-           ===================================================== */
-
-        .header {
-            background: #fff;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .header-inner {
-            width: min(1180px, calc(100% - 30px));
-            margin: auto;
-
-            min-height: 76px;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            gap: 25px;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 9px;
-
-            text-decoration: none;
-            color: #111;
-
-            white-space: nowrap;
-        }
-
-        .logo-mark {
-            width: 38px;
-            height: 38px;
-
-            border-radius: 7px;
-
-            background: #e30613;
-            color: white;
-
-            display: grid;
-            place-items: center;
-
-            font-weight: 900;
-            font-size: 20px;
-        }
-
-        .logo-text {
-            font-size: 27px;
-            font-weight: 900;
-            letter-spacing: -1.3px;
-        }
-
-        .logo-text span {
-            color: #e30613;
-        }
-
-
-        /* =====================================================
-           ARAMA
-           ===================================================== */
-
-        .search-box {
-            flex: 1;
-            max-width: 430px;
-
-            position: relative;
-        }
-
-        .search-box input {
-            width: 100%;
-            height: 42px;
-
-            border: 1px solid #ddd;
-            border-radius: 7px;
-
-            padding:
-                0 45px
-                0 16px;
-
-            outline: none;
-
-            background: #f7f7f7;
-
-            font-size: 14px;
-
-            transition: .2s;
-        }
-
-        .search-box input:focus {
-            border-color: #e30613;
-            background: white;
-        }
-
-        .search-icon {
-            position: absolute;
-
-            right: 15px;
-            top: 50%;
-
-            transform: translateY(-50%);
-
-            font-size: 18px;
-
-            color: #777;
-
-            pointer-events: none;
-        }
-
-
-        /* =====================================================
-           HEADER BUTONLARI
-           ===================================================== */
-
-        .header-actions {
-            display: flex;
-            align-items: center;
-            gap: 9px;
-        }
-
-        .header-btn {
-            width: 42px;
-            height: 42px;
-
-            border: 1px solid #ddd;
-            border-radius: 7px;
-
-            background: white;
-
-            display: grid;
-            place-items: center;
-
-            font-size: 18px;
-        }
-
-        .header-btn:hover {
-            border-color: #e30613;
-            color: #e30613;
-        }
-
-
-        /* =====================================================
-           ANA NAV
-           ===================================================== */
-
-        .main-nav {
-            background: #fff;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .nav-inner {
-            width: min(1180px, calc(100% - 30px));
-            margin: auto;
-
-            display: flex;
-            align-items: center;
-
-            overflow-x: auto;
-            scrollbar-width: none;
-        }
-
-        .nav-inner::-webkit-scrollbar {
-            display: none;
-        }
-
-        .nav-inner a {
-            height: 45px;
-
-            padding: 0 14px;
-
-            display: flex;
-            align-items: center;
-
-            text-decoration: none;
-
-            color: #222;
-
-            font-size: 14px;
-            font-weight: 700;
-
-            white-space: nowrap;
-
-            border-bottom: 3px solid transparent;
-
-            transition: .2s;
-        }
-
-        .nav-inner a:hover,
-        .nav-inner a.active {
-            color: #e30613;
-            border-bottom-color: #e30613;
-        }
-
-
-        /* =====================================================
-           SON DAKİKA
-           ===================================================== */
-
-        .breaking-wrap {
-            background: #fff;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .breaking {
-            width: min(1180px, calc(100% - 30px));
-            margin: auto;
-
-            min-height: 42px;
-
-            display: flex;
-            align-items: center;
-
-            overflow: hidden;
-        }
-
-        .breaking-label {
-            flex-shrink: 0;
-
-            background: #e30613;
-            color: white;
-
-            height: 42px;
-
-            padding: 0 17px;
-
-            display: flex;
-            align-items: center;
-
-            font-size: 12px;
-            font-weight: 900;
-        }
-
-        .breaking-text {
-            padding-left: 17px;
-
-            font-size: 13px;
-            font-weight: 700;
-
-            white-space: nowrap;
-
-            overflow: hidden;
-            text-overflow: ellipsis;
-
-            cursor: pointer;
-        }
-
-
-        /* =====================================================
-           ANA CONTAINER
-           ===================================================== */
-
-        .container {
-            width: min(1180px, calc(100% - 30px));
-            margin: 25px auto 60px;
-        }
-
-
-        /* =====================================================
-           MANŞET
-           ===================================================== */
-
-        .section-title {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            margin-bottom: 14px;
-
-            border-bottom: 2px solid #222;
-            padding-bottom: 9px;
-        }
-
-        .section-title h2 {
-            font-size: 20px;
-            letter-spacing: -.4px;
-        }
-
-        .section-title span {
-            color: #999;
-            font-size: 12px;
-        }
-
-        .manset {
-            display: grid;
-
-            grid-template-columns:
-                minmax(0, 2fr)
-                minmax(260px, 1fr);
-
-            gap: 14px;
-        }
-
-        .manset-main,
-        .manset-side {
-            position: relative;
-            overflow: hidden;
-
-            border-radius: 5px;
-
-            background: #111;
-
-            cursor: pointer;
-        }
-
-        .manset-main {
-            height: 400px;
-        }
-
-        .manset-side {
-            height: 193px;
-        }
-
-        .manset-main img,
-        .manset-side img {
-            width: 100%;
-            height: 100%;
-
-            object-fit: cover;
-
-            opacity: .88;
-
-            transition: transform .4s;
-        }
-
-        .manset-main:hover img,
-        .manset-side:hover img {
-            transform: scale(1.04);
-        }
-
-        .manset-overlay {
-            position: absolute;
-            inset: 0;
-
-            background:
-                linear-gradient(
-                    transparent 25%,
-                    rgba(0,0,0,.9)
-                );
-        }
-
-        .manset-info {
-            position: absolute;
-
-            left: 25px;
-            right: 25px;
-            bottom: 23px;
-
-            color: white;
-        }
-
-        .manset-info .category {
-            display: inline-block;
-
-            background: #e30613;
-
-            padding: 5px 9px;
-
-            font-size: 11px;
-            font-weight: 800;
-
-            margin-bottom: 9px;
-        }
-
-        .manset-info h1 {
-            font-size: clamp(24px, 3vw, 35px);
-            line-height: 1.08;
-        }
-
-        .manset-side-container {
-            display: grid;
-            gap: 14px;
-        }
-
-        .manset-side .manset-info {
-            left: 16px;
-            right: 16px;
-            bottom: 15px;
-        }
-
-        .manset-side .manset-info h2 {
-            font-size: 18px;
-            line-height: 1.15;
-        }
-
-
-        /* =====================================================
-           HABERLER
-           ===================================================== */
-
-        .news-section {
-            margin-top: 35px;
-        }
-
-        .news-layout {
-            display: grid;
-
-            grid-template-columns:
-                minmax(0, 1fr)
-                310px;
-
-            gap: 25px;
-        }
-
-        .haberler {
-            display: grid;
-
-            grid-template-columns:
-                repeat(2, minmax(0, 1fr));
-
-            gap: 16px;
-        }
-
-        .haber-karti {
-            overflow: hidden;
-
-            background: white;
-
-            border: 1px solid #e1e1e1;
-
-            border-radius: 5px;
-
-            cursor: pointer;
-
-            transition: .2s;
-        }
-
-        .haber-karti:hover {
-            border-color: #ccc;
-
-            box-shadow:
-                0 8px 25px rgba(0,0,0,.08);
-
-            transform: translateY(-2px);
-        }
-
-        .haber-karti-resim {
-            position: relative;
-
-            height: 205px;
-
-            overflow: hidden;
-
-            background: #ddd;
-        }
-
-        .haber-karti-resim img {
-            width: 100%;
-            height: 100%;
-
-            object-fit: cover;
-
-            transition: transform .4s;
-        }
-
-        .haber-karti:hover
-        .haber-karti-resim img {
-            transform: scale(1.04);
-        }
-
-        .haber-karti-icerik {
-            padding: 17px;
-        }
-
-        .haber-karti-meta {
-            display: flex;
-            justify-content: space-between;
-
-            color: #999;
-
-            font-size: 11px;
-
-            margin-bottom: 9px;
-        }
-
-        .haber-karti h2 {
-            font-size: 19px;
-            line-height: 1.22;
-
-            margin-bottom: 9px;
-
-            letter-spacing: -.25px;
-        }
-
-        .haber-karti p {
-            color: #666;
-
-            font-size: 13px;
-            line-height: 1.5;
-        }
-
-        .haber-karti-alt {
-            margin-top: 14px;
-
-            padding-top: 12px;
-
-            border-top: 1px solid #eee;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .oku-btn {
-            border: 0;
-
-            background: transparent;
-
-            color: #e30613;
-
-            font-size: 12px;
-            font-weight: 800;
-        }
-
-
-        /* =====================================================
-           KATEGORİLER
-           ===================================================== */
-
-        .kategori-bar {
-            display: flex;
-            gap: 7px;
-
-            overflow-x: auto;
-
-            margin-bottom: 18px;
-
-            scrollbar-width: none;
-        }
-
-        .kategori-bar::-webkit-scrollbar {
-            display: none;
-        }
-
-        .kategori-btn {
-            flex-shrink: 0;
-
-            border: 1px solid #ddd;
-
-            background: white;
-
-            padding: 8px 14px;
-
-            border-radius: 4px;
-
-            font-size: 12px;
-            font-weight: 700;
-
-            color: #444;
-        }
-
-        .kategori-btn:hover,
-        .kategori-btn.active {
-            background: #e30613;
-            color: white;
-            border-color: #e30613;
-        }
-
-
-        /* =====================================================
-           SAĞ PANEL
-           ===================================================== */
-
-        .sidebar {
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-        }
-
-        .sidebar-box {
-            background: white;
-
-            border: 1px solid #ddd;
-
-            border-radius: 5px;
-
-            overflow: hidden;
-        }
-
-        .sidebar-title {
-            padding: 13px 15px;
-
-            border-bottom: 2px solid #e30613;
-
-            font-size: 16px;
-            font-weight: 900;
-        }
-
-        .popular-item {
-            display: flex;
-
-            gap: 12px;
-
-            padding: 13px 15px;
-
-            border-bottom: 1px solid #eee;
-
-            cursor: pointer;
-        }
-
-        .popular-item:last-child {
-            border-bottom: 0;
-        }
-
-        .popular-number {
-            width: 27px;
-            height: 27px;
-
-            flex-shrink: 0;
-
-            display: grid;
-            place-items: center;
-
-            background: #e30613;
-            color: white;
-
-            font-size: 13px;
-            font-weight: 900;
-
-            border-radius: 3px;
-        }
-
-        .popular-item h3 {
-            font-size: 13px;
-            line-height: 1.35;
-        }
-
-        .popular-item small {
-            display: block;
-
-            color: #999;
-
-            margin-top: 5px;
-
-            font-size: 10px;
-        }
-
-
-        /* =====================================================
-           REKLAM ALANI
-           ===================================================== */
-
-        .ad-box {
-            min-height: 170px;
-
-            background: #eee;
-
-            display: grid;
-            place-items: center;
-
-            color: #aaa;
-
-            font-size: 11px;
-        }
-
-
-        /* =====================================================
-           HABER YOK
-           ===================================================== */
-
-        .haber-yok {
-            grid-column: 1 / -1;
-
-            background: white;
-
-            border: 1px solid #ddd;
-
-            padding: 60px 20px;
-
-            text-align: center;
-        }
-
-        .haber-yok div {
-            font-size: 40px;
-            margin-bottom: 15px;
-        }
-
-        .haber-yok h3 {
-            margin-bottom: 7px;
-        }
-
-        .haber-yok p {
-            color: #777;
-        }
-
-
-        /* =====================================================
-           DETAY MODAL
-           ===================================================== */
-
-        .haber-modal {
-            position: fixed;
-            inset: 0;
-
-            z-index: 99999;
-
-            visibility: hidden;
-            opacity: 0;
-
-            transition: .25s;
-        }
-
-        .haber-modal.active {
-            visibility: visible;
-            opacity: 1;
-        }
-
-        .haber-modal-overlay {
-            position: absolute;
-            inset: 0;
-
-            background: rgba(0,0,0,.78);
-
-            backdrop-filter: blur(5px);
-        }
-
-        .haber-detay {
-            position: relative;
-            z-index: 2;
-
-            width: min(900px, calc(100% - 24px));
-
-            max-height: 94vh;
-
-            overflow-y: auto;
-
-            margin: 3vh auto;
-
-            background: white;
-
-            border-radius: 7px;
-
-            transform:
-                translateY(25px)
-                scale(.98);
-
-            transition: .3s;
-        }
-
-        .haber-modal.active
-        .haber-detay {
-            transform:
-                translateY(0)
-                scale(1);
-        }
-
-        .haber-kapat {
-            position: absolute;
-
-            top: 15px;
-            right: 15px;
-
-            z-index: 5;
-
-            width: 40px;
-            height: 40px;
-
-            border: 0;
-            border-radius: 50%;
-
-            background: rgba(0,0,0,.7);
-
-            color: white;
-
-            font-size: 25px;
-        }
-
-        .haber-detay-resim {
-            height: 400px;
-        }
-
-        .haber-detay-resim img {
-            width: 100%;
-            height: 100%;
-
-            object-fit: cover;
-        }
-
-        .haber-detay-icerik {
-            padding: 35px 42px 45px;
-        }
-
-        .haber-detay-ust {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-
-            color: #999;
-
-            font-size: 12px;
-
-            margin-bottom: 15px;
-        }
-
-        .detay-kategori {
-            background: #e30613;
-            color: white;
-
-            padding: 6px 9px;
-
-            font-weight: 800;
-        }
-
-        .haber-detay-icerik h1 {
-            font-size: 40px;
-            line-height: 1.1;
-
-            margin-bottom: 18px;
-
-            letter-spacing: -1px;
-        }
-
-        .detay-ozet {
-            font-size: 18px;
-            line-height: 1.6;
-
-            color: #555;
-
-            font-weight: 600;
-
-            margin-bottom: 25px;
-        }
-
-        .detay-cizgi {
-            height: 1px;
-            background: #ddd;
-
-            margin-bottom: 25px;
-        }
-
-        .detay-metin p {
-            color: #292929;
-
-            font-size: 17px;
-            line-height: 1.85;
-
-            margin-bottom: 21px;
-        }
-
-        .detay-kaynak {
-            margin-top: 30px;
-
-            padding: 18px;
-
-            background: #f5f5f5;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            gap: 15px;
-        }
-
-        .detay-kaynak div {
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-        }
-
-        .detay-kaynak small {
-            color: #999;
-            font-size: 10px;
-            letter-spacing: 1px;
-        }
-
-        .detay-kaynak a {
-            background: #e30613;
-            color: white;
-
-            text-decoration: none;
-
-            padding: 10px 15px;
-
-            font-size: 12px;
-            font-weight: 800;
-        }
-
-        .detay-imza {
-            padding-top: 20px;
-            margin-top: 25px;
-
-            border-top: 1px solid #eee;
-        }
-
-        .detay-imza strong {
-            display: block;
-
-            color: #e30613;
-
-            font-size: 18px;
-        }
-
-        .detay-imza span {
-            color: #999;
-            font-size: 11px;
-        }
-
-
-        /* =====================================================
-           FOOTER
-           ===================================================== */
-
-        footer {
-            background: #151515;
-            color: #aaa;
-
-            margin-top: 50px;
-        }
-
-        .footer-inner {
-            width: min(1180px, calc(100% - 30px));
-            margin: auto;
-
-            padding: 40px 0;
-
-            display: grid;
-
-            grid-template-columns:
-                2fr
-                1fr
-                1fr;
-
-            gap: 40px;
-        }
-
-        .footer-logo {
-            color: white;
-
-            font-size: 24px;
-            font-weight: 900;
-
-            margin-bottom: 10px;
-        }
-
-        .footer-logo span {
-            color: #e30613;
-        }
-
-        footer p {
-            font-size: 12px;
-            line-height: 1.7;
-        }
-
-        .footer-col h3 {
-            color: white;
-
-            font-size: 14px;
-
-            margin-bottom: 13px;
-        }
-
-        .footer-col a {
-            display: block;
-
-            color: #aaa;
-
-            text-decoration: none;
-
-            font-size: 12px;
-
-            margin-bottom: 9px;
-        }
-
-        .footer-col a:hover {
-            color: white;
-        }
-
-        .copyright {
-            border-top: 1px solid #333;
-
-            text-align: center;
-
-            padding: 17px;
-
-            font-size: 11px;
-        }
-
-
-        /* =====================================================
-           DARK MODE
-           ===================================================== */
-
-        body.dark {
-            background: #101010;
-            color: #eee;
-        }
-
-        body.dark .topbar,
-        body.dark .header,
-        body.dark .main-nav,
-        body.dark .breaking-wrap {
-            background: #171717;
-            border-color: #2c2c2c;
-        }
-
-        body.dark .logo {
-            color: white;
-        }
-
-        body.dark .nav-inner a {
-            color: #ddd;
-        }
-
-        body.dark .search-box input,
-        body.dark .header-btn,
-        body.dark .kategori-btn,
-        body.dark .haber-karti,
-        body.dark .sidebar-box {
-            background: #1b1b1b;
-            border-color: #333;
-            color: #eee;
-        }
-
-        body.dark .search-box input {
-            color: white;
-        }
-
-        body.dark .haber-karti h2,
-        body.dark .sidebar-title,
-        body.dark .popular-item h3 {
-            color: #eee;
-        }
-
-        body.dark .haber-karti p,
-        body.dark .detay-ozet {
-            color: #aaa;
-        }
-
-
-        /* =====================================================
-           MOBİL
-           ===================================================== */
-
-        @media (max-width: 850px) {
-
-            .search-box {
-                max-width: none;
-            }
-
-            .header-inner {
-                flex-wrap: wrap;
-                padding: 12px 0;
-            }
-
-            .search-box {
-                order: 3;
-                flex-basis: 100%;
-            }
-
-            .manset {
-                grid-template-columns: 1fr;
-            }
-
-            .manset-main {
-                height: 350px;
-            }
-
-            .manset-side-container {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .news-layout {
-                grid-template-columns: 1fr;
-            }
-
-            .sidebar {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .footer-inner {
-                grid-template-columns: 1fr 1fr;
-            }
-
-        }
-
-
-        @media (max-width: 600px) {
-
-            .top-links {
-                display: none;
-            }
-
-            .header-actions {
-                margin-left: auto;
-            }
-
-            .logo-text {
-                font-size: 22px;
-            }
-
-            .logo-mark {
-                width: 33px;
-                height: 33px;
-                font-size: 17px;
-            }
-
-            .manset-main {
-                height: 290px;
-            }
-
-            .manset-side-container {
-                grid-template-columns: 1fr;
-            }
-
-            .manset-side {
-                height: 190px;
-            }
-
-            .haberler {
-                grid-template-columns: 1fr;
-            }
-
-            .sidebar {
-                grid-template-columns: 1fr;
-            }
-
-            .haber-detay-resim {
-                height: 250px;
-            }
-
-            .haber-detay-icerik {
-                padding: 25px 20px 30px;
-            }
-
-            .haber-detay-icerik h1 {
-                font-size: 29px;
-            }
-
-            .detay-metin p {
-                font-size: 16px;
-                line-height: 1.75;
-            }
-
-            .detay-kaynak {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .detay-kaynak a {
-                text-align: center;
-            }
-
-            .footer-inner {
-                grid-template-columns: 1fr;
-            }
-
-        }
-
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
-
 
 <body>
 
+<!-- =====================================================
+     ÜST BİLGİ BAR
+===================================================== -->
 
-    <!-- =====================================================
-         ÜST BAR
-         ===================================================== -->
+<div class="topbar">
+    <div class="container topbar-inner">
 
-    <div class="topbar">
+        <div class="topbar-left">
+            <span id="currentDate">5 Eylül 2026 Cumartesi</span>
+        </div>
 
-        <div class="topbar-inner">
+        <div class="topbar-right">
+            <a href="#">Hakkımızda</a>
+            <a href="#">İletişim</a>
+            <a href="#">Künye</a>
+        </div>
 
-            <div>
-                Türkiye'nin haber portalı
-            </div>
+    </div>
+</div>
 
-            <div class="top-links">
-                <span>Hakkımızda</span>
-                <span>İletişim</span>
-                <span>Gizlilik</span>
-            </div>
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="header">
+
+    <div class="container header-inner">
+
+        <!-- LOGO -->
+
+        <a href="index.html" class="logo">
+            <span class="logo-main">HABER</span><span class="logo-accent">İSTA</span>
+        </a>
+
+
+        <!-- MASAÜSTÜ ARAMA -->
+
+        <div class="header-search">
+
+            <input
+                type="search"
+                id="searchInput"
+                placeholder="Haberlerde ara..."
+                autocomplete="off"
+            >
+
+            <button id="searchButton" aria-label="Ara">
+                🔍
+            </button>
+
+        </div>
+
+
+        <!-- HEADER BUTONLARI -->
+
+        <div class="header-actions">
+
+            <button class="header-action" id="darkModeButton">
+                🌙
+            </button>
+
+            <button class="header-action menu-button" id="menuButton">
+                ☰
+            </button>
 
         </div>
 
     </div>
 
 
-    <!-- =====================================================
-         HEADER
-         ===================================================== -->
-
-    <header class="header">
-
-        <div class="header-inner">
-
-
-            <a href="#" class="logo">
-
-                <div class="logo-mark">
-                    H
-                </div>
-
-                <div class="logo-text">
-                    HABER<span>İSTA</span>
-                </div>
-
-            </a>
-
-
-            <div class="search-box">
-
-                <input
-                    id="arama"
-                    type="search"
-                    placeholder="Haberlerde ara..."
-                    autocomplete="off"
-                >
-
-                <span class="search-icon">
-                    🔍
-                </span>
-
-            </div>
-
-
-            <div class="header-actions">
-
-                <button
-                    class="header-btn"
-                    id="temaBtn"
-                    type="button"
-                    title="Tema"
-                >
-                    🌙
-                </button>
-
-            </div>
-
-        </div>
-
-    </header>
-
-
-    <!-- =====================================================
-         NAV
-         ===================================================== -->
+    <!-- =================================================
+         ANA NAVİGASYON
+    ================================================= -->
 
     <nav class="main-nav">
 
-        <div class="nav-inner">
+        <div class="container nav-inner">
 
-            <a href="#" class="active">
+            <a href="index.html" class="nav-link active">
                 Ana Sayfa
             </a>
 
-            <a href="#">
-                Son Dakika
+            <a href="kategori.html?kategori=son-dakika" class="nav-link breaking">
+                🔴 Son Dakika
             </a>
 
-            <a href="#haberler">
+            <a href="kategori.html?kategori=gundem" class="nav-link">
                 Gündem
             </a>
 
-            <a href="#haberler">
-                Türkiye
-            </a>
-
-            <a href="#haberler">
+            <a href="kategori.html?kategori=ekonomi" class="nav-link">
                 Ekonomi
             </a>
 
-            <a href="#haberler">
+            <a href="kategori.html?kategori=spor" class="nav-link">
                 Spor
             </a>
 
-            <a href="#haberler">
-                Dünya
+            <a href="kategori.html?kategori=magazin" class="nav-link">
+                Magazin
             </a>
 
-            <a href="#haberler">
+            <a href="kategori.html?kategori=teknoloji" class="nav-link">
                 Teknoloji
             </a>
 
-            <a href="#haberler">
+            <a href="kategori.html?kategori=dunya" class="nav-link">
+                Dünya
+            </a>
+
+            <a href="kategori.html?kategori=bilim" class="nav-link">
+                Bilim
+            </a>
+
+            <a href="kategori.html?kategori=saglik" class="nav-link">
                 Sağlık
             </a>
 
-            <a href="#haberler">
-                Magazin
+            <a href="kategori.html?kategori=yasam" class="nav-link">
+                Yaşam
             </a>
 
         </div>
 
     </nav>
 
+</header>
 
-    <!-- =====================================================
-         SON DAKİKA
-         ===================================================== -->
 
-    <div class="breaking-wrap">
+<!-- =====================================================
+     MOBİL MENÜ
+===================================================== -->
 
-        <div
-            class="breaking"
-            id="sonDakika"
-        >
+<div class="mobile-menu" id="mobileMenu">
 
-            <span class="breaking-label">
-                SON DAKİKA
+    <div class="mobile-menu-header">
+
+        <strong>Menü</strong>
+
+        <button id="closeMenu">
+            ✕
+        </button>
+
+    </div>
+
+    <a href="index.html">Ana Sayfa</a>
+    <a href="kategori.html?kategori=son-dakika">🔴 Son Dakika</a>
+    <a href="kategori.html?kategori=gundem">Gündem</a>
+    <a href="kategori.html?kategori=ekonomi">Ekonomi</a>
+    <a href="kategori.html?kategori=spor">Spor</a>
+    <a href="kategori.html?kategori=magazin">Magazin</a>
+    <a href="kategori.html?kategori=teknoloji">Teknoloji</a>
+    <a href="kategori.html?kategori=dunya">Dünya</a>
+    <a href="kategori.html?kategori=bilim">Bilim</a>
+    <a href="kategori.html?kategori=saglik">Sağlık</a>
+    <a href="kategori.html?kategori=yasam">Yaşam</a>
+
+</div>
+
+
+<!-- =====================================================
+     SON DAKİKA BANDI
+===================================================== -->
+
+<section class="breaking-news">
+
+    <div class="container breaking-inner">
+
+        <div class="breaking-title">
+            <span class="breaking-dot"></span>
+            SON DAKİKA
+        </div>
+
+        <div class="breaking-content" id="breakingNews">
+            Haberler yükleniyor...
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     ANA İÇERİK
+===================================================== -->
+
+<main class="container main-content">
+
+
+    <!-- =================================================
+         MANŞET ALANI
+    ================================================= -->
+
+    <section class="headline-section">
+
+        <div class="section-heading">
+
+            <div>
+                <span class="heading-line"></span>
+                <h2>Günün Manşetleri</h2>
+            </div>
+
+            <a href="kategori.html?kategori=gundem">
+                Tüm Haberler →
+            </a>
+
+        </div>
+
+
+        <div class="headline-grid">
+
+            <!-- BÜYÜK MANŞET -->
+
+            <article class="headline-main" id="headlineMain">
+
+                <a href="haber.html?id=1">
+
+                    <div class="headline-image">
+
+                        <img
+                            src="images/haber-1.jpg"
+                            alt="HABERİSTA manşet haberi"
+                            onerror="this.src='https://placehold.co/1000x600/f1f3f5/222?text=HABER%C4%B0STA'"
+                        >
+
+                        <span class="category-badge">
+                            Gündem
+                        </span>
+
+                    </div>
+
+                    <div class="headline-info">
+
+                        <span class="news-time">
+                            12 dakika önce
+                        </span>
+
+                        <h1>
+                            Günün öne çıkan gelişmeleri HABERİSTA'da
+                        </h1>
+
+                        <p>
+                            Türkiye ve dünyadan günün en önemli gelişmeleri,
+                            son dakika haberleri ve gündemin öne çıkan başlıkları.
+                        </p>
+
+                    </div>
+
+                </a>
+
+            </article>
+
+
+            <!-- YAN MANŞETLER -->
+
+            <div class="headline-side">
+
+                <article class="side-headline">
+
+                    <a href="haber.html?id=2">
+
+                        <div class="side-image">
+
+                            <img
+                                src="images/haber-2.jpg"
+                                alt="Haber"
+                                onerror="this.src='https://placehold.co/500x300/e9ecef/222?text=HABER'"
+                            >
+
+                        </div>
+
+                        <div class="side-info">
+
+                            <span>Ekonomi</span>
+
+                            <h3>
+                                Ekonomide günün öne çıkan gelişmeleri
+                            </h3>
+
+                            <small>
+                                25 dakika önce
+                            </small>
+
+                        </div>
+
+                    </a>
+
+                </article>
+
+
+                <article class="side-headline">
+
+                    <a href="haber.html?id=3">
+
+                        <div class="side-image">
+
+                            <img
+                                src="images/haber-3.jpg"
+                                alt="Haber"
+                                onerror="this.src='https://placehold.co/500x300/e9ecef/222?text=HABER'"
+                            >
+
+                        </div>
+
+                        <div class="side-info">
+
+                            <span>Spor</span>
+
+                            <h3>
+                                Sporda günün sıcak gelişmeleri
+                            </h3>
+
+                            <small>
+                                38 dakika önce
+                            </small>
+
+                        </div>
+
+                    </a>
+
+                </article>
+
+
+                <article class="side-headline">
+
+                    <a href="haber.html?id=4">
+
+                        <div class="side-image">
+
+                            <img
+                                src="images/haber-4.jpg"
+                                alt="Haber"
+                                onerror="this.src='https://placehold.co/500x300/e9ecef/222?text=HABER'"
+                            >
+
+                        </div>
+
+                        <div class="side-info">
+
+                            <span>Teknoloji</span>
+
+                            <h3>
+                                Teknoloji dünyasından yeni gelişmeler
+                            </h3>
+
+                            <small>
+                                51 dakika önce
+                            </small>
+
+                        </div>
+
+                    </a>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         EKONOMİ / PİYASA
+    ================================================= -->
+
+    <section class="market-section">
+
+        <div class="section-heading">
+
+            <div>
+                <span class="heading-line"></span>
+                <h2>Piyasa</h2>
+            </div>
+
+            <a href="kategori.html?kategori=ekonomi">
+                Ekonomi →
+            </a>
+
+        </div>
+
+
+        <div class="market-grid">
+
+            <div class="market-card">
+
+                <span class="market-name">
+                    Dolar
+                </span>
+
+                <strong>
+                    ₺
+                    <span id="dolarValue">—</span>
+                </strong>
+
+                <small class="market-up">
+                    Güncel
+                </small>
+
+            </div>
+
+
+            <div class="market-card">
+
+                <span class="market-name">
+                    Euro
+                </span>
+
+                <strong>
+                    €
+                    <span id="euroValue">—</span>
+                </strong>
+
+                <small class="market-up">
+                    Güncel
+                </small>
+
+            </div>
+
+
+            <div class="market-card">
+
+                <span class="market-name">
+                    Altın
+                </span>
+
+                <strong>
+                    ₺
+                    <span id="goldValue">—</span>
+                </strong>
+
+                <small class="market-up">
+                    Güncel
+                </small>
+
+            </div>
+
+
+            <div class="market-card">
+
+                <span class="market-name">
+                    BIST 100
+                </span>
+
+                <strong>
+                    <span id="bistValue">—</span>
+                </strong>
+
+                <small class="market-up">
+                    Piyasa
+                </small>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         SON HABERLER + ÇOK OKUNANLAR
+    ================================================= -->
+
+    <section class="news-layout">
+
+
+        <!-- SON HABERLER -->
+
+        <div class="latest-news">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="heading-line"></span>
+                    <h2>Son Haberler</h2>
+                </div>
+
+                <a href="kategori.html?kategori=son-dakika">
+                    Tümü →
+                </a>
+
+            </div>
+
+
+            <div id="latestNewsList">
+
+                <!-- JavaScript tarafından doldurulacak -->
+
+                <article class="news-card">
+
+                    <a href="haber.html?id=5">
+
+                        <div class="news-card-image">
+
+                            <img
+                                src="images/haber-5.jpg"
+                                alt="Son haber"
+                                onerror="this.src='https://placehold.co/400x250/e9ecef/222?text=HABER'"
+                            >
+
+                        </div>
+
+                        <div class="news-card-content">
+
+                            <span class="news-category">
+                                Gündem
+                            </span>
+
+                            <h3>
+                                Türkiye gündeminden son gelişmeler
+                            </h3>
+
+                            <p>
+                                Günün gelişmeleri ve önemli haber başlıkları...
+                            </p>
+
+                            <time>
+                                1 saat önce
+                            </time>
+
+                        </div>
+
+                    </a>
+
+                </article>
+
+
+                <article class="news-card">
+
+                    <a href="haber.html?id=6">
+
+                        <div class="news-card-image">
+
+                            <img
+                                src="images/haber-6.jpg"
+                                alt="Son haber"
+                                onerror="this.src='https://placehold.co/400x250/e9ecef/222?text=HABER'"
+                            >
+
+                        </div>
+
+                        <div class="news-card-content">
+
+                            <span class="news-category">
+                                Dünya
+                            </span>
+
+                            <h3>
+                                Dünyadan günün önemli gelişmeleri
+                            </h3>
+
+                            <p>
+                                Dünya gündeminde yaşanan son gelişmeler...
+                            </p>
+
+                            <time>
+                                1 saat önce
+                            </time>
+
+                        </div>
+
+                    </a>
+
+                </article>
+
+
+                <article class="news-card">
+
+                    <a href="haber.html?id=7">
+
+                        <div class="news-card-image">
+
+                            <img
+                                src="images/haber-7.jpg"
+                                alt="Son haber"
+                                onerror="this.src='https://placehold.co/400x250/e9ecef/222?text=HABER'"
+                            >
+
+                        </div>
+
+                        <div class="news-card-content">
+
+                            <span class="news-category">
+                                Teknoloji
+                            </span>
+
+                            <h3>
+                                Teknoloji dünyasındaki yeni gelişmeler
+                            </h3>
+
+                            <p>
+                                Teknoloji alanından dikkat çeken haberler...
+                            </p>
+
+                            <time>
+                                2 saat önce
+                            </time>
+
+                        </div>
+
+                    </a>
+
+                </article>
+
+            </div>
+
+        </div>
+
+
+        <!-- ÇOK OKUNANLAR -->
+
+        <aside class="popular-news">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="heading-line"></span>
+                    <h2>Çok Okunanlar</h2>
+                </div>
+
+            </div>
+
+
+            <div class="popular-list">
+
+                <a href="haber.html?id=8" class="popular-item">
+
+                    <strong>01</strong>
+
+                    <div>
+                        <span>Gündem</span>
+                        <h3>
+                            Günün en çok konuşulan gelişmesi
+                        </h3>
+                    </div>
+
+                </a>
+
+
+                <a href="haber.html?id=9" class="popular-item">
+
+                    <strong>02</strong>
+
+                    <div>
+                        <span>Spor</span>
+                        <h3>
+                            Spor dünyasında gündem olan olay
+                        </h3>
+                    </div>
+
+                </a>
+
+
+                <a href="haber.html?id=10" class="popular-item">
+
+                    <strong>03</strong>
+
+                    <div>
+                        <span>Ekonomi</span>
+                        <h3>
+                            Piyasalarda dikkat çeken gelişme
+                        </h3>
+                    </div>
+
+                </a>
+
+
+                <a href="haber.html?id=11" class="popular-item">
+
+                    <strong>04</strong>
+
+                    <div>
+                        <span>Teknoloji</span>
+                        <h3>
+                            Teknoloji dünyasından önemli haber
+                        </h3>
+                    </div>
+
+                </a>
+
+
+                <a href="haber.html?id=12" class="popular-item">
+
+                    <strong>05</strong>
+
+                    <div>
+                        <span>Dünya</span>
+                        <h3>
+                            Dünyanın gündemindeki gelişme
+                        </h3>
+                    </div>
+
+                </a>
+
+            </div>
+
+        </aside>
+
+    </section>
+
+
+    <!-- =================================================
+         KATEGORİLER
+    ================================================= -->
+
+    <section class="category-section">
+
+        <div class="section-heading">
+
+            <div>
+                <span class="heading-line"></span>
+                <h2>Kategorilerden Haberler</h2>
+            </div>
+
+        </div>
+
+
+        <div class="category-grid">
+
+
+            <!-- GÜNDEM -->
+
+            <div class="category-box">
+
+                <div class="category-header">
+
+                    <h2>Gündem</h2>
+
+                    <a href="kategori.html?kategori=gundem">
+                        Tümü →
+                    </a>
+
+                </div>
+
+                <a href="haber.html?id=13" class="category-main">
+
+                    <img
+                        src="images/gundem.jpg"
+                        alt="Gündem"
+                        onerror="this.src='https://placehold.co/700x400/e9ecef/222?text=G%C3%9CNDEM'"
+                    >
+
+                    <h3>
+                        Gündemden öne çıkan son gelişmeler
+                    </h3>
+
+                </a>
+
+                <a href="haber.html?id=14" class="category-small">
+                    Yeni gelişmeler gündemde
+                </a>
+
+                <a href="haber.html?id=15" class="category-small">
+                    Günün dikkat çeken açıklaması
+                </a>
+
+            </div>
+
+
+            <!-- SPOR -->
+
+            <div class="category-box">
+
+                <div class="category-header">
+
+                    <h2>Spor</h2>
+
+                    <a href="kategori.html?kategori=spor">
+                        Tümü →
+                    </a>
+
+                </div>
+
+                <a href="haber.html?id=16" class="category-main">
+
+                    <img
+                        src="images/spor.jpg"
+                        alt="Spor"
+                        onerror="this.src='https://placehold.co/700x400/e9ecef/222?text=SPOR'"
+                    >
+
+                    <h3>
+                        Spor dünyasında günün gelişmeleri
+                    </h3>
+
+                </a>
+
+                <a href="haber.html?id=17" class="category-small">
+                    Maç öncesi son gelişmeler
+                </a>
+
+                <a href="haber.html?id=18" class="category-small">
+                    Transfer gündeminde sıcak gelişme
+                </a>
+
+            </div>
+
+
+            <!-- TEKNOLOJİ -->
+
+            <div class="category-box">
+
+                <div class="category-header">
+
+                    <h2>Teknoloji</h2>
+
+                    <a href="kategori.html?kategori=teknoloji">
+                        Tümü →
+                    </a>
+
+                </div>
+
+                <a href="haber.html?id=19" class="category-main">
+
+                    <img
+                        src="images/teknoloji.jpg"
+                        alt="Teknoloji"
+                        onerror="this.src='https://placehold.co/700x400/e9ecef/222?text=TEKNOLOJ%C4%B0'"
+                    >
+
+                    <h3>
+                        Teknoloji dünyasında yeni gelişme
+                    </h3>
+
+                </a>
+
+                <a href="haber.html?id=20" class="category-small">
+                    Yeni teknoloji dikkat çekti
+                </a>
+
+                <a href="haber.html?id=21" class="category-small">
+                    Teknoloji kullanıcıları için önemli gelişme
+                </a>
+
+            </div>
+
+
+            <!-- MAGAZİN -->
+
+            <div class="category-box">
+
+                <div class="category-header">
+
+                    <h2>Magazin</h2>
+
+                    <a href="kategori.html?kategori=magazin">
+                        Tümü →
+                    </a>
+
+                </div>
+
+                <a href="haber.html?id=22" class="category-main">
+
+                    <img
+                        src="images/magazin.jpg"
+                        alt="Magazin"
+                        onerror="this.src='https://placehold.co/700x400/e9ecef/222?text=MAGAZ%C4%B0N'"
+                    >
+
+                    <h3>
+                        Magazin dünyasından son haberler
+                    </h3>
+
+                </a>
+
+                <a href="haber.html?id=23" class="category-small">
+                    Ünlü isimden dikkat çeken açıklama
+                </a>
+
+                <a href="haber.html?id=24" class="category-small">
+                    Magazin gündeminde yeni gelişme
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         BÜLTEN
+    ================================================= -->
+
+    <section class="newsletter">
+
+        <div class="newsletter-content">
+
+            <span class="newsletter-icon">
+                ✉
             </span>
 
-            <span class="breaking-text">
-                Güncel haberler yükleniyor...
-            </span>
+            <div>
+
+                <h2>Gündemi kaçırma</h2>
+
+                <p>
+                    Önemli haberleri ve son dakika gelişmelerini takip et.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <form class="newsletter-form" id="newsletterForm">
+
+            <input
+                type="email"
+                placeholder="E-posta adresiniz"
+                required
+            >
+
+            <button type="submit">
+                Abone Ol
+            </button>
+
+        </form>
+
+    </section>
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+    <div class="container footer-grid">
+
+
+        <div class="footer-brand">
+
+            <a href="index.html" class="logo footer-logo">
+                <span class="logo-main">HABER</span><span class="logo-accent">İSTA</span>
+            </a>
+
+            <p>
+                Türkiye ve dünyadan son dakika haberleri,
+                gündem, ekonomi, spor, teknoloji ve daha fazlası.
+            </p>
+
+            <div class="social-links">
+
+                <a href="#" aria-label="X">
+                    X
+                </a>
+
+                <a href="#" aria-label="Instagram">
+                    ◎
+                </a>
+
+                <a href="#" aria-label="YouTube">
+                    ▶
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>Kategoriler</h3>
+
+            <a href="kategori.html?kategori=gundem">Gündem</a>
+            <a href="kategori.html?kategori=ekonomi">Ekonomi</a>
+            <a href="kategori.html?kategori=spor">Spor</a>
+            <a href="kategori.html?kategori=magazin">Magazin</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>Diğer</h3>
+
+            <a href="#">Hakkımızda</a>
+            <a href="#">İletişim</a>
+            <a href="#">Künye</a>
+            <a href="#">Reklam</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>Yasal</h3>
+
+            <a href="#">Gizlilik Politikası</a>
+            <a href="#">Çerez Politikası</a>
+            <a href="#">Kullanım Koşulları</a>
+            <a href="#">KVKK</a>
 
         </div>
 
     </div>
 
 
-    <!-- =====================================================
-         ANA
-         ===================================================== -->
+    <div class="footer-bottom">
 
-    <main class="container">
+        <div class="container footer-bottom-inner">
 
-
-        <!-- =================================================
-             MANŞET
-             ================================================= -->
-
-        <section>
-
-            <div class="section-title">
-
-                <h2>
-                    Öne Çıkan Haberler
-                </h2>
-
-                <span>
-                    HABERİSTA
-                </span>
-
-            </div>
-
-
-            <div
-                class="manset"
-                id="manset"
-            >
-
-                <!-- JS dolduracak -->
-
-            </div>
-
-        </section>
-
-
-        <!-- =================================================
-             HABERLER
-             ================================================= -->
-
-        <section
-            class="news-section"
-            id="haberler"
-        >
-
-            <div class="section-title">
-
-                <h2>
-                    Son Haberler
-                </h2>
-
-                <span>
-                    Güncel
-                </span>
-
-            </div>
-
-
-            <div
-                class="kategori-bar"
-                id="kategoriler"
-            >
-                <!-- JS -->
-            </div>
-
-
-            <div class="news-layout">
-
-
-                <div
-                    class="haberler"
-                    id="newsContainer"
-                >
-                    <!-- JS -->
-                </div>
-
-
-                <aside class="sidebar">
-
-
-                    <div class="sidebar-box">
-
-                        <div class="sidebar-title">
-                            Çok Okunanlar
-                        </div>
-
-
-                        <div
-                            id="cokOkunanlar"
-                        >
-
-                            <div class="popular-item">
-
-                                <span class="popular-number">
-                                    1
-                                </span>
-
-                                <div>
-
-                                    <h3>
-                                        Günün en çok takip edilen gelişmeleri
-                                    </h3>
-
-                                    <small>
-                                        HABERİSTA
-                                    </small>
-
-                                </div>
-
-                            </div>
-
-
-                            <div class="popular-item">
-
-                                <span class="popular-number">
-                                    2
-                                </span>
-
-                                <div>
-
-                                    <h3>
-                                        Türkiye gündeminden son gelişmeler
-                                    </h3>
-
-                                    <small>
-                                        HABERİSTA
-                                    </small>
-
-                                </div>
-
-                            </div>
-
-
-                            <div class="popular-item">
-
-                                <span class="popular-number">
-                                    3
-                                </span>
-
-                                <div>
-
-                                    <h3>
-                                        Spor dünyasında son dakika
-                                    </h3>
-
-                                    <small>
-                                        HABERİSTA
-                                    </small>
-
-                                </div>
-
-                            </div>
-
-
-                            <div class="popular-item">
-
-                                <span class="popular-number">
-                                    4
-                                </span>
-
-                                <div>
-
-                                    <h3>
-                                        Ekonomide günün öne çıkanları
-                                    </h3>
-
-                                    <small>
-                                        HABERİSTA
-                                    </small>
-
-                                </div>
-
-                            </div>
-
-
-                            <div class="popular-item">
-
-                                <span class="popular-number">
-                                    5
-                                </span>
-
-                                <div>
-
-                                    <h3>
-                                        Teknoloji dünyasından yeni gelişmeler
-                                    </h3>
-
-                                    <small>
-                                        HABERİSTA
-                                    </small>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="sidebar-box">
-
-                        <div class="sidebar-title">
-                            Günün Bilgisi
-                        </div>
-
-                        <div class="ad-box">
-                            REKLAM ALANI
-                        </div>
-
-                    </div>
-
-
-                </aside>
-
-            </div>
-
-        </section>
-
-
-    </main>
-
-
-    <!-- =====================================================
-         FOOTER
-         ===================================================== -->
-
-    <footer>
-
-        <div class="footer-inner">
-
-
-            <div>
-
-                <div class="footer-logo">
-                    HABER<span>İSTA</span>
-                </div>
-
-                <p>
-                    Türkiye ve dünyadan güncel gelişmeleri,
-                    gündemden ekonomiye, spordan teknolojiye
-                    kadar birçok kategoride takip edin.
-                </p>
-
-            </div>
-
-
-            <div class="footer-col">
-
-                <h3>
-                    Kategoriler
-                </h3>
-
-                <a href="#">
-                    Gündem
-                </a>
-
-                <a href="#">
-                    Ekonomi
-                </a>
-
-                <a href="#">
-                    Spor
-                </a>
-
-                <a href="#">
-                    Teknoloji
-                </a>
-
-            </div>
-
-
-            <div class="footer-col">
-
-                <h3>
-                    HABERİSTA
-                </h3>
-
-                <a href="#">
-                    Hakkımızda
-                </a>
-
-                <a href="#">
-                    İletişim
-                </a>
-
-                <a href="#">
-                    Gizlilik Politikası
-                </a>
-
-                <a href="#">
-                    Kullanım Koşulları
-                </a>
-
-            </div>
-
-
-        </div>
-
-
-        <div class="copyright">
-
-            ©
-            <span data-current-year>
-                2026
+            <span>
+                © 2026 HABERİSTA. Tüm hakları saklıdır.
             </span>
-            HABERİSTA. Tüm hakları saklıdır.
+
+            <span>
+                Bağımsız Haber Platformu
+            </span>
 
         </div>
 
-    </footer>
+    </div>
+
+</footer>
 
 
-    <!-- =====================================================
-         JAVASCRIPT
-         ===================================================== -->
+<!-- =====================================================
+     COOKIE BANNER
+===================================================== -->
 
-    <script src="js/haberler.js"></script>
-    <script src="js/app.js"></script>
+<div class="cookie-banner" id="cookieBanner">
 
+    <div class="cookie-content">
 
-    <script>
+        <strong>
+            🍪 Çerez Kullanımı
+        </strong>
 
-        /* =====================================================
-           MANŞETLERİ OTOMATİK OLUŞTUR
-           ===================================================== */
+        <p>
+            HABERİSTA, deneyiminizi iyileştirmek ve sitenin düzgün
+            çalışmasını sağlamak için çerezler kullanabilir.
+        </p>
 
-        document.addEventListener(
-            "DOMContentLoaded",
-            () => {
+    </div>
 
-                const manset =
-                    document.getElementById(
-                        "manset"
-                    );
+    <div class="cookie-actions">
 
-                if (
-                    !manset ||
-                    typeof HABERLER === "undefined"
-                ) {
-                    return;
-                }
+        <button id="cookieSettings">
+            Ayarlar
+        </button>
 
+        <button class="cookie-accept" id="cookieAccept">
+            Kabul Et
+        </button>
 
-                const haberler =
-                    HABERLER.slice(0, 3);
+    </div>
 
-
-                if (!haberler.length) {
-                    return;
-                }
+</div>
 
 
-                const ana =
-                    haberler[0];
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
 
-
-                let html = `
-
-                    <article
-                        class="manset-main"
-                        data-manset-id="${ana.id}"
-                    >
-
-                        <img
-                            src="${ana.resim}"
-                            alt="${ana.baslik}"
-                        >
-
-                        <div class="manset-overlay"></div>
-
-                        <div class="manset-info">
-
-                            <span class="category">
-                                ${ana.kategori}
-                            </span>
-
-                            <h1>
-                                ${ana.baslik}
-                            </h1>
-
-                        </div>
-
-                    </article>
-
-                    <div class="manset-side-container">
-                `;
-
-
-                haberler
-                    .slice(1, 3)
-                    .forEach(haber => {
-
-                        html += `
-
-                            <article
-                                class="manset-side"
-                                data-manset-id="${haber.id}"
-                            >
-
-                                <img
-                                    src="${haber.resim}"
-                                    alt="${haber.baslik}"
-                                >
-
-                                <div class="manset-overlay"></div>
-
-                                <div class="manset-info">
-
-                                    <span class="category">
-                                        ${haber.kategori}
-                                    </span>
-
-                                    <h2>
-                                        ${haber.baslik}
-                                    </h2>
-
-                                </div>
-
-                            </article>
-
-                        `;
-
-                    });
-
-
-                html += `
-                    </div>
-                `;
-
-
-                manset.innerHTML = html;
-
-
-                manset
-                    .querySelectorAll(
-                        "[data-manset-id]"
-                    )
-                    .forEach(card => {
-
-                        card.addEventListener(
-                            "click",
-                            () => {
-
-                                const id =
-                                    card.dataset.mansetId;
-
-                                if (
-                                    window.HABERISTA &&
-                                    window.HABERISTA.haberAc
-                                ) {
-
-                                    window.HABERISTA.haberAc(
-                                        id
-                                    );
-
-                                }
-
-                            }
-                        );
-
-                    });
-
-            }
-        );
-
-    </script>
-
+<script src="js/haberler.js"></script>
+<script src="js/app.js"></script>
 
 </body>
 </html>
