@@ -1,511 +1,137 @@
-/* =========================================================
-   HABERİSTA
-   GÜNCEL HABERLER
-   5 EYLÜL 2026
-========================================================= */
-
 const haberler = [
-
-    /* =====================================================
-       HABER 1
-    ===================================================== */
 
     {
         id: 1,
-
         kategori: "Gündem",
-        kategoriSlug: "gundem",
-
-        baslik: "Öğretmen önlüğünde yeni dönem: Standartlar belirlendi",
-
-        spot:
-            "Öğretmenlerin kullanacağı önlüklerle ilgili yeni standartlar belirlendi. Düzenlemeyle birlikte önlüklerin taşıması gereken özellikler netleştirildi.",
-
+        baslik: "Türkiye'de gündemin öne çıkan gelişmeleri yakından takip ediliyor",
+        spot: "Gün boyunca yaşanan gelişmeler kamuoyunun gündeminde yer alıyor.",
         icerik: `
-            <p>
-                Eğitim gündeminde dikkat çeken gelişmelerden biri öğretmen
-                önlükleriyle ilgili yapılan yeni düzenleme oldu. Öğretmenlerin
-                kullanacağı önlükler için belirlenen standartlarla birlikte
-                ürünlerin taşıması gereken temel özellikler daha net hale
-                getirildi.
-            </p>
+            Türkiye'de gün içerisinde yaşanan önemli gelişmeler
+            kamuoyunun yakından takip ettiği başlıklar arasında yer alıyor.
 
-            <p>
-                Düzenlemenin temel amacı, öğretmen önlüklerinde belirli bir
-                standardın oluşturulması ve eğitim ortamlarında kullanılacak
-                ürünlerin ortak kriterlere sahip olması olarak öne çıkıyor.
-                Böylece farklı özelliklerdeki ürünlerin yerine belirlenen
-                standartlara uygun önlüklerin kullanılması hedefleniyor.
-            </p>
+            Yetkililer tarafından yapılan açıklamalar ve güncel gelişmeler
+            farklı başlıklarda değerlendiriliyor.
 
-            <h2>Standartlar neden önemli?</h2>
-
-            <p>
-                Eğitim kurumlarında kullanılan ürünlerin belirli kalite ve
-                kullanım kriterlerine sahip olması, hem öğretmenlerin günlük
-                çalışma koşulları hem de okul ortamındaki düzen açısından
-                önem taşıyor.
-            </p>
-
-            <p>
-                Belirlenen standartlar sayesinde önlüklerin tasarımından
-                kullanım özelliklerine kadar çeşitli konularda ortak bir
-                çerçevenin oluşturulması amaçlanıyor.
-            </p>
-
-            <h2>Eğitim gündemindeki yeri</h2>
-
-            <p>
-                Öğretmen önlüğü konusu, eğitim ortamlarının düzenlenmesi ve
-                öğretmenlerin mesleki görünümüne ilişkin tartışmaların da
-                bir parçası olarak değerlendiriliyor.
-            </p>
-
-            <p>
-                Yetkili kurumların açıklamaları ve uygulamanın nasıl
-                gerçekleştirileceğine ilişkin ayrıntılar önümüzdeki süreçte
-                eğitim camiası tarafından yakından takip edilecek.
-            </p>
-
-            <p>
-                HABERİSTA olarak gelişmeler netleştikçe yeni bilgileri
-                okuyucularımıza aktarmaya devam edeceğiz.
-            </p>
+            Gelişmeler oldukça haberimiz güncellenecektir.
         `,
-
-        resim: "images/haber-1.jpg",
-
-        yazar: "HABERİSTA Haber Merkezi",
-
+        resim: "images/haberler/haber-1.jpg",
         tarih: "5 Eylül 2026",
-        saat: "00:15",
-
-        kaynak: "TRT Haber",
-
-        oneCikan: true
+        saat: "01:10",
+        okunma: 15420
     },
-
-
-    /* =====================================================
-       HABER 2
-    ===================================================== */
 
     {
         id: 2,
-
-        kategori: "Gündem",
-        kategoriSlug: "gundem",
-
-        baslik:
-            "Yeni nesil suç örgütlerine yönelik operasyon: 42 şüpheli gözaltında",
-
-        spot:
-            "Güvenlik güçlerinin gerçekleştirdiği operasyonda yeni nesil suç örgütleriyle bağlantılı olduğu değerlendirilen 42 şüpheli gözaltına alındı.",
-
+        kategori: "Ekonomi",
+        baslik: "Piyasalarda yeni gün: Ekonomide dikkat çeken gelişmeler",
+        spot: "Yurt içi piyasalarda yatırımcıların takip ettiği göstergeler öne çıktı.",
         icerik: `
-            <p>
-                Güvenlik gündeminde önemli bir operasyon gerçekleştirildi.
-                Yetkili makamların açıklamalarına göre yeni nesil suç örgütlerine
-                yönelik düzenlenen çalışma kapsamında 42 şüpheli gözaltına
-                alındı.
-            </p>
+            Finans piyasalarında yeni günün başlamasıyla birlikte
+            yatırımcıların takip ettiği ekonomik göstergeler yeniden
+            gündemin önemli başlıklarından biri oldu.
 
-            <p>
-                Operasyon, organize suç yapılanmalarına karşı yürütülen
-                çalışmalar kapsamında gerçekleştirildi. Ekiplerin yürüttüğü
-                soruşturma ve operasyon sürecinde şüphelilerin bağlantıları
-                ve faaliyetleriyle ilgili incelemeler yapılıyor.
-            </p>
-
-            <h2>Operasyonun kapsamı</h2>
-
-            <p>
-                Güvenlik birimleri son yıllarda farklı yöntemler kullanan,
-                özellikle dijital iletişim kanallarından yararlanan suç
-                yapılanmalarına karşı çalışmalarını sürdürüyor.
-            </p>
-
-            <p>
-                Son operasyonda da şüphelilerin çeşitli bağlantılarının
-                araştırıldığı ve soruşturmanın kapsamının ilgili birimler
-                tarafından değerlendirildiği bildirildi.
-            </p>
-
-            <h2>Soruşturma devam ediyor</h2>
-
-            <p>
-                Gözaltına alınan şüpheliler hakkındaki adli süreç devam ediyor.
-                Soruşturmanın ilerleyen aşamalarında yeni bilgilerin ortaya
-                çıkması halinde dosyanın kapsamının genişleyebileceği
-                değerlendiriliyor.
-            </p>
-
-            <p>
-                Operasyonla ilgili resmi makamlar tarafından yapılacak yeni
-                açıklamalar kamuoyu tarafından takip ediliyor.
-            </p>
-
-            <p>
-                HABERİSTA, gelişmeleri resmi açıklamalar doğrultusunda
-                güncelleyerek aktarmayı sürdürecek.
-            </p>
+            Piyasalardaki hareketlilik gün içerisinde yakından takip ediliyor.
         `,
-
-        resim: "images/haber-2.jpg",
-
-        yazar: "HABERİSTA Haber Merkezi",
-
-        tarih: "4 Eylül 2026",
-        saat: "16:44",
-
-        kaynak: "TRT Haber",
-
-        oneCikan: true
+        resim: "images/haberler/haber-2.jpg",
+        tarih: "5 Eylül 2026",
+        saat: "00:55",
+        okunma: 12350
     },
-
-
-    /* =====================================================
-       HABER 3
-    ===================================================== */
 
     {
         id: 3,
-
-        kategori: "Ekonomi",
-        kategoriSlug: "ekonomi",
-
-        baslik:
-            "Altının kilogram fiyatı 6 milyon 922 bin 900 liraya geriledi",
-
-        spot:
-            "Borsa İstanbul Kıymetli Madenler ve Kıymetli Taşlar Piyasası'nda altının kilogram fiyatında gün sonunda düşüş kaydedildi.",
-
+        kategori: "Spor",
+        baslik: "Spor dünyasında günün öne çıkan gelişmeleri",
+        spot: "Takımlar ve sporcularla ilgili son gelişmeler sporseverlerin gündeminde.",
         icerik: `
-            <p>
-                Altın piyasasında günün dikkat çeken gelişmelerinden biri
-                kilogram fiyatındaki hareketlilik oldu. Borsa İstanbul
-                Kıymetli Madenler ve Kıymetli Taşlar Piyasası'nda altının
-                kilogram fiyatı gün sonunda 6 milyon 922 bin 900 lira
-                seviyesine geriledi.
-            </p>
+            Spor dünyasında yeni sezon hazırlıkları devam ederken
+            takımların çalışmaları ve transfer gündemi dikkat çekiyor.
 
-            <p>
-                Kıymetli maden piyasasında yaşanan fiyat hareketleri,
-                yatırımcıların yanı sıra altın piyasasını takip eden
-                vatandaşların da gündeminde bulunuyor.
-            </p>
-
-            <h2>Piyasalarda altın hareketliliği</h2>
-
-            <p>
-                Altın fiyatları küresel piyasalardaki gelişmeler, döviz
-                hareketleri, merkez bankalarının politikaları ve yatırımcı
-                beklentileri gibi çok sayıda faktörden etkilenebiliyor.
-            </p>
-
-            <p>
-                Bu nedenle gün içerisinde meydana gelen fiyat değişimleri
-                piyasaların yakından izlediği göstergeler arasında yer
-                alıyor.
-            </p>
-
-            <h2>Yatırımcılar takip ediyor</h2>
-
-            <p>
-                Altının kilogram fiyatındaki değişim, piyasanın genel
-                görünümüne ilişkin önemli göstergelerden biri olarak
-                değerlendiriliyor.
-            </p>
-
-            <p>
-                Ancak kilogram fiyatı ile kuyumcularda vatandaşların
-                karşılaştığı gram veya diğer altın fiyatları aynı kavram
-                değildir. Fiziki altın fiyatlarında farklı maliyetler ve
-                piyasa koşulları etkili olabilir.
-            </p>
-
-            <p>
-                Altın piyasasındaki yeni fiyat hareketleri ve ekonomik
-                gelişmeler HABERİSTA Ekonomi Servisi tarafından takip
-                edilmeye devam ediyor.
-            </p>
+            Spor kamuoyu yeni gelişmeleri yakından takip ediyor.
         `,
-
-        resim: "images/haber-3.jpg",
-
-        yazar: "HABERİSTA Ekonomi Servisi",
-
-        tarih: "4 Eylül 2026",
-        saat: "17:09",
-
-        kaynak: "TRT Haber",
-
-        oneCikan: true
+        resim: "images/haberler/haber-3.jpg",
+        tarih: "5 Eylül 2026",
+        saat: "00:40",
+        okunma: 11240
     },
-
-
-    /* =====================================================
-       HABER 4
-    ===================================================== */
 
     {
         id: 4,
-
-        kategori: "Teknoloji",
-        kategoriSlug: "teknoloji",
-
-        baslik:
-            "Bakan Uraloğlu: Türkiye yalnızca bir pazar değil, stratejik bir teknoloji merkezi",
-
-        spot:
-            "Ulaştırma ve Altyapı Bakanı Abdulkadir Uraloğlu, Türkiye'nin dijital dönüşüm ve teknoloji alanındaki konumuna ilişkin değerlendirmelerde bulundu.",
-
+        kategori: "Dünya",
+        baslik: "Dünyadan son gelişmeler: Uluslararası gündem hareketli",
+        spot: "Dünya genelindeki önemli gelişmeler yakından takip ediliyor.",
         icerik: `
-            <p>
-                Türkiye'nin teknoloji ve dijital dönüşüm alanındaki çalışmaları
-                gündemdeki yerini koruyor. Ulaştırma ve Altyapı Bakanı
-                Abdulkadir Uraloğlu, yaptığı değerlendirmede Türkiye'nin
-                teknoloji alanındaki konumuna ilişkin önemli mesajlar verdi.
-            </p>
+            Uluslararası gündemde bugün birçok önemli gelişme yaşandı.
 
-            <p>
-                Uraloğlu, Türkiye'nin yalnızca teknolojik ürünlerin tüketildiği
-                bir pazar olarak değil, aynı zamanda teknoloji geliştiren ve
-                dijital dönüşüm süreçlerinde rol üstlenen stratejik bir merkez
-                olması gerektiğine dikkat çekti.
-            </p>
-
-            <h2>Dijital dönüşüm vurgusu</h2>
-
-            <p>
-                Dijital teknolojilerin kamu hizmetlerinden ulaşıma,
-                haberleşmeden günlük yaşama kadar çok geniş bir alanda
-                kullanılması, ülkelerin teknoloji politikalarını daha önemli
-                hale getiriyor.
-            </p>
-
-            <p>
-                Türkiye'de de altyapının güçlendirilmesi, yeni nesil iletişim
-                teknolojilerinin yaygınlaştırılması ve teknoloji ekosisteminin
-                geliştirilmesine yönelik çalışmalar yürütülüyor.
-            </p>
-
-            <h2>Teknoloji merkezleri önem kazanıyor</h2>
-
-            <p>
-                Teknoloji alanındaki yatırımlar yalnızca yeni cihazların
-                geliştirilmesiyle sınırlı kalmıyor. Yazılım, yapay zeka,
-                haberleşme altyapısı, veri merkezleri ve girişimcilik
-                ekosistemi de dijital dönüşümün önemli parçaları arasında
-                bulunuyor.
-            </p>
-
-            <p>
-                Bakanlığın açıklaması, Türkiye'nin bu alanlarda daha güçlü
-                bir konuma ulaşma hedefini yeniden gündeme taşıdı.
-            </p>
-
-            <p>
-                Teknoloji yatırımları ve dijital dönüşümle ilgili yeni
-                gelişmeler HABERİSTA Teknoloji Servisi tarafından takip
-                ediliyor.
-            </p>
+            Ülkeler arasındaki diplomatik temaslar ve küresel gelişmeler
+            dünya basınında geniş şekilde yer buldu.
         `,
-
-        resim: "images/haber-4.jpg",
-
-        yazar: "HABERİSTA Teknoloji",
-
+        resim: "images/haberler/haber-4.jpg",
         tarih: "4 Eylül 2026",
-        saat: "13:49",
-
-        kaynak: "TRT Haber",
-
-        oneCikan: true
+        saat: "23:50",
+        okunma: 9870
     },
-
-
-    /* =====================================================
-       HABER 5
-    ===================================================== */
 
     {
         id: 5,
-
-        kategori: "Spor",
-        kategoriSlug: "spor",
-
-        baslik:
-            "Filenin Sultanları yarı finalde! Sırbistan karşılaşması için geri sayım",
-
-        spot:
-            "A Milli Kadın Voleybol Takımı, 2026 Avrupa Voleybol Şampiyonası'nda Almanya'yı 3-1 mağlup ederek yarı finale yükseldi.",
-
+        kategori: "Teknoloji",
+        baslik: "Teknoloji dünyasında yeni gelişmeler dikkat çekiyor",
+        spot: "Yeni teknolojiler kullanıcıların ilgisini çekmeye devam ediyor.",
         icerik: `
-            <p>
-                A Milli Kadın Voleybol Takımı, 2026 Avrupa Voleybol
-                Şampiyonası'nda yoluna devam ediyor. Filenin Sultanları,
-                çeyrek final karşılaşmasında Almanya'yı 3-1 mağlup ederek
-                adını yarı finale yazdırdı.
-            </p>
+            Teknoloji sektöründe yapay zeka, mobil cihazlar,
+            yazılım ve yeni nesil teknolojiler gündemdeki yerini koruyor.
 
-            <p>
-                Karşılaşmanın ardından milli takımın turnuvadaki bir sonraki
-                rakibi de belli oldu. Türkiye, yarı finalde Sırbistan ile
-                karşı karşıya gelecek.
-            </p>
-
-            <h2>Almanya karşısında önemli galibiyet</h2>
-
-            <p>
-                Çeyrek final mücadelesinde Almanya ile karşılaşan milliler,
-                maç boyunca önemli anlarda gösterdiği performansla mücadeleyi
-                3-1 kazanmayı başardı.
-            </p>
-
-            <p>
-                Bu sonuçla birlikte Türkiye, Avrupa Şampiyonası'nda
-                yarı finale yükselerek madalya mücadelesini sürdürme hakkı
-                kazandı.
-            </p>
-
-            <h2>Yarı finalde rakip Sırbistan</h2>
-
-            <p>
-                Filenin Sultanları'nın yarı finaldeki rakibi Sırbistan olacak.
-                İki takım arasındaki mücadele, turnuvanın en önemli
-                karşılaşmalarından biri olarak öne çıkıyor.
-            </p>
-
-            <p>
-                Milli takımın turnuvadaki hedefi finale yükselerek şampiyonluk
-                mücadelesi vermek. Karşılaşma öncesinde takımın hazırlıkları
-                ve kadro durumuyla ilgili gelişmeler yakından takip ediliyor.
-            </p>
-
-            <h2>Türkiye'de büyük heyecan</h2>
-
-            <p>
-                Milli takımın yarı finale yükselmesi Türkiye'de de büyük
-                ilgi gördü. Spor kamuoyu Sırbistan karşılaşmasına
-                odaklanırken, maçın sonucu final yolundaki mücadele açısından
-                belirleyici olacak.
-            </p>
-
-            <p>
-                Filenin Sultanları'nın Avrupa Şampiyonası serüvenindeki
-                gelişmeleri HABERİSTA Spor Servisi anlık olarak takip edecek.
-            </p>
+            Sektördeki gelişmeler kullanıcılar tarafından yakından takip ediliyor.
         `,
-
-        resim: "images/haber-5.jpg",
-
-        yazar: "HABERİSTA Spor Servisi",
-
+        resim: "images/haberler/haber-5.jpg",
         tarih: "4 Eylül 2026",
-        saat: "20:30",
+        saat: "23:20",
+        okunma: 8650
+    },
 
-        kaynak: "TRT Haber",
+    {
+        id: 6,
+        kategori: "Magazin",
+        baslik: "Magazin dünyasında günün dikkat çeken haberleri",
+        spot: "Ünlü isimlerle ilgili gelişmeler sosyal medyada konuşuluyor.",
+        icerik: `
+            Magazin dünyasında yaşanan gelişmeler sosyal medya
+            kullanıcılarının da ilgisini çekmeye devam ediyor.
+        `,
+        resim: "images/haberler/haber-6.jpg",
+        tarih: "4 Eylül 2026",
+        saat: "22:45",
+        okunma: 7450
+    },
 
-        oneCikan: true
+    {
+        id: 7,
+        kategori: "Gündem",
+        baslik: "Gündemde yeni açıklamalar: Gelişmeler takip ediliyor",
+        spot: "Günün önemli başlıklarında yeni açıklamalar geldi.",
+        icerik: `
+            Gün içerisinde yaşanan gelişmelerle ilgili yeni açıklamalar
+            yapılırken kamuoyunun ilgisi gelişmelere çevrildi.
+        `,
+        resim: "images/haberler/haber-7.jpg",
+        tarih: "4 Eylül 2026",
+        saat: "21:50",
+        okunma: 6940
+    },
+
+    {
+        id: 8,
+        kategori: "Ekonomi",
+        baslik: "Ekonomi gündeminde yeni veriler açıklandı",
+        spot: "Ekonomi gündemindeki gelişmeler yatırımcılar tarafından izleniyor.",
+        icerik: `
+            Ekonomi gündeminde açıklanan yeni veriler,
+            piyasaların yakından takip ettiği başlıklar arasında bulunuyor.
+        `,
+        resim: "images/haberler/haber-8.jpg",
+        tarih: "4 Eylül 2026",
+        saat: "21:15",
+        okunma: 6210
     }
 
 ];
-
-
-/* =========================================================
-   HABER BULMA
-========================================================= */
-
-function haberGetir(id) {
-
-    return haberler.find(
-        haber => Number(haber.id) === Number(id)
-    );
-
-}
-
-
-/* =========================================================
-   KATEGORİYE GÖRE HABERLER
-========================================================= */
-
-function kategoriHaberleri(kategori) {
-
-    return haberler.filter(
-        haber => haber.kategoriSlug === kategori
-    );
-
-}
-
-
-/* =========================================================
-   ÖNE ÇIKAN HABERLER
-========================================================= */
-
-function oneCikanHaberler() {
-
-    return haberler.filter(
-        haber => haber.oneCikan === true
-    );
-
-}
-
-
-/* =========================================================
-   SON HABERLER
-========================================================= */
-
-function sonHaberler() {
-
-    return [...haberler].sort(
-        (a, b) => b.id - a.id
-    );
-
-}
-
-
-/* =========================================================
-   ARAMA
-========================================================= */
-
-function haberAra(metin) {
-
-    const arama = metin
-        .toLocaleLowerCase("tr-TR")
-        .trim();
-
-    if (!arama) {
-        return [];
-    }
-
-    return haberler.filter(haber => {
-
-        const tamMetin = `
-            ${haber.baslik}
-            ${haber.spot}
-            ${haber.kategori}
-            ${haber.icerik}
-        `.toLocaleLowerCase("tr-TR");
-
-        return tamMetin.includes(arama);
-
-    });
-
-}
-
-
-/* =========================================================
-   GLOBAL ERİŞİM
-========================================================= */
-
-window.HABERISTA = {
-
-    haberler,
-    haberGetir,
-    kategoriHaberleri,
-    oneCikanHaberler,
-    sonHaberler,
-    haberAra
-
-};
