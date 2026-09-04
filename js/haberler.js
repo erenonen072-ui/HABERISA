@@ -1,260 +1,425 @@
 /* =========================================================
    HABERİSTA
-   GERÇEK HABER VERİTABANI
-   Güncelleme: 04.09.2026
-   ========================================================= */
+   GÜNCEL HABERLER
+   5 EYLÜL 2026
+========================================================= */
 
-const HABERLER = [
+const haberler = [
+
+    /* =====================================================
+       HABER 1
+    ===================================================== */
 
     {
         id: 1,
+
         kategori: "Gündem",
-        baslik: "KPSS maratonu 6 Eylül'de başlayacak",
-        ozet: "2026 KPSS süreci 6 Eylül Pazar günü Genel Yetenek-Genel Kültür oturumuyla başlayacak.",
-        resim: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1600&q=85",
-        saat: "11:25",
-        tarih: "4 Eylül 2026",
-        kaynak: "Anadolu Ajansı",
-        kaynakUrl: "https://aa.com.tr/",
-        detay: `
-            2026 Kamu Personel Seçme Sınavı (KPSS) maratonu 6 Eylül Pazar günü
-            yapılacak Genel Yetenek-Genel Kültür oturumuyla başlayacak.
+        kategoriSlug: "gundem",
 
-            Ölçme, Seçme ve Yerleştirme Merkezi tarafından yürütülen sınav
-            sürecinde adaylar farklı oturumlarda sınavlara girecek.
+        baslik: "Öğretmen önlüğünde yeni dönem: Standartlar belirlendi",
 
-            İlk oturumda adayların genel yetenek ve genel kültür alanlarındaki
-            bilgileri ölçülecek. Sınav süreci boyunca adayların sınav giriş
-            belgeleri, sınav saatleri ve sınav merkezleriyle ilgili duyuruları
-            takip etmesi önem taşıyor.
+        spot:
+            "Öğretmenlerin kullanacağı önlüklerle ilgili yeni standartlar belirlendi. Düzenlemeyle birlikte önlüklerin taşıması gereken özellikler netleştirildi.",
 
-            Sınava girecek adayların sınav günü yaşanabilecek yoğunluğu göz
-            önünde bulundurarak sınav merkezlerinde erken bulunmaları tavsiye
-            ediliyor.
+        icerik: `
+            <p>
+                Eğitim gündeminde dikkat çeken gelişmelerden biri öğretmen
+                önlükleriyle ilgili yapılan yeni düzenleme oldu. Öğretmenlerin
+                kullanacağı önlükler için belirlenen standartlarla birlikte
+                ürünlerin taşıması gereken temel özellikler daha net hale
+                getirildi.
+            </p>
 
-            KPSS, kamu kurumlarında görev almak isteyen adaylar açısından
-            Türkiye'deki en önemli merkezi sınavlardan biri olmayı sürdürüyor.
-        `
+            <p>
+                Düzenlemenin temel amacı, öğretmen önlüklerinde belirli bir
+                standardın oluşturulması ve eğitim ortamlarında kullanılacak
+                ürünlerin ortak kriterlere sahip olması olarak öne çıkıyor.
+                Böylece farklı özelliklerdeki ürünlerin yerine belirlenen
+                standartlara uygun önlüklerin kullanılması hedefleniyor.
+            </p>
+
+            <h2>Standartlar neden önemli?</h2>
+
+            <p>
+                Eğitim kurumlarında kullanılan ürünlerin belirli kalite ve
+                kullanım kriterlerine sahip olması, hem öğretmenlerin günlük
+                çalışma koşulları hem de okul ortamındaki düzen açısından
+                önem taşıyor.
+            </p>
+
+            <p>
+                Belirlenen standartlar sayesinde önlüklerin tasarımından
+                kullanım özelliklerine kadar çeşitli konularda ortak bir
+                çerçevenin oluşturulması amaçlanıyor.
+            </p>
+
+            <h2>Eğitim gündemindeki yeri</h2>
+
+            <p>
+                Öğretmen önlüğü konusu, eğitim ortamlarının düzenlenmesi ve
+                öğretmenlerin mesleki görünümüne ilişkin tartışmaların da
+                bir parçası olarak değerlendiriliyor.
+            </p>
+
+            <p>
+                Yetkili kurumların açıklamaları ve uygulamanın nasıl
+                gerçekleştirileceğine ilişkin ayrıntılar önümüzdeki süreçte
+                eğitim camiası tarafından yakından takip edilecek.
+            </p>
+
+            <p>
+                HABERİSTA olarak gelişmeler netleştikçe yeni bilgileri
+                okuyucularımıza aktarmaya devam edeceğiz.
+            </p>
+        `,
+
+        resim: "images/haber-1.jpg",
+
+        yazar: "HABERİSTA Haber Merkezi",
+
+        tarih: "5 Eylül 2026",
+        saat: "00:15",
+
+        kaynak: "TRT Haber",
+
+        oneCikan: true
     },
+
+
+    /* =====================================================
+       HABER 2
+    ===================================================== */
 
     {
         id: 2,
-        kategori: "Türkiye",
-        baslik: "Girne'deki gemi kazasında can kaybı 12'ye yükseldi",
-        ozet: "KKTC'nin Girne açıklarında batan yolcu gemisindeki arama kurtarma çalışmalarında iki kişinin daha cansız bedenine ulaşıldı.",
-        resim: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1600&q=85",
-        saat: "11:11",
+
+        kategori: "Gündem",
+        kategoriSlug: "gundem",
+
+        baslik:
+            "Yeni nesil suç örgütlerine yönelik operasyon: 42 şüpheli gözaltında",
+
+        spot:
+            "Güvenlik güçlerinin gerçekleştirdiği operasyonda yeni nesil suç örgütleriyle bağlantılı olduğu değerlendirilen 42 şüpheli gözaltına alındı.",
+
+        icerik: `
+            <p>
+                Güvenlik gündeminde önemli bir operasyon gerçekleştirildi.
+                Yetkili makamların açıklamalarına göre yeni nesil suç örgütlerine
+                yönelik düzenlenen çalışma kapsamında 42 şüpheli gözaltına
+                alındı.
+            </p>
+
+            <p>
+                Operasyon, organize suç yapılanmalarına karşı yürütülen
+                çalışmalar kapsamında gerçekleştirildi. Ekiplerin yürüttüğü
+                soruşturma ve operasyon sürecinde şüphelilerin bağlantıları
+                ve faaliyetleriyle ilgili incelemeler yapılıyor.
+            </p>
+
+            <h2>Operasyonun kapsamı</h2>
+
+            <p>
+                Güvenlik birimleri son yıllarda farklı yöntemler kullanan,
+                özellikle dijital iletişim kanallarından yararlanan suç
+                yapılanmalarına karşı çalışmalarını sürdürüyor.
+            </p>
+
+            <p>
+                Son operasyonda da şüphelilerin çeşitli bağlantılarının
+                araştırıldığı ve soruşturmanın kapsamının ilgili birimler
+                tarafından değerlendirildiği bildirildi.
+            </p>
+
+            <h2>Soruşturma devam ediyor</h2>
+
+            <p>
+                Gözaltına alınan şüpheliler hakkındaki adli süreç devam ediyor.
+                Soruşturmanın ilerleyen aşamalarında yeni bilgilerin ortaya
+                çıkması halinde dosyanın kapsamının genişleyebileceği
+                değerlendiriliyor.
+            </p>
+
+            <p>
+                Operasyonla ilgili resmi makamlar tarafından yapılacak yeni
+                açıklamalar kamuoyu tarafından takip ediliyor.
+            </p>
+
+            <p>
+                HABERİSTA, gelişmeleri resmi açıklamalar doğrultusunda
+                güncelleyerek aktarmayı sürdürecek.
+            </p>
+        `,
+
+        resim: "images/haber-2.jpg",
+
+        yazar: "HABERİSTA Haber Merkezi",
+
         tarih: "4 Eylül 2026",
-        kaynak: "Anadolu Ajansı",
-        kaynakUrl: "https://aa.com.tr/",
-        detay: `
-            Kuzey Kıbrıs Türk Cumhuriyeti'nin Girne kenti açıklarında batan
-            "Filo Jet" isimli yolcu gemisine ilişkin arama kurtarma çalışmaları
-            devam ediyor.
+        saat: "16:44",
 
-            KKTC Başbakanı Ünal Üstel tarafından yapılan açıklamaya göre
-            çalışmalarda iki kişinin daha naaşına ulaşıldı ve kazada hayatını
-            kaybedenlerin sayısı 12'ye yükseldi.
+        kaynak: "TRT Haber",
 
-            Bölgede yürütülen çalışmalara Türkiye'den de destek veriliyor.
-            Kurtarma gemileri TCG Işın ve TCG Alemdar, kayıp kişilere ulaşılması
-            ve geminin kara kutusunun çıkarılması amacıyla robotik dalış ve
-            tarama faaliyetlerini sürdürüyor.
-
-            Ekiplerin çalışmalarında deniz şartları ve geminin bulunduğu derinlik
-            önemli bir faktör olarak öne çıkıyor.
-
-            Arama kurtarma faaliyetlerinden gelecek yeni bilgiler doğrultusunda
-            gelişmelerin kamuoyuyla paylaşılması bekleniyor.
-        `
+        oneCikan: true
     },
+
+
+    /* =====================================================
+       HABER 3
+    ===================================================== */
 
     {
         id: 3,
+
         kategori: "Ekonomi",
-        baslik: "Türkiye ile AIIB arasında Marmara için 400 milyon avroluk işbirliği",
-        ozet: "Türkiye ve Asya Altyapı Yatırım Bankası, çevre ve altyapı projelerinde işbirliği anlaşması imzaladı.",
-        resim: "https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1600&q=85",
-        saat: "10:50",
+        kategoriSlug: "ekonomi",
+
+        baslik:
+            "Altının kilogram fiyatı 6 milyon 922 bin 900 liraya geriledi",
+
+        spot:
+            "Borsa İstanbul Kıymetli Madenler ve Kıymetli Taşlar Piyasası'nda altının kilogram fiyatında gün sonunda düşüş kaydedildi.",
+
+        icerik: `
+            <p>
+                Altın piyasasında günün dikkat çeken gelişmelerinden biri
+                kilogram fiyatındaki hareketlilik oldu. Borsa İstanbul
+                Kıymetli Madenler ve Kıymetli Taşlar Piyasası'nda altının
+                kilogram fiyatı gün sonunda 6 milyon 922 bin 900 lira
+                seviyesine geriledi.
+            </p>
+
+            <p>
+                Kıymetli maden piyasasında yaşanan fiyat hareketleri,
+                yatırımcıların yanı sıra altın piyasasını takip eden
+                vatandaşların da gündeminde bulunuyor.
+            </p>
+
+            <h2>Piyasalarda altın hareketliliği</h2>
+
+            <p>
+                Altın fiyatları küresel piyasalardaki gelişmeler, döviz
+                hareketleri, merkez bankalarının politikaları ve yatırımcı
+                beklentileri gibi çok sayıda faktörden etkilenebiliyor.
+            </p>
+
+            <p>
+                Bu nedenle gün içerisinde meydana gelen fiyat değişimleri
+                piyasaların yakından izlediği göstergeler arasında yer
+                alıyor.
+            </p>
+
+            <h2>Yatırımcılar takip ediyor</h2>
+
+            <p>
+                Altının kilogram fiyatındaki değişim, piyasanın genel
+                görünümüne ilişkin önemli göstergelerden biri olarak
+                değerlendiriliyor.
+            </p>
+
+            <p>
+                Ancak kilogram fiyatı ile kuyumcularda vatandaşların
+                karşılaştığı gram veya diğer altın fiyatları aynı kavram
+                değildir. Fiziki altın fiyatlarında farklı maliyetler ve
+                piyasa koşulları etkili olabilir.
+            </p>
+
+            <p>
+                Altın piyasasındaki yeni fiyat hareketleri ve ekonomik
+                gelişmeler HABERİSTA Ekonomi Servisi tarafından takip
+                edilmeye devam ediyor.
+            </p>
+        `,
+
+        resim: "images/haber-3.jpg",
+
+        yazar: "HABERİSTA Ekonomi Servisi",
+
         tarih: "4 Eylül 2026",
-        kaynak: "Reuters",
-        kaynakUrl: "https://www.reuters.com/",
-        detay: `
-            Türkiye, Asya Altyapı Yatırım Bankası (AIIB) ile çevre, iklim
-            değişikliği ve kentsel altyapı alanlarını kapsayan yeni bir
-            işbirliği anlaşması imzaladı.
+        saat: "17:09",
 
-            Anlaşmanın ilk aşamasında Marmara Denizi'nin temizlenmesine yönelik
-            çalışmaların desteklenmesi planlanıyor.
+        kaynak: "TRT Haber",
 
-            Projenin yaklaşık 400 milyon avroluk yatırım büyüklüğüne sahip
-            olması ve özellikle ileri biyolojik atık su arıtma tesislerinin
-            geliştirilmesine odaklanması öngörülüyor.
-
-            Marmara Denizi'nde geçmiş yıllarda görülen müsilaj problemi,
-            bölgedeki atık su arıtma kapasitesinin artırılması konusunu yeniden
-            gündeme getirmişti.
-
-            Anlaşmanın çevresel altyapının güçlendirilmesi ve Marmara'nın
-            ekolojik durumunun korunması açısından önemli bir finansman
-            adımı olması bekleniyor.
-        `
+        oneCikan: true
     },
+
+
+    /* =====================================================
+       HABER 4
+    ===================================================== */
 
     {
         id: 4,
-        kategori: "Türkiye",
-        baslik: "23 vakıf yükseköğretim kurumu hakkında inceleme başlatıldı",
-        ozet: "Yükseköğretim Denetleme Kurulu, bazı vakıf üniversitelerinde öğrenim ücretlerine ilişkin ihbar ve şikayetler üzerine inceleme başlattı.",
-        resim: "https://images.unsplash.com/photo-1564981797816-1043664bf78d?auto=format&fit=crop&w=1600&q=85",
-        saat: "10:21",
+
+        kategori: "Teknoloji",
+        kategoriSlug: "teknoloji",
+
+        baslik:
+            "Bakan Uraloğlu: Türkiye yalnızca bir pazar değil, stratejik bir teknoloji merkezi",
+
+        spot:
+            "Ulaştırma ve Altyapı Bakanı Abdulkadir Uraloğlu, Türkiye'nin dijital dönüşüm ve teknoloji alanındaki konumuna ilişkin değerlendirmelerde bulundu.",
+
+        icerik: `
+            <p>
+                Türkiye'nin teknoloji ve dijital dönüşüm alanındaki çalışmaları
+                gündemdeki yerini koruyor. Ulaştırma ve Altyapı Bakanı
+                Abdulkadir Uraloğlu, yaptığı değerlendirmede Türkiye'nin
+                teknoloji alanındaki konumuna ilişkin önemli mesajlar verdi.
+            </p>
+
+            <p>
+                Uraloğlu, Türkiye'nin yalnızca teknolojik ürünlerin tüketildiği
+                bir pazar olarak değil, aynı zamanda teknoloji geliştiren ve
+                dijital dönüşüm süreçlerinde rol üstlenen stratejik bir merkez
+                olması gerektiğine dikkat çekti.
+            </p>
+
+            <h2>Dijital dönüşüm vurgusu</h2>
+
+            <p>
+                Dijital teknolojilerin kamu hizmetlerinden ulaşıma,
+                haberleşmeden günlük yaşama kadar çok geniş bir alanda
+                kullanılması, ülkelerin teknoloji politikalarını daha önemli
+                hale getiriyor.
+            </p>
+
+            <p>
+                Türkiye'de de altyapının güçlendirilmesi, yeni nesil iletişim
+                teknolojilerinin yaygınlaştırılması ve teknoloji ekosisteminin
+                geliştirilmesine yönelik çalışmalar yürütülüyor.
+            </p>
+
+            <h2>Teknoloji merkezleri önem kazanıyor</h2>
+
+            <p>
+                Teknoloji alanındaki yatırımlar yalnızca yeni cihazların
+                geliştirilmesiyle sınırlı kalmıyor. Yazılım, yapay zeka,
+                haberleşme altyapısı, veri merkezleri ve girişimcilik
+                ekosistemi de dijital dönüşümün önemli parçaları arasında
+                bulunuyor.
+            </p>
+
+            <p>
+                Bakanlığın açıklaması, Türkiye'nin bu alanlarda daha güçlü
+                bir konuma ulaşma hedefini yeniden gündeme taşıdı.
+            </p>
+
+            <p>
+                Teknoloji yatırımları ve dijital dönüşümle ilgili yeni
+                gelişmeler HABERİSTA Teknoloji Servisi tarafından takip
+                ediliyor.
+            </p>
+        `,
+
+        resim: "images/haber-4.jpg",
+
+        yazar: "HABERİSTA Teknoloji",
+
         tarih: "4 Eylül 2026",
-        kaynak: "Anadolu Ajansı",
-        kaynakUrl: "https://aa.com.tr/",
-        detay: `
-            Yükseköğretim Denetleme Kurulu, 23 vakıf yükseköğretim kurumu
-            hakkında inceleme başlattı.
+        saat: "13:49",
 
-            İncelemenin, hazırlık ve birinci sınıf dışındaki öğrencilerin
-            öğrenim ücretlerinde belirlenen artış sınırlarına uyulmadığına
-            yönelik ihbar ve şikayetler üzerine başlatıldığı bildirildi.
+        kaynak: "TRT Haber",
 
-            Vakıf yükseköğretim kurumlarında öğrenim ücretleri öğrenciler ve
-            aileler açısından eğitim döneminin en önemli gündem maddelerinden
-            biri olurken, ücret artışlarının mevzuata uygun şekilde yapılması
-            büyük önem taşıyor.
-
-            Denetim sürecinin sonucunda kurumlar hakkında gerekli
-            değerlendirmelerin yapılması bekleniyor.
-
-            Konuyla ilgili yeni resmi açıklamalar geldikçe gelişmeler
-            kamuoyuna yansıyacak.
-        `
+        oneCikan: true
     },
+
+
+    /* =====================================================
+       HABER 5
+    ===================================================== */
 
     {
         id: 5,
-        kategori: "Gündem",
-        baslik: "Sivas Kongresi'nin 107. yılı: Bağımsızlık iradesi yeniden vurgulandı",
-        ozet: "Sivas Kongresi'nin 107. yıl dönümünde Türkiye'nin bağımsızlık mücadelesindeki tarihi rolü yeniden gündeme geldi.",
-        resim: "https://images.unsplash.com/photo-1523731407965-2430cd12f5e4?auto=format&fit=crop&w=1600&q=85",
-        saat: "10:34",
-        tarih: "4 Eylül 2026",
-        kaynak: "Anadolu Ajansı",
-        kaynakUrl: "https://aa.com.tr/",
-        detay: `
-            Milli Mücadele tarihinin önemli dönüm noktalarından biri olan
-            Sivas Kongresi'nin 107. yıl dönümü bugün çeşitli mesajlarla
-            anılıyor.
 
-            4 Eylül 1919'da başlayan Sivas Kongresi, Milli Mücadele'nin
-            örgütlenmesi ve ulusal bağımsızlık iradesinin ortaya konulması
-            açısından önemli bir yere sahip.
-
-            Kongrede alınan kararlar, Anadolu'daki milli direnişin ortak bir
-            hedef etrafında şekillenmesinde etkili oldu.
-
-            Yıl dönümü dolayısıyla yayımlanan mesajlarda Sivas Kongresi'nin
-            Türkiye'nin bağımsızlık mücadelesindeki tarihi önemi vurgulandı.
-        `
-    },
-
-    {
-        id: 6,
         kategori: "Spor",
-        baslik: "Süper Lig'de transfer dönemi bugün sona eriyor",
-        ozet: "2026-2027 sezonunun birinci transfer ve tescil dönemi 4 Eylül Cuma günü tamamlanacak.",
-        resim: "https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&w=1600&q=85",
-        saat: "10:05",
+        kategoriSlug: "spor",
+
+        baslik:
+            "Filenin Sultanları yarı finalde! Sırbistan karşılaşması için geri sayım",
+
+        spot:
+            "A Milli Kadın Voleybol Takımı, 2026 Avrupa Voleybol Şampiyonası'nda Almanya'yı 3-1 mağlup ederek yarı finale yükseldi.",
+
+        icerik: `
+            <p>
+                A Milli Kadın Voleybol Takımı, 2026 Avrupa Voleybol
+                Şampiyonası'nda yoluna devam ediyor. Filenin Sultanları,
+                çeyrek final karşılaşmasında Almanya'yı 3-1 mağlup ederek
+                adını yarı finale yazdırdı.
+            </p>
+
+            <p>
+                Karşılaşmanın ardından milli takımın turnuvadaki bir sonraki
+                rakibi de belli oldu. Türkiye, yarı finalde Sırbistan ile
+                karşı karşıya gelecek.
+            </p>
+
+            <h2>Almanya karşısında önemli galibiyet</h2>
+
+            <p>
+                Çeyrek final mücadelesinde Almanya ile karşılaşan milliler,
+                maç boyunca önemli anlarda gösterdiği performansla mücadeleyi
+                3-1 kazanmayı başardı.
+            </p>
+
+            <p>
+                Bu sonuçla birlikte Türkiye, Avrupa Şampiyonası'nda
+                yarı finale yükselerek madalya mücadelesini sürdürme hakkı
+                kazandı.
+            </p>
+
+            <h2>Yarı finalde rakip Sırbistan</h2>
+
+            <p>
+                Filenin Sultanları'nın yarı finaldeki rakibi Sırbistan olacak.
+                İki takım arasındaki mücadele, turnuvanın en önemli
+                karşılaşmalarından biri olarak öne çıkıyor.
+            </p>
+
+            <p>
+                Milli takımın turnuvadaki hedefi finale yükselerek şampiyonluk
+                mücadelesi vermek. Karşılaşma öncesinde takımın hazırlıkları
+                ve kadro durumuyla ilgili gelişmeler yakından takip ediliyor.
+            </p>
+
+            <h2>Türkiye'de büyük heyecan</h2>
+
+            <p>
+                Milli takımın yarı finale yükselmesi Türkiye'de de büyük
+                ilgi gördü. Spor kamuoyu Sırbistan karşılaşmasına
+                odaklanırken, maçın sonucu final yolundaki mücadele açısından
+                belirleyici olacak.
+            </p>
+
+            <p>
+                Filenin Sultanları'nın Avrupa Şampiyonası serüvenindeki
+                gelişmeleri HABERİSTA Spor Servisi anlık olarak takip edecek.
+            </p>
+        `,
+
+        resim: "images/haber-5.jpg",
+
+        yazar: "HABERİSTA Spor Servisi",
+
         tarih: "4 Eylül 2026",
-        kaynak: "Türkiye Futbol Federasyonu",
-        kaynakUrl: "https://www.tff.org/",
-        detay: `
-            Trendyol Süper Lig'de 2026-2027 sezonunun birinci transfer ve
-            tescil dönemi bugün sona eriyor.
+        saat: "20:30",
 
-            Türkiye Futbol Federasyonu tarafından açıklanan takvime göre
-            transfer dönemi 22 Haziran 2026 tarihinde başladı ve 4 Eylül
-            2026 Cuma günü tamamlanacak.
+        kaynak: "TRT Haber",
 
-            Kulüpler, dönemin son gününde kadrolarını güçlendirmek için
-            transfer çalışmalarını sürdürüyor.
-
-            Transfer döneminin sona ermesiyle birlikte kulüplerin sezon
-            içerisindeki kadro planlamaları açısından yeni bir aşamaya
-            geçilecek.
-
-            Son gün içerisinde yapılacak resmi transfer duyuruları spor
-            gündeminin en çok takip edilen başlıkları arasında yer alıyor.
-        `
-    },
-
-    {
-        id: 7,
-        kategori: "Dünya",
-        baslik: "Türkiye'den Marmara'nın temizliği için uluslararası finansman adımı",
-        ozet: "Yeni anlaşmayla çevre projeleri ve kentsel altyapının geliştirilmesi hedefleniyor.",
-        resim: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1600&q=85",
-        saat: "09:55",
-        tarih: "4 Eylül 2026",
-        kaynak: "Reuters",
-        kaynakUrl: "https://www.reuters.com/",
-        detay: `
-            Türkiye'nin çevre ve altyapı yatırımlarına yönelik uluslararası
-            finansman arayışında yeni bir anlaşma imzalandı.
-
-            Asya Altyapı Yatırım Bankası ile yapılan işbirliğinde ilk
-            aşamanın Marmara Denizi'nin temizlenmesine yönelik yatırımlara
-            ayrılması planlanıyor.
-
-            Projenin özellikle atık su arıtma kapasitesinin geliştirilmesine
-            odaklanması bekleniyor.
-
-            Marmara bölgesi Türkiye'nin en yoğun nüfuslu ve sanayileşmiş
-            bölgelerinden biri olduğu için çevresel altyapı yatırımları
-            bölgedeki deniz ekosistemi açısından da önem taşıyor.
-        `
-    },
-
-    {
-        id: 8,
-        kategori: "Teknoloji",
-        baslik: "İstanbul'da yapay zeka destekli 'Avcı' ile siber suçlarla mücadele",
-        ozet: "İstanbul Emniyet Müdürlüğü ekipleri siber suçlarla mücadelede yapay zeka destekli sistemlerden yararlanıyor.",
-        resim: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=85",
-        saat: "09:40",
-        tarih: "4 Eylül 2026",
-        kaynak: "Anadolu Ajansı",
-        kaynakUrl: "https://aa.com.tr/",
-        detay: `
-            İstanbul Emniyet Müdürlüğü Siber Suçlarla Mücadele Şubesi,
-            bilişim sistemleri kullanılarak gerçekleştirilen suçların
-            önlenmesine yönelik çalışmalarını sürdürüyor.
-
-            Ekiplerin çalışmalarında internet ortamındaki sanal devriyeden
-            dijital delil incelemelerine kadar farklı yöntemlerden
-            yararlanılıyor.
-
-            Yapay zeka destekli "Avcı" olarak adlandırılan sistemin de
-            siber suçlarla mücadelede kullanılan teknolojik araçlardan biri
-            olduğu bildirildi.
-
-            Dijital ortamda suçların hızlı şekilde değişmesi nedeniyle
-            güvenlik birimleri yeni teknolojiler ve analiz yöntemleri
-            kullanarak çalışmalarını genişletiyor.
-        `
+        oneCikan: true
     }
 
 ];
 
 
 /* =========================================================
-   HABER BUL
-   ========================================================= */
+   HABER BULMA
+========================================================= */
 
-function haberBul(id) {
+function haberGetir(id) {
 
-    return HABERLER.find(
+    return haberler.find(
         haber => Number(haber.id) === Number(id)
     );
 
@@ -262,23 +427,85 @@ function haberBul(id) {
 
 
 /* =========================================================
-   KATEGORİLER
-   ========================================================= */
+   KATEGORİYE GÖRE HABERLER
+========================================================= */
 
-const HABER_KATEGORILERI = [
-    "Tümü",
-    ...new Set(
-        HABERLER.map(
-            haber => haber.kategori
-        )
-    )
-];
+function kategoriHaberleri(kategori) {
+
+    return haberler.filter(
+        haber => haber.kategoriSlug === kategori
+    );
+
+}
 
 
 /* =========================================================
-   GLOBAL
-   ========================================================= */
+   ÖNE ÇIKAN HABERLER
+========================================================= */
 
-window.HABERLER = HABERLER;
-window.HABER_KATEGORILERI = HABER_KATEGORILERI;
-window.haberBul = haberBul;
+function oneCikanHaberler() {
+
+    return haberler.filter(
+        haber => haber.oneCikan === true
+    );
+
+}
+
+
+/* =========================================================
+   SON HABERLER
+========================================================= */
+
+function sonHaberler() {
+
+    return [...haberler].sort(
+        (a, b) => b.id - a.id
+    );
+
+}
+
+
+/* =========================================================
+   ARAMA
+========================================================= */
+
+function haberAra(metin) {
+
+    const arama = metin
+        .toLocaleLowerCase("tr-TR")
+        .trim();
+
+    if (!arama) {
+        return [];
+    }
+
+    return haberler.filter(haber => {
+
+        const tamMetin = `
+            ${haber.baslik}
+            ${haber.spot}
+            ${haber.kategori}
+            ${haber.icerik}
+        `.toLocaleLowerCase("tr-TR");
+
+        return tamMetin.includes(arama);
+
+    });
+
+}
+
+
+/* =========================================================
+   GLOBAL ERİŞİM
+========================================================= */
+
+window.HABERISTA = {
+
+    haberler,
+    haberGetir,
+    kategoriHaberleri,
+    oneCikanHaberler,
+    sonHaberler,
+    haberAra
+
+};
