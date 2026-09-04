@@ -2,167 +2,822 @@
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Haberİsta | Haber</title>
 
-<title>HABERİSTA</title>
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-<link rel="stylesheet" href="css/style.css">
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f5f7fa;
+    color:#172033;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+/* HEADER */
+header{
+    background:white;
+    border-bottom:1px solid #e7eaf0;
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.header{
+    max-width:1250px;
+    margin:auto;
+    height:72px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 20px;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:900;
+    letter-spacing:-1px;
+}
+
+.logo span{
+    color:#1677ff;
+}
+
+nav{
+    display:flex;
+    gap:24px;
+}
+
+nav a{
+    font-weight:600;
+    color:#4b5565;
+    transition:.2s;
+}
+
+nav a:hover{
+    color:#1677ff;
+}
+
+.menu{
+    display:none;
+    font-size:25px;
+    cursor:pointer;
+}
+
+/* BREAKING */
+.breaking{
+    background:#111827;
+    color:white;
+}
+
+.breaking-inner{
+    max-width:1250px;
+    margin:auto;
+    min-height:42px;
+    display:flex;
+    align-items:center;
+    padding:0 20px;
+    gap:15px;
+}
+
+.breaking-label{
+    background:#e53935;
+    padding:6px 11px;
+    border-radius:5px;
+    font-size:12px;
+    font-weight:800;
+}
+
+.breaking-text{
+    font-size:14px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+
+/* MAIN */
+.container{
+    max-width:1100px;
+    margin:40px auto;
+    padding:0 20px;
+}
+
+.breadcrumb{
+    color:#7b8494;
+    font-size:14px;
+    margin-bottom:22px;
+}
+
+.breadcrumb a{
+    color:#1677ff;
+}
+
+/* ARTICLE */
+.article{
+    background:white;
+    border-radius:18px;
+    padding:42px;
+    box-shadow:0 5px 30px rgba(20,30,50,.06);
+}
+
+.category{
+    display:inline-block;
+    color:#1677ff;
+    background:#edf5ff;
+    padding:7px 12px;
+    border-radius:6px;
+    font-size:13px;
+    font-weight:800;
+    margin-bottom:18px;
+}
+
+h1{
+    font-size:48px;
+    line-height:1.1;
+    letter-spacing:-1.5px;
+    margin-bottom:20px;
+}
+
+.spot{
+    color:#5e6878;
+    font-size:20px;
+    line-height:1.55;
+    margin-bottom:28px;
+}
+
+.meta{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    color:#697386;
+    font-size:14px;
+    padding-bottom:25px;
+    border-bottom:1px solid #edf0f4;
+    margin-bottom:30px;
+}
+
+.meta strong{
+    color:#222b3b;
+}
+
+.hero{
+    width:100%;
+    height:520px;
+    object-fit:cover;
+    border-radius:14px;
+    display:block;
+    background:#e9edf2;
+}
+
+.caption{
+    color:#7b8494;
+    font-size:12px;
+    margin-top:9px;
+}
+
+/* CONTENT */
+.article-content{
+    max-width:820px;
+    margin:35px auto 0;
+}
+
+.article-content p{
+    font-size:18px;
+    line-height:1.85;
+    margin-bottom:24px;
+}
+
+.article-content h2{
+    font-size:29px;
+    margin:38px 0 18px;
+}
+
+.article-content blockquote{
+    border-left:4px solid #1677ff;
+    background:#f5f8fc;
+    padding:20px 25px;
+    margin:30px 0;
+    font-size:19px;
+    line-height:1.6;
+    color:#465164;
+}
+
+/* SHARE */
+.share{
+    margin-top:40px;
+    padding:25px 0;
+    border-top:1px solid #edf0f4;
+    border-bottom:1px solid #edf0f4;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.share strong{
+    margin-right:8px;
+}
+
+.share button{
+    border:0;
+    padding:10px 15px;
+    border-radius:7px;
+    cursor:pointer;
+    font-weight:700;
+    background:#eef2f7;
+    color:#253044;
+}
+
+.share button:hover{
+    background:#1677ff;
+    color:white;
+}
+
+/* SOURCE */
+.source{
+    margin-top:25px;
+    font-size:14px;
+    color:#7b8494;
+}
+
+.source strong{
+    color:#30394a;
+}
+
+/* RELATED */
+.related-section{
+    margin-top:45px;
+}
+
+.related-section h2{
+    margin-bottom:20px;
+}
+
+.related{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.related-card{
+    background:white;
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 4px 18px rgba(20,30,50,.06);
+    transition:.25s;
+}
+
+.related-card:hover{
+    transform:translateY(-4px);
+}
+
+.related-card img{
+    width:100%;
+    height:150px;
+    object-fit:cover;
+}
+
+.related-content{
+    padding:17px;
+}
+
+.related-category{
+    color:#1677ff;
+    font-size:11px;
+    font-weight:800;
+}
+
+.related-title{
+    font-size:17px;
+    line-height:1.35;
+    font-weight:800;
+    margin-top:8px;
+}
+
+/* FOOTER */
+footer{
+    margin-top:60px;
+    background:#111827;
+    color:#aeb7c5;
+    padding:45px 20px;
+}
+
+.footer-inner{
+    max-width:1100px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    gap:30px;
+}
+
+.footer-logo{
+    color:white;
+    font-size:25px;
+    font-weight:900;
+}
+
+.footer-logo span{
+    color:#4b9cff;
+}
+
+.footer-links{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.footer-links a:hover{
+    color:white;
+}
+
+/* ERROR */
+.error{
+    background:white;
+    padding:70px 30px;
+    text-align:center;
+    border-radius:15px;
+}
+
+.error h1{
+    font-size:35px;
+    margin-bottom:15px;
+}
+
+.error a{
+    display:inline-block;
+    margin-top:20px;
+    background:#1677ff;
+    color:white;
+    padding:12px 20px;
+    border-radius:7px;
+}
+
+/* MOBILE */
+@media(max-width:800px){
+
+    nav{
+        display:none;
+    }
+
+    .menu{
+        display:block;
+    }
+
+    h1{
+        font-size:34px;
+    }
+
+    .spot{
+        font-size:17px;
+    }
+
+    .article{
+        padding:25px 20px;
+    }
+
+    .hero{
+        height:300px;
+    }
+
+    .article-content p{
+        font-size:17px;
+    }
+
+    .related{
+        grid-template-columns:1fr;
+    }
+
+    .footer-inner{
+        flex-direction:column;
+    }
+}
+
+@media(max-width:500px){
+
+    .header{
+        height:62px;
+    }
+
+    .logo{
+        font-size:23px;
+    }
+
+    .container{
+        margin:20px auto;
+    }
+
+    h1{
+        font-size:29px;
+    }
+
+    .hero{
+        height:240px;
+    }
+}
+</style>
 </head>
 
 <body>
 
-<header class="header">
+<header>
+    <div class="header">
+        <a href="index.html" class="logo">
+            Haber<span>İsta</span>
+        </a>
 
-<div class="header-inner">
+        <nav>
+            <a href="index.html">Ana Sayfa</a>
+            <a href="index.html#son-dakika">Son Dakika</a>
+            <a href="index.html#gundem">Gündem</a>
+            <a href="index.html#ekonomi">Ekonomi</a>
+            <a href="index.html#teknoloji">Teknoloji</a>
+            <a href="index.html#spor">Spor</a>
+        </nav>
 
-<a class="logo" href="index.html">
-HABER<span>İSTA</span>
-</a>
-
-<a class="back-button" href="index.html">
-← Ana Sayfa
-</a>
-
-</div>
-
+        <div class="menu">☰</div>
+    </div>
 </header>
 
+<div class="breaking">
+    <div class="breaking-inner">
+        <span class="breaking-label">SON DAKİKA</span>
+        <span class="breaking-text" id="breakingText">
+            Haberİsta güncel haberleriyle yayında.
+        </span>
+    </div>
+</div>
 
-<main class="article-container">
+<main class="container">
 
-<div id="article"></div>
+    <div class="breadcrumb">
+        <a href="index.html">Ana Sayfa</a>
+        &nbsp;›&nbsp;
+        <span id="breadcrumbCategory">Haber</span>
+    </div>
+
+    <article class="article" id="article">
+        <!-- Haber JavaScript ile gelecek -->
+    </article>
+
+    <section class="related-section">
+        <h2>İlgili Haberler</h2>
+        <div class="related" id="related"></div>
+    </section>
 
 </main>
 
-
 <footer>
+    <div class="footer-inner">
 
-<div class="footer-bottom">
-© 2026 HABERİSTA. Tüm hakları saklıdır.
-</div>
+        <div>
+            <div class="footer-logo">
+                Haber<span>İsta</span>
+            </div>
+            <p style="margin-top:10px;">
+                Türkiye'den ve dünyadan güncel haberler.
+            </p>
+        </div>
 
+        <div class="footer-links">
+            <a href="index.html">Ana Sayfa</a>
+            <a href="#">Hakkımızda</a>
+            <a href="#">Gizlilik Politikası</a>
+            <a href="#">Çerez Politikası</a>
+            <a href="#">İletişim</a>
+        </div>
+
+    </div>
 </footer>
-
-
-<script src="HABERLER/haberler.js"></script>
 
 <script>
 
-const params =
-    new URLSearchParams(
-        window.location.search
-    );
+/* =========================================
+   HABER VERİLERİ
+========================================= */
 
-const id =
-    Number(params.get("id"));
+const haberler = {
 
-const haber =
-    haberler.find(h => h.id === id);
+1: {
+    kategori:"Gündem",
+    baslik:"Öğretmenlerin önlük kullanımında yeni dönem: Standartlar netleşiyor",
+    spot:"Okullarda öğretmenlerin kullanacağı önlüklerle ilgili standartların belirlenmesine yönelik çalışmalar gündemde. Uygulamanın eğitim ortamlarında belirli bir düzen oluşturması hedefleniyor.",
+    yazar:"Haberİsta Haber Merkezi",
+    tarih:"5 Eylül 2026",
+    kaynak:"Haberİsta",
+    gorsel:"https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1400&q=80",
+
+    metin:`
+    <p>Milli eğitim gündeminde öğretmenlerin kıyafet ve önlük kullanımına ilişkin yeni düzenlemeler öne çıkıyor. Eğitim kurumlarında belirli bir standart oluşturulması amacıyla gündeme gelen çalışma, öğretmenlerin okul ortamındaki görünümüne ilişkin kuralların daha açık hale getirilmesini hedefliyor.</p>
+
+    <p>Yeni yaklaşım kapsamında öğretmen önlüklerinin kullanımına ilişkin temel özelliklerin belirlenmesi planlanıyor. Böylece farklı okullarda uygulamalar arasında oluşabilecek farklılıkların azaltılması ve eğitim ortamlarında daha düzenli bir görünüm oluşturulması amaçlanıyor.</p>
+
+    <h2>Okullarda standartlaşma hedefi</h2>
+
+    <p>Yetkililerin üzerinde çalıştığı düzenlemenin temel başlıkları arasında önlüklerin kullanım şekli, tasarımı ve eğitim ortamına uygunluğu bulunuyor. Düzenlemenin ayrıntıları kesinleştiğinde öğretmenlere ve okullara yönelik uygulama esaslarının da açıklanması bekleniyor.</p>
+
+    <blockquote>
+    Eğitim ortamlarında ortak standartların oluşturulması, öğrenciler ve öğretmenler açısından daha düzenli bir okul atmosferi oluşturmayı amaçlıyor.
+    </blockquote>
+
+    <p>Öğretmen önlüklerine ilişkin gelişmelerin önümüzdeki süreçte eğitim camiasının gündeminde kalması bekleniyor. Resmi açıklamalar geldikçe uygulamanın kapsamı ve yürürlük tarihi daha net şekilde ortaya çıkacak.</p>
+    `
+},
+
+2: {
+    kategori:"Gündem",
+    baslik:"Yeni nesil suç örgütlerine yönelik operasyon: Çok sayıda şüpheli yakalandı",
+    spot:"Güvenlik güçleri tarafından suç örgütlerine yönelik yürütülen operasyonlarda çok sayıda şüpheli gözaltına alındı. Soruşturmanın farklı illerde sürdüğü bildirildi.",
+    yazar:"Haberİsta Haber Merkezi",
+    tarih:"5 Eylül 2026",
+    kaynak:"Haberİsta",
+    gorsel:"https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1400&q=80",
+
+    metin:`
+    <p>Türkiye genelinde organize suç yapılanmalarına yönelik güvenlik operasyonları devam ediyor. Son operasyonlarda özellikle dijital iletişim yöntemlerini ve farklı finansal kanalları kullandığı değerlendirilen yapılanmalara yönelik çalışmalar gerçekleştirildi.</p>
+
+    <p>Operasyon ekiplerinin yürüttüğü soruşturmalar kapsamında farklı adreslerde aramalar yapıldı. Çalışmaların, suç örgütlerinin yapılanmalarının ortaya çıkarılması ve bağlantılarının belirlenmesi amacıyla sürdürüldüğü belirtildi.</p>
+
+    <h2>Soruşturmalar genişletiliyor</h2>
+
+    <p>Güvenlik birimleri, organize suçlarla mücadelede teknolojik imkanların daha yoğun kullanılmasına yönelik çalışmalarını sürdürüyor. Özellikle sosyal medya ve dijital platformlar üzerinden yürütüldüğü değerlendirilen faaliyetler soruşturmalarda önemli başlıklardan biri olarak öne çıkıyor.</p>
+
+    <blockquote>
+    Operasyonların temel amacı suç yapılanmalarının finansal ve organizasyonel bağlantılarını ortaya çıkarmak.
+    </blockquote>
+
+    <p>Soruşturmalarla ilgili yeni gelişmelerin resmi makamların açıklamaları doğrultusunda kamuoyuyla paylaşılması bekleniyor.</p>
+    `
+},
+
+3: {
+    kategori:"Ekonomi",
+    baslik:"Altının kilogram fiyatında yeni hareketlilik",
+    spot:"Borsa İstanbul Kıymetli Madenler ve Kıymetli Taşlar Piyasası'nda altının kilogram fiyatı gün içinde yatırımcıların odağında yer aldı.",
+    yazar:"Haberİsta Ekonomi Servisi",
+    tarih:"5 Eylül 2026",
+    kaynak:"Haberİsta",
+    gorsel:"https://images.unsplash.com/photo-1610375461246-83df859d849d?auto=format&fit=crop&w=1400&q=80",
+
+    metin:`
+    <p>Altın piyasasında haftanın son işlem gününde hareketlilik yaşandı. Borsa İstanbul Kıymetli Madenler ve Kıymetli Taşlar Piyasası'nda işlem gören altının kilogram fiyatı yatırımcıların yakından takip ettiği göstergeler arasında yer aldı.</p>
+
+    <p>Küresel piyasalarda ons altının seyri, döviz kurlarındaki hareketlilik ve merkez bankalarının para politikalarına ilişkin beklentiler, yurt içindeki altın fiyatlarının yönü üzerinde etkili olmaya devam ediyor.</p>
+
+    <h2>Yatırımcıların gözü piyasalarda</h2>
+
+    <p>Altın fiyatlarındaki hareketlilik hem bireysel yatırımcılar hem de finans piyasaları tarafından yakından izleniyor. Uzmanlar, kısa vadeli fiyat hareketleri değerlendirilirken yalnızca tek bir göstergeye değil, küresel ekonomik gelişmelerin tamamına bakılması gerektiğine dikkat çekiyor.</p>
+
+    <p>Piyasalarda önümüzdeki günlerde açıklanacak ekonomik veriler ve merkez bankalarından gelecek mesajların altının seyri açısından önem taşıması bekleniyor.</p>
+    `
+},
+
+4: {
+    kategori:"Teknoloji",
+    baslik:"Türkiye'nin teknoloji merkezi hedefi: Yeni yatırımlar gündemde",
+    spot:"Türkiye'nin teknoloji ve inovasyon kapasitesini artırmaya yönelik çalışmaları hız kazanırken, yüksek teknoloji yatırımlarının artırılması hedefleniyor.",
+    yazar:"Haberİsta Teknoloji Servisi",
+    tarih:"5 Eylül 2026",
+    kaynak:"Haberİsta",
+    gorsel:"https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=80",
+
+    metin:`
+    <p>Türkiye'nin yüksek teknoloji alanındaki konumunu güçlendirmeye yönelik çalışmalar teknoloji gündeminin önemli başlıklarından biri olmaya devam ediyor. Yapay zeka, yazılım, savunma teknolojileri, çip ve ileri üretim alanlarında yeni yatırımların artırılması hedefleniyor.</p>
+
+    <p>Teknoloji ekosisteminin büyütülmesiyle birlikte girişimcilik faaliyetlerinin desteklenmesi ve üniversiteler ile teknoloji şirketleri arasındaki iş birliğinin güçlendirilmesi de hedefler arasında bulunuyor.</p>
+
+    <h2>Yüksek teknoloji yatırımları öne çıkıyor</h2>
+
+    <p>Son yıllarda Türkiye'de teknoloji girişimlerine yönelik yatırımların ve kuluçka programlarının sayısında artış yaşanırken, küresel ölçekte rekabet edebilecek şirketlerin ortaya çıkarılması için yeni destek mekanizmaları üzerinde çalışılıyor.</p>
+
+    <blockquote>
+    Teknoloji alanındaki hedeflerin merkezinde yüksek katma değerli üretim ve nitelikli insan kaynağının geliştirilmesi bulunuyor.
+    </blockquote>
+
+    <p>Önümüzdeki dönemde özellikle yapay zeka ve ileri teknoloji üretimine yönelik projelerin Türkiye'nin teknoloji ekosistemindeki ağırlığını artırması bekleniyor.</p>
+    `
+},
+
+5: {
+    kategori:"Spor",
+    baslik:"Filenin Sultanları yarı finalde! Almanya karşısında 3-1'lik galibiyet",
+    spot:"A Milli Kadın Voleybol Takımı, Almanya'yı 3-1 mağlup ederek turnuvada yarı finale yükseldi.",
+    yazar:"Haberİsta Spor Servisi",
+    tarih:"5 Eylül 2026",
+    kaynak:"TRT Haber / Haberİsta",
+    gorsel:"https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?auto=format&fit=crop&w=1400&q=80",
+
+    metin:`
+    <p>A Milli Kadın Voleybol Takımı, turnuvadaki kritik karşılaşmada Almanya ile karşı karşıya geldi. Filenin Sultanları, mücadeleyi 3-1 kazanarak adını yarı finale yazdırdı.</p>
+
+    <p>Karşılaşmanın başından itibaren mücadele gücünü ortaya koyan milliler, özellikle hücumdaki etkili oyunuyla rakibi karşısında üstünlük kurmayı başardı. Almanya'nın geri dönüş çabalarına rağmen ay-yıldızlı ekip karşılaşmadan galibiyetle ayrıldı.</p>
+
+    <h2>Yarı final heyecanı</h2>
+
+    <p>Almanya galibiyetiyle birlikte turnuvada yoluna devam eden A Milli Kadın Voleybol Takımı, yarı finalde önemli bir mücadeleye çıkacak. Milli takımın performansı Türk voleybolseverler tarafından büyük ilgiyle takip ediliyor.</p>
+
+    <blockquote>
+    Filenin Sultanları, Almanya karşısındaki 3-1'lik galibiyetin ardından turnuvada yarı finale yükseldi.
+    </blockquote>
+
+    <p>Millilerin yarı final karşılaşmasının tarihi ve rakibi turnuva programına göre netleşecek. Takım, finale yükselerek şampiyonluk yolunda bir adım daha atmayı hedefliyor.</p>
+    `
+}
+
+};
 
 
-const article =
-    document.getElementById("article");
+/* =========================================
+   URL'DEN ID AL
+========================================= */
 
+const params = new URLSearchParams(window.location.search);
+
+const id = params.get("id");
+
+const haber = haberler[id];
+
+
+/* =========================================
+   HABERİ GÖSTER
+========================================= */
+
+const article = document.getElementById("article");
 
 if(!haber){
 
     article.innerHTML = `
-
-        <div class="error-page">
-
-            <h1>404</h1>
-
-            <h2>Haber bulunamadı</h2>
-
-            <p>
-                Aradığınız haber mevcut değil.
-            </p>
-
-            <a href="index.html">
-                Ana Sayfaya Dön
-            </a>
-
+        <div class="error">
+            <h1>Haber bulunamadı</h1>
+            <p>Aradığınız haber mevcut değil veya kaldırılmış olabilir.</p>
+            <a href="index.html">Ana Sayfaya Dön</a>
         </div>
-
     `;
 
 }else{
 
-    document.title =
-        haber.baslik + " | HABERİSTA";
+    document.title = haber.baslik + " | Haberİsta";
 
+    document.getElementById("breadcrumbCategory").textContent =
+        haber.kategori;
+
+    document.getElementById("breakingText").textContent =
+        haber.baslik;
 
     article.innerHTML = `
 
-        <div class="article-category">
+        <div class="category">
             ${haber.kategori}
         </div>
 
-        <h1 class="article-title">
+        <h1>
             ${haber.baslik}
         </h1>
 
-        <div class="article-meta">
+        <div class="spot">
+            ${haber.spot}
+        </div>
 
-            <span>🕒 ${haber.tarih}</span>
+        <div class="meta">
 
             <span>
-                ✍️ ${haber.yazar || "HABERİSTA"}
+                Yazar:
+                <strong>${haber.yazar}</strong>
+            </span>
+
+            <span>
+                Tarih:
+                <strong>${haber.tarih}</strong>
+            </span>
+
+            <span>
+                Kaynak:
+                <strong>${haber.kaynak}</strong>
             </span>
 
         </div>
 
         <img
-            class="article-cover"
+            class="hero"
             src="${haber.gorsel}"
-            alt="${haber.baslik}">
+            alt="${haber.baslik}"
+        >
 
-        <div class="article-body">
+        <div class="caption">
+            Haberİsta | ${haber.kategori}
+        </div>
 
-            <p class="lead">
-                ${haber.aciklama}
-            </p>
+        <div class="article-content">
 
-            <div class="article-text">
-                ${haber.icerik}
+            ${haber.metin}
+
+            <div class="share">
+
+                <strong>Haberi Paylaş:</strong>
+
+                <button onclick="shareWhatsApp()">
+                    WhatsApp
+                </button>
+
+                <button onclick="shareTwitter()">
+                    X
+                </button>
+
+                <button onclick="copyLink()">
+                    Linki Kopyala
+                </button>
+
+            </div>
+
+            <div class="source">
+                <strong>Kaynak:</strong>
+                ${haber.kaynak}
             </div>
 
         </div>
-
-        <div class="share-area">
-
-            <strong>Bu haberi paylaş</strong>
-
-            <button onclick="shareNews()">
-                ↗ Paylaş
-            </button>
-
-        </div>
-
     `;
-
 }
 
 
-async function shareNews(){
+/* =========================================
+   İLGİLİ HABERLER
+========================================= */
 
-    try{
+const related = document.getElementById("related");
 
-        await navigator.share({
-            title:haber.baslik,
-            text:haber.aciklama,
-            url:window.location.href
-        });
+Object.keys(haberler)
+    .filter(key => key !== id)
+    .slice(0,3)
+    .forEach(key => {
 
-    }catch(e){
+        const h = haberler[key];
 
-        await navigator.clipboard
-            .writeText(window.location.href);
+        related.innerHTML += `
 
-        alert("Haber bağlantısı kopyalandı.");
+        <a href="haber.html?id=${key}" class="related-card">
 
-    }
+            <img
+                src="${h.gorsel}"
+                alt="${h.baslik}"
+            >
 
+            <div class="related-content">
+
+                <div class="related-category">
+                    ${h.kategori.toUpperCase()}
+                </div>
+
+                <div class="related-title">
+                    ${h.baslik}
+                </div>
+
+            </div>
+
+        </a>
+
+        `;
+    });
+
+
+/* =========================================
+   PAYLAŞ
+========================================= */
+
+function shareWhatsApp(){
+
+    const url = encodeURIComponent(window.location.href);
+
+    window.open(
+        "https://wa.me/?text=" +
+        encodeURIComponent(haber.baslik + "\n" + window.location.href),
+        "_blank"
+    );
+}
+
+function shareTwitter(){
+
+    window.open(
+        "https://twitter.com/intent/tweet?text=" +
+        encodeURIComponent(haber.baslik) +
+        "&url=" +
+        encodeURIComponent(window.location.href),
+        "_blank"
+    );
+}
+
+function copyLink(){
+
+    navigator.clipboard.writeText(window.location.href);
+
+    alert("Haber bağlantısı kopyalandı.");
 }
 
 </script>
