@@ -1,41 +1,289 @@
 <!DOCTYPE html>
+
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>HABERİSTA — Son Dakika Haberleri</title>
+<title>HABERİSTA — Son Dakika Haberleri</title>
 
-    <meta name="description"
-          content="HABERİSTA son dakika, gündem, ekonomi, spor, teknoloji, dünya ve magazin haberleri.">
+<meta name="description"
+content="HABERİSTA son dakika, gündem, ekonomi, spor ve teknoloji haberleri.">
 
-    <meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
 
-    <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+
+/* =====================================================
+   KOMPAKT SON HABERLER
+===================================================== */
+
+#latestNewsList{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+#latestNewsList .news-card{
+    border:1px solid #e9edf2;
+    border-radius:12px;
+    overflow:hidden;
+    background:#fff;
+    transition:.2s;
+}
+
+#latestNewsList .news-card:hover{
+    transform:translateY(-2px);
+    box-shadow:0 8px 24px rgba(0,0,0,.07);
+}
+
+#latestNewsList .news-card > a{
+    display:flex;
+    min-height:125px;
+}
+
+#latestNewsList .news-card-image{
+    width:190px;
+    min-width:190px;
+    height:125px;
+}
+
+#latestNewsList .news-card-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+#latestNewsList .news-card-content{
+    padding:13px 16px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+#latestNewsList .news-category{
+    font-size:11px;
+    font-weight:800;
+    color:#1677ff;
+    text-transform:uppercase;
+    margin-bottom:5px;
+}
+
+#latestNewsList .news-card-content h3{
+    font-size:17px;
+    line-height:1.3;
+    margin:0 0 5px;
+}
+
+#latestNewsList .news-card-content p{
+    font-size:13px;
+    line-height:1.4;
+    color:#697386;
+    margin:0 0 7px;
+}
+
+#latestNewsList .news-card-content time{
+    font-size:11px;
+    color:#8a93a3;
+}
+
+/* =====================================================
+   KOMPAKT KATEGORİLER
+===================================================== */
+
+.category-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+}
+
+.category-box{
+    background:#fff;
+    border:1px solid #e9edf2;
+    border-radius:14px;
+    padding:14px;
+    overflow:hidden;
+    transition:.2s;
+}
+
+.category-box:hover{
+    box-shadow:0 8px 25px rgba(0,0,0,.06);
+}
+
+.category-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:11px;
+}
+
+.category-header h2{
+    font-size:20px;
+    margin:0;
+}
+
+.category-header a{
+    font-size:12px;
+    font-weight:700;
+    color:#1677ff;
+}
+
+.category-main{
+    display:block;
+}
+
+.category-main img{
+    width:100%;
+    height:175px;
+    object-fit:cover;
+    border-radius:9px;
+    display:block;
+}
+
+.category-main h3{
+    font-size:16px;
+    line-height:1.35;
+    margin:10px 2px;
+}
+
+.category-small{
+    display:block;
+    border-top:1px solid #edf0f3;
+    padding:10px 2px;
+    font-size:13px;
+    font-weight:600;
+    color:#394457;
+}
+
+.category-small:hover{
+    color:#1677ff;
+}
+
+/* =====================================================
+   ARAMA SONUÇLARI
+===================================================== */
+
+.search-results-box{
+    display:none;
+    background:#fff;
+    border:1px solid #e7ebf0;
+    border-radius:14px;
+    padding:18px;
+    margin-bottom:25px;
+}
+
+.search-results-box.active{
+    display:block;
+}
+
+.search-result{
+    display:flex;
+    gap:14px;
+    padding:12px 0;
+    border-bottom:1px solid #edf0f3;
+}
+
+.search-result:last-child{
+    border-bottom:0;
+}
+
+.search-result img{
+    width:100px;
+    height:65px;
+    object-fit:cover;
+    border-radius:7px;
+}
+
+.search-result h3{
+    font-size:15px;
+    margin:4px 0;
+}
+
+.search-result span{
+    font-size:11px;
+    color:#1677ff;
+    font-weight:700;
+}
+
+/* =====================================================
+   MOBİL
+===================================================== */
+
+@media(max-width:700px){
+
+    #latestNewsList .news-card > a{
+        min-height:100px;
+    }
+
+    #latestNewsList .news-card-image{
+        width:125px;
+        min-width:125px;
+        height:100px;
+    }
+
+    #latestNewsList .news-card-content{
+        padding:9px 11px;
+    }
+
+    #latestNewsList .news-card-content h3{
+        font-size:14px;
+    }
+
+    #latestNewsList .news-card-content p{
+        display:none;
+    }
+
+    .category-grid{
+        grid-template-columns:1fr;
+    }
+
+    .category-main img{
+        height:160px;
+    }
+
+}
+
+</style>
+
 </head>
 
 <body>
 
 <!-- =====================================================
-     ÜST BİLGİ BAR
+     ÜST BAR
 ===================================================== -->
 
 <div class="topbar">
-    <div class="container topbar-inner">
 
-        <div class="topbar-left">
-            <span id="currentDate">5 Eylül 2026 Cumartesi</span>
-        </div>
+```
+<div class="container topbar-inner">
 
-        <div class="topbar-right">
-            <a href="#">Hakkımızda</a>
-            <a href="#">İletişim</a>
-            <a href="#">Künye</a>
-        </div>
+    <div class="topbar-left">
+        <span id="currentDate"></span>
+    </div>
+
+    <div class="topbar-right">
+
+        <a href="hakkimizda.html">
+            Hakkımızda
+        </a>
+
+        <a href="iletisim.html">
+            İletişim
+        </a>
+
+        <a href="kunye.html">
+            Künye
+        </a>
 
     </div>
-</div>
 
+</div>
+```
+
+</div>
 
 <!-- =====================================================
      HEADER
@@ -43,108 +291,101 @@
 
 <header class="header">
 
-    <div class="container header-inner">
+```
+<div class="container header-inner">
 
-        <!-- LOGO -->
+    <a href="index.html" class="logo">
 
-        <a href="index.html" class="logo">
-            <span class="logo-main">HABER</span><span class="logo-accent">İSTA</span>
-        </a>
+        <span class="logo-main">HABER</span><span class="logo-accent">İSTA</span>
 
-
-        <!-- MASAÜSTÜ ARAMA -->
-
-        <div class="header-search">
-
-            <input
-                type="search"
-                id="searchInput"
-                placeholder="Haberlerde ara..."
-                autocomplete="off"
-            >
-
-            <button id="searchButton" aria-label="Ara">
-                🔍
-            </button>
-
-        </div>
+    </a>
 
 
-        <!-- HEADER BUTONLARI -->
+    <!-- ARAMA -->
 
-        <div class="header-actions">
+    <div class="header-search">
 
-            <button class="header-action" id="darkModeButton">
-                🌙
-            </button>
+        <input
+            type="search"
+            id="searchInput"
+            placeholder="Haberlerde ara..."
+            autocomplete="off"
+        >
 
-            <button class="header-action menu-button" id="menuButton">
-                ☰
-            </button>
-
-        </div>
+        <button
+            id="searchButton"
+            aria-label="Ara"
+            type="button"
+        >
+            🔍
+        </button>
 
     </div>
 
 
-    <!-- =================================================
-         ANA NAVİGASYON
-    ================================================= -->
+    <!-- BUTONLAR -->
 
-    <nav class="main-nav">
+    <div class="header-actions">
 
-        <div class="container nav-inner">
+        <button
+            class="header-action"
+            id="darkModeButton"
+            type="button"
+            title="Tema değiştir"
+        >
+            🌙
+        </button>
 
-            <a href="index.html" class="nav-link active">
-                Ana Sayfa
-            </a>
+        <button
+            class="header-action menu-button"
+            id="menuButton"
+            type="button"
+            title="Menü"
+        >
+            ☰
+        </button>
 
-            <a href="kategori.html?kategori=son-dakika" class="nav-link breaking">
-                🔴 Son Dakika
-            </a>
+    </div>
 
-            <a href="kategori.html?kategori=gundem" class="nav-link">
-                Gündem
-            </a>
+</div>
 
-            <a href="kategori.html?kategori=ekonomi" class="nav-link">
-                Ekonomi
-            </a>
 
-            <a href="kategori.html?kategori=spor" class="nav-link">
-                Spor
-            </a>
+<!-- NAV -->
 
-            <a href="kategori.html?kategori=magazin" class="nav-link">
-                Magazin
-            </a>
+<nav class="main-nav">
 
-            <a href="kategori.html?kategori=teknoloji" class="nav-link">
-                Teknoloji
-            </a>
+    <div class="container nav-inner">
 
-            <a href="kategori.html?kategori=dunya" class="nav-link">
-                Dünya
-            </a>
+        <a href="index.html" class="nav-link active">
+            Ana Sayfa
+        </a>
 
-            <a href="kategori.html?kategori=bilim" class="nav-link">
-                Bilim
-            </a>
+        <a href="kategori.html?kategori=son-dakika" class="nav-link breaking">
+            🔴 Son Dakika
+        </a>
 
-            <a href="kategori.html?kategori=saglik" class="nav-link">
-                Sağlık
-            </a>
+        <a href="kategori.html?kategori=gundem" class="nav-link">
+            Gündem
+        </a>
 
-            <a href="kategori.html?kategori=yasam" class="nav-link">
-                Yaşam
-            </a>
+        <a href="kategori.html?kategori=ekonomi" class="nav-link">
+            Ekonomi
+        </a>
 
-        </div>
+        <a href="kategori.html?kategori=spor" class="nav-link">
+            Spor
+        </a>
 
-    </nav>
+        <a href="kategori.html?kategori=teknoloji" class="nav-link">
+            Teknoloji
+        </a>
+
+    </div>
+
+</nav>
+```
 
 </header>
-
 
 <!-- =====================================================
      MOBİL MENÜ
@@ -152,52 +393,70 @@
 
 <div class="mobile-menu" id="mobileMenu">
 
-    <div class="mobile-menu-header">
+```
+<div class="mobile-menu-header">
 
-        <strong>Menü</strong>
+    <strong>Menü</strong>
 
-        <button id="closeMenu">
-            ✕
-        </button>
-
-    </div>
-
-    <a href="index.html">Ana Sayfa</a>
-    <a href="kategori.html?kategori=son-dakika">🔴 Son Dakika</a>
-    <a href="kategori.html?kategori=gundem">Gündem</a>
-    <a href="kategori.html?kategori=ekonomi">Ekonomi</a>
-    <a href="kategori.html?kategori=spor">Spor</a>
-    <a href="kategori.html?kategori=magazin">Magazin</a>
-    <a href="kategori.html?kategori=teknoloji">Teknoloji</a>
-    <a href="kategori.html?kategori=dunya">Dünya</a>
-    <a href="kategori.html?kategori=bilim">Bilim</a>
-    <a href="kategori.html?kategori=saglik">Sağlık</a>
-    <a href="kategori.html?kategori=yasam">Yaşam</a>
+    <button id="closeMenu" type="button">
+        ✕
+    </button>
 
 </div>
 
+<a href="index.html">Ana Sayfa</a>
+
+<a href="kategori.html?kategori=son-dakika">
+    🔴 Son Dakika
+</a>
+
+<a href="kategori.html?kategori=gundem">
+    Gündem
+</a>
+
+<a href="kategori.html?kategori=ekonomi">
+    Ekonomi
+</a>
+
+<a href="kategori.html?kategori=spor">
+    Spor
+</a>
+
+<a href="kategori.html?kategori=teknoloji">
+    Teknoloji
+</a>
+```
+
+</div>
 
 <!-- =====================================================
-     SON DAKİKA BANDI
+     SON DAKİKA
 ===================================================== -->
 
 <section class="breaking-news">
 
-    <div class="container breaking-inner">
+```
+<div class="container breaking-inner">
 
-        <div class="breaking-title">
-            <span class="breaking-dot"></span>
-            SON DAKİKA
-        </div>
+    <div class="breaking-title">
 
-        <div class="breaking-content" id="breakingNews">
-            Haberler yükleniyor...
-        </div>
+        <span class="breaking-dot"></span>
+
+        SON DAKİKA
 
     </div>
 
-</section>
+    <div
+        class="breaking-content"
+        id="breakingNews"
+    >
+        Haberler yükleniyor...
+    </div>
 
+</div>
+```
+
+</section>
 
 <!-- =====================================================
      ANA İÇERİK
@@ -205,741 +464,852 @@
 
 <main class="container main-content">
 
+<!-- =====================================================
+     ARAMA SONUÇLARI
+===================================================== -->
 
-    <!-- =================================================
-         MANŞET ALANI
-    ================================================= -->
+<div
+    class="search-results-box"
+    id="searchResults"
+>
 
-    <section class="headline-section">
+```
+<h2>Arama Sonuçları</h2>
 
-        <div class="section-heading">
+<div id="searchResultsList"></div>
+```
 
-            <div>
-                <span class="heading-line"></span>
-                <h2>Günün Manşetleri</h2>
-            </div>
+</div>
 
-            <a href="kategori.html?kategori=gundem">
-                Tüm Haberler →
-            </a>
+<!-- =====================================================
+     MANŞETLER
+===================================================== -->
 
-        </div>
+<section class="headline-section">
 
+```
+<div class="section-heading">
 
-        <div class="headline-grid">
+    <div>
 
-            <!-- BÜYÜK MANŞET -->
+        <span class="heading-line"></span>
 
-            <article class="headline-main" id="headlineMain">
+        <h2>Günün Manşetleri</h2>
 
-                <a href="haber.html?id=1">
+    </div>
 
-                    <div class="headline-image">
+    <a href="kategori.html?kategori=son-dakika">
+        Tüm Haberler →
+    </a>
 
-                        <img
-                            src="images/haber-1.jpg"
-                            alt="HABERİSTA manşet haberi"
-                            onerror="this.src='https://placehold.co/1000x600/f1f3f5/222?text=HABER%C4%B0STA'"
-                        >
+</div>
 
-                        <span class="category-badge">
-                            Gündem
-                        </span>
 
-                    </div>
+<div class="headline-grid">
 
-                    <div class="headline-info">
 
-                        <span class="news-time">
-                            12 dakika önce
-                        </span>
+    <!-- 1 NUMARALI HABER -->
 
-                        <h1>
-                            Günün öne çıkan gelişmeleri HABERİSTA'da
-                        </h1>
+    <article class="headline-main">
 
-                        <p>
-                            Türkiye ve dünyadan günün en önemli gelişmeleri,
-                            son dakika haberleri ve gündemin öne çıkan başlıkları.
-                        </p>
+        <a href="haber.html?id=5">
 
-                    </div>
+            <div class="headline-image">
 
-                </a>
+                <img
+                    src="images/haber-5.jpg"
+                    alt="Filenin Sultanları"
+                >
 
-            </article>
-
-
-            <!-- YAN MANŞETLER -->
-
-            <div class="headline-side">
-
-                <article class="side-headline">
-
-                    <a href="haber.html?id=2">
-
-                        <div class="side-image">
-
-                            <img
-                                src="images/haber-2.jpg"
-                                alt="Haber"
-                                onerror="this.src='https://placehold.co/500x300/e9ecef/222?text=HABER'"
-                            >
-
-                        </div>
-
-                        <div class="side-info">
-
-                            <span>Ekonomi</span>
-
-                            <h3>
-                                Ekonomide günün öne çıkan gelişmeleri
-                            </h3>
-
-                            <small>
-                                25 dakika önce
-                            </small>
-
-                        </div>
-
-                    </a>
-
-                </article>
-
-
-                <article class="side-headline">
-
-                    <a href="haber.html?id=3">
-
-                        <div class="side-image">
-
-                            <img
-                                src="images/haber-3.jpg"
-                                alt="Haber"
-                                onerror="this.src='https://placehold.co/500x300/e9ecef/222?text=HABER'"
-                            >
-
-                        </div>
-
-                        <div class="side-info">
-
-                            <span>Spor</span>
-
-                            <h3>
-                                Sporda günün sıcak gelişmeleri
-                            </h3>
-
-                            <small>
-                                38 dakika önce
-                            </small>
-
-                        </div>
-
-                    </a>
-
-                </article>
-
-
-                <article class="side-headline">
-
-                    <a href="haber.html?id=4">
-
-                        <div class="side-image">
-
-                            <img
-                                src="images/haber-4.jpg"
-                                alt="Haber"
-                                onerror="this.src='https://placehold.co/500x300/e9ecef/222?text=HABER'"
-                            >
-
-                        </div>
-
-                        <div class="side-info">
-
-                            <span>Teknoloji</span>
-
-                            <h3>
-                                Teknoloji dünyasından yeni gelişmeler
-                            </h3>
-
-                            <small>
-                                51 dakika önce
-                            </small>
-
-                        </div>
-
-                    </a>
-
-                </article>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =================================================
-         EKONOMİ / PİYASA
-    ================================================= -->
-
-    <section class="market-section">
-
-        <div class="section-heading">
-
-            <div>
-                <span class="heading-line"></span>
-                <h2>Piyasa</h2>
-            </div>
-
-            <a href="kategori.html?kategori=ekonomi">
-                Ekonomi →
-            </a>
-
-        </div>
-
-
-        <div class="market-grid">
-
-            <div class="market-card">
-
-                <span class="market-name">
-                    Dolar
+                <span class="category-badge">
+                    Spor
                 </span>
 
-                <strong>
-                    ₺
-                    <span id="dolarValue">—</span>
-                </strong>
+            </div>
 
-                <small class="market-up">
+            <div class="headline-info">
+
+                <span class="news-time">
                     Güncel
-                </small>
-
-            </div>
-
-
-            <div class="market-card">
-
-                <span class="market-name">
-                    Euro
                 </span>
 
-                <strong>
-                    €
-                    <span id="euroValue">—</span>
-                </strong>
-
-                <small class="market-up">
-                    Güncel
-                </small>
-
-            </div>
-
-
-            <div class="market-card">
-
-                <span class="market-name">
-                    Altın
-                </span>
-
-                <strong>
-                    ₺
-                    <span id="goldValue">—</span>
-                </strong>
-
-                <small class="market-up">
-                    Güncel
-                </small>
-
-            </div>
-
-
-            <div class="market-card">
-
-                <span class="market-name">
-                    BIST 100
-                </span>
-
-                <strong>
-                    <span id="bistValue">—</span>
-                </strong>
-
-                <small class="market-up">
-                    Piyasa
-                </small>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =================================================
-         SON HABERLER + ÇOK OKUNANLAR
-    ================================================= -->
-
-    <section class="news-layout">
-
-
-        <!-- SON HABERLER -->
-
-        <div class="latest-news">
-
-            <div class="section-heading">
-
-                <div>
-                    <span class="heading-line"></span>
-                    <h2>Son Haberler</h2>
-                </div>
-
-                <a href="kategori.html?kategori=son-dakika">
-                    Tümü →
-                </a>
-
-            </div>
-
-
-            <div id="latestNewsList">
-
-                <!-- JavaScript tarafından doldurulacak -->
-
-                <article class="news-card">
-
-                    <a href="haber.html?id=5">
-
-                        <div class="news-card-image">
-
-                            <img
-                                src="images/haber-5.jpg"
-                                alt="Son haber"
-                                onerror="this.src='https://placehold.co/400x250/e9ecef/222?text=HABER'"
-                            >
-
-                        </div>
-
-                        <div class="news-card-content">
-
-                            <span class="news-category">
-                                Gündem
-                            </span>
-
-                            <h3>
-                                Türkiye gündeminden son gelişmeler
-                            </h3>
-
-                            <p>
-                                Günün gelişmeleri ve önemli haber başlıkları...
-                            </p>
-
-                            <time>
-                                1 saat önce
-                            </time>
-
-                        </div>
-
-                    </a>
-
-                </article>
-
-
-                <article class="news-card">
-
-                    <a href="haber.html?id=6">
-
-                        <div class="news-card-image">
-
-                            <img
-                                src="images/haber-6.jpg"
-                                alt="Son haber"
-                                onerror="this.src='https://placehold.co/400x250/e9ecef/222?text=HABER'"
-                            >
-
-                        </div>
-
-                        <div class="news-card-content">
-
-                            <span class="news-category">
-                                Dünya
-                            </span>
-
-                            <h3>
-                                Dünyadan günün önemli gelişmeleri
-                            </h3>
-
-                            <p>
-                                Dünya gündeminde yaşanan son gelişmeler...
-                            </p>
-
-                            <time>
-                                1 saat önce
-                            </time>
-
-                        </div>
-
-                    </a>
-
-                </article>
-
-
-                <article class="news-card">
-
-                    <a href="haber.html?id=7">
-
-                        <div class="news-card-image">
-
-                            <img
-                                src="images/haber-7.jpg"
-                                alt="Son haber"
-                                onerror="this.src='https://placehold.co/400x250/e9ecef/222?text=HABER'"
-                            >
-
-                        </div>
-
-                        <div class="news-card-content">
-
-                            <span class="news-category">
-                                Teknoloji
-                            </span>
-
-                            <h3>
-                                Teknoloji dünyasındaki yeni gelişmeler
-                            </h3>
-
-                            <p>
-                                Teknoloji alanından dikkat çeken haberler...
-                            </p>
-
-                            <time>
-                                2 saat önce
-                            </time>
-
-                        </div>
-
-                    </a>
-
-                </article>
-
-            </div>
-
-        </div>
-
-
-        <!-- ÇOK OKUNANLAR -->
-
-        <aside class="popular-news">
-
-            <div class="section-heading">
-
-                <div>
-                    <span class="heading-line"></span>
-                    <h2>Çok Okunanlar</h2>
-                </div>
-
-            </div>
-
-
-            <div class="popular-list">
-
-                <a href="haber.html?id=8" class="popular-item">
-
-                    <strong>01</strong>
-
-                    <div>
-                        <span>Gündem</span>
-                        <h3>
-                            Günün en çok konuşulan gelişmesi
-                        </h3>
-                    </div>
-
-                </a>
-
-
-                <a href="haber.html?id=9" class="popular-item">
-
-                    <strong>02</strong>
-
-                    <div>
-                        <span>Spor</span>
-                        <h3>
-                            Spor dünyasında gündem olan olay
-                        </h3>
-                    </div>
-
-                </a>
-
-
-                <a href="haber.html?id=10" class="popular-item">
-
-                    <strong>03</strong>
-
-                    <div>
-                        <span>Ekonomi</span>
-                        <h3>
-                            Piyasalarda dikkat çeken gelişme
-                        </h3>
-                    </div>
-
-                </a>
-
-
-                <a href="haber.html?id=11" class="popular-item">
-
-                    <strong>04</strong>
-
-                    <div>
-                        <span>Teknoloji</span>
-                        <h3>
-                            Teknoloji dünyasından önemli haber
-                        </h3>
-                    </div>
-
-                </a>
-
-
-                <a href="haber.html?id=12" class="popular-item">
-
-                    <strong>05</strong>
-
-                    <div>
-                        <span>Dünya</span>
-                        <h3>
-                            Dünyanın gündemindeki gelişme
-                        </h3>
-                    </div>
-
-                </a>
-
-            </div>
-
-        </aside>
-
-    </section>
-
-
-    <!-- =================================================
-         KATEGORİLER
-    ================================================= -->
-
-    <section class="category-section">
-
-        <div class="section-heading">
-
-            <div>
-                <span class="heading-line"></span>
-                <h2>Kategorilerden Haberler</h2>
-            </div>
-
-        </div>
-
-
-        <div class="category-grid">
-
-
-            <!-- GÜNDEM -->
-
-            <div class="category-box">
-
-                <div class="category-header">
-
-                    <h2>Gündem</h2>
-
-                    <a href="kategori.html?kategori=gundem">
-                        Tümü →
-                    </a>
-
-                </div>
-
-                <a href="haber.html?id=13" class="category-main">
-
-                    <img
-                        src="images/gundem.jpg"
-                        alt="Gündem"
-                        onerror="this.src='https://placehold.co/700x400/e9ecef/222?text=G%C3%9CNDEM'"
-                    >
-
-                    <h3>
-                        Gündemden öne çıkan son gelişmeler
-                    </h3>
-
-                </a>
-
-                <a href="haber.html?id=14" class="category-small">
-                    Yeni gelişmeler gündemde
-                </a>
-
-                <a href="haber.html?id=15" class="category-small">
-                    Günün dikkat çeken açıklaması
-                </a>
-
-            </div>
-
-
-            <!-- SPOR -->
-
-            <div class="category-box">
-
-                <div class="category-header">
-
-                    <h2>Spor</h2>
-
-                    <a href="kategori.html?kategori=spor">
-                        Tümü →
-                    </a>
-
-                </div>
-
-                <a href="haber.html?id=16" class="category-main">
-
-                    <img
-                        src="images/spor.jpg"
-                        alt="Spor"
-                        onerror="this.src='https://placehold.co/700x400/e9ecef/222?text=SPOR'"
-                    >
-
-                    <h3>
-                        Spor dünyasında günün gelişmeleri
-                    </h3>
-
-                </a>
-
-                <a href="haber.html?id=17" class="category-small">
-                    Maç öncesi son gelişmeler
-                </a>
-
-                <a href="haber.html?id=18" class="category-small">
-                    Transfer gündeminde sıcak gelişme
-                </a>
-
-            </div>
-
-
-            <!-- TEKNOLOJİ -->
-
-            <div class="category-box">
-
-                <div class="category-header">
-
-                    <h2>Teknoloji</h2>
-
-                    <a href="kategori.html?kategori=teknoloji">
-                        Tümü →
-                    </a>
-
-                </div>
-
-                <a href="haber.html?id=19" class="category-main">
-
-                    <img
-                        src="images/teknoloji.jpg"
-                        alt="Teknoloji"
-                        onerror="this.src='https://placehold.co/700x400/e9ecef/222?text=TEKNOLOJ%C4%B0'"
-                    >
-
-                    <h3>
-                        Teknoloji dünyasında yeni gelişme
-                    </h3>
-
-                </a>
-
-                <a href="haber.html?id=20" class="category-small">
-                    Yeni teknoloji dikkat çekti
-                </a>
-
-                <a href="haber.html?id=21" class="category-small">
-                    Teknoloji kullanıcıları için önemli gelişme
-                </a>
-
-            </div>
-
-
-            <!-- MAGAZİN -->
-
-            <div class="category-box">
-
-                <div class="category-header">
-
-                    <h2>Magazin</h2>
-
-                    <a href="kategori.html?kategori=magazin">
-                        Tümü →
-                    </a>
-
-                </div>
-
-                <a href="haber.html?id=22" class="category-main">
-
-                    <img
-                        src="images/magazin.jpg"
-                        alt="Magazin"
-                        onerror="this.src='https://placehold.co/700x400/e9ecef/222?text=MAGAZ%C4%B0N'"
-                    >
-
-                    <h3>
-                        Magazin dünyasından son haberler
-                    </h3>
-
-                </a>
-
-                <a href="haber.html?id=23" class="category-small">
-                    Ünlü isimden dikkat çeken açıklama
-                </a>
-
-                <a href="haber.html?id=24" class="category-small">
-                    Magazin gündeminde yeni gelişme
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =================================================
-         BÜLTEN
-    ================================================= -->
-
-    <section class="newsletter">
-
-        <div class="newsletter-content">
-
-            <span class="newsletter-icon">
-                ✉
-            </span>
-
-            <div>
-
-                <h2>Gündemi kaçırma</h2>
+                <h1>
+                    Filenin Sultanları yarı finalde! Almanya karşısında 3-1'lik galibiyet
+                </h1>
 
                 <p>
-                    Önemli haberleri ve son dakika gelişmelerini takip et.
+                    A Milli Kadın Voleybol Takımı, Almanya'yı 3-1 mağlup ederek turnuvada yarı finale yükseldi.
                 </p>
 
             </div>
 
+        </a>
+
+    </article>
+
+
+    <!-- YAN MANŞETLER -->
+
+    <div class="headline-side">
+
+
+        <article class="side-headline">
+
+            <a href="haber.html?id=1">
+
+                <div class="side-image">
+
+                    <img
+                        src="images/haber-1.jpg"
+                        alt="Öğretmen önlüğü standartları"
+                    >
+
+                </div>
+
+                <div class="side-info">
+
+                    <span>Gündem</span>
+
+                    <h3>
+                        Öğretmenlerin önlük kullanımında yeni dönem
+                    </h3>
+
+                    <small>
+                        Güncel
+                    </small>
+
+                </div>
+
+            </a>
+
+        </article>
+
+
+        <article class="side-headline">
+
+            <a href="haber.html?id=2">
+
+                <div class="side-image">
+
+                    <img
+                        src="images/haber-2.jpg"
+                        alt="Suç örgütlerine operasyon"
+                    >
+
+                </div>
+
+                <div class="side-info">
+
+                    <span>Gündem</span>
+
+                    <h3>
+                        Yeni nesil suç örgütlerine yönelik operasyon
+                    </h3>
+
+                    <small>
+                        Güncel
+                    </small>
+
+                </div>
+
+            </a>
+
+        </article>
+
+
+        <article class="side-headline">
+
+            <a href="haber.html?id=3">
+
+                <div class="side-image">
+
+                    <img
+                        src="images/haber-3.jpg"
+                        alt="Altın fiyatı"
+                    >
+
+                </div>
+
+                <div class="side-info">
+
+                    <span>Ekonomi</span>
+
+                    <h3>
+                        Altının kilogram fiyatında yeni hareketlilik
+                    </h3>
+
+                    <small>
+                        Güncel
+                    </small>
+
+                </div>
+
+            </a>
+
+        </article>
+
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- =====================================================
+     PİYASA
+===================================================== -->
+
+<section class="market-section">
+
+```
+<div class="section-heading">
+
+    <div>
+
+        <span class="heading-line"></span>
+
+        <h2>Piyasa</h2>
+
+    </div>
+
+    <a href="kategori.html?kategori=ekonomi">
+        Ekonomi →
+    </a>
+
+</div>
+
+
+<div class="market-grid">
+
+    <div class="market-card">
+
+        <span class="market-name">
+            Dolar
+        </span>
+
+        <strong>
+            ₺<span id="dolarValue">—</span>
+        </strong>
+
+        <small>
+            Güncel
+        </small>
+
+    </div>
+
+
+    <div class="market-card">
+
+        <span class="market-name">
+            Euro
+        </span>
+
+        <strong>
+            €<span id="euroValue">—</span>
+        </strong>
+
+        <small>
+            Güncel
+        </small>
+
+    </div>
+
+
+    <div class="market-card">
+
+        <span class="market-name">
+            Altın
+        </span>
+
+        <strong>
+            ₺<span id="goldValue">—</span>
+        </strong>
+
+        <small>
+            Piyasa
+        </small>
+
+    </div>
+
+
+    <div class="market-card">
+
+        <span class="market-name">
+            BIST 100
+        </span>
+
+        <strong>
+            <span id="bistValue">—</span>
+        </strong>
+
+        <small>
+            Piyasa
+        </small>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- =====================================================
+     SON HABERLER
+===================================================== -->
+
+<section class="news-layout">
+
+<div class="latest-news">
+
+```
+<div class="section-heading">
+
+    <div>
+
+        <span class="heading-line"></span>
+
+        <h2>Son Haberler</h2>
+
+    </div>
+
+    <a href="kategori.html?kategori=son-dakika">
+        Tümü →
+    </a>
+
+</div>
+
+
+<div id="latestNewsList">
+
+
+    <!-- HABER 1 -->
+
+    <article class="news-card">
+
+        <a href="haber.html?id=1">
+
+            <div class="news-card-image">
+
+                <img
+                    src="images/haber-1.jpg"
+                    alt="Öğretmen önlüğü"
+                >
+
+            </div>
+
+            <div class="news-card-content">
+
+                <span class="news-category">
+                    Gündem
+                </span>
+
+                <h3>
+                    Öğretmenlerin önlük kullanımında yeni dönem
+                </h3>
+
+                <p>
+                    Okullarda öğretmen önlüklerine ilişkin standartlar gündemde.
+                </p>
+
+                <time>
+                    5 Eylül 2026
+                </time>
+
+            </div>
+
+        </a>
+
+    </article>
+
+
+    <!-- HABER 2 -->
+
+    <article class="news-card">
+
+        <a href="haber.html?id=2">
+
+            <div class="news-card-image">
+
+                <img
+                    src="images/haber-2.jpg"
+                    alt="Operasyon"
+                >
+
+            </div>
+
+            <div class="news-card-content">
+
+                <span class="news-category">
+                    Gündem
+                </span>
+
+                <h3>
+                    Yeni nesil suç örgütlerine yönelik operasyon
+                </h3>
+
+                <p>
+                    Güvenlik güçlerinin operasyonlarında çok sayıda şüpheli yakalandı.
+                </p>
+
+                <time>
+                    5 Eylül 2026
+                </time>
+
+            </div>
+
+        </a>
+
+    </article>
+
+
+    <!-- HABER 3 -->
+
+    <article class="news-card">
+
+        <a href="haber.html?id=3">
+
+            <div class="news-card-image">
+
+                <img
+                    src="images/haber-3.jpg"
+                    alt="Altın"
+                >
+
+            </div>
+
+            <div class="news-card-content">
+
+                <span class="news-category">
+                    Ekonomi
+                </span>
+
+                <h3>
+                    Altının kilogram fiyatında yeni hareketlilik
+                </h3>
+
+                <p>
+                    Altın piyasasında yatırımcıların takip ettiği hareketlilik sürüyor.
+                </p>
+
+                <time>
+                    5 Eylül 2026
+                </time>
+
+            </div>
+
+        </a>
+
+    </article>
+
+
+    <!-- HABER 4 -->
+
+    <article class="news-card">
+
+        <a href="haber.html?id=4">
+
+            <div class="news-card-image">
+
+                <img
+                    src="images/haber-4.jpg"
+                    alt="Teknoloji"
+                >
+
+            </div>
+
+            <div class="news-card-content">
+
+                <span class="news-category">
+                    Teknoloji
+                </span>
+
+                <h3>
+                    Türkiye'nin teknoloji merkezi hedefi
+                </h3>
+
+                <p>
+                    Yüksek teknoloji yatırımları ve inovasyon gündemde.
+                </p>
+
+                <time>
+                    5 Eylül 2026
+                </time>
+
+            </div>
+
+        </a>
+
+    </article>
+
+
+    <!-- HABER 5 -->
+
+    <article class="news-card">
+
+        <a href="haber.html?id=5">
+
+            <div class="news-card-image">
+
+                <img
+                    src="images/haber-5.jpg"
+                    alt="Filenin Sultanları"
+                >
+
+            </div>
+
+            <div class="news-card-content">
+
+                <span class="news-category">
+                    Spor
+                </span>
+
+                <h3>
+                    Filenin Sultanları yarı finalde!
+                </h3>
+
+                <p>
+                    Milliler Almanya'yı 3-1 yenerek yarı finale yükseldi.
+                </p>
+
+                <time>
+                    5 Eylül 2026
+                </time>
+
+            </div>
+
+        </a>
+
+    </article>
+
+
+</div>
+```
+
+</div>
+
+<!-- =====================================================
+     ÇOK OKUNANLAR
+===================================================== -->
+
+<aside class="popular-news">
+
+```
+<div class="section-heading">
+
+    <div>
+
+        <span class="heading-line"></span>
+
+        <h2>Öne Çıkanlar</h2>
+
+    </div>
+
+</div>
+
+
+<div class="popular-list">
+
+
+    <a href="haber.html?id=5" class="popular-item">
+
+        <strong>01</strong>
+
+        <div>
+
+            <span>Spor</span>
+
+            <h3>
+                Filenin Sultanları yarı finalde
+            </h3>
+
+        </div>
+
+    </a>
+
+
+    <a href="haber.html?id=3" class="popular-item">
+
+        <strong>02</strong>
+
+        <div>
+
+            <span>Ekonomi</span>
+
+            <h3>
+                Altın piyasasında hareketlilik
+            </h3>
+
+        </div>
+
+    </a>
+
+
+    <a href="haber.html?id=2" class="popular-item">
+
+        <strong>03</strong>
+
+        <div>
+
+            <span>Gündem</span>
+
+            <h3>
+                Suç örgütlerine yönelik operasyon
+            </h3>
+
+        </div>
+
+    </a>
+
+
+    <a href="haber.html?id=4" class="popular-item">
+
+        <strong>04</strong>
+
+        <div>
+
+            <span>Teknoloji</span>
+
+            <h3>
+                Türkiye'nin teknoloji hedefi
+            </h3>
+
+        </div>
+
+    </a>
+
+
+    <a href="haber.html?id=1" class="popular-item">
+
+        <strong>05</strong>
+
+        <div>
+
+            <span>Gündem</span>
+
+            <h3>
+                Öğretmen önlüğü standartları
+            </h3>
+
+        </div>
+
+    </a>
+
+
+</div>
+```
+
+</aside>
+
+</section>
+
+<!-- =====================================================
+     KATEGORİLER
+===================================================== -->
+
+<section class="category-section">
+
+```
+<div class="section-heading">
+
+    <div>
+
+        <span class="heading-line"></span>
+
+        <h2>Kategorilerden Haberler</h2>
+
+    </div>
+
+</div>
+
+
+<div class="category-grid">
+
+
+    <!-- GÜNDEM -->
+
+    <div class="category-box">
+
+        <div class="category-header">
+
+            <h2>Gündem</h2>
+
+            <a href="kategori.html?kategori=gundem">
+                Tümü →
+            </a>
+
         </div>
 
 
-        <form class="newsletter-form" id="newsletterForm">
+        <a href="haber.html?id=1" class="category-main">
 
-            <input
-                type="email"
-                placeholder="E-posta adresiniz"
-                required
+            <img
+                src="images/haber-1.jpg"
+                alt="Öğretmen önlüğü"
             >
 
-            <button type="submit">
-                Abone Ol
-            </button>
+            <h3>
+                Öğretmenlerin önlük kullanımında yeni dönem
+            </h3>
 
-        </form>
+        </a>
 
-    </section>
+
+        <a href="haber.html?id=2" class="category-small">
+            Yeni nesil suç örgütlerine yönelik operasyon
+        </a>
+
+    </div>
+
+
+    <!-- EKONOMİ -->
+
+    <div class="category-box">
+
+        <div class="category-header">
+
+            <h2>Ekonomi</h2>
+
+            <a href="kategori.html?kategori=ekonomi">
+                Tümü →
+            </a>
+
+        </div>
+
+
+        <a href="haber.html?id=3" class="category-main">
+
+            <img
+                src="images/haber-3.jpg"
+                alt="Altın"
+            >
+
+            <h3>
+                Altının kilogram fiyatında yeni hareketlilik
+            </h3>
+
+        </a>
+
+    </div>
+
+
+    <!-- TEKNOLOJİ -->
+
+    <div class="category-box">
+
+        <div class="category-header">
+
+            <h2>Teknoloji</h2>
+
+            <a href="kategori.html?kategori=teknoloji">
+                Tümü →
+            </a>
+
+        </div>
+
+
+        <a href="haber.html?id=4" class="category-main">
+
+            <img
+                src="images/haber-4.jpg"
+                alt="Türkiye teknoloji hedefi"
+            >
+
+            <h3>
+                Türkiye'nin teknoloji merkezi hedefi
+            </h3>
+
+        </a>
+
+    </div>
+
+
+    <!-- SPOR -->
+
+    <div class="category-box">
+
+        <div class="category-header">
+
+            <h2>Spor</h2>
+
+            <a href="kategori.html?kategori=spor">
+                Tümü →
+            </a>
+
+        </div>
+
+
+        <a href="haber.html?id=5" class="category-main">
+
+            <img
+                src="images/haber-5.jpg"
+                alt="Filenin Sultanları"
+            >
+
+            <h3>
+                Filenin Sultanları yarı finale yükseldi
+            </h3>
+
+        </a>
+
+    </div>
+
+
+</div>
+```
+
+</section>
+
+<!-- =====================================================
+     BÜLTEN
+===================================================== -->
+
+<section class="newsletter">
+
+```
+<div class="newsletter-content">
+
+    <span class="newsletter-icon">
+        ✉
+    </span>
+
+    <div>
+
+        <h2>
+            Gündemi kaçırma
+        </h2>
+
+        <p>
+            Önemli haberleri ve son dakika gelişmelerini takip et.
+        </p>
+
+    </div>
+
+</div>
+
+
+<form
+    class="newsletter-form"
+    id="newsletterForm"
+>
+
+    <input
+        type="email"
+        id="newsletterEmail"
+        placeholder="E-posta adresiniz"
+        required
+    >
+
+    <button type="submit">
+        Abone Ol
+    </button>
+
+</form>
+```
+
+</section>
 
 </main>
-
 
 <!-- =====================================================
      FOOTER
@@ -947,136 +1317,650 @@
 
 <footer class="footer">
 
-    <div class="container footer-grid">
+```
+<div class="container footer-grid">
 
 
-        <div class="footer-brand">
+    <div class="footer-brand">
 
-            <a href="index.html" class="logo footer-logo">
-                <span class="logo-main">HABER</span><span class="logo-accent">İSTA</span>
-            </a>
+        <a
+            href="index.html"
+            class="logo footer-logo"
+        >
 
-            <p>
-                Türkiye ve dünyadan son dakika haberleri,
-                gündem, ekonomi, spor, teknoloji ve daha fazlası.
-            </p>
-
-            <div class="social-links">
-
-                <a href="#" aria-label="X">
-                    X
-                </a>
-
-                <a href="#" aria-label="Instagram">
-                    ◎
-                </a>
-
-                <a href="#" aria-label="YouTube">
-                    ▶
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <div class="footer-column">
-
-            <h3>Kategoriler</h3>
-
-            <a href="kategori.html?kategori=gundem">Gündem</a>
-            <a href="kategori.html?kategori=ekonomi">Ekonomi</a>
-            <a href="kategori.html?kategori=spor">Spor</a>
-            <a href="kategori.html?kategori=magazin">Magazin</a>
-
-        </div>
-
-
-        <div class="footer-column">
-
-            <h3>Diğer</h3>
-
-            <a href="#">Hakkımızda</a>
-            <a href="#">İletişim</a>
-            <a href="#">Künye</a>
-            <a href="#">Reklam</a>
-
-        </div>
-
-
-        <div class="footer-column">
-
-            <h3>Yasal</h3>
-
-            <a href="#">Gizlilik Politikası</a>
-            <a href="#">Çerez Politikası</a>
-            <a href="#">Kullanım Koşulları</a>
-            <a href="#">KVKK</a>
-
-        </div>
-
-    </div>
-
-
-    <div class="footer-bottom">
-
-        <div class="container footer-bottom-inner">
-
-            <span>
-                © 2026 HABERİSTA. Tüm hakları saklıdır.
+            <span class="logo-main">
+                HABER
             </span>
 
-            <span>
-                Bağımsız Haber Platformu
+            <span class="logo-accent">
+                İSTA
             </span>
 
-        </div>
+        </a>
 
-    </div>
-
-</footer>
-
-
-<!-- =====================================================
-     COOKIE BANNER
-===================================================== -->
-
-<div class="cookie-banner" id="cookieBanner">
-
-    <div class="cookie-content">
-
-        <strong>
-            🍪 Çerez Kullanımı
-        </strong>
 
         <p>
-            HABERİSTA, deneyiminizi iyileştirmek ve sitenin düzgün
-            çalışmasını sağlamak için çerezler kullanabilir.
+            Türkiye ve dünyadan güncel haberler,
+            gündem, ekonomi, spor ve teknoloji.
         </p>
+
+
+        <div class="social-links">
+
+            <a
+                href="https://x.com/"
+                target="_blank"
+                rel="noopener"
+                aria-label="X"
+            >
+                X
+            </a>
+
+            <a
+                href="https://www.instagram.com/"
+                target="_blank"
+                rel="noopener"
+                aria-label="Instagram"
+            >
+                ◎
+            </a>
+
+            <a
+                href="https://www.youtube.com/"
+                target="_blank"
+                rel="noopener"
+                aria-label="YouTube"
+            >
+                ▶
+            </a>
+
+        </div>
 
     </div>
 
-    <div class="cookie-actions">
 
-        <button id="cookieSettings">
-            Ayarlar
-        </button>
+    <div class="footer-column">
 
-        <button class="cookie-accept" id="cookieAccept">
-            Kabul Et
-        </button>
+        <h3>Kategoriler</h3>
+
+        <a href="kategori.html?kategori=gundem">
+            Gündem
+        </a>
+
+        <a href="kategori.html?kategori=ekonomi">
+            Ekonomi
+        </a>
+
+        <a href="kategori.html?kategori=spor">
+            Spor
+        </a>
+
+        <a href="kategori.html?kategori=teknoloji">
+            Teknoloji
+        </a>
+
+    </div>
+
+
+    <div class="footer-column">
+
+        <h3>HABERİSTA</h3>
+
+        <a href="hakkimizda.html">
+            Hakkımızda
+        </a>
+
+        <a href="iletisim.html">
+            İletişim
+        </a>
+
+        <a href="kunye.html">
+            Künye
+        </a>
+
+    </div>
+
+
+    <div class="footer-column">
+
+        <h3>Yasal</h3>
+
+        <a href="gizlilik.html">
+            Gizlilik Politikası
+        </a>
+
+        <a href="cerez.html">
+            Çerez Politikası
+        </a>
+
+        <a href="kullanim.html">
+            Kullanım Koşulları
+        </a>
+
+        <a href="kvkk.html">
+            KVKK
+        </a>
+
+    </div>
+
+
+</div>
+
+
+<div class="footer-bottom">
+
+    <div class="container footer-bottom-inner">
+
+        <span>
+            © 2026 HABERİSTA. Tüm hakları saklıdır.
+        </span>
+
+        <span>
+            Bağımsız Haber Platformu
+        </span>
 
     </div>
 
 </div>
+```
 
+</footer>
+
+<!-- =====================================================
+     ÇEREZ
+===================================================== -->
+
+<div
+    class="cookie-banner"
+    id="cookieBanner"
+>
+
+```
+<div class="cookie-content">
+
+    <strong>
+        🍪 Çerez Kullanımı
+    </strong>
+
+    <p>
+        HABERİSTA, site deneyimini iyileştirmek için
+        gerekli çerezleri kullanabilir.
+    </p>
+
+</div>
+
+
+<div class="cookie-actions">
+
+    <button
+        id="cookieSettings"
+        type="button"
+    >
+        Ayarlar
+    </button>
+
+    <button
+        class="cookie-accept"
+        id="cookieAccept"
+        type="button"
+    >
+        Kabul Et
+    </button>
+
+</div>
+```
+
+</div>
 
 <!-- =====================================================
      JAVASCRIPT
 ===================================================== -->
 
-<script src="js/haberler.js"></script>
-<script src="js/app.js"></script>
+<script>
+
+/* =====================================================
+   HABER VERİLERİ
+===================================================== */
+
+const haberler = [
+
+    {
+        id:1,
+        kategori:"Gündem",
+        slug:"gundem",
+        baslik:"Öğretmenlerin önlük kullanımında yeni dönem: Standartlar netleşiyor",
+        spot:"Okullarda öğretmenlerin kullanacağı önlüklerle ilgili standartların belirlenmesine yönelik çalışmalar gündemde.",
+        gorsel:"images/haber-1.jpg"
+    },
+
+    {
+        id:2,
+        kategori:"Gündem",
+        slug:"gundem",
+        baslik:"Yeni nesil suç örgütlerine yönelik operasyon: Çok sayıda şüpheli yakalandı",
+        spot:"Güvenlik güçleri tarafından suç örgütlerine yönelik yürütülen operasyonlarda çok sayıda şüpheli gözaltına alındı.",
+        gorsel:"images/haber-2.jpg"
+    },
+
+    {
+        id:3,
+        kategori:"Ekonomi",
+        slug:"ekonomi",
+        baslik:"Altının kilogram fiyatında yeni hareketlilik",
+        spot:"Borsa İstanbul Kıymetli Madenler ve Kıymetli Taşlar Piyasası'nda altın fiyatları yatırımcıların odağında.",
+        gorsel:"images/haber-3.jpg"
+    },
+
+    {
+        id:4,
+        kategori:"Teknoloji",
+        slug:"teknoloji",
+        baslik:"Türkiye'nin teknoloji merkezi hedefi: Yeni yatırımlar gündemde",
+        spot:"Türkiye'nin teknoloji ve inovasyon kapasitesini artırmaya yönelik çalışmalar hız kazanıyor.",
+        gorsel:"images/haber-4.jpg"
+    },
+
+    {
+        id:5,
+        kategori:"Spor",
+        slug:"spor",
+        baslik:"Filenin Sultanları yarı finalde! Almanya karşısında 3-1'lik galibiyet",
+        spot:"A Milli Kadın Voleybol Takımı, Almanya'yı 3-1 mağlup ederek turnuvada yarı finale yükseldi.",
+        gorsel:"images/haber-5.jpg"
+    }
+
+];
+
+
+/* =====================================================
+   TARİH
+===================================================== */
+
+document.getElementById("currentDate").textContent =
+    new Intl.DateTimeFormat(
+        "tr-TR",
+        {
+            weekday:"long",
+            day:"numeric",
+            month:"long",
+            year:"numeric"
+        }
+    ).format(new Date());
+
+
+/* =====================================================
+   SON DAKİKA BANDI
+===================================================== */
+
+const breakingNews =
+    document.getElementById("breakingNews");
+
+let breakingIndex = 0;
+
+function showBreaking(){
+
+    const haber =
+        haberler[breakingIndex];
+
+    breakingNews.innerHTML = `
+        <a href="haber.html?id=${haber.id}">
+            ${haber.baslik}
+        </a>
+    `;
+
+    breakingIndex++;
+
+    if(breakingIndex >= haberler.length){
+        breakingIndex = 0;
+    }
+
+}
+
+showBreaking();
+
+setInterval(showBreaking,5000);
+
+
+/* =====================================================
+   ARAMA
+===================================================== */
+
+const searchInput =
+    document.getElementById("searchInput");
+
+const searchButton =
+    document.getElementById("searchButton");
+
+const searchResults =
+    document.getElementById("searchResults");
+
+const searchResultsList =
+    document.getElementById("searchResultsList");
+
+
+function performSearch(){
+
+    const query =
+        searchInput.value
+        .trim()
+        .toLocaleLowerCase("tr-TR");
+
+
+    if(!query){
+
+        searchResults.classList.remove("active");
+
+        searchResultsList.innerHTML="";
+
+        return;
+    }
+
+
+    const results =
+        haberler.filter(haber =>
+
+            (
+                haber.baslik +
+                " " +
+                haber.spot +
+                " " +
+                haber.kategori
+            )
+            .toLocaleLowerCase("tr-TR")
+            .includes(query)
+
+        );
+
+
+    searchResults.classList.add("active");
+
+
+    if(results.length === 0){
+
+        searchResultsList.innerHTML = `
+            <p>
+                <strong>${query}</strong>
+                için haber bulunamadı.
+            </p>
+        `;
+
+        searchResults.scrollIntoView({
+            behavior:"smooth",
+            block:"start"
+        });
+
+        return;
+    }
+
+
+    searchResultsList.innerHTML =
+        results.map(haber => `
+
+            <a
+                class="search-result"
+                href="haber.html?id=${haber.id}"
+            >
+
+                <img
+                    src="${haber.gorsel}"
+                    alt="${haber.baslik}"
+                >
+
+                <div>
+
+                    <span>
+                        ${haber.kategori}
+                    </span>
+
+                    <h3>
+                        ${haber.baslik}
+                    </h3>
+
+                    <small>
+                        Haberi oku →
+                    </small>
+
+                </div>
+
+            </a>
+
+        `).join("");
+
+
+    searchResults.scrollIntoView({
+        behavior:"smooth",
+        block:"start"
+    });
+
+}
+
+
+searchButton.addEventListener(
+    "click",
+    performSearch
+);
+
+
+searchInput.addEventListener(
+    "keydown",
+    function(event){
+
+        if(event.key === "Enter"){
+
+            event.preventDefault();
+
+            performSearch();
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   KARANLIK MOD
+===================================================== */
+
+const darkModeButton =
+    document.getElementById("darkModeButton");
+
+
+if(localStorage.getItem("haberista-theme") === "dark"){
+
+    document.body.classList.add("dark-mode");
+
+    darkModeButton.textContent = "☀️";
+
+}
+
+
+darkModeButton.addEventListener(
+    "click",
+    function(){
+
+        document.body.classList.toggle("dark-mode");
+
+        const dark =
+            document.body.classList.contains("dark-mode");
+
+
+        localStorage.setItem(
+            "haberista-theme",
+            dark ? "dark" : "light"
+        );
+
+
+        darkModeButton.textContent =
+            dark ? "☀️" : "🌙";
+
+    }
+);
+
+
+/* =====================================================
+   MOBİL MENÜ
+===================================================== */
+
+const menuButton =
+    document.getElementById("menuButton");
+
+const mobileMenu =
+    document.getElementById("mobileMenu");
+
+const closeMenu =
+    document.getElementById("closeMenu");
+
+
+menuButton.addEventListener(
+    "click",
+    function(){
+
+        mobileMenu.classList.add("open");
+
+    }
+);
+
+
+closeMenu.addEventListener(
+    "click",
+    function(){
+
+        mobileMenu.classList.remove("open");
+
+    }
+);
+
+
+/* Menü linkine basınca kapat */
+
+mobileMenu
+    .querySelectorAll("a")
+    .forEach(link => {
+
+        link.addEventListener(
+            "click",
+            function(){
+
+                mobileMenu.classList.remove("open");
+
+            }
+        );
+
+    });
+
+
+/* =====================================================
+   ÇEREZ
+===================================================== */
+
+const cookieBanner =
+    document.getElementById("cookieBanner");
+
+const cookieAccept =
+    document.getElementById("cookieAccept");
+
+const cookieSettings =
+    document.getElementById("cookieSettings");
+
+
+if(localStorage.getItem("haberista-cookie") === "accepted"){
+
+    cookieBanner.style.display = "none";
+
+}
+
+
+cookieAccept.addEventListener(
+    "click",
+    function(){
+
+        localStorage.setItem(
+            "haberista-cookie",
+            "accepted"
+        );
+
+        cookieBanner.style.display = "none";
+
+    }
+);
+
+
+cookieSettings.addEventListener(
+    "click",
+    function(){
+
+        alert(
+            "Çerez ayarları: Gerekli çerezler site deneyiminin çalışması için kullanılabilir."
+        );
+
+    }
+);
+
+
+/* =====================================================
+   BÜLTEN
+===================================================== */
+
+const newsletterForm =
+    document.getElementById("newsletterForm");
+
+
+newsletterForm.addEventListener(
+    "submit",
+    function(event){
+
+        event.preventDefault();
+
+
+        const email =
+            document
+            .getElementById("newsletterEmail")
+            .value
+            .trim();
+
+
+        if(!email){
+
+            return;
+
+        }
+
+
+        localStorage.setItem(
+            "haberista-newsletter",
+            email
+        );
+
+
+        alert(
+            "Bülten aboneliğiniz başarıyla alındı."
+        );
+
+
+        newsletterForm.reset();
+
+    }
+);
+
+
+/* =====================================================
+   PİYASA
+===================================================== */
+
+document.getElementById("dolarValue").textContent =
+    "—";
+
+document.getElementById("euroValue").textContent =
+    "—";
+
+document.getElementById("goldValue").textContent =
+    "—";
+
+document.getElementById("bistValue").textContent =
+    "—";
+
+
+</script>
 
 </body>
 </html>
