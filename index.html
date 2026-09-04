@@ -1,500 +1,220 @@
-
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<meta name="description" content="HABERİSTA - Güncel haberler, son dakika gelişmeleri ve gündem.">
-<title>HABERİSTA | Güncel Haberler</title>
-<link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="HABERİSTA - Türkiye ve dünyadan son dakika haberleri.">
+    <meta name="theme-color" content="#e21b2d">
+
+    <title>HABERİSTA | Son Dakika Haberleri</title>
+
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-<div class="breaking">
-    <div class="breaking-inner">
-        <strong>🔴 SON DAKİKA</strong>
-        <div id="breakingText">HABERİSTA son dakika gelişmelerini takip ediyor.</div>
-    </div>
-</div>
+    <!-- ================= HEADER ================= -->
 
-<header class="header">
-    <div class="header-inner">
+    <header class="site-header">
 
-        <button class="mobile-menu" onclick="toggleMenu()">☰</button>
-
-        <a class="logo" href="index.html">
-            HABER<span>İSTA</span>
-        </a>
-
-        <nav id="mainNav">
-            <a href="index.html">Ana Sayfa</a>
-            <a href="#sonhaberler">Son Haberler</a>
-            <a href="#kategoriler">Kategoriler</a>
-        </nav>
-
-        <div class="header-actions">
-            <button onclick="toggleTheme()" title="Tema değiştir">◐</button>
-            <button onclick="focusSearch()" title="Ara">⌕</button>
+        <div class="topbar">
+            <div class="container topbar-inner">
+                <span>4 Eylül 2026</span>
+                <span id="clock">--:--:--</span>
+            </div>
         </div>
 
-    </div>
-</header>
+        <div class="container header-main">
 
-<main>
+            <a href="index.html" class="logo">
+                HABER<span>İ</span>STA
+            </a>
 
-<section class="container hero-section">
+            <button
+                class="menu-btn"
+                id="menuBtn"
+                aria-label="Menüyü aç">
+                ☰
+            </button>
 
-    <div class="section-heading">
-        <div>
-            <span class="eyebrow">GÜNDEM</span>
-            <h1>Günün Öne Çıkanları</h1>
-        </div>
-        <span id="currentDate"></span>
-    </div>
+            <nav id="mainNav">
 
-    <div id="heroArea" class="hero-grid"></div>
+                <a href="index.html" class="active">
+                    Ana Sayfa
+                </a>
 
-</section>
+                <a href="kategori.html?kategori=gundem">
+                    Gündem
+                </a>
 
+                <a href="kategori.html?kategori=turkiye">
+                    Türkiye
+                </a>
 
-<section class="container categories" id="kategoriler">
+                <a href="kategori.html?kategori=dunya">
+                    Dünya
+                </a>
 
-    <div class="section-heading">
-        <div>
-            <span class="eyebrow">KEŞFET</span>
-            <h2>Kategoriler</h2>
-        </div>
-    </div>
+                <a href="kategori.html?kategori=ekonomi">
+                    Ekonomi
+                </a>
 
-    <div class="category-list">
+                <a href="kategori.html?kategori=spor">
+                    Spor
+                </a>
 
-        <button data-category="Tümü">Tümü</button>
-        <button data-category="Gündem">Gündem</button>
-        <button data-category="Dünya">Dünya</button>
-        <button data-category="Spor">Spor</button>
-        <button data-category="Teknoloji">Teknoloji</button>
-        <button data-category="Ekonomi">Ekonomi</button>
-        <button data-category="Kültür">Kültür</button>
+                <a href="kategori.html?kategori=teknoloji">
+                    Teknoloji
+                </a>
 
-    </div>
+            </nav>
 
-</section>
+            <button
+                class="theme-btn"
+                id="themeBtn"
+                aria-label="Tema değiştir">
+                ☾
+            </button>
 
-
-<section class="container news-section" id="sonhaberler">
-
-    <div class="section-heading">
-        <div>
-            <span class="eyebrow">HABERLER</span>
-            <h2>Son Haberler</h2>
-        </div>
-
-        <div class="search-box">
-            <span>⌕</span>
-            <input
-                id="searchInput"
-                type="search"
-                placeholder="Haber ara..."
-            >
-        </div>
-    </div>
-
-    <div id="newsGrid" class="news-grid"></div>
-
-</section>
-
-</main>
-
-
-<footer>
-
-<div class="footer-main container">
-
-    <div class="footer-brand">
-        <div class="logo">
-            HABER<span>İSTA</span>
         </div>
 
-        <p>
-            Türkiye ve dünyadan güncel gelişmeleri
-            takip edebileceğiniz modern haber platformu.
-        </p>
-    </div>
+    </header>
 
-    <div class="footer-column">
-        <h3>HABERİSTA</h3>
-        <a href="hakkimizda.html">Hakkımızda</a>
-        <a href="iletisim.html">İletişim</a>
-    </div>
 
-    <div class="footer-column">
-        <h3>YASAL</h3>
-        <a href="gizlilik-politikasi.html">Gizlilik Politikası</a>
-        <a href="cerez-politikasi.html">Çerez Politikası</a>
-        <a href="kvkk.html">KVKK</a>
-        <a href="kullanim-kosullari.html">Kullanım Koşulları</a>
-    </div>
+    <!-- ================= SON DAKİKA ================= -->
 
-</div>
+    <div class="breaking">
 
-<div class="footer-bottom">
-    © 2026 HABERİSTA. Tüm hakları saklıdır.
-</div>
+        <div class="container breaking-inner">
 
-</footer>
+            <strong>
+                SON DAKİKA
+            </strong>
 
-
-<!-- ÇEREZ BANNER -->
-
-<div id="cookieBanner" class="cookie-banner">
-
-    <div>
-        <strong>🍪 Çerez Tercihleriniz</strong>
-
-        <p>
-            HABERİSTA, sitenin çalışmasını sağlamak ve
-            deneyimi geliştirmek için çerezler kullanabilir.
-        </p>
-    </div>
-
-    <div class="cookie-buttons">
-        <button onclick="acceptCookies()" class="primary">
-            Tümünü Kabul Et
-        </button>
-
-        <button onclick="rejectCookies()">
-            Tümünü Reddet
-        </button>
-
-        <button onclick="openCookieSettings()">
-            Tercihler
-        </button>
-    </div>
-
-</div>
-
-
-<!-- ÇEREZ AYARLARI -->
-
-<div id="cookieModal" class="overlay">
-
-    <div class="cookie-modal">
-
-        <button
-            class="modal-close"
-            onclick="closeCookieSettings()">
-            ×
-        </button>
-
-        <h2>Çerez Tercihleri</h2>
-
-        <p>
-            Hangi çerez kategorilerine izin vereceğinizi
-            seçebilirsiniz.
-        </p>
-
-        <label class="cookie-option">
-            <span>
-                <strong>Zorunlu Çerezler</strong>
-                <small>
-                    Sitenin çalışması için gereklidir.
-                </small>
-            </span>
-
-            <input type="checkbox" checked disabled>
-        </label>
-
-        <label class="cookie-option">
-            <span>
-                <strong>Analitik Çerezler</strong>
-                <small>
-                    Site kullanımını anlamamıza yardımcı olur.
-                </small>
-            </span>
-
-            <input
-                id="analyticsCookies"
-                type="checkbox"
-            >
-        </label>
-
-        <label class="cookie-option">
-            <span>
-                <strong>Tercih Çerezleri</strong>
-                <small>
-                    Site tercihlerinizi hatırlamak için kullanılır.
-                </small>
-            </span>
-
-            <input
-                id="preferenceCookies"
-                type="checkbox"
-            >
-        </label>
-
-        <button
-            class="save-cookie"
-            onclick="saveCookieSettings()">
-
-            Tercihlerimi Kaydet
-
-        </button>
-
-    </div>
-
-</div>
-
-
-<button id="topButton" onclick="scrollTopPage()">↑</button>
-
-<script src="HABERLER/haberler.js"></script>
-<script src="js/site.js"></script>
-
-<script>
-
-let activeCategory = "Tümü";
-let searchText = "";
-
-function getNews(){
-    return typeof haberler !== "undefined"
-        ? haberler
-        : [];
-}
-
-
-function openNews(id){
-    window.location.href = "haber.html?id=" + id;
-}
-
-
-function render(){
-
-    let list = [...getNews()];
-
-    if(activeCategory !== "Tümü"){
-        list = list.filter(
-            h => h.kategori === activeCategory
-        );
-    }
-
-    if(searchText.trim()){
-
-        const q =
-            searchText.toLocaleLowerCase("tr-TR");
-
-        list = list.filter(h =>
-            h.baslik
-                .toLocaleLowerCase("tr-TR")
-                .includes(q)
-            ||
-            h.aciklama
-                .toLocaleLowerCase("tr-TR")
-                .includes(q)
-        );
-    }
-
-    renderHero(list);
-    renderGrid(list);
-}
-
-
-function renderHero(list){
-
-    const area =
-        document.getElementById("heroArea");
-
-    if(!list.length){
-
-        area.innerHTML =
-            `<div class="empty">Haber bulunamadı.</div>`;
-
-        return;
-    }
-
-    const main = list[0];
-
-    const side = list.slice(1,4);
-
-    area.innerHTML = `
-
-        <article
-            class="main-story"
-            onclick="openNews(${main.id})">
-
-            <img src="${main.gorsel}" alt="${main.baslik}">
-
-            <div class="story-overlay">
-
-                <span class="tag">
-                    ${main.kategori}
-                </span>
-
-                <h2>
-                    ${main.baslik}
-                </h2>
-
-                <p>
-                    ${main.aciklama}
-                </p>
-
-                <span class="story-date">
-                    ${main.tarih}
-                </span>
-
+            <div class="breaking-text">
+                HABERİSTA ile gündemin nabzını takip edin.
             </div>
 
-        </article>
-
-        <div class="side-stories">
-
-            ${side.map(h => `
-
-                <article
-                    class="side-story"
-                    onclick="openNews(${h.id})">
-
-                    <img
-                        src="${h.gorsel}"
-                        alt="${h.baslik}">
-
-                    <div>
-
-                        <span class="mini-tag">
-                            ${h.kategori}
-                        </span>
-
-                        <h3>
-                            ${h.baslik}
-                        </h3>
-
-                        <small>
-                            ${h.tarih}
-                        </small>
-
-                    </div>
-
-                </article>
-
-            `).join("")}
-
         </div>
-    `;
-}
+
+    </div>
 
 
-function renderGrid(list){
+    <!-- ================= MAIN ================= -->
 
-    const grid =
-        document.getElementById("newsGrid");
+    <main class="container">
 
-    if(!list.length){
 
-        grid.innerHTML = `
-            <div class="empty">
-                <h3>Haber bulunamadı</h3>
-                <p>Farklı bir arama deneyin.</p>
-            </div>
-        `;
+        <!-- ================= ÖNE ÇIKAN ================= -->
 
-        return;
-    }
+        <section class="hero">
 
-    grid.innerHTML = list.map(h => `
+            <div class="section-head">
 
-        <article
-            class="news-card"
-            onclick="openNews(${h.id})">
-
-            <div class="card-image">
-
-                <img
-                    src="${h.gorsel}"
-                    alt="${h.baslik}">
+                <h1>
+                    Günün Öne Çıkan Haberleri
+                </h1>
 
                 <span>
-                    ${h.kategori}
+                    HABERİSTA
                 </span>
 
             </div>
 
-            <div class="card-content">
 
-                <h3>
-                    ${h.baslik}
-                </h3>
+            <div
+                id="featuredNews"
+                class="featured-grid">
+            </div>
 
-                <p>
-                    ${h.aciklama}
-                </p>
+        </section>
 
-                <div class="card-meta">
-                    <span>${h.tarih}</span>
-                    <span>→</span>
-                </div>
+
+
+        <!-- ================= SON HABERLER ================= -->
+
+        <section class="latest">
+
+            <div class="section-head">
+
+                <h2>
+                    Son Haberler
+                </h2>
+
+                <a href="kategori.html?kategori=gundem">
+                    Tümünü Gör →
+                </a>
 
             </div>
 
-        </article>
 
-    `).join("");
-}
+            <div
+                id="newsGrid"
+                class="news-grid">
+            </div>
 
+        </section>
 
-document
-.getElementById("searchInput")
-.addEventListener("input", e => {
-
-    searchText = e.target.value;
-
-    render();
-
-});
+    </main>
 
 
-document
-.querySelectorAll(".category-list button")
-.forEach(button => {
 
-    button.addEventListener("click", () => {
+    <!-- ================= FOOTER ================= -->
 
-        document
-        .querySelectorAll(".category-list button")
-        .forEach(b => b.classList.remove("active"));
+    <footer>
 
-        button.classList.add("active");
-
-        activeCategory =
-            button.dataset.category;
-
-        render();
-
-    });
-
-});
+        <div class="container footer-inner">
 
 
-document.getElementById("currentDate").textContent =
-    new Date().toLocaleDateString(
-        "tr-TR",
-        {
-            day:"numeric",
-            month:"long",
-            year:"numeric"
-        }
-    );
+            <div>
+
+                <div class="logo">
+                    HABER<span>İ</span>STA
+                </div>
+
+                <p>
+                    Gündemin güvenilir ve hızlı adresi.
+                </p>
+
+            </div>
 
 
-if(getNews().length){
+            <div class="footer-links">
 
-    document.getElementById("breakingText").textContent =
-        getNews()[0].baslik;
+                <a href="hakkimizda.html">
+                    Hakkımızda
+                </a>
 
-}
+                <a href="iletisim.html">
+                    İletişim
+                </a>
 
-render();
+                <a href="gizlilik.html">
+                    Gizlilik
+                </a>
 
-</script>
+            </div>
+
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 HABERİSTA.
+            Tüm hakları saklıdır.
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="js/haberler.js"></script>
+    <script src="js/app.js"></script>
 
 </body>
 </html>
