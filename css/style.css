@@ -1,24 +1,22 @@
 /* =========================================================
-   HABERİSTA - PREMIUM HABER TASARIMI
+   HABERİSTA
    ========================================================= */
 
 :root {
     --red: #e50914;
-    --red-dark: #c9000a;
+    --red-dark: #c7000b;
     --black: #111;
-    --dark: #171717;
     --text: #171717;
-    --muted: #777;
-    --border: #e5e5e5;
+    --gray: #777;
+    --line: #e5e5e5;
     --bg: #fff;
-    --soft: #f5f5f5;
     --container: 1180px;
 }
 
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 html {
@@ -26,18 +24,9 @@ html {
 }
 
 body {
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
     background: #fff;
     color: var(--text);
-    line-height: 1.5;
-}
-
-img {
-    display: block;
-    max-width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 a {
@@ -47,12 +36,12 @@ a {
 
 button,
 input {
-    font: inherit;
+    font-family: inherit;
 }
 
 .container {
-    width: min(var(--container), calc(100% - 32px));
-    margin: 0 auto;
+    width: min(var(--container), calc(100% - 36px));
+    margin: auto;
 }
 
 /* =========================================================
@@ -68,21 +57,20 @@ input {
 }
 
 .main-header {
-    background: #fff;
+    height: 72px;
 }
 
 .header-inner {
-    min-height: 76px;
+    height: 72px;
     display: flex;
     align-items: center;
     gap: 25px;
 }
 
 .logo {
-    font-size: 31px;
+    font-size: 30px;
     font-weight: 900;
     letter-spacing: -1.5px;
-    white-space: nowrap;
 }
 
 .logo span {
@@ -91,46 +79,38 @@ input {
 
 .menu-btn {
     display: none;
-    width: 42px;
-    height: 42px;
     border: 0;
     background: #f3f3f3;
-    border-radius: 8px;
+    width: 42px;
+    height: 42px;
+    border-radius: 5px;
     cursor: pointer;
     font-size: 22px;
 }
 
 .search-box {
     margin-left: auto;
-    width: 330px;
-    height: 42px;
+    width: 310px;
+    height: 40px;
     display: flex;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 4px;
     overflow: hidden;
-    background: #fff;
 }
 
 .search-box input {
     flex: 1;
-    min-width: 0;
     border: 0;
     outline: 0;
-    padding: 0 14px;
-    font-size: 14px;
+    padding: 0 13px;
 }
 
 .search-box button {
     width: 48px;
     border: 0;
     background: var(--red);
-    color: white;
+    color: #fff;
     cursor: pointer;
-    transition: .2s;
-}
-
-.search-box button:hover {
-    background: var(--red-dark);
 }
 
 /* =========================================================
@@ -139,11 +119,11 @@ input {
 
 .category-nav {
     background: #111;
-    color: #fff;
+    color: white;
 }
 
 .nav-inner {
-    min-height: 46px;
+    height: 46px;
     display: flex;
     align-items: stretch;
     overflow-x: auto;
@@ -158,20 +138,17 @@ input {
     display: flex;
     align-items: center;
     padding: 0 17px;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 700;
     white-space: nowrap;
-    transition: .2s;
-    border-bottom: 3px solid transparent;
 }
 
 .nav-inner a:hover {
-    background: #252525;
+    background: #272727;
 }
 
 .nav-inner a.active {
     background: var(--red);
-    border-bottom-color: #fff;
 }
 
 /* =========================================================
@@ -179,51 +156,49 @@ input {
    ========================================================= */
 
 .breaking-bar {
-    background: #f5f5f5;
+    height: 44px;
+    background: #f4f4f4;
     border-bottom: 1px solid #ddd;
+    overflow: hidden;
 }
 
 .breaking-inner {
-    height: 42px;
+    height: 44px;
     display: flex;
     align-items: center;
+    overflow: hidden;
 }
 
 .breaking-title {
+    flex-shrink: 0;
     height: 100%;
     display: flex;
     align-items: center;
     gap: 8px;
-    padding-right: 18px;
+    padding-right: 20px;
+    color: var(--red);
     font-size: 12px;
     font-weight: 900;
-    color: var(--red);
-    white-space: nowrap;
+    background: #f4f4f4;
+    position: relative;
+    z-index: 5;
 }
 
 .breaking-dot {
     width: 8px;
     height: 8px;
-    background: var(--red);
     border-radius: 50%;
-    animation: pulse 1.3s infinite;
+    background: var(--red);
+    animation: breakingPulse 1.2s infinite;
 }
 
-.breaking-news {
-    overflow: hidden;
-    white-space: nowrap;
-    font-size: 13px;
-    font-weight: 600;
-    color: #333;
-}
-
-@keyframes pulse {
+@keyframes breakingPulse {
     0% {
         opacity: 1;
     }
 
     50% {
-        opacity: .35;
+        opacity: .3;
     }
 
     100% {
@@ -231,114 +206,180 @@ input {
     }
 }
 
+.breaking-news {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    height: 100%;
+}
+
+.breaking-marquee {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.breaking-track {
+    display: flex;
+    width: max-content;
+    height: 100%;
+    animation: breakingMove 28s linear infinite;
+}
+
+.breaking-track:hover {
+    animation-play-state: paused;
+}
+
+.breaking-group {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.breaking-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+    margin-right: 65px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #222;
+}
+
+.breaking-item:hover {
+    color: var(--red);
+}
+
+.breaking-mini-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--red);
+}
+
+@keyframes breakingMove {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
 /* =========================================================
-   ANA ALAN
+   ANA
    ========================================================= */
 
 main.container {
     padding-top: 18px;
-    padding-bottom: 50px;
+    padding-bottom: 60px;
 }
 
 /* =========================================================
-   HERO SLIDER
+   MANŞET
    ========================================================= */
 
 .hero-slider {
     width: 100%;
-    height: 530px;
+    height: 500px;
     position: relative;
     overflow: hidden;
     background: #111;
-    border-radius: 2px;
-    margin-bottom: 22px;
+    margin-bottom: 20px;
 }
 
 .hero-main {
     width: 100%;
     height: 100%;
-    position: relative;
 }
 
-.hero-main a,
-.hero-main .hero-link {
+.hero-slide-link {
     display: block;
     width: 100%;
     height: 100%;
+    position: relative;
 }
 
-.hero-main img {
+.hero-image {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.hero-main::after {
-    content: "";
+.hero-overlay {
     position: absolute;
     inset: 0;
     background:
         linear-gradient(
             to bottom,
-            rgba(0,0,0,0.02) 30%,
-            rgba(0,0,0,0.18) 55%,
-            rgba(0,0,0,0.88) 100%
+            rgba(0,0,0,0) 25%,
+            rgba(0,0,0,.12) 45%,
+            rgba(0,0,0,.88) 100%
         );
-    pointer-events: none;
 }
 
 .hero-content {
     position: absolute;
-    z-index: 3;
+    z-index: 4;
     left: 35px;
     right: 35px;
-    bottom: 80px;
-    color: #fff;
+    bottom: 75px;
+    color: white;
 }
 
 .hero-category {
     display: inline-block;
-    padding: 5px 10px;
+    padding: 5px 9px;
     background: var(--red);
-    color: #fff;
-    font-size: 12px;
-    font-weight: 800;
+    font-size: 11px;
+    font-weight: 900;
     margin-bottom: 10px;
-    border-radius: 2px;
 }
 
-.hero-title {
-    max-width: 850px;
-    font-size: 34px;
+.hero-content h1 {
+    max-width: 900px;
+    font-size: 36px;
     line-height: 1.12;
     font-weight: 900;
-    text-shadow: 0 2px 5px rgba(0,0,0,.35);
+    text-shadow: 0 2px 5px rgba(0,0,0,.5);
 }
 
-.hero-description {
+.hero-content p {
     max-width: 800px;
     margin-top: 10px;
-    font-size: 15px;
+    font-size: 14px;
+    line-height: 1.5;
     color: #eee;
 }
 
-/* Oklar */
+.hero-meta {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #ddd;
+}
+
+/* =========================================================
+   MANŞET OKLARI
+   ========================================================= */
 
 .hero-arrow {
     position: absolute;
-    z-index: 20;
+    z-index: 10;
     top: 50%;
     transform: translateY(-50%);
-    width: 50px;
-    height: 72px;
+    width: 55px;
+    height: 80px;
     border: 0;
-    background: rgba(0,0,0,.18);
-    color: white;
+    background: rgba(0,0,0,.15);
+    color: #fff;
     font-size: 65px;
-    line-height: 55px;
+    line-height: 60px;
     cursor: pointer;
     transition: .2s;
-    font-family: Arial, sans-serif;
 }
 
 .hero-arrow:hover {
@@ -354,32 +395,35 @@ main.container {
 }
 
 /* =========================================================
-   HERO NUMARALARI
+   MANŞET NUMARALARI
    ========================================================= */
 
 .hero-numbers {
     position: absolute;
-    z-index: 30;
-    bottom: 0;
+    z-index: 20;
     left: 0;
-    width: 100%;
-    height: 49px;
+    right: 0;
+    bottom: 0;
+    height: 50px;
     display: flex;
-    background: rgba(0,0,0,.94);
+    background: #111;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.hero-numbers::-webkit-scrollbar {
+    display: none;
 }
 
 .hero-number {
-    flex: 1;
-    min-width: 42px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    flex: 1 0 48px;
+    border: 0;
     border-right: 1px solid #333;
+    background: #111;
     color: #fff;
     font-size: 14px;
     font-weight: 800;
     cursor: pointer;
-    transition: .2s;
 }
 
 .hero-number:hover {
@@ -388,22 +432,10 @@ main.container {
 
 .hero-number.active {
     background: var(--red);
-    color: #fff;
 }
 
 /* =========================================================
-   ARAMA SONUCU
-   ========================================================= */
-
-.search-result-info {
-    margin-bottom: 18px;
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--muted);
-}
-
-/* =========================================================
-   CONTENT LAYOUT
+   İÇERİK
    ========================================================= */
 
 .content-layout {
@@ -412,27 +444,22 @@ main.container {
     gap: 28px;
 }
 
-/* =========================================================
-   SECTION HEADER
-   ========================================================= */
-
 .section-header {
     display: flex;
     align-items: center;
     gap: 12px;
-    margin-bottom: 16px;
+    margin-bottom: 17px;
 }
 
 .section-header h2 {
     font-size: 24px;
-    line-height: 1;
     font-weight: 900;
     white-space: nowrap;
 }
 
 .section-header span {
-    height: 4px;
     flex: 1;
+    height: 3px;
     background: linear-gradient(
         to right,
         var(--red),
@@ -446,31 +473,22 @@ main.container {
 
 .news-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 24px 20px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px 20px;
 }
-
-/* Haber kartı */
 
 .news-card {
     background: #fff;
     min-width: 0;
-    cursor: pointer;
-    transition:
-        transform .2s ease,
-        box-shadow .2s ease;
-}
-
-.news-card:hover {
-    transform: translateY(-3px);
 }
 
 .news-card-image {
+    display: block;
     width: 100%;
-    aspect-ratio: 16 / 9;
+    height: 190px;
+    position: relative;
     overflow: hidden;
     background: #eee;
-    position: relative;
 }
 
 .news-card-image img {
@@ -481,38 +499,53 @@ main.container {
 }
 
 .news-card:hover .news-card-image img {
-    transform: scale(1.045);
+    transform: scale(1.05);
 }
 
-.news-card-content {
-    padding-top: 10px;
-}
-
-.news-category {
-    color: var(--red);
-    font-size: 11px;
+.card-category {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    background: var(--red);
+    color: #fff;
+    padding: 4px 7px;
+    font-size: 10px;
     font-weight: 900;
-    text-transform: uppercase;
-    margin-bottom: 4px;
+}
+
+.news-card-body {
+    padding-top: 9px;
+}
+
+.news-card-meta {
+    font-size: 10px;
+    color: #999;
+    margin-bottom: 5px;
 }
 
 .news-card h3 {
-    font-size: 18px;
-    line-height: 1.35;
+    font-size: 17px;
+    line-height: 1.3;
     font-weight: 800;
-    color: #111;
+}
+
+.news-card h3 a:hover {
+    color: var(--red);
 }
 
 .news-card p {
-    color: #777;
-    font-size: 13px;
     margin-top: 6px;
+    color: #777;
+    font-size: 12px;
+    line-height: 1.5;
 }
 
-.news-date {
-    color: #999;
-    font-size: 11px;
-    margin-top: 7px;
+.read-more {
+    display: inline-block;
+    margin-top: 8px;
+    color: var(--red);
+    font-size: 12px;
+    font-weight: 800;
 }
 
 /* =========================================================
@@ -526,32 +559,27 @@ main.container {
 }
 
 .sidebar-box {
-    border: 1px solid #e3e3e3;
-    background: #fff;
+    border: 1px solid #e1e1e1;
 }
 
 .sidebar-title {
-    padding: 13px 15px;
     background: #111;
     color: #fff;
     border-left: 5px solid var(--red);
+    padding: 12px 14px;
 }
 
 .sidebar-title h3 {
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 900;
-}
-
-.popular-news {
-    display: flex;
-    flex-direction: column;
 }
 
 .popular-item {
     display: grid;
-    grid-template-columns: 75px 1fr;
-    gap: 10px;
-    padding: 12px;
+    grid-template-columns: 30px 70px 1fr;
+    gap: 9px;
+    align-items: center;
+    padding: 11px;
     border-bottom: 1px solid #eee;
 }
 
@@ -559,32 +587,43 @@ main.container {
     border-bottom: 0;
 }
 
+.popular-number {
+    color: var(--red);
+    font-size: 18px;
+    font-weight: 900;
+}
+
 .popular-item img {
-    width: 75px;
-    height: 55px;
+    width: 70px;
+    height: 52px;
     object-fit: cover;
 }
 
 .popular-item h4 {
-    font-size: 13px;
+    font-size: 12px;
     line-height: 1.3;
-    font-weight: 800;
 }
 
-.sidebar-headlines {
-    padding: 5px 15px;
+.popular-item small {
+    display: block;
+    margin-top: 4px;
+    color: #999;
+    font-size: 9px;
 }
 
 .sidebar-headline {
     display: block;
-    padding: 13px 0;
+    padding: 12px 14px;
     border-bottom: 1px solid #eee;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 700;
+    line-height: 1.4;
 }
 
-.sidebar-headline:last-child {
-    border-bottom: 0;
+.sidebar-headline span {
+    color: var(--red);
+    font-size: 17px;
+    margin-right: 5px;
 }
 
 .sidebar-headline:hover {
@@ -592,7 +631,7 @@ main.container {
 }
 
 /* =========================================================
-   KATEGORİ BÖLÜMLERİ
+   KATEGORİLER
    ========================================================= */
 
 .category-section {
@@ -601,8 +640,20 @@ main.container {
 
 .category-grid {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
+}
+
+/* =========================================================
+   BOŞ SONUÇ
+   ========================================================= */
+
+.empty-search,
+.empty-category {
+    padding: 30px;
+    background: #f7f7f7;
+    color: #777;
+    text-align: center;
 }
 
 /* =========================================================
@@ -610,23 +661,22 @@ main.container {
    ========================================================= */
 
 .site-footer {
-    margin-top: 60px;
     background: #111;
-    color: #fff;
+    color: white;
+    margin-top: 50px;
 }
 
 .footer-grid {
-    padding-top: 45px;
-    padding-bottom: 40px;
+    padding: 45px 0;
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1fr;
-    gap: 40px;
+    gap: 35px;
 }
 
 .footer-logo {
-    font-size: 28px;
+    font-size: 27px;
     font-weight: 900;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 .footer-logo span {
@@ -634,43 +684,42 @@ main.container {
 }
 
 .footer-about p {
-    max-width: 330px;
     color: #aaa;
-    font-size: 13px;
+    max-width: 320px;
+    font-size: 12px;
+    line-height: 1.6;
 }
 
 .footer-grid h4 {
-    font-size: 15px;
-    margin-bottom: 15px;
+    font-size: 14px;
+    margin-bottom: 14px;
 }
 
 .footer-grid > div > a {
     display: block;
     color: #aaa;
-    font-size: 13px;
-    margin-bottom: 9px;
+    font-size: 12px;
+    margin-bottom: 8px;
 }
 
 .footer-grid > div > a:hover {
-    color: #fff;
+    color: white;
 }
 
 .socials {
     display: flex;
-    gap: 8px;
+    gap: 7px;
 }
 
 .socials a {
-    width: 35px;
-    height: 35px;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #252525;
     display: flex !important;
     align-items: center;
     justify-content: center;
-    background: #252525;
-    color: #fff !important;
-    border-radius: 50%;
-    margin: 0 !important;
-    font-size: 15px !important;
+    color: white !important;
 }
 
 .socials a:hover {
@@ -679,9 +728,9 @@ main.container {
 
 .footer-bottom {
     border-top: 1px solid #292929;
+    padding: 15px 0;
     color: #777;
-    font-size: 12px;
-    padding: 16px 0;
+    font-size: 11px;
 }
 
 /* =========================================================
@@ -691,51 +740,40 @@ main.container {
 .cookie-box {
     position: fixed;
     left: 20px;
-    right: 20px;
     bottom: 20px;
-    max-width: 650px;
     z-index: 9999;
-    padding: 18px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
+    width: min(620px, calc(100% - 40px));
+    padding: 17px;
     background: #fff;
     border: 1px solid #ddd;
-    box-shadow: 0 10px 40px rgba(0,0,0,.15);
-    border-radius: 8px;
-}
-
-.cookie-box strong {
-    font-size: 15px;
+    box-shadow: 0 8px 35px rgba(0,0,0,.18);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    border-radius: 5px;
 }
 
 .cookie-box p {
     color: #777;
-    font-size: 12px;
+    font-size: 11px;
     margin-top: 3px;
 }
 
 .cookie-box button {
-    flex-shrink: 0;
     border: 0;
     background: var(--red);
-    color: #fff;
-    padding: 10px 17px;
-    border-radius: 4px;
-    font-weight: 800;
+    color: white;
+    padding: 10px 16px;
     cursor: pointer;
-}
-
-.cookie-box button:hover {
-    background: var(--red-dark);
+    font-weight: 800;
 }
 
 /* =========================================================
-   RESPONSIVE - TABLET
+   TABLET
    ========================================================= */
 
-@media (max-width: 1000px) {
+@media (max-width: 950px) {
 
     .content-layout {
         grid-template-columns: 1fr;
@@ -746,32 +784,31 @@ main.container {
         grid-template-columns: 1fr 1fr;
     }
 
+    .hero-slider {
+        height: 450px;
+    }
+
     .category-grid {
         grid-template-columns: repeat(2, 1fr);
-    }
-
-    .hero-slider {
-        height: 470px;
-    }
-
-    .hero-title {
-        font-size: 29px;
     }
 }
 
 /* =========================================================
-   RESPONSIVE - MOBİL
+   MOBİL
    ========================================================= */
 
 @media (max-width: 700px) {
 
     .container {
-        width: min(100% - 20px, var(--container));
+        width: calc(100% - 20px);
     }
 
     .header-inner {
-        min-height: 62px;
-        gap: 10px;
+        height: 62px;
+    }
+
+    .main-header {
+        height: 62px;
     }
 
     .menu-btn {
@@ -783,8 +820,7 @@ main.container {
     }
 
     .search-box {
-        width: 43px;
-        margin-left: auto;
+        width: 42px;
         border: 0;
     }
 
@@ -793,18 +829,26 @@ main.container {
     }
 
     .search-box button {
-        width: 43px;
+        width: 42px;
+        height: 40px;
+    }
+
+    .category-nav {
+        overflow: hidden;
+    }
+
+    .nav-inner {
         height: 42px;
-        border-radius: 6px;
     }
 
     .nav-inner a {
-        padding: 0 13px;
-        font-size: 12px;
+        padding: 0 12px;
+        font-size: 11px;
     }
 
+    .breaking-bar,
     .breaking-inner {
-        height: 38px;
+        height: 40px;
     }
 
     .breaking-title {
@@ -812,80 +856,76 @@ main.container {
         padding-right: 10px;
     }
 
-    .breaking-news {
+    .breaking-item {
         font-size: 11px;
-    }
-
-    main.container {
-        padding-top: 10px;
+        margin-right: 40px;
     }
 
     .hero-slider {
         height: 390px;
-        margin-bottom: 15px;
     }
 
     .hero-content {
         left: 18px;
         right: 18px;
-        bottom: 65px;
+        bottom: 63px;
     }
 
-    .hero-title {
-        font-size: 22px;
+    .hero-content h1 {
+        font-size: 23px;
     }
 
-    .hero-description {
+    .hero-content p {
         display: none;
     }
 
     .hero-arrow {
         width: 38px;
-        height: 58px;
+        height: 60px;
         font-size: 48px;
     }
 
     .hero-numbers {
         height: 43px;
-        overflow-x: auto;
     }
 
     .hero-number {
         flex: 0 0 38px;
-        min-width: 38px;
         font-size: 12px;
     }
 
-    .section-header h2 {
-        font-size: 20px;
+    .news-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px 12px;
     }
 
-    .news-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 20px 12px;
+    .news-card-image {
+        height: 125px;
     }
 
     .news-card h3 {
         font-size: 14px;
-        line-height: 1.3;
     }
 
     .news-card p {
         display: none;
     }
 
-    .category-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px 10px;
+    .read-more {
+        font-size: 10px;
     }
 
     .sidebar {
         grid-template-columns: 1fr;
     }
 
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
     .footer-grid {
         grid-template-columns: 1fr 1fr;
-        gap: 30px 20px;
     }
 
     .footer-about {
@@ -894,20 +934,15 @@ main.container {
 
     .cookie-box {
         left: 10px;
-        right: 10px;
         bottom: 10px;
-        padding: 14px;
+        width: calc(100% - 20px);
         flex-direction: column;
         align-items: stretch;
-    }
-
-    .cookie-box button {
-        width: 100%;
     }
 }
 
 /* =========================================================
-   KÜÇÜK TELEFON
+   ÇOK KÜÇÜK TELEFON
    ========================================================= */
 
 @media (max-width: 430px) {
@@ -920,12 +955,8 @@ main.container {
         grid-template-columns: 1fr;
     }
 
-    .hero-slider {
-        height: 350px;
-    }
-
-    .hero-title {
-        font-size: 20px;
+    .news-card-image {
+        height: 190px;
     }
 
     .footer-grid {
