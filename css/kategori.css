@@ -1,0 +1,495 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #f4f6f8;
+    color: #111827;
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+}
+
+
+/* HEADER */
+
+.category-header {
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.header-inner {
+    width: min(1200px, 94%);
+    min-height: 78px;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    color: #111827;
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: 900;
+    letter-spacing: -1.5px;
+}
+
+.logo span {
+    color: #e11d48;
+}
+
+.home-button {
+    text-decoration: none;
+    color: #334155;
+    background: #f1f5f9;
+
+    padding: 11px 17px;
+    border-radius: 9px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    transition: .2s;
+}
+
+.home-button:hover {
+    background: #e2e8f0;
+}
+
+
+/* KATEGORİ MENÜ */
+
+.category-menu {
+    width: 100%;
+    background: #ffffff;
+
+    border-bottom: 1px solid #e5e7eb;
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.category-menu a {
+    color: #475569;
+    text-decoration: none;
+
+    padding: 16px 14px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    transition: .2s;
+}
+
+.category-menu a:hover {
+    color: #e11d48;
+    background: #fff1f2;
+}
+
+
+/* ANA */
+
+.category-container {
+    width: min(1200px, 94%);
+    margin: 40px auto 70px;
+}
+
+
+/* BAŞLIK */
+
+.category-heading {
+    background: #ffffff;
+
+    border-radius: 18px;
+
+    padding: 30px;
+
+    margin-bottom: 28px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border: 1px solid #e5e7eb;
+
+    box-shadow:
+        0 8px 30px rgba(15, 23, 42, .06);
+}
+
+.category-label {
+    color: #e11d48;
+
+    font-size: 12px;
+    font-weight: 900;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 7px;
+}
+
+.category-heading h1 {
+    margin: 0;
+
+    font-size: 42px;
+    letter-spacing: -1.5px;
+
+    color: #0f172a;
+}
+
+.category-heading p {
+    margin: 9px 0 0;
+
+    color: #64748b;
+
+    font-size: 15px;
+}
+
+.category-count {
+    text-align: center;
+
+    min-width: 100px;
+
+    padding: 14px 18px;
+
+    background: #fff1f2;
+
+    border-radius: 12px;
+
+    color: #e11d48;
+}
+
+.category-count strong {
+    display: block;
+
+    font-size: 28px;
+    line-height: 1;
+}
+
+.category-count span {
+    display: block;
+
+    margin-top: 5px;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+/* HABERLER */
+
+.category-news-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 24px;
+}
+
+
+/* KART */
+
+.category-news-card {
+    background: #ffffff;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    border: 1px solid #e5e7eb;
+
+    cursor: pointer;
+
+    transition:
+        transform .22s ease,
+        box-shadow .22s ease;
+
+    box-shadow:
+        0 5px 20px rgba(15, 23, 42, .05);
+}
+
+.category-news-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 14px 35px rgba(15, 23, 42, .12);
+}
+
+
+/* FOTOĞRAF */
+
+.card-image {
+    height: 230px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background: #e2e8f0;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition:
+        transform .35s ease;
+}
+
+.category-news-card:hover
+.card-image img {
+    transform: scale(1.05);
+}
+
+
+/* ETİKET */
+
+.card-category {
+    position: absolute;
+
+    left: 14px;
+    top: 14px;
+
+    background: #e11d48;
+    color: white;
+
+    padding: 7px 10px;
+
+    border-radius: 6px;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    text-transform: uppercase;
+}
+
+
+/* İÇERİK */
+
+.card-content {
+    padding: 20px;
+}
+
+.card-content h2 {
+    margin: 0;
+
+    font-size: 20px;
+    line-height: 1.35;
+
+    color: #111827;
+
+    letter-spacing: -.3px;
+}
+
+.card-meta {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px 14px;
+
+    margin-top: 18px;
+
+    color: #94a3b8;
+
+    font-size: 12px;
+}
+
+
+/* BOŞ */
+
+.empty-state {
+    background: #ffffff;
+
+    border-radius: 18px;
+
+    padding: 70px 20px;
+
+    text-align: center;
+
+    border: 1px solid #e5e7eb;
+}
+
+.empty-icon {
+    font-size: 50px;
+}
+
+.empty-state h2 {
+    margin: 15px 0 8px;
+}
+
+.empty-state p {
+    color: #64748b;
+}
+
+.empty-state a {
+    display: inline-block;
+
+    margin-top: 10px;
+
+    background: #e11d48;
+    color: white;
+
+    text-decoration: none;
+
+    padding: 12px 18px;
+
+    border-radius: 8px;
+
+    font-weight: 700;
+}
+
+
+/* FOOTER */
+
+.category-footer {
+    background: #0f172a;
+
+    color: #94a3b8;
+
+    text-align: center;
+
+    padding: 45px 20px;
+}
+
+.footer-logo {
+    font-size: 25px;
+
+    font-weight: 900;
+
+    color: white;
+}
+
+.footer-logo span {
+    color: #fb7185;
+}
+
+.category-footer p {
+    margin: 10px 0 20px;
+}
+
+.footer-links {
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 18px;
+
+    margin-bottom: 25px;
+}
+
+.footer-links a {
+    color: #cbd5e1;
+
+    text-decoration: none;
+
+    font-size: 13px;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+.copyright {
+    padding-top: 20px;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.08);
+
+    font-size: 12px;
+}
+
+
+/* TABLET */
+
+@media (max-width: 900px) {
+
+    .category-news-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* TELEFON */
+
+@media (max-width: 600px) {
+
+    .header-inner {
+        min-height: 65px;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .home-button {
+        padding: 9px 11px;
+        font-size: 12px;
+    }
+
+    .category-menu {
+        justify-content: flex-start;
+
+        overflow-x: auto;
+
+        flex-wrap: nowrap;
+
+        white-space: nowrap;
+    }
+
+    .category-menu a {
+        padding: 13px 11px;
+
+        font-size: 12px;
+    }
+
+    .category-container {
+        width: 94%;
+        margin-top: 20px;
+    }
+
+    .category-heading {
+        padding: 22px;
+
+        align-items: flex-start;
+    }
+
+    .category-heading h1 {
+        font-size: 30px;
+    }
+
+    .category-count {
+        min-width: 70px;
+
+        padding: 10px;
+    }
+
+    .category-count strong {
+        font-size: 22px;
+    }
+
+    .category-news-grid {
+        grid-template-columns: 1fr;
+
+        gap: 17px;
+    }
+
+    .card-image {
+        height: 220px;
+    }
+
+}
