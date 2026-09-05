@@ -1288,3 +1288,17 @@ main.container {
         font-size: 9px;
     }
 }
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    height: 55px;
+}
+
+.logo img {
+    width: 55px;
+    height: 55px;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+}
