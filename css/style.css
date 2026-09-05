@@ -2370,3 +2370,138 @@ img {
     }
 
 }
+/* ==========================================
+   ANA SAYFA - PROFESYONEL HABER KARTLARI
+   ========================================== */
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+
+/* KART */
+
+.home-news-card {
+    display: block;
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+
+    text-decoration: none;
+    color: inherit;
+
+    border: 1px solid #e8ebef;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, .05);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+.home-news-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, .12);
+}
+
+
+/* FOTOĞRAF */
+
+.home-news-card-image {
+    position: relative;
+
+    width: 100%;
+    height: 220px;
+
+    overflow: hidden;
+
+    background: #eef0f2;
+}
+
+
+/* FOTOĞRAF TAM KUTUYU DOLDURUR */
+
+.home-news-card-image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    max-width: none;
+
+    object-fit: cover;
+    object-position: center center;
+
+    transition:
+        transform .45s ease;
+}
+
+
+/* HOVER */
+
+.home-news-card:hover
+.home-news-card-image img {
+    transform: scale(1.06);
+}
+
+
+/* BAŞLIK */
+
+.home-news-card-title {
+    padding: 17px 18px 19px;
+
+    color: #111827;
+
+    font-size: 19px;
+    font-weight: 800;
+
+    line-height: 1.35;
+
+    min-height: 78px;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+
+
+/* TABLET */
+
+@media (max-width: 950px) {
+
+    .news-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .home-news-card-image {
+        height: 210px;
+    }
+
+}
+
+
+/* TELEFON */
+
+@media (max-width: 600px) {
+
+    .news-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .home-news-card-image {
+        height: 220px;
+    }
+
+    .home-news-card-title {
+        font-size: 18px;
+    }
+
+}
