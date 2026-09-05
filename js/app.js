@@ -2,7 +2,7 @@
 
 /* =========================================================
    HABERİSTA APP.JS
-   Ana sayfa uygulaması
+   ANA SAYFA UYGULAMASI
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -13,9 +13,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const $ = (selector) => document.querySelector(selector);
 
-    const $$ = (selector) => {
-        return Array.from(document.querySelectorAll(selector));
-    };
+    const $$ = (selector) =>
+        Array.from(document.querySelectorAll(selector));
 
 
     /* =====================================================
@@ -32,24 +31,44 @@ document.addEventListener("DOMContentLoaded", function () {
        DOM
     ===================================================== */
 
-    const menuBtn = $("#menuBtn");
+    const menuBtn =
+        $("#menuBtn");
 
-    const searchBtn = $("#searchBtn");
-    const searchBox = $("#searchBox");
-    const searchInput = $("#searchInput");
+    const searchBtn =
+        $("#searchBtn");
 
-    const breakingNews = $("#breakingNews");
+    const searchBox =
+        $("#searchBox");
 
-    const heroMain = $("#heroMain");
-    const heroPrev = $("#heroPrev");
-    const heroNext = $("#heroNext");
-    const heroNumbers = $("#heroNumbers");
+    const searchInput =
+        $("#searchInput");
 
-    const newsGrid = $("#newsGrid");
-    const searchResultInfo = $("#searchResultInfo");
+    const breakingNews =
+        $("#breakingNews");
 
-    const cookieBox = $("#cookieBox");
-    const cookieAccept = $("#cookieAccept");
+    const heroMain =
+        $("#heroMain");
+
+    const heroPrev =
+        $("#heroPrev");
+
+    const heroNext =
+        $("#heroNext");
+
+    const heroNumbers =
+        $("#heroNumbers");
+
+    const newsGrid =
+        $("#newsGrid");
+
+    const searchResultInfo =
+        $("#searchResultInfo");
+
+    const cookieBox =
+        $("#cookieBox");
+
+    const cookieAccept =
+        $("#cookieAccept");
 
 
     /* =====================================================
@@ -87,15 +106,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function getSlug(haber) {
 
-        if (haber.slug) {
+        if (haber && haber.slug) {
             return haber.slug;
         }
 
-        if (typeof window.slugOlustur === "function") {
-            return window.slugOlustur(haber.baslik);
+        if (
+            typeof window.slugOlustur === "function"
+        ) {
+            return window.slugOlustur(
+                haber ? haber.baslik : ""
+            );
         }
 
-        return String(haber.baslik || "")
+        return String(
+            haber ? haber.baslik : ""
+        )
             .toLocaleLowerCase("tr-TR")
             .replace(/ğ/g, "g")
             .replace(/ü/g, "u")
@@ -139,9 +164,10 @@ document.addEventListener("DOMContentLoaded", function () {
         if (searchInput) {
 
             setTimeout(function () {
-                searchInput.focus();
-            }, 100);
 
+                searchInput.focus();
+
+            }, 100);
         }
     }
 
@@ -162,7 +188,9 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        if (searchBox.classList.contains("active")) {
+        if (
+            searchBox.classList.contains("active")
+        ) {
             closeSearch();
         } else {
             openSearch();
@@ -172,43 +200,50 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (searchBtn) {
 
-        searchBtn.addEventListener("click", function (event) {
+        searchBtn.addEventListener(
+            "click",
+            function (event) {
 
-            event.preventDefault();
-            event.stopPropagation();
+                event.preventDefault();
+                event.stopPropagation();
 
-            toggleSearch();
-
-        });
-
+                toggleSearch();
+            }
+        );
     }
 
 
     if (searchBox) {
 
-        searchBox.addEventListener("click", function (event) {
+        searchBox.addEventListener(
+            "click",
+            function (event) {
 
-            event.stopPropagation();
-
-        });
-
+                event.stopPropagation();
+            }
+        );
     }
 
 
-    document.addEventListener("click", function (event) {
+    document.addEventListener(
+        "click",
+        function (event) {
 
-        if (!searchBox || !searchBtn) {
-            return;
+            if (
+                !searchBox ||
+                !searchBtn
+            ) {
+                return;
+            }
+
+            if (
+                !searchBox.contains(event.target) &&
+                !searchBtn.contains(event.target)
+            ) {
+                closeSearch();
+            }
         }
-
-        if (
-            !searchBox.contains(event.target) &&
-            !searchBtn.contains(event.target)
-        ) {
-            closeSearch();
-        }
-
-    });
+    );
 
 
     /* =====================================================
@@ -225,6 +260,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!query) {
 
             if (searchResultInfo) {
+
                 searchResultInfo.innerHTML = "";
             }
 
@@ -235,28 +271,40 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         const results =
-            haberListesi.filter(function (haber) {
+            haberListesi.filter(
+                function (haber) {
 
-                const title =
-                    String(haber.baslik || "")
-                        .toLocaleLowerCase("tr-TR");
+                    const title =
+                        String(
+                            haber.baslik || ""
+                        )
+                            .toLocaleLowerCase(
+                                "tr-TR"
+                            );
 
-                const spot =
-                    String(haber.spot || "")
-                        .toLocaleLowerCase("tr-TR");
+                    const spot =
+                        String(
+                            haber.spot || ""
+                        )
+                            .toLocaleLowerCase(
+                                "tr-TR"
+                            );
 
-                const category =
-                    String(haber.kategori || "")
-                        .toLocaleLowerCase("tr-TR");
+                    const category =
+                        String(
+                            haber.kategori || ""
+                        )
+                            .toLocaleLowerCase(
+                                "tr-TR"
+                            );
 
-
-                return (
-                    title.includes(query) ||
-                    spot.includes(query) ||
-                    category.includes(query)
-                );
-
-            });
+                    return (
+                        title.includes(query) ||
+                        spot.includes(query) ||
+                        category.includes(query)
+                    );
+                }
+            );
 
 
         renderNews(results);
@@ -266,49 +314,51 @@ document.addEventListener("DOMContentLoaded", function () {
 
             searchResultInfo.innerHTML =
                 `<strong>${results.length}</strong> haber bulundu.`;
-
         }
-
     }
 
 
     if (searchInput) {
 
-        searchInput.addEventListener("input", function () {
+        searchInput.addEventListener(
+            "input",
+            function () {
 
-            searchNews(this.value);
-
-        });
-
-
-        searchInput.addEventListener("keydown", function (event) {
-
-            if (event.key === "Escape") {
-
-                this.value = "";
-
-                searchNews("");
-
-                closeSearch();
-
+                searchNews(this.value);
             }
+        );
 
-        });
 
+        searchInput.addEventListener(
+            "keydown",
+            function (event) {
+
+                if (event.key === "Escape") {
+
+                    this.value = "";
+
+                    searchNews("");
+
+                    closeSearch();
+                }
+            }
+        );
     }
 
 
     /* =====================================================
        SON DAKİKA BANDI
        
-       EN YENİ 5 HABERİ GÖSTERİR.
+       HER ZAMAN EN YENİ 5 HABER
        
-       haberler.js'de listenin en üstüne yeni haber
-       eklendiğinde otomatik olarak banda girer.
+       haberler.js:
+       [YENİ HABER, 2, 3, 4, 5, ...]
+       
+       Son dakika:
+       [YENİ HABER, 2, 3, 4, 5]
+       
+       Yeni haber eklenince eski 5. otomatik çıkar.
     ===================================================== */
-
-    let breakingIndex = 0;
-
 
     function renderBreakingNews() {
 
@@ -317,131 +367,80 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
 
-        /*
-         * listenin en üstündeki 5 haber
-         *
-         * Örnek:
-         *
-         * 6 → yeni haber
-         * 5
-         * 4
-         * 3
-         * 2
-         *
-         * 1 otomatik olarak banttan çıkar.
-         */
-
         const breaking =
             haberListesi.slice(0, 5);
 
 
-        if (breaking.length === 0) {
+        if (
+            !Array.isArray(breaking) ||
+            breaking.length === 0
+        ) {
 
             breakingNews.innerHTML =
-                `<span>Haberİsta'dan son gelişmeler...</span>`;
+                `
+                <div class="breaking-track">
+                    <span class="breaking-link">
+                        Haberİsta'dan son gelişmeler...
+                    </span>
+                </div>
+                `;
 
             return;
         }
 
 
         /*
-         * Bant içeriği
+         * İlk liste
          */
+        const firstSet =
+            breaking
+                .map(function (haber) {
+
+                    return `
+                        <a
+                            href="${getNewsUrl(haber)}"
+                            class="breaking-link"
+                        >
+                            ${escapeHTML(haber.baslik)}
+                        </a>
+                    `;
+                })
+                .join("");
+
+
+        /*
+         * İkinci liste
+         *
+         * Kesintisiz kayan bant için
+         * ilk 5 haber tekrar edilir.
+         */
+        const secondSet =
+            breaking
+                .map(function (haber) {
+
+                    return `
+                        <a
+                            href="${getNewsUrl(haber)}"
+                            class="breaking-link"
+                        >
+                            ${escapeHTML(haber.baslik)}
+                        </a>
+                    `;
+                })
+                .join("");
+
 
         breakingNews.innerHTML = `
-
             <div class="breaking-track">
-
-                ${
-                    breaking.map(function (haber) {
-
-                        return `
-                            <a
-                                href="${getNewsUrl(haber)}"
-                                class="breaking-link"
-                            >
-                                ${escapeHTML(haber.baslik)}
-                            </a>
-                        `;
-
-                    }).join("")
-                }
-
+                ${firstSet}
+                ${secondSet}
             </div>
-
         `;
-
-
-        const links =
-            breakingNews.querySelectorAll(".breaking-link");
-
-
-        if (links.length === 0) {
-            return;
-        }
-
-
-        /*
-         * Başlangıçta ilk haber görünür.
-         */
-
-        links.forEach(function (link, index) {
-
-            link.style.display =
-                index === 0
-                    ? "block"
-                    : "none";
-
-        });
-
-
-        breakingIndex = 0;
-
-
-        /*
-         * Haberleri sırayla değiştir.
-         */
-
-        if (links.length > 1) {
-
-            setInterval(function () {
-
-                if (!links[breakingIndex]) {
-                    return;
-                }
-
-
-                links[breakingIndex].classList.remove(
-                    "breaking-current"
-                );
-
-
-                links[breakingIndex].style.display =
-                    "none";
-
-
-                breakingIndex =
-                    (breakingIndex + 1) % links.length;
-
-
-                links[breakingIndex].style.display =
-                    "block";
-
-
-                links[breakingIndex].classList.add(
-                    "breaking-current"
-                );
-
-
-            }, 4000);
-
-        }
-
     }
 
 
     /* =====================================================
-       MANŞET
+       MANŞET HABERLERİ
     ===================================================== */
 
     let heroIndex = 0;
@@ -450,6 +449,10 @@ document.addEventListener("DOMContentLoaded", function () {
         haberListesi.slice(0, 5);
 
 
+    /* =====================================================
+       MANŞET OLUŞTUR
+    ===================================================== */
+
     function renderHero() {
 
         if (!heroMain) {
@@ -457,7 +460,10 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
 
-        if (heroNews.length === 0) {
+        if (
+            !Array.isArray(heroNews) ||
+            heroNews.length === 0
+        ) {
 
             heroMain.innerHTML = `
                 <div class="hero-empty">
@@ -469,13 +475,18 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
 
-        if (heroIndex >= heroNews.length) {
+        if (
+            heroIndex >= heroNews.length
+        ) {
             heroIndex = 0;
         }
 
 
-        if (heroIndex < 0) {
-            heroIndex = heroNews.length - 1;
+        if (
+            heroIndex < 0
+        ) {
+            heroIndex =
+                heroNews.length - 1;
         }
 
 
@@ -484,58 +495,69 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         const image =
-            getImagePath(haber.image);
+            getImagePath(
+                haber.image
+            );
 
 
         heroMain.innerHTML = `
             <a
                 href="${getNewsUrl(haber)}"
-                class="hero-link"
+                class="hero-slide-link"
             >
 
-                <div class="hero-image">
+                ${
+                    image
+                        ? `
+                            <img
+                                src="${escapeHTML(image)}"
+                                alt="${escapeHTML(haber.baslik)}"
+                                class="hero-image"
+                                loading="eager"
+                            >
+                          `
+                        : `
+                            <div class="hero-image hero-image-empty">
+                                Haberİsta
+                            </div>
+                          `
+                }
 
-                    ${
-                        image
-                            ? `
-                                <img
-                                    src="${escapeHTML(image)}"
-                                    alt="${escapeHTML(haber.baslik)}"
-                                    loading="eager"
-                                >
-                              `
-                            : ""
-                    }
+                <div class="hero-overlay"></div>
 
-                </div>
-
-
-                <div class="hero-overlay">
+                <div class="hero-content">
 
                     <span class="hero-category">
-                        ${escapeHTML(haber.kategori)}
+                        ${escapeHTML(
+                            haber.kategori || ""
+                        )}
                     </span>
 
-
                     <h1>
-                        ${escapeHTML(haber.baslik)}
+                        ${escapeHTML(
+                            haber.baslik || ""
+                        )}
                     </h1>
 
-
                     <p>
-                        ${escapeHTML(haber.spot)}
+                        ${escapeHTML(
+                            haber.spot || ""
+                        )}
                     </p>
-
 
                     <div class="hero-meta">
 
-                        ${escapeHTML(haber.date || "")}
+                        ${escapeHTML(
+                            haber.date || ""
+                        )}
 
                         ${
                             haber.time
                                 ? `
-                                    •
-                                    ${escapeHTML(haber.time)}
+                                    <span>•</span>
+                                    ${escapeHTML(
+                                        haber.time
+                                    )}
                                   `
                                 : ""
                         }
@@ -549,7 +571,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         renderHeroNumbers();
-
     }
 
 
@@ -565,43 +586,52 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         heroNumbers.innerHTML =
-            heroNews.map(function (haber, index) {
+            heroNews
+                .map(
+                    function (haber, index) {
 
-                return `
-                    <button
-                        type="button"
-                        class="hero-number ${
-                            index === heroIndex
-                                ? "active"
-                                : ""
-                        }"
-                        data-index="${index}"
-                        aria-label="${index + 1}. haber"
-                    >
-                        ${index + 1}
-                    </button>
-                `;
-
-            }).join("");
+                        return `
+                            <button
+                                type="button"
+                                class="hero-number ${
+                                    index === heroIndex
+                                        ? "active"
+                                        : ""
+                                }"
+                                data-index="${index}"
+                                aria-label="${index + 1}. haber"
+                            >
+                                ${index + 1}
+                            </button>
+                        `;
+                    }
+                )
+                .join("");
 
 
         const buttons =
-            heroNumbers.querySelectorAll(".hero-number");
+            heroNumbers.querySelectorAll(
+                ".hero-number"
+            );
 
 
-        buttons.forEach(function (button) {
+        buttons.forEach(
+            function (button) {
 
-            button.addEventListener("click", function () {
+                button.addEventListener(
+                    "click",
+                    function () {
 
-                heroIndex =
-                    Number(this.dataset.index);
+                        heroIndex =
+                            Number(
+                                this.dataset.index
+                            );
 
-                renderHero();
-
-            });
-
-        });
-
+                        renderHero();
+                    }
+                );
+            }
+        );
     }
 
 
@@ -611,26 +641,32 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (heroPrev) {
 
-        heroPrev.addEventListener("click", function () {
+        heroPrev.addEventListener(
+            "click",
+            function () {
 
-            if (heroNews.length === 0) {
-                return;
+                if (
+                    heroNews.length === 0
+                ) {
+                    return;
+                }
+
+
+                heroIndex--;
+
+
+                if (
+                    heroIndex < 0
+                ) {
+
+                    heroIndex =
+                        heroNews.length - 1;
+                }
+
+
+                renderHero();
             }
-
-
-            heroIndex--;
-
-
-            if (heroIndex < 0) {
-                heroIndex =
-                    heroNews.length - 1;
-            }
-
-
-            renderHero();
-
-        });
-
+        );
     }
 
 
@@ -640,25 +676,32 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (heroNext) {
 
-        heroNext.addEventListener("click", function () {
+        heroNext.addEventListener(
+            "click",
+            function () {
 
-            if (heroNews.length === 0) {
-                return;
+                if (
+                    heroNews.length === 0
+                ) {
+                    return;
+                }
+
+
+                heroIndex++;
+
+
+                if (
+                    heroIndex >=
+                    heroNews.length
+                ) {
+
+                    heroIndex = 0;
+                }
+
+
+                renderHero();
             }
-
-
-            heroIndex++;
-
-
-            if (heroIndex >= heroNews.length) {
-                heroIndex = 0;
-            }
-
-
-            renderHero();
-
-        });
-
+        );
     }
 
 
@@ -666,22 +709,30 @@ document.addEventListener("DOMContentLoaded", function () {
        OTOMATİK MANŞET
     ===================================================== */
 
-    if (heroNews.length > 1) {
+    if (
+        heroNews.length > 1
+    ) {
 
-        setInterval(function () {
+        setInterval(
+            function () {
 
-            heroIndex++;
-
-
-            if (heroIndex >= heroNews.length) {
-                heroIndex = 0;
-            }
+                heroIndex++;
 
 
-            renderHero();
+                if (
+                    heroIndex >=
+                    heroNews.length
+                ) {
 
-        }, 7000);
+                    heroIndex = 0;
+                }
 
+
+                renderHero();
+
+            },
+            7000
+        );
     }
 
 
@@ -696,7 +747,10 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
 
-        if (!Array.isArray(list) || list.length === 0) {
+        if (
+            !Array.isArray(list) ||
+            list.length === 0
+        ) {
 
             newsGrid.innerHTML = `
                 <div class="no-news">
@@ -721,111 +775,133 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         newsGrid.innerHTML =
-            list.map(function (haber) {
+            list
+                .map(
+                    function (haber) {
 
-                const image =
-                    getImagePath(haber.image);
-
-
-                return `
-                    <article
-                        class="news-card"
-                        data-id="${escapeHTML(haber.id)}"
-                    >
-
-                        <a
-                            href="${getNewsUrl(haber)}"
-                            class="news-card-link"
-                        >
-
-                            <div class="news-card-image">
-
-                                ${
-                                    image
-                                        ? `
-                                            <img
-                                                src="${escapeHTML(image)}"
-                                                alt="${escapeHTML(haber.baslik)}"
-                                                loading="lazy"
-                                            >
-                                          `
-                                        : `
-                                            <div class="image-placeholder">
-                                                Haberİsta
-                                            </div>
-                                          `
-                                }
+                        const image =
+                            getImagePath(
+                                haber.image
+                            );
 
 
-                                <span class="news-category">
-                                    ${escapeHTML(haber.kategori)}
-                                </span>
+                        return `
+                            <article
+                                class="news-card"
+                                data-id="${escapeHTML(
+                                    haber.id
+                                )}"
+                            >
 
-                            </div>
+                                <a
+                                    href="${getNewsUrl(haber)}"
+                                    class="news-card-link"
+                                >
 
+                                    <div class="news-card-image">
 
-                            <div class="news-card-content">
+                                        ${
+                                            image
+                                                ? `
+                                                    <img
+                                                        src="${escapeHTML(
+                                                            image
+                                                        )}"
+                                                        alt="${escapeHTML(
+                                                            haber.baslik
+                                                        )}"
+                                                        loading="lazy"
+                                                    >
+                                                  `
+                                                : `
+                                                    <div class="image-placeholder">
+                                                        Haberİsta
+                                                    </div>
+                                                  `
+                                        }
 
-                                <div class="news-card-meta">
+                                        <span class="news-category">
+                                            ${escapeHTML(
+                                                haber.kategori || ""
+                                            )}
+                                        </span>
 
-                                    <span>
-                                        ${escapeHTML(haber.date || "")}
-                                    </span>
-
-                                    ${
-                                        haber.time
-                                            ? `
-                                                <span>•</span>
-
-                                                <span>
-                                                    ${escapeHTML(haber.time)}
-                                                </span>
-                                              `
-                                            : ""
-                                    }
-
-                                </div>
-
-
-                                <h3>
-                                    ${escapeHTML(haber.baslik)}
-                                </h3>
-
-
-                                <p>
-                                    ${escapeHTML(haber.spot)}
-                                </p>
-
-
-                                <div class="news-card-bottom">
-
-                                    <span class="read-more">
-                                        Haberi Oku →
-                                    </span>
+                                    </div>
 
 
-                                    ${
-                                        haber.views
-                                            ? `
-                                                <span class="views">
-                                                    👁
-                                                    ${Number(haber.views).toLocaleString("tr-TR")}
-                                                </span>
-                                              `
-                                            : ""
-                                    }
+                                    <div class="news-card-content">
 
-                                </div>
+                                        <div class="news-card-meta">
 
-                            </div>
+                                            <span>
+                                                ${escapeHTML(
+                                                    haber.date || ""
+                                                )}
+                                            </span>
 
-                        </a>
+                                            ${
+                                                haber.time
+                                                    ? `
+                                                        <span>•</span>
 
-                    </article>
-                `;
+                                                        <span>
+                                                            ${escapeHTML(
+                                                                haber.time
+                                                            )}
+                                                        </span>
+                                                      `
+                                                    : ""
+                                            }
 
-            }).join("");
+                                        </div>
 
+
+                                        <h3>
+                                            ${escapeHTML(
+                                                haber.baslik || ""
+                                            )}
+                                        </h3>
+
+
+                                        <p>
+                                            ${escapeHTML(
+                                                haber.spot || ""
+                                            )}
+                                        </p>
+
+
+                                        <div class="news-card-bottom">
+
+                                            <span class="read-more">
+                                                Haberi Oku →
+                                            </span>
+
+                                            ${
+                                                haber.views
+                                                    ? `
+                                                        <span class="views">
+                                                            👁
+                                                            ${Number(
+                                                                haber.views
+                                                            ).toLocaleString(
+                                                                "tr-TR"
+                                                            )}
+                                                        </span>
+                                                      `
+                                                    : ""
+                                            }
+
+                                        </div>
+
+                                    </div>
+
+                                </a>
+
+                            </article>
+                        `;
+                    }
+                )
+                .join("");
     }
 
 
@@ -835,29 +911,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (menuBtn) {
 
-        menuBtn.addEventListener("click", function () {
+        menuBtn.addEventListener(
+            "click",
+            function () {
 
-            document.body.classList.toggle(
-                "menu-open"
-            );
-
-
-            const nav =
-                document.querySelector(
-                    ".category-nav"
+                document.body.classList.toggle(
+                    "menu-open"
                 );
 
 
-            if (nav) {
+                const nav =
+                    document.querySelector(
+                        ".category-nav"
+                    );
 
-                nav.classList.toggle(
-                    "mobile-open"
-                );
 
+                if (nav) {
+
+                    nav.classList.toggle(
+                        "mobile-open"
+                    );
+                }
             }
-
-        });
-
+        );
     }
 
 
@@ -865,32 +941,35 @@ document.addEventListener("DOMContentLoaded", function () {
        MENÜ LİNKLERİ
     ===================================================== */
 
-    $$(".category-nav a").forEach(function (link) {
+    $$(".category-nav a")
+        .forEach(
+            function (link) {
 
-        link.addEventListener("click", function () {
+                link.addEventListener(
+                    "click",
+                    function () {
 
-            document.body.classList.remove(
-                "menu-open"
-            );
+                        document.body.classList.remove(
+                            "menu-open"
+                        );
 
 
-            const nav =
-                document.querySelector(
-                    ".category-nav"
+                        const nav =
+                            document.querySelector(
+                                ".category-nav"
+                            );
+
+
+                        if (nav) {
+
+                            nav.classList.remove(
+                                "mobile-open"
+                            );
+                        }
+                    }
                 );
-
-
-            if (nav) {
-
-                nav.classList.remove(
-                    "mobile-open"
-                );
-
             }
-
-        });
-
-    });
+        );
 
 
     /* =====================================================
@@ -910,7 +989,9 @@ document.addEventListener("DOMContentLoaded", function () {
             );
 
 
-        if (accepted === "true") {
+        if (
+            accepted === "true"
+        ) {
 
             cookieBox.style.display =
                 "none";
@@ -919,9 +1000,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             cookieBox.style.display =
                 "flex";
-
         }
-
     }
 
 
@@ -941,12 +1020,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     cookieBox.style.display =
                         "none";
-
                 }
-
             }
         );
-
     }
 
 
@@ -991,9 +1067,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             clock.textContent =
                 `${dateText} • ${timeText}`;
-
         }
-
     }
 
 
@@ -1005,7 +1079,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     renderHero();
 
-    renderNews(haberListesi);
+    renderNews(
+        haberListesi
+    );
 
     showCookieBox();
 
@@ -1032,7 +1108,7 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
     console.log(
-        "Son dakika bandı:",
+        "Son dakika için kullanılan haberler:",
         haberListesi.slice(0, 5)
     );
 
