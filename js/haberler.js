@@ -118,7 +118,7 @@ const haberler = [
 
         Vatandaşların ve işletmelerin kendilerini ilgilendiren konularda güncel mevzuatı takip etmeleri ve Resmî Gazete'de yayımlanan düzenlemelerin yürürlük tarihlerini kontrol etmeleri önem taşıyor.
     `,
-    resim: "ChatGPT Image 5 Eyl 2026 15_25_02.png",
+    resim: "images/ChatGPT Image 5 Eyl 2026 15_25_02.png",
     tarih: "5 Eylül 2026",
     saat: "15:20",
     okunma: 38742,
