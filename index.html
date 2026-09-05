@@ -8,7 +8,7 @@
 
     <meta
         name="description"
-        content="Haberİsta - Türkiye ve dünyadan son dakika haberleri, gündem, ekonomi, spor, teknoloji ve daha fazlası."
+        content="Haberİsta - Türkiye ve dünyadan son dakika haberleri."
     >
 
     <link rel="stylesheet" href="css/style.css">
@@ -18,16 +18,11 @@
 
 <header class="site-header">
 
-    <div class="main-header">
+    <div class="top-header">
 
         <div class="container header-inner">
 
-            <button
-                class="menu-btn"
-                id="menuBtn"
-                aria-label="Menüyü aç"
-                type="button"
-            >
+            <button id="menuBtn" class="menu-btn">
                 ☰
             </button>
 
@@ -38,17 +33,12 @@
             <div class="search-box">
 
                 <input
-                    type="search"
                     id="searchInput"
+                    type="search"
                     placeholder="Haber ara..."
-                    autocomplete="off"
                 >
 
-                <button
-                    id="searchBtn"
-                    aria-label="Ara"
-                    type="button"
-                >
+                <button id="searchBtn">
                     🔍
                 </button>
 
@@ -59,16 +49,11 @@
     </div>
 
 
-    <!-- ANA MENÜ -->
-
     <nav class="category-nav">
 
         <div class="container nav-inner">
 
-            <a
-                href="index.html"
-                class="active"
-            >
+            <a class="active" href="index.html">
                 Ana Sayfa
             </a>
 
@@ -115,24 +100,20 @@
 </header>
 
 
-<!-- SON DAKİKA ŞERİDİ -->
+<!-- =====================================================
+     SON DAKİKA
+===================================================== -->
 
 <div class="breaking-bar">
 
     <div class="container breaking-inner">
 
         <div class="breaking-title">
-
-            <span class="breaking-dot"></span>
-
+            <span></span>
             SON DAKİKA
-
         </div>
 
-        <div
-            id="breakingNews"
-            class="breaking-news"
-        ></div>
+        <div id="breakingNews" class="breaking-news"></div>
 
     </div>
 
@@ -141,190 +122,63 @@
 
 <main class="container">
 
+    <!-- =================================================
+         MANŞET
+    ================================================= -->
 
-    <!-- MANŞET -->
+    <section class="hero-slider">
 
-   <section class="hero-slider" id="heroSlider">
+        <button
+            id="heroPrev"
+            class="hero-arrow hero-prev"
+        >
+            ‹
+        </button>
 
-    <button class="hero-arrow hero-prev" id="heroPrev" aria-label="Önceki haber">
-        ‹
-    </button>
+        <div id="heroMain" class="hero-main"></div>
 
-    <div id="heroMain" class="hero-main"></div>
+        <button
+            id="heroNext"
+            class="hero-arrow hero-next"
+        >
+            ›
+        </button>
 
-    <button class="hero-arrow hero-next" id="heroNext" aria-label="Sonraki haber">
-        ›
-    </button>
-
-    <div id="heroNumbers" class="hero-numbers"></div>
-
-</section>
-
-
-    <!-- ARAMA SONUCU -->
-
-    <div
-        id="searchResultInfo"
-        class="search-result-info"
-    ></div>
-
-
-    <!-- HABERLER + SIDEBAR -->
-
-    <div class="content-layout">
-
-        <section class="main-column">
-
-            <div class="section-header">
-
-                <h2 id="sectionTitle">
-                    Son Haberler
-                </h2>
-
-                <span></span>
-
-            </div>
-
-            <div
-                id="newsGrid"
-                class="news-grid"
-            ></div>
-
-        </section>
-
-
-        <!-- SAĞ SIDEBAR -->
-
-        <aside class="sidebar">
-
-
-            <!-- ÇOK OKUNANLAR -->
-
-            <div class="sidebar-box">
-
-                <div class="sidebar-title">
-
-                    <h3>
-                        Çok Okunanlar
-                    </h3>
-
-                </div>
-
-                <div
-                    id="popularNews"
-                    class="popular-news"
-                ></div>
-
-            </div>
-
-
-            <!-- GÜNÜN BAŞLIKLARI -->
-
-            <div class="sidebar-box">
-
-                <div class="sidebar-title">
-
-                    <h3>
-                        Günün Başlıkları
-                    </h3>
-
-                </div>
-
-                <div
-                    id="sidebarHeadlines"
-                    class="sidebar-headlines"
-                ></div>
-
-            </div>
-
-        </aside>
-
-    </div>
-
-
-    <!-- GÜNDEM -->
-
-    <section class="category-section">
-
-        <div class="section-header">
-
-            <h2>
-                Gündem
-            </h2>
-
-            <span></span>
-
-        </div>
 
         <div
-            id="gundemNews"
-            class="category-grid"
+            id="heroNumbers"
+            class="hero-numbers"
         ></div>
 
     </section>
 
 
-    <!-- EKONOMİ -->
+    <!-- =================================================
+         HABERLER
+    ================================================= -->
 
-    <section class="category-section">
+    <section class="latest-section">
 
-        <div class="section-header">
+        <div class="section-title">
 
             <h2>
-                Ekonomi
+                Son Haberler
             </h2>
 
-            <span></span>
+            <div></div>
 
         </div>
 
+
         <div
-            id="ekonomiNews"
-            class="category-grid"
+            id="searchResultInfo"
+            class="search-result-info"
         ></div>
 
-    </section>
-
-
-    <!-- SPOR -->
-
-    <section class="category-section">
-
-        <div class="section-header">
-
-            <h2>
-                Spor
-            </h2>
-
-            <span></span>
-
-        </div>
 
         <div
-            id="sporNews"
-            class="category-grid"
-        ></div>
-
-    </section>
-
-
-    <!-- TEKNOLOJİ -->
-
-    <section class="category-section">
-
-        <div class="section-header">
-
-            <h2>
-                Teknoloji
-            </h2>
-
-            <span></span>
-
-        </div>
-
-        <div
-            id="teknolojiNews"
-            class="category-grid"
+            id="newsGrid"
+            class="news-grid"
         ></div>
 
     </section>
@@ -332,122 +186,40 @@
 </main>
 
 
-<!-- FOOTER -->
-
 <footer class="site-footer">
 
-    <div class="container footer-grid">
+    <div class="container footer-inner">
 
-
-        <!-- HAKKIMIZDA -->
-
-        <div class="footer-about">
+        <div>
 
             <div class="footer-logo">
                 <span>Haber</span>İsta
             </div>
 
             <p>
-                Türkiye ve dünyadan güncel gelişmeleri
-                takip edebileceğiniz bağımsız haber portalı.
+                Türkiye ve dünyadan güncel haberler.
             </p>
 
         </div>
 
-
-        <!-- KATEGORİLER -->
-
         <div>
 
-            <h4>
-                Kategoriler
-            </h4>
+            <h4>Kategoriler</h4>
 
-            <a href="gundem.html">
-                Gündem
-            </a>
-
-            <a href="ekonomi.html">
-                Ekonomi
-            </a>
-
-            <a href="spor.html">
-                Spor
-            </a>
-
-            <a href="dunya.html">
-                Dünya
-            </a>
+            <a href="gundem.html">Gündem</a>
+            <a href="ekonomi.html">Ekonomi</a>
+            <a href="spor.html">Spor</a>
+            <a href="dunya.html">Dünya</a>
 
         </div>
 
-
-        <!-- HABERİSTA -->
-
         <div>
 
-            <h4>
-                Haberİsta
-            </h4>
+            <h4>Haberİsta</h4>
 
-            <a href="hakkimizda.html">
-                Hakkımızda
-            </a>
-
-            <a href="iletisim.html">
-                İletişim
-            </a>
-
-            <a href="gizlilik.html">
-                Gizlilik Politikası
-            </a>
-
-            <a href="cerez-politikasi.html">
-                Çerez Politikası
-            </a>
-
-        </div>
-
-
-        <!-- SOSYAL MEDYA -->
-
-        <div>
-
-            <h4>
-                Sosyal Medya
-            </h4>
-
-            <div class="socials">
-
-                <a
-                    href="#"
-                    aria-label="X"
-                >
-                    𝕏
-                </a>
-
-                <a
-                    href="#"
-                    aria-label="Facebook"
-                >
-                    f
-                </a>
-
-                <a
-                    href="#"
-                    aria-label="Instagram"
-                >
-                    ◎
-                </a>
-
-                <a
-                    href="#"
-                    aria-label="YouTube"
-                >
-                    ▶
-                </a>
-
-            </div>
+            <a href="hakkimizda.html">Hakkımızda</a>
+            <a href="iletisim.html">İletişim</a>
+            <a href="gizlilik.html">Gizlilik</a>
 
         </div>
 
@@ -456,29 +228,18 @@
 
     <div class="footer-bottom">
 
-        <div class="container">
-
-            © 2026 Haberİsta. Tüm hakları saklıdır.
-
-        </div>
+        © 2026 Haberİsta. Tüm hakları saklıdır.
 
     </div>
 
 </footer>
 
 
-<!-- ÇEREZ -->
-
-<div
-    id="cookieBox"
-    class="cookie-box"
->
+<div id="cookieBox" class="cookie-box">
 
     <div>
 
-        <strong>
-            Çerez Kullanımı
-        </strong>
+        <strong>Çerez Kullanımı</strong>
 
         <p>
             Site deneyimini geliştirmek için gerekli
@@ -487,10 +248,7 @@
 
     </div>
 
-    <button
-        id="cookieAccept"
-        type="button"
-    >
+    <button id="cookieAccept">
         Kabul Et
     </button>
 
