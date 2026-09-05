@@ -1,11 +1,56 @@
+"use strict";
+
+/* =========================================================
+   HABERİSTA - HABER VERİTABANI
+========================================================= */
+
+
+/* =========================================================
+   SLUG OLUŞTUR
+========================================================= */
+
+function slugOlustur(metin) {
+
+    return String(metin || "")
+
+        .toLocaleLowerCase("tr-TR")
+
+        .replace(/ğ/g, "g")
+        .replace(/ü/g, "u")
+        .replace(/ş/g, "s")
+        .replace(/ı/g, "i")
+        .replace(/ö/g, "o")
+        .replace(/ç/g, "c")
+
+        .replace(/â/g, "a")
+        .replace(/î/g, "i")
+        .replace(/û/g, "u")
+
+        .replace(/[^a-z0-9\s-]/g, "")
+
+        .trim()
+
+        .replace(/\s+/g, "-")
+
+        .replace(/-+/g, "-")
+
+        .replace(/^-+|-+$/g, "");
+}
+
+
+/* =========================================================
+   HABERLER
+========================================================= */
+
 const haberler = [
 
-    /* =========================================================
-       HABER 1 - AYNI KALIYOR
-    ========================================================= */
+    /* =====================================================
+       HABER 1
+    ===================================================== */
 
     {
         id: 1,
+
         kategori: "Son Dakika",
 
         baslik:
@@ -15,6 +60,7 @@ const haberler = [
             "5 Eylül 2026 tarihli Resmî Gazete'de ekonomi, kamu yönetimi, eğitim ve ulaştırma alanlarını ilgilendiren çok sayıda karar ve düzenleme yayımlandı. Sayıştay Başsavcılığına Recep Çevik atanırken bazı kamu kurumlarında yeni atama ve görevden alma kararları da Resmî Gazete'de yer aldı.",
 
         content: `
+
             <p>
                 5 Eylül 2026 tarihli Resmî Gazete yayımlandı.
                 Yeni sayıda kamu yönetiminden ekonomiye,
@@ -76,13 +122,16 @@ const haberler = [
                 sektörler açısından yeni gelişmeleri beraberinde
                 getiriyor.
             </p>
+
         `,
 
         image:
             "images/ChatGPT Image 5 Eyl 2026 15_25_02.png",
 
         date: "5 Eylül 2026",
+
         time: "15:20",
+
         views: 38742,
 
         source:
@@ -90,12 +139,13 @@ const haberler = [
     },
 
 
-    /* =========================================================
-       HABER 2 - AYNI KALIYOR
-    ========================================================= */
+    /* =====================================================
+       HABER 2
+    ===================================================== */
 
     {
         id: 2,
+
         kategori: "Spor",
 
         baslik:
@@ -105,6 +155,7 @@ const haberler = [
             "A Milli Kadın Voleybol Takımı, 2026 CEV Trendyol Kadınlar Avrupa Voleybol Şampiyonası'nda finale yükseldi. Yarı finalde Sırbistan'ı 3-0 mağlup eden Filenin Sultanları, şampiyonluk maçında İtalya ile karşılaşacak.",
 
         content: `
+
             <p>
                 A Milli Kadın Voleybol Takımı, Avrupa Şampiyonası'nda
                 adını finale yazdırdı.
@@ -157,13 +208,16 @@ const haberler = [
                 Şimdi tüm gözler Avrupa şampiyonluğu için oynanacak
                 Türkiye-İtalya finaline çevrilmiş durumda.
             </p>
+
         `,
 
         image:
             "images/AVRUPA.jpeg",
 
         date: "6 Eylül 2026",
+
         time: "01:30",
+
         views: 58421,
 
         source:
@@ -171,12 +225,13 @@ const haberler = [
     },
 
 
-    /* =========================================================
-       HABER 3
-    ========================================================= */
+    /* =====================================================
+       HABER 3 - EKONOMİ
+    ===================================================== */
 
     {
         id: 3,
+
         kategori: "Ekonomi",
 
         baslik:
@@ -186,6 +241,7 @@ const haberler = [
             "Para piyasası fonları ile unvanında 'para piyasası' ibaresi bulunan serbest fonlardan elde edilen kazançlara uygulanan tevkifat oranı yüzde 0'dan yüzde 10'a çıkarıldı. Yeni düzenleme yatırımcıların fon getirileri üzerindeki vergi hesabını doğrudan etkileyecek.",
 
         content: `
+
             <p>
                 Ekonomi gündeminde yatırımcıları yakından ilgilendiren
                 yeni bir düzenleme öne çıktı. Para piyasası fonları ile
@@ -258,13 +314,16 @@ const haberler = [
                 fon seçimlerini değerlendirirken dikkate alacağı
                 önemli değişikliklerden biri oldu.
             </p>
+
         `,
 
         image:
             "images/EKENOMİ.jpeg",
 
         date: "5 Eylül 2026",
+
         time: "18:10",
+
         views: 26341,
 
         source:
@@ -272,12 +331,13 @@ const haberler = [
     },
 
 
-    /* =========================================================
-       HABER 4
-    ========================================================= */
+    /* =====================================================
+       HABER 4 - GÜNDEM
+    ===================================================== */
 
     {
         id: 4,
+
         kategori: "Gündem",
 
         baslik:
@@ -287,6 +347,7 @@ const haberler = [
             "Eylül ayına ilişkin yaşlı ve engelli aylıklarının hesaplara yatırılmaya başlandığı bildirildi. Ödemelerden yararlanan vatandaşlar hesaplarını ve ödeme durumlarını takip ediyor.",
 
         content: `
+
             <p>
                 Eylül ayının başlamasıyla birlikte sosyal yardım
                 ödemeleri de vatandaşların gündemindeki önemli
@@ -353,13 +414,16 @@ const haberler = [
                 Eylül ayındaki ödemeler de sosyal destek
                 gündeminin öne çıkan başlıkları arasında yer aldı.
             </p>
+
         `,
 
         image:
             "images/GÜNDEM.jpeg",
 
         date: "5 Eylül 2026",
+
         time: "10:27",
+
         views: 22418,
 
         source:
@@ -367,13 +431,14 @@ const haberler = [
     },
 
 
-    /* =========================================================
-       HABER 5
-    ========================================================= */
+    /* =====================================================
+       HABER 5 - PISA
+    ===================================================== */
 
     {
         id: 5,
-        kategori: "Gündem",
+
+        kategori: "Eğitim",
 
         baslik:
             "PISA 2025 sonuçları için geri sayım: Sonuçlar 8 Eylül'de açıklanacak",
@@ -382,6 +447,7 @@ const haberler = [
             "PISA 2025 sonuçları için tarih belli oldu. Uluslararası öğrenci değerlendirmesinin sonuçları 8 Eylül 2026'da açıklanacak. Türkiye'deki öğrencilerin performansı da açıklanacak sonuçlarla birlikte gündeme gelecek.",
 
         content: `
+
             <p>
                 Eğitim dünyasının yakından takip ettiği PISA 2025
                 sonuçları için geri sayım başladı. Uluslararası
@@ -457,13 +523,16 @@ const haberler = [
                 mevcut durumuna ilişkin önemli göstergeler sunması
                 bekleniyor.
             </p>
+
         `,
 
         image:
             "images/PISA.jpeg",
 
         date: "6 Eylül 2026",
+
         time: "09:42",
+
         views: 18976,
 
         source:
@@ -472,60 +541,95 @@ const haberler = [
 
 ];
 
+
 /* =========================================================
-   HER HABERE OTOMATİK SLUG
+   HER HABERE OTOMATİK SLUG VE URL
 ========================================================= */
 
 haberler.forEach(function (haber) {
 
-    haber.slug = slugOlustur(haber.baslik);
+    haber.slug =
+        slugOlustur(haber.baslik);
 
-    haber.url = "/haber/" + haber.slug;
+    haber.url =
+        "/haber/" + haber.slug;
 
 });
 
 
 /* =========================================================
-   HABER BULMA
+   SLUG İLE HABER BUL
 ========================================================= */
 
 function haberSlugIleBul(slug) {
 
+    const temizSlug =
+        slugOlustur(
+            decodeURIComponent(
+                String(slug || "")
+            )
+        );
+
     return haberler.find(function (haber) {
 
-        return haber.slug === slug;
+        return haber.slug === temizSlug;
 
-    });
-
+    }) || null;
 }
 
+
+/* =========================================================
+   ID İLE HABER BUL
+========================================================= */
 
 function haberIdIleBul(id) {
 
     return haberler.find(function (haber) {
 
-        return String(haber.id) === String(id);
+        return String(haber.id)
+            === String(id);
 
-    });
-
+    }) || null;
 }
 
 
 /* =========================================================
-   GLOBAL
+   GLOBAL DEĞİŞKENLER
 ========================================================= */
 
-window.haberler = haberler;
+window.haberler =
+    haberler;
 
-window.slugOlustur = slugOlustur;
+window.slugOlustur =
+    slugOlustur;
 
-window.haberSlugIleBul = haberSlugIleBul;
+window.haberSlugIleBul =
+    haberSlugIleBul;
 
-window.haberIdIleBul = haberIdIleBul;
+window.haberIdIleBul =
+    haberIdIleBul;
 
+
+/* =========================================================
+   KONTROL
+========================================================= */
 
 console.log(
     "Haberİsta:",
     haberler.length,
     "haber başarıyla yüklendi."
 );
+
+console.log(
+    "Haber URL'leri:"
+);
+
+haberler.forEach(function (haber) {
+
+    console.log(
+        haber.id,
+        "→",
+        haber.url
+    );
+
+});
