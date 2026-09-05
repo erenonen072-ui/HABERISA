@@ -1,2185 +1,287 @@
+```css
 /* =========================================================
    HABERİSTA
-   ========================================================= */
-
-:root {
-    --red: #e50914;
-    --red-dark: #c7000b;
-    --black: #111;
-    --text: #171717;
-    --gray: #777;
-    --line: #e5e5e5;
-    --bg: #fff;
-    --container: 1180px;
-}
+   KÜÇÜK HABER KARTLARI
+========================================================= */
 
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-html {
-    scroll-behavior: smooth;
 }
 
 body {
-    background: #fff;
-    color: var(--text);
+    margin: 0;
+    background: #f5f6f8;
+    color: #111318;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-a {
-    color: inherit;
-    text-decoration: none;
+/* =========================================================
+   KATEGORİ SAYFASI
+========================================================= */
+
+.category-page {
+    min-height: 100vh;
+    padding: 25px 0 50px;
 }
 
-button,
-input {
-    font-family: inherit;
-}
-
-.container {
-    width: min(var(--container), calc(100% - 36px));
+.category-container {
+    width: min(1250px, calc(100% - 30px));
     margin: auto;
 }
 
 /* =========================================================
-   HEADER
-   ========================================================= */
+   KATEGORİ BAŞLIĞI
+========================================================= */
 
-.site-header {
-    background: #fff;
-    border-bottom: 1px solid #ddd;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.main-header {
-    height: 72px;
-}
-
-.header-inner {
-    height: 72px;
+.category-title {
     display: flex;
     align-items: center;
-    gap: 25px;
+    gap: 10px;
+    margin: 0 0 20px;
 }
 
-.logo {
-    font-size: 30px;
-    font-weight: 900;
-    letter-spacing: -1.5px;
-}
-
-.logo span {
-    color: var(--red);
-}
-
-.menu-btn {
-    display: none;
-    border: 0;
-    background: #f3f3f3;
-    width: 42px;
-    height: 42px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 22px;
-}
-
-.search-box {
-    margin-left: auto;
-    width: 310px;
-    height: 40px;
-    display: flex;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    overflow: hidden;
-}
-
-.search-box input {
-    flex: 1;
-    border: 0;
-    outline: 0;
-    padding: 0 13px;
-}
-
-.search-box button {
-    width: 48px;
-    border: 0;
-    background: var(--red);
-    color: #fff;
-    cursor: pointer;
-}
-
-/* =========================================================
-   NAV
-   ========================================================= */
-
-.category-nav {
-    background: #111;
-    color: white;
-}
-
-.nav-inner {
-    height: 46px;
-    display: flex;
-    align-items: stretch;
-    overflow-x: auto;
-    scrollbar-width: none;
-}
-
-.nav-inner::-webkit-scrollbar {
-    display: none;
-}
-
-.nav-inner a {
-    display: flex;
-    align-items: center;
-    padding: 0 17px;
-    font-size: 13px;
-    font-weight: 700;
-    white-space: nowrap;
-}
-
-.nav-inner a:hover {
-    background: #272727;
-}
-
-.nav-inner a.active {
-    background: var(--red);
-}
-
-/* =========================================================
-   SON DAKİKA
-   ========================================================= */
-
-.breaking-bar {
-    height: 44px;
-    background: #f4f4f4;
-    border-bottom: 1px solid #ddd;
-    overflow: hidden;
-}
-
-.breaking-inner {
-    height: 44px;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-}
-
-.breaking-title {
-    flex-shrink: 0;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding-right: 20px;
-    color: var(--red);
-    font-size: 12px;
-    font-weight: 900;
-    background: #f4f4f4;
-    position: relative;
-    z-index: 5;
-}
-
-.breaking-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--red);
-    animation: breakingPulse 1.2s infinite;
-}
-
-@keyframes breakingPulse {
-    0% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: .3;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-.breaking-news {
-    flex: 1;
-    min-width: 0;
-    overflow: hidden;
-    height: 100%;
-}
-
-.breaking-marquee {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
-
-.breaking-track {
-    display: flex;
-    width: max-content;
-    height: 100%;
-    animation: breakingMove 28s linear infinite;
-}
-
-.breaking-track:hover {
-    animation-play-state: paused;
-}
-
-.breaking-group {
-    display: flex;
-    align-items: center;
-    flex-shrink: 0;
-}
-
-.breaking-item {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    white-space: nowrap;
-    margin-right: 65px;
-    font-size: 13px;
-    font-weight: 700;
-    color: #222;
-}
-
-.breaking-item:hover {
-    color: var(--red);
-}
-
-.breaking-mini-dot {
+.category-title::before {
+    content: "";
     width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    background: var(--red);
+    height: 28px;
+    background: #e30613;
+    border-radius: 10px;
 }
 
-@keyframes breakingMove {
-    from {
-        transform: translateX(0);
-    }
-
-    to {
-        transform: translateX(-50%);
-    }
-}
-
-/* =========================================================
-   ANA
-   ========================================================= */
-
-main.container {
-    padding-top: 18px;
-    padding-bottom: 60px;
-}
-
-/* =========================================================
-   MANŞET
-   ========================================================= */
-
-.hero-slider {
-    width: 100%;
-    height: 500px;
-    position: relative;
-    overflow: hidden;
-    background: #111;
-    margin-bottom: 20px;
-}
-
-.hero-main {
-    width: 100%;
-    height: 100%;
-}
-
-.hero-slide-link {
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: relative;
-}
-
-.hero-image {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.hero-overlay {
-    position: absolute;
-    inset: 0;
-    background:
-        linear-gradient(
-            to bottom,
-            rgba(0,0,0,0) 25%,
-            rgba(0,0,0,.12) 45%,
-            rgba(0,0,0,.88) 100%
-        );
-}
-
-.hero-content {
-    position: absolute;
-    z-index: 4;
-    left: 35px;
-    right: 35px;
-    bottom: 75px;
-    color: white;
-}
-
-.hero-category {
-    display: inline-block;
-    padding: 5px 9px;
-    background: var(--red);
-    font-size: 11px;
+.category-title h1 {
+    margin: 0;
+    font-size: 27px;
     font-weight: 900;
-    margin-bottom: 10px;
-}
-
-.hero-content h1 {
-    max-width: 900px;
-    font-size: 36px;
-    line-height: 1.12;
-    font-weight: 900;
-    text-shadow: 0 2px 5px rgba(0,0,0,.5);
-}
-
-.hero-content p {
-    max-width: 800px;
-    margin-top: 10px;
-    font-size: 14px;
-    line-height: 1.5;
-    color: #eee;
-}
-
-.hero-meta {
-    margin-top: 10px;
-    font-size: 12px;
-    color: #ddd;
-}
-
-/* =========================================================
-   MANŞET OKLARI
-   ========================================================= */
-
-.hero-arrow {
-    position: absolute;
-    z-index: 10;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 55px;
-    height: 80px;
-    border: 0;
-    background: rgba(0,0,0,.15);
-    color: #fff;
-    font-size: 65px;
-    line-height: 60px;
-    cursor: pointer;
-    transition: .2s;
-}
-
-.hero-arrow:hover {
-    background: rgba(0,0,0,.55);
-}
-
-.hero-prev {
-    left: 0;
-}
-
-.hero-next {
-    right: 0;
-}
-
-/* =========================================================
-   MANŞET NUMARALARI
-   ========================================================= */
-
-.hero-numbers {
-    position: absolute;
-    z-index: 20;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 50px;
-    display: flex;
-    background: #111;
-    overflow-x: auto;
-    scrollbar-width: none;
-}
-
-.hero-numbers::-webkit-scrollbar {
-    display: none;
-}
-
-.hero-number {
-    flex: 1 0 48px;
-    border: 0;
-    border-right: 1px solid #333;
-    background: #111;
-    color: #fff;
-    font-size: 14px;
-    font-weight: 800;
-    cursor: pointer;
-}
-
-.hero-number:hover {
-    background: #292929;
-}
-
-.hero-number.active {
-    background: var(--red);
-}
-
-/* =========================================================
-   İÇERİK
-   ========================================================= */
-
-.content-layout {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 300px;
-    gap: 28px;
-}
-
-.section-header {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 17px;
-}
-
-.section-header h2 {
-    font-size: 24px;
-    font-weight: 900;
-    white-space: nowrap;
-}
-
-.section-header span {
-    flex: 1;
-    height: 3px;
-    background: linear-gradient(
-        to right,
-        var(--red),
-        #eee
-    );
+    letter-spacing: -0.5px;
 }
 
 /* =========================================================
    HABER GRID
-   ========================================================= */
+========================================================= */
 
-.news-grid {
+.category-news {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 22px 20px;
+    gap: 18px;
 }
+
+/* =========================================================
+   HABER KARTI
+========================================================= */
 
 .news-card {
-    background: #fff;
-    min-width: 0;
-}
-
-.news-card-image {
     display: block;
-    width: 100%;
-    height: 190px;
-    position: relative;
+    background: #fff;
+    border: 1px solid #e4e6ea;
+    border-radius: 12px;
     overflow: hidden;
-    background: #eee;
-}
-
-.news-card-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform .35s ease;
-}
-
-.news-card:hover .news-card-image img {
-    transform: scale(1.05);
-}
-
-.card-category {
-    position: absolute;
-    left: 10px;
-    bottom: 10px;
-    background: var(--red);
-    color: #fff;
-    padding: 4px 7px;
-    font-size: 10px;
-    font-weight: 900;
-}
-
-.news-card-body {
-    padding-top: 9px;
-}
-
-.news-card-meta {
-    font-size: 10px;
-    color: #999;
-    margin-bottom: 5px;
-}
-
-.news-card h3 {
-    font-size: 17px;
-    line-height: 1.3;
-    font-weight: 800;
-}
-
-.news-card h3 a:hover {
-    color: var(--red);
-}
-
-.news-card p {
-    margin-top: 6px;
-    color: #777;
-    font-size: 12px;
-    line-height: 1.5;
-}
-
-.read-more {
-    display: inline-block;
-    margin-top: 8px;
-    color: var(--red);
-    font-size: 12px;
-    font-weight: 800;
-}
-
-/* =========================================================
-   SIDEBAR
-   ========================================================= */
-
-.sidebar {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-}
-
-.sidebar-box {
-    border: 1px solid #e1e1e1;
-}
-
-.sidebar-title {
-    background: #111;
-    color: #fff;
-    border-left: 5px solid var(--red);
-    padding: 12px 14px;
-}
-
-.sidebar-title h3 {
-    font-size: 15px;
-    font-weight: 900;
-}
-
-.popular-item {
-    display: grid;
-    grid-template-columns: 30px 70px 1fr;
-    gap: 9px;
-    align-items: center;
-    padding: 11px;
-    border-bottom: 1px solid #eee;
-}
-
-.popular-item:last-child {
-    border-bottom: 0;
-}
-
-.popular-number {
-    color: var(--red);
-    font-size: 18px;
-    font-weight: 900;
-}
-
-.popular-item img {
-    width: 70px;
-    height: 52px;
-    object-fit: cover;
-}
-
-.popular-item h4 {
-    font-size: 12px;
-    line-height: 1.3;
-}
-
-.popular-item small {
-    display: block;
-    margin-top: 4px;
-    color: #999;
-    font-size: 9px;
-}
-
-.sidebar-headline {
-    display: block;
-    padding: 12px 14px;
-    border-bottom: 1px solid #eee;
-    font-size: 12px;
-    font-weight: 700;
-    line-height: 1.4;
-}
-
-.sidebar-headline span {
-    color: var(--red);
-    font-size: 17px;
-    margin-right: 5px;
-}
-
-.sidebar-headline:hover {
-    color: var(--red);
-}
-
-/* =========================================================
-   KATEGORİLER
-   ========================================================= */
-
-.category-section {
-    margin-top: 50px;
-}
-
-.category-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-}
-
-/* =========================================================
-   BOŞ SONUÇ
-   ========================================================= */
-
-.empty-search,
-.empty-category {
-    padding: 30px;
-    background: #f7f7f7;
-    color: #777;
-    text-align: center;
-}
-
-/* =========================================================
-   FOOTER
-   ========================================================= */
-
-.site-footer {
-    background: #111;
-    color: white;
-    margin-top: 50px;
-}
-
-.footer-grid {
-    padding: 45px 0;
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
-    gap: 35px;
-}
-
-.footer-logo {
-    font-size: 27px;
-    font-weight: 900;
-    margin-bottom: 10px;
-}
-
-.footer-logo span {
-    color: var(--red);
-}
-
-.footer-about p {
-    color: #aaa;
-    max-width: 320px;
-    font-size: 12px;
-    line-height: 1.6;
-}
-
-.footer-grid h4 {
-    font-size: 14px;
-    margin-bottom: 14px;
-}
-
-.footer-grid > div > a {
-    display: block;
-    color: #aaa;
-    font-size: 12px;
-    margin-bottom: 8px;
-}
-
-.footer-grid > div > a:hover {
-    color: white;
-}
-
-.socials {
-    display: flex;
-    gap: 7px;
-}
-
-.socials a {
-    width: 34px;
-    height: 34px;
-    border-radius: 50%;
-    background: #252525;
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
-    color: white !important;
-}
-
-.socials a:hover {
-    background: var(--red);
-}
-
-.footer-bottom {
-    border-top: 1px solid #292929;
-    padding: 15px 0;
-    color: #777;
-    font-size: 11px;
-}
-
-/* =========================================================
-   ÇEREZ
-   ========================================================= */
-
-.cookie-box {
-    position: fixed;
-    left: 20px;
-    bottom: 20px;
-    z-index: 9999;
-    width: min(620px, calc(100% - 40px));
-    padding: 17px;
-    background: #fff;
-    border: 1px solid #ddd;
-    box-shadow: 0 8px 35px rgba(0,0,0,.18);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-    border-radius: 5px;
-}
-
-.cookie-box p {
-    color: #777;
-    font-size: 11px;
-    margin-top: 3px;
-}
-
-.cookie-box button {
-    border: 0;
-    background: var(--red);
-    color: white;
-    padding: 10px 16px;
-    cursor: pointer;
-    font-weight: 800;
-}
-
-/* =========================================================
-   TABLET
-   ========================================================= */
-
-@media (max-width: 950px) {
-
-    .content-layout {
-        grid-template-columns: 1fr;
-    }
-
-    .sidebar {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .hero-slider {
-        height: 450px;
-    }
-
-    .category-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-/* =========================================================
-   MOBİL
-   ========================================================= */
-
-@media (max-width: 700px) {
-
-    .container {
-        width: calc(100% - 20px);
-    }
-
-    .header-inner {
-        height: 62px;
-    }
-
-    .main-header {
-        height: 62px;
-    }
-
-    .menu-btn {
-        display: block;
-    }
-
-    .logo {
-        font-size: 24px;
-    }
-
-    .search-box {
-        width: 42px;
-        border: 0;
-    }
-
-    .search-box input {
-        display: none;
-    }
-
-    .search-box button {
-        width: 42px;
-        height: 40px;
-    }
-
-    .category-nav {
-        overflow: hidden;
-    }
-
-    .nav-inner {
-        height: 42px;
-    }
-
-    .nav-inner a {
-        padding: 0 12px;
-        font-size: 11px;
-    }
-
-    .breaking-bar,
-    .breaking-inner {
-        height: 40px;
-    }
-
-    .breaking-title {
-        font-size: 10px;
-        padding-right: 10px;
-    }
-
-    .breaking-item {
-        font-size: 11px;
-        margin-right: 40px;
-    }
-
-    .hero-slider {
-        height: 390px;
-    }
-
-    .hero-content {
-        left: 18px;
-        right: 18px;
-        bottom: 63px;
-    }
-
-    .hero-content h1 {
-        font-size: 23px;
-    }
-
-    .hero-content p {
-        display: none;
-    }
-
-    .hero-arrow {
-        width: 38px;
-        height: 60px;
-        font-size: 48px;
-    }
-
-    .hero-numbers {
-        height: 43px;
-    }
-
-    .hero-number {
-        flex: 0 0 38px;
-        font-size: 12px;
-    }
-
-    .news-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px 12px;
-    }
-
-    .news-card-image {
-        height: 125px;
-    }
-
-    .news-card h3 {
-        font-size: 14px;
-    }
-
-    .news-card p {
-        display: none;
-    }
-
-    .read-more {
-        font-size: 10px;
-    }
-
-    .sidebar {
-        grid-template-columns: 1fr;
-    }
-
-    .category-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
-    }
-
-    .footer-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .footer-about {
-        grid-column: 1 / -1;
-    }
-
-    .cookie-box {
-        left: 10px;
-        bottom: 10px;
-        width: calc(100% - 20px);
-        flex-direction: column;
-        align-items: stretch;
-    }
-}
-
-/* =========================================================
-   ÇOK KÜÇÜK TELEFON
-   ========================================================= */
-
-@media (max-width: 430px) {
-
-    .news-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .category-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .news-card-image {
-        height: 190px;
-    }
-
-    .footer-grid {
-        grid-template-columns: 1fr;
-    }
-}
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-:root {
-    --red: #ed1111;
-    --black: #111;
-    --gray: #777;
-    --line: #ddd;
-}
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #fff;
-    color: #111;
-}
-
-a {
     text-decoration: none;
     color: inherit;
-}
-
-.container {
-    width: 1180px;
-    max-width: calc(100% - 36px);
-    margin: auto;
-}
-
-
-/* =====================================================
-   HEADER
-===================================================== */
-
-.top-header {
-    height: 72px;
-    background: white;
-}
-
-.header-inner {
-    height: 72px;
-    display: flex;
-    align-items: center;
-}
-
-.logo {
-    font-size: 31px;
-    font-weight: 900;
-    letter-spacing: -1.5px;
-}
-
-.logo span {
-    color: var(--red);
-}
-
-.menu-btn {
-    display: none;
-}
-
-.search-box {
-    margin-left: auto;
-    height: 40px;
-    width: 310px;
-    display: flex;
-    border: 1px solid #ddd;
-}
-
-.search-box input {
-    flex: 1;
-    border: 0;
-    outline: none;
-    padding: 0 12px;
-}
-
-.search-box button {
-    width: 45px;
-    border: 0;
-    background: var(--red);
-    color: white;
-    cursor: pointer;
-}
-
-
-/* =====================================================
-   NAV
-===================================================== */
-
-.category-nav {
-    height: 45px;
-    background: #111;
-    color: white;
-}
-
-.nav-inner {
-    height: 45px;
-    display: flex;
-    overflow-x: auto;
-}
-
-.nav-inner a {
-    display: flex;
-    align-items: center;
-    padding: 0 17px;
-    font-size: 13px;
-    font-weight: 700;
-    white-space: nowrap;
-}
-
-.nav-inner a.active {
-    background: var(--red);
-}
-
-.nav-inner a:hover {
-    background: #292929;
-}
-
-
-/* =====================================================
-   SON DAKİKA KAYAN BANT
-===================================================== */
-
-.breaking-bar {
-    height: 42px;
-    background: #f5f5f5;
-    border-bottom: 1px solid #ddd;
-    overflow: hidden;
-}
-
-.breaking-inner {
-    height: 42px;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-}
-
-.breaking-title {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding-right: 18px;
-    background: #f5f5f5;
-    z-index: 3;
-    flex-shrink: 0;
-    color: var(--red);
-    font-size: 12px;
-    font-weight: 900;
-}
-
-.breaking-title span {
-    width: 8px;
-    height: 8px;
-    background: var(--red);
-    border-radius: 50%;
-    animation: blink 1s infinite;
-}
-
-@keyframes blink {
-    0% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: .3;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-.breaking-news {
-    overflow: hidden;
-    height: 100%;
-    flex: 1;
-}
-
-.breaking-marquee {
-    height: 100%;
-    overflow: hidden;
-}
-
-.breaking-track {
-    display: flex;
-    width: max-content;
-    height: 100%;
-    animation: ticker 35s linear infinite;
-}
-
-.breaking-track:hover {
-    animation-play-state: paused;
-}
-
-.breaking-group {
-    display: flex;
-    align-items: center;
-}
-
-.breaking-item {
-    white-space: nowrap;
-    margin-right: 70px;
-    font-size: 13px;
-    font-weight: 700;
-}
-
-.breaking-item:hover {
-    color: var(--red);
-}
-
-.breaking-mini-dot {
-    display: inline-block;
-    width: 5px;
-    height: 5px;
-    margin-right: 7px;
-    background: var(--red);
-    border-radius: 50%;
-}
-
-@keyframes ticker {
-
-    from {
-        transform: translateX(0);
-    }
-
-    to {
-        transform: translateX(-50%);
-    }
-
-}
-
-
-/* =====================================================
-   ANA
-===================================================== */
-
-main {
-    padding-top: 16px;
-    padding-bottom: 60px;
-}
-
-
-/* =====================================================
-   MANŞET
-===================================================== */
-
-.hero-slider {
-    position: relative;
-    width: 100%;
-    height: 510px;
-    overflow: hidden;
-    background: #111;
-}
-
-.hero-main {
-    width: 100%;
-    height: 100%;
-}
-
-.hero-slide-link {
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: relative;
-}
-
-.hero-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-.hero-overlay {
-    position: absolute;
-    inset: 0;
-
-    background:
-        linear-gradient(
-            to bottom,
-            rgba(0,0,0,0) 25%,
-            rgba(0,0,0,.15) 45%,
-            rgba(0,0,0,.85) 100%
-        );
-}
-
-.hero-content {
-    position: absolute;
-    left: 38px;
-    right: 38px;
-    bottom: 72px;
-    color: white;
-}
-
-.hero-category {
-    display: inline-block;
-    background: var(--red);
-    padding: 5px 9px;
-    margin-bottom: 10px;
-    font-size: 11px;
-    font-weight: 900;
-}
-
-.hero-content h1 {
-    max-width: 900px;
-    font-size: 36px;
-    line-height: 1.08;
-    font-weight: 900;
-    text-shadow: 0 2px 5px rgba(0,0,0,.7);
-}
-
-.hero-content p {
-    max-width: 800px;
-    margin-top: 10px;
-    font-size: 14px;
-    line-height: 1.5;
-}
-
-.hero-meta {
-    margin-top: 8px;
-    font-size: 11px;
-    color: #ddd;
-}
-
-
-/* =====================================================
-   OKLAR
-===================================================== */
-
-.hero-arrow {
-    position: absolute;
-    top: 42%;
-    z-index: 10;
-
-    width: 55px;
-    height: 90px;
-
-    border: 0;
-    background: rgba(0,0,0,.05);
-
-    color: white;
-
-    font-size: 75px;
-    font-weight: 200;
-
     cursor: pointer;
 
-    line-height: 70px;
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease,
+        border-color .2s ease;
 }
 
-.hero-arrow:hover {
-    background: rgba(0,0,0,.35);
+.news-card:hover {
+    transform: translateY(-4px);
+    border-color: #d8dbe0;
+    box-shadow: 0 12px 28px rgba(0,0,0,.09);
 }
 
-.hero-prev {
-    left: 0;
-}
-
-.hero-next {
-    right: 0;
-}
-
-
-/* =====================================================
-   NUMARALAR
-===================================================== */
-
-.hero-numbers {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-
-    height: 50px;
-
-    display: flex;
-
-    background: #080808;
-
-    overflow-x: auto;
-}
-
-.hero-number {
-    flex: 0 0 60px;
-
-    border: 0;
-    border-right: 1px solid #292929;
-
-    background: #080808;
-
-    color: white;
-
-    font-size: 14px;
-    font-weight: 900;
-
-    cursor: pointer;
-}
-
-.hero-number:hover {
-    background: #222;
-}
-
-.hero-number.active {
-    background: var(--red);
-}
-
-
-/* =====================================================
-   HABERLER
-===================================================== */
-
-.latest-section {
-    padding-top: 24px;
-}
-
-.section-title {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 17px;
-}
-
-.section-title h2 {
-    font-size: 24px;
-    font-weight: 900;
-}
-
-.section-title div {
-    flex: 1;
-    height: 3px;
-    background: linear-gradient(
-        to right,
-        var(--red),
-        #eee
-    );
-}
-
-
-/* =====================================================
-   3 SÜTUN
-===================================================== */
-
-.news-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    column-gap: 30px;
-    row-gap: 38px;
-}
-
-.news-card {
-    min-width: 0;
-}
+/* =========================================================
+   FOTOĞRAF
+========================================================= */
 
 .news-card-image {
     position: relative;
-    display: block;
-
     width: 100%;
-    height: 225px;
-
+    height: 165px;
     overflow: hidden;
-    background: #eee;
+    background: #e9eaec;
 }
 
 .news-card-image img {
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
-
-    display: block;
 
     transition: transform .3s ease;
 }
 
-.news-card:hover img {
-    transform: scale(1.04);
+.news-card:hover .news-card-image img {
+    transform: scale(1.045);
 }
 
-.card-category {
-    position: absolute;
-    left: 10px;
-    bottom: 10px;
+/* =========================================================
+   SON DAKİKA ETİKETİ
+========================================================= */
 
-    background: var(--red);
-    color: white;
+.news-badge {
+    position: absolute;
+    left: 9px;
+    top: 9px;
+
+    background: #e30613;
+    color: #fff;
 
     padding: 5px 8px;
+    border-radius: 5px;
 
-    font-size: 10px;
+    font-size: 9px;
     font-weight: 900;
+    letter-spacing: .3px;
 }
 
-.news-card-body {
-    padding-top: 11px;
+/* =========================================================
+   KART İÇERİĞİ
+========================================================= */
+
+.news-card-content {
+    padding: 13px 14px 12px;
 }
+
+.news-card-category {
+    margin-bottom: 6px;
+
+    color: #e30613;
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.news-card-title {
+    margin: 0;
+
+    font-size: 16px;
+    line-height: 1.32;
+    font-weight: 800;
+    color: #17191d;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+
+/* =========================================================
+   TARİH
+========================================================= */
 
 .news-card-meta {
-    color: #999;
-    font-size: 10px;
-    margin-bottom: 6px;
-}
-
-.news-card h3 {
-    font-size: 19px;
-    line-height: 1.3;
-    font-weight: 900;
-}
-
-.news-card h3 a:hover {
-    color: var(--red);
-}
-
-.news-card p {
-    margin-top: 7px;
-    color: #777;
-    font-size: 13px;
-    line-height: 1.5;
-}
-
-.read-more {
-    display: inline-block;
-    margin-top: 7px;
-    color: var(--red);
-    font-size: 12px;
-    font-weight: 900;
-}
-
-
-/* =====================================================
-   FOOTER
-===================================================== */
-
-.site-footer {
-    background: #111;
-    color: white;
-}
-
-.footer-inner {
-    padding: 45px 0;
-
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 50px;
-}
-
-.footer-logo {
-    font-size: 27px;
-    font-weight: 900;
-}
-
-.footer-logo span {
-    color: var(--red);
-}
-
-.footer-inner p {
     margin-top: 10px;
-    color: #aaa;
-    font-size: 12px;
-}
+    padding-top: 9px;
 
-.footer-inner h4 {
-    margin-bottom: 13px;
-}
-
-.footer-inner a {
-    display: block;
-    color: #aaa;
-    margin-bottom: 7px;
-    font-size: 12px;
-}
-
-.footer-inner a:hover {
-    color: white;
-}
-
-.footer-bottom {
-    padding: 15px 0;
-    border-top: 1px solid #292929;
-    color: #777;
-    font-size: 11px;
-}
-
-
-/* =====================================================
-   ÇEREZ
-===================================================== */
-
-.cookie-box {
-    position: fixed;
-    z-index: 9999;
-
-    left: 20px;
-    bottom: 20px;
-
-    width: 550px;
-    max-width: calc(100% - 40px);
-
-    padding: 17px;
-
-    background: white;
-
-    border: 1px solid #ddd;
-
-    box-shadow: 0 5px 30px rgba(0,0,0,.2);
+    border-top: 1px solid #eeeeef;
 
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    gap: 20px;
+    align-items: center;
+
+    color: #92979f;
+    font-size: 10px;
 }
 
-.cookie-box p {
-    color: #777;
-    font-size: 11px;
-    margin-top: 3px;
+.news-card-time {
+    font-weight: 600;
 }
 
-.cookie-box button {
-    background: var(--red);
-    color: white;
-    border: 0;
-    padding: 10px 16px;
-    font-weight: 800;
-    cursor: pointer;
+/* =========================================================
+   HABER YOK
+========================================================= */
+
+.no-news {
+    grid-column: 1 / -1;
+
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+
+    padding: 40px;
+    text-align: center;
+
+    color: #858a92;
 }
 
-
-/* =====================================================
+/* =========================================================
    MOBİL
-===================================================== */
+========================================================= */
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
 
-    .container {
-        max-width: calc(100% - 20px);
-    }
-
-    .top-header,
-    .header-inner {
-        height: 60px;
-    }
-
-    .menu-btn {
-        display: block;
-
-        width: 40px;
-        height: 40px;
-
-        margin-right: 10px;
-
-        border: 0;
-        background: #eee;
-
-        font-size: 20px;
-    }
-
-    .logo {
-        font-size: 23px;
-    }
-
-    .search-box {
-        width: 42px;
-        border: 0;
-    }
-
-    .search-box input {
-        display: none;
-    }
-
-    .search-box button {
-        width: 42px;
-        height: 40px;
-    }
-
-    .hero-slider {
-        height: 400px;
-    }
-
-    .hero-content {
-        left: 18px;
-        right: 18px;
-        bottom: 60px;
-    }
-
-    .hero-content h1 {
-        font-size: 24px;
-    }
-
-    .hero-content p {
-        display: none;
-    }
-
-    .hero-number {
-        flex-basis: 42px;
-    }
-
-    .news-grid {
+    .category-news {
         grid-template-columns: repeat(2, 1fr);
-        gap: 20px 12px;
+        gap: 14px;
     }
 
     .news-card-image {
         height: 145px;
     }
+}
 
-    .news-card h3 {
-        font-size: 15px;
+@media (max-width: 600px) {
+
+    .category-page {
+        padding: 18px 0 40px;
     }
-
-    .news-card p {
-        display: none;
-    }
-
-    .footer-inner {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-
-@media (max-width: 480px) {
-
-    .news-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .news-card-image {
-        height: 200px;
-    }
-
-    .hero-slider {
-        height: 370px;
-    }
-
-    .hero-content h1 {
-        font-size: 22px;
-    }
-
-    .footer-inner {
-        grid-template-columns: 1fr;
-    }
-
-}
-```css
-/* =========================================================
-   HABERİSTA - PROFESYONEL KATEGORİ SAYFALARI
-========================================================= */
-
-.category-page {
-    background: #f5f6f8;
-    min-height: 100vh;
-}
-
-/* ANA İÇERİK */
-.category-container {
-    max-width: 1250px;
-    margin: 0 auto;
-    padding: 30px 20px 60px;
-}
-
-/* KATEGORİ BAŞLIĞI */
-.category-header {
-    position: relative;
-    background: #fff;
-    border-radius: 18px;
-    padding: 28px 32px;
-    margin-bottom: 25px;
-    border: 1px solid #e7e9ed;
-    box-shadow: 0 5px 20px rgba(0,0,0,.04);
-    overflow: hidden;
-}
-
-.category-header::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 6px;
-    background: #e30613;
-}
-
-.category-header h1 {
-    margin: 0 0 7px;
-    font-size: 32px;
-    font-weight: 800;
-    color: #111318;
-    letter-spacing: -.8px;
-}
-
-.category-header p {
-    margin: 0;
-    color: #747a84;
-    font-size: 15px;
-}
-
-/* AKTİF MENÜ */
-.nav-menu a.active {
-    color: #e30613 !important;
-    font-weight: 800;
-    position: relative;
-}
-
-.nav-menu a.active::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -12px;
-    height: 3px;
-    border-radius: 5px;
-    background: #e30613;
-}
-
-/* HABER LAYOUT */
-.category-layout {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 330px;
-    gap: 25px;
-    align-items: start;
-}
-
-/* HABER GRID */
-.category-news {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 20px;
-}
-
-/* BÜYÜK MANŞET */
-.category-featured {
-    grid-column: 1 / -1;
-    position: relative;
-    min-height: 390px;
-    border-radius: 18px;
-    overflow: hidden;
-    background: #111;
-    box-shadow: 0 8px 25px rgba(0,0,0,.08);
-}
-
-.category-featured img {
-    width: 100%;
-    height: 390px;
-    object-fit: cover;
-    display: block;
-    opacity: .88;
-    transition: transform .4s ease;
-}
-
-.category-featured:hover img {
-    transform: scale(1.035);
-}
-
-.category-featured::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        to top,
-        rgba(0,0,0,.88),
-        rgba(0,0,0,.05) 65%
-    );
-}
-
-.featured-content {
-    position: absolute;
-    z-index: 2;
-    left: 28px;
-    right: 28px;
-    bottom: 25px;
-    color: #fff;
-}
-
-.featured-category {
-    display: inline-block;
-    background: #e30613;
-    color: #fff;
-    padding: 6px 11px;
-    border-radius: 6px;
-    font-size: 12px;
-    font-weight: 800;
-    margin-bottom: 10px;
-}
-
-.featured-content h2 {
-    margin: 0 0 9px;
-    font-size: 29px;
-    line-height: 1.18;
-    font-weight: 800;
-}
-
-.featured-content p {
-    margin: 0;
-    color: rgba(255,255,255,.82);
-    font-size: 14px;
-    line-height: 1.5;
-}
-
-/* NORMAL HABER KARTI */
-.news-card {
-    background: #fff;
-    border-radius: 15px;
-    overflow: hidden;
-    border: 1px solid #e7e9ed;
-    box-shadow: 0 4px 15px rgba(0,0,0,.035);
-    transition: transform .2s ease, box-shadow .2s ease;
-    cursor: pointer;
-}
-
-.news-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 30px rgba(0,0,0,.10);
-}
-
-.news-card-image {
-    position: relative;
-    height: 210px;
-    overflow: hidden;
-}
-
-.news-card-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform .35s ease;
-}
-
-.news-card:hover .news-card-image img {
-    transform: scale(1.05);
-}
-
-.news-card-body {
-    padding: 17px;
-}
-
-.news-card-category {
-    display: inline-block;
-    color: #e30613;
-    font-size: 11px;
-    font-weight: 800;
-    text-transform: uppercase;
-    margin-bottom: 7px;
-}
-
-.news-card h2 {
-    margin: 0 0 9px;
-    font-size: 19px;
-    line-height: 1.3;
-    color: #15171b;
-}
-
-.news-card p {
-    margin: 0;
-    color: #777d86;
-    font-size: 13px;
-    line-height: 1.5;
-}
-
-.news-card-meta {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 14px;
-    padding-top: 11px;
-    border-top: 1px solid #eee;
-    color: #9298a1;
-    font-size: 11px;
-}
-
-/* ÇOK OKUNANLAR */
-.most-read {
-    background: #fff;
-    border-radius: 17px;
-    border: 1px solid #e7e9ed;
-    padding: 20px;
-    position: sticky;
-    top: 20px;
-}
-
-.most-read-title {
-    display: flex;
-    align-items: center;
-    gap: 9px;
-    font-size: 18px;
-    font-weight: 800;
-    color: #15171b;
-    margin-bottom: 16px;
-}
-
-.most-read-title span {
-    width: 4px;
-    height: 21px;
-    background: #e30613;
-    border-radius: 5px;
-}
-
-.most-read-item {
-    display: grid;
-    grid-template-columns: 34px 1fr;
-    gap: 10px;
-    padding: 14px 0;
-    border-bottom: 1px solid #eee;
-}
-
-.most-read-item:last-child {
-    border-bottom: 0;
-}
-
-.most-read-number {
-    width: 30px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background: #f1f2f4;
-    color: #e30613;
-    font-weight: 900;
-    font-size: 13px;
-}
-
-.most-read-item h3 {
-    margin: 0;
-    font-size: 14px;
-    line-height: 1.35;
-    color: #25282d;
-}
-
-/* SON DAKİKA */
-.breaking-bar {
-    background: #e30613;
-    color: #fff;
-    height: 42px;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-}
-
-.breaking-inner {
-    max-width: 1250px;
-    width: 100%;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    padding: 0 20px;
-}
-
-.breaking-title {
-    font-weight: 900;
-    font-size: 12px;
-    white-space: nowrap;
-    padding-right: 15px;
-    border-right: 1px solid rgba(255,255,255,.35);
-}
-
-.breaking-text {
-    font-size: 13px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-/* MOBİL */
-@media (max-width: 900px) {
-
-    .category-layout {
-        grid-template-columns: 1fr;
-    }
-
-    .most-read {
-        position: static;
-    }
-
-    .category-news {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-@media (max-width: 650px) {
 
     .category-container {
-        padding: 18px 12px 40px;
+        width: calc(100% - 20px);
     }
 
-    .category-header {
-        padding: 23px 22px;
-        border-radius: 14px;
+    .category-title {
+        margin-bottom: 15px;
     }
 
-    .category-header h1 {
-        font-size: 25px;
+    .category-title h1 {
+        font-size: 23px;
+    }
+
+    .category-title::before {
+        height: 24px;
     }
 
     .category-news {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
     }
 
-    .category-featured {
-        min-height: 310px;
-    }
-
-    .category-featured img {
-        height: 310px;
-    }
-
-    .featured-content {
-        left: 18px;
-        right: 18px;
-        bottom: 18px;
-    }
-
-    .featured-content h2 {
-        font-size: 22px;
+    .news-card {
+        border-radius: 9px;
     }
 
     .news-card-image {
-        height: 200px;
+        height: 115px;
     }
 
-    .breaking-inner {
-        padding: 0 12px;
+    .news-card-content {
+        padding: 9px;
+    }
+
+    .news-card-category {
+        font-size: 8px;
+        margin-bottom: 4px;
+    }
+
+    .news-card-title {
+        font-size: 13px;
+        line-height: 1.3;
+    }
+
+    .news-card-meta {
+        margin-top: 7px;
+        padding-top: 7px;
+        font-size: 9px;
+    }
+
+    .news-badge {
+        top: 6px;
+        left: 6px;
+        padding: 4px 6px;
+        font-size: 8px;
     }
 }
 ```
-
-### Sonra her kategori sayfasında aynı sistemi kullan
-
-Örneğin `gundem.html`:
-
-```html
-<div class="category-page">
-
-    <div class="category-container">
-
-        <div class="category-header">
-            <h1>Gündem Haberleri</h1>
-            <p>Türkiye gündeminden en son gelişmeler ve sıcak haberler</p>
-        </div>
-
-        <div class="category-layout">
-
-            <main class="category-news" id="categoryNews">
-
-                <!-- Haberler JS ile gelecek -->
-
-            </main>
-
-            <aside class="most-read">
-
-                <div class="most-read-title">
-                    <span></span>
-                    Çok Okunanlar
-                </div>
-
-                <div id="mostRead"></div>
-
-            </aside>
-
-        </div>
-
-    </div>
-
-</div>
-```
-
-Ve **en önemli kısmı:** Kullanıcı hangi kategoriye basarsa o sayfada menü otomatik aktif olacak.
-
-`app.js` veya kullandığın ana JS dosyasına:
-
-```javascript
-document.addEventListener("DOMContentLoaded", () => {
-
-    const currentPage =
-        window.location.pathname
-            .split("/")
-            .pop()
-            .replace(".html", "")
-            .toLowerCase();
-
-    document.querySelectorAll(".nav-menu a").forEach(link => {
-
-        const href = link.getAttribute("href");
-
-        if (!href) return;
-
-        const page =
-            href
-                .split("/")
-                .pop()
-                .replace(".html", "")
-                .toLowerCase();
-
-        if (page === currentPage) {
-            link.classList.add("active");
-        }
-
-    });
-
-});
-```
-
-Böylece:
-
-**Gündem'e basarsa:**
-
-`Gündem` 🔴 aktif
-
-**Ekonomi'ye basarsa:**
-
-`Ekonomi` 🔴 aktif
-
-**Spor'a basarsa:**
-
-`Spor` 🔴 aktif
-
-vs.
-
-Ayrıca mevcut sitendeki `gundem.html` şu anda başlık + boş alan + footer ağırlıklı görünüyor; bunu yukarıdaki yapı ile gerçek bir **haber kategori portalına** dönüştürebiliriz.
-
-İstersen bir sonraki adımda **`gundem.html + ekonomi.html + spor.html + magazin.html + dunya.html + teknoloji.html + saglik.html + kultur-sanat.html + son-dakika.html` dosyalarının tamamını**, birbirinin kopyası olmadan **tek tek profesyonel şekilde çalışan hazır kod** olarak verebilirim.
