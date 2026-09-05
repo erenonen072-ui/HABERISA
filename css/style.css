@@ -2740,3 +2740,178 @@ main.container {
         height: 170px;
     }
 }
+/* =========================================================
+   HABERİSTA - MOBİL MANŞET V2
+   FOTOĞRAF DAHA FAZLA GÖRÜNSÜN
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .hero-slider {
+        width: calc(100% - 24px);
+        height: 300px;
+        margin: 0 auto;
+
+        border-radius: 14px;
+        overflow: hidden;
+
+        background: #111;
+        box-shadow:
+            0 6px 22px rgba(0, 0, 0, .12);
+    }
+
+    .hero-main,
+    .hero-slide-link {
+        width: 100%;
+        height: 100%;
+    }
+
+    /* FOTOĞRAF */
+    .hero-image {
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+        object-position: center center;
+
+        transform: none !important;
+    }
+
+    /* FOTOĞRAFIN ÜZERİNDEKİ KARARTMA */
+    .hero-overlay {
+        background:
+            linear-gradient(
+                to top,
+                rgba(0, 0, 0, .88) 0%,
+                rgba(0, 0, 0, .58) 27%,
+                rgba(0, 0, 0, .18) 55%,
+                rgba(0, 0, 0, .02) 100%
+            );
+    }
+
+    /* YAZI ALANI */
+    .hero-content {
+        left: 15px;
+        right: 15px;
+        bottom: 17px;
+
+        max-width: none;
+    }
+
+    .hero-category {
+        display: inline-flex;
+
+        margin-bottom: 6px;
+        padding: 4px 7px;
+
+        border-radius: 4px;
+
+        font-size: 8px;
+        line-height: 1;
+    }
+
+    .hero-content h1 {
+        margin: 0;
+
+        font-size: 21px;
+        line-height: 1.14;
+
+        letter-spacing: -.35px;
+
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+
+        overflow: hidden;
+    }
+
+    .hero-content p {
+        margin-top: 6px;
+
+        font-size: 10px;
+        line-height: 1.35;
+
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+
+        overflow: hidden;
+
+        color: rgba(255,255,255,.82);
+    }
+
+    .hero-meta {
+        margin-top: 5px;
+
+        font-size: 8px;
+    }
+
+    /* OKLAR */
+    .hero-arrow {
+        width: 32px;
+        height: 32px;
+
+        font-size: 22px;
+
+        background: rgba(0,0,0,.28);
+        border-color: rgba(255,255,255,.28);
+
+        backdrop-filter: blur(5px);
+    }
+
+    .hero-prev {
+        left: 7px;
+    }
+
+    .hero-next {
+        right: 7px;
+    }
+
+    /* NUMARALAR */
+    .hero-numbers {
+        right: 12px;
+        bottom: 11px;
+
+        gap: 4px;
+    }
+
+    .hero-number {
+        width: 20px;
+        height: 20px;
+
+        font-size: 8px;
+    }
+}
+
+
+/* =========================================================
+   KÜÇÜK TELEFON
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .hero-slider {
+        width: calc(100% - 20px);
+        height: 285px;
+        border-radius: 13px;
+    }
+
+    .hero-content {
+        left: 14px;
+        right: 14px;
+        bottom: 15px;
+    }
+
+    .hero-content h1 {
+        font-size: 20px;
+    }
+
+    .hero-content p {
+        font-size: 9px;
+    }
+
+    .hero-arrow {
+        width: 30px;
+        height: 30px;
+    }
+}
