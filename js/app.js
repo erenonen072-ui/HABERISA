@@ -1,15 +1,20 @@
-document.addEventListener("DOMContentLoaded", () => {
+"use strict";
 
-    const haberler = Array.isArray(window.haberler)
-        ? window.haberler
-        : [];
+/* =========================================================
+   HABERİSTA APP.JS
+   HTML + haberler.js ile uyumlu
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const $ = (selector) => document.querySelector(selector);
 
     /* =====================================================
-       YARDIMCI FONKSİYONLAR
+       YARDIMCI
     ===================================================== */
 
-    function escapeHtml(value) {
-        return String(value || "")
+    function escapeHTML(text) {
+        return String(text || "")
             .replace(/&/g, "&amp;")
             .replace(/</g, "&lt;")
             .replace(/>/g, "&gt;")
@@ -17,353 +22,359 @@ document.addEventListener("DOMContentLoaded", () => {
             .replace(/'/g, "&#039;");
     }
 
-    function getNewsUrl(haber) {
-
-        if (haber.url) {
-            return haber.url;
-        }
-
-        if (haber.slug) {
-            return `/haber/${haber.slug}`;
-        }
-
-        if (
-            window.slugOlustur &&
-            haber.baslik
-        ) {
-            return `/haber/${window.slugOlustur(haber.baslik)}`;
-        }
-
-        return haber.id
-            ? `/haber.html?id=${haber.id}`
-            : "#";
+    function haberURL(haber) {
+        return haber.url || (
+            "haber.html?slug=" +
+            encodeURIComponent(haber.slug || "")
+        );
     }
 
-    function getImagePath(haber) {
-
-        const image =
-            haber.resim ||
-            haber.image ||
-            "/images/default-news.jpg";
-
-        if (
-            typeof image === "string" &&
-            /^https?:\/\//i.test(image)
-        ) {
-            return image;
-        }
-
-        return "/" +
-            String(image)
-                .replace(/^\/+/, "");
+    function formatDate(haber) {
+        return `${haber.date || ""} ${haber.time || ""}`.trim();
     }
-
 
     /* =====================================================
-       MANŞET HABER
+       ELEMENTLER
     ===================================================== */
 
-    function createHeadlineCard(haber) {
-
-        const card =
-            document.createElement("a");
-
-        card.href =
-            getNewsUrl(haber);
-
-        card.className =
-            "headline-news-card";
-
-        card.innerHTML = `
-
-            <div class="headline-news-image">
-
-                <img
-                    src="${getImagePath(haber)}"
-                    alt="${escapeHtml(haber.baslik)}"
-                    loading="eager"
-                    onerror="
-                        this.onerror=null;
-                        this.src='/images/default-news.jpg';
-                    "
-                >
-
-            </div>
-
-            <div class="headline-news-gradient"></div>
-
-            <div class="headline-news-content">
-
-                <span class="headline-news-category">
-                    ${escapeHtml(
-                        haber.kategori || "HABER"
-                    )}
-                </span>
-
-                <h1>
-                    ${escapeHtml(haber.baslik)}
-                </h1>
-
-            </div>
-
-        `;
-
-        return card;
-    }
-
+    const heroMain = $("#heroMain");
+    const heroNumbers = $("#heroNumbers");
+    const heroPrev = $("#heroPrev");
+    const heroNext = $("#heroNext");
 
     /* =====================================================
-       KÜÇÜK HABER KARTI
+       MANŞET
     ===================================================== */
 
-    function createSmallNewsCard(haber) {
+    const heroNews = haberler.slice(0, Math.min(haberler.length, 20));
 
-        const card =
-            document.createElement("a");
+    let heroIndex = 0;
+    let heroTimer = null;
 
-        card.href =
-            getNewsUrl(haber);
+    function renderHero() {
 
-        card.className =
-            "small-news-card";
+        if (!heroMain || !heroNumbers) return;
 
-        card.innerHTML = `
-
-            <div class="small-news-image">
-
-                <img
-                    src="${getImagePath(haber)}"
-                    alt="${escapeHtml(haber.baslik)}"
-                    loading="lazy"
-                    onerror="
-                        this.onerror=null;
-                        this.src='/images/default-news.jpg';
-                    "
-                >
-
-            </div>
-
-            <div class="small-news-content">
-
-                <span class="small-news-category">
-                    ${escapeHtml(
-                        haber.kategori || "HABER"
-                    )}
-                </span>
-
-                <h3>
-                    ${escapeHtml(haber.baslik)}
-                </h3>
-
-            </div>
-
-        `;
-
-        return card;
-    }
-
-
-    /* =====================================================
-       ANA SAYFA MANŞET + KÜÇÜK HABERLER
-    ===================================================== */
-
-    function renderMainNews() {
-
-        const grid =
-            document.getElementById("newsGrid");
-
-        if (!grid) {
-            return;
-        }
-
-        grid.innerHTML = "";
-
-        if (haberler.length === 0) {
-
-            grid.innerHTML = `
-                <div class="no-news">
-                    Henüz haber bulunmuyor.
+        if (!heroNews.length) {
+            heroMain.innerHTML = `
+                <div class="hero-empty">
+                    Haber bulunamadı.
                 </div>
             `;
 
+            heroNumbers.innerHTML = "";
             return;
         }
 
+        const haber = heroNews[heroIndex];
+
+        heroMain.innerHTML = `
+            <a
+                href="${haberURL(haber)}"
+                class="hero-slide-link"
+                aria-label="${escapeHTML(haber.baslik)}"
+            >
+
+                <img
+                    src="${escapeHTML(haber.image)}"
+                    alt="${escapeHTML(haber.baslik)}"
+                    class="hero-image"
+                    onerror="this.src='https://placehold.co/1200x600/111/fff?text=Haber%C4%B0sta'"
+                >
+
+                <div class="hero-overlay"></div>
+
+                <div class="hero-content">
+
+                    <span class="hero-category">
+                        ${escapeHTML(haber.kategori)}
+                    </span>
+
+                    <h1>
+                        ${escapeHTML(haber.baslik)}
+                    </h1>
+
+                    <p>
+                        ${escapeHTML(haber.spot)}
+                    </p>
+
+                    <div class="hero-meta">
+                        ${escapeHTML(haber.date || "")}
+                        ${haber.time ? " • " + escapeHTML(haber.time) : ""}
+                    </div>
+
+                </div>
+
+            </a>
+        `;
+
+        heroNumbers.innerHTML = heroNews
+            .map(function (haber, index) {
+                return `
+                    <button
+                        type="button"
+                        class="hero-number ${
+                            index === heroIndex ? "active" : ""
+                        }"
+                        data-index="${index}"
+                    >
+                        ${index + 1}
+                    </button>
+                `;
+            })
+            .join("");
+    }
+
+    function nextHero() {
+
+        if (!heroNews.length) return;
+
+        heroIndex =
+            (heroIndex + 1) % heroNews.length;
+
+        renderHero();
+    }
+
+    function prevHero() {
+
+        if (!heroNews.length) return;
+
+        heroIndex =
+            (heroIndex - 1 + heroNews.length) %
+            heroNews.length;
+
+        renderHero();
+    }
+
+    function startHeroTimer() {
+
+        clearInterval(heroTimer);
+
+        heroTimer = setInterval(function () {
+            nextHero();
+        }, 6000);
+    }
+
+    if (heroNext) {
+
+        heroNext.addEventListener("click", function () {
+            nextHero();
+            startHeroTimer();
+        });
+
+    }
+
+    if (heroPrev) {
+
+        heroPrev.addEventListener("click", function () {
+            prevHero();
+            startHeroTimer();
+        });
+
+    }
+
+    if (heroNumbers) {
+
+        heroNumbers.addEventListener(
+            "click",
+            function (event) {
+
+                const button =
+                    event.target.closest(".hero-number");
+
+                if (!button) return;
+
+                heroIndex =
+                    Number(button.dataset.index);
+
+                renderHero();
+                startHeroTimer();
+            }
+        );
+
+    }
+
+    renderHero();
+    startHeroTimer();
+
+
+    /* =====================================================
+       SON DAKİKA - KAYAN BANT
+    ===================================================== */
+
+    const breakingNews =
+        haberler.filter(function (haber) {
+            return haber.kategori === "Son Dakika";
+        });
+
+    const breakingContainer = $("#breakingNews");
+
+    if (breakingContainer) {
+
+        let tickerNews = breakingNews.length
+            ? breakingNews
+            : haberler.slice(0, 5);
+
+        const createTicker = function () {
+
+            return tickerNews.map(function (haber) {
+
+                return `
+                    <a
+                        href="${haberURL(haber)}"
+                        class="breaking-item"
+                    >
+                        <span class="breaking-mini-dot"></span>
+                        ${escapeHTML(haber.baslik)}
+                    </a>
+                `;
+
+            }).join("");
+        };
 
         /*
-            İlk haber = MANŞET
-
-            Diğer haberler =
-            küçük profesyonel kartlar
+          Aynı içerik iki kez yazılıyor.
+          Böylece sonsuz kayma efekti oluşuyor.
         */
 
-        const headline =
-            haberler[0];
+        breakingContainer.innerHTML = `
+            <div class="breaking-marquee">
 
-        const headlineCard =
-            createHeadlineCard(headline);
+                <div class="breaking-track">
 
-        grid.appendChild(
-            headlineCard
-        );
+                    <div class="breaking-group">
+                        ${createTicker()}
+                    </div>
 
+                    <div class="breaking-group" aria-hidden="true">
+                        ${createTicker()}
+                    </div>
 
-        const smallContainer =
-            document.createElement("div");
-
-        smallContainer.className =
-            "small-news-grid";
-
-
-        haberler
-            .slice(1)
-            .forEach(haber => {
-
-                smallContainer.appendChild(
-                    createSmallNewsCard(haber)
-                );
-
-            });
-
-
-        grid.appendChild(
-            smallContainer
-        );
-    }
-
-
-    /* =====================================================
-       KATEGORİ BÖLÜMLERİ
-    ===================================================== */
-
-    function renderCategory(
-        category,
-        elementId
-    ) {
-
-        const container =
-            document.getElementById(elementId);
-
-        if (!container) {
-            return;
-        }
-
-        const news =
-            haberler.filter(haber =>
-                String(
-                    haber.kategori || ""
-                )
-                    .trim()
-                    .toLowerCase() ===
-                category.toLowerCase()
-            );
-
-        container.innerHTML = "";
-
-
-        if (news.length === 0) {
-
-            container.innerHTML = `
-                <div class="no-news">
-                    Bu kategoride henüz haber bulunmuyor.
                 </div>
-            `;
 
-            return;
-        }
-
-
-        news.forEach(haber => {
-
-            container.appendChild(
-                createSmallNewsCard(haber)
-            );
-
-        });
+            </div>
+        `;
     }
 
 
     /* =====================================================
-       ÇOK OKUNANLAR
+       HABER KARTLARI
     ===================================================== */
 
-    function renderPopularNews() {
+    const newsGrid = $("#newsGrid");
 
-        const container =
-            document.getElementById(
-                "popularNews"
-            );
+    function haberKarti(haber) {
 
-        if (!container) {
-            return;
-        }
+        return `
+            <article class="news-card">
 
+                <a
+                    href="${haberURL(haber)}"
+                    class="news-card-image"
+                >
+
+                    <img
+                        src="${escapeHTML(haber.image)}"
+                        alt="${escapeHTML(haber.baslik)}"
+                        loading="lazy"
+                        onerror="this.src='https://placehold.co/800x450/e9e9e9/333?text=Haber%C4%B0sta'"
+                    >
+
+                    <span class="card-category">
+                        ${escapeHTML(haber.kategori)}
+                    </span>
+
+                </a>
+
+                <div class="news-card-body">
+
+                    <div class="news-card-meta">
+                        ${escapeHTML(formatDate(haber))}
+                    </div>
+
+                    <h3>
+                        <a href="${haberURL(haber)}">
+                            ${escapeHTML(haber.baslik)}
+                        </a>
+                    </h3>
+
+                    <p>
+                        ${escapeHTML(haber.spot)}
+                    </p>
+
+                    <a
+                        href="${haberURL(haber)}"
+                        class="read-more"
+                    >
+                        Haberi oku →
+                    </a>
+
+                </div>
+
+            </article>
+        `;
+    }
+
+    if (newsGrid) {
+
+        newsGrid.innerHTML = haberler
+            .map(haberKarti)
+            .join("");
+
+    }
+
+
+    /* =====================================================
+       SIDEBAR - ÇOK OKUNANLAR
+    ===================================================== */
+
+    const popularNews = $("#popularNews");
+
+    if (popularNews) {
 
         const popular =
             [...haberler]
-                .sort((a, b) => {
-
-                    const aViews =
-                        Number(
-                            a.okunma ??
-                            a.views ??
-                            0
-                        );
-
-                    const bViews =
-                        Number(
-                            b.okunma ??
-                            b.views ??
-                            0
-                        );
-
-                    return bViews - aViews;
-
+                .sort(function (a, b) {
+                    return Number(b.views || 0) -
+                           Number(a.views || 0);
                 })
                 .slice(0, 5);
 
+        popularNews.innerHTML =
+            popular.map(function (haber, index) {
 
-        container.innerHTML = "";
+                return `
+                    <a
+                        href="${haberURL(haber)}"
+                        class="popular-item"
+                    >
 
+                        <div class="popular-number">
+                            ${String(index + 1).padStart(2, "0")}
+                        </div>
 
-        popular.forEach(
-            (haber, index) => {
+                        <img
+                            src="${escapeHTML(haber.image)}"
+                            alt=""
+                            loading="lazy"
+                            onerror="this.src='https://placehold.co/150x100/e9e9e9/333'"
+                        >
 
-                const item =
-                    document.createElement("a");
+                        <div>
+                            <h4>
+                                ${escapeHTML(haber.baslik)}
+                            </h4>
 
-                item.href =
-                    getNewsUrl(haber);
+                            <small>
+                                ${Number(haber.views || 0).toLocaleString("tr-TR")}
+                                okunma
+                            </small>
+                        </div>
 
-                item.className =
-                    "popular-news-item";
-
-
-                item.innerHTML = `
-
-                    <span class="popular-rank">
-                        ${index + 1}
-                    </span>
-
-                    <div class="popular-news-text">
-
-                        <strong>
-                            ${escapeHtml(
-                                haber.baslik
-                            )}
-                        </strong>
-
-                    </div>
-
+                    </a>
                 `;
 
-
-                container.appendChild(
-                    item
-                );
-
-            }
-        );
+            }).join("");
     }
 
 
@@ -371,467 +382,166 @@ document.addEventListener("DOMContentLoaded", () => {
        GÜNÜN BAŞLIKLARI
     ===================================================== */
 
-    function renderHeadlines() {
+    const sidebarHeadlines =
+        $("#sidebarHeadlines");
 
-        const container =
-            document.getElementById(
-                "sidebarHeadlines"
-            );
+    if (sidebarHeadlines) {
 
-        if (!container) {
-            return;
-        }
+        sidebarHeadlines.innerHTML =
+            haberler.slice(0, 7)
+                .map(function (haber) {
 
-        container.innerHTML = "";
-
-
-        haberler
-            .slice(0, 7)
-            .forEach(
-                (haber, index) => {
-
-                    const item =
-                        document.createElement("a");
-
-                    item.href =
-                        getNewsUrl(haber);
-
-                    item.className =
-                        "headline-item";
-
-
-                    item.innerHTML = `
-
-                        <span>
-                            ${index + 1}
-                        </span>
-
-                        <strong>
-                            ${escapeHtml(
-                                haber.baslik
-                            )}
-                        </strong>
-
+                    return `
+                        <a
+                            href="${haberURL(haber)}"
+                            class="sidebar-headline"
+                        >
+                            <span>›</span>
+                            ${escapeHTML(haber.baslik)}
+                        </a>
                     `;
 
-
-                    container.appendChild(
-                        item
-                    );
-
-                }
-            );
+                })
+                .join("");
     }
 
 
     /* =====================================================
-       SON DAKİKA
+       KATEGORİLER
     ===================================================== */
 
-    function renderBreakingNews() {
+    function kategoriRender(
+        kategori,
+        elementID
+    ) {
 
         const container =
-            document.getElementById(
-                "breakingNews"
-            );
+            document.getElementById(elementID);
 
-        if (!container) {
-            return;
-        }
+        if (!container) return;
 
+        const liste =
+            haberler.filter(function (haber) {
+                return haber.kategori
+                    .toLocaleLowerCase("tr-TR") ===
+                    kategori.toLocaleLowerCase("tr-TR");
+            });
 
-        container.innerHTML = "";
+        container.innerHTML =
+            liste.slice(0, 4)
+                .map(haberKarti)
+                .join("");
 
+        if (!liste.length) {
 
-        haberler
-            .slice(0, 5)
-            .forEach(
-                (haber, index) => {
-
-                    const link =
-                        document.createElement("a");
-
-                    link.href =
-                        getNewsUrl(haber);
-
-                    link.className =
-                        "breaking-link";
-
-                    link.textContent =
-                        haber.baslik;
-
-
-                    container.appendChild(
-                        link
-                    );
-
-
-                    if (
-                        index <
-                        Math.min(
-                            haberler.length,
-                            5
-                        ) - 1
-                    ) {
-
-                        const separator =
-                            document.createElement("span");
-
-                        separator.className =
-                            "breaking-separator";
-
-                        separator.textContent =
-                            " • ";
-
-
-                        container.appendChild(
-                            separator
-                        );
-                    }
-
-                }
-            );
-    }
-
-
-    /* =====================================================
-       HERO / MANŞET SLIDER
-    ===================================================== */
-
-    let heroIndex = 0;
-
-
-    function renderHero() {
-
-        const hero =
-            document.getElementById(
-                "heroMain"
-            );
-
-        if (
-            !hero ||
-            haberler.length === 0
-        ) {
-            return;
-        }
-
-
-        const haber =
-            haberler[heroIndex];
-
-
-        hero.innerHTML = `
-
-            <a
-                href="${getNewsUrl(haber)}"
-                class="hero-news"
-            >
-
-                <div class="hero-news-image">
-
-                    <img
-                        src="${getImagePath(haber)}"
-                        alt="${escapeHtml(haber.baslik)}"
-                        onerror="
-                            this.onerror=null;
-                            this.src='/images/default-news.jpg';
-                        "
-                    >
-
+            container.innerHTML = `
+                <div class="empty-category">
+                    Bu kategoride henüz haber bulunmuyor.
                 </div>
-
-
-                <div class="hero-news-overlay">
-
-                    <span>
-                        ${escapeHtml(
-                            haber.kategori ||
-                            "HABER"
-                        )}
-                    </span>
-
-                    <h1>
-                        ${escapeHtml(
-                            haber.baslik
-                        )}
-                    </h1>
-
-                </div>
-
-            </a>
-        `;
-
-
-        renderHeroNumbers();
-    }
-
-
-    function renderHeroNumbers() {
-
-        const container =
-            document.getElementById(
-                "heroNumbers"
-            );
-
-        if (!container) {
-            return;
-        }
-
-
-        container.innerHTML = "";
-
-
-        haberler.forEach(
-            (haber, index) => {
-
-                const button =
-                    document.createElement("button");
-
-                button.type =
-                    "button";
-
-                button.className =
-                    index === heroIndex
-                        ? "active"
-                        : "";
-
-                button.textContent =
-                    index + 1;
-
-
-                button.addEventListener(
-                    "click",
-                    () => {
-
-                        heroIndex =
-                            index;
-
-                        renderHero();
-
-                    }
-                );
-
-
-                container.appendChild(
-                    button
-                );
-
-            }
-        );
-    }
-
-
-    function setupHeroButtons() {
-
-        const prev =
-            document.getElementById(
-                "heroPrev"
-            );
-
-        const next =
-            document.getElementById(
-                "heroNext"
-            );
-
-
-        if (prev) {
-
-            prev.addEventListener(
-                "click",
-                () => {
-
-                    heroIndex--;
-
-                    if (
-                        heroIndex < 0
-                    ) {
-                        heroIndex =
-                            haberler.length - 1;
-                    }
-
-                    renderHero();
-
-                }
-            );
-        }
-
-
-        if (next) {
-
-            next.addEventListener(
-                "click",
-                () => {
-
-                    heroIndex++;
-
-                    if (
-                        heroIndex >=
-                        haberler.length
-                    ) {
-                        heroIndex = 0;
-                    }
-
-                    renderHero();
-
-                }
-            );
+            `;
         }
     }
+
+    kategoriRender("Gündem", "gundemNews");
+    kategoriRender("Ekonomi", "ekonomiNews");
+    kategoriRender("Spor", "sporNews");
+    kategoriRender("Teknoloji", "teknolojiNews");
 
 
     /* =====================================================
        ARAMA
     ===================================================== */
 
-    function setupSearch() {
+    const searchInput = $("#searchInput");
+    const searchBtn = $("#searchBtn");
+    const searchResultInfo =
+        $("#searchResultInfo");
 
-        const input =
-            document.getElementById(
-                "searchInput"
-            );
+    function searchNews() {
 
-        const button =
-            document.getElementById(
-                "searchBtn"
-            );
+        if (!searchInput) return;
 
+        const query =
+            searchInput.value
+                .trim()
+                .toLocaleLowerCase("tr-TR");
 
-        if (!input) {
+        if (!query) {
+
+            if (searchResultInfo) {
+                searchResultInfo.textContent = "";
+            }
+
+            if (newsGrid) {
+                newsGrid.innerHTML =
+                    haberler.map(haberKarti).join("");
+            }
+
             return;
         }
 
+        const results =
+            haberler.filter(function (haber) {
 
-        function searchNews() {
+                const text =
+                    (
+                        haber.baslik +
+                        " " +
+                        haber.spot +
+                        " " +
+                        haber.kategori
+                    ).toLocaleLowerCase("tr-TR");
 
-            const query =
-                input.value
-                    .trim()
-                    .toLowerCase();
-
-
-            const grid =
-                document.getElementById(
-                    "newsGrid"
-                );
-
-
-            if (!grid) {
-                return;
-            }
-
-
-            if (!query) {
-
-                renderMainNews();
-
-                return;
-            }
-
-
-            const results =
-                haberler.filter(
-                    haber => {
-
-                        const title =
-                            String(
-                                haber.baslik ||
-                                ""
-                            )
-                                .toLowerCase();
-
-                        const category =
-                            String(
-                                haber.kategori ||
-                                ""
-                            )
-                                .toLowerCase();
-
-
-                        return (
-                            title.includes(
-                                query
-                            ) ||
-                            category.includes(
-                                query
-                            )
-                        );
-
-                    }
-                );
-
-
-            grid.innerHTML = "";
-
-
-            const resultGrid =
-                document.createElement(
-                    "div"
-                );
-
-            resultGrid.className =
-                "small-news-grid search-results";
-
-
-            results.forEach(haber => {
-
-                resultGrid.appendChild(
-                    createSmallNewsCard(
-                        haber
-                    )
-                );
-
+                return text.includes(query);
             });
 
+        if (searchResultInfo) {
 
-            if (results.length === 0) {
-
-                resultGrid.innerHTML = `
-                    <div class="no-news">
-                        "${escapeHtml(
-                            input.value
-                        )}" için haber bulunamadı.
-                    </div>
-                `;
-
-            }
-
-
-            grid.appendChild(
-                resultGrid
-            );
-
-
-            const info =
-                document.getElementById(
-                    "searchResultInfo"
-                );
-
-
-            if (info) {
-
-                info.textContent =
-                    `"${input.value}" için ${results.length} haber bulundu.`;
-            }
+            searchResultInfo.innerHTML =
+                `<strong>${results.length}</strong> haber bulundu.`;
         }
 
+        if (newsGrid) {
 
-        if (button) {
-
-            button.addEventListener(
-                "click",
-                searchNews
-            );
-
+            newsGrid.innerHTML =
+                results.length
+                    ? results.map(haberKarti).join("")
+                    : `
+                        <div class="empty-search">
+                            <strong>Haber bulunamadı.</strong>
+                            <p>Farklı bir kelime deneyin.</p>
+                        </div>
+                    `;
         }
+    }
 
+    if (searchBtn) {
 
-        input.addEventListener(
+        searchBtn.addEventListener(
+            "click",
+            searchNews
+        );
+
+    }
+
+    if (searchInput) {
+
+        searchInput.addEventListener(
             "keydown",
-            event => {
+            function (event) {
 
-                if (
-                    event.key === "Enter"
-                ) {
+                if (event.key === "Enter") {
+                    searchNews();
+                }
+
+            }
+        );
+
+        searchInput.addEventListener(
+            "input",
+            function () {
+
+                if (!searchInput.value.trim()) {
                     searchNews();
                 }
 
@@ -844,96 +554,55 @@ document.addEventListener("DOMContentLoaded", () => {
        ÇEREZ
     ===================================================== */
 
-    function setupCookie() {
+    const cookieBox = $("#cookieBox");
+    const cookieAccept = $("#cookieAccept");
 
-        const box =
-            document.getElementById(
-                "cookieBox"
-            );
+    if (
+        cookieBox &&
+        localStorage.getItem("haberista_cookie")
+    ) {
+        cookieBox.style.display = "none";
+    }
 
+    if (cookieAccept) {
 
-        if (!box) {
-            return;
-        }
+        cookieAccept.addEventListener(
+            "click",
+            function () {
 
+                localStorage.setItem(
+                    "haberista_cookie",
+                    "accepted"
+                );
 
-        if (
-            localStorage.getItem(
-                "haberista_cookie"
-            ) === "accepted"
-        ) {
-
-            box.style.display =
-                "none";
-
-            return;
-        }
-
-
-        const button =
-            box.querySelector(
-                "[data-cookie-accept]"
-            );
-
-
-        if (button) {
-
-            button.addEventListener(
-                "click",
-                () => {
-
-                    localStorage.setItem(
-                        "haberista_cookie",
-                        "accepted"
-                    );
-
-                    box.style.display =
-                        "none";
-
+                if (cookieBox) {
+                    cookieBox.style.display = "none";
                 }
-            );
-        }
+
+            }
+        );
     }
 
 
     /* =====================================================
-       BAŞLAT
+       MOBİL MENÜ
     ===================================================== */
 
-    renderMainNews();
+    const menuBtn = $("#menuBtn");
+    const nav = document.querySelector(".category-nav");
 
-    renderCategory(
-        "Gündem",
-        "gundemNews"
-    );
+    if (menuBtn && nav) {
 
-    renderCategory(
-        "Ekonomi",
-        "ekonomiNews"
-    );
+        menuBtn.addEventListener(
+            "click",
+            function () {
 
-    renderCategory(
-        "Spor",
-        "sporNews"
-    );
+                nav.classList.toggle(
+                    "mobile-open"
+                );
 
-    renderCategory(
-        "Teknoloji",
-        "teknolojiNews"
-    );
-
-    renderPopularNews();
-
-    renderHeadlines();
-
-    renderBreakingNews();
-
-    renderHero();
-
-    setupHeroButtons();
-
-    setupSearch();
-
-    setupCookie();
+            }
+        );
+    }
 
 });
