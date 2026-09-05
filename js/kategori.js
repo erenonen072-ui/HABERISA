@@ -1,424 +1,168 @@
-(function () {
+document.addEventListener("DOMContentLoaded", () => {
 
-    "use strict";
+    const haberler = window.haberler || [];
 
+    const path = window.location.pathname
+        .toLowerCase()
+        .replace(/\/+$/, "");
 
-    const newsGrid =
-        document.getElementById("categoryNews");
-
-    const categoryTitle =
-        document.getElementById("categoryTitle");
-
-    const categoryDescription =
-        document.getElementById("categoryDescription");
-
-    const newsCount =
-        document.getElementById("newsCount");
-
-    const emptyState =
-        document.getElementById("emptyState");
-
-
-    /*
-     * Hangi kategori sayfasındayız?
-     */
-
-    const fileName =
-        window.location.pathname
-            .split("/")
-            .pop()
-            .toLowerCase();
-
-
-    const categories = {
-
-        "son-dakika.html": {
-            name: "Son Dakika",
-            description:
-                "Türkiye ve dünyadan son dakika gelişmeleri."
-        },
-
-        "gundem.html": {
-            name: "Gündem",
-            description:
-                "Türkiye gündeminden en güncel haberler."
-        },
-
-        "ekonomi.html": {
-            name: "Ekonomi",
-            description:
-                "Ekonomi, piyasalar ve finans dünyasından gelişmeler."
-        },
-
-        "spor.html": {
-            name: "Spor",
-            description:
-                "Spor dünyasından son gelişmeler ve haberler."
-        },
-
-        "magazin.html": {
-            name: "Magazin",
-            description:
-                "Magazin dünyasından güncel haberler."
-        },
-
-        "dunya.html": {
-            name: "Dünya",
-            description:
-                "Dünyadan önemli gelişmeler ve son dakika haberleri."
-        },
-
-        "teknoloji.html": {
-            name: "Teknoloji",
-            description:
-                "Teknoloji dünyasından en yeni gelişmeler."
-        },
-
-        "saglik.html": {
-            name: "Sağlık",
-            description:
-                "Sağlık dünyasından güncel bilgiler ve gelişmeler."
-        },
-
-        "kultur-sanat.html": {
-            name: "Kültür Sanat",
-            description:
-                "Kültür, sanat, sinema, müzik ve edebiyat haberleri."
-        }
-
+    const kategoriMap = {
+        "/son-dakika.html": "Son Dakika",
+        "/gundem.html": "Gündem",
+        "/ekonomi.html": "Ekonomi",
+        "/spor.html": "Spor",
+        "/magazin.html": "Magazin",
+        "/dunya.html": "Dünya",
+        "/teknoloji.html": "Teknoloji",
+        "/saglik.html": "Sağlık",
+        "/kultur-sanat.html": "Kültür Sanat"
     };
 
+    const kategori = kategoriMap[path];
 
-    const currentCategory =
-        categories[fileName];
-
-
-    /*
-     * Kategori bulunamadıysa
-     */
-
-    if (!currentCategory) {
-
-        categoryTitle.textContent =
-            "Haberler";
-
-        categoryDescription.textContent =
-            "Güncel haberler.";
-
-    } else {
-
-        categoryTitle.textContent =
-            currentCategory.name;
-
-        categoryDescription.textContent =
-            currentCategory.description;
-
-        document.title =
-            currentCategory.name +
-            " Haberleri | Haberİsta";
-
+    if (!kategori) {
+        console.warn("Kategori bulunamadı:", path);
+        return;
     }
 
-
-    /*
-     * Haberler.js kontrolü
-     */
-
-    const allNews =
-        Array.isArray(window.haberler)
-            ? window.haberler
-            : [];
-
-
-    console.log(
-        "Haberİsta kategori:",
-        currentCategory
+    const kategoriHaberleri = haberler.filter(haber =>
+        String(haber.kategori || "").trim().toLowerCase() ===
+        kategori.toLowerCase()
     );
 
-    console.log(
-        "Toplam haber:",
-        allNews.length
-    );
+    const title = document.getElementById("categoryTitle");
+    const count = document.getElementById("categoryCount");
+    const grid = document.getElementById("categoryNews");
+    const empty = document.getElementById("categoryEmpty");
 
-
-    /*
-     * Haberleri filtrele
-     */
-
-    let filteredNews = [];
-
-
-    if (currentCategory) {
-
-        filteredNews =
-            allNews.filter(function (haber) {
-
-                return String(
-                    haber.kategori || ""
-                ).trim().toLowerCase()
-
-                ===
-
-                currentCategory.name
-                    .trim()
-                    .toLowerCase();
-
-            });
-
-    } else {
-
-        filteredNews = allNews;
-
+    if (title) {
+        title.textContent = kategori;
     }
 
-
-    /*
-     * Son dakika için ayrıca
-     * kategori adı kontrolü
-     */
-
-    if (
-        currentCategory &&
-        currentCategory.name === "Son Dakika"
-    ) {
-
-        filteredNews =
-            allNews.filter(function (haber) {
-
-                return String(
-                    haber.kategori || ""
-                ).toLowerCase()
-                === "son dakika";
-
-            });
-
+    if (count) {
+        count.textContent =
+            `${kategoriHaberleri.length} haber`;
     }
 
+    if (!grid) return;
 
-    /*
-     * Sayı
-     */
+    grid.innerHTML = "";
 
-    newsCount.textContent =
-        filteredNews.length;
+    if (kategoriHaberleri.length === 0) {
 
-
-    /*
-     * Haber yoksa
-     */
-
-    if (filteredNews.length === 0) {
-
-        newsGrid.innerHTML = "";
-
-        emptyState.style.display =
-            "block";
+        if (empty) {
+            empty.style.display = "block";
+            empty.innerHTML = `
+                <div class="empty-icon">📰</div>
+                <h3>Bu kategoride henüz haber yok</h3>
+                <p>
+                    ${kategori} kategorisine yeni haberler eklendiğinde
+                    burada otomatik olarak görüntülenecek.
+                </p>
+            `;
+        }
 
         return;
-
     }
 
+    if (empty) {
+        empty.style.display = "none";
+    }
 
-    emptyState.style.display =
-        "none";
+    kategoriHaberleri.forEach(haber => {
 
-
-    /*
-     * Haberleri ekrana bas
-     */
-
-    newsGrid.innerHTML =
-        filteredNews
-            .map(createNewsCard)
-            .join("");
-
-
-    /*
-     * HABER KARTI
-     */
-
-    function createNewsCard(haber) {
-
-        const title =
-            haber.baslik ||
-            "Başlıksız Haber";
-
-
-        const category =
-            haber.kategori ||
-            "Haber";
-
-
-        const date =
-            haber.date ||
-            haber.tarih ||
-            "";
-
-
-        const time =
-            haber.time ||
-            haber.saat ||
-            "";
-
-
-        const views =
-            haber.views ??
-            haber.okunma ??
-            "";
-
-
-        const image =
-            getImage(
-                haber.image ||
-                haber.resim ||
-                haber.gorsel
-            );
-
-
-        /*
-         * Slug
-         */
-
-        let slug =
-            haber.slug;
-
-
-        if (
-            !slug &&
-            typeof window.slugOlustur ===
-            "function"
-        ) {
-
-            slug =
-                window.slugOlustur(title);
-
-        }
-
+        const slug =
+            haber.slug ||
+            window.slugOlustur(haber.baslik);
 
         const url =
-            "/haber/" +
-            encodeURIComponent(slug);
+            haber.url ||
+            `/haber/${slug}`;
 
+        const image =
+            haber.resim ||
+            haber.image ||
+            "/images/default-news.jpg";
 
-        return `
+        const date =
+            haber.tarih ||
+            haber.date ||
+            "";
 
-            <article
-                class="category-news-card"
-                onclick="window.location.href='${url}'"
-            >
+        const time =
+            haber.saat ||
+            haber.time ||
+            "";
 
-                <div class="card-image">
+        const spot =
+            haber.spot ||
+            haber.ozet ||
+            haber.description ||
+            "";
 
-                    <img
-                        src="${escapeAttribute(image)}"
-                        alt="${escapeAttribute(title)}"
-                        loading="lazy"
-                        onerror="
-                            this.onerror=null;
-                            this.src='/images/default-news.jpg';
-                        "
-                    >
+        const article = document.createElement("article");
 
-                    <span class="card-category">
-                        ${escapeHtml(category)}
+        article.className = "category-news-card";
+
+        article.innerHTML = `
+            <a href="${url}" class="category-image-link">
+                <img
+                    src="/${image.replace(/^\/+/, "")}"
+                    alt="${escapeHtml(haber.baslik)}"
+                    loading="lazy"
+                    onerror="this.src='/images/default-news.jpg'"
+                >
+            </a>
+
+            <div class="category-news-content">
+
+                <a
+                    href="${url}"
+                    class="category-badge"
+                >
+                    ${escapeHtml(haber.kategori)}
+                </a>
+
+                <h2>
+                    <a href="${url}">
+                        ${escapeHtml(haber.baslik)}
+                    </a>
+                </h2>
+
+                <p>
+                    ${escapeHtml(spot)}
+                </p>
+
+                <div class="category-news-meta">
+                    <span>
+                        ${escapeHtml(date)}
                     </span>
 
+                    ${
+                        time
+                        ? `<span>•</span><span>${escapeHtml(time)}</span>`
+                        : ""
+                    }
+
+                    <a href="${url}">
+                        Haberi Oku →
+                    </a>
                 </div>
 
-
-                <div class="card-content">
-
-                    <h2>
-                        ${escapeHtml(title)}
-                    </h2>
-
-
-                    <div class="card-meta">
-
-                        ${
-                            date
-                            ? `<span>${escapeHtml(date)}</span>`
-                            : ""
-                        }
-
-                        ${
-                            time
-                            ? `<span>${escapeHtml(time)}</span>`
-                            : ""
-                        }
-
-                        ${
-                            views !== ""
-                            ? `<span>👁 ${escapeHtml(String(views))}</span>`
-                            : ""
-                        }
-
-                    </div>
-
-                </div>
-
-            </article>
-
+            </div>
         `;
 
-    }
+        grid.appendChild(article);
+    });
+});
 
 
-    /*
-     * FOTOĞRAF YOLU
-     */
+function escapeHtml(value) {
 
-    function getImage(src) {
-
-        if (!src) {
-
-            return "/images/default-news.jpg";
-
-        }
-
-
-        src =
-            String(src).trim();
-
-
-        if (
-            src.startsWith("http://") ||
-            src.startsWith("https://") ||
-            src.startsWith("data:")
-        ) {
-
-            return src;
-
-        }
-
-
-        return "/" +
-            src.replace(/^\/+/, "");
-
-    }
-
-
-    /*
-     * HTML güvenliği
-     */
-
-    function escapeHtml(value) {
-
-        return String(value)
-            .replace(/&/g, "&amp;")
-            .replace(/</g, "&lt;")
-            .replace(/>/g, "&gt;")
-            .replace(/"/g, "&quot;")
-            .replace(/'/g, "&#039;");
-
-    }
-
-
-    function escapeAttribute(value) {
-
-        return escapeHtml(value);
-
-    }
-
-
-})();
+    return String(value || "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
