@@ -2915,3 +2915,637 @@ img {
         font-size: 19px;
     }
 }
+/* =========================================================
+   HABERİSTA YENİ ANA SAYFA
+========================================================= */
+
+.news-grid {
+    display: block;
+    width: 100%;
+}
+
+
+/* =========================================================
+   MANŞET
+========================================================= */
+
+.headline-news-card {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 470px;
+    overflow: hidden;
+    margin-bottom: 22px;
+    border-radius: 12px;
+    background: #111;
+    color: #fff;
+    text-decoration: none;
+}
+
+.headline-news-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.headline-news-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    
+    /*
+       FOTOĞRAF KARTIN TAMAMINA SIĞAR.
+       ORANI BOZULMAZ.
+    */
+    object-fit: cover;
+    object-position: center center;
+
+    transition: transform .45s ease;
+}
+
+.headline-news-card:hover
+.headline-news-image img {
+    transform: scale(1.035);
+}
+
+
+.headline-news-gradient {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0, 0, 0, .92) 0%,
+            rgba(0, 0, 0, .58) 35%,
+            rgba(0, 0, 0, .08) 72%,
+            rgba(0, 0, 0, 0) 100%
+        );
+}
+
+
+.headline-news-content {
+    position: absolute;
+    z-index: 2;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    padding: 30px;
+}
+
+
+.headline-news-category {
+    display: inline-block;
+
+    margin-bottom: 10px;
+    padding: 6px 10px;
+
+    border-radius: 4px;
+
+    background: #e30613;
+
+    color: #fff;
+
+    font-size: 11px;
+    font-weight: 900;
+
+    text-transform: uppercase;
+}
+
+
+.headline-news-content h1 {
+    max-width: 900px;
+
+    margin: 0;
+
+    color: #fff;
+
+    font-size: 34px;
+    line-height: 1.13;
+    font-weight: 900;
+    letter-spacing: -.5px;
+}
+
+
+/* =========================================================
+   KÜÇÜK HABER KARTLARI
+========================================================= */
+
+.small-news-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 18px;
+
+    width: 100%;
+}
+
+
+.small-news-card {
+    display: block;
+
+    min-width: 0;
+
+    overflow: hidden;
+
+    border-radius: 9px;
+
+    background: #fff;
+
+    border: 1px solid #e5e7eb;
+
+    color: #111;
+
+    text-decoration: none;
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease,
+        border-color .2s ease;
+}
+
+
+.small-news-card:hover {
+    transform: translateY(-3px);
+
+    border-color: #d1d5db;
+
+    box-shadow:
+        0 8px 22px
+        rgba(0, 0, 0, .10);
+}
+
+
+/* =========================================================
+   KÜÇÜK KART FOTOĞRAFI
+========================================================= */
+
+.small-news-image {
+    position: relative;
+
+    width: 100%;
+
+    /*
+       SABİT ORAN.
+       FOTOĞRAF NE KADAR BÜYÜK/KÜÇÜK OLURSA OLSUN
+       ALANI TAM DOLDURUR.
+    */
+    aspect-ratio: 16 / 9;
+
+    overflow: hidden;
+
+    background: #edf0f2;
+}
+
+
+.small-news-image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    /*
+       FOTOĞRAF TAM KARTI DOLDURUR
+       VE DEFORME OLMAZ.
+    */
+    object-fit: cover;
+
+    object-position: center center;
+
+    transition:
+        transform .4s ease;
+}
+
+
+.small-news-card:hover
+.small-news-image img {
+    transform: scale(1.045);
+}
+
+
+/* =========================================================
+   KÜÇÜK KART YAZI
+========================================================= */
+
+.small-news-content {
+    padding: 11px 13px 14px;
+}
+
+
+.small-news-category {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #e30613;
+
+    font-size: 10px;
+
+    line-height: 1;
+
+    font-weight: 900;
+
+    text-transform: uppercase;
+}
+
+
+.small-news-content h3 {
+    margin: 0;
+
+    color: #151515;
+
+    font-size: 16px;
+
+    line-height: 1.28;
+
+    font-weight: 800;
+
+    display: -webkit-box;
+
+    -webkit-box-orient: vertical;
+
+    -webkit-line-clamp: 3;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   KATEGORİ BÖLÜMLERİNDEKİ KARTLAR
+========================================================= */
+
+.category-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 18px;
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.popular-news-item {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 10px;
+
+    padding: 12px 0;
+
+    border-bottom:
+        1px solid #e5e7eb;
+
+    color: #111;
+
+    text-decoration: none;
+}
+
+
+.popular-news-item:last-child {
+    border-bottom: 0;
+}
+
+
+.popular-rank {
+    flex: 0 0 27px;
+
+    width: 27px;
+    height: 27px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 4px;
+
+    background: #f1f3f5;
+
+    color: #e30613;
+
+    font-size: 13px;
+
+    font-weight: 900;
+}
+
+
+.popular-news-text {
+    min-width: 0;
+}
+
+
+.popular-news-text strong {
+    display: block;
+
+    color: #222;
+
+    font-size: 13px;
+
+    line-height: 1.35;
+
+    font-weight: 750;
+}
+
+
+/* =========================================================
+   GÜNÜN BAŞLIKLARI
+========================================================= */
+
+.headline-item {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 9px;
+
+    padding: 10px 0;
+
+    border-bottom:
+        1px solid #e5e7eb;
+
+    color: #111;
+
+    text-decoration: none;
+}
+
+
+.headline-item span {
+    flex: 0 0 23px;
+
+    width: 23px;
+    height: 23px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 4px;
+
+    background: #151515;
+
+    color: #fff;
+
+    font-size: 11px;
+
+    font-weight: 900;
+}
+
+
+.headline-item strong {
+    font-size: 13px;
+
+    line-height: 1.35;
+}
+
+
+/* =========================================================
+   HERO ESKİ ALAN
+========================================================= */
+
+.hero-news {
+    position: relative;
+
+    display: block;
+
+    width: 100%;
+    height: 430px;
+
+    overflow: hidden;
+
+    border-radius: 12px;
+
+    color: #fff;
+
+    text-decoration: none;
+
+    background: #111;
+}
+
+
+.hero-news-image {
+    position: absolute;
+
+    inset: 0;
+}
+
+
+.hero-news-image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+
+.hero-news-overlay {
+    position: absolute;
+
+    z-index: 2;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    padding: 80px 28px 25px;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0, 0, 0, .9),
+            rgba(0, 0, 0, .4),
+            transparent
+        );
+}
+
+
+.hero-news-overlay span {
+    display: inline-block;
+
+    margin-bottom: 8px;
+
+    padding: 5px 9px;
+
+    border-radius: 4px;
+
+    background: #e30613;
+
+    color: #fff;
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    text-transform: uppercase;
+}
+
+
+.hero-news-overlay h1 {
+    margin: 0;
+
+    max-width: 900px;
+
+    color: #fff;
+
+    font-size: 30px;
+
+    line-height: 1.15;
+
+    font-weight: 900;
+}
+
+
+/* =========================================================
+   SON DAKİKA
+========================================================= */
+
+.breaking-link {
+    color: inherit;
+
+    text-decoration: none;
+
+    font-weight: 600;
+}
+
+
+.breaking-link:hover {
+    text-decoration: underline;
+}
+
+
+.breaking-separator {
+    margin: 0 7px;
+
+    opacity: .5;
+}
+
+
+/* =========================================================
+   HABER YOK
+========================================================= */
+
+.no-news {
+    width: 100%;
+
+    padding: 30px;
+
+    border:
+        1px solid #e5e7eb;
+
+    border-radius: 9px;
+
+    background: #fff;
+
+    color: #777;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .small-news-grid,
+    .category-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .headline-news-card {
+        height: 400px;
+    }
+
+    .headline-news-content h1 {
+        font-size: 29px;
+    }
+}
+
+
+/* =========================================================
+   TELEFON
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .small-news-grid,
+    .category-grid {
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+    }
+
+
+    .headline-news-card {
+        height: 330px;
+
+        border-radius: 8px;
+
+        margin-bottom: 16px;
+    }
+
+
+    .headline-news-content {
+        padding: 18px;
+    }
+
+
+    .headline-news-content h1 {
+        font-size: 22px;
+
+        line-height: 1.18;
+    }
+
+
+    .small-news-image {
+        aspect-ratio: 16 / 9;
+    }
+
+
+    .small-news-content h3 {
+        font-size: 16px;
+    }
+}
+
+
+/* =========================================================
+   ÇOK KÜÇÜK EKRAN
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .headline-news-card {
+        height: 290px;
+    }
+
+
+    .headline-news-content h1 {
+        font-size: 20px;
+    }
+
+
+    .small-news-content {
+        padding: 10px 12px 13px;
+    }
+
+
+    .small-news-content h3 {
+        font-size: 15px;
+    }
+}
