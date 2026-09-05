@@ -1705,3 +1705,481 @@ main {
     }
 
 }
+```css
+/* =========================================================
+   HABERİSTA - PROFESYONEL KATEGORİ SAYFALARI
+========================================================= */
+
+.category-page {
+    background: #f5f6f8;
+    min-height: 100vh;
+}
+
+/* ANA İÇERİK */
+.category-container {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 30px 20px 60px;
+}
+
+/* KATEGORİ BAŞLIĞI */
+.category-header {
+    position: relative;
+    background: #fff;
+    border-radius: 18px;
+    padding: 28px 32px;
+    margin-bottom: 25px;
+    border: 1px solid #e7e9ed;
+    box-shadow: 0 5px 20px rgba(0,0,0,.04);
+    overflow: hidden;
+}
+
+.category-header::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 6px;
+    background: #e30613;
+}
+
+.category-header h1 {
+    margin: 0 0 7px;
+    font-size: 32px;
+    font-weight: 800;
+    color: #111318;
+    letter-spacing: -.8px;
+}
+
+.category-header p {
+    margin: 0;
+    color: #747a84;
+    font-size: 15px;
+}
+
+/* AKTİF MENÜ */
+.nav-menu a.active {
+    color: #e30613 !important;
+    font-weight: 800;
+    position: relative;
+}
+
+.nav-menu a.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -12px;
+    height: 3px;
+    border-radius: 5px;
+    background: #e30613;
+}
+
+/* HABER LAYOUT */
+.category-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 330px;
+    gap: 25px;
+    align-items: start;
+}
+
+/* HABER GRID */
+.category-news {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+/* BÜYÜK MANŞET */
+.category-featured {
+    grid-column: 1 / -1;
+    position: relative;
+    min-height: 390px;
+    border-radius: 18px;
+    overflow: hidden;
+    background: #111;
+    box-shadow: 0 8px 25px rgba(0,0,0,.08);
+}
+
+.category-featured img {
+    width: 100%;
+    height: 390px;
+    object-fit: cover;
+    display: block;
+    opacity: .88;
+    transition: transform .4s ease;
+}
+
+.category-featured:hover img {
+    transform: scale(1.035);
+}
+
+.category-featured::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,.88),
+        rgba(0,0,0,.05) 65%
+    );
+}
+
+.featured-content {
+    position: absolute;
+    z-index: 2;
+    left: 28px;
+    right: 28px;
+    bottom: 25px;
+    color: #fff;
+}
+
+.featured-category {
+    display: inline-block;
+    background: #e30613;
+    color: #fff;
+    padding: 6px 11px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.featured-content h2 {
+    margin: 0 0 9px;
+    font-size: 29px;
+    line-height: 1.18;
+    font-weight: 800;
+}
+
+.featured-content p {
+    margin: 0;
+    color: rgba(255,255,255,.82);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* NORMAL HABER KARTI */
+.news-card {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid #e7e9ed;
+    box-shadow: 0 4px 15px rgba(0,0,0,.035);
+    transition: transform .2s ease, box-shadow .2s ease;
+    cursor: pointer;
+}
+
+.news-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0,0,0,.10);
+}
+
+.news-card-image {
+    position: relative;
+    height: 210px;
+    overflow: hidden;
+}
+
+.news-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .35s ease;
+}
+
+.news-card:hover .news-card-image img {
+    transform: scale(1.05);
+}
+
+.news-card-body {
+    padding: 17px;
+}
+
+.news-card-category {
+    display: inline-block;
+    color: #e30613;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 7px;
+}
+
+.news-card h2 {
+    margin: 0 0 9px;
+    font-size: 19px;
+    line-height: 1.3;
+    color: #15171b;
+}
+
+.news-card p {
+    margin: 0;
+    color: #777d86;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.news-card-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 14px;
+    padding-top: 11px;
+    border-top: 1px solid #eee;
+    color: #9298a1;
+    font-size: 11px;
+}
+
+/* ÇOK OKUNANLAR */
+.most-read {
+    background: #fff;
+    border-radius: 17px;
+    border: 1px solid #e7e9ed;
+    padding: 20px;
+    position: sticky;
+    top: 20px;
+}
+
+.most-read-title {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 18px;
+    font-weight: 800;
+    color: #15171b;
+    margin-bottom: 16px;
+}
+
+.most-read-title span {
+    width: 4px;
+    height: 21px;
+    background: #e30613;
+    border-radius: 5px;
+}
+
+.most-read-item {
+    display: grid;
+    grid-template-columns: 34px 1fr;
+    gap: 10px;
+    padding: 14px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.most-read-item:last-child {
+    border-bottom: 0;
+}
+
+.most-read-number {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #f1f2f4;
+    color: #e30613;
+    font-weight: 900;
+    font-size: 13px;
+}
+
+.most-read-item h3 {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.35;
+    color: #25282d;
+}
+
+/* SON DAKİKA */
+.breaking-bar {
+    background: #e30613;
+    color: #fff;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.breaking-inner {
+    max-width: 1250px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 0 20px;
+}
+
+.breaking-title {
+    font-weight: 900;
+    font-size: 12px;
+    white-space: nowrap;
+    padding-right: 15px;
+    border-right: 1px solid rgba(255,255,255,.35);
+}
+
+.breaking-text {
+    font-size: 13px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* MOBİL */
+@media (max-width: 900px) {
+
+    .category-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .most-read {
+        position: static;
+    }
+
+    .category-news {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 650px) {
+
+    .category-container {
+        padding: 18px 12px 40px;
+    }
+
+    .category-header {
+        padding: 23px 22px;
+        border-radius: 14px;
+    }
+
+    .category-header h1 {
+        font-size: 25px;
+    }
+
+    .category-news {
+        grid-template-columns: 1fr;
+    }
+
+    .category-featured {
+        min-height: 310px;
+    }
+
+    .category-featured img {
+        height: 310px;
+    }
+
+    .featured-content {
+        left: 18px;
+        right: 18px;
+        bottom: 18px;
+    }
+
+    .featured-content h2 {
+        font-size: 22px;
+    }
+
+    .news-card-image {
+        height: 200px;
+    }
+
+    .breaking-inner {
+        padding: 0 12px;
+    }
+}
+```
+
+### Sonra her kategori sayfasında aynı sistemi kullan
+
+Örneğin `gundem.html`:
+
+```html
+<div class="category-page">
+
+    <div class="category-container">
+
+        <div class="category-header">
+            <h1>Gündem Haberleri</h1>
+            <p>Türkiye gündeminden en son gelişmeler ve sıcak haberler</p>
+        </div>
+
+        <div class="category-layout">
+
+            <main class="category-news" id="categoryNews">
+
+                <!-- Haberler JS ile gelecek -->
+
+            </main>
+
+            <aside class="most-read">
+
+                <div class="most-read-title">
+                    <span></span>
+                    Çok Okunanlar
+                </div>
+
+                <div id="mostRead"></div>
+
+            </aside>
+
+        </div>
+
+    </div>
+
+</div>
+```
+
+Ve **en önemli kısmı:** Kullanıcı hangi kategoriye basarsa o sayfada menü otomatik aktif olacak.
+
+`app.js` veya kullandığın ana JS dosyasına:
+
+```javascript
+document.addEventListener("DOMContentLoaded", () => {
+
+    const currentPage =
+        window.location.pathname
+            .split("/")
+            .pop()
+            .replace(".html", "")
+            .toLowerCase();
+
+    document.querySelectorAll(".nav-menu a").forEach(link => {
+
+        const href = link.getAttribute("href");
+
+        if (!href) return;
+
+        const page =
+            href
+                .split("/")
+                .pop()
+                .replace(".html", "")
+                .toLowerCase();
+
+        if (page === currentPage) {
+            link.classList.add("active");
+        }
+
+    });
+
+});
+```
+
+Böylece:
+
+**Gündem'e basarsa:**
+
+`Gündem` 🔴 aktif
+
+**Ekonomi'ye basarsa:**
+
+`Ekonomi` 🔴 aktif
+
+**Spor'a basarsa:**
+
+`Spor` 🔴 aktif
+
+vs.
+
+Ayrıca mevcut sitendeki `gundem.html` şu anda başlık + boş alan + footer ağırlıklı görünüyor; bunu yukarıdaki yapı ile gerçek bir **haber kategori portalına** dönüştürebiliriz.
+
+İstersen bir sonraki adımda **`gundem.html + ekonomi.html + spor.html + magazin.html + dunya.html + teknoloji.html + saglik.html + kultur-sanat.html + son-dakika.html` dosyalarının tamamını**, birbirinin kopyası olmadan **tek tek profesyonel şekilde çalışan hazır kod** olarak verebilirim.
