@@ -1,47 +1,11 @@
-"use strict";
-
-/* =========================================================
-   SLUG OLUŞTUR
-========================================================= */
-
-function slugOlustur(metin) {
-
-    return String(metin || "")
-        .toLocaleLowerCase("tr-TR")
-
-        .replace(/ğ/g, "g")
-        .replace(/ü/g, "u")
-        .replace(/ş/g, "s")
-        .replace(/ı/g, "i")
-        .replace(/ö/g, "o")
-        .replace(/ç/g, "c")
-
-        .replace(/â/g, "a")
-        .replace(/î/g, "i")
-        .replace(/û/g, "u")
-
-        .replace(/[^a-z0-9\s-]/g, "")
-
-        .trim()
-
-        .replace(/\s+/g, "-")
-
-        .replace(/-+/g, "-")
-
-        .replace(/^-+|-+$/g, "");
-}
-
-
-/* =========================================================
-   HABERLER
-   BURADAKİ HABERLERİNİ İSTEDİĞİN GİBİ ÇOĞALTABİLİRSİN
-========================================================= */
-
 const haberler = [
+
+    /* =========================================================
+       HABER 1 - AYNI KALIYOR
+    ========================================================= */
 
     {
         id: 1,
-
         kategori: "Son Dakika",
 
         baslik:
@@ -61,68 +25,56 @@ const haberler = [
             <h2>Yeni kararlar yayımlandı</h2>
 
             <p>
-                Resmî Gazete'nin yayımlanan sayısında
-                kamu kurumlarının çalışmalarını ilgilendiren
-                çeşitli düzenlemeler kamuoyuna duyuruldu.
-                Kararların ilgili kurumlar tarafından
-                uygulanması bekleniyor.
+                Resmî Gazete'nin yayımlanan sayısında kamu kurumlarının
+                çalışmalarını ilgilendiren çeşitli düzenlemeler
+                kamuoyuna duyuruldu.
             </p>
 
             <h2>Kamu kurumlarında yeni atamalar</h2>
 
             <p>
                 Sayıştay Başsavcılığı görevine Recep Çevik'in
-                atanmasına ilişkin karar da Resmî Gazete'de
-                yayımlanan düzenlemeler arasında yer aldı.
+                atanmasına ilişkin karar da yayımlanan düzenlemeler
+                arasında yer aldı.
             </p>
 
             <p>
                 Bazı kamu kurumlarında görev değişiklikleri,
-                atamalar ve görevden alma kararları da
-                yayımlanan kararlar arasında bulundu.
+                atamalar ve görevden alma kararları da yayımlanan
+                kararlar arasında bulundu.
             </p>
 
             <h2>Eğitim ve üniversiteler</h2>
 
             <p>
-                Eğitim alanındaki bazı düzenlemeler ve
-                yükseköğretim kurumlarını ilgilendiren
-                kararlar da yeni sayıda yer aldı.
+                Eğitim alanındaki bazı düzenlemeler ve yükseköğretim
+                kurumlarını ilgilendiren kararlar da yeni sayıda
+                yer aldı.
             </p>
 
             <h2>Ulaştırma alanındaki düzenlemeler</h2>
 
             <p>
-                Ulaştırma ve raylı sistemlerle ilgili
-                düzenlemeler de Resmî Gazete'de yayımlanan
-                kararlar arasında bulunuyor.
+                Ulaştırma ve raylı sistemlerle ilgili düzenlemeler
+                de Resmî Gazete'de yayımlanan kararlar arasında
+                bulunuyor.
             </p>
 
             <h2>Ekonomiye ilişkin kararlar</h2>
 
             <p>
-                Ekonomi ve kamu hizmetlerini ilgilendiren
-                bazı kararların da yeni düzenlemeler
-                kapsamında yayımlandığı görüldü.
-            </p>
-
-            <h2>Kararlar ne anlama geliyor?</h2>
-
-            <p>
-                Resmî Gazete'de yayımlanan kararlar,
-                ilgili kurumların görev alanlarına göre
-                farklı tarihlerde yürürlüğe girebiliyor.
-                Düzenlemelerin uygulama süreçleri ilgili
-                kurumların açıklamalarıyla netleşecek.
+                Ekonomi ve kamu hizmetlerini ilgilendiren bazı
+                kararların da yeni düzenlemeler kapsamında
+                yayımlandığı görüldü.
             </p>
 
             <h2>Sonuç</h2>
 
             <p>
-                5 Eylül 2026 tarihli Resmî Gazete'de
-                yayımlanan karar ve düzenlemeler,
-                kamu yönetimi ve çeşitli sektörler açısından
-                yeni gelişmeleri beraberinde getiriyor.
+                5 Eylül 2026 tarihli Resmî Gazete'de yayımlanan
+                karar ve düzenlemeler, kamu yönetimi ve çeşitli
+                sektörler açısından yeni gelişmeleri beraberinde
+                getiriyor.
             </p>
         `,
 
@@ -130,9 +82,7 @@ const haberler = [
             "images/ChatGPT Image 5 Eyl 2026 15_25_02.png",
 
         date: "5 Eylül 2026",
-
         time: "15:20",
-
         views: 38742,
 
         source:
@@ -140,640 +90,387 @@ const haberler = [
     },
 
 
-   const haberler = [
+    /* =========================================================
+       HABER 2 - AYNI KALIYOR
+    ========================================================= */
 
     {
         id: 2,
-
         kategori: "Spor",
 
         baslik:
             "Filenin Sultanları Avrupa şampiyonluğu için sahada! Türkiye-İtalya finali bugün oynanacak",
 
         spot:
-            "A Milli Kadın Voleybol Takımı, Trendyol 2026 CEV Kadınlar Avrupa Voleybol Şampiyonası'nda tarihi bir final karşılaşmasına çıkıyor. Yarı finalde Sırbistan'ı 3-0 mağlup ederek finale yükselen Filenin Sultanları, şampiyonluk maçında İtalya ile karşı karşıya gelecek. İstanbul'daki Sinan Erdem Spor Salonu'nda oynanacak dev mücadele bugün saat 16.00'da başlayacak.",
+            "A Milli Kadın Voleybol Takımı, 2026 CEV Trendyol Kadınlar Avrupa Voleybol Şampiyonası'nda finale yükseldi. Yarı finalde Sırbistan'ı 3-0 mağlup eden Filenin Sultanları, şampiyonluk maçında İtalya ile karşılaşacak.",
 
         content: `
-
             <p>
-                Türkiye'nin gözü bugün İstanbul'da oynanacak dev mücadelede olacak.
-                A Milli Kadın Voleybol Takımı, Trendyol 2026 CEV Kadınlar Avrupa
-                Voleybol Şampiyonası finalinde İtalya ile karşı karşıya gelecek.
-                Filenin Sultanları, turnuvanın en kritik karşılaşmasında Avrupa
-                şampiyonluğu için sahaya çıkacak.
+                A Milli Kadın Voleybol Takımı, Avrupa Şampiyonası'nda
+                adını finale yazdırdı.
             </p>
 
             <p>
-                Ay-yıldızlı ekip, turnuvada gösterdiği başarılı performansın ardından
-                finale yükselerek şampiyonluk yolunda son adımı atmaya hazırlanıyor.
-                Türkiye, yarı final karşılaşmasında güçlü rakibi Sırbistan'ı
-                3-0 mağlup ederek adını finale yazdırdı. Bu sonuçla birlikte
-                milliler, Avrupa'nın en önemli voleybol organizasyonlarından
-                birinde bir kez daha zirve mücadelesi verme hakkı kazandı.
-            </p>
-
-            <h2>Finalin adresi Sinan Erdem Spor Salonu</h2>
-
-            <p>
-                Türkiye ile İtalya arasındaki Avrupa Şampiyonası finali,
-                İstanbul'daki Sinan Erdem Spor Salonu'nda oynanacak.
-                Karşılaşmanın başlama saati 16.00 olarak açıklandı.
-                İstanbul'un ev sahipliği yaptığı organizasyonda tribünlerin
-                büyük ölçüde dolması ve milli takıma yoğun destek verilmesi
-                bekleniyor.
-            </p>
-
-            <p>
-                Türkiye'nin kendi seyircisi önünde oynayacağı final,
-                organizasyonun en önemli karşılaşması olacak.
-                Turnuva boyunca Filenin Sultanları'nın maçlarını yakından
-                takip eden taraftarların final karşılaşmasında da milli
-                takıma büyük destek vermesi bekleniyor.
-            </p>
-
-            <p>
-                Mücadelenin Türkiye açısından ayrı bir önemi daha bulunuyor.
-                Avrupa Şampiyonası'nı kendi taraftarı önünde zirvede tamamlamak
-                isteyen ay-yıldızlı ekip, finalde İtalya karşısında
-                şampiyonluk kupasını kaldırmayı hedefliyor.
-            </p>
-
-            <h2>Filenin Sultanları final yolunda neler yaptı?</h2>
-
-            <p>
-                Türkiye, Avrupa Şampiyonası boyunca zorlu bir mücadele verdi.
-                Grup aşamasının ardından eleme turlarında yoluna devam eden
-                ay-yıldızlı takım, son 16 turunda Azerbaycan'ı mağlup ederek
-                çeyrek finale yükseldi.
-            </p>
-
-            <p>
-                Çeyrek finalde Almanya ile karşılaşan milliler,
-                rakibini 3-1 yenerek adını son dört takım arasına yazdırdı.
-                Karşılaşmanın özellikle kritik bölümlerinde gösterilen
-                mücadele ve takım oyunu Türkiye'nin yarı finale yükselmesini
-                sağladı.
-            </p>
-
-            <p>
-                Almanya karşısında alınan galibiyet aynı zamanda Türkiye'ye
-                2027 FIVB Dünya Kupası için de önemli bir avantaj sağladı.
-                Avrupa Şampiyonası'nda son dört takım arasına kalan
-                ay-yıldızlı ekip, Dünya Kupası biletini de garantileyen
-                takımlar arasında yer aldı.
-            </p>
-
-            <h2>Yarı finalde rakip Sırbistan oldu</h2>
-
-            <p>
-                Türkiye'nin yarı finaldeki rakibi ise Avrupa voleybolunun
-                önemli ekiplerinden Sırbistan oldu. İki takımın karşılaşması
-                büyük bir heyecana sahne olması beklenen mücadelelerden
-                biri olarak öne çıktı.
-            </p>
-
-            <p>
-                Ancak Filenin Sultanları karşılaşmaya son derece etkili
-                başladı. Türkiye, maç boyunca oyunun kontrolünü büyük
-                ölçüde elinde tutarak Sırbistan'a set vermedi.
-                Ay-yıldızlı ekip, mücadeleyi 3-0 kazanarak Avrupa
-                Şampiyonası'nda finale yükseldi.
-            </p>
-
-            <p>
-                Sırbistan karşısında alınan net galibiyet, Türkiye'nin
-                turnuvadaki şampiyonluk hedefini daha da güçlendirdi.
-                Milliler, yarı finalde ortaya koyduğu oyunla final öncesi
-                moral depolarken gözler doğrudan İtalya ile oynanacak
-                şampiyonluk maçına çevrildi.
+                Filenin Sultanları yarı final karşılaşmasında
+                Sırbistan'ı 3-0 mağlup ederek şampiyonluk yolunda
+                son maça çıktı.
             </p>
 
             <h2>Finalde rakip İtalya</h2>
 
             <p>
                 Türkiye'nin finaldeki rakibi İtalya oldu.
-                Avrupa voleybolunun son yıllardaki en güçlü ekiplerinden
-                biri olarak öne çıkan İtalya, turnuvada finale kadar
-                yükselerek şampiyonluk mücadelesine ortak oldu.
-            </p>
-
-            <p>
-                Böylece Avrupa Şampiyonası'nın finalinde iki güçlü milli
-                takım karşı karşıya gelecek. Türkiye bir tarafta kendi
-                seyircisi önünde Avrupa'nın zirvesine çıkmak isterken,
-                İtalya da kupayı kazanmak için sahaya çıkacak.
-            </p>
-
-            <p>
-                Final karşılaşması yalnızca iki takım arasındaki bir
-                mücadele olmayacak. Aynı zamanda Avrupa kadın voleybolunun
-                en güçlü ekiplerinden ikisinin sezonun en önemli
-                karşılaşmalarından birinde karşı karşıya gelmesi anlamına
-                geliyor.
-            </p>
-
-            <h2>Türkiye'nin en büyük kozlarından biri Vargas</h2>
-
-            <p>
-                Filenin Sultanları'nın turnuva boyunca en fazla dikkat
-                çeken isimlerinden biri Melissa Vargas oldu.
-                Hücumdaki etkinliği, servisleri ve kritik anlarda
-                ürettiği sayılarla takımın önemli silahlarından biri
-                olan Vargas'ın finaldeki performansı da büyük önem taşıyor.
-            </p>
-
-            <p>
-                Vargas'ın yanı sıra Türkiye'nin kadrosundaki deneyimli
-                oyuncular ve genç isimlerin birlikte ortaya koyduğu
-                performans, millilerin finale kadar yükselmesinde önemli
-                rol oynadı.
-            </p>
-
-            <p>
-                Takımın kaptanı Eda Erdem'in tecrübesi, savunmadaki
-                organizasyon ve file üzerindeki mücadele de Türkiye'nin
-                güçlü yönleri arasında bulunuyor.
-            </p>
-
-            <h2>Takım oyunu ön plana çıkıyor</h2>
-
-            <p>
-                Filenin Sultanları'nın turnuvadaki başarısının yalnızca
-                bireysel performanslara bağlı olmadığı görülüyor.
-                Türkiye, özellikle kritik karşılaşmalarda takım halinde
-                hareket ederek rakiplerinin oyun planlarını bozmayı başardı.
-            </p>
-
-            <p>
-                Servis karşılamadaki istikrar, blok organizasyonu,
-                savunmadaki mücadele ve hücumdaki çeşitlilik Türkiye'nin
-                finale ulaşmasında belirleyici unsurlar arasında yer aldı.
-            </p>
-
-            <p>
-                Teknik ekip tarafından maç içerisinde yapılan değişiklikler
-                ve rakibin oyununa göre geliştirilen taktikler de
-                millilerin turnuvada ilerlemesine katkı sağladı.
-            </p>
-
-            <h2>Türkiye'nin hedefi Avrupa şampiyonluğu</h2>
-
-            <p>
-                Artık Filenin Sultanları için turnuvada geriye yalnızca
-                bir maç kaldı. Türkiye, Avrupa Şampiyonası'nı kupayla
-                tamamlamak istiyor.
-            </p>
-
-            <p>
-                Finale kadar gelen süreçte elde edilen sonuçlar,
-                millilerin şampiyonluk için ne kadar iddialı olduğunu
-                ortaya koydu. Ancak final karşılaşması yeni bir mücadele
-                olacak ve daha önce oynanan maçların sonuçları sahadaki
-                mücadeleyi doğrudan belirlemeyecek.
-            </p>
-
-            <p>
-                Türkiye'nin finalde özellikle ilk setten itibaren
-                oyunun temposunu kontrol etmesi, servislerde baskı
-                oluşturması ve rakibin hücumlarını blok-savunma sistemiyle
-                durdurması büyük önem taşıyor.
-            </p>
-
-            <h2>İtalya karşısında kritik detaylar</h2>
-
-            <p>
-                İtalya'nın finalde Türkiye karşısında güçlü servislerle
-                oyunu bozmayı ve hücum temposunu yükseltmeyi hedeflemesi
-                bekleniyor. Türkiye'nin ise servis karşılamadaki
-                istikrarını koruması ve hücum organizasyonlarını
-                çeşitlendirmesi gerekecek.
-            </p>
-
-            <p>
-                Karşılaşmanın en kritik bölümlerinden birinin uzun
-                ralliler olması bekleniyor. İki takımın da savunmada
-                dirençli olması halinde maçın bazı setlerinde uzun
-                ralliler yaşanabilir.
-            </p>
-
-            <p>
-                Özellikle setlerin son bölümünde yapılacak servisler,
-                blok tercihleri ve hücum kararları karşılaşmanın kaderini
-                belirleyebilecek ayrıntılar arasında bulunuyor.
-            </p>
-
-            <h2>Sinan Erdem'de büyük heyecan</h2>
-
-            <p>
-                İstanbul'daki Sinan Erdem Spor Salonu'nun final günü
-                büyük bir heyecana sahne olması bekleniyor.
-                Milli takımın taraftarları karşılaşma öncesinde
-                salon çevresinde ve tribünlerde yoğunluk oluşturacak.
-            </p>
-
-            <p>
-                Türkiye'nin kendi seyircisi önünde Avrupa Şampiyonası
-                finaline çıkacak olması organizasyona ayrı bir atmosfer
-                kazandırıyor. Tribünlerden gelecek desteğin maç sırasında
-                millilerin motivasyonuna katkı sağlaması bekleniyor.
-            </p>
-
-            <p>
-                Türkiye açısından finalin bir başka önemi ise
-                organizasyonun ev sahibi atmosferinde oynanacak olması.
-                Taraftarların desteği, özellikle maçın kritik
-                bölümlerinde takım için önemli bir avantaj oluşturabilir.
-            </p>
-
-            <h2>Maç saat kaçta?</h2>
-
-            <p>
-                Türkiye ile İtalya arasındaki Avrupa Şampiyonası finali
-                6 Eylül 2026 Pazar günü saat 16.00'da başlayacak.
-                Karşılaşma İstanbul'daki Sinan Erdem Spor Salonu'nda
+                Şampiyonluk karşılaşması 6 Eylül 2026 Pazar günü
+                İstanbul'daki Sinan Erdem Spor Salonu'nda
                 oynanacak.
             </p>
 
+            <h2>Final saat 16.00'da</h2>
+
             <p>
-                Voleybolseverler için günün en önemli spor karşılaşmalarından
-                biri olması beklenen finalde Türkiye, Avrupa şampiyonluğu
-                için sahaya çıkacak.
+                Türkiye-İtalya finali saat 16.00'da başlayacak.
+                Milli takım, kendi seyircisi önünde Avrupa
+                şampiyonluğu için mücadele edecek.
             </p>
 
             <h2>Türkiye finale nasıl geldi?</h2>
 
             <p>
-                Filenin Sultanları turnuvanın grup aşamasından itibaren
-                istikrarlı bir görüntü ortaya koydu. Grup karşılaşmalarının
-                ardından eleme turlarına kalan Türkiye, son 16 turunda
-                Azerbaycan ile karşılaştı.
+                Türkiye, çeyrek finalde Almanya'yı 3-1 mağlup ederek
+                yarı finale yükseldi.
             </p>
 
             <p>
-                Bu mücadeleyi kazanarak çeyrek finale yükselen ay-yıldızlı
-                ekip, burada Almanya ile karşı karşıya geldi.
-                Türkiye, Almanya karşısında 3-1'lik galibiyet elde ederek
-                yarı finale çıktı.
+                Yarı finalde Sırbistan ile karşılaşan milliler,
+                rakibine set vermeden 3-0 kazanarak finale çıktı.
+            </p>
+
+            <h2>Dünya Kupası bileti</h2>
+
+            <p>
+                Türkiye, Avrupa Şampiyonası'nda yarı finale yükselerek
+                2027 FIVB Dünya Kupası'nda mücadele etme hakkını da
+                elde etti.
             </p>
 
             <p>
-                Yarı finalde ise Sırbistan ile karşılaşan milliler,
-                rakibine set vermeden 3-0 galip geldi.
-                Bu sonuç Türkiye'yi doğrudan Avrupa Şampiyonası finaline
-                taşıdı.
+                Şimdi tüm gözler Avrupa şampiyonluğu için oynanacak
+                Türkiye-İtalya finaline çevrilmiş durumda.
             </p>
-
-            <h2>2027 Dünya Kupası bileti de geldi</h2>
-
-            <p>
-                Türkiye'nin Avrupa Şampiyonası'ndaki başarısı yalnızca
-                final biletiyle sınırlı kalmadı.
-                Almanya karşısında alınan çeyrek final galibiyetinin
-                ardından milliler, 2027 FIVB Dünya Kupası'nda mücadele
-                etme hakkını da elde etti.
-            </p>
-
-            <p>
-                Avrupa Şampiyonası'nda son dört takım arasında yer alan
-                Türkiye, organizasyonda elde ettiği derece sayesinde
-                Dünya Kupası yolunu da açmış oldu.
-            </p>
-
-            <p>
-                2027 FIVB Dünya Kupası'nın 20 Ağustos-5 Eylül 2027
-                tarihleri arasında ABD ve Kanada'da düzenlenmesi planlanıyor.
-                Türkiye böylece Avrupa Şampiyonası'ndaki başarısını
-                bir sonraki büyük uluslararası organizasyona da taşıyacak.
-            </p>
-
-            <h2>Şampiyonluk için son maç</h2>
-
-            <p>
-                Şimdi ise tüm dikkatler İtalya ile oynanacak finale çevrildi.
-                Türkiye'nin turnuva boyunca gösterdiği performansı
-                kupayla taçlandırabilmesi için finalde bir galibiyet
-                daha alması gerekiyor.
-            </p>
-
-            <p>
-                Millilerin final öncesinde en büyük hedefi,
-                karşılaşmaya konsantre olmak ve turnuva boyunca
-                uyguladığı oyun planını sahaya yansıtmak olacak.
-                Teknik ekip ve oyuncular için uzun turnuva maratonunun
-                en önemli karşılaşması geride kaldı.
-            </p>
-
-            <p>
-                Avrupa Şampiyonası'nın finalinde alınacak sonuç,
-                Türkiye'nin turnuvadaki derecesini belirleyecek.
-                Şampiyonluk gelmesi halinde Filenin Sultanları
-                Avrupa'nın zirvesine çıkacak ve büyük bir başarıya
-                daha imza atacak.
-            </p>
-
-            <h2>Türkiye'nin gözü kupada</h2>
-
-            <p>
-                Ay-yıldızlı takım için artık hesaplar değil,
-                sahadaki performans belirleyici olacak.
-                Türkiye'nin servis karşılamadan hücuma,
-                bloktan savunmaya kadar tüm alanlarda yüksek
-                konsantrasyonla mücadele etmesi bekleniyor.
-            </p>
-
-            <p>
-                Özellikle karşılaşmanın başlangıcı büyük önem taşıyor.
-                İlk seti kazanarak psikolojik üstünlük elde etmek,
-                finalin geri kalanında Türkiye'ye önemli bir avantaj
-                sağlayabilir.
-            </p>
-
-            <p>
-                Bununla birlikte İtalya gibi güçlü bir rakibe karşı
-                mücadelede maçın herhangi bir bölümünde yaşanabilecek
-                küçük bir konsantrasyon kaybı bile setin sonucunu
-                değiştirebilir. Bu nedenle millilerin karşılaşma boyunca
-                disiplinli bir oyun ortaya koyması gerekiyor.
-            </p>
-
-            <h2>Voleybolseverler ekran başında olacak</h2>
-
-            <p>
-                Türkiye'de milyonlarca voleybolseverin final karşılaşmasını
-                takip etmesi bekleniyor. Avrupa Şampiyonası boyunca
-                milli takıma verilen büyük destek, final karşılaşması
-                öncesinde de devam edecek.
-            </p>
-
-            <p>
-                Sosyal medyada da Türkiye-İtalya finalinin günün en çok
-                konuşulan spor başlıklarından biri olması bekleniyor.
-                Taraftarlar maç öncesinde milli takıma destek mesajları
-                paylaşırken, karşılaşma sonrasında oluşacak tablo da
-                büyük merak konusu olacak.
-            </p>
-
-            <h2>Final öncesi son durum</h2>
-
-            <p>
-                Türkiye final öncesinde moral olarak oldukça yüksek bir
-                noktada bulunuyor. Sırbistan karşısında alınan 3-0'lık
-                galibiyet, takımın finale güçlü bir şekilde gelmesini
-                sağladı.
-            </p>
-
-            <p>
-                İtalya ise Avrupa Şampiyonası'nda finale kadar yükselerek
-                Türkiye'nin karşısına çıkmaya hak kazandı.
-                Böylece organizasyonun en güçlü iki ekiplerinden biri
-                şampiyonluk kupasını İstanbul'da kaldıracak.
-            </p>
-
-            <p>
-                Finalin sonucunun ne olacağı ise bugün saat 16.00'dan
-                itibaren sahada belli olacak.
-            </p>
-
-            <h2>Şampiyonluk için geri sayım başladı</h2>
-
-            <p>
-                Filenin Sultanları'nın Avrupa Şampiyonası finali için
-                geri sayım başladı. Türkiye, kendi seyircisinin önünde
-                İtalya karşısında tarih yazmak ve Avrupa'nın zirvesine
-                çıkmak istiyor.
-            </p>
-
-            <p>
-                Uzun turnuva maratonunun ardından artık bütün gözler
-                Sinan Erdem Spor Salonu'nda olacak. Türkiye ile İtalya
-                arasındaki final, kadın voleybolunda Avrupa'nın
-                en büyük kupasının sahibini belirleyecek.
-            </p>
-
-            <p>
-                Milli takımın finale kadar gösterdiği mücadele,
-                Türkiye'deki voleybol heyecanını yeniden zirveye taşıdı.
-                Şimdi sırada son maç ve şampiyonluk hedefi bulunuyor.
-            </p>
-
-            <h2>Maçın ardından ne olacak?</h2>
-
-            <p>
-                Türkiye'nin finali kazanması halinde Filenin Sultanları
-                Avrupa şampiyonu olacak. Karşılaşmanın ardından kupa
-                töreni düzenlenecek ve turnuvanın en başarılı oyuncuları
-                da ödüllendirilecek.
-            </p>
-
-            <p>
-                Türkiye'nin finali kaybetmesi durumunda ise milliler
-                Avrupa Şampiyonası'nı ikinci sırada tamamlayacak.
-                Ancak hangi sonuç alınırsa alınsın, Türkiye'nin finale
-                kadar yükselmesi ve 2027 Dünya Kupası'na katılma hakkı
-                elde etmesi önemli bir başarı olarak kayıtlara geçecek.
-            </p>
-
-            <h2>Son söz: Herkesin gözü finalde</h2>
-
-            <p>
-                Avrupa Şampiyonası'nda finale kadar gelen Filenin Sultanları,
-                şimdi sezonun en önemli karşılaşmalarından birine çıkıyor.
-                Türkiye ile İtalya arasındaki mücadele saat 16.00'da
-                başlayacak.
-            </p>
-
-            <p>
-                Türkiye'nin hedefi belli: Avrupa'nın zirvesine çıkmak,
-                kupayı kazanmak ve turnuvayı şampiyon olarak tamamlamak.
-                Bunun için sahada son topa kadar mücadele edilecek.
-            </p>
-
-            <p>
-                Türk voleybolunun son yıllardaki yükselişinin önemli
-                temsilcilerinden olan Filenin Sultanları,
-                İstanbul'daki finalde bir kez daha milyonların karşısına
-                çıkacak. Şampiyonluk yolundaki son engel İtalya olacak.
-            </p>
-
-            <p>
-                Gözler Sinan Erdem Spor Salonu'nda, kulaklar milli takımın
-                mücadelesinde olacak. Türkiye'nin Avrupa Şampiyonası
-                finalindeki kaderi bugün belli olacak.
-            </p>
-
-            <p>
-                <strong>
-                    Türkiye-İtalya Avrupa Şampiyonası finali:
-                    6 Eylül 2026 Pazar, saat 16.00.
-                </strong>
-            </p>
-
         `,
 
         image:
             "images/AVRUPA.jpeg",
 
         date: "6 Eylül 2026",
-
         time: "01:30",
-
         views: 58421,
 
         source:
-            "Anadolu Ajansı / TRT Haber"
+            "Türkiye Voleybol Federasyonu / Anadolu Ajansı"
     },
 
 
-
+    /* =========================================================
+       HABER 3
+    ========================================================= */
 
     {
         id: 3,
-
         kategori: "Ekonomi",
 
         baslik:
-            "Piyasalarda yeni hafta öncesi hareketlilik: Gözler ekonomi gündeminde",
+            "Para piyasası fonlarında yeni dönem: Stopaj oranı yüzde 10'a çıkarıldı",
 
         spot:
-            "Piyasalarda yeni hafta öncesinde yatırımcıların ve ekonomi çevrelerinin takip ettiği gelişmeler öne çıkıyor.",
+            "Para piyasası fonları ile unvanında 'para piyasası' ibaresi bulunan serbest fonlardan elde edilen kazançlara uygulanan tevkifat oranı yüzde 0'dan yüzde 10'a çıkarıldı. Yeni düzenleme yatırımcıların fon getirileri üzerindeki vergi hesabını doğrudan etkileyecek.",
 
         content: `
             <p>
-                Piyasalarda yeni hafta öncesinde ekonomi
-                gündemindeki gelişmeler yakından takip ediliyor.
+                Ekonomi gündeminde yatırımcıları yakından ilgilendiren
+                yeni bir düzenleme öne çıktı. Para piyasası fonları ile
+                unvanında "para piyasası" ibaresi bulunan serbest
+                fonlardan elde edilen kazançlara uygulanan tevkifat
+                oranında değişikliğe gidildi.
             </p>
 
-            <h2>Ekonomi gündemi</h2>
+            <h2>Stopaj oranı değişti</h2>
 
             <p>
-                Piyasaların yönü üzerinde etkili olabilecek
-                ekonomik gelişmeler ve açıklamalar yatırımcıların
-                odağında bulunuyor.
+                Yapılan düzenlemeyle söz konusu fonlardan elde edilen
+                kazançlara uygulanan tevkifat oranı yüzde 0'dan
+                yüzde 10'a çıkarıldı.
             </p>
 
             <p>
-                Yeni haftada açıklanacak ekonomik veriler ve
-                resmi açıklamalar piyasaların seyri açısından
+                Düzenleme, özellikle kısa vadeli yatırım araçlarında
+                değerlendirme yapan yatırımcıların dikkatle takip
+                ettiği gelişmeler arasında yer aldı.
+            </p>
+
+            <h2>Yatırımcılar için ne anlama geliyor?</h2>
+
+            <p>
+                Stopaj oranındaki değişiklik, yatırım araçlarının
+                vergilendirme sonrasında yatırımcıya kalan net
+                getirisini etkileyebilecek.
+            </p>
+
+            <p>
+                Bu nedenle yatırımcıların yalnızca fonun brüt
+                getirisini değil, vergiler ve diğer maliyetler
+                sonrasında oluşan net getiriyi de değerlendirmesi
                 önem taşıyor.
+            </p>
+
+            <h2>Para piyasası fonları neden takip ediliyor?</h2>
+
+            <p>
+                Para piyasası fonları, yatırımcıların kısa vadeli
+                birikimlerini değerlendirmek amacıyla sıkça takip
+                ettiği yatırım araçları arasında bulunuyor.
+            </p>
+
+            <p>
+                Faiz, enflasyon, likidite ve piyasa koşulları bu
+                fonların performansında etkili olabiliyor.
+            </p>
+
+            <h2>Ekonomi gündeminde yeni hafta</h2>
+
+            <p>
+                Yeni haftaya girilirken yatırımcıların gözü hem
+                yurt içindeki ekonomik gelişmelerde hem de küresel
+                piyasalardaki hareketlilikte olacak.
+            </p>
+
+            <p>
+                Özellikle para politikası kararları, ekonomik veriler,
+                döviz piyasaları ve faiz beklentileri piyasaların
+                yönü açısından yakından takip edilecek.
+            </p>
+
+            <h2>Son durum</h2>
+
+            <p>
+                Para piyasası fonlarında stopaj oranının yüzde 10'a
+                yükseltilmesi, yatırımcıların önümüzdeki dönemde
+                fon seçimlerini değerlendirirken dikkate alacağı
+                önemli değişikliklerden biri oldu.
             </p>
         `,
 
         image:
-            "images/haber-3.jpg",
+            "images/EKENOMİ.jpeg",
 
-        date:
-            "6 Eylül 2026",
-
-        time:
-            "10:00",
-
-        views:
-            19852,
+        date: "5 Eylül 2026",
+        time: "18:10",
+        views: 26341,
 
         source:
-            "Haberİsta Haber Merkezi"
+            "Anadolu Ajansı / Haberİsta Ekonomi Servisi"
     },
 
+
+    /* =========================================================
+       HABER 4
+    ========================================================= */
 
     {
         id: 4,
-
-        kategori: "Spor",
+        kategori: "Gündem",
 
         baslik:
-            "Transfer döneminin ardından futbolda gözler yeni haftaya çevrildi",
+            "Eylül ayı yaşlı ve engelli aylıkları hesaplara yatırılmaya başlandı",
 
         spot:
-            "Transfer döneminin ardından futbol dünyasında yeni haftanın maçları ve takımların hazırlıkları gündemin öne çıkan başlıkları arasında.",
+            "Eylül ayına ilişkin yaşlı ve engelli aylıklarının hesaplara yatırılmaya başlandığı bildirildi. Ödemelerden yararlanan vatandaşlar hesaplarını ve ödeme durumlarını takip ediyor.",
 
         content: `
             <p>
-                Transfer döneminin sona ermesinin ardından
-                futbol dünyasında gözler yeni haftada oynanacak
-                karşılaşmalara çevrildi.
-            </p>
-
-            <h2>Takımlar hazırlıklarını sürdürüyor</h2>
-
-            <p>
-                Kulüpler yeni hafta öncesinde antrenman programlarını
-                sürdürürken teknik ekipler de maç planlamaları
-                üzerinde çalışmalarını devam ettiriyor.
+                Eylül ayının başlamasıyla birlikte sosyal yardım
+                ödemeleri de vatandaşların gündemindeki önemli
+                başlıklardan biri oldu.
             </p>
 
             <p>
-                Futbolseverler yeni haftanın karşılaşmalarını
-                yakından takip edecek.
+                Yaşlı ve engelli aylıklarının hesaplara yatırılmaya
+                başlandığı bildirildi. Ödemelerden yararlanan
+                vatandaşlar, hesaplarındaki hareketleri ve ödeme
+                durumlarını takip ediyor.
+            </p>
+
+            <h2>Ödemeler başladı</h2>
+
+            <p>
+                Sosyal yardım kapsamında gerçekleştirilen ödemeler,
+                hak sahiplerinin hesaplarına aktarılmaya başlandı.
+            </p>
+
+            <p>
+                Ödeme süreçleriyle ilgili vatandaşların resmi
+                kanallardan yapılan açıklamaları takip etmesi önem
+                taşıyor.
+            </p>
+
+            <h2>Kimler yararlanıyor?</h2>
+
+            <p>
+                Yaşlı aylığı ve engelli aylığı, belirlenen şartları
+                taşıyan vatandaşlara sosyal destek kapsamında
+                sağlanan ödemeler arasında bulunuyor.
+            </p>
+
+            <p>
+                Hak sahiplerinin ödeme durumlarını kendi banka
+                hesaplarından ve ilgili resmi sistemlerden
+                kontrol edebileceği belirtildi.
+            </p>
+
+            <h2>Vatandaşlar ödemeleri takip ediyor</h2>
+
+            <p>
+                Eylül ayı ödemeleriyle birlikte vatandaşların
+                özellikle ödeme tarihleri ve hesaplara geçiş
+                süreçleriyle ilgili araştırmaları da arttı.
+            </p>
+
+            <p>
+                Ödeme konusunda sorun yaşayan vatandaşların
+                ilgili kamu kurumları üzerinden bilgi alması
+                öneriliyor.
+            </p>
+
+            <h2>Yeni ayda sosyal destek gündemi</h2>
+
+            <p>
+                Sosyal yardım ödemeleri, özellikle sabit gelirle
+                yaşamını sürdüren vatandaşlar açısından önem
+                taşımaya devam ediyor.
+            </p>
+
+            <p>
+                Eylül ayındaki ödemeler de sosyal destek
+                gündeminin öne çıkan başlıkları arasında yer aldı.
             </p>
         `,
 
         image:
-            "images/haber-4.jpg",
+            "images/GÜNDEM.jpeg",
 
-        date:
-            "6 Eylül 2026",
-
-        time:
-            "11:30",
-
-        views:
-            31247,
+        date: "5 Eylül 2026",
+        time: "10:27",
+        views: 22418,
 
         source:
-            "Haberİsta Spor Servisi"
+            "TRT Haber / Haberİsta Gündem Servisi"
     },
 
 
+    /* =========================================================
+       HABER 5
+    ========================================================= */
+
     {
         id: 5,
-
-        kategori: "Dünya",
+        kategori: "Gündem",
 
         baslik:
-            "Dünyada kritik gelişmeler: Uluslararası gündem yakından takip ediliyor",
+            "PISA 2025 sonuçları için geri sayım: Sonuçlar 8 Eylül'de açıklanacak",
 
         spot:
-            "Dünya genelinde yaşanan gelişmeler uluslararası kamuoyunun gündemindeki yerini koruyor.",
+            "PISA 2025 sonuçları için tarih belli oldu. Uluslararası öğrenci değerlendirmesinin sonuçları 8 Eylül 2026'da açıklanacak. Türkiye'deki öğrencilerin performansı da açıklanacak sonuçlarla birlikte gündeme gelecek.",
 
         content: `
             <p>
-                Dünya genelinde yaşanan siyasi, ekonomik ve
-                diplomatik gelişmeler uluslararası kamuoyu
-                tarafından yakından takip ediliyor.
+                Eğitim dünyasının yakından takip ettiği PISA 2025
+                sonuçları için geri sayım başladı. Uluslararası
+                öğrenci değerlendirmesinin sonuçları 8 Eylül 2026
+                tarihinde açıklanacak.
             </p>
 
-            <h2>Uluslararası gündem</h2>
+            <h2>PISA nedir?</h2>
 
             <p>
-                Ülkeler arasındaki diplomatik temaslar ve
-                uluslararası kuruluşların açıklamaları gündemin
-                önemli başlıkları arasında bulunuyor.
+                PISA, öğrencilerin matematik, fen ve okuma becerilerini
+                uluslararası ölçekte değerlendiren önemli araştırmalardan
+                biri olarak biliniyor.
             </p>
 
             <p>
-                Önümüzdeki günlerde yapılacak resmi açıklamalar
-                gelişmelerin yönü açısından önem taşıyor.
+                Değerlendirme, öğrencilerin yalnızca derslerde öğrendiği
+                bilgileri değil, bu bilgileri günlük yaşamda kullanma
+                becerilerini de ölçmeye odaklanıyor.
+            </p>
+
+            <h2>Türkiye'nin sonuçları merak ediliyor</h2>
+
+            <p>
+                2025 yılında gerçekleştirilen değerlendirmeye ilişkin
+                sonuçların açıklanmasıyla Türkiye'nin uluslararası
+                sıralamadaki yeri de ortaya çıkacak.
+            </p>
+
+            <p>
+                Sonuçlarla birlikte öğrencilerin matematik, fen ve
+                okuma alanlarındaki performansları hakkında kapsamlı
+                verilerin paylaşılması bekleniyor.
+            </p>
+
+            <h2>Eğitim politikaları açısından önemli</h2>
+
+            <p>
+                PISA sonuçları yalnızca öğrencilerin performansını
+                göstermesi açısından değil, eğitim politikalarının
+                değerlendirilmesi açısından da önem taşıyor.
+            </p>
+
+            <p>
+                Sonuçların ardından eğitim sisteminin güçlü ve
+                geliştirilmesi gereken yönleri üzerine yeni
+                değerlendirmelerin yapılması bekleniyor.
+            </p>
+
+            <h2>Sonuçlar ne zaman açıklanacak?</h2>
+
+            <p>
+                PISA 2025 sonuçları 8 Eylül 2026 tarihinde kamuoyuna
+                açıklanacak.
+            </p>
+
+            <p>
+                Sonuçların açıklanmasının ardından Türkiye'nin
+                performansına ilişkin ayrıntılar ve uluslararası
+                karşılaştırmalar gündemin önemli başlıkları arasında
+                yer alacak.
+            </p>
+
+            <h2>Öğrenciler ve eğitim camiası bekliyor</h2>
+
+            <p>
+                Öğrenciler, öğretmenler, veliler ve eğitim yöneticileri
+                PISA sonuçlarını yakından takip edecek.
+            </p>
+
+            <p>
+                Açıklanacak verilerin Türkiye'nin eğitim alanındaki
+                mevcut durumuna ilişkin önemli göstergeler sunması
+                bekleniyor.
             </p>
         `,
 
         image:
-            "images/haber-5.jpg",
+            "images/PISA.jpeg",
 
-        date:
-            "6 Eylül 2026",
-
-        time:
-            "12:10",
-
-        views:
-            17543,
+        date: "6 Eylül 2026",
+        time: "09:42",
+        views: 18976,
 
         source:
-            "Haberİsta Dünya Servisi"
+            "TRT Haber / Haberİsta Eğitim Servisi"
     }
 
 ];
-
 
 /* =========================================================
    HER HABERE OTOMATİK SLUG
@@ -781,12 +478,10 @@ const haberler = [
 
 haberler.forEach(function (haber) {
 
-    haber.slug =
-        slugOlustur(haber.baslik);
+    haber.slug = slugOlustur(haber.baslik);
 
-    haber.url =
-        "/haber/" +
-        haber.slug;
+    haber.url = "/haber/" + haber.slug;
+
 });
 
 
@@ -801,6 +496,7 @@ function haberSlugIleBul(slug) {
         return haber.slug === slug;
 
     });
+
 }
 
 
@@ -808,10 +504,10 @@ function haberIdIleBul(id) {
 
     return haberler.find(function (haber) {
 
-        return String(haber.id) ===
-            String(id);
+        return String(haber.id) === String(id);
 
     });
+
 }
 
 
@@ -819,17 +515,13 @@ function haberIdIleBul(id) {
    GLOBAL
 ========================================================= */
 
-window.haberler =
-    haberler;
+window.haberler = haberler;
 
-window.slugOlustur =
-    slugOlustur;
+window.slugOlustur = slugOlustur;
 
-window.haberSlugIleBul =
-    haberSlugIleBul;
+window.haberSlugIleBul = haberSlugIleBul;
 
-window.haberIdIleBul =
-    haberIdIleBul;
+window.haberIdIleBul = haberIdIleBul;
 
 
 console.log(
