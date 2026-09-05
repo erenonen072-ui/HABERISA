@@ -1,73 +1,341 @@
-/* SON DAKİKA / KATEGORİ KARTLARI */
+/* =========================================
+   HABERİSTA KATEGORİ SAYFASI
+   ========================================= */
 
-.category-news-grid {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 18px;
+.category-page {
+    padding-top: 35px;
+    padding-bottom: 60px;
 }
 
-.category-news-card {
-    border-radius: 12px;
-    overflow: hidden;
+
+/* BAŞLIK */
+
+.page-heading {
+    background: #fff;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 28px 30px;
+    margin-bottom: 25px;
 }
 
-.category-image-link {
-    height: 145px;
-}
-
-.category-news-content {
-    padding: 15px;
-}
-
-.category-news-content h2 {
-    font-size: 17px;
-    line-height: 1.35;
-    margin-bottom: 8px;
-
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
-
-.category-news-content p {
-    font-size: 13px;
-    line-height: 1.5;
-
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-
-    margin-bottom: 12px;
-}
-
-.category-badge {
+.page-kicker {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: #e11d48;
     margin-bottom: 7px;
 }
 
-.category-news-meta {
-    font-size: 12px;
+.page-heading h1 {
+    margin: 0;
+    font-size: 34px;
+    line-height: 1.15;
+    color: #111827;
 }
 
-@media (max-width: 1100px) {
-    .category-news-grid {
+.page-heading p {
+    margin: 9px 0 0;
+    color: #6b7280;
+    font-size: 15px;
+}
+
+
+/* ANA DÜZEN */
+
+.category-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 300px;
+    gap: 28px;
+    align-items: start;
+}
+
+
+/* HABER GRID */
+
+.news-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    align-items: start;
+}
+
+
+/* HABER KARTI */
+
+.category-card {
+    min-width: 0;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    overflow: hidden;
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease,
+        border-color .2s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-4px);
+    border-color: #d1d5db;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, .09);
+}
+
+
+/* KÜÇÜK GÖRSEL */
+
+.category-card-image {
+    display: block;
+    width: 100%;
+    height: 175px;
+    overflow: hidden;
+    background: #f3f4f6;
+}
+
+.category-card-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .35s ease;
+}
+
+.category-card:hover .category-card-image img {
+    transform: scale(1.04);
+}
+
+
+/* KART İÇİ */
+
+.category-card-body {
+    padding: 16px;
+}
+
+.category-card-category {
+    display: inline-block;
+    margin-bottom: 8px;
+    color: #e11d48;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    text-decoration: none;
+}
+
+.category-card-title {
+    margin: 0 0 9px;
+    font-size: 18px;
+    line-height: 1.35;
+    font-weight: 800;
+}
+
+.category-card-title a {
+    color: #111827;
+    text-decoration: none;
+}
+
+.category-card-title a:hover {
+    color: #e11d48;
+}
+
+
+/* ÖZET */
+
+.category-card-spot {
+    margin: 0 0 14px;
+    color: #6b7280;
+    font-size: 13px;
+    line-height: 1.55;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+
+
+/* ALT BİLGİ */
+
+.category-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+
+    padding-top: 12px;
+    border-top: 1px solid #f0f1f3;
+
+    color: #8a919b;
+    font-size: 11px;
+}
+
+
+/* POPÜLER */
+
+.popular-item {
+    display: flex;
+    gap: 11px;
+    padding: 13px 0;
+    border-bottom: 1px solid #eee;
+    text-decoration: none;
+}
+
+.popular-item:last-child {
+    border-bottom: 0;
+}
+
+.popular-number {
+    flex: 0 0 27px;
+    width: 27px;
+    height: 27px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #f3f4f6;
+    color: #e11d48;
+
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.popular-item strong {
+    display: block;
+
+    color: #1f2937;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.popular-item small {
+    display: block;
+    margin-top: 5px;
+
+    color: #9ca3af;
+    font-size: 11px;
+}
+
+
+/* BOŞ KATEGORİ */
+
+.category-empty {
+    grid-column: 1 / -1;
+
+    padding: 70px 20px;
+
+    text-align: center;
+
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+}
+
+.empty-icon {
+    font-size: 42px;
+    margin-bottom: 12px;
+}
+
+.category-empty h3 {
+    margin: 0 0 7px;
+    font-size: 20px;
+    color: #111827;
+}
+
+.category-empty p {
+    margin: 0;
+    color: #6b7280;
+}
+
+
+/* TABLET */
+
+@media (max-width: 1050px) {
+
+    .category-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .news-grid {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
+
+/* KÜÇÜK TABLET */
+
 @media (max-width: 800px) {
-    .category-news-grid {
+
+    .news-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .category-card-image {
+        height: 180px;
+    }
+
+    .page-heading h1 {
+        font-size: 29px;
     }
 }
 
-@media (max-width: 520px) {
-    .category-news-grid {
-        grid-template-columns: 1fr;
+
+/* TELEFON */
+
+@media (max-width: 550px) {
+
+    .category-page {
+        padding-top: 20px;
     }
 
-    .category-image-link {
-        height: 190px;
+    .page-heading {
+        padding: 22px 18px;
+    }
+
+    .page-heading h1 {
+        font-size: 25px;
+    }
+
+    .news-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .category-card {
+        display: grid;
+        grid-template-columns: 135px 1fr;
+    }
+
+    .category-card-image {
+        height: 100%;
+        min-height: 150px;
+    }
+
+    .category-card-body {
+        padding: 13px;
+    }
+
+    .category-card-title {
+        font-size: 15px;
+    }
+
+    .category-card-spot {
+        font-size: 12px;
+        -webkit-line-clamp: 2;
+    }
+
+    .category-card-footer {
+        font-size: 10px;
+    }
+
+    .sidebar {
+        display: block;
     }
 }
