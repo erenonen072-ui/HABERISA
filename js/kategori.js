@@ -1,72 +1,49 @@
 document.addEventListener("DOMContentLoaded", () => {
-
     const haberler = window.haberler || [];
 
-    const path = window.location.pathname
-        .toLowerCase()
-        .replace(/\/+$/, "");
+    const path = window.location.pathname.toLowerCase();
 
     const kategoriMap = {
-        "/son-dakika.html": "Son Dakika",
-        "/gundem.html": "Gündem",
-        "/ekonomi.html": "Ekonomi",
-        "/spor.html": "Spor",
-        "/magazin.html": "Magazin",
-        "/dunya.html": "Dünya",
-        "/teknoloji.html": "Teknoloji",
-        "/saglik.html": "Sağlık",
-        "/kultur-sanat.html": "Kültür Sanat"
+        "son-dakika.html": "Son Dakika",
+        "gundem.html": "Gündem",
+        "ekonomi.html": "Ekonomi",
+        "spor.html": "Spor",
+        "magazin.html": "Magazin",
+        "dunya.html": "Dünya",
+        "teknoloji.html": "Teknoloji",
+        "saglik.html": "Sağlık",
+        "kultur-sanat.html": "Kültür Sanat"
     };
 
-    const kategori = kategoriMap[path];
+    const dosyaAdi = path.split("/").pop();
 
-    if (!kategori) {
-        console.warn("Kategori bulunamadı:", path);
-        return;
-    }
+    const kategori = kategoriMap[dosyaAdi];
 
-    const kategoriHaberleri = haberler.filter(haber =>
-        String(haber.kategori || "").trim().toLowerCase() ===
-        kategori.toLowerCase()
-    );
+    if (!kategori) return;
 
-    const title = document.getElementById("categoryTitle");
-    const count = document.getElementById("categoryCount");
     const grid = document.getElementById("categoryNews");
-    const empty = document.getElementById("categoryEmpty");
-
-    if (title) {
-        title.textContent = kategori;
-    }
-
-    if (count) {
-        count.textContent =
-            `${kategoriHaberleri.length} haber`;
-    }
 
     if (!grid) return;
+
+    const kategoriHaberleri = haberler.filter(haber =>
+        String(haber.kategori || "").toLowerCase() ===
+        kategori.toLowerCase()
+    );
 
     grid.innerHTML = "";
 
     if (kategoriHaberleri.length === 0) {
-
-        if (empty) {
-            empty.style.display = "block";
-            empty.innerHTML = `
+        grid.innerHTML = `
+            <div class="category-empty">
                 <div class="empty-icon">📰</div>
-                <h3>Bu kategoride henüz haber yok</h3>
+                <h3>Henüz haber bulunmuyor</h3>
                 <p>
-                    ${kategori} kategorisine yeni haberler eklendiğinde
-                    burada otomatik olarak görüntülenecek.
+                    Bu kategoride yeni haberler yayınlandığında
+                    burada görüntülenecek.
                 </p>
-            `;
-        }
-
+            </div>
+        `;
         return;
-    }
-
-    if (empty) {
-        empty.style.display = "none";
     }
 
     kategoriHaberleri.forEach(haber => {
@@ -84,12 +61,12 @@ document.addEventListener("DOMContentLoaded", () => {
             haber.image ||
             "/images/default-news.jpg";
 
-        const date =
+        const tarih =
             haber.tarih ||
             haber.date ||
             "";
 
-        const time =
+        const saat =
             haber.saat ||
             haber.time ||
             "";
@@ -100,12 +77,17 @@ document.addEventListener("DOMContentLoaded", () => {
             haber.description ||
             "";
 
-        const article = document.createElement("article");
+        const okunma =
+            haber.okunma ??
+            haber.views ??
+            0;
 
-        article.className = "category-news-card";
+        const card = document.createElement("article");
 
-        article.innerHTML = `
-            <a href="${url}" class="category-image-link">
+        card.className = "category-card";
+
+        card.innerHTML = `
+            <a href="${url}" class="category-card-image">
                 <img
                     src="/${image.replace(/^\/+/, "")}"
                     alt="${escapeHtml(haber.baslik)}"
@@ -114,51 +96,98 @@ document.addEventListener("DOMContentLoaded", () => {
                 >
             </a>
 
-            <div class="category-news-content">
+            <div class="category-card-body">
 
                 <a
                     href="${url}"
-                    class="category-badge"
+                    class="category-card-category"
                 >
                     ${escapeHtml(haber.kategori)}
                 </a>
 
-                <h2>
+                <h2 class="category-card-title">
                     <a href="${url}">
                         ${escapeHtml(haber.baslik)}
                     </a>
                 </h2>
 
-                <p>
+                <p class="category-card-spot">
                     ${escapeHtml(spot)}
                 </p>
 
-                <div class="category-news-meta">
+                <div class="category-card-footer">
+
                     <span>
-                        ${escapeHtml(date)}
+                        ${escapeHtml(tarih)}
+                        ${saat ? ` • ${escapeHtml(saat)}` : ""}
                     </span>
 
-                    ${
-                        time
-                        ? `<span>•</span><span>${escapeHtml(time)}</span>`
-                        : ""
-                    }
+                    <span>
+                        ${Number(okunma).toLocaleString("tr-TR")} okunma
+                    </span>
 
-                    <a href="${url}">
-                        Haberi Oku →
-                    </a>
                 </div>
 
             </div>
         `;
 
-        grid.appendChild(article);
+        grid.appendChild(card);
     });
+
+    // Çok okunanlar
+    const popular = document.getElementById("popularNews");
+
+    if (popular) {
+
+        const populerHaberler = [...haberler]
+            .sort((a, b) =>
+                Number(b.okunma ?? b.views ?? 0) -
+                Number(a.okunma ?? a.views ?? 0)
+            )
+            .slice(0, 5);
+
+        popular.innerHTML = populerHaberler.map((haber, index) => {
+
+            const slug =
+                haber.slug ||
+                window.slugOlustur(haber.baslik);
+
+            const url =
+                haber.url ||
+                `/haber/${slug}`;
+
+            const okunma =
+                haber.okunma ??
+                haber.views ??
+                0;
+
+            return `
+                <a
+                    href="${url}"
+                    class="popular-item"
+                >
+                    <span class="popular-number">
+                        ${index + 1}
+                    </span>
+
+                    <div>
+                        <strong>
+                            ${escapeHtml(haber.baslik)}
+                        </strong>
+
+                        <small>
+                            ${Number(okunma).toLocaleString("tr-TR")} okunma
+                        </small>
+                    </div>
+                </a>
+            `;
+
+        }).join("");
+    }
 });
 
 
 function escapeHtml(value) {
-
     return String(value || "")
         .replace(/&/g, "&amp;")
         .replace(/</g, "&lt;")
