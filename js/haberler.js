@@ -1,34 +1,43 @@
-// ============================================================
-// HABERİSTA - HABERLER.JS
-// ============================================================
+"use strict";
 
-// Türkçe başlıktan SEO uyumlu URL oluşturur
+/* =========================================================
+   SLUG OLUŞTUR
+========================================================= */
+
 function slugOlustur(metin) {
-    return metin
+
+    return String(metin || "")
         .toLocaleLowerCase("tr-TR")
+
         .replace(/ğ/g, "g")
         .replace(/ü/g, "u")
         .replace(/ş/g, "s")
         .replace(/ı/g, "i")
         .replace(/ö/g, "o")
         .replace(/ç/g, "c")
-        .replace(/İ/g, "i")
+
+        .replace(/â/g, "a")
+        .replace(/î/g, "i")
+        .replace(/û/g, "u")
+
         .replace(/[^a-z0-9\s-]/g, "")
+
         .trim()
+
         .replace(/\s+/g, "-")
-        .replace(/-+/g, "-");
+
+        .replace(/-+/g, "-")
+
+        .replace(/^-+|-+$/g, "");
 }
 
 
-// ============================================================
-// HABERLER
-// ============================================================
+/* =========================================================
+   HABERLER
+   BURADAKİ HABERLERİNİ İSTEDİĞİN GİBİ ÇOĞALTABİLİRSİN
+========================================================= */
 
 const haberler = [
-
-    // ========================================================
-    // HABER 1
-    // ========================================================
 
     {
         id: 1,
@@ -41,192 +50,95 @@ const haberler = [
         spot:
             "5 Eylül 2026 tarihli Resmî Gazete'de ekonomi, kamu yönetimi, eğitim ve ulaştırma alanlarını ilgilendiren çok sayıda karar ve düzenleme yayımlandı. Sayıştay Başsavcılığına Recep Çevik atanırken bazı kamu kurumlarında yeni atama ve görevden alma kararları da Resmî Gazete'de yer aldı.",
 
-        icerik: `
+        content: `
             <p>
-                5 Eylül 2026 tarihli ve 33361 sayılı Resmî Gazete yayımlandı.
-                Gece yarısından itibaren yayımlanan karar ve düzenlemelerde kamu
-                yönetiminden ekonomiye, yükseköğretimden ulaştırma altyapısına
-                kadar farklı alanları ilgilendiren çok sayıda gelişme yer aldı.
+                5 Eylül 2026 tarihli Resmî Gazete yayımlandı.
+                Yeni sayıda kamu yönetiminden ekonomiye,
+                eğitimden ulaştırmaya kadar birçok alanı
+                ilgilendiren karar ve düzenleme yer aldı.
+            </p>
+
+            <h2>Yeni kararlar yayımlandı</h2>
+
+            <p>
+                Resmî Gazete'nin yayımlanan sayısında
+                kamu kurumlarının çalışmalarını ilgilendiren
+                çeşitli düzenlemeler kamuoyuna duyuruldu.
+                Kararların ilgili kurumlar tarafından
+                uygulanması bekleniyor.
+            </p>
+
+            <h2>Kamu kurumlarında yeni atamalar</h2>
+
+            <p>
+                Sayıştay Başsavcılığı görevine Recep Çevik'in
+                atanmasına ilişkin karar da Resmî Gazete'de
+                yayımlanan düzenlemeler arasında yer aldı.
             </p>
 
             <p>
-                Resmî Gazete'nin yeni sayısında özellikle Cumhurbaşkanı kararları,
-                atama ve görevden alma kararları ile çeşitli kurumlara ilişkin
-                düzenlemeler dikkat çekti.
+                Bazı kamu kurumlarında görev değişiklikleri,
+                atamalar ve görevden alma kararları da
+                yayımlanan kararlar arasında bulundu.
             </p>
 
-            <h2>Ekonomi ve ihracat alanında yeni düzenleme</h2>
+            <h2>Eğitim ve üniversiteler</h2>
 
             <p>
-                Günün öne çıkan kararlarından biri ihracat, transit ticaret,
-                ihracat sayılan satış ve teslimler ile döviz kazandırıcı hizmet
-                ve faaliyetlerde vergi, resim ve harç istisnasına ilişkin
-                düzenlemede yapılan değişiklik oldu.
+                Eğitim alanındaki bazı düzenlemeler ve
+                yükseköğretim kurumlarını ilgilendiren
+                kararlar da yeni sayıda yer aldı.
             </p>
 
+            <h2>Ulaştırma alanındaki düzenlemeler</h2>
+
             <p>
-                Cumhurbaşkanı kararıyla yapılan değişiklik, özellikle dış ticaret
-                faaliyetleri yürüten şirketler ve döviz kazandırıcı hizmetlerde
-                bulunan işletmeler açısından takip edilmesi gereken düzenlemeler
-                arasında yer aldı.
+                Ulaştırma ve raylı sistemlerle ilgili
+                düzenlemeler de Resmî Gazete'de yayımlanan
+                kararlar arasında bulunuyor.
             </p>
 
+            <h2>Ekonomiye ilişkin kararlar</h2>
+
             <p>
-                Düzenlemenin yürürlüğe girmesiyle birlikte ilgili sektörlerde
-                faaliyet gösteren işletmelerin mevcut uygulamalarını ve istisna
-                kapsamındaki işlemlerini yeni hükümler doğrultusunda
-                değerlendirmesi gerekiyor.
+                Ekonomi ve kamu hizmetlerini ilgilendiren
+                bazı kararların da yeni düzenlemeler
+                kapsamında yayımlandığı görüldü.
             </p>
 
-            <h2>Kamu hizmetlerine ilişkin yeni karar</h2>
+            <h2>Kararlar ne anlama geliyor?</h2>
 
             <p>
-                Resmî Gazete'de ayrıca kamu kurum ve kuruluşlarının ürettikleri
-                bazı mal ve hizmetlerden ücretsiz veya indirimli olarak
-                faydalanacak kişilerin belirlenmesine ilişkin yeni bir
-                Cumhurbaşkanı kararı yayımlandı.
-            </p>
-
-            <p>
-                Kararla birlikte belirli kamu hizmetlerinden hangi kişi ve
-                grupların ücretsiz veya indirimli şekilde yararlanabileceğine
-                ilişkin çerçeve yeniden düzenlendi.
-            </p>
-
-            <h2>Üniversitelerle ilgili önemli kararlar</h2>
-
-            <p>
-                5 Eylül tarihli Resmî Gazete'de yükseköğretim kurumlarıyla
-                ilgili de çeşitli kararlar yayımlandı.
-            </p>
-
-            <p>
-                Dokuz Eylül Üniversitesi Rektörlüğü bünyesinde bulunan Güzel
-                Sanatlar Enstitüsünün kapatılmasına karar verilirken,
-                Munzur Üniversitesi bünyesinde Yabancı Diller ve Turizm
-                Fakültesi kurulmasına ilişkin karar da yayımlandı.
-            </p>
-
-            <p>
-                Kayseri Üniversitesi bünyesinde bulunan Mühendislik, Mimarlık
-                ve Tasarım Fakültesinin adı ise Mühendislik ve Tasarım Fakültesi
-                olarak değiştirildi.
-            </p>
-
-            <p>
-                Bunun yanında Türkiye Uluslararası İslam, Bilim ve Teknoloji
-                Üniversitesi bünyesinde Yabancı Diller Yüksekokulu kurulmasına
-                ilişkin karar da Resmî Gazete'de yer aldı.
-            </p>
-
-            <h2>Ulaştırma ve raylı sistemler</h2>
-
-            <p>
-                Resmî Gazete'nin dikkat çeken diğer başlıklarından biri şehir
-                içi raylı ulaşım sistemleri ve metrolarla ilgili düzenleme oldu.
-            </p>
-
-            <p>
-                Şehir içi raylı ulaşım sistemleri, metrolar ve bunlarla ilgili
-                tesislerin Ulaştırma ve Altyapı Bakanlığı tarafından
-                üstlenilmesi, devralınması ve tamamlanmasının ardından ilgili
-                kuruluşlara devredilmesine ilişkin şartlarda değişiklik
-                yapılmasına dair karar yayımlandı.
-            </p>
-
-            <h2>Sayıştay Başsavcılığına yeni atama</h2>
-
-            <p>
-                Günün önemli atama kararlarından biri Sayıştay Başkanlığı
-                bünyesinde gerçekleşti.
-            </p>
-
-            <p>
-                Resmî Gazete'de yayımlanan karara göre Sayıştay Savcısı
-                Recep Çevik, Sayıştay Başsavcılığı görevine atandı.
-            </p>
-
-            <p>
-                Atama kararı Cumhurbaşkanı Recep Tayyip Erdoğan'ın imzasıyla
-                yayımlanan kararlar arasında yer aldı.
-            </p>
-
-            <h2>Diyanet İşleri Başkanlığında atamalar</h2>
-
-            <p>
-                Resmî Gazete'de Diyanet İşleri Başkanlığına ilişkin çeşitli
-                atama kararları da yayımlandı.
-            </p>
-
-            <p>
-                Cumhurbaşkanı tarafından imzalanan kararlarla bazı
-                müftülüklerde yeni görevlendirmeler yapılırken Diyanet
-                teşkilatındaki bazı yönetici kadrolarında da değişiklik
-                gerçekleştirildi.
-            </p>
-
-            <h2>Kamu kurumlarında görev değişiklikleri</h2>
-
-            <p>
-                5 Eylül tarihli Resmî Gazete'de çok sayıda atama ve görevden
-                alma kararı da yayımlandı.
-            </p>
-
-            <p>
-                Kamu kurumlarında yapılan bu değişikliklerin bir bölümü üst
-                düzey yönetici kadrolarını kapsarken bazı kararlar ise farklı
-                kamu kuruluşlarındaki görev değişikliklerine ilişkin oldu.
-            </p>
-
-            <h2>Vatandaşlar için ne anlama geliyor?</h2>
-
-            <p>
-                Resmî Gazete'de yayımlanan kararların tamamı doğrudan
-                vatandaşları ilgilendirmiyor. Ancak özellikle kamu
-                hizmetlerinden ücretsiz veya indirimli yararlanma şartları,
-                eğitim kurumlarının yapılanması ve ekonomik faaliyetlere
-                ilişkin düzenlemeler belirli vatandaş grupları ve işletmeler
-                açısından önem taşıyor.
-            </p>
-
-            <p>
-                İhracat yapan şirketler ile döviz kazandırıcı hizmet ve
-                faaliyetlerde bulunan işletmelerin yeni düzenlemeleri
-                yakından takip etmesi gerekiyor.
+                Resmî Gazete'de yayımlanan kararlar,
+                ilgili kurumların görev alanlarına göre
+                farklı tarihlerde yürürlüğe girebiliyor.
+                Düzenlemelerin uygulama süreçleri ilgili
+                kurumların açıklamalarıyla netleşecek.
             </p>
 
             <h2>Sonuç</h2>
 
             <p>
-                5 Eylül 2026 tarihli Resmî Gazete, kamu yönetimi ve ekonomi
-                başta olmak üzere birçok alanda yeni kararların yürürlüğe
-                girdiği bir gündem oluşturdu.
-            </p>
-
-            <p>
-                İhracat ve döviz kazandırıcı faaliyetlerde vergi, resim ve
-                harç istisnalarına ilişkin değişiklik, üniversitelerin
-                yapısına yönelik kararlar, raylı sistemlerle ilgili düzenleme
-                ve kamu kurumlarındaki atamalar günün öne çıkan başlıkları
-                arasında yer aldı.
+                5 Eylül 2026 tarihli Resmî Gazete'de
+                yayımlanan karar ve düzenlemeler,
+                kamu yönetimi ve çeşitli sektörler açısından
+                yeni gelişmeleri beraberinde getiriyor.
             </p>
         `,
 
-        resim: "images/ChatGPT Image 5 Eyl 2026 15_25_02.png",
+        image:
+            "images/ChatGPT Image 5 Eyl 2026 15_25_02.png",
 
-        tarih: "5 Eylül 2026",
+        date: "5 Eylül 2026",
 
-        saat: "15:20",
+        time: "15:20",
 
-        okunma: 38742,
+        views: 38742,
 
-        kaynak: "Resmî Gazete / Anadolu Ajansı"
+        source:
+            "Resmî Gazete / Anadolu Ajansı"
     },
 
-
-    // ========================================================
-    // HABER 2
-    // ========================================================
 
     {
         id: 2,
@@ -237,62 +149,45 @@ const haberler = [
             "Türkiye'de gündem yoğun: Yeni haftada gözler kritik gelişmelerde",
 
         spot:
-            "Türkiye'de yeni haftaya girilirken siyaset, ekonomi, eğitim ve kamu gündemindeki gelişmeler yakından takip ediliyor.",
+            "Türkiye'de yeni haftayla birlikte gündemin öne çıkan başlıkları ve kamuoyunun yakından takip ettiği gelişmeler yeniden gündemde.",
 
-        icerik: `
+        content: `
             <p>
-                Türkiye'de yeni haftanın başlamasıyla birlikte birçok başlık
-                kamuoyunun gündeminde yer almaya devam ediyor.
+                Türkiye'de yeni haftanın başlamasıyla birlikte
+                gündemin öne çıkan başlıkları yakından takip
+                ediliyor.
+            </p>
+
+            <h2>Gündemin öne çıkan başlıkları</h2>
+
+            <p>
+                Önümüzdeki günlerde ekonomi, kamu yönetimi,
+                eğitim ve günlük yaşamı ilgilendiren gelişmelerin
+                gündemde olması bekleniyor.
             </p>
 
             <p>
-                Siyasi gelişmeler, ekonomi gündemi ve kamu kurumlarından
-                gelecek yeni açıklamalar vatandaşlar tarafından yakından
-                takip ediliyor.
-            </p>
-
-            <h2>Yeni haftada yoğun gündem</h2>
-
-            <p>
-                Önümüzdeki günlerde yapılması beklenen açıklamalar ve
-                alınabilecek yeni kararların gündemin seyrini belirlemesi
-                bekleniyor.
-            </p>
-
-            <p>
-                Özellikle ekonomi ve kamu yönetimine ilişkin gelişmelerin
-                önümüzdeki günlerde daha fazla öne çıkabileceği
-                değerlendiriliyor.
-            </p>
-
-            <h2>Gelişmeler takip ediliyor</h2>
-
-            <p>
-                Haberista olarak Türkiye gündemindeki gelişmeleri yakından
-                takip ediyoruz.
-            </p>
-
-            <p>
-                Yeni açıklamalar geldikçe gelişmeleri okuyucularımıza
-                aktarmaya devam edeceğiz.
+                Yetkililer tarafından yapılacak açıklamalar
+                gelişmelerin seyri açısından önem taşıyor.
             </p>
         `,
 
-        resim: "images/haber-2.jpg",
+        image:
+            "images/haber-2.jpg",
 
-        tarih: "6 Eylül 2026",
+        date:
+            "6 Eylül 2026",
 
-        saat: "09:15",
+        time:
+            "09:15",
 
-        okunma: 24681,
+        views:
+            24681,
 
-        kaynak: "Haberista Haber Merkezi"
+        source:
+            "Haberİsta Haber Merkezi"
     },
 
-
-    // ========================================================
-    // HABER 3
-    // ========================================================
 
     {
         id: 3,
@@ -303,56 +198,45 @@ const haberler = [
             "Piyasalarda yeni hafta öncesi hareketlilik: Gözler ekonomi gündeminde",
 
         spot:
-            "Yeni hafta öncesinde piyasaların seyri ve açıklanacak ekonomik veriler yatırımcıların yakın takibinde olacak.",
+            "Piyasalarda yeni hafta öncesinde yatırımcıların ve ekonomi çevrelerinin takip ettiği gelişmeler öne çıkıyor.",
 
-        icerik: `
+        content: `
             <p>
-                Finans piyasalarında yeni hafta öncesinde hareketlilik
-                devam ediyor.
+                Piyasalarda yeni hafta öncesinde ekonomi
+                gündemindeki gelişmeler yakından takip ediliyor.
+            </p>
+
+            <h2>Ekonomi gündemi</h2>
+
+            <p>
+                Piyasaların yönü üzerinde etkili olabilecek
+                ekonomik gelişmeler ve açıklamalar yatırımcıların
+                odağında bulunuyor.
             </p>
 
             <p>
-                Yurt içi piyasalarda ekonomik veriler, para politikası ve
-                küresel gelişmeler yatırımcıların takip ettiği başlıca
-                başlıklar arasında bulunuyor.
-            </p>
-
-            <h2>Ekonomik veriler takip edilecek</h2>
-
-            <p>
-                Önümüzdeki günlerde açıklanacak veriler ve resmi kurumlardan
-                gelecek açıklamalar piyasaların yönü açısından önem taşıyor.
-            </p>
-
-            <p>
-                Küresel piyasalarda yaşanan gelişmelerin Türkiye piyasalarına
-                etkisi de yakından takip ediliyor.
-            </p>
-
-            <h2>Yatırımcıların gözü piyasalarda</h2>
-
-            <p>
-                Ekonomi gündemindeki gelişmelerin özellikle döviz, altın ve
-                hisse piyasalarında hareketliliğe neden olup olmayacağı
-                merak ediliyor.
+                Yeni haftada açıklanacak ekonomik veriler ve
+                resmi açıklamalar piyasaların seyri açısından
+                önem taşıyor.
             </p>
         `,
 
-        resim: "images/haber-3.jpg",
+        image:
+            "images/haber-3.jpg",
 
-        tarih: "6 Eylül 2026",
+        date:
+            "6 Eylül 2026",
 
-        saat: "10:00",
+        time:
+            "10:00",
 
-        okunma: 19852,
+        views:
+            19852,
 
-        kaynak: "Haberista Ekonomi Servisi"
+        source:
+            "Haberİsta Haber Merkezi"
     },
 
-
-    // ========================================================
-    // HABER 4
-    // ========================================================
 
     {
         id: 4,
@@ -363,55 +247,45 @@ const haberler = [
             "Transfer döneminin ardından futbolda gözler yeni haftaya çevrildi",
 
         spot:
-            "2026-2027 sezonunda transfer döneminin sona ermesiyle birlikte takımların yeni sezon performansları gündemin önemli başlıklarından biri oldu.",
+            "Transfer döneminin ardından futbol dünyasında yeni haftanın maçları ve takımların hazırlıkları gündemin öne çıkan başlıkları arasında.",
 
-        icerik: `
+        content: `
             <p>
-                Türk futbolunda transfer döneminin sona ermesinin ardından
-                gözler liglerde oynanacak karşılaşmalara çevrildi.
+                Transfer döneminin sona ermesinin ardından
+                futbol dünyasında gözler yeni haftada oynanacak
+                karşılaşmalara çevrildi.
+            </p>
+
+            <h2>Takımlar hazırlıklarını sürdürüyor</h2>
+
+            <p>
+                Kulüpler yeni hafta öncesinde antrenman programlarını
+                sürdürürken teknik ekipler de maç planlamaları
+                üzerinde çalışmalarını devam ettiriyor.
             </p>
 
             <p>
-                Takımlar yeni sezon kadrolarıyla mücadele ederken yapılan
-                transferlerin sahadaki performansa nasıl yansıyacağı merak
-                ediliyor.
-            </p>
-
-            <h2>Takımlar yeni sezon hedeflerine odaklandı</h2>
-
-            <p>
-                Teknik direktörler ve futbolcular için yoğun maç programının
-                başlamasıyla birlikte takımların form durumu da önem kazanacak.
-            </p>
-
-            <p>
-                Taraftarlar ise yeni sezonun ilerleyen haftalarında takımlarının
-                hedeflerine ulaşıp ulaşamayacağını yakından takip edecek.
-            </p>
-
-            <h2>Futbol gündemi</h2>
-
-            <p>
-                Futbol gündemindeki son gelişmeler Haberista Spor Servisi
-                tarafından takip ediliyor.
+                Futbolseverler yeni haftanın karşılaşmalarını
+                yakından takip edecek.
             </p>
         `,
 
-        resim: "images/haber-4.jpg",
+        image:
+            "images/haber-4.jpg",
 
-        tarih: "6 Eylül 2026",
+        date:
+            "6 Eylül 2026",
 
-        saat: "11:30",
+        time:
+            "11:30",
 
-        okunma: 31247,
+        views:
+            31247,
 
-        kaynak: "Haberista Spor Servisi"
+        source:
+            "Haberİsta Spor Servisi"
     },
 
-
-    // ========================================================
-    // HABER 5
-    // ========================================================
 
     {
         id: 5,
@@ -422,113 +296,107 @@ const haberler = [
             "Dünyada kritik gelişmeler: Uluslararası gündem yakından takip ediliyor",
 
         spot:
-            "Dünya genelinde yaşanan siyasi ve diplomatik gelişmeler yeni haftanın en önemli gündem maddeleri arasında yer alıyor.",
+            "Dünya genelinde yaşanan gelişmeler uluslararası kamuoyunun gündemindeki yerini koruyor.",
 
-        icerik: `
+        content: `
             <p>
-                Dünya genelinde yaşanan gelişmeler uluslararası kamuoyunun
-                gündeminde yer almaya devam ediyor.
+                Dünya genelinde yaşanan siyasi, ekonomik ve
+                diplomatik gelişmeler uluslararası kamuoyu
+                tarafından yakından takip ediliyor.
+            </p>
+
+            <h2>Uluslararası gündem</h2>
+
+            <p>
+                Ülkeler arasındaki diplomatik temaslar ve
+                uluslararası kuruluşların açıklamaları gündemin
+                önemli başlıkları arasında bulunuyor.
             </p>
 
             <p>
-                Özellikle Orta Doğu'daki gelişmeler, Birleşmiş Milletler'in
-                açıklamaları ve ülkeler arasındaki diplomatik temaslar
-                yakından takip ediliyor.
-            </p>
-
-            <h2>Diplomatik temaslar sürüyor</h2>
-
-            <p>
-                Bölgedeki gelişmelerin uluslararası diplomasi ve güvenlik
-                gündemine etkileri tartışılırken ülkelerden yeni açıklamalar
-                gelmeye devam ediyor.
-            </p>
-
-            <p>
-                Önümüzdeki günlerde gerçekleştirilecek diplomatik görüşmelerin
-                ve yapılacak resmi açıklamaların gündemin yönünü belirlemesi
-                bekleniyor.
-            </p>
-
-            <h2>Dünya gündemi takip ediliyor</h2>
-
-            <p>
-                Haberista Dünya Servisi gelişmeleri takip ederek yeni bilgiler
-                geldikçe okuyucularına aktarmaya devam edecek.
+                Önümüzdeki günlerde yapılacak resmi açıklamalar
+                gelişmelerin yönü açısından önem taşıyor.
             </p>
         `,
 
-        resim: "images/haber-5.jpg",
+        image:
+            "images/haber-5.jpg",
 
-        tarih: "6 Eylül 2026",
+        date:
+            "6 Eylül 2026",
 
-        saat: "12:10",
+        time:
+            "12:10",
 
-        okunma: 17543,
+        views:
+            17543,
 
-        kaynak: "Haberista Dünya Servisi"
+        source:
+            "Haberİsta Dünya Servisi"
     }
 
 ];
 
 
-// ============================================================
-// OTOMATİK SLUG + URL
-// ============================================================
+/* =========================================================
+   HER HABERE OTOMATİK SLUG
+========================================================= */
 
-haberler.forEach(haber => {
+haberler.forEach(function (haber) {
 
-    haber.slug = slugOlustur(haber.baslik);
+    haber.slug =
+        slugOlustur(haber.baslik);
 
-    haber.url = `/haber/${haber.slug}`;
-
+    haber.url =
+        "/haber/" +
+        haber.slug;
 });
 
 
-// ============================================================
-// HABER BULMA FONKSİYONLARI
-// ============================================================
+/* =========================================================
+   HABER BULMA
+========================================================= */
 
 function haberSlugIleBul(slug) {
 
-    return haberler.find(
-        haber => haber.slug === slug
-    );
+    return haberler.find(function (haber) {
 
+        return haber.slug === slug;
+
+    });
 }
 
 
 function haberIdIleBul(id) {
 
-    return haberler.find(
-        haber => haber.id === Number(id)
-    );
+    return haberler.find(function (haber) {
 
+        return String(haber.id) ===
+            String(id);
+
+    });
 }
 
 
-// ============================================================
-// APP.JS İÇİN GLOBAL OLARAK PAYLAŞ
-// ============================================================
+/* =========================================================
+   GLOBAL
+========================================================= */
 
-window.haberler = haberler;
+window.haberler =
+    haberler;
 
-window.slugOlustur = slugOlustur;
+window.slugOlustur =
+    slugOlustur;
 
-window.haberSlugIleBul = haberSlugIleBul;
+window.haberSlugIleBul =
+    haberSlugIleBul;
 
-window.haberIdIleBul = haberIdIleBul;
+window.haberIdIleBul =
+    haberIdIleBul;
 
-
-// ============================================================
-// KONSOL KONTROLÜ
-// ============================================================
-
-console.log(
-    `Haberİsta: ${haberler.length} haber başarıyla yüklendi.`
-);
 
 console.log(
-    "Haberler:",
-    haberler
+    "Haberİsta:",
+    haberler.length,
+    "haber başarıyla yüklendi."
 );
