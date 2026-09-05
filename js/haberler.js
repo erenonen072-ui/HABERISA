@@ -621,9 +621,9 @@ const haberler = [
 
         source:
             "Anadolu Ajansı / TRT Haber"
-    }
+    },
 
-];
+
 
 
     {
