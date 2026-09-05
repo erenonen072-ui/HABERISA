@@ -1,11 +1,40 @@
+// ============================================================
+// HABERİSTA - HABERLER.JS
+// ============================================================
+
+function slugOlustur(metin) {
+    return metin
+        .toLocaleLowerCase("tr-TR")
+        .replace(/ğ/g, "g")
+        .replace(/ü/g, "u")
+        .replace(/ş/g, "s")
+        .replace(/ı/g, "i")
+        .replace(/ö/g, "o")
+        .replace(/ç/g, "c")
+        .replace(/İ/g, "i")
+        .replace(/[^a-z0-9\s-]/g, "")
+        .trim()
+        .replace(/\s+/g, "-")
+        .replace(/-+/g, "-");
+}
+
+
+// ============================================================
+// HABERLER
+// ============================================================
+
 const haberler = [
 
+    // ========================================================
+    // 1 - MEVCUT HABERİN
+    // ========================================================
+
     {
-    id: 1,
-    kategori: "Son Dakika",
-    baslik: "5 Eylül 2026 Resmî Gazete yayımlandı: Yeni kararlar, atamalar ve önemli düzenlemeler",
-    spot: "5 Eylül 2026 tarihli Resmî Gazete'de ekonomi, kamu yönetimi, eğitim ve ulaştırma alanlarını ilgilendiren çok sayıda karar ve düzenleme yayımlandı. Sayıştay Başsavcılığına Recep Çevik atanırken bazı kamu kurumlarında yeni atama ve görevden alma kararları da Resmî Gazete'de yer aldı.",
-    icerik: `
+        id: 1,
+        kategori: "Son Dakika",
+        baslik: "5 Eylül 2026 Resmî Gazete yayımlandı: Yeni kararlar, atamalar ve önemli düzenlemeler",
+        spot: "5 Eylül 2026 tarihli Resmî Gazete'de ekonomi, kamu yönetimi, eğitim ve ulaştırma alanlarını ilgilendiren çok sayıda karar ve düzenleme yayımlandı. Sayıştay Başsavcılığına Recep Çevik atanırken bazı kamu kurumlarında yeni atama ve görevden alma kararları da Resmî Gazete'de yer aldı.",
+        icerik: `
         5 Eylül 2026 tarihli ve 33361 sayılı Resmî Gazete yayımlandı. Gece yarısından itibaren yayımlanan karar ve düzenlemelerde kamu yönetiminden ekonomiye, yükseköğretimden ulaştırma altyapısına kadar farklı alanları ilgilendiren çok sayıda gelişme yer aldı.
 
         Resmî Gazete'nin yeni sayısında özellikle Cumhurbaşkanı kararları, atama ve görevden alma kararları ile çeşitli kurumlara ilişkin düzenlemeler dikkat çekti. Yayımlanan kararların bir bölümü doğrudan kamu kurumlarının çalışma yapısını ve yönetim kadrolarını ilgilendirirken, bazı düzenlemeler ise ihracat ve döviz kazandırıcı faaliyetlerde bulunan kişi ve kuruluşlar açısından önem taşıyor.
@@ -117,218 +146,184 @@ const haberler = [
         Yeni kararların uygulanmasına ilişkin ayrıntılar, ilgili kurumların açıklamaları ve önümüzdeki günlerde yayımlanabilecek ek düzenlemelerle birlikte daha net ortaya çıkacak.
 
         Vatandaşların ve işletmelerin kendilerini ilgilendiren konularda güncel mevzuatı takip etmeleri ve Resmî Gazete'de yayımlanan düzenlemelerin yürürlük tarihlerini kontrol etmeleri önem taşıyor.
-    `,
-    resim: "images/ChatGPT Image 5 Eyl 2026 15_25_02.png",
-    tarih: "5 Eylül 2026",
-    saat: "15:20",
-    okunma: 38742,
-    kaynak: "Resmî Gazete / Anadolu Ajansı"
-},
+        `,
+        resim: "images/ChatGPT Image 5 Eyl 2026 15_25_02.png",
+        tarih: "5 Eylül 2026",
+        saat: "15:20",
+        okunma: 38742,
+        kaynak: "Resmî Gazete / Anadolu Ajansı"
+    },
 
+
+    // ========================================================
+    // 2
+    // ========================================================
 
     {
         id: 2,
-        kategori: "Spor",
-        baslik: "Filenin Sultanları yarı finalde: Türkiye'nin rakibi Sırbistan",
-        spot: "Türkiye Kadın Milli Voleybol Takımı, Avrupa Şampiyonası çeyrek finalinde Almanya'yı 3-1 mağlup ederek yarı finale yükseldi.",
+        kategori: "Gündem",
+        baslik: "Türkiye'de gündem yoğun: Yeni haftada gözler kritik gelişmelerde",
+        spot: "Türkiye'de yeni haftaya girilirken siyaset, ekonomi, eğitim ve kamu gündemindeki gelişmeler yakından takip ediliyor.",
         icerik: `
-            Türkiye Kadın Milli Voleybol Takımı, 2026 Avrupa Voleybol Şampiyonası'nda önemli bir başarıya imza attı.
+        Türkiye'de yeni haftanın başlamasıyla birlikte birçok başlık kamuoyunun
+        gündeminde yer almaya devam ediyor.
 
-            Ay-yıldızlı ekip çeyrek final karşılaşmasında Almanya ile karşılaştı ve mücadeleden 3-1 galip ayrılarak adını yarı finale yazdırdı.
+        Siyasi gelişmeler, ekonomi gündemi ve kamu kurumlarından gelecek yeni
+        açıklamalar vatandaşlar tarafından yakından takip ediliyor.
 
-            Türkiye'nin yarı finaldeki rakibi Sırbistan olacak.
+        Önümüzdeki günlerde yapılması beklenen açıklamalar ve alınabilecek yeni
+        kararların gündemin seyrini belirlemesi bekleniyor.
 
-            Karşılaşma öncesinde milli takımın turnuvadaki performansı ve oyuncuların son durumu sporseverler tarafından yakından takip ediliyor.
+        Uzmanlar özellikle ekonomi ve kamu yönetimine ilişkin gelişmelerin
+        önümüzdeki günlerde daha fazla öne çıkabileceğini değerlendiriyor.
 
-            Milli takım finale yükselmek için Sırbistan karşısında mücadele edecek.
+        Haberista olarak Türkiye gündemindeki gelişmeleri anlık olarak takip
+        ederek yeni açıklamalar geldikçe okuyucularımıza aktarmaya devam edeceğiz.
         `,
-        resim: "https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=1400&q=85",
-        tarih: "5 Eylül 2026",
-        saat: "00:20",
-        okunma: 22140,
-        kaynak: "TRT Haber"
+        resim: "images/haber-2.jpg",
+        tarih: "6 Eylül 2026",
+        saat: "09:15",
+        okunma: 24681,
+        kaynak: "Haberista Haber Merkezi"
     },
 
+
+    // ========================================================
+    // 3
+    // ========================================================
 
     {
         id: 3,
-        kategori: "Spor",
-        baslik: "Fenerbahçe-Beşiktaş derbisi için geri sayım başladı",
-        spot: "Süper Lig'in 4. haftasında Fenerbahçe ile Beşiktaş karşı karşıya gelecek.",
+        kategori: "Ekonomi",
+        baslik: "Piyasalarda yeni hafta öncesi hareketlilik: Gözler ekonomi gündeminde",
+        spot: "Yeni hafta öncesinde piyasaların seyri ve açıklanacak ekonomik veriler yatırımcıların yakın takibinde olacak.",
         icerik: `
-            Trendyol Süper Lig'de futbolseverlerin merakla beklediği Fenerbahçe-Beşiktaş karşılaşması için geri sayım başladı.
+        Finans piyasalarında yeni hafta öncesinde hareketlilik devam ediyor.
 
-            İki takım 5 Eylül 2026 Cumartesi günü İstanbul'da karşı karşıya gelecek.
+        Yurt içi piyasalarda ekonomik veriler, para politikası ve küresel
+        gelişmeler yatırımcıların takip ettiği başlıca başlıklar arasında
+        bulunuyor.
 
-            Sezonun erken dönemindeki mücadele iki takım açısından da önemli bir puan karşılaşması olacak.
+        Önümüzdeki günlerde açıklanacak veriler ve resmi kurumlardan gelecek
+        açıklamalar piyasaların yönü açısından önem taşıyor.
 
-            Maç öncesinde karşılaşmanın başlama saati, yayın bilgileri ve hakem kadrosu futbol gündeminin öne çıkan konuları arasında bulunuyor.
+        Küresel piyasalarda yaşanan gelişmelerin Türkiye piyasalarına etkisi
+        de yakından takip ediliyor.
 
-            Taraftarlar derbi öncesinde takımların muhtemel kadrolarını ve son gelişmeleri takip ediyor.
+        Ekonomi gündemindeki gelişmelerin özellikle döviz, altın ve hisse
+        piyasalarında hareketliliğe neden olup olmayacağı merak ediliyor.
         `,
-        resim: "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1400&q=85",
-        tarih: "5 Eylül 2026",
-        saat: "00:35",
-        okunma: 19420,
-        kaynak: "Spor gündemi"
+        resim: "images/haber-3.jpg",
+        tarih: "6 Eylül 2026",
+        saat: "10:00",
+        okunma: 19852,
+        kaynak: "Haberista Ekonomi Servisi"
     },
 
+
+    // ========================================================
+    // 4
+    // ========================================================
 
     {
         id: 4,
-        kategori: "Ekonomi",
-        baslik: "Altının kilogram fiyatında gerileme",
-        spot: "Borsa İstanbul Kıymetli Madenler ve Kıymetli Taşlar Piyasası'nda altının kilogram fiyatı 6 milyon 922 bin 900 liraya geriledi.",
+        kategori: "Spor",
+        baslik: "Transfer döneminin ardından futbolda gözler yeni haftaya çevrildi",
+        spot: "2026-2027 sezonunda transfer döneminin sona ermesiyle birlikte takımların yeni sezon performansları gündemin önemli başlıklarından biri oldu.",
         icerik: `
-            Altın piyasasında haftanın son işlem gününde hareketlilik yaşandı.
+        Türk futbolunda transfer döneminin sona ermesinin ardından gözler
+        liglerde oynanacak karşılaşmalara çevrildi.
 
-            Borsa İstanbul Kıymetli Madenler ve Kıymetli Taşlar Piyasası verilerine göre standart altının kilogram fiyatı 6 milyon 922 bin 900 liraya geriledi.
+        Takımlar yeni sezon kadrolarıyla mücadele ederken yapılan transferlerin
+        sahadaki performansa nasıl yansıyacağı merak ediliyor.
 
-            Piyasalarda altının yanı sıra döviz kurları ve küresel ekonomik gelişmeler de yatırımcıların takip ettiği başlıklar arasında yer aldı.
+        Teknik direktörler ve futbolcular için yoğun maç programının başlamasıyla
+        birlikte takımların form durumu da önem kazanacak.
 
-            Uzmanlar ve piyasa katılımcıları yeni haftada açıklanacak ekonomik verilerin piyasalar üzerindeki olası etkilerini izlemeye devam ediyor.
+        Taraftarlar ise yeni sezonun ilerleyen haftalarında takımlarının
+        hedeflerine ulaşıp ulaşamayacağını yakından takip edecek.
+
+        Futbol gündemindeki son gelişmeler Haberista Spor Servisi tarafından
+        takip ediliyor.
         `,
-        resim: "https://images.unsplash.com/photo-1610375461246-83df859d849d?auto=format&fit=crop&w=1400&q=85",
-        tarih: "4 Eylül 2026",
-        saat: "17:09",
-        okunma: 17380,
-        kaynak: "TRT Haber"
+        resim: "images/haber-4.jpg",
+        tarih: "6 Eylül 2026",
+        saat: "11:30",
+        okunma: 31247,
+        kaynak: "Haberista Spor Servisi"
     },
 
+
+    // ========================================================
+    // 5
+    // ========================================================
 
     {
         id: 5,
-        kategori: "Teknoloji",
-        baslik: "ABD'de memur adaylarının mülakatında yapay zeka dönemi",
-        spot: "ABD'de bazı memur adaylarının değerlendirme süreçlerinde yapay zeka destekli mülakat sistemi gündeme geldi.",
-        icerik: `
-            Yapay zekanın çalışma hayatındaki kullanım alanları genişlemeye devam ediyor.
-
-            ABD'de kamu görevlerine başvuran adayların değerlendirme süreçlerinde yapay zeka destekli mülakat uygulamasının kullanılmasına yönelik gelişmeler teknoloji gündeminde öne çıktı.
-
-            Yapay zeka sistemlerinin işe alım süreçlerinde kullanılması, değerlendirme kriterlerinin nasıl oluşturulacağı ve insan denetiminin rolü konusunda yeni tartışmaları da beraberinde getiriyor.
-
-            Teknolojinin kamu ve özel sektördeki kullanım alanlarının önümüzdeki dönemde daha da genişlemesi bekleniyor.
-        `,
-        resim: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1400&q=85",
-        tarih: "4 Eylül 2026",
-        saat: "16:53",
-        okunma: 15120,
-        kaynak: "TRT Haber"
-    },
-
-
-    {
-        id: 6,
-        kategori: "Gündem",
-        baslik: "Öğretmen önlüğü için standartlar belirlendi",
-        spot: "Öğretmenlerin kullanacağı önlüklerle ilgili standartlara ilişkin yeni düzenleme gündeme geldi.",
-        icerik: `
-            Öğretmen önlüklerine ilişkin standartlar belirlenmesine yönelik düzenleme gündemin öne çıkan başlıklarından biri oldu.
-
-            Düzenlemeyle öğretmenlerin kullanacağı önlüklerin belirli standartlara uygun olması hedefleniyor.
-
-            Eğitim camiasını ilgilendiren düzenlemenin ayrıntıları ve uygulama esasları ilgili kurumların açıklamalarıyla takip ediliyor.
-
-            Yeni eğitim döneminin başlamasıyla birlikte öğretmen kıyafetleri ve okul hazırlıkları da gündemdeki yerini koruyor.
-        `,
-        resim: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1400&q=85",
-        tarih: "4 Eylül 2026",
-        saat: "14:28",
-        okunma: 14350,
-        kaynak: "TRT Haber"
-    },
-
-
-    {
-        id: 7,
-        kategori: "Gündem",
-        baslik: "Türkiye'nin hafta sonu hava durumu için yeni tahmin",
-        spot: "Yurdun büyük bölümünde hafta sonunun yağışsız ve az bulutlu geçmesi bekleniyor.",
-        icerik: `
-            Meteoroloji verilerine göre hafta sonu yurdun büyük bölümünde yağışsız ve az bulutlu bir hava bekleniyor.
-
-            Hava sıcaklıklarının bazı bölgelerde mevsim normallerinin üzerinde seyretmesi öngörülüyor.
-
-            Özellikle açık alanda plan yapan vatandaşların il bazındaki güncel tahminleri takip etmesi öneriliyor.
-
-            Hava koşullarının bölgelere göre değişebileceği belirtilirken meteorolojik tahminlerin gün içerisinde güncellenebileceği unutulmamalı.
-        `,
-        resim: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?auto=format&fit=crop&w=1400&q=85",
-        tarih: "4 Eylül 2026",
-        saat: "16:00",
-        okunma: 12780,
-        kaynak: "TRT Haber"
-    },
-
-
-    {
-        id: 8,
-        kategori: "Sağlık",
-        baslik: "Türk Kızılay'dan 2026'nın ilk 8 ayına ilişkin kan bağışı verileri",
-        spot: "Türk Kızılay'ın 2026'nın ilk sekiz ayında topladığı kan bağışlarına ilişkin veriler açıklandı.",
-        icerik: `
-            Türk Kızılay tarafından 2026 yılının ilk sekiz ayına ilişkin kan bağışı verileri paylaşıldı.
-
-            Açıklanan verilere göre yılın ilk sekiz ayında 2 milyon 7 bin 440 ünite kan bağışı toplandı.
-
-            Yaz aylarında yapılan kan bağışlarının geçen yılın aynı dönemine kıyasla arttığı bildirildi.
-
-            Kan bağışlarının düzenli olarak sürdürülmesi, hastanelerde tedavi gören ve kan ihtiyacı bulunan hastalar açısından önem taşıyor.
-
-            Kızılay'ın kan bağışı noktaları üzerinden vatandaşlar bağış süreçleri hakkında bilgi alabiliyor.
-        `,
-        resim: "https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=1400&q=85",
-        tarih: "4 Eylül 2026",
-        saat: "15:10",
-        okunma: 10840,
-        kaynak: "TRT Haber"
-    },
-
-
-    {
-        id: 9,
-        kategori: "Ekonomi",
-        baslik: "Akaryakıt fiyatlarında son durum takip ediliyor",
-        spot: "Motorin ve benzin fiyatlarında yaşanan son değişikliklerin ardından yeni fiyat beklentileri gündemde.",
-        icerik: `
-            Akaryakıt piyasasında petrol fiyatlarındaki hareketlilik nedeniyle fiyat değişimleri yakından takip ediliyor.
-
-            4 Eylül Cuma günü motorin ve benzin fiyatlarında yapılan değişikliklerin ardından sürücüler yeni fiyatları takip etmeye başladı.
-
-            Brent petrol fiyatının yükselmesi akaryakıt fiyatları açısından önemli bir gösterge olarak öne çıkıyor.
-
-            5 Eylül Cumartesi gecesi için resmileşmiş yeni bir zam kararı bulunmadığı bildirildi.
-
-            Akaryakıt fiyatları şehir, dağıtım şirketi ve istasyona göre farklılık gösterebilir.
-        `,
-        resim: "https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=1400&q=85",
-        tarih: "5 Eylül 2026",
-        saat: "00:10",
-        okunma: 9820,
-        kaynak: "İnternet Haber"
-    },
-
-
-    {
-        id: 10,
         kategori: "Dünya",
-        baslik: "Dünya gündeminde yeni gelişmeler yakından takip ediliyor",
-        spot: "Uluslararası gündemde diplomasi, ekonomi ve bölgesel gelişmeler öne çıkıyor.",
+        baslik: "Dünyada kritik gelişmeler: Uluslararası gündem yakından takip ediliyor",
+        spot: "Dünya genelinde yaşanan siyasi ve diplomatik gelişmeler yeni haftanın en önemli gündem maddeleri arasında yer alıyor.",
         icerik: `
-            Uluslararası gündemde farklı bölgelerde yaşanan gelişmeler yakından takip ediliyor.
+        Dünya genelinde yaşanan gelişmeler uluslararası kamuoyunun gündeminde
+        yer almaya devam ediyor.
 
-            Diplomatik temaslar, bölgesel güvenlik gelişmeleri ve küresel ekonomi gündemin öne çıkan başlıkları arasında bulunuyor.
+        Özellikle Orta Doğu'daki gelişmeler, Birleşmiş Milletler'in açıklamaları
+        ve ülkeler arasındaki diplomatik temaslar yakından takip ediliyor.
 
-            Dünya genelindeki gelişmelerin piyasalara ve ülkelerin dış politikalarına etkileri de değerlendiriliyor.
+        Bölgedeki gelişmelerin uluslararası diplomasi ve güvenlik gündemine
+        etkileri tartışılırken ülkelerden yeni açıklamalar gelmeye devam ediyor.
 
-            Yeni açıklamalar geldikçe uluslararası gündemdeki hareketliliğin devam etmesi bekleniyor.
+        Önümüzdeki günlerde gerçekleştirilecek diplomatik görüşmelerin ve
+        yapılacak resmi açıklamaların gündemin yönünü belirlemesi bekleniyor.
+
+        Haberista Dünya Servisi gelişmeleri takip ederek yeni bilgiler geldikçe
+        okuyucularına aktarmaya devam edecek.
         `,
-        resim: "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=1400&q=85",
-        tarih: "4 Eylül 2026",
-        saat: "22:30",
-        okunma: 8940,
-        kaynak: "Dünya gündemi"
+        resim: "images/haber-5.jpg",
+        tarih: "6 Eylül 2026",
+        saat: "12:10",
+        okunma: 17543,
+        kaynak: "Haberista Dünya Servisi"
     }
 
 ];
+
+
+// ============================================================
+// OTOMATİK SEO URL / SLUG
+// ============================================================
+
+haberler.forEach(haber => {
+
+    haber.slug = slugOlustur(haber.baslik);
+
+    haber.url = `/haber/${haber.slug}`;
+
+});
+
+
+// ============================================================
+// HABER BULMA
+// ============================================================
+
+function haberSlugIleBul(slug) {
+    return haberler.find(haber => haber.slug === slug);
+}
+
+function haberIdIleBul(id) {
+    return haberler.find(haber => haber.id === Number(id));
+}
+
+
+// ============================================================
+// EXPORT
+// ============================================================
+
+export {
+    haberler,
+    slugOlustur,
+    haberSlugIleBul,
+    haberIdIleBul
+};
+
+export default haberler;
