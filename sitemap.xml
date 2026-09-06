@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+    <!-- ANA SAYFA -->
     <url>
         <loc>https://haberisa.vercel.app/</loc>
         <changefreq>hourly</changefreq>
         <priority>1.0</priority>
     </url>
 
+    <!-- KATEGORİLER -->
     <url>
         <loc>https://haberisa.vercel.app/gundem.html</loc>
         <changefreq>daily</changefreq>
@@ -29,6 +31,104 @@
         <loc>https://haberisa.vercel.app/dunya.html</loc>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://haberisa.vercel.app/egitim.html</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://haberisa.vercel.app/turkiye.html</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- HABERLER -->
+
+    <url>
+        <loc>https://haberisa.vercel.app/haber/4-il-icin-sel-ve-heyelan-uyarisi</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://haberisa.vercel.app/haber/son-depremler-afad-ve-kandilli-verileri-guncellendi</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://haberisa.vercel.app/haber/2026-kpss-lisans-sinavi-bugun-yapiliyor</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://haberisa.vercel.app/haber/besiktas-derbide-fenerbahceyi-2-1-maglup-etti</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://haberisa.vercel.app/haber/altin-fiyatlarinda-6-eylul-hareketliligi</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://haberisa.vercel.app/haber/akaryakit-fiyatlari-yeniden-gundemde</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://haberisa.vercel.app/haber/rusyada-universitenin-altinda-nazi-tanki-bulundu</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://haberisa.vercel.app/haber/mxgp-sampiyonu-afyonda-belli-oluyor</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://haberisa.vercel.app/haber/avrupa-seyahatlerinde-sinir-kontrollerinde-yeni-donem</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://haberisa.vercel.app/haber/5-eylul-2026-resmi-gazete-yayimlandi-yeni-kararlar-atamalar-ve-onemli-duzenlemeler</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://haberisa.vercel.app/haber/filenin-sultanlari-avrupa-sampiyonlugu-icin-sahada-turkiye-italya-finali-bugun-oynanacak</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://haberisa.vercel.app/haber/para-piyasasi-fonlarinda-yeni-donem-stopaj-orani-yuzde-10a-cikarildi</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://haberisa.vercel.app/haber/eylul-ayi-yasli-ve-engelli-ayliklari-hesaplara-yatirilmaya-baslandi</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://haberisa.vercel.app/haber/pisa-2025-sonuclari-icin-geri-sayim-sonuclar-8-eylulde-aciklanacak</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
     </url>
 
 </urlset>
