@@ -40,6 +40,481 @@ const haberler = [
        1 - GÜNDEM
     ===================================================== */
 {
+    id: 17,
+    kategori: "Dünya",
+    baslik: "ABD, 3 İran tankerini vurduğunu açıkladı",
+
+    spot: "ABD yönetimi, İran'a ait olduğu belirtilen 3 petrol tankerinin vurulduğunu açıkladı. Gelişme, ABD ile İran arasındaki gerilimin yeniden tırmandığı bir dönemde yaşanırken, bölgedeki deniz trafiği ve enerji güvenliği açısından da dikkat çekti.",
+
+    icerik: `
+        ABD ile İran arasındaki gerilimde yeni bir gelişme yaşandı. ABD
+        yönetimi, İran'a ait 3 petrol tankerinin vurulduğunu açıkladı.
+        Açıklama, bölgede devam eden yüksek tansiyonun deniz taşımacılığına
+        ve enerji güvenliğine yönelik etkilerine ilişkin endişeleri yeniden
+        gündeme getirdi.
+
+        ABD tarafından yapılan açıklamaya göre, İran'a ait olduğu belirtilen
+        tankerler hedef alındı. Söz konusu gelişmenin ardından bölgedeki
+        güvenlik durumu ve deniz ulaşımının geleceği yakından takip edilmeye
+        başlandı.
+
+        ABD VE İRAN ARASINDA GERİLİM TIRMANIYOR
+
+        Son gelişme, Washington ile Tahran arasındaki karşılıklı gerilimin
+        kritik bir aşamaya geldiğini gösteren gelişmelerden biri olarak
+        değerlendiriliyor.
+
+        ABD'nin tankerleri hedef aldığı yönündeki açıklamasının ardından
+        olayın ayrıntıları ve saldırıların hangi bölgede gerçekleştiğine
+        ilişkin bilgiler kamuoyunun gündemine geldi.
+
+        Bölgedeki gelişmeler yalnızca ABD ve İran arasındaki ilişkiler
+        açısından değil, enerji piyasaları ve uluslararası deniz ticareti
+        bakımından da önem taşıyor.
+
+        PETROL TAŞIMACILIĞI YAKINDAN İZLENİYOR
+
+        İran, dünyanın önemli petrol üreticileri arasında yer alırken,
+        ülkeye ait petrolün deniz yoluyla taşınması bölgesel ve küresel
+        enerji piyasaları açısından önem taşıyor.
+
+        Tankerlerin hedef alınmasına ilişkin gelişme, petrol taşımacılığının
+        güvenliği konusunu yeniden gündeme taşıdı. Bölgede yaşanabilecek
+        yeni saldırıların enerji sevkiyatında aksamalara neden olabileceği
+        değerlendirilirken, uluslararası piyasaların gelişmeleri yakından
+        izlemesi bekleniyor.
+
+        DENİZ GÜVENLİĞİ ENDİŞESİ
+
+        Körfez bölgesi ve çevresindeki deniz yolları, dünya enerji ticareti
+        açısından stratejik öneme sahip. Bu nedenle bölgede meydana gelen
+        askeri hareketlilik, yalnızca taraf ülkeleri değil, uluslararası
+        ticaret yapan şirketleri ve enerji piyasalarını da doğrudan
+        ilgilendiriyor.
+
+        İran tankerlerinin hedef alınmasına ilişkin açıklamanın ardından
+        bölgede yeni bir saldırı yaşanıp yaşanmayacağı ve deniz ulaşımında
+        herhangi bir kısıtlama uygulanıp uygulanmayacağı merak konusu oldu.
+
+        ULUSLARARASI TOPLUMDAN YAKIN TAKİP
+
+        ABD ile İran arasındaki gerilimin yeni bir boyut kazanması,
+        uluslararası toplum tarafından da yakından takip ediliyor.
+
+        Bölgedeki ülkelerin güvenlik önlemlerini artırabileceği
+        değerlendirilirken, diplomatik kanallardan yeni açıklamaların
+        gelmesi bekleniyor.
+
+        Özellikle enerji ihracatı ve deniz ticareti açısından kritik
+        güzergahlarda güvenliğin sağlanması, uluslararası aktörlerin
+        öncelikleri arasında bulunuyor.
+
+        YENİ GELİŞMELER BEKLENİYOR
+
+        ABD'nin 3 İran tankerini vurduğuna ilişkin açıklamasının ardından
+        olayla ilgili ayrıntıların önümüzdeki saatlerde netleşmesi bekleniyor.
+
+        Saldırıların nasıl gerçekleştiği, tankerlerde bulunan personelin
+        durumu ve olayın bölgedeki askeri dengelere etkisi konusunda yeni
+        açıklamaların yapılabileceği değerlendiriliyor.
+
+        ABD VE İRAN ARASINDAKİ GERİLİMİN BÖLGESEL ETKİSİ
+
+        ABD ile İran arasındaki gerilim uzun süredir Orta Doğu'daki
+        gelişmelerin merkezinde yer alıyor. Taraflar arasındaki askeri ve
+        siyasi gerilim, zaman zaman bölgedeki farklı aktörleri de etkileyen
+        gelişmelere neden oluyor.
+
+        Son tanker saldırısı açıklaması da bu nedenle uluslararası kamuoyu
+        tarafından yakından izleniyor.
+
+        Enerji piyasaları, deniz taşımacılığı ve bölgesel güvenlik
+        açısından ortaya çıkabilecek sonuçlar önümüzdeki dönemde daha
+        belirgin hale gelebilir.
+
+        HABERİSTA TAKİPTE
+
+        ABD'nin İran tankerlerine yönelik saldırı açıklamasının ardından
+        bölgede yaşanan gelişmeler yakından takip ediliyor.
+
+        Olayın ayrıntıları ve taraflardan gelecek yeni açıklamalar
+        doğrultusunda haberin detaylarının netleşmesi bekleniyor.
+
+        HABERİSTA olarak bölgedeki gelişmeleri doğrulanmış bilgiler
+        üzerinden takip ediyor ve yeni gelişmeler oldukça okuyucularımıza
+        aktarıyoruz.
+    `,
+
+    tarih: "6 Eylül 2026",
+    saat: "11:17",
+    gorsel: "images/iran-tanker.jpg",
+    kaynak: "HABERİSTA"
+},
+
+{
+    id: 18,
+    kategori: "Ekonomi",
+    baslik: "Ekonomide 3 yıllık yol haritası belli oluyor",
+
+    spot: "Türkiye ekonomisinin önümüzdeki dönemde izleyeceği politikalar açısından önem taşıyan 3 yıllık yol haritası açıklandı. Yeni Orta Vadeli Program ile büyüme, enflasyon, istihdam ve kamu maliyesine ilişkin hedefler gündeme geldi.",
+
+    icerik: `
+        Türkiye ekonomisinin önümüzdeki üç yıllık dönemde izleyeceği
+        politikalara ilişkin yeni yol haritası kamuoyuyla paylaşıldı.
+        Orta Vadeli Program kapsamında ekonominin temel göstergelerine
+        ilişkin hedefler ve öncelikli politikalar ortaya konuldu.
+
+        Yeni program, Türkiye ekonomisinde fiyat istikrarının sağlanması,
+        sürdürülebilir büyümenin desteklenmesi ve kamu maliyesinin
+        güçlendirilmesi açısından önemli bir çerçeve oluşturuyor.
+
+        ÜÇ YILLIK EKONOMİK PLAN
+
+        Orta Vadeli Program, ekonomi yönetiminin önümüzdeki dönemde
+        uygulayacağı politikalar açısından temel belgelerden biri olma
+        özelliğini taşıyor.
+
+        Program kapsamında büyüme, enflasyon, istihdam, ihracat, kamu
+        harcamaları ve mali disiplin gibi başlıklara ilişkin hedefler
+        belirleniyor.
+
+        Ekonominin daha dengeli ve sürdürülebilir bir yapıya
+        kavuşturulmasının hedeflendiği programda, fiyat istikrarı
+        çalışmalarının da önemli bir yer tuttuğu belirtiliyor.
+
+        ENFLASYONLA MÜCADELE ÖNCELİKLİ KONULAR ARASINDA
+
+        Yeni dönemin en önemli başlıklarından biri enflasyonla mücadele
+        olacak. Fiyat istikrarının sağlanması ve vatandaşların satın alma
+        gücünün korunması ekonomi yönetiminin öncelikleri arasında
+        bulunuyor.
+
+        Enflasyonun düşürülmesine yönelik politikaların yanı sıra
+        ekonomik büyümenin korunması da programın önemli başlıklarından
+        biri olarak öne çıkıyor.
+
+        BÜYÜME VE İSTİHDAM HEDEFİ
+
+        Ekonomik programda sürdürülebilir büyümenin desteklenmesi ve
+        istihdamın artırılması da öncelikli hedefler arasında yer alıyor.
+
+        Üretim kapasitesinin geliştirilmesi, yatırımların artırılması ve
+        ihracatın desteklenmesi yoluyla ekonominin daha güçlü bir yapıya
+        kavuşturulması hedefleniyor.
+
+        İstihdam piyasasındaki gelişmelerin de program süresince yakından
+        takip edilmesi bekleniyor.
+
+        KAMU MALİYESİNE ODAKLANILACAK
+
+        Üç yıllık yol haritasının bir diğer önemli başlığı kamu maliyesi
+        olacak. Kamu kaynaklarının daha etkin kullanılması ve bütçe
+        disiplininin güçlendirilmesi amacıyla çeşitli politikaların
+        uygulanması planlanıyor.
+
+        Kamu harcamalarında verimliliğin artırılması ve mali dengelerin
+        korunması, ekonomik programın temel unsurları arasında bulunuyor.
+
+        YATIRIMLAR VE ÜRETİM DESTEKLENECEK
+
+        Programın hedefleri arasında yatırımların ve üretimin artırılması
+        da bulunuyor. Özellikle katma değerli üretimin ve ihracat
+        kapasitesinin geliştirilmesine yönelik politikaların ön plana
+        çıkması bekleniyor.
+
+        Türkiye'nin küresel ekonomideki rekabet gücünün artırılması için
+        sanayi, teknoloji ve ihracat alanlarında yeni adımların atılması
+        hedefleniyor.
+
+        EKONOMİ YÖNETİMİNİN YOL HARİTASI
+
+        Yeni Orta Vadeli Program, önümüzdeki üç yıllık dönemde ekonomi
+        yönetiminin izleyeceği temel politikalar açısından yol gösterici
+        olacak.
+
+        Programda yer alan hedeflerin hayata geçirilmesiyle birlikte
+        enflasyonun düşürülmesi, büyümenin dengeli şekilde sürdürülmesi ve
+        ekonomik istikrarın güçlendirilmesi amaçlanıyor.
+
+        PİYASALAR YAKINDAN İZLEYECEK
+
+        Açıklanan programın ardından gözler ekonomi yönetiminin atacağı
+        adımlara çevrildi. Piyasalar, belirlenen hedeflerin ne ölçüde
+        gerçekleştirileceğini ve uygulanan politikaların ekonomik
+        göstergeler üzerindeki etkisini yakından takip edecek.
+
+        Özellikle enflasyon, faiz, büyüme ve kamu maliyesine ilişkin
+        gelişmelerin programın başarısı açısından belirleyici olması
+        bekleniyor.
+
+        HABERİSTA olarak Türkiye ekonomisine ilişkin gelişmeleri ve yeni
+        ekonomik programın uygulanma sürecini takip etmeye devam edeceğiz.
+    `,
+
+    tarih: "6 Eylül 2026",
+    saat: "11:01",
+    gorsel: "images/ekonomi.jpg",
+    kaynak: "HABERİSTA"
+},
+
+{
+    id: 19,
+    kategori: "Dünya",
+    baslik: "İran'da 'Ekonomik Savaş Karargâhı' kuruldu",
+
+    spot: "İran'da ekonomik koşulların ve dış baskıların yönetilmesi amacıyla 'Ekonomik Savaş Karargâhı' kurulduğu açıklandı. Yeni yapılanmanın ülkenin ekonomik faaliyetlerini ve kritik sektörlerini koordine etmesi bekleniyor.",
+
+    icerik: `
+        İran'da ekonomik gelişmelere ilişkin dikkat çeken bir adım atıldı.
+        Ülkede yaşanan ekonomik baskılar ve mevcut koşulların yönetilmesi
+        amacıyla "Ekonomik Savaş Karargâhı" kurulduğu açıklandı.
+
+        Yeni yapılanmanın, ekonomik alanda karşılaşılan sorunların
+        koordineli şekilde yönetilmesi ve ülkenin kritik ekonomik
+        faaliyetlerinin düzenlenmesi amacıyla görev yapması bekleniyor.
+
+        EKONOMİK BASKILAR GÜNDEMDE
+
+        İran ekonomisi uzun süredir dış baskılar, yaptırımlar ve ekonomik
+        dalgalanmalarla karşı karşıya bulunuyor. Son dönemde bölgede
+        yaşanan gelişmelerin de ekonomik koşullar üzerinde baskı
+        oluşturduğu değerlendiriliyor.
+
+        Bu ortamda Tahran yönetimi ekonomik faaliyetlerin daha etkin
+        şekilde koordine edilmesi amacıyla yeni bir yapılanmaya gitti.
+
+        "EKONOMİK SAVAŞ KARARGÂHI" KURULDU
+
+        İran'da kurulan Ekonomik Savaş Karargâhı'nın, ülkenin ekonomik
+        güvenliğini ilgilendiren konularda koordinasyon sağlaması
+        bekleniyor.
+
+        Yapılanmanın hangi kurumlarla birlikte çalışacağı ve görev
+        alanlarının kapsamının önümüzdeki dönemde yapılacak açıklamalarla
+        daha net hale gelmesi bekleniyor.
+
+        KRİTİK SEKTÖRLER TAKİP EDİLECEK
+
+        Yeni karargâhın özellikle temel ekonomik faaliyetler, ticaret,
+        üretim ve tedarik zincirleri gibi alanlarda yaşanabilecek
+        sorunlara karşı koordinasyon sağlaması bekleniyor.
+
+        İran yönetimi açısından ekonomik kaynakların etkin kullanılması
+        ve kritik ihtiyaçların karşılanması büyük önem taşıyor.
+
+        DIŞ BASKILARA KARŞI EKONOMİK TEDBİRLER
+
+        İran yönetimi daha önce de ekonomik yaptırımların etkilerini
+        azaltmak amacıyla çeşitli önlemler uygulamıştı.
+
+        Yeni karargâhın kurulması, ekonomik baskıların arttığı bir
+        dönemde devlet kurumları arasındaki koordinasyonun güçlendirilmesi
+        amacıyla atılmış yeni bir adım olarak değerlendiriliyor.
+
+        BÖLGESEL GELİŞMELER EKONOMİYİ ETKİLİYOR
+
+        Orta Doğu'daki siyasi ve askeri gelişmeler, bölge ülkelerinin
+        ekonomileri üzerinde doğrudan veya dolaylı etkiler oluşturuyor.
+
+        İran'ın enerji ihracatı, dış ticareti ve finansal sistemi de
+        bölgedeki gelişmelerden etkilenebilecek alanlar arasında yer
+        alıyor.
+
+        Yeni ekonomik yapılanmanın bu risklere karşı ülke içerisindeki
+        koordinasyonu güçlendirmesi amaçlanıyor.
+
+        İRAN EKONOMİSİNDE YENİ DÖNEM
+
+        Ekonomik Savaş Karargâhı'nın kurulması, İran yönetiminin mevcut
+        ekonomik koşullara verdiği önemin yeni bir göstergesi olarak
+        dikkat çekiyor.
+
+        Karargâhın faaliyetleri ve alınacak kararlar, İran ekonomisinin
+        önümüzdeki dönemdeki seyri açısından yakından takip edilecek.
+
+        Yeni yapılanmanın hangi alanlarda somut kararlar alacağı ve
+        ekonomik sorunlara yönelik hangi tedbirlerin uygulanacağı ise
+        önümüzdeki günlerde daha net ortaya çıkacak.
+
+        HABERİSTA olarak İran'daki ekonomik gelişmeleri ve bölgedeki
+        gelişmelerin Türkiye'ye ve küresel piyasalara olası etkilerini
+        takip etmeye devam edeceğiz.
+    `,
+
+    tarih: "6 Eylül 2026",
+    saat: "10:23",
+    gorsel: "images/iran-ekonomi.jpg",
+    kaynak: "HABERİSTA"
+},
+
+{
+    id: 20,
+    kategori: "Gündem",
+    baslik: "Tırdan dökülen mazot 10 aracı birbirine kattı",
+
+    spot: "Bursa'da bir tırdan yola dökülen mazot nedeniyle kayganlaşan yolda zincirleme kaza meydana geldi. Yaklaşık 10 aracın karıştığı kazada ekipler bölgede çalışma başlattı.",
+
+    icerik: `
+        Bursa'da trafikte seyir halinde bulunan bir tırdan yola mazot
+        dökülmesi, zincirleme kazaya neden oldu. Mazot nedeniyle yolun
+        kayganlaşmasının ardından sürücüler araçlarının kontrolünü
+        kaybetti.
+
+        Kısa süre içerisinde meydana gelen kazalarda yaklaşık 10 araç
+        birbirine girdi. Olayın ardından bölgeye ekipler sevk edilirken,
+        trafik güvenliğinin sağlanması için çalışma başlatıldı.
+
+        YOL BİR ANDA KAYGANLAŞTI
+
+        Edinilen bilgilere göre olay, tırdan yola mazot dökülmesinin
+        ardından meydana geldi. Asfalt yüzeyine yayılan mazot, yolun
+        kayganlaşmasına neden oldu.
+
+        Sürücülerin zemindeki kayganlığı fark etmekte zorlanması üzerine
+        peş peşe kazalar yaşandı.
+
+        Yaklaşık 10 aracın karıştığı kazanın ardından olay yerine
+        güvenlik ve sağlık ekipleri yönlendirildi.
+
+        10 ARAÇ KAZAYA KARIŞTI
+
+        Mazot nedeniyle meydana gelen zincirleme kazada çok sayıda araç
+        birbirine çarptı. Araçlarda maddi hasar meydana gelirken,
+        ekipler kazanın ardından yol güvenliğini sağlamak için çalışma
+        yaptı.
+
+        Kazanın meydana geldiği bölgede ulaşım bir süre kontrollü şekilde
+        sağlandı.
+
+        EKİPLER SEVK EDİLDİ
+
+        İhbar üzerine bölgeye gelen ekipler, hem kazaya karışan araçlara
+        müdahale etti hem de yola dökülen mazotun oluşturduğu tehlikeyi
+        ortadan kaldırmak için çalışma başlattı.
+
+        Sürücülerin yeni kazalara karışmaması için bölgede gerekli
+        güvenlik önlemlerinin alınması sağlandı.
+
+        TRAFİKTE KAYGAN ZEMİN UYARISI
+
+        Özellikle yağ, mazot ve benzeri maddelerin yola dökülmesi,
+        araçların fren mesafesini ve yol tutuşunu ciddi şekilde
+        etkileyebiliyor.
+
+        Uzmanlar, sürücülerin yol üzerinde kayganlık fark ettikleri
+        durumlarda hızlarını düşürmeleri ve ani manevralardan kaçınmaları
+        gerektiğine dikkat çekiyor.
+
+        KAZANIN NEDENİ İNCELENİYOR
+
+        Yaklaşık 10 aracın karıştığı kazanın ardından olayla ilgili
+        inceleme başlatıldı. Mazotun yola nasıl döküldüğü ve kazaya
+        ilişkin diğer ayrıntıların yapılacak çalışmaların ardından
+        netleşmesi bekleniyor.
+
+        Trafik ekipleri bölgede güvenliği sağlamak ve ulaşımın yeniden
+        normale dönmesi için çalışmalarını sürdürdü.
+
+        SON DAKİKA GELİŞMELERİ TAKİP EDİLİYOR
+
+        Bursa'da yaşanan zincirleme kaza, yola dökülen mazotun trafikte
+        ne kadar ciddi bir risk oluşturabileceğini bir kez daha ortaya
+        koydu.
+
+        Kazayla ilgili yeni bilgiler geldikçe haberin detaylarının
+        güncellenmesi bekleniyor.
+
+        HABERİSTA olarak olayla ilgili gelişmeleri takip ediyoruz.
+    `,
+
+    tarih: "6 Eylül 2026",
+    saat: "09:53",
+    gorsel: "images/ChatGPT Image 6 Eyl 2026 19_48_08.png",
+    kaynak: "HABERİSTA"
+},
+
+{
+    id: 21,
+    kategori: "Gündem",
+    baslik: "Tırın çarptığı hafif ticari araç 30 metre sürüklendi: 6 yaralı",
+
+    spot: "İstanbul Eyüpsultan'da meydana gelen trafik kazasında tırın çarptığı hafif ticari araç yaklaşık 30 metre sürüklendi. Kazada 6 kişi yaralandı. Olay yerine sevk edilen ekipler yaralılara müdahale etti.",
+
+    icerik: `
+        İstanbul Eyüpsultan'da meydana gelen trafik kazasında tır ile
+        hafif ticari araç çarpıştı. Çarpışmanın etkisiyle hafif ticari
+        araç yaklaşık 30 metre sürüklendi.
+
+        Kazada 6 kişi yaralanırken, ihbar üzerine olay yerine sağlık,
+        polis ve ilgili ekipler sevk edildi.
+
+        ÇARPIŞMANIN ETKİSİYLE 30 METRE SÜRÜKLENDİ
+
+        Edinilen bilgilere göre kaza, Eyüpsultan'da meydana geldi.
+        Seyir halindeki tır ile hafif ticari araç henüz belirlenemeyen
+        bir nedenle çarpıştı.
+
+        Çarpışmanın şiddetiyle hafif ticari araç yaklaşık 30 metre
+        sürüklendi. Kazayı gören vatandaşların ihbarı üzerine bölgeye
+        kısa sürede ekipler gönderildi.
+
+        6 KİŞİ YARALANDI
+
+        Kazada 6 kişinin yaralandığı bildirildi. Olay yerine ulaşan
+        sağlık ekipleri, yaralılara ilk müdahaleyi kaza yerinde yaptı.
+
+        Yaralıların sağlık durumlarına ilişkin ayrıntıların yapılacak
+        kontrollerin ardından netleşmesi beklenirken, ekipler kaza
+        alanında güvenlik önlemleri aldı.
+
+        TRAFİKTE YOĞUNLUK OLUŞTU
+
+        Kazaya karışan araçların yol üzerinde bulunması nedeniyle
+        bölgede ulaşımda kısa süreli aksama yaşandı.
+
+        Polis ekipleri hem kaza nedeniyle oluşabilecek yeni bir
+        tehlikeyi önlemek hem de araçların kontrollü şekilde kaldırılması
+        için bölgede çalışma yürüttü.
+
+        OLAY YERİNDE İNCELEME
+
+        Kazanın ardından olay yeri ekipleri tarafından inceleme
+        gerçekleştirildi. Kazanın meydana geliş şeklinin belirlenmesi
+        amacıyla gerekli çalışmalar başlatıldı.
+
+        Tır ile hafif ticari aracın hangi koşullarda çarpıştığına
+        ilişkin ayrıntıların yapılacak incelemenin ardından netleşmesi
+        bekleniyor.
+
+        SÜRÜCÜLERİN DİKKATLİ OLMASI GEREKİYOR
+
+        İstanbul gibi yoğun trafik akışının bulunduğu kentlerde ağır
+        vasıtalar ile diğer araçların karıştığı kazalar ciddi sonuçlara
+        yol açabiliyor.
+
+        Özellikle kavşak, bağlantı yolları ve yoğun trafik noktalarında
+        sürücülerin hızlarını yol ve trafik şartlarına göre ayarlaması
+        önem taşıyor.
+
+        KAZAYLA İLGİLİ İNCELEME SÜRÜYOR
+
+        Eyüpsultan'da 6 kişinin yaralandığı kazanın ardından ekiplerin
+        çalışmaları devam etti.
+
+        Kazada yaralanan kişilerin sağlık durumları takip edilirken,
+        olayın kesin nedeninin yapılacak incelemeler sonucunda
+        belirlenmesi bekleniyor.
+
+        HABERİSTA olarak İstanbul'daki trafik kazasıyla ilgili gelişmeleri
+        takip ediyor ve yeni bilgiler geldikçe okuyucularımıza aktarıyoruz.
+    `,
+
+    tarih: "6 Eylül 2026",
+    saat: "09:22",
+    gorsel: "images/eyupsultan-kaza.jpg",
+    kaynak: "HABERİSTA"
+},
+{
     id: 16,
     kategori: "Magazin",
     baslik: "Ünlü oyuncu Serhat Mustafa Kılıç hayatını kaybetti",
