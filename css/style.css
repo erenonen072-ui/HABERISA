@@ -2915,3 +2915,612 @@ main.container {
         height: 30px;
     }
 }
+/* =========================================================
+   HABERİSTA - PREMIUM ANİMASYON & İNCE TASARIM DETAYLARI
+========================================================= */
+
+/* =========================================================
+   1. SAYFA AÇILIŞ ANİMASYONU
+========================================================= */
+body {
+    animation: pageFadeIn .45s ease both;
+}
+
+@keyframes pageFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* =========================================================
+   2. HEADER İNCE GÖLGE / GEÇİŞ
+========================================================= */
+.site-header {
+    transition:
+        box-shadow .25s ease,
+        background .25s ease;
+}
+
+.site-header:hover {
+    box-shadow: 0 4px 18px rgba(0,0,0,.045);
+}
+
+
+/* =========================================================
+   3. LOGO MICRO ANIMATION
+========================================================= */
+.brand {
+    transition:
+        opacity .2s ease,
+        transform .2s ease;
+}
+
+.brand:hover {
+    opacity: .92;
+}
+
+.brand img {
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+.brand:hover img {
+    transform: scale(1.04);
+    box-shadow: 0 4px 14px rgba(0,0,0,.12);
+}
+
+
+/* =========================================================
+   4. MENÜ BUTONU
+========================================================= */
+.menu-btn {
+    transition:
+        transform .18s ease,
+        background .2s ease,
+        border-color .2s ease,
+        box-shadow .2s ease;
+}
+
+.menu-btn:hover {
+    background: #f7f7f8;
+    border-color: #d8dbe0;
+    box-shadow: 0 4px 12px rgba(0,0,0,.06);
+}
+
+.menu-btn:active {
+    transform: scale(.93);
+}
+
+
+/* =========================================================
+   5. ARAMA BUTONU
+========================================================= */
+.search-icon {
+    transition:
+        transform .2s ease,
+        background .2s ease,
+        box-shadow .2s ease;
+}
+
+.search-icon:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,.06);
+}
+
+.search-icon:active {
+    transform: scale(.92);
+}
+
+
+/* =========================================================
+   6. ARAMA KUTUSU PREMIUM
+========================================================= */
+.search-area .search-box {
+    transform-origin: top right;
+}
+
+.search-area .search-box.active {
+    animation: searchOpen .22s ease both;
+}
+
+@keyframes searchOpen {
+    from {
+        opacity: 0;
+        transform: translateY(-8px) scale(.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.search-area .search-box input {
+    transition:
+        border-color .2s ease,
+        background .2s ease,
+        box-shadow .2s ease;
+}
+
+.search-area .search-box input:focus {
+    box-shadow: 0 0 0 3px rgba(227,6,19,.06);
+}
+
+
+/* =========================================================
+   7. KATEGORİ MENÜSÜ
+========================================================= */
+.nav-inner a {
+    transition:
+        color .2s ease,
+        background .2s ease;
+}
+
+.nav-inner a::before {
+    content: "";
+    position: absolute;
+    left: 14px;
+    right: 14px;
+    bottom: 0;
+    height: 2px;
+    background: #e30613;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform .22s ease;
+}
+
+.nav-inner a:hover::before {
+    transform: scaleX(.65);
+}
+
+.nav-inner a.active::before {
+    display: none;
+}
+
+
+/* =========================================================
+   8. SON DAKİKA NOKTASI - PULSE
+========================================================= */
+.breaking-title span {
+    animation: breakingPulse 1.8s ease-in-out infinite;
+}
+
+@keyframes breakingPulse {
+    0%,
+    100% {
+        box-shadow:
+            0 0 0 3px rgba(227,6,19,.08);
+        transform: scale(1);
+    }
+
+    50% {
+        box-shadow:
+            0 0 0 6px rgba(227,6,19,.03);
+        transform: scale(1.08);
+    }
+}
+
+
+/* =========================================================
+   9. SON DAKİKA YAZILARI
+========================================================= */
+.breaking-item {
+    transition:
+        color .2s ease,
+        transform .2s ease;
+}
+
+.breaking-item:hover {
+    transform: translateX(2px);
+}
+
+
+/* =========================================================
+   10. MANŞET GÖRSELİ
+========================================================= */
+.hero-slider {
+    isolation: isolate;
+}
+
+.hero-slide-link {
+    transition: filter .3s ease;
+}
+
+.hero-slide-link:hover {
+    filter: brightness(1.02);
+}
+
+.hero-image {
+    transition:
+        transform .7s cubic-bezier(.2,.7,.2,1),
+        filter .5s ease;
+}
+
+.hero-slide-link:hover .hero-image {
+    transform: scale(1.035);
+}
+
+
+/* =========================================================
+   11. MANŞET YAZISI
+========================================================= */
+.hero-content {
+    animation: heroContentIn .5s ease both;
+}
+
+@keyframes heroContentIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-category {
+    transition:
+        transform .2s ease,
+        background .2s ease;
+}
+
+.hero-category:hover {
+    transform: translateY(-1px);
+    background: #cF0511;
+}
+
+
+/* =========================================================
+   12. MANŞET OKLARI
+========================================================= */
+.hero-arrow {
+    transition:
+        background .2s ease,
+        border-color .2s ease,
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+.hero-arrow:hover {
+    transform: translateY(-50%) scale(1.08);
+    background: rgba(227,6,19,.92);
+    border-color: rgba(255,255,255,.55);
+    box-shadow: 0 6px 18px rgba(0,0,0,.18);
+}
+
+.hero-arrow:active {
+    transform: translateY(-50%) scale(.94);
+}
+
+
+/* =========================================================
+   13. MANŞET NUMARALARI
+========================================================= */
+.hero-number {
+    transition:
+        transform .2s ease,
+        background .2s ease,
+        border-color .2s ease;
+}
+
+.hero-number:hover {
+    transform: scale(1.1);
+}
+
+.hero-number:active {
+    transform: scale(.92);
+}
+
+
+/* =========================================================
+   14. BÖLÜM BAŞLIĞI
+========================================================= */
+.section-title h2 {
+    position: relative;
+}
+
+.section-title h2::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    margin-top: 5px;
+    border-radius: 5px;
+    background: #e30613;
+    transition: width .3s ease;
+}
+
+.latest-section:hover .section-title h2::after {
+    width: 28px;
+}
+
+
+/* =========================================================
+   15. HABER KARTLARI
+========================================================= */
+.news-card {
+    position: relative;
+    transition:
+        transform .28s cubic-bezier(.2,.7,.2,1),
+        box-shadow .28s ease,
+        border-color .28s ease;
+}
+
+.news-card::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background: #e30613;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform .3s ease;
+}
+
+.news-card:hover::after {
+    transform: scaleX(1);
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+    border-color: #d9dce1;
+    box-shadow:
+        0 15px 32px rgba(0,0,0,.10);
+}
+
+
+/* =========================================================
+   16. HABER FOTOĞRAFI
+========================================================= */
+.news-card-image {
+    overflow: hidden;
+}
+
+.news-card-image img {
+    transition:
+        transform .55s cubic-bezier(.2,.7,.2,1),
+        filter .35s ease;
+}
+
+.news-card:hover .news-card-image img {
+    transform: scale(1.055);
+    filter: brightness(1.025);
+}
+
+
+/* =========================================================
+   17. HABER BAŞLIĞI
+========================================================= */
+.news-card h3,
+.news-card-content h3 {
+    transition:
+        color .22s ease,
+        transform .22s ease;
+}
+
+.news-card:hover h3,
+.news-card:hover .news-card-content h3 {
+    color: #d71920;
+}
+
+
+/* =========================================================
+   18. POPÜLER HABERLER
+========================================================= */
+.popular-item {
+    transition:
+        background .2s ease,
+        padding-left .2s ease;
+}
+
+.popular-item:hover {
+    padding-left: 5px;
+}
+
+.popular-item img {
+    transition:
+        transform .3s ease,
+        filter .3s ease;
+}
+
+.popular-item:hover img {
+    transform: scale(1.04);
+    filter: brightness(1.03);
+}
+
+
+/* =========================================================
+   19. GÜNÜN BAŞLIKLARI
+========================================================= */
+.sidebar-headline {
+    transition:
+        color .2s ease,
+        padding-left .2s ease;
+}
+
+.sidebar-headline:hover {
+    padding-left: 4px;
+}
+
+
+/* =========================================================
+   20. FOOTER LİNKLERİ
+========================================================= */
+.footer-inner a {
+    transition:
+        color .2s ease,
+        padding-left .2s ease;
+}
+
+.footer-inner a:hover {
+    padding-left: 3px;
+    color: #fff;
+}
+
+
+/* =========================================================
+   21. ÇEREZ BUTONU
+========================================================= */
+.cookie-box {
+    animation: cookieUp .45s ease both;
+}
+
+@keyframes cookieUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cookie-box button {
+    transition:
+        transform .18s ease,
+        background .2s ease,
+        box-shadow .2s ease;
+}
+
+.cookie-box button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 14px rgba(227,6,19,.20);
+}
+
+.cookie-box button:active {
+    transform: scale(.95);
+}
+
+
+/* =========================================================
+   22. KATEGORİ SAYFASI
+========================================================= */
+.category-title::before {
+    transition:
+        height .25s ease,
+        transform .25s ease;
+}
+
+.category-title:hover::before {
+    height: 34px;
+    transform: translateY(-2px);
+}
+
+.category-news .news-card {
+    transition:
+        transform .28s ease,
+        box-shadow .28s ease,
+        border-color .28s ease;
+}
+
+
+/* =========================================================
+   23. SAYFA İÇERİĞİ YUKARI DOĞRU GELİYOR HİSSİ
+========================================================= */
+.latest-section {
+    animation: sectionReveal .55s ease both;
+    animation-delay: .08s;
+}
+
+@keyframes sectionReveal {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================================
+   24. MOBİL DOKUNMA EFEKTLERİ
+========================================================= */
+@media (max-width: 600px) {
+
+    .news-card {
+        transition:
+            transform .18s ease,
+            box-shadow .18s ease;
+    }
+
+    .news-card:active {
+        transform: scale(.985);
+        box-shadow:
+            0 5px 15px rgba(0,0,0,.08);
+    }
+
+    .hero-slide-link:active .hero-image {
+        transform: scale(1.01);
+    }
+
+    .hero-arrow:active {
+        transform: translateY(-50%) scale(.90);
+    }
+
+    .nav-inner a:active {
+        transform: scale(.96);
+    }
+
+    .section-title h2::after {
+        width: 24px;
+    }
+
+    /* Mobilde hover kaynaklı hareketleri azalt */
+    .brand:hover img {
+        transform: none;
+    }
+
+    .news-card:hover {
+        transform: none;
+    }
+
+    .news-card:hover .news-card-image img {
+        transform: none;
+    }
+}
+
+
+/* =========================================================
+   25. TABLETTE DAHA YUMUŞAK
+========================================================= */
+@media (min-width: 601px) and (max-width: 900px) {
+    .news-card:hover {
+        transform: translateY(-3px);
+    }
+
+    .hero-slide-link:hover .hero-image {
+        transform: scale(1.02);
+    }
+}
+
+
+/* =========================================================
+   26. ANİMASYONLARI KAPATMA DESTEĞİ
+   ERİŞİLEBİLİRLİK
+========================================================= */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
