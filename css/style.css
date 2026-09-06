@@ -3524,3 +3524,164 @@ body {
         scroll-behavior: auto !important;
     }
 }
+/* =========================================================
+   HABERİSTA - CANLI PİYASA BANDI
+========================================================= */
+
+.market-bar {
+    width: 100%;
+    background: #fff;
+    border-bottom: 1px solid #e6e7ea;
+    box-shadow: 0 2px 8px rgba(0,0,0,.035);
+}
+
+.market-bar-inner {
+    min-height: 52px;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.market-live {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: #17191d;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: .5px;
+}
+
+.live-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #e30613;
+    box-shadow: 0 0 0 4px rgba(227,6,19,.10);
+    animation: marketPulse 1.5s infinite;
+}
+
+@keyframes marketPulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: .55;
+        transform: scale(.82);
+    }
+}
+
+.market-items {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.market-items::-webkit-scrollbar {
+    display: none;
+}
+
+.market-item {
+    flex: 0 0 auto;
+    min-height: 30px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 22px;
+    border-right: 1px solid #ececef;
+}
+
+.market-item:first-child {
+    padding-left: 0;
+}
+
+.market-name {
+    color: #6c7078;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.market-price {
+    color: #17191d;
+    font-size: 13px;
+    font-weight: 900;
+}
+
+.market-change {
+    font-size: 10px;
+    font-weight: 900;
+}
+
+.market-change.up {
+    color: #159447;
+}
+
+.market-change.down {
+    color: #d71920;
+}
+
+.market-change.neutral {
+    color: #777;
+}
+
+.market-updated {
+    flex-shrink: 0;
+    color: #969aa2;
+    font-size: 9px;
+    white-space: nowrap;
+}
+
+.market-loading,
+.market-error {
+    color: #858991;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+@media (max-width: 700px) {
+
+    .market-bar-inner {
+        min-height: 46px;
+        gap: 12px;
+    }
+
+    .market-live {
+        font-size: 9px;
+    }
+
+    .live-dot {
+        width: 6px;
+        height: 6px;
+    }
+
+    .market-item {
+        padding: 0 15px;
+        gap: 6px;
+    }
+
+    .market-item:first-child {
+        padding-left: 0;
+    }
+
+    .market-name {
+        font-size: 9px;
+    }
+
+    .market-price {
+        font-size: 11px;
+    }
+
+    .market-change {
+        font-size: 8px;
+    }
+
+    .market-updated {
+        display: none;
+    }
+}
