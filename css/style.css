@@ -3748,3 +3748,120 @@ body {
     }
 
 }
+/* =====================================================
+   PROFESYONEL YAZI TASARIMI
+===================================================== */
+
+/* Ana haber başlığı */
+.article-title h1 {
+    color: #0a0a0a !important;
+    font-weight: 900 !important;
+    letter-spacing: -1.8px;
+    line-height: 1.08;
+}
+
+/* Spot */
+.article-spot p {
+    color: #202020 !important;
+    font-weight: 600 !important;
+    line-height: 1.65;
+}
+
+/* Haber metni */
+.article-content p {
+    color: #111111 !important;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.9;
+}
+
+/* İlk paragraf daha güçlü */
+.article-content p:first-child {
+    color: #080808 !important;
+    font-weight: 650;
+    font-size: 19px;
+    line-height: 1.85;
+}
+
+/* Alt başlıklar */
+.article-content h2 {
+    color: #050505 !important;
+    font-weight: 900 !important;
+    letter-spacing: -0.6px;
+}
+
+.article-content h3 {
+    color: #080808 !important;
+    font-weight: 850 !important;
+}
+
+/* Kalın yazılar */
+.article-content strong {
+    color: #000000 !important;
+    font-weight: 800;
+}
+
+/* Listeler */
+.article-content li {
+    color: #111111 !important;
+    font-weight: 500;
+    line-height: 1.8;
+}
+
+/* Alıntı */
+.article-content blockquote {
+    color: #171717 !important;
+    font-weight: 600;
+    background: #f7f7f7;
+    border-left: 4px solid #e11d48;
+}
+
+/* Kaynak */
+.article-source {
+    color: #333333 !important;
+}
+
+.article-source strong {
+    color: #000000 !important;
+}
+
+/* Tarih / saat */
+.article-meta {
+    color: #444444 !important;
+}
+
+.article-meta strong {
+    color: #171717 !important;
+}
+
+/* Mobil */
+@media (max-width: 700px) {
+
+    .article-title h1 {
+        color: #050505 !important;
+        font-weight: 900 !important;
+    }
+
+    .article-spot p {
+        color: #202020 !important;
+        font-weight: 600 !important;
+    }
+
+    .article-content p {
+        color: #111111 !important;
+        font-size: 17px;
+        font-weight: 500;
+        line-height: 1.85;
+    }
+
+    .article-content p:first-child {
+        font-size: 18px;
+        font-weight: 650;
+    }
+
+    .article-content h2 {
+        color: #050505 !important;
+        font-weight: 900 !important;
+    }
+
+}
