@@ -1275,5 +1275,5 @@ document.addEventListener("DOMContentLoaded", function () {
     /*
        60 saniyede bir güncelle
     */
-    setInterval(piyasaVerileriniGetir, 60000);
+    setInterval(piyasaVerileriniGetir, 1000);
 });
