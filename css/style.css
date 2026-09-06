@@ -4014,3 +4014,304 @@ body {
 .notification-menu-btn.enabled {
     background: #16a34a;
 }
+/* =========================================================
+   KATEGORİ SAYFALARI
+========================================================= */
+
+.category-header {
+    margin: 28px 0 30px;
+}
+
+.category-header-inner {
+    min-height: 190px;
+    padding: 35px 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #111827,
+            #1f2937
+        );
+
+    color: #fff;
+
+    overflow: hidden;
+}
+
+.category-label {
+    display: inline-block;
+
+    margin-bottom: 10px;
+
+    padding: 6px 12px;
+
+    border-radius: 20px;
+
+    background: rgba(255,255,255,.12);
+
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.category-header h1 {
+    margin: 0 0 8px;
+
+    font-size: 38px;
+    font-weight: 900;
+}
+
+.category-header p {
+    margin: 0;
+
+    color: rgba(255,255,255,.75);
+
+    font-size: 15px;
+}
+
+.category-header-icon {
+    font-size: 90px;
+    opacity: .15;
+}
+
+
+/* Kategori haber grid */
+
+.kategori-news-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 24px;
+
+    margin-bottom: 50px;
+}
+
+
+/* Haber kartı */
+
+.kategori-haber-card {
+    overflow: hidden;
+
+    background: #fff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,.06);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+.kategori-haber-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,.12);
+}
+
+
+/* Görsel */
+
+.kategori-haber-image {
+    position: relative;
+
+    display: block;
+
+    width: 100%;
+    height: 210px;
+
+    overflow: hidden;
+
+    background: #f3f4f6;
+}
+
+.kategori-haber-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform .35s ease;
+}
+
+.kategori-haber-card:hover
+.kategori-haber-image img {
+    transform: scale(1.05);
+}
+
+
+/* Kategori etiketi */
+
+.kategori-etiket {
+    position: absolute;
+
+    left: 14px;
+    bottom: 14px;
+
+    padding: 6px 10px;
+
+    border-radius: 6px;
+
+    background: #111827;
+    color: #fff;
+
+    font-size: 11px;
+    font-weight: 800;
+}
+
+
+/* İçerik */
+
+.kategori-haber-content {
+    padding: 18px;
+}
+
+.kategori-haber-tarih {
+    margin-bottom: 8px;
+
+    color: #6b7280;
+
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.kategori-haber-content h3 {
+    margin: 0 0 10px;
+
+    line-height: 1.35;
+
+    font-size: 18px;
+}
+
+.kategori-haber-content h3 a {
+    color: #111827;
+
+    text-decoration: none;
+}
+
+.kategori-haber-content h3 a:hover {
+    color: #2563eb;
+}
+
+.kategori-haber-content p {
+    margin: 0 0 15px;
+
+    color: #6b7280;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+
+    overflow: hidden;
+}
+
+
+/* Devamını oku */
+
+.devamini-oku {
+    display: inline-block;
+
+    color: #2563eb;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    text-decoration: none;
+}
+
+.devamini-oku:hover {
+    text-decoration: underline;
+}
+
+
+/* Haber bulunamadı */
+
+.kategori-bos,
+.kategori-hata {
+    grid-column: 1 / -1;
+
+    padding: 70px 20px;
+
+    text-align: center;
+
+    border-radius: 16px;
+
+    background: #f9fafb;
+
+    border: 1px solid #e5e7eb;
+}
+
+.kategori-bos-icon {
+    font-size: 45px;
+
+    margin-bottom: 12px;
+}
+
+.kategori-bos h3 {
+    margin: 0 0 8px;
+
+    font-size: 20px;
+}
+
+.kategori-bos p {
+    margin: 0;
+
+    color: #6b7280;
+}
+
+
+/* Mobil */
+
+@media (max-width: 900px) {
+
+    .kategori-news-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .category-header-inner {
+        min-height: 150px;
+
+        padding: 25px;
+    }
+
+    .category-header h1 {
+        font-size: 30px;
+    }
+
+    .category-header-icon {
+        display: none;
+    }
+
+    .kategori-news-grid {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+    .kategori-haber-image {
+        height: 200px;
+    }
+
+}
