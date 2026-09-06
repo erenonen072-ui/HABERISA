@@ -40,6 +40,272 @@ const haberler = [
        1 - GÜNDEM
     ===================================================== */
 {
+    id: 18,
+    kategori: "Dünya",
+    baslik: "ABD ile İran arasında tansiyon yeniden yükseldi: 3 İran tankeri hedef alındı",
+
+    spot: "ABD ile İran arasındaki askeri gerilim yeniden tırmanırken, ABD Merkez Komutanlığı tarafından İran'a ait olduğu belirtilen 3 petrol tankerinin hedef alındığı açıklandı. İran yönetimi ise yeni saldırılara daha sert karşılık verileceği mesajını verirken, Hürmüz Boğazı ve küresel enerji piyasalarındaki gelişmeler yakından takip ediliyor.",
+
+    icerik: `
+        ABD VE İRAN ARASINDA TANSİYON YENİDEN TIRMANDI
+
+        ABD ile İran arasında aylardır devam eden askeri ve siyasi gerilimde
+        yeni bir gelişme yaşandı. ABD Merkez Komutanlığı tarafından yapılan
+        açıklamaya göre, İran'a ait olduğu belirtilen 3 petrol tankeri
+        hedef alındı.
+
+        Yeni saldırılar, bölgede karşılıklı askeri operasyonların yeniden
+        yoğunlaştığı bir dönemde gerçekleşti. ABD ve İran arasında yaşanan
+        gelişmeler yalnızca iki ülke arasındaki ilişkileri değil, Orta Doğu
+        güvenliğini, deniz taşımacılığını ve küresel enerji piyasalarını da
+        doğrudan etkiliyor.
+
+        ABD'nin tankerleri hedef aldığı yönündeki açıklamanın ardından
+        bölgede güvenlik önlemleri ve deniz trafiğine ilişkin gelişmeler
+        yakından takip edilmeye başlandı.
+
+        ABD'DEN 3 İRAN TANKERİ AÇIKLAMASI
+
+        ABD Merkez Komutanlığı tarafından yapılan açıklamada, İran'a ait
+        olduğu belirtilen üç petrol tankerinin hedef alındığı bildirildi.
+
+        Washington yönetimi, operasyonların İran ile devam eden askeri
+        çatışmalar çerçevesinde gerçekleştirildiğini belirtirken, bölgedeki
+        deniz faaliyetlerinin de yakından takip edildiği mesajını verdi.
+
+        Tankerlerin hedef alınması, ABD ile İran arasında devam eden
+        çatışmanın yalnızca karadaki ve havadaki askeri hedeflerle sınırlı
+        kalmadığını göstermesi açısından dikkat çekti.
+
+        Yaşanan gelişmenin ardından petrol taşımacılığı yapan şirketlerin
+        bölgedeki güvenlik durumunu daha yakından değerlendirmesi bekleniyor.
+
+        İRAN'DAN SERT KARŞILIK MESAJI
+
+        İran tarafı ise ABD'nin saldırılarına karşılık verileceğini
+        açıklayarak gerilimin daha da yükselmesi ihtimalini gündeme taşıdı.
+
+        İran Meclis Başkanı Muhammed Bakır Kalibaf, gelecekte gerçekleştirilecek
+        saldırılara daha sert karşılık verileceği yönünde mesaj verdi.
+
+        İran yönetimi, ülkesine yönelik askeri operasyonların devam etmesi
+        halinde karşılıklarının daha ağır olabileceğini savunuyor.
+
+        Tahran'dan gelen açıklamalar, ABD ile İran arasındaki çatışmanın
+        yeni bir aşamaya geçebileceği yönündeki endişeleri artırdı.
+
+        HÜRMÜZ BOĞAZI GÜNDEMİN MERKEZİNDE
+
+        Gerilimin en önemli başlıklarından biri ise Hürmüz Boğazı oldu.
+
+        Hürmüz Boğazı, Körfez ülkelerinden dünya piyasalarına gönderilen
+        petrol ve enerji ürünleri açısından dünyanın en stratejik deniz
+        geçiş noktalarından biri olarak biliniyor.
+
+        İran'ın bölgede deniz trafiğine yönelik yeni kısıtlamalar
+        uygulayabileceğine ilişkin açıklamaları, uluslararası enerji
+        piyasalarında yakından izleniyor.
+
+        Bölgede yaşanabilecek yeni saldırılar veya deniz ulaşımının
+        aksaması, petrol sevkiyatının yavaşlamasına ve enerji fiyatlarının
+        yeniden yükselmesine neden olabilir.
+
+        İRAN HÜRMÜZ BOĞAZI'NDA KISITLAMA PLANLIYOR
+
+        İran yönetimi, Hürmüz Boğazı çevresinde daha sıkı bir kontrol
+        mekanizması oluşturulabileceği yönünde mesajlar verdi.
+
+        Tahran yönetiminin, belirli kurallara uymayan gemilere yönelik
+        yaptırım uygulayabileceği belirtilirken, bölgedeki ticari gemilerin
+        güvenliği yeniden uluslararası gündemin önemli başlıklarından biri
+        haline geldi.
+
+        Deniz taşımacılığı şirketleri açısından bölgedeki güvenlik koşulları
+        büyük önem taşıyor. Hürmüz Boğazı'ndan geçen gemilerin rotalarını
+        değiştirmesi veya bölgedeki geçişlerin yavaşlaması durumunda
+        taşımacılık maliyetlerinin artabileceği değerlendiriliyor.
+
+        PETROL FİYATLARI YÜKSELİŞE GEÇTİ
+
+        ABD ile İran arasındaki askeri gerilimin yeniden yükselmesi,
+        küresel petrol piyasalarında da etkisini gösterdi.
+
+        Brent petrolün varil fiyatı haftayı yaklaşık yüzde 7,6 yükselişle
+        96 dolar seviyesinin üzerinde tamamladı. ABD'nin Batı Teksas türü
+        ham petrolünün fiyatında da yaklaşık yüzde 10'a yaklaşan haftalık
+        yükseliş görüldü.
+
+        Piyasalardaki yükselişte Orta Doğu'daki çatışmaların yanı sıra
+        petrol sevkiyatında yaşanabilecek olası kesintilere ilişkin
+        endişeler etkili oldu.
+
+        Uzmanlar, çatışmanın daha geniş bir bölgeye yayılması halinde
+        petrol fiyatları üzerindeki baskının daha da artabileceğine
+        dikkat çekiyor.
+
+        ENERJİ PİYASALARI GELİŞMELERİ YAKINDAN İZLİYOR
+
+        İran dünyanın önemli petrol üreticilerinden biri olduğu için
+        ülkeden gerçekleştirilen petrol ihracatının geleceği küresel
+        piyasalar açısından büyük önem taşıyor.
+
+        ABD'nin İran'a yönelik ekonomik yaptırımları ve deniz ablukası
+        baskısının petrol ihracatını zorlaştırdığı belirtilirken, İran
+        yönetimi ekonomik sorunlarla mücadele etmek için yeni önlemler
+        üzerinde çalışıyor.
+
+        Petrol ihracatındaki olası düşüşün enerji fiyatlarında yeni bir
+        dalgalanmaya yol açabileceği değerlendiriliyor.
+
+        Özellikle Avrupa ve Asya ülkelerinin enerji tedarik zincirlerinde
+        yaşanabilecek sorunlar, küresel ekonominin de gündemine gelebilir.
+
+        DENİZ TİCARETİ İÇİN YENİ RİSK
+
+        İran tankerlerinin hedef alınması, bölgedeki ticari gemiler için
+        güvenlik riskinin yeniden gündeme gelmesine neden oldu.
+
+        Körfez bölgesinde faaliyet gösteren uluslararası denizcilik
+        şirketlerinin güvenlik değerlendirmelerini güncellemesi bekleniyor.
+
+        Bölgede yaşanabilecek yeni saldırılar, gemilerin daha uzun
+        rotaları tercih etmesine ve bunun sonucunda taşıma süreleri ile
+        maliyetlerin yükselmesine neden olabilir.
+
+        Sigorta şirketlerinin savaş ve çatışma riski nedeniyle bölgedeki
+        gemilere yönelik primleri artırması da ihtimaller arasında
+        değerlendiriliyor.
+
+        ABD'NİN BÖLGEDEKİ ASKERİ VARLIĞI
+
+        ABD'nin Orta Doğu'daki askeri varlığı, İran ile yaşanan
+        çatışmanın en önemli unsurlarından biri olmaya devam ediyor.
+
+        ABD yönetimi bölgedeki askeri unsurlarını ve deniz kuvvetlerini
+        korumaya çalışırken, İran da ABD'nin bölgedeki askeri varlıklarını
+        hedef alabilecek kapasiteye sahip olduğunu savunuyor.
+
+        Taraflar arasındaki karşılıklı saldırılar, yanlış hesaplama veya
+        yeni bir saldırının daha geniş kapsamlı bir çatışmayı tetikleyip
+        tetiklemeyeceği konusunda endişelere yol açıyor.
+
+        DİPLOMATİK ÇÖZÜM İHTİMALİ
+
+        Askeri gerilimin yanında diplomatik çözüm ihtimali de gündemde
+        bulunuyor.
+
+        ABD yönetimi İran üzerindeki ekonomik ve askeri baskıyı artırmaya
+        çalışırken, İran yönetimi yaptırımların kaldırılması ve ülkenin
+        bölgesel konumunun tanınması gibi konularda taleplerini sürdürüyor.
+
+        Taraflar arasında yeniden müzakere sürecinin başlayıp başlamayacağı
+        ise önümüzdeki dönemde yaşanacak gelişmelere bağlı olacak.
+
+        Uluslararası aktörler, ABD ile İran arasındaki gerilimin diplomatik
+        yollarla azaltılması için yeni girişimlerde bulunabilir.
+
+        BÖLGE ÜLKELERİ DE GELİŞMELERİ İZLİYOR
+
+        ABD ve İran arasındaki çatışmanın devam etmesi, Körfez ülkeleri
+        başta olmak üzere bölgedeki birçok ülkeyi doğrudan ilgilendiriyor.
+
+        Bölge ülkeleri bir yandan kendi güvenliklerini artırmaya çalışırken,
+        diğer yandan enerji ihracatının ve ticaret yollarının kesintiye
+        uğramaması için gelişmeleri yakından takip ediyor.
+
+        Özellikle Hürmüz Boğazı'nda yaşanabilecek herhangi bir güvenlik
+        sorununun bölgedeki ülkelerin ekonomileri üzerinde ciddi etkiler
+        oluşturabileceği değerlendiriliyor.
+
+        KÜRESEL EKONOMİ İÇİN RİSK ARTIYOR
+
+        ABD ile İran arasındaki çatışmanın uzaması halinde enerji fiyatları
+        üzerinden küresel ekonomide yeni baskılar oluşabileceği belirtiliyor.
+
+        Petrol fiyatlarındaki yükseliş, ulaşım ve üretim maliyetlerinin
+        artmasına neden olabilir. Bu durum birçok ülkede enflasyon
+        baskısının yeniden güçlenmesi riskini beraberinde getirebilir.
+
+        Enerji maliyetlerinin yükselmesi, özellikle petrol ve doğal gaz
+        ithalatına yüksek oranda bağımlı ülkeler açısından daha büyük bir
+        ekonomik sorun oluşturabilir.
+
+        İRAN EKONOMİSİ BASKI ALTINDA
+
+        İran ekonomisi ise uzun süredir ABD yaptırımları ve enerji
+        ihracatındaki sorunlarla mücadele ediyor.
+
+        ABD'nin ekonomik baskısının İran'ın petrol gelirlerini ve yabancı
+        para kaynaklarını önemli ölçüde etkilediği belirtiliyor.
+
+        Tahran yönetimi ekonomik sorunların çözülmesi için çeşitli
+        düzenlemeler yapacağını açıklarken, çatışmanın devam etmesi
+        ekonomideki baskıyı daha da artırabilir.
+
+        İran yönetimi ise ülkenin ekonomik zorluklara rağmen direncini
+        koruyacağını ve ABD'nin baskısına boyun eğmeyeceğini savunuyor.
+
+        YENİ SALDIRI İHTİMALİ GÜNDEMDE
+
+        Üç İran tankerinin hedef alınmasının ardından gözler ABD ve İran'dan
+        gelecek yeni açıklamalara çevrildi.
+
+        Özellikle İran'ın daha sert karşılık verileceği yönündeki açıklaması,
+        bölgede yeni askeri saldırı ihtimalini gündeme getirdi.
+
+        Taraflardan birinin gerçekleştireceği yeni bir saldırının,
+        çatışmanın kapsamını genişletip genişletmeyeceği merak ediliyor.
+
+        ABD VE İRAN ARASINDAKİ GERİLİMİN GELECEĞİ
+
+        ABD ile İran arasında yaşanan son gelişmeler, iki ülke arasındaki
+        çatışmanın kısa sürede sona ermeyebileceğine ilişkin endişeleri
+        artırıyor.
+
+        Askeri operasyonların yanı sıra ekonomik yaptırımlar, enerji
+        sevkiyatı ve deniz güvenliği de gerilimin önemli başlıkları
+        arasında bulunuyor.
+
+        Önümüzdeki günlerde ABD ve İran yönetimlerinden gelecek açıklamalar,
+        bölgedeki gelişmelerin yönünü belirleyecek.
+
+        Hürmüz Boğazı'ndaki deniz trafiği, petrol fiyatları ve askeri
+        hareketlilik de uluslararası kamuoyu tarafından yakından takip
+        edilmeye devam edecek.
+
+        SON DURUM
+
+        ABD'nin 3 İran tankerini hedef aldığını açıklamasının ardından
+        bölgede tansiyon yeniden yükseldi.
+
+        İran yönetimi saldırılara daha sert karşılık verilebileceği
+        mesajını verirken, Hürmüz Boğazı ve petrol taşımacılığına ilişkin
+        gelişmeler de dikkatle izleniyor.
+
+        Yaşanan gelişmelerin enerji fiyatları, deniz ticareti ve bölgesel
+        güvenlik üzerindeki etkilerinin önümüzdeki günlerde daha net
+        ortaya çıkması bekleniyor.
+
+        HABERİSTA TAKİPTE
+
+        ABD ile İran arasındaki gerilimle ilgili yeni gelişmeleri
+        doğrulanmış bilgiler üzerinden takip ediyoruz.
+
+        Bölgede yaşanacak yeni saldırılar, diplomatik açıklamalar,
+        petrol piyasalarındaki hareketlilik ve Hürmüz Boğazı'ndaki
+        gelişmeler oldukça haberimizi güncelleyeceğiz.
+
+        HABERİSTA olarak dünyadan ve Türkiye'den önemli gelişmeleri
+        okuyucularımıza hızlı, anlaşılır ve güvenilir şekilde aktarmaya
+        devam ediyoruz.
+    `,
+
+    tarih: "7 Eylül 2026",
+    saat: "00:01",
+    gorsel: "images/6.jpeg",
+    kaynak: "Reuters / HABERİSTA"
+},
+{
     id: 17,
     kategori: "Dünya",
     baslik: "ABD, 3 İran tankerini vurduğunu açıkladı",
