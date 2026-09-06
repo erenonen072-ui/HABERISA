@@ -3992,92 +3992,22 @@ body {
 /* =========================================================
    HABERİSTA - PROFESYONEL BİLDİRİM BUTONU
 ========================================================= */
-
-.notification-btn {
-    position: fixed;
-    top: 18px;
-    right: 22px;
-    bottom: auto;
-
-    z-index: 99999;
-
-    display: flex;
-    align-items: center;
-    gap: 9px;
-
-    border: 0;
-    border-radius: 50px;
-    padding: 11px 17px;
-
+.notification-menu-btn {
+    border: none;
     background: #111827;
-    color: #fff;
-
+    color: white;
+    padding: 9px 14px;
+    border-radius: 8px;
     font-size: 13px;
     font-weight: 700;
-
     cursor: pointer;
-
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.20);
-
-    transition:
-        transform .2s ease,
-        box-shadow .2s ease,
-        background .2s ease;
+    margin-left: 10px;
 }
 
-.notification-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.28);
+.notification-menu-btn:hover {
+    background: #1f2937;
 }
 
-.notification-btn:active {
-    transform: scale(.96);
-}
-
-.notification-icon {
-    width: 29px;
-    height: 29px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
-    background: rgba(255,255,255,.12);
-
-    font-size: 16px;
-}
-
-.notification-text {
-    white-space: nowrap;
-}
-
-/* Bildirimler açık */
-.notification-btn.enabled {
+.notification-menu-btn.enabled {
     background: #16a34a;
-}
-
-.notification-btn.enabled .notification-icon {
-    background: rgba(255,255,255,.16);
-}
-
-/* Gizleme */
-.notification-btn.hidden {
-    display: none;
-}
-
-/* Mobil */
-@media (max-width: 600px) {
-    .notification-btn {
-        top: 12px;
-        right: 12px;
-        padding: 9px 13px;
-        font-size: 12px;
-    }
-
-    .notification-icon {
-        width: 27px;
-        height: 27px;
-        font-size: 15px;
-    }
 }
