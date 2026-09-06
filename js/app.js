@@ -1137,22 +1137,37 @@ async function piyasaVerileriniGetir() {
         const data = result.data;
 
         const piyasalar = [
-            {
-                key: "USD/TRY",
-                label: "Dolar",
-                suffix: "₺"
-            },
-            {
-                key: "EUR/TRY",
-                label: "Euro",
-                suffix: "₺"
-            },
-            {
-                key: "BTC/USD",
-                label: "Bitcoin",
-                suffix: "$"
-            }
-        ];
+    {
+        key: "USD/TRY",
+        label: "Dolar",
+        suffix: "₺",
+        decimals: 2
+    },
+    {
+        key: "EUR/TRY",
+        label: "Euro",
+        suffix: "₺",
+        decimals: 2
+    },
+    {
+        key: "XAU/TRY",
+        label: "Altın",
+        suffix: "₺",
+        decimals: 2
+    },
+    {
+        key: "BTC/USD",
+        label: "Bitcoin",
+        suffix: "$",
+        decimals: 2
+    },
+    {
+        key: "BIST100",
+        label: "BIST 100",
+        suffix: "",
+        decimals: 2
+    }
+];
 
         marketItems.innerHTML = piyasalar
             .map((market) => {
