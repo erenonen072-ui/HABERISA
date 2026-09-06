@@ -31,57 +31,59 @@ document.addEventListener("DOMContentLoaded", function () {
        DOM
     ===================================================== */
 
-    const menuBtn =
-        $("#menuBtn");
+    const menuBtn = $("#menuBtn");
 
-    const searchBtn =
-        $("#searchBtn");
+    const searchBtn = $("#searchBtn");
 
-    const searchBox =
-        $("#searchBox");
+    const searchBox = $("#searchBox");
 
-    const searchInput =
-        $("#searchInput");
+    const searchInput = $("#searchInput");
 
-    const breakingNews =
-        $("#breakingNews");
+    const breakingNews = $("#breakingNews");
 
-    const heroMain =
-        $("#heroMain");
+    const heroMain = $("#heroMain");
 
-    const heroPrev =
-        $("#heroPrev");
+    const heroPrev = $("#heroPrev");
 
-    const heroNext =
-        $("#heroNext");
+    const heroNext = $("#heroNext");
 
-    const heroNumbers =
-        $("#heroNumbers");
+    const heroNumbers = $("#heroNumbers");
 
-    const newsGrid =
-        $("#newsGrid");
+    const newsGrid = $("#newsGrid");
 
-    const searchResultInfo =
-        $("#searchResultInfo");
+    const searchResultInfo = $("#searchResultInfo");
 
-    const cookieBox =
-        $("#cookieBox");
+    const cookieBox = $("#cookieBox");
 
-    const cookieAccept =
-        $("#cookieAccept");
+    const cookieAccept = $("#cookieAccept");
 
 
     /* =====================================================
        GÖRSEL YOLU
+       
+       image / resim / gorsel / foto vb.
+       hepsini destekler.
     ===================================================== */
 
-    function getImagePath(image) {
+    function getImagePath(haber) {
 
-        if (!image) {
+        if (!haber) {
             return "";
         }
 
-        return String(image);
+        const image =
+            haber.image ||
+            haber.resim ||
+            haber.gorsel ||
+            haber.görsel ||
+            haber.foto ||
+            haber.fotograf ||
+            haber.photo ||
+            haber.thumbnail ||
+            haber.img ||
+            "";
+
+        return String(image).trim();
     }
 
 
@@ -191,8 +193,11 @@ document.addEventListener("DOMContentLoaded", function () {
         if (
             searchBox.classList.contains("active")
         ) {
+
             closeSearch();
+
         } else {
+
             openSearch();
         }
     }
@@ -205,6 +210,7 @@ document.addEventListener("DOMContentLoaded", function () {
             function (event) {
 
                 event.preventDefault();
+
                 event.stopPropagation();
 
                 toggleSearch();
@@ -240,6 +246,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 !searchBox.contains(event.target) &&
                 !searchBtn.contains(event.target)
             ) {
+
                 closeSearch();
             }
         }
@@ -282,6 +289,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                 "tr-TR"
                             );
 
+
                     const spot =
                         String(
                             haber.spot || ""
@@ -290,6 +298,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                 "tr-TR"
                             );
 
+
                     const category =
                         String(
                             haber.kategori || ""
@@ -297,6 +306,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             .toLocaleLowerCase(
                                 "tr-TR"
                             );
+
 
                     return (
                         title.includes(query) ||
@@ -349,15 +359,7 @@ document.addEventListener("DOMContentLoaded", function () {
     /* =====================================================
        SON DAKİKA BANDI
        
-       HER ZAMAN EN YENİ 5 HABER
-       
-       haberler.js:
-       [YENİ HABER, 2, 3, 4, 5, ...]
-       
-       Son dakika:
-       [YENİ HABER, 2, 3, 4, 5]
-       
-       Yeni haber eklenince eski 5. otomatik çıkar.
+       EN YENİ 5 HABER
     ===================================================== */
 
     function renderBreakingNews() {
@@ -376,22 +378,18 @@ document.addEventListener("DOMContentLoaded", function () {
             breaking.length === 0
         ) {
 
-            breakingNews.innerHTML =
-                `
+            breakingNews.innerHTML = `
                 <div class="breaking-track">
                     <span class="breaking-link">
                         Haberİsta'dan son gelişmeler...
                     </span>
                 </div>
-                `;
+            `;
 
             return;
         }
 
 
-        /*
-         * İlk liste
-         */
         const firstSet =
             breaking
                 .map(function (haber) {
@@ -408,12 +406,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 .join("");
 
 
-        /*
-         * İkinci liste
-         *
-         * Kesintisiz kayan bant için
-         * ilk 5 haber tekrar edilir.
-         */
         const secondSet =
             breaking
                 .map(function (haber) {
@@ -431,10 +423,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         breakingNews.innerHTML = `
+
             <div class="breaking-track">
+
                 ${firstSet}
+
                 ${secondSet}
+
             </div>
+
         `;
     }
 
@@ -466,9 +463,13 @@ document.addEventListener("DOMContentLoaded", function () {
         ) {
 
             heroMain.innerHTML = `
+
                 <div class="hero-empty">
+
                     Henüz haber bulunmuyor.
+
                 </div>
+
             `;
 
             return;
@@ -478,6 +479,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (
             heroIndex >= heroNews.length
         ) {
+
             heroIndex = 0;
         }
 
@@ -485,6 +487,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (
             heroIndex < 0
         ) {
+
             heroIndex =
                 heroNews.length - 1;
         }
@@ -494,13 +497,14 @@ document.addEventListener("DOMContentLoaded", function () {
             heroNews[heroIndex];
 
 
+        /* FOTOĞRAF */
+
         const image =
-            getImagePath(
-                haber.image
-            );
+            getImagePath(haber);
 
 
         heroMain.innerHTML = `
+
             <a
                 href="${getNewsUrl(haber)}"
                 class="hero-slide-link"
@@ -509,41 +513,59 @@ document.addEventListener("DOMContentLoaded", function () {
                 ${
                     image
                         ? `
+
                             <img
                                 src="${escapeHTML(image)}"
-                                alt="${escapeHTML(haber.baslik)}"
+                                alt="${escapeHTML(haber.baslik || "Haberİsta")}"
                                 class="hero-image"
                                 loading="eager"
+                                onerror="this.style.display='none';"
                             >
+
                           `
                         : `
+
                             <div class="hero-image hero-image-empty">
+
                                 Haberİsta
+
                             </div>
+
                           `
                 }
 
+
                 <div class="hero-overlay"></div>
+
 
                 <div class="hero-content">
 
                     <span class="hero-category">
+
                         ${escapeHTML(
                             haber.kategori || ""
                         )}
+
                     </span>
 
+
                     <h1>
+
                         ${escapeHTML(
                             haber.baslik || ""
                         )}
+
                     </h1>
 
+
                     <p>
+
                         ${escapeHTML(
                             haber.spot || ""
                         )}
+
                     </p>
+
 
                     <div class="hero-meta">
 
@@ -554,10 +576,13 @@ document.addEventListener("DOMContentLoaded", function () {
                         ${
                             haber.time
                                 ? `
+
                                     <span>•</span>
+
                                     ${escapeHTML(
                                         haber.time
                                     )}
+
                                   `
                                 : ""
                         }
@@ -567,6 +592,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 </div>
 
             </a>
+
         `;
 
 
@@ -591,6 +617,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     function (haber, index) {
 
                         return `
+
                             <button
                                 type="button"
                                 class="hero-number ${
@@ -601,8 +628,11 @@ document.addEventListener("DOMContentLoaded", function () {
                                 data-index="${index}"
                                 aria-label="${index + 1}. haber"
                             >
+
                                 ${index + 1}
+
                             </button>
+
                         `;
                     }
                 )
@@ -753,21 +783,31 @@ document.addEventListener("DOMContentLoaded", function () {
         ) {
 
             newsGrid.innerHTML = `
+
                 <div class="no-news">
 
                     <div class="no-news-icon">
+
                         📰
+
                     </div>
 
+
                     <h3>
+
                         Haber bulunamadı
+
                     </h3>
 
+
                     <p>
+
                         Aradığınız kriterlere uygun haber bulunamadı.
+
                     </p>
 
                 </div>
+
             `;
 
             return;
@@ -779,13 +819,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 .map(
                     function (haber) {
 
+
+                        /* =========================
+                           FOTOĞRAF
+                        ========================= */
+
                         const image =
-                            getImagePath(
-                                haber.image
-                            );
+                            getImagePath(haber);
 
 
                         return `
+
                             <article
                                 class="news-card"
                                 data-id="${escapeHTML(
@@ -798,57 +842,78 @@ document.addEventListener("DOMContentLoaded", function () {
                                     class="news-card-link"
                                 >
 
+
+                                    <!-- FOTOĞRAF -->
+
                                     <div class="news-card-image">
 
                                         ${
                                             image
                                                 ? `
+
                                                     <img
-                                                        src="${escapeHTML(
-                                                            image
-                                                        )}"
+                                                        src="${escapeHTML(image)}"
                                                         alt="${escapeHTML(
-                                                            haber.baslik
+                                                            haber.baslik || "Haberİsta"
                                                         )}"
                                                         loading="lazy"
+                                                        onerror="this.style.display='none';"
                                                     >
+
                                                   `
                                                 : `
+
                                                     <div class="image-placeholder">
+
                                                         Haberİsta
+
                                                     </div>
+
                                                   `
                                         }
 
+
                                         <span class="news-category">
+
                                             ${escapeHTML(
                                                 haber.kategori || ""
                                             )}
+
                                         </span>
 
                                     </div>
 
 
+                                    <!-- İÇERİK -->
+
                                     <div class="news-card-content">
+
 
                                         <div class="news-card-meta">
 
                                             <span>
+
                                                 ${escapeHTML(
                                                     haber.date || ""
                                                 )}
+
                                             </span>
+
 
                                             ${
                                                 haber.time
                                                     ? `
+
                                                         <span>•</span>
 
                                                         <span>
+
                                                             ${escapeHTML(
                                                                 haber.time
                                                             )}
+
                                                         </span>
+
                                                       `
                                                     : ""
                                             }
@@ -857,47 +922,62 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
                                         <h3>
+
                                             ${escapeHTML(
                                                 haber.baslik || ""
                                             )}
+
                                         </h3>
 
 
                                         <p>
+
                                             ${escapeHTML(
                                                 haber.spot || ""
                                             )}
+
                                         </p>
 
 
                                         <div class="news-card-bottom">
 
+
                                             <span class="read-more">
+
                                                 Haberi Oku →
+
                                             </span>
+
 
                                             ${
                                                 haber.views
                                                     ? `
+
                                                         <span class="views">
+
                                                             👁
+
                                                             ${Number(
                                                                 haber.views
                                                             ).toLocaleString(
                                                                 "tr-TR"
                                                             )}
+
                                                         </span>
+
                                                       `
                                                     : ""
                                             }
 
                                         </div>
 
+
                                     </div>
 
                                 </a>
 
                             </article>
+
                         `;
                     }
                 )
@@ -1102,178 +1182,332 @@ document.addEventListener("DOMContentLoaded", function () {
         "Haberİsta App başlatıldı."
     );
 
+
     console.log(
         "Yüklenen haber sayısı:",
         haberListesi.length
     );
+
 
     console.log(
         "Son dakika için kullanılan haberler:",
         haberListesi.slice(0, 5)
     );
 
+
+    /* =====================================================
+       FOTOĞRAF KONTROLÜ
+    ===================================================== */
+
+    console.log(
+        "Haber fotoğrafları:",
+        haberListesi.map(function (haber) {
+
+            return {
+                id: haber.id,
+                baslik: haber.baslik,
+                image: getImagePath(haber)
+            };
+
+        })
+    );
+
 });
+
+
 /* =========================================================
    HABERİSTA CANLI PİYASA
 ========================================================= */
 
 async function piyasaVerileriniGetir() {
-    const marketItems = document.getElementById("marketItems");
-    const marketUpdated = document.getElementById("marketUpdated");
 
-    if (!marketItems) return;
+    const marketItems =
+        document.getElementById(
+            "marketItems"
+        );
+
+
+    const marketUpdated =
+        document.getElementById(
+            "marketUpdated"
+        );
+
+
+    if (!marketItems) {
+        return;
+    }
+
 
     try {
-        const response = await fetch("/api/market", {
-            cache: "no-store"
-        });
 
-        const result = await response.json();
+        const response =
+            await fetch(
+                "/api/market",
+                {
+                    cache: "no-store"
+                }
+            );
+
+
+        const result =
+            await response.json();
+
 
         if (!result.success) {
-            throw new Error(result.error || "Piyasa verisi alınamadı.");
+
+            throw new Error(
+                result.error ||
+                "Piyasa verisi alınamadı."
+            );
         }
 
-        const data = result.data;
+
+        const data =
+            result.data;
+
 
         const piyasalar = [
+
             {
                 key: "USD/TRY",
                 label: "Dolar",
                 suffix: "₺",
                 decimals: 2
             },
+
             {
                 key: "EUR/TRY",
                 label: "Euro",
                 suffix: "₺",
                 decimals: 2
             },
+
             {
                 key: "XAU/TRY",
                 label: "Altın",
                 suffix: "₺",
                 decimals: 2
             },
+
             {
                 key: "BTC/USD",
                 label: "Bitcoin",
                 suffix: "$",
                 decimals: 2
             },
+
             {
                 key: "BIST100",
                 label: "BIST 100",
                 suffix: "",
                 decimals: 2
             }
+
         ];
 
-        marketItems.innerHTML = piyasalar.map(function (market) {
 
-            const item = data[market.key];
+        marketItems.innerHTML =
 
-            if (
-                !item ||
-                item.price === null ||
-                item.price === undefined
-            ) {
-                return `
-                    <div class="market-item">
-                        <span class="market-name">
-                            ${market.label}
-                        </span>
+            piyasalar
+                .map(function (market) {
 
-                        <strong class="market-price">
-                            --
-                        </strong>
 
-                        <span class="market-change neutral">
-                            EOD
-                        </span>
-                    </div>
-                `;
-            }
+                    const item =
+                        data[market.key];
 
-            const price = Number(item.price).toLocaleString("tr-TR", {
-                minimumFractionDigits: market.decimals,
-                maximumFractionDigits: market.decimals
-            });
 
-            const percent = Number(item.percent || 0);
+                    if (
+                        !item ||
+                        item.price === null ||
+                        item.price === undefined
+                    ) {
 
-            const direction =
-                percent > 0
-                    ? "▲"
-                    : percent < 0
-                        ? "▼"
-                        : "•";
+                        return `
 
-            const className =
-                percent > 0
-                    ? "up"
-                    : percent < 0
-                        ? "down"
-                        : "neutral";
+                            <div class="market-item">
 
-            return `
-                <div class="market-item">
+                                <span class="market-name">
 
-                    <span class="market-name">
-                        ${market.label}
-                    </span>
+                                    ${market.label}
 
-                    <strong class="market-price">
-                        ${price}${market.suffix}
-                    </strong>
+                                </span>
 
-                    <span class="market-change ${className}">
-                        ${direction}
-                        ${Math.abs(percent).toFixed(2)}%
-                    </span>
 
-                </div>
-            `;
+                                <strong class="market-price">
 
-        }).join("");
+                                    --
 
-        const now = new Date();
+                                </strong>
 
-        marketUpdated.textContent =
-            "Son güncelleme " +
-            now.toLocaleTimeString("tr-TR", {
-                hour: "2-digit",
-                minute: "2-digit"
-            });
+
+                                <span class="market-change neutral">
+
+                                    EOD
+
+                                </span>
+
+                            </div>
+
+                        `;
+                    }
+
+
+                    const price =
+                        Number(
+                            item.price
+                        ).toLocaleString(
+                            "tr-TR",
+                            {
+                                minimumFractionDigits:
+                                    market.decimals,
+
+                                maximumFractionDigits:
+                                    market.decimals
+                            }
+                        );
+
+
+                    const percent =
+                        Number(
+                            item.percent || 0
+                        );
+
+
+                    const direction =
+
+                        percent > 0
+                            ? "▲"
+                            : percent < 0
+                                ? "▼"
+                                : "•";
+
+
+                    const className =
+
+                        percent > 0
+                            ? "up"
+                            : percent < 0
+                                ? "down"
+                                : "neutral";
+
+
+                    return `
+
+                        <div class="market-item">
+
+                            <span class="market-name">
+
+                                ${market.label}
+
+                            </span>
+
+
+                            <strong class="market-price">
+
+                                ${price}${market.suffix}
+
+                            </strong>
+
+
+                            <span class="market-change ${className}">
+
+                                ${direction}
+
+                                ${Math.abs(
+                                    percent
+                                ).toFixed(2)}%
+
+                            </span>
+
+                        </div>
+
+                    `;
+
+                })
+                .join("");
+
+
+        const now =
+            new Date();
+
+
+        if (marketUpdated) {
+
+            marketUpdated.textContent =
+
+                "Son güncelleme " +
+
+                now.toLocaleTimeString(
+                    "tr-TR",
+                    {
+                        hour: "2-digit",
+                        minute: "2-digit"
+                    }
+                );
+        }
+
 
     } catch (error) {
 
-        console.error("Piyasa:", error);
+        console.error(
+            "Piyasa:",
+            error
+        );
+
 
         marketItems.innerHTML = `
+
             <div class="market-error">
+
                 Piyasa verileri şu anda alınamıyor.
+
             </div>
+
         `;
 
-        marketUpdated.textContent =
-            "Bağlantı bekleniyor";
+
+        if (marketUpdated) {
+
+            marketUpdated.textContent =
+                "Bağlantı bekleniyor";
+        }
     }
 }
 
+
+/* =========================================================
+   PİYASA FİYAT FORMAT
+========================================================= */
+
 function formatMarketPrice(value) {
-    return Number(value).toLocaleString("tr-TR", {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
-    });
+
+    return Number(
+        value
+    ).toLocaleString(
+        "tr-TR",
+        {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        }
+    );
 }
 
 
-document.addEventListener("DOMContentLoaded", function () {
-    piyasaVerileriniGetir();
+/* =========================================================
+   PİYASA BAŞLAT
+========================================================= */
 
-    /*
-       60 saniyede bir güncelle
-    */
-    setInterval(piyasaVerileriniGetir, 30000);
-});
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        piyasaVerileriniGetir();
+
+
+        setInterval(
+            piyasaVerileriniGetir,
+            30000
+        );
+
+    }
+);
