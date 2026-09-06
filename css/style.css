@@ -3865,3 +3865,127 @@ body {
     }
 
 }
+/* =====================================================
+   MİNİ SESLİ OKUMA
+===================================================== */
+
+.mini-voice-reader {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    margin: 0 50px 22px;
+    padding: 7px 9px;
+
+    width: fit-content;
+
+    background: #f7f7f7;
+
+    border: 1px solid #dedede;
+
+    border-radius: 8px;
+}
+
+.mini-voice-btn,
+.mini-control {
+
+    height: 32px;
+
+    border: 0;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    transition: .2s;
+}
+
+.mini-voice-btn {
+
+    padding: 0 11px;
+
+    background: #111;
+
+    color: #fff;
+}
+
+.mini-voice-btn:hover {
+
+    background: #e11d48;
+}
+
+.mini-control {
+
+    width: 32px;
+
+    background: #fff;
+
+    color: #222;
+
+    border: 1px solid #ddd;
+}
+
+.mini-control:hover {
+
+    background: #111;
+
+    color: #fff;
+
+    border-color: #111;
+}
+
+#voiceStatus {
+
+    margin-left: 3px;
+
+    padding-right: 5px;
+
+    color: #666;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+
+/* MOBİL */
+
+@media (max-width: 700px) {
+
+    .mini-voice-reader {
+
+        margin:
+            0 18px 18px;
+
+        padding:
+            6px 7px;
+    }
+
+    .mini-voice-btn {
+
+        padding:
+            0 9px;
+    }
+
+    .mini-control {
+
+        width:
+            30px;
+
+        height:
+            30px;
+    }
+
+    #voiceStatus {
+
+        font-size:
+            10px;
+    }
+
+}
