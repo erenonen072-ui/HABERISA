@@ -1137,89 +1137,105 @@ async function piyasaVerileriniGetir() {
         const data = result.data;
 
         const piyasalar = [
-    {
-        key: "USD/TRY",
-        label: "Dolar",
-        suffix: "₺",
-        decimals: 2
-    },
-    {
-        key: "EUR/TRY",
-        label: "Euro",
-        suffix: "₺",
-        decimals: 2
-    },
-    {
-        key: "XAU/TRY",
-        label: "Altın",
-        suffix: "₺",
-        decimals: 2
-    },
-    {
-        key: "BTC/USD",
-        label: "Bitcoin",
-        suffix: "$",
-        decimals: 2
-    },
-    {
-        key: "BIST100",
-        label: "BIST 100",
-        suffix: "",
-        decimals: 2
-    }
-];
+            {
+                key: "USD/TRY",
+                label: "Dolar",
+                suffix: "₺",
+                decimals: 2
+            },
+            {
+                key: "EUR/TRY",
+                label: "Euro",
+                suffix: "₺",
+                decimals: 2
+            },
+            {
+                key: "XAU/TRY",
+                label: "Altın",
+                suffix: "₺",
+                decimals: 2
+            },
+            {
+                key: "BTC/USD",
+                label: "Bitcoin",
+                suffix: "$",
+                decimals: 2
+            },
+            {
+                key: "BIST100",
+                label: "BIST 100",
+                suffix: "",
+                decimals: 2
+            }
+        ];
 
-        marketItems.innerHTML = piyasalar
-            .map((market) => {
-                const item = data[market.key];
+        marketItems.innerHTML = piyasalar.map(function (market) {
 
-                if (!item || Number.isNaN(item.price)) {
-                    return `
-                        <div class="market-item market-error">
-                            <span class="market-name">${market.label}</span>
-                            <strong>--</strong>
-                        </div>
-                    `;
-                }
+            const item = data[market.key];
 
-                const price = formatMarketPrice(item.price);
-                const percent = Number(item.percent || 0);
-
-                const positive = percent > 0;
-                const negative = percent < 0;
-
-                const direction = positive
-                    ? "▲"
-                    : negative
-                        ? "▼"
-                        : "•";
-
-                const className = positive
-                    ? "up"
-                    : negative
-                        ? "down"
-                        : "neutral";
-
+            if (
+                !item ||
+                item.price === null ||
+                item.price === undefined
+            ) {
                 return `
                     <div class="market-item">
-
                         <span class="market-name">
                             ${market.label}
                         </span>
 
                         <strong class="market-price">
-                            ${price}${market.suffix}
+                            --
                         </strong>
 
-                        <span class="market-change ${className}">
-                            ${direction}
-                            ${Math.abs(percent).toFixed(2)}%
+                        <span class="market-change neutral">
+                            EOD
                         </span>
-
                     </div>
                 `;
-            })
-            .join("");
+            }
+
+            const price = Number(item.price).toLocaleString("tr-TR", {
+                minimumFractionDigits: market.decimals,
+                maximumFractionDigits: market.decimals
+            });
+
+            const percent = Number(item.percent || 0);
+
+            const direction =
+                percent > 0
+                    ? "▲"
+                    : percent < 0
+                        ? "▼"
+                        : "•";
+
+            const className =
+                percent > 0
+                    ? "up"
+                    : percent < 0
+                        ? "down"
+                        : "neutral";
+
+            return `
+                <div class="market-item">
+
+                    <span class="market-name">
+                        ${market.label}
+                    </span>
+
+                    <strong class="market-price">
+                        ${price}${market.suffix}
+                    </strong>
+
+                    <span class="market-change ${className}">
+                        ${direction}
+                        ${Math.abs(percent).toFixed(2)}%
+                    </span>
+
+                </div>
+            `;
+
+        }).join("");
 
         const now = new Date();
 
@@ -1231,6 +1247,7 @@ async function piyasaVerileriniGetir() {
             });
 
     } catch (error) {
+
         console.error("Piyasa:", error);
 
         marketItems.innerHTML = `
@@ -1239,10 +1256,10 @@ async function piyasaVerileriniGetir() {
             </div>
         `;
 
-        marketUpdated.textContent = "Bağlantı bekleniyor";
+        marketUpdated.textContent =
+            "Bağlantı bekleniyor";
     }
 }
-
 
 function formatMarketPrice(value) {
     return Number(value).toLocaleString("tr-TR", {
