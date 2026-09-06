@@ -1516,114 +1516,93 @@ document.addEventListener(
 ========================================================= */
 document.addEventListener("DOMContentLoaded", function () {
 
-    const notificationBtn = document.getElementById("notificationBtn");
+    const notificationBtn =
+        document.getElementById("notificationBtn");
 
     if (!notificationBtn) return;
 
-    function butonAktif() {
+    function aktif() {
+
         notificationBtn.classList.add("enabled");
-        notificationBtn.innerHTML = "✓ Bildirimler Açık";
+
+        notificationBtn.innerHTML =
+            "✓ Bildirimler Açık";
     }
 
-    function butonNormal() {
+    function pasif() {
+
         notificationBtn.classList.remove("enabled");
-        notificationBtn.innerHTML = "🔔 Bildirimleri Aç";
+
+        notificationBtn.innerHTML =
+            "🔔 Bildirimleri Aç";
     }
 
-    async function oneSignalBekle() {
+    notificationBtn.addEventListener("click", function () {
 
-        for (let i = 0; i < 30; i++) {
+        window.OneSignalDeferred =
+            window.OneSignalDeferred || [];
 
-            if (window.OneSignal) {
-                return true;
-            }
+        OneSignalDeferred.push(async function(OneSignal) {
 
-            await new Promise(resolve => setTimeout(resolve, 500));
-        }
+            try {
 
-        return false;
-    }
+                notificationBtn.disabled = true;
 
-    async function durumKontrol() {
+                notificationBtn.innerHTML =
+                    "⏳ İzin isteniyor...";
 
-        const hazir = await oneSignalBekle();
-
-        if (!hazir) {
-            console.log("OneSignal yüklenemedi.");
-            return;
-        }
-
-        try {
-
-            const optedIn =
-                OneSignal.User.PushSubscription.optedIn;
-
-            if (optedIn) {
-                butonAktif();
-            } else {
-                butonNormal();
-            }
-
-        } catch (error) {
-            console.error("Bildirim durumu:", error);
-        }
-    }
-
-    notificationBtn.addEventListener("click", async function () {
-
-        notificationBtn.disabled = true;
-        notificationBtn.innerHTML = "⏳ Yükleniyor...";
-
-        try {
-
-            const hazir = await oneSignalBekle();
-
-            if (!hazir) {
-
-                alert(
-                    "Bildirim sistemi yüklenemedi. Sayfayı yenileyip tekrar deneyin."
+                console.log(
+                    "OneSignal hazır."
                 );
 
-                butonNormal();
-                return;
+                const izin =
+                    await OneSignal.Notifications.requestPermission();
+
+                console.log(
+                    "Bildirim izni:",
+                    izin
+                );
+
+                if (izin === true) {
+
+                    await OneSignal.User.PushSubscription.optIn();
+
+                    aktif();
+
+                    console.log(
+                        "Bildirim aboneliği aktif."
+                    );
+
+                } else {
+
+                    pasif();
+
+                    alert(
+                        "Bildirim izni verilmedi."
+                    );
+                }
+
+            } catch (error) {
+
+                console.error(
+                    "OneSignal HATASI:",
+                    error
+                );
+
+                pasif();
+
+                alert(
+                    "Bildirim sistemi çalışmadı. Tarayıcı bildirim iznini kontrol edin."
+                );
+
+            } finally {
+
+                notificationBtn.disabled = false;
+
             }
 
-            const optedIn =
-                OneSignal.User.PushSubscription.optedIn;
-
-            if (optedIn) {
-
-                butonAktif();
-                return;
-            }
-
-            await OneSignal.Notifications.requestPermission();
-
-            await OneSignal.User.PushSubscription.optIn();
-
-            butonAktif();
-
-        } catch (error) {
-
-            console.error(
-                "OneSignal bildirim hatası:",
-                error
-            );
-
-            alert(
-                "Bildirim izni verilemedi. Tarayıcı ayarlarından bildirim iznini kontrol edin."
-            );
-
-            butonNormal();
-
-        } finally {
-
-            notificationBtn.disabled = false;
-
-        }
+        });
 
     });
-
-    durumKontrol();
 
 });
