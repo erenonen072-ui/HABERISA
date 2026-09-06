@@ -147,7 +147,7 @@ const haberler = [
 
     tarih: "6 Eylül 2026",
     saat: "11:17",
-    gorsel: "images/ChatGPT Image 6 Eyl 2026 19_44_18.pngEyl 2026 19_46_53.png ",
+    gorsel: "images/ChatGPT Image 6 Eyl 2026 19_44_18.png",
     kaynak: "HABERİSTA"
 },
 
@@ -343,7 +343,7 @@ const haberler = [
 
     tarih: "6 Eylül 2026",
     saat: "10:23",
-    gorsel: "images/",
+    gorsel: "images/ChatGPT Image 6 Eyl 2026 19_46_53.png",
     kaynak: "HABERİSTA"
 },
 
