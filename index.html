@@ -23,6 +23,35 @@
     >
 
     <link rel="stylesheet" href="css/style.css">
+
+
+    <!-- Diğer head kodların -->
+
+    <script
+      src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js"
+      defer>
+    </script>
+
+    <script>
+      window.OneSignalDeferred = window.OneSignalDeferred || [];
+
+      OneSignalDeferred.push(async function(OneSignal) {
+
+        await OneSignal.init({
+          appId: "7d85b114-8807-4eea-8a34-3518fc2d76e3",
+
+          safari_web_id:
+            "web.onesignal.auto.6a2e4cfc-4f7f-4e0a-b787-2d0bd3e78806",
+
+          notifyButton: {
+            enable: true
+          }
+        });
+
+      });
+    </script>
+
+
 </head>
 
 <body>
