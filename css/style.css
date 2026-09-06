@@ -3685,3 +3685,66 @@ body {
         display: none;
     }
 }
+/* =========================================================
+   HABERİSTA - SOSYAL MEDYA
+========================================================= */
+
+.footer-social h4 {
+    margin-bottom: 14px;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+
+    padding: 8px 11px;
+
+    color: #bfc2c8;
+    text-decoration: none;
+
+    border-radius: 7px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    transition:
+        background .2s ease,
+        color .2s ease,
+        transform .2s ease;
+}
+
+.social-links a:hover {
+    background: #e30613;
+    color: #fff;
+    transform: translateX(4px);
+}
+
+
+/* MOBİL */
+
+@media (max-width: 600px) {
+
+    .footer-social {
+        margin-top: 5px;
+    }
+
+    .social-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+
+    .social-links a {
+        background: #202227;
+        padding: 8px 10px;
+        font-size: 11px;
+    }
+
+}
