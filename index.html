@@ -26,7 +26,6 @@
 
 
     <!-- Diğer head kodların -->
-<!-- OneSignal -->
 <script
     src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js"
     defer>
@@ -35,7 +34,7 @@
 <script>
     window.OneSignalDeferred = window.OneSignalDeferred || [];
 
-    OneSignalDeferred.push(async function (OneSignal) {
+    OneSignalDeferred.push(async function(OneSignal) {
 
         await OneSignal.init({
             appId: "7d85b114-8807-4eea-8a34-3518fc2d76e3",
@@ -48,8 +47,11 @@
             }
         });
 
+        console.log("OneSignal başarıyla başlatıldı.");
+
     });
 </script>
+
    
     
 
