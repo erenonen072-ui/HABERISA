@@ -1514,121 +1514,115 @@ document.addEventListener(
 /* =========================================================
    HABERİSTA - ONESIGNAL PROFESYONEL BİLDİRİM BUTONU
 ========================================================= */
-
 document.addEventListener("DOMContentLoaded", function () {
 
-    const notificationBtn =
-        document.getElementById("notificationBtn");
+    const notificationBtn = document.getElementById("notificationBtn");
 
     if (!notificationBtn) return;
 
-
     function butonAktif() {
-
         notificationBtn.classList.add("enabled");
-
-        notificationBtn.querySelector(".notification-icon").textContent = "✓";
-
-        notificationBtn.querySelector(".notification-text").textContent =
-            "Bildirimler Açık";
+        notificationBtn.innerHTML = "✓ Bildirimler Açık";
     }
-
 
     function butonNormal() {
-
         notificationBtn.classList.remove("enabled");
-
-        notificationBtn.querySelector(".notification-icon").textContent = "🔔";
-
-        notificationBtn.querySelector(".notification-text").textContent =
-            "Bildirimleri Aç";
+        notificationBtn.innerHTML = "🔔 Bildirimleri Aç";
     }
 
+    async function oneSignalBekle() {
+
+        for (let i = 0; i < 30; i++) {
+
+            if (window.OneSignal) {
+                return true;
+            }
+
+            await new Promise(resolve => setTimeout(resolve, 500));
+        }
+
+        return false;
+    }
 
     async function durumKontrol() {
 
+        const hazir = await oneSignalBekle();
+
+        if (!hazir) {
+            console.log("OneSignal yüklenemedi.");
+            return;
+        }
+
         try {
-
-            await new Promise(function(resolve) {
-                setTimeout(resolve, 1000);
-            });
-
-            if (!window.OneSignal) return;
 
             const optedIn =
                 OneSignal.User.PushSubscription.optedIn;
 
             if (optedIn) {
-
                 butonAktif();
-
             } else {
-
                 butonNormal();
-
             }
 
         } catch (error) {
-
-            console.log(
-                "OneSignal durum kontrolü:",
-                error
-            );
-
+            console.error("Bildirim durumu:", error);
         }
     }
 
-
     notificationBtn.addEventListener("click", async function () {
+
+        notificationBtn.disabled = true;
+        notificationBtn.innerHTML = "⏳ Yükleniyor...";
 
         try {
 
-            if (!window.OneSignal) {
+            const hazir = await oneSignalBekle();
+
+            if (!hazir) {
 
                 alert(
-                    "Bildirim sistemi henüz yüklenmedi. Lütfen birkaç saniye sonra tekrar deneyin."
+                    "Bildirim sistemi yüklenemedi. Sayfayı yenileyip tekrar deneyin."
                 );
 
+                butonNormal();
                 return;
             }
-
 
             const optedIn =
                 OneSignal.User.PushSubscription.optedIn;
 
-
             if (optedIn) {
 
                 butonAktif();
-
                 return;
             }
 
-
             await OneSignal.Notifications.requestPermission();
-
 
             await OneSignal.User.PushSubscription.optIn();
 
-
             butonAktif();
-
 
         } catch (error) {
 
             console.error(
-                "Bildirim aboneliği başarısız:",
+                "OneSignal bildirim hatası:",
                 error
             );
 
             alert(
-                "Bildirim izni verilemedi. Tarayıcı bildirim izinlerinizi kontrol edin."
+                "Bildirim izni verilemedi. Tarayıcı ayarlarından bildirim iznini kontrol edin."
             );
+
+            butonNormal();
+
+        } finally {
+
+            notificationBtn.disabled = false;
 
         }
 
     });
-
 
     durumKontrol();
 
