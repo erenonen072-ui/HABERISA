@@ -1,53 +1,34 @@
 "use strict";
 
-
-/* =========================================================
-   HABERİSTA SHORTS VİDEOLARI
-========================================================= */
-
 const shorts = [
 
     {
         id: 1,
-
         video: "videos/sel-uyarisi.mp4",
-
         kategori: "Gündem",
-
         baslik: "4 il için sel ve heyelan uyarısı",
-
-        haberLink: "#"
+        haberLink: "haber.html?id=11"
     },
-
 
     {
         id: 2,
-
         video: "videos/istanbul-yagmur.mp4",
-
         kategori: "Gündem",
-
         baslik: "İstanbul'da yağış etkili oluyor",
-
-        haberLink: "#"
+        haberLink: "haber.html?id=12"
     }
 
 ];
 
 
-/* =========================================================
-   SHORTS OLUŞTUR
-========================================================= */
-
 const container = document.getElementById("shortsContainer");
 
 
-shorts.forEach((short) => {
+shorts.forEach(short => {
 
     const card = document.createElement("article");
 
     card.className = "short-card";
-
 
     card.innerHTML = `
 
@@ -56,12 +37,14 @@ shorts.forEach((short) => {
             playsinline
             preload="metadata"
         >
+
             <source
                 src="${short.video}"
                 type="video/mp4"
             >
 
             Tarayıcınız videoyu desteklemiyor.
+
         </video>
 
 
@@ -85,7 +68,6 @@ shorts.forEach((short) => {
         </div>
 
     `;
-
 
     container.appendChild(card);
 
