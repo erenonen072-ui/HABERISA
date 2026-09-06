@@ -2,6 +2,7 @@
 
 /* =========================================================
    HABERİSTA - HABER VERİTABANI
+   6 EYLÜL 2026
 ========================================================= */
 
 
@@ -10,91 +11,99 @@
 ========================================================= */
 
 function slugOlustur(metin) {
-
     return String(metin || "")
-
         .toLocaleLowerCase("tr-TR")
-
         .replace(/ğ/g, "g")
         .replace(/ü/g, "u")
         .replace(/ş/g, "s")
         .replace(/ı/g, "i")
         .replace(/ö/g, "o")
         .replace(/ç/g, "c")
-
         .replace(/â/g, "a")
         .replace(/î/g, "i")
         .replace(/û/g, "u")
-
         .replace(/[^a-z0-9\s-]/g, "")
-
         .trim()
-
         .replace(/\s+/g, "-")
-
         .replace(/-+/g, "-")
-
         .replace(/^-+|-+$/g, "");
 }
 
 
 /* =========================================================
-   HABERİSTA
-   6 EYLÜL 2026 - UZUN HABERLER
+   HABERLER
 ========================================================= */
 
-const yeniHaberler = [
+const haberler = [
 
     /* =====================================================
        1 - GÜNDEM
     ===================================================== */
+
     {
         id: 11,
         kategori: "Gündem",
         baslik: "4 il için sel ve heyelan uyarısı",
-        spot: "6 Eylül 2026 tarihinde bazı bölgelerde etkili olması beklenen yağışlar nedeniyle 4 il için sel ve heyelan uyarısı yapıldı. Yetkililer, vatandaşları özellikle kuvvetli yağış sırasında dikkatli olmaları konusunda uyardı.",
+
+        spot: "6 Eylül 2026'da bazı bölgelerde etkili olması beklenen yağışlar nedeniyle 4 il için sel ve heyelan uyarısı yapıldı. Yetkililer, vatandaşların kuvvetli yağış sırasında dikkatli olması gerektiğini belirtti.",
+
         icerik: `
-            Türkiye'nin bazı bölgelerinde etkili olması beklenen yağışlı hava nedeniyle
-            vatandaşlara yönelik uyarılar gündeme geldi. Meteorolojik değerlendirmelerde
-            yağışların bazı bölgelerde yerel olarak kuvvetlenebileceği belirtilirken,
-            özellikle sel ve heyelan riski bulunan alanlarda yaşayan vatandaşların
-            dikkatli olması istendi.
+            Türkiye'nin bazı bölgelerinde etkili olması beklenen yağışlı hava
+            nedeniyle vatandaşlara yönelik uyarılar gündeme geldi. Meteorolojik
+            değerlendirmelerde bazı bölgelerde yağışların yerel olarak kuvvetlenebileceği
+            belirtilirken, özellikle sel ve heyelan riski bulunan alanlarda yaşayan
+            vatandaşların dikkatli olması istendi.
 
-            6 Eylül Pazar günü itibarıyla hava durumundaki değişiklikler özellikle
-            ulaşım, tarım ve günlük yaşam açısından yakından takip ediliyor. Kısa sürede
-            etkili olan kuvvetli yağışlar, şehir merkezlerinde su birikintilerine,
-            kırsal bölgelerde ise ulaşım sorunlarına neden olabiliyor.
+            6 Eylül Pazar günü itibarıyla hava durumundaki değişiklikler ulaşım,
+            tarım ve günlük yaşam açısından yakından takip ediliyor. Kısa süre
+            içerisinde etkili olan kuvvetli yağışlar şehir merkezlerinde su
+            birikintilerine, kırsal bölgelerde ise ulaşım sorunlarına neden
+            olabiliyor.
 
-            Yetkililer tarafından yapılan değerlendirmelerde vatandaşların meteorolojik
-            uyarıları takip etmeleri ve zorunlu olmadıkça riskli bölgelerde bulunmamaları
-            gerektiği vurgulanıyor. Özellikle dere yatakları, su kanalları, eğimli araziler
-            ve daha önce heyelan yaşanan bölgeler için ekstra dikkat çağrısı yapılıyor.
+            Yetkililer tarafından yapılan değerlendirmelerde vatandaşların
+            meteorolojik uyarıları takip etmeleri ve zorunlu olmadıkça riskli
+            bölgelerde bulunmamaları gerektiği vurgulanıyor.
 
-            Uzmanlara göre son yıllarda kısa süre içerisinde yüksek miktarda yağış
-            bırakabilen hava sistemleri, özellikle altyapının yetersiz olduğu bölgelerde
-            ani su baskınlarına yol açabiliyor. Bu nedenle yağış sırasında araç kullanacak
-            vatandaşların da güzergahlarını dikkatli seçmeleri önem taşıyor.
+            Özellikle dere yatakları, su kanalları, eğimli araziler ve daha
+            önce heyelan yaşanan bölgeler için ekstra dikkat çağrısı yapılıyor.
 
-            SEL VE SU BASKINI RİSKİ
+            SEL RİSKİ ARTIYOR
 
-            Kuvvetli yağış sırasında suyun hızlı şekilde yükselmesi özellikle dere
-            yatakları ve alçak bölgelerde risk oluşturabiliyor. Vatandaşların yağış
-            sırasında araçlarını su birikintilerinin bulunduğu alanlarda bırakmamaları,
-            mümkün olduğunca güvenli ve yüksek noktalarda bulunmaları tavsiye ediliyor.
+            Kuvvetli yağış sırasında kısa süre içerisinde büyük miktarda suyun
+            birikmesi özellikle alçak bölgelerde ani su baskınlarına yol açabiliyor.
+            Bu nedenle vatandaşların yağış sırasında dere yataklarından ve suyun
+            hızla birikebileceği bölgelerden uzak durması önem taşıyor.
 
-            HEYELAN RİSKİNE DİKKAT
+            Araç sürücülerinin de suyla kaplanan yollarda ilerlemeye çalışmaması
+            gerektiği belirtiliyor. Su seviyesinin aracın güvenli geçiş sınırını
+            aşması durumunda sürücülerin alternatif güzergahları tercih etmesi
+            gerekiyor.
 
-            Yağışın uzun süre devam ettiği eğimli bölgelerde toprak hareketleri
-            meydana gelebiliyor. Bu nedenle yamaç ve dağlık alanlarda bulunan yolların
-            kullanılması sırasında dikkatli olunması gerekiyor.
+            HEYELAN TEHLİKESİ
 
-            Yetkililer, hava koşullarının bölgeden bölgeye değişebileceğini belirterek
-            vatandaşların resmi kurumlardan yapılan güncel açıklamaları takip etmelerini
-            öneriyor.
+            Yağışların uzun süre devam ettiği eğimli bölgelerde toprağın
+            hareket etmesi heyelan riskini artırabiliyor. Özellikle dağlık
+            bölgelerdeki yolların kullanılması sırasında dikkatli olunması
+            gerektiği belirtiliyor.
 
-            HABERİSTA olarak gelişmeleri ve hava koşullarına ilişkin yeni uyarıları
-            takip ediyoruz. Yeni bir uyarı yapılması halinde haberimiz güncellenecektir.
+            Uzmanlar, vatandaşların hava durumuna ilişkin resmi uyarıları
+            takip etmelerini ve sosyal medyada doğrulanmamış bilgilere
+            itibar etmemelerini öneriyor.
+
+            HAVA DURUMU TAKİP EDİLİYOR
+
+            Yağışların etkisinin bölgeden bölgeye değişebileceği belirtilirken,
+            gün içerisinde yeni meteorolojik uyarıların yapılabileceği ifade
+            ediliyor.
+
+            Vatandaşların seyahat planlarını hava koşullarını dikkate alarak
+            yapması, özellikle uzun yola çıkacak kişilerin güzergahlarını
+            önceden kontrol etmesi önem taşıyor.
+
+            HABERİSTA olarak hava koşullarına ilişkin gelişmeleri ve resmi
+            açıklamaları takip ediyoruz.
         `,
+
         tarih: "6 Eylül 2026",
         saat: "12:10",
         gorsel: "images/SEL-HEYELAN.jpeg",
@@ -105,53 +114,74 @@ const yeniHaberler = [
     /* =====================================================
        2 - TÜRKİYE
     ===================================================== */
+
     {
         id: 12,
         kategori: "Türkiye",
         baslik: "Son depremler: AFAD ve Kandilli verileri güncellendi",
+
         spot: "Türkiye'de vatandaşların yakından takip ettiği son deprem verileri 6 Eylül itibarıyla güncellendi. Gün içerisinde farklı bölgelerde çeşitli büyüklüklerde sarsıntılar kaydedildi.",
+
         icerik: `
-            Türkiye'nin deprem kuşağında yer alması nedeniyle ülke genelinde meydana gelen
-            sarsıntılar vatandaşlar tarafından yakından takip ediliyor. AFAD ve Kandilli
-            Rasathanesi tarafından paylaşılan deprem verileri gün içerisinde düzenli olarak
-            kontrol ediliyor.
+            Türkiye'nin deprem kuşağında yer alması nedeniyle ülke genelinde
+            meydana gelen sarsıntılar vatandaşlar tarafından yakından takip
+            ediliyor.
 
-            6 Eylül 2026 itibarıyla Türkiye'nin farklı bölgelerinde çeşitli büyüklüklerde
-            depremler meydana gelirken, vatandaşların en çok merak ettiği konular arasında
-            sarsıntıların merkez üssü, büyüklüğü ve derinliği bulunuyor.
+            AFAD ve Kandilli Rasathanesi tarafından paylaşılan deprem verileri
+            gün içerisinde düzenli olarak kontrol ediliyor. Vatandaşlar meydana
+            gelen depremlerin merkez üssünü, büyüklüğünü ve derinliğini resmi
+            kaynaklardan öğrenmeye çalışıyor.
 
-            Deprem verileri resmi kurumların internet siteleri ve mobil uygulamaları
-            üzerinden vatandaşlarla paylaşılabiliyor. Özellikle sosyal medya üzerinden
-            yayılan doğrulanmamış bilgilerin aksine resmi kaynaklardan açıklanan verilerin
-            dikkate alınması önem taşıyor.
+            6 Eylül 2026 itibarıyla Türkiye'nin farklı bölgelerinde çeşitli
+            büyüklüklerde sarsıntılar kaydedilirken, özellikle deprem riski
+            bulunan bölgelerde yaşayan vatandaşların gelişmeleri yakından
+            takip ettiği görülüyor.
 
-            DEPREM SONRASI NE YAPILMALI?
+            RESMİ KAYNAKLAR ÖNEMLİ
 
-            Uzmanlar, deprem sırasında panik yapılmaması gerektiğini ve mümkün olduğunca
-            güvenli bir noktaya geçilmesini öneriyor. Bina içerisinde bulunan kişilerin
-            camlardan, balkonlardan ve devrilebilecek eşyalardan uzak durması önem taşıyor.
+            Deprem sonrasında sosyal medya platformlarında çok sayıda paylaşım
+            yapılabiliyor. Ancak bu paylaşımların tamamının doğru olmadığı
+            unutulmamalı.
 
-            Deprem sonrasında ise binanın güvenliği konusunda şüphe oluşması halinde
-            vatandaşların binaya tekrar girmemesi gerekiyor. Hasarlı binalardan uzak
-            durulması ve yetkililerin açıklamalarının takip edilmesi gerekiyor.
+            Uzmanlar, vatandaşların depremle ilgili bilgi edinirken AFAD ve
+            Kandilli Rasathanesi gibi resmi kaynakları takip etmesi gerektiğini
+            belirtiyor.
 
-            TÜRKİYE'DE DEPREM GERÇEĞİ
+            DEPREM SIRASINDA NE YAPILMALI?
 
-            Türkiye'nin farklı bölgelerinde aktif fay hatlarının bulunması nedeniyle
-            deprem riski uzun yıllardır ülkenin önemli gündem maddelerinden biri olarak
-            öne çıkıyor. Uzmanlar, deprem riskine karşı sadece deprem sonrasında değil,
-            deprem gerçekleşmeden önce de hazırlıklı olunması gerektiğini vurguluyor.
+            Deprem sırasında öncelikle panik yapılmaması gerekiyor. Bina içerisinde
+            bulunan kişilerin camlardan, balkonlardan ve devrilebilecek ağır
+            eşyalardan uzak durması önem taşıyor.
 
-            Evlerde ağır eşyaların sabitlenmesi, acil durum çantasının hazırlanması,
-            aile bireyleriyle toplanma alanının belirlenmesi ve acil durum iletişim
-            planının oluşturulması alınabilecek önlemler arasında yer alıyor.
+            Güvenli bir noktaya geçilmesi ve mümkün olduğunca baş ve boyun
+            bölgesinin korunması öneriliyor.
 
-            Vatandaşların güncel deprem bilgileri için AFAD ve Kandilli Rasathanesi gibi
-            resmi kaynakları takip etmesi öneriliyor.
+            Deprem sonrasında ise hasar meydana gelmiş olabilecek binalara
+            tekrar girilmemesi gerekiyor.
 
-            HABERİSTA olarak Türkiye'deki son deprem gelişmelerini ve resmi açıklamaları
-            takip etmeye devam ediyoruz.
+            DEPREME HAZIRLIK
+
+            Uzmanlara göre deprem hazırlığı yalnızca deprem meydana geldiğinde
+            yapılacaklardan ibaret değil. Evlerde ağır eşyaların sabitlenmesi,
+            acil durum çantasının hazırlanması ve aile bireyleriyle iletişim
+            planı oluşturulması da büyük önem taşıyor.
+
+            Vatandaşların yaşadıkları bölgelerdeki toplanma alanlarını önceden
+            öğrenmeleri de öneriliyor.
+
+            TÜRKİYE'DE DEPREM GÜNDEMİ
+
+            Türkiye'de farklı fay hatlarının bulunması nedeniyle deprem konusu
+            uzun yıllardır ülkenin önemli gündem maddeleri arasında yer alıyor.
+
+            Gün içerisinde meydana gelen her sarsıntı vatandaşların dikkatini
+            çekerken, uzmanlar küçük depremlerin tek başına büyük bir depremin
+            habercisi olarak değerlendirilmemesi gerektiğini vurguluyor.
+
+            HABERİSTA olarak Türkiye'deki deprem gelişmelerini ve resmi
+            açıklamaları takip etmeye devam ediyoruz.
         `,
+
         tarih: "6 Eylül 2026",
         saat: "11:55",
         gorsel: "images/DEPREM.jpeg",
@@ -162,189 +192,234 @@ const yeniHaberler = [
     /* =====================================================
        3 - EĞİTİM
     ===================================================== */
+
     {
         id: 13,
         kategori: "Eğitim",
         baslik: "2026 KPSS Lisans sınavı bugün yapılıyor",
-        spot: "2026-KPSS Lisans Genel Yetenek-Genel Kültür oturumu 6 Eylül Pazar günü gerçekleştirildi. Milyonlarca aday kamu personeli olabilmek için sınav merkezlerinde ter döktü.",
+
+        spot: "2026-KPSS Lisans Genel Yetenek-Genel Kültür oturumu 6 Eylül Pazar günü gerçekleştirildi. Binlerce aday kamu personeli olabilmek için sınav merkezlerinde ter döktü.",
+
         icerik: `
-            Kamu kurumlarında görev almak isteyen binlerce adayın uzun süredir hazırlandığı
-            2026-KPSS Lisans Genel Yetenek-Genel Kültür oturumu 6 Eylül Pazar günü
-            gerçekleştirildi.
+            Kamu kurumlarında görev almak isteyen adayların uzun süredir
+            hazırlandığı 2026-KPSS Lisans Genel Yetenek-Genel Kültür oturumu
+            6 Eylül Pazar günü gerçekleştirildi.
 
-            ÖSYM tarafından düzenlenen sınava Türkiye genelindeki sınav merkezlerinde
-            adaylar katıldı. Sınav öncesinde adaylar, sınav binalarının önünde yoğunluk
-            oluştururken görevliler de sınav sürecinin düzenli şekilde yürütülmesi için
-            gerekli hazırlıkları tamamladı.
+            ÖSYM tarafından düzenlenen sınav için Türkiye genelindeki sınav
+            merkezlerinde yoğunluk yaşandı.
 
-            2026-KPSS Lisans Genel Yetenek-Genel Kültür oturumuna 1 milyon 708 bin 329
-            adayın başvurduğu açıklandı. Adaylar sınavda Genel Yetenek ve Genel Kültür
-            testlerinden soruları yanıtladı. Sınav 120 sorudan oluşurken adaylara
-            130 dakika süre verildi. :contentReference[oaicite:2]{index=2}
+            Sabahın erken saatlerinden itibaren sınav binalarına gelen adaylar,
+            sınav saatinden önce salonlara giriş yaptı.
 
-            SINAVDA YOĞUNLUK
+            SINAVDA 120 SORU
 
-            Sınavın gerçekleştirildiği kentlerde sabah saatlerinden itibaren hareketlilik
-            yaşandı. Adaylar sınav saatinden önce sınav binalarına gelirken bazı bölgelerde
-            ulaşım yoğunluğu meydana geldi.
+            Genel Yetenek ve Genel Kültür oturumunda adaylara toplam 120 soru
+            yöneltildi ve sınav için 130 dakika süre verildi.
 
-            ÖSYM'nin sınav kuralları gereği adayların sınav binalarına belirlenen saatten
-            sonra alınmaması nedeniyle birçok aday sınav merkezlerine erken gelmeyi tercih etti.
+            Adaylar sınav boyunca Türkçe, matematik, tarih, coğrafya ve
+            vatandaşlık gibi alanlardan gelen soruları yanıtladı.
 
-            SINAV SONUÇLARI MERAK EDİLİYOR
+            SINAV MERKEZLERİNDE YOĞUNLUK
 
-            Sınavın tamamlanmasının ardından adayların en çok merak ettiği konu sonuçların
-            ne zaman açıklanacağı oldu. Adaylar ÖSYM'nin sonuç takvimini takip ederek
-            sonuçların açıklanacağı tarihi öğrenebilecek.
+            Türkiye'nin birçok kentinde sınav öncesinde ulaşım yoğunluğu
+            yaşandı. Adaylar sınava geç kalmamak için sınav merkezlerine
+            erken saatlerde geldi.
 
-            KPSS puanı, kamu kurumlarında yapılacak çeşitli personel alımlarında adayların
-            değerlendirilmesinde kullanılan önemli kriterlerden biri olarak öne çıkıyor.
+            Sınav kuralları gereği belirlenen saatten sonra sınav binalarına
+            giriş yapılamaması nedeniyle adaylar sınav saatlerine özellikle
+            dikkat etti.
 
-            SINAV SONRASI SÜREÇ
+            SORULAR VE CEVAP ANAHTARI
 
-            Sınavın tamamlanmasıyla birlikte adaylar artık sonuç ve tercih dönemine
-            odaklanacak. Alınacak puanların ardından ilgili kamu kurumlarının ilanları
-            takip edilecek.
+            Sınavın ardından adayların en çok merak ettiği konulardan biri
+            soru kitapçığı ve cevap anahtarının ne zaman yayımlanacağı oldu.
 
-            Adayların tercih döneminde puanlarının yanı sıra başvuru şartlarını,
-            mezuniyet durumlarını ve kadroların özel koşullarını dikkatli şekilde
-            incelemesi gerekiyor.
+            ÖSYM'nin yayımlayacağı resmi soru ve cevap anahtarları üzerinden
+            adaylar sınav performanslarını değerlendirebilecek.
 
-            ÖSYM tarafından yayımlanan soru kitapçığı ve cevap anahtarının ardından
-            adaylar kendi performanslarını da değerlendirme fırsatı buldu. :contentReference[oaicite:3]{index=3}
+            SONUÇLAR BEKLENİYOR
 
-            HABERİSTA olarak KPSS sonuçları ve tercih sürecine ilişkin gelişmeleri
-            takip etmeye devam edeceğiz.
+            Sınavın tamamlanmasının ardından adayların gözü sonuç takvimine
+            çevrildi.
+
+            KPSS puanları kamu kurum ve kuruluşlarının çeşitli personel
+            alımlarında önemli bir değerlendirme kriteri olarak kullanılıyor.
+
+            Adaylar sonuçların açıklanmasının ardından tercih ve başvuru
+            süreçlerini takip edecek.
+
+            TERCİH DÖNEMİ ÖNEMLİ
+
+            KPSS puanı alan adayların yalnızca puanlarına değil, başvuracakları
+            kadroların özel şartlarına da dikkat etmesi gerekiyor.
+
+            Mezuniyet şartları, yaş şartları ve diğer özel koşullar tercih
+            sürecinde önem taşıyor.
+
+            HABERİSTA Eğitim Servisi olarak KPSS sonuçları ve kamu personeli
+            alımlarına ilişkin gelişmeleri takip ediyoruz.
         `,
+
         tarih: "6 Eylül 2026",
         saat: "10:15",
         gorsel: "images/KPSS-LISANS.jpeg",
-        kaynak: "ÖSYM / AA"
+        kaynak: "ÖSYM"
     },
 
 
     /* =====================================================
        4 - SPOR
     ===================================================== */
+
     {
         id: 14,
         kategori: "Spor",
         baslik: "Beşiktaş derbide Fenerbahçe'yi 2-1 mağlup etti",
-        spot: "Trendyol Süper Lig'in 4. haftasındaki dev derbide Beşiktaş, deplasmanda Fenerbahçe'yi 2-1 mağlup ederek önemli bir galibiyete imza attı.",
+
+        spot: "Trendyol Süper Lig'in 4. haftasındaki dev derbide Beşiktaş, Fenerbahçe'yi deplasmanda 2-1 mağlup ederek üç puanın sahibi oldu.",
+
         icerik: `
-            Trendyol Süper Lig'in 4. haftası dev bir derbiye sahne oldu. Fenerbahçe ile
-            Beşiktaş, Kadıköy'de karşı karşıya geldi. Büyük mücadeleye sahne olan karşılaşmayı
-            Beşiktaş 2-1 kazanarak deplasmandan üç puanla ayrıldı.
+            Trendyol Süper Lig'in 4. haftasında futbolseverlerin büyük
+            heyecanla beklediği Fenerbahçe-Beşiktaş derbisi oynandı.
 
-            Karşılaşmada ilk gol Fenerbahçe'den geldi. Sarı-lacivertli takımın savunma
-            oyuncusu Milan Skriniar'ın attığı golle Fenerbahçe mücadelede 1-0 öne geçti.
+            Kadıköy'deki mücadelede iki takım da karşılaşmaya yüksek tempoyla
+            başladı. Tribünlerde büyük bir atmosferin oluştuğu maçta ilk gol
+            Fenerbahçe'den geldi.
 
-            Ancak Beşiktaş kısa süre içerisinde oyunun kontrolünü yeniden ele geçirdi.
-            Siyah-beyazlı ekip Rıdvan Yılmaz'ın golüyle skoru 1-1'e getirdi.
+            Milan Skriniar'ın golüyle sarı-lacivertli ekip karşılaşmada
+            1-0 öne geçti.
 
-            İkinci yarıda iki takım da galibiyet için önemli fırsatlar yakaladı.
-            Mücadelenin ilerleyen bölümünde Beşiktaş'ın yıldız oyuncusu Dusan Vlahovic
-            sahneye çıktı ve siyah-beyazlı ekibi 2-1 öne geçiren golü kaydetti.
+            BEŞİKTAŞ'TAN HIZLI CEVAP
 
-            Karşılaşmanın kalan bölümünde Fenerbahçe beraberlik golünü bulmak için
-            baskısını artırdı. Ancak Beşiktaş savunması skoru korumayı başardı.
+            Fenerbahçe'nin golünün ardından Beşiktaş oyunun kontrolünü
+            yeniden ele geçirmek için baskısını artırdı.
 
-            Son düdüğün ardından Beşiktaş sahadan 2-1 galip ayrıldı. Böylece siyah-beyazlı
-            ekip sezonun önemli deplasman maçlarından birinde üç puanı hanesine yazdırdı.
-            Maçın golleri ve skor bilgisi güncel spor kaynakları tarafından da doğrulandı.
-            :contentReference[oaicite:4]{index=4}
+            Siyah-beyazlı takımın çabaları sonuç verdi ve Rıdvan Yılmaz'ın
+            attığı golle skor 1-1'e geldi.
 
-            DERBİDE BÜYÜK HEYECAN
+            İlk yarının kalan bölümünde iki takım da üstünlük kurmak için
+            mücadele etti.
 
-            Karşılaşma boyunca iki takım taraftarları da takımlarına büyük destek verdi.
-            Kadıköy'deki atmosfer maçın önemini daha da artırırken, futbolcuların
-            mücadelesi tribünlerdeki heyecanı yükseltti.
+            İKİNCİ YARIDA HEYECAN ARTTI
 
-            Beşiktaş'ın geriye düştükten sonra maçı çevirmesi ise karşılaşmanın
-            dikkat çeken noktalarından biri oldu.
+            Karşılaşmanın ikinci yarısında tempo daha da yükseldi.
 
-            VLAHOVIC'TEN KRİTİK GOL
+            Fenerbahçe kendi sahasında yeniden öne geçmek için pozisyonlar
+            üretmeye çalışırken Beşiktaş hızlı hücumlarla rakip kalede
+            tehlike oluşturmaya başladı.
 
-            Siyah-beyazlı takım adına maçın en önemli anlarından biri Vlahovic'in
-            attığı gol oldu. Bu gol Beşiktaş'ı öne geçirirken karşılaşmanın sonucunu
-            da büyük ölçüde belirledi.
+            Mücadelenin ilerleyen dakikalarında Beşiktaş'ın yıldız oyuncusu
+            Dusan Vlahovic sahneye çıktı.
 
-            DERBİ SONRASI
+            VLAHOVIC SKORU DEĞİŞTİRDİ
 
-            Beşiktaş aldığı galibiyetle ligde önemli bir üç puanı hanesine yazdırırken,
-            Fenerbahçe kendi sahasında aldığı mağlubiyetin ardından önündeki maçlara
-            odaklanacak.
+            Vlahovic'in attığı gol Beşiktaş'ı 2-1 öne geçirdi.
 
-            Süper Lig'de sezonun ilerleyen haftalarında iki takımın alacağı sonuçlar
-            şampiyonluk yarışının ve üst sıralardaki mücadelenin şekillenmesinde
-            önemli rol oynayacak.
+            Golden sonra Fenerbahçe beraberlik golünü bulmak için baskısını
+            artırdı. Ancak Beşiktaş savunması karşılaşmanın son bölümünde
+            skor üstünlüğünü korumayı başardı.
 
-            HABERİSTA olarak Süper Lig'deki gelişmeleri, transfer haberlerini,
-            puan durumunu ve maç sonuçlarını takip etmeye devam ediyoruz.
+            DERBİDE SON DÜDÜK
+
+            Karşılaşmanın son düdüğüyle birlikte Beşiktaş sahadan
+            2-1 galip ayrıldı.
+
+            Siyah-beyazlı ekip deplasmanda aldığı bu önemli galibiyetle
+            üç puanı hanesine yazdırırken Fenerbahçe kendi sahasında
+            mağlubiyet yaşadı.
+
+            MAÇIN ÖNE ÇIKAN İSİMLERİ
+
+            Rıdvan Yılmaz ve Dusan Vlahovic Beşiktaş adına skora katkı
+            sağlayan oyuncular olurken, Fenerbahçe'nin golünü Milan
+            Skriniar kaydetti.
+
+            Karşılaşma sosyal medyada da büyük yankı oluşturdu.
+
+            SEZONUN GERİ KALANI
+
+            Süper Lig'de sezonun henüz başında oynanan derbinin ardından
+            iki takım da önündeki karşılaşmalara odaklanacak.
+
+            Beşiktaş bu galibiyetle moral kazanırken Fenerbahçe'nin önündeki
+            maçlarda nasıl bir reaksiyon göstereceği merak konusu oldu.
+
+            HABERİSTA Spor Servisi olarak Süper Lig'deki tüm gelişmeleri
+            takip ediyoruz.
         `,
+
         tarih: "6 Eylül 2026",
         saat: "00:20",
         gorsel: "images/BESIKTAS-FENERBAHCE.jpeg",
-        kaynak: "Spor kaynakları"
+        kaynak: "Spor Servisi"
     },
 
 
     /* =====================================================
        5 - EKONOMİ
     ===================================================== */
+
     {
         id: 15,
         kategori: "Ekonomi",
         baslik: "Altın fiyatlarında 6 Eylül hareketliliği",
-        spot: "Hafta sonuna girilirken yatırımcıların gözü gram, çeyrek ve diğer altın fiyatlarında. Küresel piyasalar ve döviz hareketleri altın yatırımcıları tarafından yakından izleniyor.",
+
+        spot: "Hafta sonuna girilirken yatırımcıların gözü gram, çeyrek, yarım ve Cumhuriyet altını fiyatlarında. Küresel piyasalardaki gelişmeler yakından takip ediliyor.",
+
         icerik: `
-            Altın piyasası, Türkiye'de yatırımcıların en fazla takip ettiği finansal
-            göstergeler arasında yer almaya devam ediyor. 6 Eylül 2026 itibarıyla
-            yatırımcıların gündeminde gram altın, çeyrek altın, yarım altın,
-            tam altın ve Cumhuriyet altını bulunuyor.
+            Altın piyasasında hareketlilik yatırımcıların gündemindeki yerini
+            koruyor. Türkiye'de özellikle gram altın ve çeyrek altın fiyatları
+            vatandaşlar tarafından yakından takip ediliyor.
 
-            Hafta sonlarında fiziki piyasalarda işlem yoğunluğu hafta içine kıyasla
-            farklılık gösterirken yatırımcılar yeni haftanın açılış fiyatlarını da
-            yakından takip ediyor.
+            6 Eylül 2026 itibarıyla yatırımcılar yeni haftaya girilirken
+            altın fiyatlarının nasıl şekilleneceğini merak ediyor.
 
-            Altın fiyatlarının Türkiye'deki seyri yalnızca ons altın fiyatına bağlı
-            değil. Dolar/TL kuru, küresel piyasalardaki gelişmeler, merkez bankalarının
-            para politikaları ve yatırımcıların risk iştahı da fiyatlar üzerinde etkili
-            olabiliyor.
+            Altının fiyatı yalnızca Türkiye'deki gelişmelerden etkilenmiyor.
+            Küresel piyasalarda ons altının seyri, doların değeri, merkez
+            bankalarının kararları ve ekonomik beklentiler de fiyat üzerinde
+            etkili olabiliyor.
 
-            GRAM ALTIN TAKİP EDİLİYOR
+            GRAM ALTIN İLGİ GÖRÜYOR
 
-            Türkiye'de özellikle gram altın küçük ve orta ölçekli yatırımcıların
-            yakından takip ettiği ürünlerden biri. Gün içerisinde oluşan fiyat
-            değişimleri nedeniyle yatırımcılar alış ve satış rakamlarını ayrı ayrı
-            değerlendiriyor.
+            Gram altın Türkiye'de en çok takip edilen yatırım araçlarından
+            biri olmaya devam ediyor.
 
-            Çeyrek altın ise özellikle fiziki altın talebinde önemli bir yere sahip.
-            Düğün sezonu, özel günler ve geleneksel yatırım alışkanlıkları nedeniyle
-            çeyrek altının fiyatı vatandaşlar tarafından günlük olarak kontrol ediliyor.
+            Gün içerisinde fiyatlarda meydana gelen değişimler yatırımcıların
+            alış ve satış rakamlarını ayrı ayrı takip etmesine neden oluyor.
+
+            ÇEYREK ALTIN DA GÜNDEMDE
+
+            Fiziki altın tarafında çeyrek altın da vatandaşların yakından
+            takip ettiği ürünler arasında bulunuyor.
+
+            Özellikle düğün sezonunda çeyrek altın fiyatları daha fazla
+            araştırılıyor.
 
             KÜRESEL PİYASALARIN ETKİSİ
 
-            Uluslararası piyasalarda altının ons fiyatında yaşanan hareketler Türkiye
-            piyasasında da hissedilebiliyor. Özellikle doların küresel değeri ve ABD
-            ekonomisine ilişkin gelişmeler altın fiyatlarının yönü açısından önem taşıyor.
+            ABD ekonomisine ilişkin veriler, faiz beklentileri ve merkez
+            bankalarının para politikaları altın piyasasının yönü açısından
+            önem taşıyor.
 
-            Uzmanlar altın fiyatlarını değerlendirirken sadece günlük hareketlere
-            bakılmaması gerektiğini, yatırım kararlarının kişisel risk durumu ve
-            yatırım süresi dikkate alınarak verilmesi gerektiğini belirtiyor.
+            Yatırımcıların riskten kaçınma eğiliminin arttığı dönemlerde
+            değerli metallere olan ilgi de değişebiliyor.
 
             YENİ HAFTA BEKLENİYOR
 
-            Piyasalar yeni haftaya hazırlanırken yatırımcılar altın fiyatlarının
-            nasıl bir seyir izleyeceğini merak ediyor.
+            Hafta sonu nedeniyle piyasalarda işlem koşulları hafta içine
+            göre farklılık gösterirken yatırımcılar yeni haftanın açılışını
+            yakından izleyecek.
 
-            Özellikle küresel ekonomik veriler, merkez bankalarından gelecek açıklamalar
-            ve döviz piyasasındaki hareketlilik altın tarafında yeni fiyatlamalara
-            neden olabilir.
+            Uzmanlar yatırım kararlarının yalnızca günlük fiyat hareketlerine
+            göre verilmemesi gerektiğini vurguluyor.
 
-            HABERİSTA Ekonomi Servisi olarak altın piyasasındaki gelişmeleri ve
-            haftanın ilk işlem günündeki fiyat hareketlerini takip ediyoruz.
+            Altın alım-satımı yapmak isteyen vatandaşların güncel fiyatları
+            ve işlem maliyetlerini ayrı ayrı değerlendirmesi önem taşıyor.
+
+            HABERİSTA Ekonomi Servisi olarak altın piyasasındaki gelişmeleri
+            takip ediyoruz.
         `,
+
         tarih: "6 Eylül 2026",
         saat: "09:30",
         gorsel: "images/ALTIN.jpeg",
@@ -355,53 +430,65 @@ const yeniHaberler = [
     /* =====================================================
        6 - EKONOMİ
     ===================================================== */
+
     {
         id: 16,
         kategori: "Ekonomi",
         baslik: "Akaryakıt fiyatları yeniden gündemde",
-        spot: "Benzin, motorin ve LPG fiyatları küresel petrol piyasası, döviz kuru ve vergi düzenlemeleri nedeniyle vatandaşların gündemindeki yerini koruyor.",
+
+        spot: "Benzin, motorin ve LPG fiyatları küresel petrol piyasaları, döviz kuru ve vergi düzenlemeleri nedeniyle vatandaşların gündemindeki yerini koruyor.",
+
         icerik: `
-            Türkiye'de milyonlarca araç sahibinin yakından takip ettiği akaryakıt
-            fiyatları yeniden gündemin önemli başlıkları arasında yer alıyor.
+            Türkiye'de milyonlarca araç sahibinin yakından takip ettiği
+            akaryakıt fiyatları gündemdeki yerini koruyor.
 
-            Benzin, motorin ve LPG fiyatlarında yaşanan değişiklikler özellikle araç
-            kullanan vatandaşların bütçesini doğrudan etkileyebiliyor. Bu nedenle
-            sürücüler istasyonlardaki fiyatları ve olası zam veya indirim haberlerini
-            yakından takip ediyor.
+            Benzin, motorin ve LPG fiyatları hem bireysel araç sahipleri
+            hem de ticari taşımacılık yapan işletmeler açısından büyük
+            önem taşıyor.
 
-            Akaryakıt fiyatlarının belirlenmesinde uluslararası petrol fiyatlarının
-            yanı sıra döviz kuru ve vergiler de önemli rol oynuyor. Küresel piyasalarda
-            petrol fiyatlarında meydana gelen değişiklikler belirli koşullarda
-            Türkiye'deki pompa fiyatlarına da yansıyabiliyor.
+            Akaryakıt fiyatlarının oluşmasında uluslararası petrol fiyatları,
+            döviz kuru ve vergiler önemli rol oynuyor.
 
-            BENZİN VE MOTORİN TAKİPTE
+            PETROL FİYATLARI TAKİPTE
 
-            Özellikle şehirler arası yolculuk yapan vatandaşlar açısından benzin
-            ve motorin fiyatları büyük önem taşıyor. Ticari araçlarda ise yakıt
-            maliyetleri işletme giderlerinin önemli bir bölümünü oluşturabiliyor.
+            Küresel enerji piyasalarında yaşanan gelişmeler petrol fiyatları
+            üzerinde doğrudan etkili olabiliyor.
 
-            Taşımacılık sektöründeki yakıt maliyetleri yalnızca araç sahiplerini
-            değil, ürünlerin lojistik maliyetlerini ve dolayısıyla bazı mal ve
-            hizmetlerin fiyatlarını da etkileyebiliyor.
+            Petrol fiyatlarında meydana gelen değişikliklerin yanı sıra
+            döviz kurundaki hareketlilik de Türkiye'deki akaryakıt
+            fiyatlarının takip edilmesine neden oluyor.
 
-            LPG KULLANANLAR DA FİYATLARI İZLİYOR
+            BENZİN VE MOTORİN
 
-            LPG'li araç kullanan vatandaşlar da istasyonlardaki güncel fiyatları
-            yakından takip ediyor. LPG fiyatları da diğer akaryakıt ürünlerinde
-            olduğu gibi piyasa koşullarından etkilenebiliyor.
+            Özellikle uzun yol yapan vatandaşlar için benzin ve motorin
+            fiyatlarındaki değişiklikler önemli bir maliyet oluşturuyor.
 
-            DÖVİZ VE PETROL PİYASASI ÖNEMLİ
+            Ticari araç kullanan işletmeler açısından ise yakıt maliyetleri
+            toplam işletme giderlerinin önemli bir bölümünü oluşturabiliyor.
 
-            Önümüzdeki dönemde petrol fiyatlarının seyri, küresel enerji piyasaları
-            ve döviz kurundaki hareketlilik akaryakıt fiyatları açısından önemli
-            başlıklar arasında olacak.
+            TAŞIMACILIK MALİYETLERİ
 
-            Vatandaşların fiyat değişiklikleri konusunda resmi açıklamaları ve
-            güvenilir piyasa kaynaklarını takip etmesi önem taşıyor.
+            Akaryakıt fiyatlarının yükselmesi yalnızca sürücüleri değil,
+            taşımacılık sektörünü de etkileyebiliyor.
 
-            HABERİSTA Ekonomi Servisi olarak benzin, motorin ve LPG fiyatlarında
-            meydana gelebilecek değişiklikleri takip etmeye devam ediyoruz.
+            Nakliye maliyetlerindeki değişiklikler bazı ürünlerin raf
+            fiyatlarına dolaylı olarak yansıyabiliyor.
+
+            LPG KULLANANLAR DA TAKİP EDİYOR
+
+            LPG'li araç kullanan vatandaşlar da istasyonlardaki güncel
+            fiyatları yakından takip ediyor.
+
+            Yeni haftada petrol piyasası ve döviz kurundaki hareketlilik
+            akaryakıt fiyatları açısından önem taşıyacak.
+
+            Vatandaşların olası zam veya indirim haberlerinde resmi ve
+            güvenilir kaynakları takip etmesi gerekiyor.
+
+            HABERİSTA Ekonomi Servisi olarak akaryakıt piyasasındaki
+            gelişmeleri takip ediyoruz.
         `,
+
         tarih: "6 Eylül 2026",
         saat: "09:10",
         gorsel: "images/AKARYAKIT.jpeg",
@@ -412,117 +499,146 @@ const yeniHaberler = [
     /* =====================================================
        7 - DÜNYA
     ===================================================== */
+
     {
         id: 17,
         kategori: "Dünya",
         baslik: "Rusya'da üniversitenin altında Nazi tankı bulundu",
-        spot: "Rusya'nın Kazan kentinde yürütülen çalışmalar sırasında II. Dünya Savaşı döneminden kalma Alman Panther V tankı bulundu. Tankın önemli bir bölümünün toprağın altında olduğu bildirildi.",
+
+        spot: "Rusya'nın Kazan kentinde yürütülen çalışmalar sırasında II. Dünya Savaşı döneminden kalma Alman Panther V tankı bulundu.",
+
         icerik: `
-            Rusya'nın Kazan kentinde yürütülen çalışmalar sırasında tarih meraklılarını
-            şaşırtan bir keşif yapıldı. Bir üniversite yerleşkesinde gerçekleştirilen
-            çalışmalar sırasında II. Dünya Savaşı döneminden kalma Alman yapımı
+            Rusya'nın Kazan kentinde yürütülen çalışmalar sırasında tarih
+            dünyasında dikkat çeken bir keşif gerçekleştirildi.
+
+            Bir üniversite yerleşkesinde yapılan çalışmalar sırasında
+            II. Dünya Savaşı döneminden kaldığı belirtilen Alman yapımı
             Panther V tankına ulaşıldı.
 
-            Tankın Kazan Ulusal Araştırma Teknoloji Üniversitesi'ndeki bir çalışma
-            sırasında ortaya çıkarıldığı bildirildi. Yapılan incelemelerde tankın
-            uzun süredir toprağın altında bulunduğu belirlendi.
+            Tankın önemli bir bölümünün uzun süredir toprağın altında
+            bulunduğu bildirildi.
 
-            Panther V, II. Dünya Savaşı döneminde Almanya tarafından kullanılan
-            önemli tank modellerinden biri olarak biliniyor. Savaş döneminden kalan
-            araçların günümüzde ortaya çıkarılması tarih araştırmaları açısından
-            büyük önem taşıyor.
+            TARİHİ ARAÇ TOPRAKTAN ÇIKARILDI
 
-            ÜNİVERSİTE ALANINDA TARİHİ KEŞİF
+            Çalışmalar sırasında ortaya çıkan metal parçalarının ardından
+            bölgede daha detaylı inceleme gerçekleştirildi.
 
-            Tankın üniversite yerleşkesindeki eski bir yeraltı yapısının bulunduğu
-            bölgede yapılan çalışmalar sırasında fark edildiği aktarıldı.
+            İncelemeler sonucunda ortaya çıkan yapının savaş döneminden
+            kalma bir tank olduğu belirlendi.
 
-            İnşaat çalışmaları sırasında ortaya çıkan metal parçalarının ardından
-            bölgede inceleme yapılmasıyla aracın bir tank olduğu anlaşıldı.
-            Tankın büyük bölümünün toprak altında bulunduğu bildirildi.
+            Panther tankları II. Dünya Savaşı sırasında Almanya tarafından
+            kullanılan önemli zırhlı araçlar arasında yer alıyordu.
 
-            Panther tankının ortaya çıkarılması yalnızca askeri tarih açısından
-            değil, bölgenin geçmişi açısından da dikkat çekici bir gelişme olarak
-            değerlendiriliyor.
+            KAZAN'DAKİ KEŞİF DİKKAT ÇEKTİ
 
-            TARİHİ ARAÇLARIN KORUNMASI
+            Tankın bir üniversite alanında bulunması keşfi daha da dikkat
+            çekici hale getirdi.
 
-            II. Dünya Savaşı döneminden kalan askeri araçlar, savaş tarihinin
-            araştırılması açısından önemli arşiv niteliği taşıyor. Bu araçların
-            korunması ve uygun koşullarda sergilenmesi, gelecek nesillerin geçmişi
-            daha iyi anlamasına yardımcı oluyor.
+            Tarihi araçların yıllar sonra toprağın altından çıkarılması,
+            bölgenin geçmişine ilişkin yeni araştırmalar yapılmasına
+            imkan sağlayabiliyor.
 
-            Kazan'daki tankın da uzmanlar tarafından detaylı şekilde incelenmesi
-            ve durumunun değerlendirilmesi bekleniyor.
+            TARİHİ ESERLERİN KORUNMASI
 
-            Keşif, Rusya'da ve uluslararası basında da dikkat çeken tarih haberleri
-            arasında yer aldı. Tankın Kazan'daki bir üniversitenin altında ortaya
-            çıkarıldığı farklı kaynaklar tarafından da aktarıldı. :contentReference[oaicite:5]{index=5}
+            Savaş döneminden kalan askeri araçların korunması tarih
+            araştırmaları açısından büyük önem taşıyor.
 
-            HABERİSTA olarak tarihi keşifle ilgili yeni gelişmeleri takip ediyoruz.
+            Uzmanların araç üzerinde yapacağı incelemeler tankın geçmişi,
+            bulunduğu bölge ve nasıl toprağın altında kaldığı konusunda
+            daha fazla bilgi sağlayabilir.
+
+            II. DÜNYA SAVAŞI'NIN İZLERİ
+
+            II. Dünya Savaşı'ndan onlarca yıl sonra bile farklı ülkelerde
+            savaş dönemine ait araç ve kalıntılara rastlanabiliyor.
+
+            Bu tür keşifler askeri tarih, arkeoloji ve bölgesel tarih
+            araştırmaları açısından önemli kabul ediliyor.
+
+            Kazan'daki tankın da uzmanlar tarafından incelenmesi ve
+            gelecekte sergilenip sergilenmeyeceğinin değerlendirilmesi
+            bekleniyor.
+
+            HABERİSTA Dünya Servisi olarak gelişmeleri takip ediyoruz.
         `,
+
         tarih: "6 Eylül 2026",
         saat: "08:45",
         gorsel: "images/PANTHER-TANK.jpeg",
-        kaynak: "Dünya basını"
+        kaynak: "Dünya Servisi"
     },
 
 
     /* =====================================================
        8 - SPOR
     ===================================================== */
+
     {
         id: 18,
         kategori: "Spor",
         baslik: "MXGP şampiyonu Afyon'da belli oluyor",
+
         spot: "Dünya Motokros Şampiyonası'nın 2026 sezonundaki önemli duraklarından MXGP Türkiye'de final yarışları 6 Eylül Pazar günü Afyonkarahisar'da gerçekleştiriliyor.",
+
         icerik: `
-            Dünya Motokros Şampiyonası'nın 2026 sezonundaki önemli etaplarından biri
-            olan MXGP Türkiye'de büyük heyecan yaşanıyor. Organizasyonun final günü
-            6 Eylül Pazar günü Afyonkarahisar'da gerçekleştiriliyor.
+            Dünya Motokros Şampiyonası'nın önemli etaplarından biri olan
+            MXGP Türkiye'de heyecan doruğa ulaştı.
 
-            Dünyanın en iyi motokros sporcularının mücadele ettiği organizasyon,
-            Afyonkarahisar Motor Sporları Merkezi'nde düzenleniyor. Türkiye etabı
-            hem sporcular hem de motor sporları tutkunları açısından sezonun
-            önemli organizasyonlarından biri olarak öne çıkıyor.
+            2026 sezonundaki önemli yarışlardan biri Afyonkarahisar'da
+            düzenlenirken, dünyanın farklı ülkelerinden gelen sporcular
+            zorlu parkurda mücadele ediyor.
 
-            MXGP Türkiye'nin Afyonkarahisar'daki organizasyonunda farklı kategorilerde
-            yarışlar gerçekleştiriliyor. MXGP'nin yanı sıra MX2 ve diğer destek
-            kategorilerinde de sporcular piste çıkıyor.
+            6 Eylül Pazar günü gerçekleştirilen final yarışları motor
+            sporları tutkunlarının dikkatini Afyonkarahisar'a çevirdi.
+
+            AFYONKARAHİSAR'DA BÜYÜK YARIŞ
+
+            Afyonkarahisar Motor Sporları Merkezi, uluslararası seviyedeki
+            yarışlara ev sahipliği yapmasıyla Türkiye'nin önemli motor
+            sporları merkezlerinden biri haline geldi.
+
+            Parkurun farklı bölümleri sporcular için farklı zorluklar
+            oluşturuyor.
+
+            HIZ VE TEKNİK ÖNEMLİ
+
+            Motokros yarışlarında yalnızca yüksek hız değil, virajlarda
+            doğru çizginin seçilmesi, atlayışların doğru şekilde yapılması
+            ve motosiklet kontrolü de büyük önem taşıyor.
+
+            Pist koşullarının yarış boyunca değişmesi sporcuların
+            performansını etkileyebiliyor.
 
             ŞAMPİYONLUK MÜCADELESİ
 
-            Sezonun son yarışlarına yaklaşılması nedeniyle sporcular arasındaki
-            şampiyonluk mücadelesi büyük önem taşıyor. Her yarışta elde edilen
-            puanların sezon sonu sıralamasına etkisi bulunuyor.
+            Sezonun önemli yarışlarından biri olması nedeniyle
+            Afyonkarahisar'daki sonuçlar şampiyona puanları açısından
+            büyük önem taşıyor.
 
-            Afyonkarahisar'daki yarışlarda alınacak sonuçlar şampiyonluk mücadelesinin
-            kaderini belirleyebilecek önemli gelişmeler arasında bulunuyor.
+            Sporcular sezon boyunca elde ettikleri puanlarla genel
+            klasmanda üst sıralarda yer almak için mücadele ediyor.
 
-            AFYONKARAHİSAR MOTOR SPORLARI MERKEZİ
+            TÜRKİYE'DE MOTOR SPORLARI
 
-            Türkiye'nin önemli motor sporları tesislerinden biri olan Afyonkarahisar
-            Motor Sporları Merkezi, yıllardır uluslararası yarışlara ev sahipliği yapıyor.
+            MXGP Türkiye'nin düzenlenmesi ülkedeki motor sporlarına olan
+            ilgiyi artıran önemli organizasyonlardan biri olarak öne çıkıyor.
 
-            Parkur, yüksek hızlı bölümleri, virajları ve atlayışlarıyla sporculara
-            zorlu bir mücadele sunuyor. Yarış boyunca pistin durumu ve hava şartları
-            da sporcuların performansını etkileyebiliyor.
+            Yarışların yanı sıra organizasyon alanında farklı etkinlikler
+            de düzenlenebiliyor.
 
-            TÜRKİYE'DE MOTOR SPORLARINA İLGİ
+            MOTOR SPORLARI TUTKUNLARI PİSTTE
 
-            MXGP Türkiye'nin düzenlenmesi Türkiye'deki motor sporları kültürünün
-            gelişmesine de katkı sağlıyor. Organizasyon kapsamında yarışların yanı
-            sıra çeşitli etkinlikler ve festival programları da gerçekleştiriliyor.
+            Yarışları takip etmek için Afyonkarahisar'a gelen motor
+            sporları tutkunları hafta sonu boyunca büyük heyecana ortak
+            oluyor.
 
-            Türkiye'nin MXGP etabının 2026 takviminde Afyonkarahisar'da düzenlendiği
-            resmi ve yerel kaynaklarda yer alıyor. :contentReference[oaicite:6]{index=6}
+            Final yarışlarının ardından sezon sıralamasında oluşacak
+            tablo motor sporları dünyasında yakından takip edilecek.
 
-            Şampiyonluk yarışının sonucu motor sporları dünyasında yakından takip
-            ediliyor.
-
-            HABERİSTA Spor Servisi olarak MXGP Türkiye'deki gelişmeleri ve yarış
-            sonuçlarını takip ediyoruz.
+            HABERİSTA Spor Servisi olarak MXGP Türkiye'deki gelişmeleri
+            takip ediyoruz.
         `,
+
         tarih: "6 Eylül 2026",
         saat: "08:30",
         gorsel: "images/MXGP-AFYON.jpeg",
@@ -533,59 +649,72 @@ const yeniHaberler = [
     /* =====================================================
        9 - DÜNYA
     ===================================================== */
+
     {
         id: 19,
         kategori: "Dünya",
         baslik: "Avrupa seyahatlerinde sınır kontrollerinde yeni dönem",
-        spot: "Avrupa'ya seyahat edenleri ilgilendiren EES sınır kontrol sistemiyle birlikte Avrupa'nın dış sınırlarında biyometrik verilerin kullanımına dayalı yeni bir dönem başlıyor.",
+
+        spot: "Avrupa'ya seyahat edenleri ilgilendiren EES sınır kontrol sisteminde yeni dönem başlıyor. Sistem kapsamında sınır geçişlerinde biyometrik kontrollerin kullanılması planlanıyor.",
+
         icerik: `
-            Avrupa'ya seyahat eden vatandaşları yakından ilgilendiren sınır kontrol
-            uygulamalarında yeni bir dönem gündemde. Avrupa Birliği'nin Entry/Exit
-            System olarak bilinen EES sistemi, Schengen bölgesinin dış sınırlarında
-            giriş ve çıkışların daha dijital şekilde takip edilmesini amaçlıyor.
+            Avrupa'ya seyahat eden vatandaşları yakından ilgilendiren
+            sınır kontrol uygulamalarında dijitalleşme süreci devam ediyor.
 
-            Sistem kapsamında geleneksel pasaport damgasının yerini elektronik
-            kayıtların alması ve sınır geçişlerinde biyometrik verilerin kullanılması
-            planlanıyor.
+            Avrupa Birliği'nin Entry/Exit System olarak bilinen EES
+            sistemi, Schengen bölgesinin dış sınırlarında giriş ve
+            çıkışların elektronik olarak takip edilmesini amaçlıyor.
 
-            Yeni sistem özellikle Avrupa Birliği dışından Schengen bölgesine seyahat
-            eden kişiler açısından önem taşıyor. Yolcuların sınır kapılarında daha
-            kapsamlı kontrollerden geçirilmesi ve seyahat bilgilerinin elektronik
-            ortamda kaydedilmesi hedefleniyor.
+            Sistem özellikle Avrupa Birliği dışından Schengen bölgesine
+            seyahat eden kişiler açısından önem taşıyor.
 
-            BİYOMETRİK KONTROL DÖNEMİ
+            PASAPORT DAMGASI DÖNEMİ DEĞİŞİYOR
 
-            EES kapsamında yolcuların kimlik bilgilerinin yanı sıra biyometrik
-            verilerinin de sisteme işlenmesi planlanıyor. Böylece sınır geçişlerinin
-            daha dijital ve merkezi şekilde takip edilmesi amaçlanıyor.
+            EES sisteminin uygulanmasıyla birlikte geleneksel pasaport
+            damgalarının yerini elektronik kayıtların alması hedefleniyor.
 
-            Avrupa'daki sınır kapılarında sistemin uygulanmaya başlamasıyla birlikte
-            ilk dönemlerde ek kontroller nedeniyle bazı noktalarda işlem sürelerinin
-            değişmesi mümkün olabilecek.
+            Böylece yolcuların Schengen bölgesine giriş ve çıkışlarının
+            merkezi bir sistem üzerinden takip edilmesi amaçlanıyor.
 
-            TÜRK VATANDAŞLARI İÇİN ÖNEMİ
+            BİYOMETRİK KONTROLLER
 
-            Avrupa'ya turistik amaçla, eğitim için, iş seyahati nedeniyle veya
-            farklı nedenlerle seyahat eden Türk vatandaşlarının yeni sınır kontrol
-            sistemindeki uygulamaları takip etmesi önem taşıyor.
+            Yeni sistem kapsamında yolcuların belirli biyometrik
+            bilgilerinin kullanılması planlanıyor.
 
-            Seyahat öncesinde pasaport geçerlilik süresi, vize durumu ve gidilecek
-            ülkenin güncel giriş koşullarının kontrol edilmesi gerekiyor.
+            Sınır kapılarında yapılacak kontrollerin daha dijital
+            hale getirilmesi ve kimlik doğrulama işlemlerinin
+            elektronik sistemlerle desteklenmesi hedefleniyor.
 
-            SINIR KAPLARINDA YENİ TEKNOLOJİ
+            TÜRKİYE'DEN AVRUPA'YA SEYAHAT EDENLER
 
-            Avrupa'nın sınır yönetiminde dijitalleşmenin artmasıyla birlikte
-            biyometrik sistemlerin daha fazla kullanılması bekleniyor. Amaç,
-            sınır geçişlerinin daha güvenli şekilde kayıt altına alınması ve
-            kişilerin Schengen bölgesindeki giriş-çıkışlarının elektronik olarak
-            takip edilmesi.
+            Avrupa ülkelerine turistik, eğitim, iş veya farklı
+            amaçlarla seyahat eden Türk vatandaşlarının yeni
+            uygulamaları takip etmesi önem taşıyor.
 
-            Sistemle ilgili uygulama ayrıntılarının ve geçiş takviminin ülkeler
-            tarafından duyurulması seyahat planlayanlar açısından önem taşıyor.
+            Seyahat öncesinde pasaport, vize ve gidilecek ülkenin
+            güncel giriş şartlarının kontrol edilmesi gerekiyor.
 
-            HABERİSTA Dünya Servisi olarak Avrupa'daki sınır uygulamalarına ilişkin
-            gelişmeleri takip ediyoruz.
+            SINIR KAPLARINDA YOĞUNLUK OLABİLİR
+
+            Yeni sistemin uygulanmaya başladığı dönemlerde sınır
+            kapılarında işlem sürelerinin değişmesi mümkün olabilir.
+
+            Özellikle yoğun seyahat dönemlerinde yolcuların sınır
+            kontrolleri için daha fazla zaman ayırması gerekebilir.
+
+            DİJİTAL SINIR DÖNEMİ
+
+            Avrupa'da sınır yönetiminin giderek daha fazla dijital
+            sistemlere taşınması bekleniyor.
+
+            Yeni sistemin temel hedefleri arasında sınır geçişlerinin
+            daha düzenli şekilde kayıt altına alınması ve güvenlik
+            kontrollerinin geliştirilmesi bulunuyor.
+
+            HABERİSTA Dünya Servisi olarak Avrupa'daki sınır
+            uygulamalarına ilişkin gelişmeleri takip ediyoruz.
         `,
+
         tarih: "6 Eylül 2026",
         saat: "08:15",
         gorsel: "images/EES-AVRUPA.jpeg",
@@ -596,86 +725,442 @@ const yeniHaberler = [
     /* =====================================================
        10 - SPOR
     ===================================================== */
+
     {
         id: 20,
         kategori: "Spor",
         baslik: "Filenin Sultanları için Avrupa Şampiyonası heyecanı",
-        spot: "A Milli Kadın Voleybol Takımı, 2026 CEV Kadınlar Avrupa Voleybol Şampiyonası finalinde İtalya ile karşılaşacak. Türkiye'nin şampiyonluk heyecanı İstanbul'da yaşanıyor.",
+
+        spot: "A Milli Kadın Voleybol Takımı, 2026 CEV Kadınlar Avrupa Voleybol Şampiyonası finalinde İtalya ile karşılaşacak. Şampiyonluk heyecanı İstanbul'da yaşanıyor.",
+
         icerik: `
-            A Milli Kadın Voleybol Takımı'nın Avrupa şampiyonluğu yolundaki mücadelesinde
-            artık final zamanı. Filenin Sultanları, 2026 CEV Trendyol Kadınlar Avrupa
-            Voleybol Şampiyonası finalinde İtalya ile karşı karşıya gelecek.
+            A Milli Kadın Voleybol Takımı'nın Avrupa şampiyonluğu yolundaki
+            mücadelesinde final heyecanı yaşanıyor.
 
-            Türkiye'nin de ev sahipleri arasında bulunduğu organizasyonda A Milli Kadın
-            Voleybol Takımı başarılı performansıyla finale yükseldi.
+            Filenin Sultanları, 2026 CEV Kadınlar Avrupa Voleybol
+            Şampiyonası finalinde İtalya ile karşı karşıya gelecek.
 
-            Filenin Sultanları yarı finalde Sırbistan karşısında etkili bir oyun ortaya
-            koyarak finale yükseldi. Türkiye'nin finale çıkmasının ardından gözler
-            İtalya ile oynanacak şampiyonluk maçına çevrildi. Türkiye Voleybol
-            Federasyonu da final rakibinin İtalya olduğunu duyurdu. :contentReference[oaicite:7]{index=7}
+            Türkiye'nin ev sahipleri arasında bulunduğu turnuvada
+            milli takımın finale yükselmesi büyük heyecan oluşturdu.
 
             FİNALDE RAKİP İTALYA
 
-            Avrupa şampiyonluğu için mücadele edecek iki takım da turnuvanın en
-            güçlü ekipleri arasında bulunuyor. Türkiye ile İtalya arasındaki final
-            mücadelesinin büyük bir voleybol heyecanına sahne olması bekleniyor.
+            Türkiye ile İtalya arasındaki final karşılaşması Avrupa
+            kadın voleybolunun iki önemli takımını karşı karşıya
+            getirecek.
 
-            Filenin Sultanları'nın kadrosunda yer alan oyuncular, turnuva boyunca
-            hücumdaki etkinlikleri ve savunmadaki mücadeleleriyle dikkat çekti.
+            İki takım da turnuva boyunca başarılı sonuçlar alarak
+            şampiyonluk maçına kadar yükseldi.
+
+            FİLENİN SULTANLARI'NIN YOLCULUĞU
+
+            A Milli Kadın Voleybol Takımı turnuva boyunca hücum,
+            blok ve savunmadaki performansıyla dikkat çekti.
+
+            Oyuncuların servis performansları ve savunmadaki
+            mücadeleleri de takımın finale ulaşmasında önemli rol oynadı.
 
             İSTANBUL'DA BÜYÜK HEYECAN
 
-            Final karşılaşmasının İstanbul'da oynanacak olması Türk voleybolseverler
-            açısından ayrı bir önem taşıyor. Milli takımın Avrupa şampiyonluğu
-            hedefiyle sahaya çıkacak olması nedeniyle karşılaşmaya yoğun ilgi
-            gösterilmesi bekleniyor.
+            Final maçının İstanbul'da oynanacak olması Türk
+            voleybolseverler için ayrıca önem taşıyor.
 
-            Türkiye'nin ev sahipleri arasında bulunduğu turnuvada milli takımın
-            finale kadar yükselmesi, organizasyonun Türkiye açısından önemini
-            daha da artırdı.
+            Milli takımın şampiyonluk hedefiyle sahaya çıkacak olması
+            nedeniyle karşılaşmaya büyük ilgi gösterilmesi bekleniyor.
 
-            AVRUPA ŞAMPİYONLUĞU HEDEFİ
+            ŞAMPİYONLUK HEDEFİ
 
-            Filenin Sultanları'nın hedefi Avrupa şampiyonluğuna ulaşmak. Milli takım
-            son yıllarda uluslararası turnuvalarda elde ettiği başarılarla Türkiye'de
-            voleybola olan ilgiyi de önemli ölçüde artırdı.
+            Filenin Sultanları'nın hedefi Avrupa Şampiyonası'nı
+            şampiyon tamamlamak.
 
-            Final karşılaşmasında oyuncuların servis, blok, hücum ve savunmadaki
-            performansı maçın sonucunu belirleyecek.
+            Türkiye kadın voleybolunda son yıllarda uluslararası
+            organizasyonlarda önemli başarılar elde ederek büyük
+            bir taraftar kitlesine ulaştı.
+
+            FİNALDE NELER BELİRLEYECEK?
+
+            Final karşılaşmasında servis kalitesi, blok savunması,
+            hücum verimliliği ve kritik sayılarda yapılan hatalar
+            maçın sonucunda belirleyici olabilir.
+
+            Özellikle uzun rallilerde savunma performansı ve
+            oyuncuların fiziksel dayanıklılığı önem taşıyacak.
 
             TÜRKİYE'NİN VOLEYBOL HEYECANI
 
-            Avrupa Şampiyonası boyunca milli takımın maçları Türkiye'de büyük ilgi
-            gördü. Sosyal medyada da Filenin Sultanları ile ilgili çok sayıda paylaşım
-            yapılırken taraftarlar final maçına odaklandı.
+            Turnuva boyunca milli takımın karşılaşmaları Türkiye'de
+            büyük ilgi gördü.
 
-            Türkiye ile İtalya arasındaki final karşılaşması, Avrupa kadın voleybolunun
-            iki önemli takımını karşı karşıya getirecek.
+            Final karşılaşması da milyonlarca voleybolsever tarafından
+            yakından takip edilecek.
 
-            HABERİSTA Spor Servisi olarak final maçındaki gelişmeleri, set sonuçlarını
-            ve karşılaşmanın ardından oluşacak tabloyu takip ediyoruz.
+            Türkiye Voleybol Federasyonu tarafından finalde rakibin
+            İtalya olduğu duyuruldu.
+
+            HABERİSTA Spor Servisi olarak final maçındaki gelişmeleri,
+            set sonuçlarını ve karşılaşmanın ardından oluşacak
+            tabloyu takip ediyoruz.
         `,
+
         tarih: "6 Eylül 2026",
         saat: "19:00",
         gorsel: "images/FILENIN-SULTANLARI.jpeg",
         kaynak: "Türkiye Voleybol Federasyonu"
+    },
+
+
+    /* =====================================================
+       11 - SON DAKİKA
+    ===================================================== */
+
+    {
+        id: 1,
+        kategori: "Son Dakika",
+        baslik: "5 Eylül 2026 Resmî Gazete yayımlandı: Yeni kararlar, atamalar ve önemli düzenlemeler",
+
+        spot: "5 Eylül 2026 tarihli Resmî Gazete yayımlandı. Kamu yönetimi, ekonomi, eğitim ve farklı alanları ilgilendiren kararlar ve düzenlemeler kamuoyuna duyuruldu.",
+
+        icerik: `
+            5 Eylül 2026 tarihli ve günün önemli kararlarını içeren
+            Resmî Gazete yayımlandı.
+
+            Resmî Gazete'de yayımlanan karar, yönetmelik, atama ve
+            düzenlemeler kamu kurumları ve vatandaşlar açısından
+            önemli başlıklar oluşturdu.
+
+            Resmî Gazete'de yayımlanan düzenlemeler arasında farklı
+            kamu kurumlarını ve vatandaşları ilgilendiren kararlar
+            yer aldı.
+
+            KAMU YÖNETİMİNE İLİŞKİN KARARLAR
+
+            Kamu kurumlarının işleyişine ilişkin çeşitli düzenlemeler
+            ve kararlar yayımlanırken, ilgili kurumların görev ve
+            sorumluluklarına ilişkin yeni gelişmeler kamuoyuna
+            duyuruldu.
+
+            ATAMALAR
+
+            Resmî Gazete'nin önemli bölümlerinden biri de atama
+            kararları oldu.
+
+            Çeşitli kamu kurumlarında görev değişikliklerine ilişkin
+            kararlar yayımlanırken yeni görevlendirmeler de duyuruldu.
+
+            EKONOMİ VE KAMU MALİYESİ
+
+            Ekonomi alanında yayımlanan kararlar ve düzenlemeler
+            vatandaşların ve iş dünyasının gündeminde yer aldı.
+
+            Kamu maliyesi, ekonomik yönetim ve çeşitli idari
+            düzenlemelere ilişkin hükümler Resmî Gazete üzerinden
+            kamuoyuyla paylaşıldı.
+
+            EĞİTİM VE DİĞER ALANLAR
+
+            Eğitim başta olmak üzere farklı sektörleri ilgilendiren
+            düzenlemeler de yayımlanan kararlar arasında yer aldı.
+
+            Resmî Gazete'de yayımlanan kararlar yürürlük tarihleri
+            ve kapsamlarına göre ilgili kurumlar tarafından
+            uygulanacak.
+
+            Vatandaşların kendilerini ilgilendiren düzenlemelerin
+            ayrıntılarını resmi metinlerden takip etmesi önem taşıyor.
+
+            HABERİSTA olarak Resmî Gazete'deki yeni kararları ve
+            uygulamaların vatandaşlara etkilerini takip ediyoruz.
+        `,
+
+        tarih: "5 Eylül 2026",
+        saat: "15:20",
+        gorsel: "images/ChatGPT Image 5 Eyl 2026 15_25_02.png",
+        kaynak: "Resmî Gazete"
+    },
+
+
+    /* =====================================================
+       12 - SPOR
+    ===================================================== */
+
+    {
+        id: 2,
+        kategori: "Spor",
+        baslik: "Filenin Sultanları Avrupa şampiyonluğu için sahada! Türkiye-İtalya finali bugün oynanacak",
+
+        spot: "A Milli Kadın Voleybol Takımı Avrupa şampiyonluğu için İtalya karşısında sahaya çıkıyor. Final mücadelesi İstanbul'da oynanacak.",
+
+        icerik: `
+            A Milli Kadın Voleybol Takımı Avrupa Şampiyonası'nda
+            şampiyonluk için sahaya çıkıyor.
+
+            Filenin Sultanları'nın finaldeki rakibi İtalya oldu.
+
+            Türkiye'nin ev sahipliği yaptığı turnuvada milli takımın
+            finale kadar yükselmesi büyük heyecan oluşturdu.
+
+            FİNALİN ADRESİ İSTANBUL
+
+            Türkiye ile İtalya arasındaki final mücadelesi İstanbul'da
+            oynanacak.
+
+            Karşılaşma öncesinde voleybolseverlerin ilgisi büyük olurken
+            milli takımın şampiyonluk hedefiyle sahaya çıkması
+            Türkiye genelinde heyecan oluşturdu.
+
+            TAKIMIN HEDEFİ ŞAMPİYONLUK
+
+            Filenin Sultanları turnuva boyunca başarılı bir performans
+            ortaya koyarak finale yükseldi.
+
+            Milli takım oyuncuları kritik karşılaşmalarda gösterdikleri
+            mücadeleyle dikkat çekti.
+
+            Finalde servis karşılamaları, bloklar, hücum organizasyonları
+            ve savunma performansı karşılaşmanın sonucunda önemli rol
+            oynayacak.
+
+            TARAFTAR DESTEĞİ
+
+            Türkiye'nin finalde sahaya çıkacak olması nedeniyle
+            voleybolseverlerin milli takıma desteği de büyük.
+
+            Sosyal medyada Filenin Sultanları için çok sayıda destek
+            mesajı paylaşılırken taraftarlar final karşılaşmasına
+            odaklandı.
+
+            ŞAMPİYONLUK İÇİN SON MAÇ
+
+            Turnuvanın en önemli karşılaşması olan finalde Türkiye ve
+            İtalya Avrupa şampiyonluğu için mücadele edecek.
+
+            Maçın ardından turnuvanın şampiyonu belli olacak.
+
+            HABERİSTA Spor Servisi olarak karşılaşmanın tüm gelişmelerini
+            takip ediyoruz.
+        `,
+
+        tarih: "6 Eylül 2026",
+        saat: "01:30",
+        gorsel: "images/AVRUPA.jpeg",
+        kaynak: "Türkiye Voleybol Federasyonu"
+    },
+
+
+    /* =====================================================
+       13 - EKONOMİ
+    ===================================================== */
+
+    {
+        id: 3,
+        kategori: "Ekonomi",
+        baslik: "Para piyasası fonlarında yeni dönem: Stopaj oranı yüzde 10'a çıkarıldı",
+
+        spot: "Para piyasası fonlarına ilişkin stopaj düzenlemesi yatırımcıların gündemine geldi. Yeni düzenlemeyle birlikte stopaj oranında değişikliğe gidildi.",
+
+        icerik: `
+            Finans piyasalarında yatırımcıların yakından takip ettiği
+            para piyasası fonlarına ilişkin yeni düzenleme gündeme geldi.
+
+            Yapılan düzenlemeyle para piyasası fonlarından elde edilen
+            kazançlara uygulanan stopaj oranında değişiklik yapıldı.
+
+            Yeni oran yatırımcıların fon tercihlerini ve net getirilerini
+            değerlendirmesinde önemli bir başlık haline geldi.
+
+            YATIRIMCILARIN DİKKATİ FONLARDA
+
+            Para piyasası fonları özellikle kısa vadeli yatırım yapmak
+            isteyen yatırımcılar tarafından tercih edilebiliyor.
+
+            Fonların getirileri piyasa koşullarına göre değişirken,
+            vergi ve stopaj uygulamaları yatırımcıların elde edeceği
+            net kazanç açısından önem taşıyor.
+
+            STOPAJ DEĞİŞİKLİĞİ
+
+            Stopaj oranındaki değişiklik sonrasında yatırımcıların
+            brüt getiri ile net getiri arasındaki farkı dikkate alması
+            gerekiyor.
+
+            Bir yatırım aracının yalnızca nominal getirisine bakmak
+            yerine vergi sonrası getirinin değerlendirilmesi önem taşıyor.
+
+            FONLARA İLGİ DEVAM EDİYOR
+
+            Para piyasası fonları likidite avantajları nedeniyle
+            yatırımcıların ilgisini çekmeye devam ediyor.
+
+            Ancak her yatırım ürününde olduğu gibi fon yatırımlarında
+            da risk, getiri ve vergi koşullarının birlikte değerlendirilmesi
+            gerekiyor.
+
+            YENİ DÖNEMDE YATIRIMCI NE YAPACAK?
+
+            Yatırımcıların yeni düzenlemeyi dikkate alarak kendi
+            yatırım stratejilerini yeniden değerlendirmesi bekleniyor.
+
+            Finans uzmanları yatırım kararlarının kişinin risk profili,
+            yatırım süresi ve nakit ihtiyacı dikkate alınarak verilmesi
+            gerektiğini vurguluyor.
+
+            HABERİSTA Ekonomi Servisi olarak finans piyasalarındaki
+            düzenlemeleri takip ediyoruz.
+        `,
+
+        tarih: "5 Eylül 2026",
+        saat: "18:10",
+        gorsel: "images/EKENOMİ.jpeg",
+        kaynak: "Ekonomi Servisi"
+    },
+
+
+    /* =====================================================
+       14 - GÜNDEM
+    ===================================================== */
+
+    {
+        id: 4,
+        kategori: "Gündem",
+        baslik: "Eylül ayı yaşlı ve engelli aylıkları hesaplara yatırılmaya başlandı",
+
+        spot: "Eylül ayına ilişkin yaşlı ve engelli aylığı ödemeleri vatandaşların gündeminde. Ödemelerin hak sahiplerinin hesaplarına aktarılması süreci başladı.",
+
+        icerik: `
+            Eylül ayına ilişkin yaşlı ve engelli aylığı ödemeleri
+            vatandaşların gündemindeki önemli başlıklardan biri oldu.
+
+            Sosyal destek ödemelerinden yararlanan vatandaşlar,
+            ödemelerin hesaplarına ne zaman aktarılacağını yakından
+            takip ediyor.
+
+            Ödemeler hak sahiplerinin durumlarına göre ilgili ödeme
+            kanalları üzerinden gerçekleştiriliyor.
+
+            YAŞLI AYLIĞI ÖDEMELERİ
+
+            Yaşlı aylığı, belirli şartları sağlayan vatandaşlara
+            sosyal destek kapsamında ödeniyor.
+
+            Ödemelerden yararlanabilmek için mevzuatta belirtilen
+            gelir ve diğer şartların sağlanması gerekiyor.
+
+            ENGELLİ AYLIKLARI
+
+            Engelli vatandaşlara yönelik sosyal destek ödemeleri de
+            düzenli şekilde gerçekleştiriliyor.
+
+            Desteklerin amacı ihtiyaç sahibi vatandaşların ekonomik
+            yükünü azaltmak ve sosyal destek mekanizmalarını
+            güçlendirmek.
+
+            VATANDAŞLAR ÖDEME DURUMUNU TAKİP EDİYOR
+
+            Hak sahipleri ödemelerinin gerçekleşip gerçekleşmediğini
+            ilgili resmi kanallar üzerinden kontrol edebiliyor.
+
+            Ödeme konusunda sorun yaşayan vatandaşların ise ilgili
+            kamu kurumlarına başvurmaları gerekiyor.
+
+            SOSYAL DESTEKLERİN ÖNEMİ
+
+            Sosyal yardım programları özellikle sabit geliri bulunan
+            veya ekonomik desteğe ihtiyaç duyan vatandaşlar açısından
+            önemli bir kaynak oluşturuyor.
+
+            Ödemelerin düzenli şekilde gerçekleştirilmesi vatandaşların
+            aylık bütçelerini planlamasına yardımcı oluyor.
+
+            HABERİSTA olarak sosyal yardım ödemeleriyle ilgili resmi
+            açıklamaları takip etmeye devam ediyoruz.
+        `,
+
+        tarih: "5 Eylül 2026",
+        saat: "10:27",
+        gorsel: "images/GÜNDEM.jpeg",
+        kaynak: "HABERİSTA Gündem"
+    },
+
+
+    /* =====================================================
+       15 - EĞİTİM
+    ===================================================== */
+
+    {
+        id: 5,
+        kategori: "Eğitim",
+        baslik: "PISA 2025 sonuçları için geri sayım: Sonuçlar 8 Eylül'de açıklanacak",
+
+        spot: "PISA 2025 araştırmasının sonuçları için geri sayım başladı. Türkiye'nin eğitim performansına ilişkin sonuçların 8 Eylül'de açıklanması bekleniyor.",
+
+        icerik: `
+            Eğitim dünyasının yakından takip ettiği PISA 2025
+            araştırmasının sonuçları için geri sayım başladı.
+
+            Uluslararası Öğrenci Değerlendirme Programı olarak bilinen
+            PISA araştırması, öğrencilerin bilgi ve becerilerini farklı
+            alanlarda değerlendiren uluslararası çalışmalardan biri.
+
+            SONUÇLAR BEKLENİYOR
+
+            PISA 2025 sonuçlarının açıklanmasıyla birlikte Türkiye'nin
+            uluslararası eğitim performansına ilişkin yeni veriler
+            ortaya çıkacak.
+
+            Araştırmada öğrencilerin okuma becerileri, matematik ve
+            fen alanlarındaki performansları gibi çeşitli başlıklar
+            değerlendiriliyor.
+
+            EĞİTİM SİSTEMİ İÇİN ÖNEMLİ VERİ
+
+            PISA sonuçları yalnızca öğrencilerin sınav performansını
+            göstermekle kalmıyor.
+
+            Sonuçlar eğitim politikalarının değerlendirilmesi,
+            öğrencilerin güçlü ve zayıf yönlerinin belirlenmesi ve
+            eğitim sisteminde yapılabilecek iyileştirmelerin
+            tartışılması açısından da önem taşıyor.
+
+            TÜRKİYE'NİN PERFORMANSI MERAK EDİLİYOR
+
+            Yeni sonuçlarla birlikte Türkiye'nin önceki araştırmalara
+            kıyasla nasıl bir değişim gösterdiği de değerlendirilecek.
+
+            Eğitim uzmanları sonuçların tek başına değerlendirilmemesi,
+            sosyoekonomik koşullar ve eğitim imkanları gibi faktörlerin
+            de dikkate alınması gerektiğini belirtiyor.
+
+            8 EYLÜL'DE AÇIKLANACAK
+
+            PISA 2025 sonuçlarının 8 Eylül'de açıklanması bekleniyor.
+
+            Sonuçların açıklanmasının ardından Türkiye'nin sıralaması,
+            öğrenci performansları ve önceki yıllarla karşılaştırmalar
+            eğitim gündeminin önemli başlıkları arasında yer alacak.
+
+            HABERİSTA Eğitim Servisi olarak PISA sonuçlarını ve
+            eğitim dünyasındaki gelişmeleri takip ediyoruz.
+        `,
+
+        tarih: "6 Eylül 2026",
+        saat: "09:42",
+        gorsel: "images/PISA.jpeg",
+        kaynak: "Eğitim Servisi"
     }
+
 
 ];
 
 
-
 /* =========================================================
-   HER HABERE OTOMATİK SLUG VE URL
+   HER HABERE OTOMATİK SLUG VE URL EKLE
 ========================================================= */
 
 haberler.forEach(function (haber) {
 
-    haber.slug =
-        slugOlustur(haber.baslik);
+    haber.slug = slugOlustur(haber.baslik);
 
-    haber.url =
-        "/haber/" + haber.slug;
+    haber.url = "/haber/" + haber.slug;
 
 });
 
@@ -686,18 +1171,18 @@ haberler.forEach(function (haber) {
 
 function haberSlugIleBul(slug) {
 
-    const temizSlug =
-        slugOlustur(
-            decodeURIComponent(
-                String(slug || "")
-            )
-        );
+    const temizSlug = slugOlustur(
+        decodeURIComponent(
+            String(slug || "")
+        )
+    );
 
     return haberler.find(function (haber) {
 
         return haber.slug === temizSlug;
 
     }) || null;
+
 }
 
 
@@ -709,10 +1194,10 @@ function haberIdIleBul(id) {
 
     return haberler.find(function (haber) {
 
-        return String(haber.id)
-            === String(id);
+        return String(haber.id) === String(id);
 
     }) || null;
+
 }
 
 
@@ -720,17 +1205,13 @@ function haberIdIleBul(id) {
    GLOBAL DEĞİŞKENLER
 ========================================================= */
 
-window.haberler =
-    haberler;
+window.haberler = haberler;
 
-window.slugOlustur =
-    slugOlustur;
+window.slugOlustur = slugOlustur;
 
-window.haberSlugIleBul =
-    haberSlugIleBul;
+window.haberSlugIleBul = haberSlugIleBul;
 
-window.haberIdIleBul =
-    haberIdIleBul;
+window.haberIdIleBul = haberIdIleBul;
 
 
 /* =========================================================
