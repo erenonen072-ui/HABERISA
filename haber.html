@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="tr">
-<head>
 
+<head>
     <meta charset="UTF-8">
 
     <meta
@@ -9,129 +9,75 @@
         content="width=device-width, initial-scale=1.0"
     >
 
+    <title>Haber Detayı | HABERİSTA</title>
+
     <meta
         name="description"
-        content="Haberİsta haber detay sayfası"
+        content="HABERİSTA haber detay sayfası"
     >
 
-    <meta
-        name="theme-color"
-        content="#e11d48"
+    <link
+        rel="stylesheet"
+        href="/css/style.css"
     >
 
-    <title>Haberİsta</title>
-
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/haber.css">
+    <link
+        rel="stylesheet"
+        href="/css/haber.css"
+    >
 
     <style>
 
         /* =====================================================
-           TEMEL
+           GENEL
         ===================================================== */
 
         * {
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
             margin: 0;
-
             background: #f5f5f5;
-
-            color: #0a0a0a;
-
+            color: #111;
             font-family:
                 Arial,
                 Helvetica,
                 sans-serif;
-
-            transition:
-                background .25s,
-                color .25s;
         }
 
 
         /* =====================================================
-           SAYFA
+           HABER SAYFASI
         ===================================================== */
 
         .article-page {
-            min-height: 100vh;
-
-            padding:
-                24px 16px 70px;
-        }
-
-        .article-wrapper {
-            width:
-                min(1200px, 100%);
-
-            margin: 0 auto;
+            max-width: 1250px;
+            margin: 35px auto 70px;
+            padding: 0 20px;
         }
 
 
         /* =====================================================
-           ÜST BAR
+           GERİ BUTONU
         ===================================================== */
 
-        .article-top {
-
-            height: 62px;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: space-between;
-
-            margin-bottom: 18px;
-        }
-
-        .article-logo {
-
-            text-decoration: none;
-
-            font-size: 31px;
-
-            font-weight: 950;
-
-            letter-spacing: -1.8px;
-
-            color: #080808;
-        }
-
-        .article-logo span {
-            color: #e11d48;
-        }
-
-
         .back-button {
-
-            display: flex;
-
+            display: inline-flex;
             align-items: center;
-
             gap: 7px;
 
-            border:
-                1px solid #dedede;
+            margin-bottom: 22px;
 
-            background: #ffffff;
+            padding: 9px 14px;
 
-            color: #111111;
+            background: #111;
+            color: #fff;
 
-            padding:
-                10px 16px;
-
-            border-radius: 8px;
+            border: 0;
+            border-radius: 7px;
 
             font-size: 13px;
-
             font-weight: 800;
 
             cursor: pointer;
@@ -140,81 +86,75 @@
         }
 
         .back-button:hover {
-
-            background: #111111;
-
-            color: #ffffff;
-
-            border-color:
-                #111111;
+            background: #e11d48;
         }
 
 
         /* =====================================================
-           HABER KARTI
+           ANA HABER KARTI
         ===================================================== */
 
-        .article-card {
+        .article-layout {
+            display: grid;
 
-            background: #ffffff;
+            grid-template-columns:
+                minmax(0, 1fr)
+                300px;
 
-            border:
-                1px solid #dedede;
+            gap: 30px;
+        }
+
+
+        .article-main {
+            min-width: 0;
+
+            background: #fff;
+
+            border: 1px solid #e3e3e3;
 
             border-radius: 12px;
 
             overflow: hidden;
 
             box-shadow:
-                0 10px 35px
-                rgba(0,0,0,.06);
+                0 8px 30px rgba(0, 0, 0, .05);
         }
 
 
         /* =====================================================
-           HABER HEADER
+           HABER ÜST KISIM
         ===================================================== */
 
         .article-header {
-
             padding:
-                38px 50px 32px;
+                35px 50px
+                10px;
         }
 
-
-        /* =====================================================
-           KATEGORİ
-        ===================================================== */
 
         .article-category {
-
-            margin-bottom: 18px;
-        }
-
-        .article-category span {
-
             display: inline-flex;
 
             align-items: center;
 
+            margin-bottom: 16px;
+
             padding:
                 7px 12px;
 
-            background:
-                #e11d48;
+            background: #e11d48;
 
-            color: #ffffff;
+            color: #fff;
 
-            border-radius: 4px;
+            border-radius: 5px;
 
-            font-size: 11px;
+            font-size: 12px;
 
             font-weight: 900;
 
-            letter-spacing: .7px;
+            text-transform: uppercase;
 
-            text-transform:
-                uppercase;
+            letter-spacing: .5px;
         }
 
 
@@ -223,14 +163,9 @@
         ===================================================== */
 
         .article-title h1 {
-
-            max-width:
-                1080px;
-
             margin: 0;
 
-            color:
-                #050505;
+            color: #050505;
 
             font-size:
                 clamp(
@@ -239,17 +174,11 @@
                     58px
                 );
 
-            line-height:
-                1.04;
+            line-height: 1.04;
 
-            letter-spacing:
-                -2.3px;
+            font-weight: 950;
 
-            font-weight:
-                950;
-
-            text-wrap:
-                balance;
+            letter-spacing: -2.3px;
         }
 
 
@@ -258,109 +187,174 @@
         ===================================================== */
 
         .article-spot {
-
-            max-width:
-                950px;
-
-            margin-top:
-                22px;
+            margin-top: 22px;
         }
 
         .article-spot p {
-
             margin: 0;
 
-            color:
-                #222222;
+            color: #222;
 
-            font-size:
-                20px;
+            font-size: 20px;
 
-            line-height:
-                1.55;
+            line-height: 1.55;
 
-            font-weight:
-                600;
-
-            letter-spacing:
-                -.2px;
+            font-weight: 650;
         }
 
 
         /* =====================================================
-           META
+           TARİH / BİLGİ
         ===================================================== */
 
         .article-meta {
-
             display: flex;
 
             align-items: center;
 
             flex-wrap: wrap;
 
-            gap:
-                9px 14px;
+            gap: 15px;
 
-            margin-top:
-                24px;
+            margin-top: 22px;
 
-            color:
-                #555555;
+            padding-top: 17px;
 
-            font-size:
-                13px;
+            border-top:
+                1px solid #e5e5e5;
 
-            font-weight:
-                500;
+            color: #666;
+
+            font-size: 13px;
+
+            font-weight: 600;
         }
 
-        .article-meta strong {
+        .article-meta span {
+            display: inline-flex;
 
-            color:
-                #171717;
+            align-items: center;
 
-            font-weight:
-                800;
-        }
-
-        .meta-separator {
-
-            width: 4px;
-
-            height: 4px;
-
-            background:
-                #aaaaaa;
-
-            border-radius:
-                50%;
-        }
-
-        .article-source-mini {
-
-            color:
-                #333333;
-
-            font-weight:
-                800;
+            gap: 5px;
         }
 
 
         /* =====================================================
-           FOTOĞRAF
+           MİNİ SESLİ OKUMA
         ===================================================== */
 
-        .article-image-wrapper {
+        .mini-voice-reader {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 6px;
+
+            margin:
+                10px 50px 22px;
+
+            padding:
+                7px 9px;
+
+            width: fit-content;
+
+            background: #f7f7f7;
+
+            border:
+                1px solid #dedede;
+
+            border-radius: 8px;
+        }
+
+
+        .mini-voice-btn,
+        .mini-control {
+
+            height: 32px;
+
+            border: 0;
+
+            border-radius: 6px;
+
+            cursor: pointer;
+
+            font-size: 12px;
+
+            font-weight: 800;
+
+            transition: .2s;
+        }
+
+
+        .mini-voice-btn {
+
+            padding:
+                0 11px;
+
+            background: #111;
+
+            color: #fff;
+        }
+
+
+        .mini-voice-btn:hover {
+
+            background: #e11d48;
+        }
+
+
+        .mini-control {
+
+            width: 32px;
+
+            background: #fff;
+
+            color: #222;
+
+            border:
+                1px solid #ddd;
+        }
+
+
+        .mini-control:hover {
+
+            background: #111;
+
+            color: #fff;
+
+            border-color: #111;
+        }
+
+
+        #voiceStatus {
+
+            margin-left: 3px;
+
+            padding-right: 5px;
+
+            color: #666;
+
+            font-size: 11px;
+
+            font-weight: 600;
+
+            white-space: nowrap;
+        }
+
+
+        /* =====================================================
+           HABER GÖRSELİ
+        ===================================================== */
+
+        .article-image-wrap {
 
             width: 100%;
 
-            background:
-                #e9e9e9;
-
-            overflow:
-                hidden;
+            padding:
+                0 50px;
         }
+
 
         .article-image {
 
@@ -368,697 +362,117 @@
 
             width: 100%;
 
-            max-height:
-                680px;
+            max-height: 620px;
 
-            min-height:
-                300px;
+            object-fit: cover;
 
-            object-fit:
-                cover;
+            border-radius: 10px;
 
-            object-position:
-                center;
-        }
-
-        .image-caption {
-
-            padding:
-                9px 50px;
-
-            background:
-                #fafafa;
-
-            border-bottom:
-                1px solid #e4e4e4;
-
-            color:
-                #888888;
-
-            font-size:
-                11px;
-
-            font-weight:
-                500;
+            background: #eee;
         }
 
 
         /* =====================================================
-           ERİŞİLEBİLİRLİK PANELİ
+           HABER İÇERİĞİ
         ===================================================== */
-
-        .accessibility-panel {
-
-            margin:
-                0 50px 28px;
-
-            padding:
-                18px;
-
-            background:
-                #f7f7f7;
-
-            border:
-                1px solid #dddddd;
-
-            border-radius:
-                10px;
-        }
-
-        .accessibility-header {
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content:
-                space-between;
-
-            gap: 15px;
-
-            margin-bottom:
-                14px;
-        }
-
-        .accessibility-title {
-
-            color:
-                #080808;
-
-            font-size:
-                14px;
-
-            font-weight:
-                950;
-        }
-
-        .accessibility-description {
-
-            color:
-                #666666;
-
-            font-size:
-                11px;
-
-            font-weight:
-                600;
-        }
-
-
-        /* =====================================================
-           SES BUTONLARI
-        ===================================================== */
-
-        .voice-controls {
-
-            display: flex;
-
-            flex-wrap: wrap;
-
-            align-items: center;
-
-            gap: 8px;
-        }
-
-        .voice-button {
-
-            display: inline-flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            gap: 7px;
-
-            min-height:
-                42px;
-
-            padding:
-                10px 15px;
-
-            border:
-                1px solid #cccccc;
-
-            border-radius:
-                7px;
-
-            background:
-                #ffffff;
-
-            color:
-                #111111;
-
-            font-size:
-                13px;
-
-            font-weight:
-                850;
-
-            cursor:
-                pointer;
-
-            transition:
-                .2s;
-        }
-
-        .voice-button:hover {
-
-            background:
-                #111111;
-
-            color:
-                #ffffff;
-
-            border-color:
-                #111111;
-        }
-
-        .voice-button.primary {
-
-            background:
-                #111111;
-
-            color:
-                #ffffff;
-
-            border-color:
-                #111111;
-        }
-
-        .voice-button.primary:hover {
-
-            background:
-                #e11d48;
-
-            border-color:
-                #e11d48;
-        }
-
-        .voice-button.active {
-
-            background:
-                #e11d48;
-
-            color:
-                #ffffff;
-
-            border-color:
-                #e11d48;
-        }
-
-
-        /* =====================================================
-           HIZ SEÇENEKLERİ
-        ===================================================== */
-
-        .speed-controls {
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 5px;
-
-            margin-left:
-                5px;
-
-            padding-left:
-                12px;
-
-            border-left:
-                1px solid #d7d7d7;
-        }
-
-        .speed-label {
-
-            color:
-                #555555;
-
-            font-size:
-                11px;
-
-            font-weight:
-                800;
-
-            margin-right:
-                3px;
-        }
-
-        .speed-button {
-
-            width:
-                38px;
-
-            height:
-                34px;
-
-            border:
-                1px solid #d4d4d4;
-
-            border-radius:
-                6px;
-
-            background:
-                #ffffff;
-
-            color:
-                #333333;
-
-            font-size:
-                11px;
-
-            font-weight:
-                850;
-
-            cursor:
-                pointer;
-        }
-
-        .speed-button:hover {
-
-            background:
-                #111111;
-
-            color:
-                #ffffff;
-        }
-
-        .speed-button.selected {
-
-            background:
-                #111111;
-
-            color:
-                #ffffff;
-
-            border-color:
-                #111111;
-        }
-
-
-        /* =====================================================
-           SES DURUMU
-        ===================================================== */
-
-        .voice-status {
-
-            margin-top:
-                11px;
-
-            color:
-                #555555;
-
-            font-size:
-                11px;
-
-            font-weight:
-                600;
-        }
-
-
-        /* =====================================================
-           OKUMA ANİMASYONU
-        ===================================================== */
-
-        .reading-indicator {
-
-            display:
-                none;
-
-            align-items:
-                center;
-
-            gap:
-                6px;
-
-            margin-top:
-                12px;
-
-            color:
-                #e11d48;
-
-            font-size:
-                11px;
-
-            font-weight:
-                850;
-        }
-
-        .reading-indicator.show {
-            display: flex;
-        }
-
-        .reading-dot {
-
-            width:
-                7px;
-
-            height:
-                7px;
-
-            background:
-                #e11d48;
-
-            border-radius:
-                50%;
-
-            animation:
-                voicePulse 1s infinite;
-        }
-
-        @keyframes voicePulse {
-
-            0% {
-                transform: scale(.8);
-                opacity: .5;
-            }
-
-            50% {
-                transform: scale(1.2);
-                opacity: 1;
-            }
-
-            100% {
-                transform: scale(.8);
-                opacity: .5;
-            }
-
-        }
-
-
-        /* =====================================================
-           İÇERİK
-        ===================================================== */
-
-        .article-body-layout {
-
-            display: grid;
-
-            grid-template-columns:
-                minmax(0, 850px)
-                240px;
-
-            gap:
-                50px;
-
-            justify-content:
-                center;
-
-            padding:
-                44px 50px 50px;
-        }
 
         .article-content {
-            min-width: 0;
+
+            padding:
+                35px 50px
+                50px;
+
+            color: #111;
+
+            font-size: 18px;
+
+            line-height: 1.92;
+
+            font-weight: 500;
         }
 
-
-        /* =====================================================
-           PARAGRAFLAR
-        ===================================================== */
 
         .article-content p {
 
             margin:
-                0 0 26px;
-
-            color:
-                #111111;
-
-            font-size:
-                18px;
-
-            line-height:
-                1.92;
-
-            font-weight:
-                500;
-
-            letter-spacing:
-                -.05px;
+                0 0 24px;
         }
+
 
         .article-content p:first-child {
 
-            color:
-                #080808;
+            color: #090909;
 
-            font-size:
-                20px;
+            font-size: 20px;
 
-            line-height:
-                1.8;
+            line-height: 1.8;
 
-            font-weight:
-                650;
+            font-weight: 650;
         }
 
-
-        /* =====================================================
-           H2
-        ===================================================== */
 
         .article-content h2 {
 
             margin:
-                45px 0 20px;
+                38px 0 18px;
 
-            padding-left:
-                15px;
+            padding-left: 13px;
 
             border-left:
                 5px solid #e11d48;
 
-            color:
-                #050505;
+            color: #050505;
 
-            font-size:
-                29px;
+            font-size: 29px;
 
-            line-height:
-                1.25;
+            line-height: 1.2;
 
-            font-weight:
-                950;
-
-            letter-spacing:
-                -.8px;
+            font-weight: 950;
         }
 
-
-        /* =====================================================
-           H3
-        ===================================================== */
 
         .article-content h3 {
 
             margin:
-                35px 0 16px;
+                30px 0 14px;
 
-            color:
-                #080808;
+            color: #050505;
 
-            font-size:
-                23px;
+            font-size: 23px;
 
-            line-height:
-                1.3;
-
-            font-weight:
-                900;
-
-            letter-spacing:
-                -.4px;
+            font-weight: 900;
         }
 
-
-        /* =====================================================
-           STRONG
-        ===================================================== */
 
         .article-content strong {
 
-            color:
-                #000000;
+            color: #000;
 
-            font-weight:
-                900;
+            font-weight: 900;
         }
 
 
-        /* =====================================================
-           LİSTELER
-        ===================================================== */
+        .article-content a {
+
+            color: #e11d48;
+
+            font-weight: 800;
+        }
+
 
         .article-content ul,
         .article-content ol {
 
             margin:
-                24px 0 30px;
+                20px 0 25px;
 
-            padding-left:
-                30px;
+            padding-left: 28px;
         }
+
 
         .article-content li {
 
-            margin-bottom:
-                13px;
-
-            color:
-                #111111;
-
-            font-size:
-                17px;
-
-            line-height:
-                1.75;
-
-            font-weight:
-                500;
-        }
-
-
-        /* =====================================================
-           BLOCKQUOTE
-        ===================================================== */
-
-        .article-content blockquote {
-
-            margin:
-                35px 0;
-
-            padding:
-                22px 25px;
-
-            background:
-                #f6f6f6;
-
-            border-left:
-                5px solid #e11d48;
-
-            border-radius:
-                0 8px 8px 0;
-
-            color:
-                #191919;
-
-            font-size:
-                18px;
-
-            line-height:
-                1.75;
-
-            font-weight:
-                600;
-        }
-
-
-        /* =====================================================
-           SIDEBAR
-        ===================================================== */
-
-        .article-sidebar {
-
-            position:
-                sticky;
-
-            top:
-                20px;
-
-            align-self:
-                start;
-        }
-
-        .sidebar-box {
-
-            background:
-                #fafafa;
-
-            border:
-                1px solid #dedede;
-
-            border-radius:
-                9px;
-
-            overflow:
-                hidden;
-        }
-
-        .sidebar-title {
-
-            padding:
-                14px 16px;
-
-            border-bottom:
-                1px solid #dedede;
-
-            color:
-                #0a0a0a;
-
-            font-size:
-                13px;
-
-            font-weight:
-                900;
-        }
-
-        .sidebar-content {
-
-            padding:
-                16px;
-        }
-
-        .sidebar-content p {
-
-            margin: 0;
-
-            color:
-                #444444;
-
-            font-size:
-                13px;
-
-            line-height:
-                1.7;
-        }
-
-
-        /* =====================================================
-           KAYNAK
-        ===================================================== */
-
-        .article-source {
-
-            margin:
-                0 50px 30px;
-
-            padding:
-                16px 18px;
-
-            background:
-                #f7f7f7;
-
-            border:
-                1px solid #dddddd;
-
-            border-radius:
-                8px;
-
-            color:
-                #444444;
-
-            font-size:
-                13px;
-        }
-
-        .article-source strong {
-
-            color:
-                #000000;
-
-            font-weight:
-                900;
+            margin-bottom: 10px;
         }
 
 
@@ -1068,380 +482,178 @@
 
         .article-share {
 
-            display:
-                flex;
+            display: flex;
 
-            align-items:
-                center;
+            align-items: center;
 
-            gap:
-                9px;
+            gap: 8px;
+
+            flex-wrap: wrap;
+
+            margin-top: 35px;
+
+            padding-top: 25px;
+
+            border-top:
+                1px solid #ddd;
+        }
+
+
+        .share-button {
 
             padding:
-                0 50px 40px;
-        }
-
-        .share-title {
-
-            margin-right:
-                5px;
-
-            color:
-                #333333;
-
-            font-size:
-                13px;
-
-            font-weight:
-                900;
-        }
-
-        .share-btn {
-
-            width:
-                40px;
-
-            height:
-                40px;
-
-            display:
-                flex;
-
-            align-items:
-                center;
-
-            justify-content:
-                center;
+                9px 13px;
 
             border:
-                1px solid #dddddd;
+                1px solid #ddd;
 
-            border-radius:
-                50%;
+            border-radius: 6px;
 
-            background:
-                #ffffff;
+            background: #fff;
 
-            color:
-                #111111;
+            color: #111;
 
-            cursor:
-                pointer;
+            font-size: 12px;
 
-            transition:
-                .2s;
+            font-weight: 800;
+
+            cursor: pointer;
+
+            transition: .2s;
         }
 
-        .share-btn:hover {
 
-            background:
-                #111111;
+        .share-button:hover {
 
-            color:
-                #ffffff;
+            background: #111;
 
-            border-color:
-                #111111;
+            color: #fff;
 
-            transform:
-                translateY(-2px);
+            border-color: #111;
         }
 
 
         /* =====================================================
-           AYRAÇ
+           SAĞ SIDEBAR
         ===================================================== */
 
-        .article-end {
+        .article-sidebar {
 
-            height:
-                1px;
+            align-self: start;
 
-            margin:
-                0 50px;
+            position: sticky;
 
-            background:
-                #dedede;
+            top: 20px;
         }
 
 
-        /* =====================================================
-           FOOTER
-        ===================================================== */
+        .sidebar-box {
 
-        .article-footer {
-
-            padding:
-                28px 10px 0;
-
-            text-align:
-                center;
-
-            color:
-                #888888;
-
-            font-size:
-                12px;
-        }
-
-
-        /* =====================================================
-           LOADING
-        ===================================================== */
-
-        .article-loading {
-
-            min-height:
-                65vh;
-
-            display:
-                flex;
-
-            align-items:
-                center;
-
-            justify-content:
-                center;
-
-            color:
-                #555555;
-
-            font-size:
-                16px;
-
-            font-weight:
-                600;
-        }
-
-
-        /* =====================================================
-           HATA
-        ===================================================== */
-
-        .article-error {
-
-            padding:
-                80px 25px;
-
-            background:
-                #ffffff;
-
-            text-align:
-                center;
+            background: #fff;
 
             border:
-                1px solid #dddddd;
+                1px solid #e3e3e3;
 
-            border-radius:
-                12px;
+            border-radius: 10px;
+
+            padding: 20px;
+
+            margin-bottom: 20px;
+
+            box-shadow:
+                0 7px 25px rgba(0,0,0,.04);
         }
 
-        .article-error-icon {
 
-            width:
-                60px;
-
-            height:
-                60px;
-
-            display:
-                flex;
-
-            align-items:
-                center;
-
-            justify-content:
-                center;
+        .sidebar-box h3 {
 
             margin:
-                0 auto 18px;
+                0 0 15px;
 
-            background:
-                #fff1f2;
+            padding-bottom: 12px;
 
-            color:
-                #e11d48;
+            border-bottom:
+                2px solid #111;
 
-            border-radius:
-                50%;
+            color: #050505;
 
-            font-size:
-                25px;
+            font-size: 18px;
 
-            font-weight:
-                900;
+            font-weight: 950;
         }
 
-        .article-error h1 {
+
+        .sidebar-info {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 10px;
+
+            padding:
+                9px 0;
+
+            border-bottom:
+                1px solid #eee;
+
+            font-size: 13px;
+        }
+
+
+        .sidebar-info:last-child {
+
+            border-bottom: 0;
+        }
+
+
+        .sidebar-info strong {
+
+            color: #111;
+
+            font-weight: 900;
+        }
+
+
+        .sidebar-info span {
+
+            color: #666;
+
+            text-align: right;
+        }
+
+
+        /* =====================================================
+           HABER BULUNAMADI
+        ===================================================== */
+
+        .not-found {
+
+            padding:
+                80px 20px;
+
+            text-align: center;
+
+            background: #fff;
+
+            border-radius: 12px;
+        }
+
+
+        .not-found h1 {
 
             margin:
                 0 0 10px;
 
-            color:
-                #050505;
+            color: #111;
 
-            font-size:
-                32px;
-
-            font-weight:
-                950;
-        }
-
-        .article-error p {
-
-            max-width:
-                500px;
-
-            margin:
-                0 auto 25px;
-
-            color:
-                #555555;
-
-            line-height:
-                1.6;
-        }
-
-        .article-error button {
-
-            border:
-                0;
-
-            background:
-                #e11d48;
-
-            color:
-                #ffffff;
-
-            padding:
-                12px 22px;
-
-            border-radius:
-                7px;
-
-            font-weight:
-                800;
-
-            cursor:
-                pointer;
+            font-size: 32px;
         }
 
 
-        /* =====================================================
-           YÜKSEK KONTRAST
-        ===================================================== */
+        .not-found p {
 
-        body.high-contrast {
-
-            background:
-                #000000;
-        }
-
-        body.high-contrast .article-card {
-
-            background:
-                #000000;
-
-            border-color:
-                #ffffff;
-        }
-
-        body.high-contrast .article-header,
-        body.high-contrast .article-body-layout {
-
-            background:
-                #000000;
-        }
-
-        body.high-contrast .article-title h1,
-        body.high-contrast .article-content h2,
-        body.high-contrast .article-content h3 {
-
-            color:
-                #ffffff !important;
-        }
-
-        body.high-contrast .article-spot p,
-        body.high-contrast .article-content p,
-        body.high-contrast .article-content li {
-
-            color:
-                #ffffff !important;
-        }
-
-        body.high-contrast .article-content blockquote {
-
-            background:
-                #111111;
-
-            color:
-                #ffffff;
-        }
-
-        body.high-contrast .accessibility-panel {
-
-            background:
-                #111111;
-
-            border-color:
-                #ffffff;
-        }
-
-        body.high-contrast .accessibility-title,
-        body.high-contrast .accessibility-description,
-        body.high-contrast .voice-status {
-
-            color:
-                #ffffff;
-        }
-
-
-        /* =====================================================
-           YAZI BÜYÜTME
-        ===================================================== */
-
-        body.large-text .article-content p {
-            font-size:
-                21px;
-        }
-
-        body.large-text .article-content p:first-child {
-            font-size:
-                23px;
-        }
-
-        body.large-text .article-content li {
-            font-size:
-                20px;
-        }
-
-        body.large-text .article-content h2 {
-            font-size:
-                32px;
-        }
-
-
-        /* =====================================================
-           TABLET
-        ===================================================== */
-
-        @media (max-width: 900px) {
-
-            .article-body-layout {
-
-                grid-template-columns:
-                    1fr;
-
-                gap:
-                    25px;
-            }
-
-            .article-sidebar {
-
-                position:
-                    static;
-            }
-
+            color: #666;
         }
 
 
@@ -1449,1887 +661,1569 @@
            MOBİL
         ===================================================== */
 
+        @media (max-width: 900px) {
+
+            .article-layout {
+
+                grid-template-columns: 1fr;
+            }
+
+            .article-sidebar {
+
+                position: static;
+            }
+        }
+
+
         @media (max-width: 700px) {
 
             .article-page {
 
-                padding:
-                    8px 7px 40px;
-            }
-
-            .article-top {
-
-                height:
-                    55px;
-            }
-
-            .article-logo {
-
-                font-size:
-                    23px;
-            }
-
-            .back-button {
+                margin-top: 20px;
 
                 padding:
-                    8px 11px;
-
-                font-size:
-                    12px;
+                    0 10px;
             }
 
-            .article-card {
-
-                border-radius:
-                    10px;
-            }
 
             .article-header {
 
                 padding:
-                    25px 18px 23px;
+                    25px 18px
+                    5px;
             }
 
-            .article-category {
-
-                margin-bottom:
-                    14px;
-            }
 
             .article-title h1 {
 
-                font-size:
-                    32px;
-
-                line-height:
-                    1.08;
+                font-size: 32px;
 
                 letter-spacing:
                     -1.2px;
             }
 
-            .article-spot {
-
-                margin-top:
-                    16px;
-            }
 
             .article-spot p {
 
-                font-size:
-                    17px;
-
-                line-height:
-                    1.55;
+                font-size: 17px;
             }
+
 
             .article-meta {
 
-                margin-top:
-                    18px;
+                font-size: 11px;
 
-                font-size:
-                    11px;
-            }
-
-            .article-image {
-
-                min-height:
-                    220px;
-
-                max-height:
-                    450px;
-            }
-
-            .image-caption {
-
-                padding:
-                    8px 18px;
+                gap: 10px;
             }
 
 
-            /* SES PANELİ */
-
-            .accessibility-panel {
+            .mini-voice-reader {
 
                 margin:
-                    0 18px 25px;
+                    8px 18px 18px;
 
                 padding:
-                    15px;
+                    6px 7px;
             }
 
-            .accessibility-header {
 
-                align-items:
-                    flex-start;
-
-                flex-direction:
-                    column;
-
-                gap:
-                    5px;
-            }
-
-            .voice-controls {
-
-                display:
-                    grid;
-
-                grid-template-columns:
-                    1fr 1fr;
-
-                width:
-                    100%;
-            }
-
-            .voice-button {
-
-                width:
-                    100%;
-            }
-
-            .speed-controls {
-
-                grid-column:
-                    1 / -1;
-
-                margin:
-                    5px 0 0;
+            .mini-voice-btn {
 
                 padding:
-                    10px 0 0;
-
-                border-left:
-                    0;
-
-                border-top:
-                    1px solid #d7d7d7;
-
-                justify-content:
-                    center;
+                    0 9px;
             }
 
 
-            /* İÇERİK */
+            .mini-control {
 
-            .article-body-layout {
+                width: 30px;
+
+                height: 30px;
+            }
+
+
+            #voiceStatus {
+
+                font-size: 10px;
+            }
+
+
+            .article-image-wrap {
 
                 padding:
-                    28px 18px 35px;
-            }
-
-            .article-content p {
-
-                font-size:
-                    17px;
-
-                line-height:
-                    1.85;
-
-                margin-bottom:
-                    22px;
-            }
-
-            .article-content p:first-child {
-
-                font-size:
-                    18px;
-
-                line-height:
-                    1.8;
-            }
-
-            .article-content h2 {
-
-                margin-top:
-                    36px;
-
-                font-size:
-                    24px;
-
-                padding-left:
-                    12px;
-            }
-
-            .article-content h3 {
-
-                font-size:
-                    20px;
-            }
-
-            .article-content li {
-
-                font-size:
-                    16px;
-            }
-
-            .article-content blockquote {
-
-                padding:
-                    17px 18px;
-
-                font-size:
-                    16px;
-            }
-
-            .article-source {
-
-                margin:
-                    0 18px 25px;
-
-                font-size:
-                    12px;
-            }
-
-            .article-share {
-
-                padding:
-                    0 18px 28px;
-            }
-
-            .article-end {
-
-                margin:
                     0 18px;
             }
 
+
+            .article-image {
+
+                max-height: 400px;
+
+                border-radius: 8px;
+            }
+
+
+            .article-content {
+
+                padding:
+                    28px 18px
+                    35px;
+
+                font-size: 17px;
+
+                line-height: 1.82;
+            }
+
+
+            .article-content p:first-child {
+
+                font-size: 18px;
+            }
+
+
+            .article-content h2 {
+
+                font-size: 24px;
+            }
+
+
+            .article-content h3 {
+
+                font-size: 20px;
+            }
+
+
+            .article-share {
+
+                margin-top: 25px;
+            }
         }
 
     </style>
 
 </head>
 
+
 <body>
 
 
-<main class="article-page">
+    <!-- =====================================================
+         SİTE HEADER
+    ===================================================== -->
 
-    <div class="article-wrapper">
-
-
-        <!-- =================================================
-             ÜST
-        ================================================== -->
-
-        <div class="article-top">
-
-            <a
-                href="/"
-                class="article-logo"
-                aria-label="Haberİsta ana sayfa"
-            >
-                <span>Haber</span>İsta
-            </a>
+    <header id="siteHeader"></header>
 
 
-            <button
-                type="button"
-                class="back-button"
-                onclick="goBack()"
-                aria-label="Geri dön"
-            >
-                ← Geri
-            </button>
+    <!-- =====================================================
+         HABER
+    ===================================================== -->
 
-        </div>
+    <main class="article-page">
+
+        <button
+            class="back-button"
+            onclick="goBack()"
+        >
+            ← Geri Dön
+        </button>
 
 
-        <!-- =================================================
-             HABER
-        ================================================== -->
+        <div id="articleContainer">
 
-        <article id="articleContainer">
+            <div class="not-found">
 
-            <div class="article-loading">
+                <h1>Haber yükleniyor...</h1>
 
-                Haber yükleniyor...
+                <p>
+                    Lütfen bekleyin.
+                </p>
 
             </div>
 
-        </article>
-
-
-        <div class="article-footer">
-
-            © 2026 Haberİsta ·
-            Tüm hakları saklıdır.
-
         </div>
 
-
-    </div>
-
-</main>
+    </main>
 
 
+    <!-- =====================================================
+         SİTE FOOTER
+    ===================================================== -->
 
-<script src="/js/haberler.js"></script>
-
-
-<script>
-
-(function () {
-
-    "use strict";
+    <footer id="siteFooter"></footer>
 
 
-    const container =
-        document.getElementById(
-            "articleContainer"
-        );
+    <!-- =====================================================
+         HABERLER
+    ===================================================== -->
+
+    <script src="/js/haberler.js"></script>
+
+    <script src="/app.js"></script>
 
 
-    const news =
-        Array.isArray(
-            window.haberler
-        )
-            ? window.haberler
-            : [];
+    <!-- =====================================================
+         HABER SAYFASI JAVASCRIPT
+    ===================================================== -->
+
+    <script>
+
+        "use strict";
 
 
-    /* =====================================================
-       HABERLER YÜKLENMEDİ
-    ===================================================== */
+        /* =====================================================
+           YARDIMCI
+        ===================================================== */
 
-    if (!news.length) {
+        function slugOlustur(metin) {
 
-        showError(
-            "Haber verileri yüklenemedi."
-        );
+            return String(metin || "")
+                .toLocaleLowerCase("tr-TR")
 
-        return;
+                .replace(/ğ/g, "g")
+                .replace(/ü/g, "u")
+                .replace(/ş/g, "s")
+                .replace(/ı/g, "i")
+                .replace(/ö/g, "o")
+                .replace(/ç/g, "c")
 
-    }
+                .replace(/[^a-z0-9]+/g, "-")
 
-
-    /* =====================================================
-       URL
-    ===================================================== */
-
-    const pathname =
-        window.location.pathname;
-
-    const params =
-        new URLSearchParams(
-            window.location.search
-        );
-
-
-    let slug = "";
-
-    let id = "";
-
-
-    const pathMatch =
-        pathname.match(
-            /^\/haber\/([^\/]+)\/?$/i
-        );
-
-
-    if (pathMatch) {
-
-        slug =
-            decodeURIComponent(
-                pathMatch[1]
-            );
-
-    }
-
-
-    if (
-        !slug &&
-        params.get("slug")
-    ) {
-
-        slug =
-            params.get("slug");
-
-    }
-
-
-    if (
-        !slug &&
-        params.get("haber")
-    ) {
-
-        const value =
-            params.get("haber");
-
-
-        if (
-            /^\d+$/.test(value)
-        ) {
-
-            id = value;
-
-        } else {
-
-            slug = value;
-
+                .replace(/^-+|-+$/g, "");
         }
 
-    }
+
+        /* =====================================================
+           URL'DEN HABER BİLGİSİNİ AL
+        ===================================================== */
+
+        function getUrlValue() {
+
+            const path =
+                window.location.pathname;
 
 
-    if (
-        !slug &&
-        !id &&
-        params.get("haberId")
-    ) {
+            /*
+             * /haber/haber-basligi
+             */
 
-        id =
-            params.get("haberId");
+            if (
+                path.startsWith("/haber/")
+            ) {
 
-    }
-
-
-    if (
-        !slug &&
-        !id &&
-        params.get("id")
-    ) {
-
-        id =
-            params.get("id");
-
-    }
+                return decodeURIComponent(
+                    path
+                        .replace(
+                            "/haber/",
+                            ""
+                        )
+                );
+            }
 
 
-    /* =====================================================
-       HABER BUL
-    ===================================================== */
+            /*
+             * QUERY PARAMETRELERİ
+             */
 
-    let haber = null;
+            const params =
+                new URLSearchParams(
+                    window.location.search
+                );
 
 
-    if (id) {
-
-        haber =
-            news.find(
-                function (item) {
-
-                    return (
-                        String(item.id)
-                        ===
-                        String(id)
-                    );
-
-                }
+            return (
+                params.get("slug")
+                ||
+                params.get("haber")
+                ||
+                params.get("haberId")
+                ||
+                params.get("id")
             );
-
-    }
-
-
-    if (
-        !haber &&
-        slug
-    ) {
-
-        const temizSlug =
-            slugify(slug);
+        }
 
 
-        haber =
-            news.find(
-                function (item) {
+        /* =====================================================
+           HABER BUL
+        ===================================================== */
 
-                    return (
-                        slugify(
-                            item.slug ||
-                            item.baslik
+        function findNews() {
+
+            const value =
+                getUrlValue();
+
+
+            if (!value) {
+                return null;
+            }
+
+
+            if (
+                typeof window.haberler ===
+                "undefined"
+            ) {
+
+                return null;
+            }
+
+
+            const haberler =
+                Array.isArray(
+                    window.haberler
+                )
+                    ? window.haberler
+                    : [];
+
+
+            /*
+             * ID İLE ARA
+             */
+
+            const byId =
+                haberler.find(
+                    haber =>
+                        String(
+                            haber.id
+                        ) === String(value)
+                );
+
+
+            if (byId) {
+                return byId;
+            }
+
+
+            /*
+             * SLUG İLE ARA
+             */
+
+            const bySlug =
+                haberler.find(
+                    haber => {
+
+                        const slug =
+                            haber.slug
+                            ||
+                            slugOlustur(
+                                haber.baslik
+                                ||
+                                haber.title
+                            );
+
+                        return (
+                            slug ===
+                            String(value)
+                        );
+                    }
+                );
+
+
+            if (bySlug) {
+                return bySlug;
+            }
+
+
+            /*
+             * BAŞLIK İLE ARA
+             */
+
+            const byTitle =
+                haberler.find(
+                    haber =>
+                        String(
+                            haber.baslik
+                            ||
+                            haber.title
+                            ||
+                            ""
+                        )
+                        .trim()
+                        .toLocaleLowerCase(
+                            "tr-TR"
                         )
                         ===
-                        temizSlug
-                    );
+                        String(value)
+                            .trim()
+                            .toLocaleLowerCase(
+                                "tr-TR"
+                            )
+                );
 
-                }
+
+            return byTitle || null;
+        }
+
+
+        /* =====================================================
+           GÖRSEL YOLU
+        ===================================================== */
+
+        function getImagePath(haber) {
+
+            const image =
+                haber.resim
+                ||
+                haber.image
+                ||
+                haber.gorsel
+                ||
+                haber.foto
+                ||
+                haber.imageUrl
+                ||
+                "";
+
+
+            if (!image) {
+
+                return "";
+            }
+
+
+            if (
+                image.startsWith("http://")
+                ||
+                image.startsWith("https://")
+                ||
+                image.startsWith("data:")
+                ||
+                image.startsWith("/")
+            ) {
+
+                return image;
+            }
+
+
+            return "/" + image;
+        }
+
+
+        /* =====================================================
+           TARİH
+        ===================================================== */
+
+        function formatDate(haber) {
+
+            return (
+                haber.tarih
+                ||
+                haber.date
+                ||
+                haber.yayinTarihi
+                ||
+                "Bugün"
             );
-
-    }
-
-
-    if (!haber) {
-
-        showError();
-
-        return;
-
-    }
+        }
 
 
-    /* =====================================================
-       HABERİ GÖSTER
-    ===================================================== */
+        /* =====================================================
+           SAAT
+        ===================================================== */
 
-    renderArticle(haber);
+        function formatTime(haber) {
 
-
-    function renderArticle(haber) {
-
-
-        const baslik =
-            haber.baslik ||
-            haber.title ||
-            "Haber";
-
-
-        const kategori =
-            haber.kategori ||
-            haber.category ||
-            "Haber";
+            return (
+                haber.saat
+                ||
+                haber.time
+                ||
+                ""
+            );
+        }
 
 
-        const tarih =
-            haber.tarih ||
-            haber.date ||
-            "";
+        /* =====================================================
+           HABER İÇERİĞİNİ GÜVENLİ ŞEKİLDE GÖSTER
+        ===================================================== */
+
+        function renderContent(content) {
+
+            if (!content) {
+
+                return `
+                    <p>
+                        Bu haberin detayları
+                        yakında güncellenecektir.
+                    </p>
+                `;
+            }
 
 
-        const saat =
-            haber.saat ||
-            haber.time ||
-            "";
+            /*
+             * Eğer içerik HTML olarak
+             * geliyorsa olduğu gibi göster.
+             */
+
+            if (
+                /<[^>]+>/.test(
+                    String(content)
+                )
+            ) {
+
+                return content;
+            }
 
 
-        const okunma =
-            haber.okunma ??
-            haber.views ??
-            "";
+            /*
+             * Düz metinse paragraflara böl.
+             */
+
+            return String(content)
+                .split(/\n+/)
+                .filter(
+                    text =>
+                        text.trim()
+                )
+                .map(
+                    text =>
+                        `<p>${text.trim()}</p>`
+                )
+                .join("");
+        }
 
 
-        const kaynak =
-            haber.kaynak ||
-            haber.source ||
-            "Haberİsta";
+        /* =====================================================
+           HABERİ OLUŞTUR
+        ===================================================== */
+
+        function renderArticle() {
+
+            const container =
+                document.getElementById(
+                    "articleContainer"
+                );
 
 
-        const spot =
-            haber.spot ||
-            haber.description ||
-            "";
+            const haber =
+                findNews();
 
 
-        const resim =
-            haber.image ||
-            haber.resim ||
-            haber.gorsel ||
-            haber["görsel"] ||
-            haber.foto ||
-            haber.fotograf ||
-            haber.photo ||
-            haber.thumbnail ||
-            haber.img ||
-            "";
+            if (!haber) {
 
+                container.innerHTML = `
 
-        const icerik =
-            haber.icerik ||
-            haber.content ||
-            "";
-
-
-        document.title =
-            baslik +
-            " | Haberİsta";
-
-
-        const imagePath =
-            getImagePath(resim);
-
-
-        /* =================================================
-           HTML
-        ================================================= */
-
-        container.innerHTML = `
-
-            <div class="article-card">
-
-
-                <header class="article-header">
-
-
-                    <div class="article-category">
-
-                        <span>
-                            ${escapeHtml(kategori)}
-                        </span>
-
-                    </div>
-
-
-                    <div class="article-title">
+                    <div class="not-found">
 
                         <h1>
-                            ${escapeHtml(baslik)}
+                            Haber Bulunamadı
                         </h1>
 
+                        <p>
+                            Aradığınız haber
+                            bulunamadı veya
+                            kaldırılmış olabilir.
+                        </p>
+
+                        <button
+                            class="back-button"
+                            onclick="goBack()"
+                        >
+                            ← Ana Sayfaya Dön
+                        </button>
+
                     </div>
 
+                `;
 
-                    ${
-                        spot
-                        ? `
-                            <div class="article-spot">
+                return;
+            }
 
-                                <p>
-                                    ${escapeHtml(spot)}
-                                </p>
 
+            const title =
+                haber.baslik
+                ||
+                haber.title
+                ||
+                "Haber";
+
+
+            const spot =
+                haber.spot
+                ||
+                haber.ozet
+                ||
+                haber.description
+                ||
+                "";
+
+
+            const content =
+                haber.icerik
+                ||
+                haber.content
+                ||
+                haber.metin
+                ||
+                "";
+
+
+            const category =
+                haber.kategori
+                ||
+                haber.category
+                ||
+                "Haber";
+
+
+            const image =
+                getImagePath(haber);
+
+
+            const date =
+                formatDate(haber);
+
+
+            const time =
+                formatTime(haber);
+
+
+            const source =
+                haber.kaynak
+                ||
+                haber.source
+                ||
+                "HABERİSTA";
+
+
+            const views =
+                haber.goruntulenme
+                ||
+                haber.views
+                ||
+                0;
+
+
+            document.title =
+                title +
+                " | HABERİSTA";
+
+
+            container.innerHTML = `
+
+                <div class="article-layout">
+
+                    <!-- =================================================
+                         ANA HABER
+                    ================================================== -->
+
+                    <article class="article-main">
+
+
+                        <header
+                            class="article-header"
+                        >
+
+                            <div
+                                class="article-category"
+                            >
+                                ${category}
                             </div>
-                        `
-                        : ""
-                    }
 
 
-                    <div class="article-meta">
-
-
-                        ${
-                            tarih
-                            ? `
-                                <span>
-                                    <strong>
-                                        ${escapeHtml(tarih)}
-                                    </strong>
-                                </span>
-                            `
-                            : ""
-                        }
-
-
-                        ${
-                            saat
-                            ? `
-                                <span class="meta-separator">
-                                </span>
-
-                                <span>
-                                    ${escapeHtml(saat)}
-                                </span>
-                            `
-                            : ""
-                        }
-
-
-                        ${
-                            okunma !== ""
-                            ? `
-                                <span class="meta-separator">
-                                </span>
-
-                                <span>
-                                    👁
-                                    ${escapeHtml(
-                                        String(okunma)
-                                    )}
-                                    okunma
-                                </span>
-                            `
-                            : ""
-                        }
-
-
-                        <span class="meta-separator">
-                        </span>
-
-
-                        <span class="article-source-mini">
-
-                            ${escapeHtml(kaynak)}
-
-                        </span>
-
-
-                    </div>
-
-
-                </header>
-
-
-                ${
-                    imagePath
-                    ? `
-                        <div class="article-image-wrapper">
-
-                            <img
-                                class="article-image"
-                                src="${escapeAttribute(imagePath)}"
-                                alt="${escapeAttribute(baslik)}"
-                                loading="eager"
-                                onerror="this.style.display='none'"
+                            <div
+                                class="article-title"
                             >
 
-                        </div>
-
-                        <div class="image-caption">
-
-                            Haberİsta · Haber görseli
-
-                        </div>
-                    `
-                    : ""
-                }
-
-
-
-                <!-- =========================================
-                     ERİŞİLEBİLİRLİK
-                ========================================== -->
-
-                <section
-                    class="accessibility-panel"
-                    aria-label="Erişilebilirlik ve sesli okuma"
-                >
-
-
-                    <div class="accessibility-header">
-
-                        <div>
-
-                            <div class="accessibility-title">
-
-                                🔊 Haber Sesli Okuma
+                                <h1>
+                                    ${title}
+                                </h1>
 
                             </div>
 
 
-                            <div class="accessibility-description">
+                            ${
+                                spot
+                                ?
+                                `
+                                <div
+                                    class="article-spot"
+                                >
 
-                                Haberi dinlemek için
-                                aşağıdaki kontrolleri kullanabilirsiniz.
+                                    <p>
+                                        ${spot}
+                                    </p>
+
+                                </div>
+                                `
+                                :
+                                ""
+                            }
+
+
+                            <div
+                                class="article-meta"
+                            >
+
+                                <span>
+                                    📅 ${date}
+                                </span>
+
+                                ${
+                                    time
+                                    ?
+                                    `
+                                    <span>
+                                        🕒 ${time}
+                                    </span>
+                                    `
+                                    :
+                                    ""
+                                }
+
+                                <span>
+                                    👁️ ${views}
+                                </span>
+
+                                <span>
+                                    📰 ${source}
+                                </span>
 
                             </div>
 
-                        </div>
-
-                    </div>
+                        </header>
 
 
+                        <!-- =============================================
+                             MİNİ SESLİ OKUMA
+                        ============================================== -->
 
-                    <div class="voice-controls">
-
-
-                        <button
-                            type="button"
-                            id="voiceStart"
-                            class="voice-button primary"
-                            onclick="startVoiceReader()"
+                        <div
+                            class="mini-voice-reader"
                         >
-                            🔊 Haberi Oku
-                        </button>
+
+                            <button
+                                id="voiceStart"
+                                class="mini-voice-btn"
+                                onclick="startVoiceReader()"
+                                title="Haberi sesli oku"
+                            >
+                                🔊 Oku
+                            </button>
 
 
-                        <button
-                            type="button"
-                            id="voicePause"
-                            class="voice-button"
-                            onclick="pauseVoiceReader()"
-                        >
-                            ⏸ Duraklat
-                        </button>
+                            <button
+                                id="voicePause"
+                                class="mini-control"
+                                onclick="pauseVoiceReader()"
+                                title="Duraklat"
+                            >
+                                ⏸
+                            </button>
 
 
-                        <button
-                            type="button"
-                            id="voiceResume"
-                            class="voice-button"
-                            onclick="resumeVoiceReader()"
-                        >
-                            ▶ Devam Et
-                        </button>
+                            <button
+                                id="voiceResume"
+                                class="mini-control"
+                                onclick="resumeVoiceReader()"
+                                title="Devam et"
+                            >
+                                ▶
+                            </button>
 
 
-                        <button
-                            type="button"
-                            id="voiceStop"
-                            class="voice-button"
-                            onclick="stopVoiceReader()"
-                        >
-                            ⏹ Durdur
-                        </button>
+                            <button
+                                id="voiceStop"
+                                class="mini-control"
+                                onclick="stopVoiceReader()"
+                                title="Durdur"
+                            >
+                                ⏹
+                            </button>
 
 
-
-                        <div class="speed-controls">
-
-                            <span class="speed-label">
-                                Okuma hızı:
+                            <span
+                                id="voiceStatus"
+                            >
+                                Haberi dinle
                             </span>
 
-
-                            <button
-                                type="button"
-                                class="speed-button"
-                                data-speed="0.75"
-                                onclick="setVoiceSpeed(0.75)"
-                            >
-                                0.75x
-                            </button>
-
-
-                            <button
-                                type="button"
-                                class="speed-button selected"
-                                data-speed="1"
-                                onclick="setVoiceSpeed(1)"
-                            >
-                                1x
-                            </button>
-
-
-                            <button
-                                type="button"
-                                class="speed-button"
-                                data-speed="1.25"
-                                onclick="setVoiceSpeed(1.25)"
-                            >
-                                1.25x
-                            </button>
-
-
-                            <button
-                                type="button"
-                                class="speed-button"
-                                data-speed="1.5"
-                                onclick="setVoiceSpeed(1.5)"
-                            >
-                                1.5x
-                            </button>
-
                         </div>
 
 
-                    </div>
+                        <!-- =============================================
+                             GÖRSEL
+                        ============================================== -->
+
+                        ${
+                            image
+                            ?
+                            `
+                            <div
+                                class="article-image-wrap"
+                            >
+
+                                <img
+                                    class="article-image"
+                                    src="${image}"
+                                    alt="${title}"
+                                    loading="eager"
+                                    onerror="
+                                        this.style.display='none';
+                                    "
+                                >
+
+                            </div>
+                            `
+                            :
+                            ""
+                        }
 
 
+                        <!-- =============================================
+                             İÇERİK
+                        ============================================== -->
 
-                    <div
-                        id="voiceStatus"
-                        class="voice-status"
-                        aria-live="polite"
-                    >
-                        Sesli okuma hazır.
-                    </div>
+                        <div
+                            id="articleContent"
+                            class="article-content"
+                        >
 
-
-                    <div
-                        id="readingIndicator"
-                        class="reading-indicator"
-                    >
-
-                        <span class="reading-dot"></span>
-
-                        Haber sesli olarak okunuyor...
-
-                    </div>
+                            ${renderContent(content)}
 
 
-                </section>
+                            <!-- =========================================
+                                 PAYLAŞ
+                            ========================================== -->
+
+                            <div
+                                class="article-share"
+                            >
+
+                                <button
+                                    class="share-button"
+                                    onclick="shareArticle()"
+                                >
+                                    📤 Paylaş
+                                </button>
 
 
+                                <button
+                                    class="share-button"
+                                    onclick="copyArticleLink()"
+                                >
+                                    🔗 Linki Kopyala
+                                </button>
 
-                <!-- =========================================
-                     İÇERİK
-                ========================================== -->
+                            </div>
 
-                <div class="article-body-layout">
+                        </div>
 
-
-                    <div
-                        class="article-content"
-                        id="articleContent"
-                    ></div>
+                    </article>
 
 
+                    <!-- =================================================
+                         SIDEBAR
+                    ================================================== -->
 
                     <aside
                         class="article-sidebar"
-                        aria-label="Haberİsta"
                     >
 
-                        <div class="sidebar-box">
+                        <div
+                            class="sidebar-box"
+                        >
+
+                            <h3>
+                                Haber Bilgileri
+                            </h3>
 
 
-                            <div class="sidebar-title">
+                            <div
+                                class="sidebar-info"
+                            >
 
+                                <strong>
+                                    Kategori
+                                </strong>
+
+                                <span>
+                                    ${category}
+                                </span>
+
+                            </div>
+
+
+                            <div
+                                class="sidebar-info"
+                            >
+
+                                <strong>
+                                    Tarih
+                                </strong>
+
+                                <span>
+                                    ${date}
+                                </span>
+
+                            </div>
+
+
+                            ${
+                                time
+                                ?
+                                `
+                                <div
+                                    class="sidebar-info"
+                                >
+
+                                    <strong>
+                                        Saat
+                                    </strong>
+
+                                    <span>
+                                        ${time}
+                                    </span>
+
+                                </div>
+                                `
+                                :
+                                ""
+                            }
+
+
+                            <div
+                                class="sidebar-info"
+                            >
+
+                                <strong>
+                                    Görüntülenme
+                                </strong>
+
+                                <span>
+                                    ${views}
+                                </span>
+
+                            </div>
+
+
+                            <div
+                                class="sidebar-info"
+                            >
+
+                                <strong>
+                                    Kaynak
+                                </strong>
+
+                                <span>
+                                    ${source}
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div
+                            class="sidebar-box"
+                        >
+
+                            <h3>
                                 HABERİSTA
+                            </h3>
 
-                            </div>
-
-
-                            <div class="sidebar-content">
-
-                                <p>
-
-                                    Türkiye ve dünyadan
-                                    güncel gelişmeleri
-                                    Haberİsta farkıyla
-                                    takip edin.
-
-                                </p>
-
-                            </div>
-
+                            <p
+                                style="
+                                    margin:0;
+                                    color:#555;
+                                    font-size:14px;
+                                    line-height:1.7;
+                                "
+                            >
+                                Türkiye ve dünyadan
+                                güncel haberleri
+                                hızlı, anlaşılır ve
+                                güvenilir şekilde
+                                takip edin.
+                            </p>
 
                         </div>
 
                     </aside>
 
-
                 </div>
-
-
-
-                <!-- =========================================
-                     KAYNAK
-                ========================================== -->
-
-                ${
-                    kaynak
-                    ? `
-                        <div class="article-source">
-
-                            <strong>
-                                Kaynak:
-                            </strong>
-
-                            ${escapeHtml(kaynak)}
-
-                        </div>
-                    `
-                    : ""
-                }
-
-
-
-                <!-- =========================================
-                     YAZI ERİŞİLEBİLİRLİĞİ
-                ========================================== -->
-
-                <div
-                    class="accessibility-panel"
-                    style="margin-top:0;"
-                >
-
-                    <div class="accessibility-header">
-
-                        <div class="accessibility-title">
-
-                            ♿ Okuma Kolaylığı
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="voice-controls">
-
-
-                        <button
-                            type="button"
-                            class="voice-button"
-                            onclick="increaseTextSize()"
-                        >
-                            🔎 Yazıyı Büyüt
-                        </button>
-
-
-                        <button
-                            type="button"
-                            class="voice-button"
-                            onclick="resetTextSize()"
-                        >
-                            A Normal
-                        </button>
-
-
-                        <button
-                            type="button"
-                            class="voice-button"
-                            onclick="toggleHighContrast()"
-                        >
-                            ◐ Yüksek Kontrast
-                        </button>
-
-
-                    </div>
-
-                </div>
-
-
-
-                <!-- =========================================
-                     PAYLAŞ
-                ========================================== -->
-
-                <div class="article-share">
-
-
-                    <span class="share-title">
-
-                        Haberi paylaş:
-
-                    </span>
-
-
-                    <button
-                        type="button"
-                        class="share-btn"
-                        onclick="shareNews()"
-                        title="Haberi paylaş"
-                        aria-label="Haberi paylaş"
-                    >
-                        ↗
-                    </button>
-
-
-                    <button
-                        type="button"
-                        class="share-btn"
-                        onclick="copyLink()"
-                        title="Bağlantıyı kopyala"
-                        aria-label="Bağlantıyı kopyala"
-                    >
-                        🔗
-                    </button>
-
-
-                </div>
-
-
-                <div class="article-end"></div>
-
-
-            </div>
-
-        `;
-
-
-        /* =================================================
-           İÇERİK
-        ================================================= */
-
-        const contentBox =
-            document.getElementById(
-                "articleContent"
-            );
-
-
-        if (!icerik) {
-
-            contentBox.innerHTML = `
-
-                <p>
-
-                    Bu haber için henüz
-                    detaylı içerik eklenmemiştir.
-
-                </p>
 
             `;
 
-            return;
 
-        }
+            /*
+             * GÖRSEL YÜKLENDİKTEN SONRA
+             */
 
-
-        if (
-            /<[a-z][\s\S]*>/i.test(
-                String(icerik)
-            )
-        ) {
-
-            contentBox.innerHTML =
-                icerik;
-
-        } else {
-
-            contentBox.innerHTML =
-                String(icerik)
-                    .split(/\n+/)
-                    .map(
-                        text =>
-                            text.trim()
-                    )
-                    .filter(Boolean)
-                    .map(
-                        text =>
-                            `<p>${escapeHtml(text)}</p>`
-                    )
-                    .join("");
-
-        }
-
-    }
-
-
-    /* =====================================================
-       SLUG
-    ===================================================== */
-
-    function slugify(text) {
-
-        return String(text || "")
-            .toLocaleLowerCase("tr-TR")
-            .replace(/ğ/g, "g")
-            .replace(/ü/g, "u")
-            .replace(/ş/g, "s")
-            .replace(/ı/g, "i")
-            .replace(/ö/g, "o")
-            .replace(/ç/g, "c")
-            .replace(/â/g, "a")
-            .replace(/î/g, "i")
-            .replace(/û/g, "u")
-            .replace(
-                /[^a-z0-9\s-]/g,
-                ""
-            )
-            .trim()
-            .replace(
-                /\s+/g,
-                "-"
-            )
-            .replace(
-                /-+/g,
-                "-"
-            )
-            .replace(
-                /^-+|-+$/g,
-                "");
-
-    }
-
-
-    /* =====================================================
-       RESİM
-    ===================================================== */
-
-    function getImagePath(src) {
-
-        if (!src) {
-
-            return "";
-
-        }
-
-
-        src =
-            String(src).trim();
-
-
-        if (
-            src.startsWith(
-                "http://"
-            ) ||
-            src.startsWith(
-                "https://"
-            ) ||
-            src.startsWith(
-                "data:"
-            )
-        ) {
-
-            return src;
-
-        }
-
-
-        return "/" +
-            src.replace(
-                /^\/+/,
-                ""
-            );
-
-    }
-
-
-    /* =====================================================
-       HTML GÜVENLİĞİ
-    ===================================================== */
-
-    function escapeHtml(value) {
-
-        return String(value ?? "")
-            .replace(
-                /&/g,
-                "&amp;"
-            )
-            .replace(
-                /</g,
-                "&lt;"
-            )
-            .replace(
-                />/g,
-                "&gt;"
-            )
-            .replace(
-                /"/g,
-                "&quot;"
-            )
-            .replace(
-                /'/g,
-                "&#039;"
-            );
-
-    }
-
-
-    function escapeAttribute(value) {
-
-        return escapeHtml(value);
-
-    }
-
-
-    /* =====================================================
-       HATA
-    ===================================================== */
-
-    function showError(message) {
-
-        container.innerHTML = `
-
-            <div class="article-error">
-
-
-                <div class="article-error-icon">
-
-                    !
-
-                </div>
-
-
-                <h1>
-
-                    Haber bulunamadı
-
-                </h1>
-
-
-                <p>
-
-                    ${
-                        message ||
-                        "Aradığınız haber kaldırılmış veya bağlantı hatalı olabilir."
-                    }
-
-                </p>
-
-
-                <button
-                    onclick="window.location.href='/'"
-                >
-
-                    Ana Sayfaya Dön
-
-                </button>
-
-
-            </div>
-
-        `;
-
-    }
-
-
-})();
-
-
-
-/* =========================================================
-   SESLİ OKUMA SİSTEMİ
-========================================================= */
-
-let speechUtterance = null;
-
-let voiceSpeed = 1;
-
-let isReading = false;
-
-
-/* =========================================================
-   OKUNACAK METNİ AL
-========================================================= */
-
-function getArticleVoiceText() {
-
-    const title =
-        document.querySelector(
-            ".article-title h1"
-        )?.innerText || "";
-
-
-    const spot =
-        document.querySelector(
-            ".article-spot p"
-        )?.innerText || "";
-
-
-    const content =
-        document.querySelector(
-            "#articleContent"
-        )?.innerText || "";
-
-
-    return [
-
-        title,
-
-        spot,
-
-        content
-
-    ]
-        .filter(Boolean)
-        .join(". ");
-
-}
-
-
-/* =========================================================
-   TÜRKÇE SESİ BUL
-========================================================= */
-
-function getTurkishVoice() {
-
-    const voices =
-        window.speechSynthesis
-            .getVoices();
-
-
-    if (!voices.length) {
-
-        return null;
-
-    }
-
-
-    return (
-        voices.find(
-            voice =>
-                voice.lang
-                    .toLowerCase()
-                    .startsWith("tr")
-        )
-        ||
-        voices.find(
-            voice =>
-                voice.name
-                    .toLowerCase()
-                    .includes("turk")
-        )
-        ||
-        null
-    );
-
-}
-
-
-/* =========================================================
-   BAŞLAT
-========================================================= */
-
-function startVoiceReader() {
-
-    if (
-        !("speechSynthesis" in window)
-    ) {
-
-        alert(
-            "Tarayıcınız sesli okumayı desteklemiyor. Lütfen Chrome, Edge veya Safari kullanın."
-        );
-
-        return;
-
-    }
-
-
-    const text =
-        getArticleVoiceText();
-
-
-    if (!text.trim()) {
-
-        alert(
-            "Okunacak haber metni bulunamadı."
-        );
-
-        return;
-
-    }
-
-
-    window.speechSynthesis.cancel();
-
-
-    speechUtterance =
-        new SpeechSynthesisUtterance(
-            text
-        );
-
-
-    speechUtterance.lang =
-        "tr-TR";
-
-
-    speechUtterance.rate =
-        voiceSpeed;
-
-
-    speechUtterance.pitch =
-        1;
-
-
-    speechUtterance.volume =
-        1;
-
-
-    const turkishVoice =
-        getTurkishVoice();
-
-
-    if (turkishVoice) {
-
-        speechUtterance.voice =
-            turkishVoice;
-
-    }
-
-
-    speechUtterance.onstart =
-        function () {
-
-            isReading =
-                true;
-
-
-            updateVoiceUI(
-                true
-            );
-
-        };
-
-
-    speechUtterance.onend =
-        function () {
-
-            isReading =
-                false;
-
-
-            updateVoiceUI(
-                false
-            );
-
-
-            document.getElementById(
-                "voiceStatus"
-            ).textContent =
-                "Haberin tamamı okundu.";
-
-        };
-
-
-    speechUtterance.onerror =
-        function () {
-
-            isReading =
-                false;
-
-
-            updateVoiceUI(
-                false
-            );
-
-
-            document.getElementById(
-                "voiceStatus"
-            ).textContent =
-                "Sesli okuma sırasında bir hata oluştu.";
-
-        };
-
-
-    window.speechSynthesis.speak(
-        speechUtterance
-    );
-
-}
-
-
-/* =========================================================
-   DURAKLAT
-========================================================= */
-
-function pauseVoiceReader() {
-
-    if (
-        window.speechSynthesis.speaking &&
-        !window.speechSynthesis.paused
-    ) {
-
-        window.speechSynthesis.pause();
-
-
-        document.getElementById(
-            "voiceStatus"
-        ).textContent =
-            "Sesli okuma duraklatıldı.";
-
-    }
-
-}
-
-
-/* =========================================================
-   DEVAM
-========================================================= */
-
-function resumeVoiceReader() {
-
-    if (
-        window.speechSynthesis.paused
-    ) {
-
-        window.speechSynthesis.resume();
-
-
-        document.getElementById(
-            "voiceStatus"
-        ).textContent =
-            "Sesli okuma devam ediyor.";
-
-    }
-
-}
-
-
-/* =========================================================
-   DURDUR
-========================================================= */
-
-function stopVoiceReader() {
-
-    window.speechSynthesis.cancel();
-
-
-    isReading =
-        false;
-
-
-    updateVoiceUI(
-        false
-    );
-
-
-    document.getElementById(
-        "voiceStatus"
-    ).textContent =
-        "Sesli okuma durduruldu.";
-
-}
-
-
-/* =========================================================
-   OKUMA HIZI
-========================================================= */
-
-function setVoiceSpeed(speed) {
-
-    voiceSpeed =
-        Number(speed);
-
-
-    document
-        .querySelectorAll(
-            ".speed-button"
-        )
-        .forEach(
-            function (button) {
-
-                button.classList.toggle(
-                    "selected",
-                    Number(
-                        button.dataset.speed
-                    )
-                    ===
-                    voiceSpeed
+            const articleImage =
+                document.querySelector(
+                    ".article-image"
                 );
 
+
+            if (articleImage) {
+
+                articleImage.addEventListener(
+                    "error",
+                    function () {
+
+                        this.style.display =
+                            "none";
+
+                    }
+                );
             }
-        );
+        }
 
 
-    document.getElementById(
-        "voiceStatus"
-    ).textContent =
-        "Okuma hızı " +
-        voiceSpeed +
-        "x olarak ayarlandı.";
+        /* =====================================================
+           PAYLAŞ
+        ===================================================== */
 
+        async function shareArticle() {
 
-    /*
-       Eğer şu anda okuyorsa
-       yeniden başlat.
-    */
+            const url =
+                window.location.href;
 
-    if (
-        isReading
-    ) {
 
-        startVoiceReader();
+            const title =
+                document.querySelector(
+                    ".article-title h1"
+                )?.innerText
+                ||
+                "HABERİSTA";
 
-    }
 
-}
+            if (
+                navigator.share
+            ) {
 
+                try {
 
-/* =========================================================
-   SES UI
-========================================================= */
+                    await navigator.share({
 
-function updateVoiceUI(reading) {
+                        title:
+                            title,
 
-    const start =
-        document.getElementById(
-            "voiceStart"
-        );
+                        text:
+                            title,
 
+                        url:
+                            url
 
-    const indicator =
-        document.getElementById(
-            "readingIndicator"
-        );
+                    });
 
+                } catch (error) {
 
-    if (!start) return;
-
-
-    if (reading) {
-
-        start.innerHTML =
-            "🔊 Okunuyor...";
-
-        start.classList.add(
-            "active"
-        );
-
-        indicator?.classList.add(
-            "show"
-        );
-
-    } else {
-
-        start.innerHTML =
-            "🔊 Haberi Oku";
-
-        start.classList.remove(
-            "active"
-        );
-
-        indicator?.classList.remove(
-            "show"
-        );
-
-    }
-
-}
-
-
-/* =========================================================
-   YAZI BÜYÜT
-========================================================= */
-
-function increaseTextSize() {
-
-    document.body.classList.add(
-        "large-text"
-    );
-
-}
-
-
-/* =========================================================
-   YAZI NORMAL
-========================================================= */
-
-function resetTextSize() {
-
-    document.body.classList.remove(
-        "large-text"
-    );
-
-}
-
-
-/* =========================================================
-   YÜKSEK KONTRAST
-========================================================= */
-
-function toggleHighContrast() {
-
-    document.body.classList.toggle(
-        "high-contrast"
-    );
-
-}
-
-
-/* =========================================================
-   GERİ
-========================================================= */
-
-function goBack() {
-
-    if (
-        document.referrer &&
-        document.referrer.includes(
-            window.location.host
-        )
-    ) {
-
-        history.back();
-
-    } else {
-
-        window.location.href =
-            "/";
-
-    }
-
-}
-
-
-/* =========================================================
-   PAYLAŞ
-========================================================= */
-
-function shareNews() {
-
-    const data = {
-
-        title:
-            document.title,
-
-        text:
-            document.title,
-
-        url:
-            window.location.href
-
-    };
-
-
-    if (
-        navigator.share
-    ) {
-
-        navigator
-            .share(data)
-            .catch(
-                () => {}
-            );
-
-    } else {
-
-        copyLink();
-
-    }
-
-}
-
-
-/* =========================================================
-   LİNK KOPYALA
-========================================================= */
-
-function copyLink() {
-
-    const url =
-        window.location.href;
-
-
-    if (
-        navigator.clipboard
-    ) {
-
-        navigator.clipboard
-            .writeText(url)
-            .then(
-                function () {
-
-                    alert(
-                        "Haber bağlantısı kopyalandı."
-                    );
+                    /*
+                     * Kullanıcı paylaşımı
+                     * iptal ettiyse hata verme.
+                     */
 
                 }
-            )
-            .catch(
-                function () {
 
-                    alert(
-                        "Bağlantı kopyalanamadı."
+                return;
+            }
+
+
+            await copyArticleLink();
+
+
+            alert(
+                "Haber bağlantısı kopyalandı."
+            );
+        }
+
+
+        /* =====================================================
+           LİNK KOPYALA
+        ===================================================== */
+
+        async function copyArticleLink() {
+
+            const url =
+                window.location.href;
+
+
+            try {
+
+                await navigator.clipboard
+                    .writeText(url);
+
+            } catch (error) {
+
+                const textarea =
+                    document.createElement(
+                        "textarea"
                     );
 
-                }
+
+                textarea.value =
+                    url;
+
+
+                document.body.appendChild(
+                    textarea
+                );
+
+
+                textarea.select();
+
+
+                document.execCommand(
+                    "copy"
+                );
+
+
+                textarea.remove();
+            }
+        }
+
+
+        /* =====================================================
+           GERİ DÖN
+        ===================================================== */
+
+        function goBack() {
+
+            if (
+                document.referrer
+                &&
+                document.referrer
+                    .includes(
+                        window.location.host
+                    )
+            ) {
+
+                history.back();
+
+            } else {
+
+                window.location.href =
+                    "/";
+            }
+        }
+
+
+        /* =====================================================
+           MİNİ SESLİ OKUMA SİSTEMİ
+        ===================================================== */
+
+        let speechUtterance =
+            null;
+
+
+        let voiceSpeed =
+            1;
+
+
+        /* =====================================================
+           HABER METNİNİ AL
+        ===================================================== */
+
+        function getArticleVoiceText() {
+
+            const title =
+                document.querySelector(
+                    ".article-title h1"
+                )?.innerText
+                ||
+                "";
+
+
+            const spot =
+                document.querySelector(
+                    ".article-spot p"
+                )?.innerText
+                ||
+                "";
+
+
+            const content =
+                document.querySelector(
+                    "#articleContent"
+                )?.innerText
+                ||
+                "";
+
+
+            /*
+             * Paylaşım butonlarının
+             * seslendirilmesini engelle.
+             */
+
+            const cleanContent =
+                content
+                    .replace(
+                        "📤 Paylaş",
+                        ""
+                    )
+                    .replace(
+                        "🔗 Linki Kopyala",
+                        ""
+                    );
+
+
+            return [
+
+                title,
+
+                spot,
+
+                cleanContent
+
+            ]
+            .filter(Boolean)
+
+            .join(". ");
+        }
+
+
+        /* =====================================================
+           TÜRKÇE SESİ BUL
+        ===================================================== */
+
+        function getTurkishVoice() {
+
+            const voices =
+                speechSynthesis
+                    .getVoices();
+
+
+            return (
+                voices.find(
+                    voice =>
+                        voice.lang
+                            .toLowerCase()
+                            .startsWith("tr")
+                )
+                ||
+                null
             );
-
-    } else {
-
-        alert(
-            "Bağlantı kopyalanamadı."
-        );
-
-    }
-
-}
+        }
 
 
-/* =========================================================
-   SESLER YÜKLENDİĞİNDE
-========================================================= */
+        /* =====================================================
+           OKUMAYI BAŞLAT
+        ===================================================== */
 
-if (
-    "speechSynthesis" in window
-) {
+        function startVoiceReader() {
 
-    window.speechSynthesis
-        .onvoiceschanged =
-        function () {
+            if (
+                !(
+                    "speechSynthesis"
+                    in window
+                )
+            ) {
 
-            window.speechSynthesis
-                .getVoices();
+                alert(
+                    "Tarayıcınız sesli okumayı desteklemiyor."
+                );
 
-        };
+                return;
+            }
 
-}
+
+            const text =
+                getArticleVoiceText();
 
 
-/* =========================================================
-   SAYFADAN ÇIKINCA SESİ KES
-========================================================= */
+            if (!text.trim()) {
 
-window.addEventListener(
-    "beforeunload",
-    function () {
+                return;
+            }
+
+
+            /*
+             * Önce mevcut sesi durdur.
+             */
+
+            speechSynthesis.cancel();
+
+
+            speechUtterance =
+                new SpeechSynthesisUtterance(
+                    text
+                );
+
+
+            speechUtterance.lang =
+                "tr-TR";
+
+
+            speechUtterance.rate =
+                voiceSpeed;
+
+
+            speechUtterance.pitch =
+                1;
+
+
+            speechUtterance.volume =
+                1;
+
+
+            const voice =
+                getTurkishVoice();
+
+
+            if (voice) {
+
+                speechUtterance.voice =
+                    voice;
+            }
+
+
+            /*
+             * BAŞLADI
+             */
+
+            speechUtterance.onstart =
+                function () {
+
+                    const startButton =
+                        document.getElementById(
+                            "voiceStart"
+                        );
+
+
+                    const status =
+                        document.getElementById(
+                            "voiceStatus"
+                        );
+
+
+                    if (startButton) {
+
+                        startButton.innerHTML =
+                            "🔊 Okunuyor";
+                    }
+
+
+                    if (status) {
+
+                        status.textContent =
+                            "Sesli okuma devam ediyor";
+                    }
+                };
+
+
+            /*
+             * BİTTİ
+             */
+
+            speechUtterance.onend =
+                function () {
+
+                    const startButton =
+                        document.getElementById(
+                            "voiceStart"
+                        );
+
+
+                    const status =
+                        document.getElementById(
+                            "voiceStatus"
+                        );
+
+
+                    if (startButton) {
+
+                        startButton.innerHTML =
+                            "🔊 Oku";
+                    }
+
+
+                    if (status) {
+
+                        status.textContent =
+                            "Okuma tamamlandı";
+                    }
+                };
+
+
+            /*
+             * HATA
+             */
+
+            speechUtterance.onerror =
+                function () {
+
+                    const startButton =
+                        document.getElementById(
+                            "voiceStart"
+                        );
+
+
+                    const status =
+                        document.getElementById(
+                            "voiceStatus"
+                        );
+
+
+                    if (startButton) {
+
+                        startButton.innerHTML =
+                            "🔊 Oku";
+                    }
+
+
+                    if (status) {
+
+                        status.textContent =
+                            "Okuma kullanılamıyor";
+                    }
+                };
+
+
+            speechSynthesis.speak(
+                speechUtterance
+            );
+        }
+
+
+        /* =====================================================
+           DURAKLAT
+        ===================================================== */
+
+        function pauseVoiceReader() {
+
+            if (
+                speechSynthesis.speaking
+                &&
+                !speechSynthesis.paused
+            ) {
+
+                speechSynthesis.pause();
+
+
+                const status =
+                    document.getElementById(
+                        "voiceStatus"
+                    );
+
+
+                if (status) {
+
+                    status.textContent =
+                        "Duraklatıldı";
+                }
+            }
+        }
+
+
+        /* =====================================================
+           DEVAM ET
+        ===================================================== */
+
+        function resumeVoiceReader() {
+
+            if (
+                speechSynthesis.paused
+            ) {
+
+                speechSynthesis.resume();
+
+
+                const status =
+                    document.getElementById(
+                        "voiceStatus"
+                    );
+
+
+                if (status) {
+
+                    status.textContent =
+                        "Devam ediyor";
+                }
+            }
+        }
+
+
+        /* =====================================================
+           DURDUR
+        ===================================================== */
+
+        function stopVoiceReader() {
+
+            speechSynthesis.cancel();
+
+
+            const startButton =
+                document.getElementById(
+                    "voiceStart"
+                );
+
+
+            const status =
+                document.getElementById(
+                    "voiceStatus"
+                );
+
+
+            if (startButton) {
+
+                startButton.innerHTML =
+                    "🔊 Oku";
+            }
+
+
+            if (status) {
+
+                status.textContent =
+                    "Haberi dinle";
+            }
+        }
+
+
+        /* =====================================================
+           TARAYICI SESLERİ YÜKLENİNCE
+        ===================================================== */
 
         if (
             "speechSynthesis"
             in window
         ) {
 
-            window.speechSynthesis
-                .cancel();
+            speechSynthesis
+                .addEventListener(
+                    "voiceschanged",
+                    function () {
 
+                        getTurkishVoice();
+
+                    }
+                );
         }
 
-    }
-);
 
-</script>
+        /* =====================================================
+           SAYFADAN ÇIKARKEN SESİ KAPAT
+        ===================================================== */
 
+        window.addEventListener(
+            "beforeunload",
+            function () {
+
+                if (
+                    "speechSynthesis"
+                    in window
+                ) {
+
+                    speechSynthesis.cancel();
+                }
+            }
+        );
+
+
+        /* =====================================================
+           SAYFA YÜKLENDİ
+        ===================================================== */
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+                renderArticle();
+
+            }
+        );
+
+    </script>
 
 </body>
+
 </html>
