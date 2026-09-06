@@ -147,7 +147,7 @@ const haberler = [
 
     tarih: "6 Eylül 2026",
     saat: "11:17",
-    gorsel: "images/iran-tanker.jpg",
+    gorsel: "images/ChatGPT Image 6 Eyl 2026 19_44_18.pngEyl 2026 19_46_53.png ",
     kaynak: "HABERİSTA"
 },
 
@@ -253,7 +253,7 @@ const haberler = [
 
     tarih: "6 Eylül 2026",
     saat: "11:01",
-    gorsel: "images/ekonomi.jpg",
+    gorsel: "images/ChatGPT Image 6 Eyl 2026 19_45_31.png",
     kaynak: "HABERİSTA"
 },
 
@@ -343,7 +343,7 @@ const haberler = [
 
     tarih: "6 Eylül 2026",
     saat: "10:23",
-    gorsel: "images/iran-ekonomi.jpg",
+    gorsel: "images/",
     kaynak: "HABERİSTA"
 },
 
@@ -511,7 +511,7 @@ const haberler = [
 
     tarih: "6 Eylül 2026",
     saat: "09:22",
-    gorsel: "images/eyupsultan-kaza.jpg",
+    gorsel: "images/",
     kaynak: "HABERİSTA"
 },
 {
