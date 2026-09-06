@@ -106,7 +106,7 @@ const haberler = [
 
         tarih: "6 Eylül 2026",
         saat: "12:10",
-        gorsel: "images/SEL-HEYELAN.jpeg",
+        gorsel: "images/meteroji.jpeg",
         kaynak: "HABERİSTA"
     },
 
@@ -184,7 +184,7 @@ const haberler = [
 
         tarih: "6 Eylül 2026",
         saat: "11:55",
-        gorsel: "images/DEPREM.jpeg",
+        gorsel: "images/deprem.jpeg",
         kaynak: "AFAD / Kandilli Rasathanesi"
     },
 
@@ -262,7 +262,7 @@ const haberler = [
 
         tarih: "6 Eylül 2026",
         saat: "10:15",
-        gorsel: "images/KPSS-LISANS.jpeg",
+        gorsel: "images/kpss.jpeg",
         kaynak: "ÖSYM"
     },
 
@@ -350,7 +350,7 @@ const haberler = [
 
         tarih: "6 Eylül 2026",
         saat: "00:20",
-        gorsel: "images/BESIKTAS-FENERBAHCE.jpeg",
+        gorsel: "images/bjkfb.jpeg",
         kaynak: "Spor Servisi"
     },
 
@@ -422,7 +422,7 @@ const haberler = [
 
         tarih: "6 Eylül 2026",
         saat: "09:30",
-        gorsel: "images/ALTIN.jpeg",
+        gorsel: "images/altın.jpeg",
         kaynak: "HABERİSTA Ekonomi"
     },
 
@@ -491,7 +491,7 @@ const haberler = [
 
         tarih: "6 Eylül 2026",
         saat: "09:10",
-        gorsel: "images/AKARYAKIT.jpeg",
+        gorsel: "images/yakıt.jpeg",
         kaynak: "HABERİSTA Ekonomi"
     },
 
@@ -564,7 +564,7 @@ const haberler = [
 
         tarih: "6 Eylül 2026",
         saat: "08:45",
-        gorsel: "images/PANTHER-TANK.jpeg",
+        gorsel: "images/rusya ünüversite.jpeg",
         kaynak: "Dünya Servisi"
     },
 
@@ -641,7 +641,7 @@ const haberler = [
 
         tarih: "6 Eylül 2026",
         saat: "08:30",
-        gorsel: "images/MXGP-AFYON.jpeg",
+        gorsel: "images/mxgp yarışması.jpeg",
         kaynak: "Türkiye Motosiklet Federasyonu"
     },
 
@@ -717,98 +717,12 @@ const haberler = [
 
         tarih: "6 Eylül 2026",
         saat: "08:15",
-        gorsel: "images/EES-AVRUPA.jpeg",
+        gorsel: "images/asrupa seyhat.jpeg",
         kaynak: "Avrupa Birliği"
     },
 
 
-    /* =====================================================
-       10 - SPOR
-    ===================================================== */
-
-    {
-        id: 20,
-        kategori: "Spor",
-        baslik: "Filenin Sultanları için Avrupa Şampiyonası heyecanı",
-
-        spot: "A Milli Kadın Voleybol Takımı, 2026 CEV Kadınlar Avrupa Voleybol Şampiyonası finalinde İtalya ile karşılaşacak. Şampiyonluk heyecanı İstanbul'da yaşanıyor.",
-
-        icerik: `
-            A Milli Kadın Voleybol Takımı'nın Avrupa şampiyonluğu yolundaki
-            mücadelesinde final heyecanı yaşanıyor.
-
-            Filenin Sultanları, 2026 CEV Kadınlar Avrupa Voleybol
-            Şampiyonası finalinde İtalya ile karşı karşıya gelecek.
-
-            Türkiye'nin ev sahipleri arasında bulunduğu turnuvada
-            milli takımın finale yükselmesi büyük heyecan oluşturdu.
-
-            FİNALDE RAKİP İTALYA
-
-            Türkiye ile İtalya arasındaki final karşılaşması Avrupa
-            kadın voleybolunun iki önemli takımını karşı karşıya
-            getirecek.
-
-            İki takım da turnuva boyunca başarılı sonuçlar alarak
-            şampiyonluk maçına kadar yükseldi.
-
-            FİLENİN SULTANLARI'NIN YOLCULUĞU
-
-            A Milli Kadın Voleybol Takımı turnuva boyunca hücum,
-            blok ve savunmadaki performansıyla dikkat çekti.
-
-            Oyuncuların servis performansları ve savunmadaki
-            mücadeleleri de takımın finale ulaşmasında önemli rol oynadı.
-
-            İSTANBUL'DA BÜYÜK HEYECAN
-
-            Final maçının İstanbul'da oynanacak olması Türk
-            voleybolseverler için ayrıca önem taşıyor.
-
-            Milli takımın şampiyonluk hedefiyle sahaya çıkacak olması
-            nedeniyle karşılaşmaya büyük ilgi gösterilmesi bekleniyor.
-
-            ŞAMPİYONLUK HEDEFİ
-
-            Filenin Sultanları'nın hedefi Avrupa Şampiyonası'nı
-            şampiyon tamamlamak.
-
-            Türkiye kadın voleybolunda son yıllarda uluslararası
-            organizasyonlarda önemli başarılar elde ederek büyük
-            bir taraftar kitlesine ulaştı.
-
-            FİNALDE NELER BELİRLEYECEK?
-
-            Final karşılaşmasında servis kalitesi, blok savunması,
-            hücum verimliliği ve kritik sayılarda yapılan hatalar
-            maçın sonucunda belirleyici olabilir.
-
-            Özellikle uzun rallilerde savunma performansı ve
-            oyuncuların fiziksel dayanıklılığı önem taşıyacak.
-
-            TÜRKİYE'NİN VOLEYBOL HEYECANI
-
-            Turnuva boyunca milli takımın karşılaşmaları Türkiye'de
-            büyük ilgi gördü.
-
-            Final karşılaşması da milyonlarca voleybolsever tarafından
-            yakından takip edilecek.
-
-            Türkiye Voleybol Federasyonu tarafından finalde rakibin
-            İtalya olduğu duyuruldu.
-
-            HABERİSTA Spor Servisi olarak final maçındaki gelişmeleri,
-            set sonuçlarını ve karşılaşmanın ardından oluşacak
-            tabloyu takip ediyoruz.
-        `,
-
-        tarih: "6 Eylül 2026",
-        saat: "19:00",
-        gorsel: "images/FILENIN-SULTANLARI.jpeg",
-        kaynak: "Türkiye Voleybol Federasyonu"
-    },
-
-
+    
     /* =====================================================
        11 - SON DAKİKA
     ===================================================== */
