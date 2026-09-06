@@ -1113,3 +1113,135 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
 });
+/* =========================================================
+   HABERİSTA CANLI PİYASA
+========================================================= */
+
+async function piyasaVerileriniGetir() {
+    const marketItems = document.getElementById("marketItems");
+    const marketUpdated = document.getElementById("marketUpdated");
+
+    if (!marketItems) return;
+
+    try {
+        const response = await fetch("/api/market", {
+            cache: "no-store"
+        });
+
+        const result = await response.json();
+
+        if (!result.success) {
+            throw new Error(result.error || "Piyasa verisi alınamadı.");
+        }
+
+        const data = result.data;
+
+        const piyasalar = [
+            {
+                key: "USD/TRY",
+                label: "Dolar",
+                suffix: "₺"
+            },
+            {
+                key: "EUR/TRY",
+                label: "Euro",
+                suffix: "₺"
+            },
+            {
+                key: "BTC/USD",
+                label: "Bitcoin",
+                suffix: "$"
+            }
+        ];
+
+        marketItems.innerHTML = piyasalar
+            .map((market) => {
+                const item = data[market.key];
+
+                if (!item || Number.isNaN(item.price)) {
+                    return `
+                        <div class="market-item market-error">
+                            <span class="market-name">${market.label}</span>
+                            <strong>--</strong>
+                        </div>
+                    `;
+                }
+
+                const price = formatMarketPrice(item.price);
+                const percent = Number(item.percent || 0);
+
+                const positive = percent > 0;
+                const negative = percent < 0;
+
+                const direction = positive
+                    ? "▲"
+                    : negative
+                        ? "▼"
+                        : "•";
+
+                const className = positive
+                    ? "up"
+                    : negative
+                        ? "down"
+                        : "neutral";
+
+                return `
+                    <div class="market-item">
+
+                        <span class="market-name">
+                            ${market.label}
+                        </span>
+
+                        <strong class="market-price">
+                            ${price}${market.suffix}
+                        </strong>
+
+                        <span class="market-change ${className}">
+                            ${direction}
+                            ${Math.abs(percent).toFixed(2)}%
+                        </span>
+
+                    </div>
+                `;
+            })
+            .join("");
+
+        const now = new Date();
+
+        marketUpdated.textContent =
+            "Son güncelleme " +
+            now.toLocaleTimeString("tr-TR", {
+                hour: "2-digit",
+                minute: "2-digit"
+            });
+
+    } catch (error) {
+        console.error("Piyasa:", error);
+
+        marketItems.innerHTML = `
+            <div class="market-error">
+                Piyasa verileri şu anda alınamıyor.
+            </div>
+        `;
+
+        marketUpdated.textContent = "Bağlantı bekleniyor";
+    }
+}
+
+
+function formatMarketPrice(value) {
+    return Number(value).toLocaleString("tr-TR", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    });
+}
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    piyasaVerileriniGetir();
+
+    /*
+       60 saniyede bir güncelle
+    */
+    setInterval(piyasaVerileriniGetir, 60000);
+});
