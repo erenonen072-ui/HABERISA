@@ -1,127 +1,271 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Son Dakika Haberleri - Haberİsta</title>
-    <meta name="description" content="Haberİsta son dakika haberleri. Türkiye ve dünyadan en son gelişmeler.">
-    <link rel="stylesheet" href="css/style.css">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Gündem Haberleri - Haberİsta</title>
+
+    <meta
+        name="description"
+        content="Haberİsta Gündem - Türkiye'den en güncel gündem haberleri."
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
 </head>
 
-<body>
-
+<body data-kategori="Son Dakika">
 <header class="site-header">
-    <div class="header-inner">
 
-        <a href="index.html" class="logo">
-            Haber<span>İsta</span>
-        </a>
+    <div class="top-header">
 
-        <div class="header-search">
-            <input type="text" id="searchInput" placeholder="Haber ara...">
-            <button id="searchBtn">⌕</button>
-        </div>
+        <div class="container header-inner">
 
-        <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+            <button
+                id="menuBtn"
+                class="menu-btn"
+            >
+                ☰
+            </button>
 
-    </div>
+            <a
+                href="index.html"
+                class="brand"
+            >
+                <img
+                    src="images/logo.jpeg"
+                    alt="Haberİsta Logo"
+                >
 
-    <nav class="main-nav" id="mainNav">
-        <div class="nav-inner">
-            <a href="index.html">Ana Sayfa</a>
-            <a href="son-dakika.html" class="active">Son Dakika</a>
-            <a href="gundem.html">Gündem</a>
-            <a href="ekonomi.html">Ekonomi</a>
-            <a href="spor.html">Spor</a>
-            <a href="magazin.html">Magazin</a>
-            <a href="dunya.html">Dünya</a>
-            <a href="teknoloji.html">Teknoloji</a>
-            <a href="saglik.html">Sağlık</a>
-            <a href="kultur-sanat.html">Kültür Sanat</a>
-        </div>
-    </nav>
-</header>
+                <span>Haberİsta</span>
+            </a>
 
-<div class="breaking-bar">
-    <div class="container breaking-inner">
-        <strong>SON DAKİKA</strong>
-        <div id="breakingNews"></div>
-    </div>
-</div>
+            <div class="search-area">
 
-<main class="container category-page">
+                <button
+                    id="searchBtn"
+                    class="search-icon"
+                    aria-label="Ara"
+                >
+                    🔍
+                </button>
 
-    <div class="page-heading">
-        <div>
-            <span class="page-kicker">HABERİSTA</span>
-            <h1>Son Dakika Haberleri</h1>
-            <p>Türkiye ve dünyadan son dakika gelişmeleri</p>
-        </div>
-    </div>
+                <button
+                    id="notificationBtn"
+                    class="notification-menu-btn"
+                    type="button"
+                >
+                    🔔 Bildirimleri Aç
+                </button>
 
-    <div class="category-layout">
+                <div
+                    id="searchBox"
+                    class="search-box"
+                >
 
-        <section>
-            <div id="categoryNews" class="news-grid"></div>
-        </section>
+                    <input
+                        id="searchInput"
+                        type="search"
+                        placeholder="Haber ara..."
+                    >
 
-        <aside class="sidebar">
-
-            <div class="sidebar-box">
-                <div class="sidebar-title">
-                    <span>ÇOK OKUNANLAR</span>
                 </div>
-                <div id="popularNews"></div>
+
             </div>
 
-        </aside>
+        </div>
 
     </div>
+
+    <nav class="category-nav">
+
+        <div class="container nav-inner">
+
+            <a href="index.html">
+                Ana Sayfa
+            </a>
+
+            <a href="son-dakika.html">
+                Son Dakika
+            </a>
+
+            <a
+                class="active"
+                href="gundem.html"
+            >
+                Gündem
+            </a>
+
+            <a href="ekonomi.html">
+                Ekonomi
+            </a>
+
+            <a href="spor.html">
+                Spor
+            </a>
+
+            <a href="magazin.html">
+                Magazin
+            </a>
+
+            <a href="dunya.html">
+                Dünya
+            </a>
+
+            <a href="teknoloji.html">
+                Teknoloji
+            </a>
+
+            <a href="saglik.html">
+                Sağlık
+            </a>
+
+            <a href="kultur-sanat.html">
+                Kültür Sanat
+            </a>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+<section class="category-header">
+
+    <div class="container">
+
+        <div class="category-header-inner">
+
+            <div>
+
+                <div class="category-label">
+                    HABERİSTA
+                </div>
+
+                <h1 id="kategoriBaslik">
+                    Gündem
+                </h1>
+
+                <p id="kategoriAciklama">
+                    Gündem kategorisinden en güncel haberler
+                </p>
+
+            </div>
+
+            <div class="category-header-icon">
+                📰
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<main class="container">
+
+    <div class="section-title">
+
+        <h2>
+            Gündem Haberleri
+        </h2>
+
+        <div></div>
+
+    </div>
+
+
+    <section
+        id="newsGrid"
+        class="news-grid kategori-news-grid"
+    ></section>
 
 </main>
 
+
 <footer class="site-footer">
-    <div class="container">
 
-        <div class="footer-grid">
+    <div class="container footer-inner">
 
-            <div>
-                <div class="footer-logo">
-                    Haber<span>İsta</span>
-                </div>
-                <p>
-                    Türkiye ve dünyadan gündemi takip edebileceğiniz
-                    bağımsız haber platformu.
-                </p>
+        <div>
+
+            <div class="footer-logo">
+                <span>Haber</span>İsta
             </div>
 
-            <div>
-                <h3>Kategoriler</h3>
-                <a href="gundem.html">Gündem</a>
-                <a href="ekonomi.html">Ekonomi</a>
-                <a href="spor.html">Spor</a>
-                <a href="dunya.html">Dünya</a>
-            </div>
-
-            <div>
-                <h3>Haberİsta</h3>
-                <a href="hakkimizda.html">Hakkımızda</a>
-                <a href="iletisim.html">İletişim</a>
-                <a href="gizlilik.html">Gizlilik Politikası</a>
-                <a href="cerez-politikasi.html">Çerez Politikası</a>
-            </div>
+            <p>
+                Türkiye ve dünyadan güncel haberler.
+            </p>
 
         </div>
 
-        <div class="footer-bottom">
-            © 2026 Haberİsta — Tüm hakları saklıdır.
+        <div>
+
+            <h4>Kategoriler</h4>
+
+            <a href="gundem.html">
+                Gündem
+            </a>
+
+            <a href="ekonomi.html">
+                Ekonomi
+            </a>
+
+            <a href="spor.html">
+                Spor
+            </a>
+
+            <a href="dunya.html">
+                Dünya
+            </a>
+
+        </div>
+
+        <div>
+
+            <h4>Haberİsta</h4>
+
+            <a href="hakkimizda.html">
+                Hakkımızda
+            </a>
+
+            <a href="iletisim.html">
+                İletişim
+            </a>
+
+            <a href="gizlilik.html">
+                Gizlilik
+            </a>
+
         </div>
 
     </div>
+
+    <div class="footer-bottom">
+        © 2026 Haberİsta. Tüm hakları saklıdır.
+    </div>
+
 </footer>
 
+
 <script src="js/haberler.js"></script>
+
 <script src="js/kategori.js"></script>
 
+<script src="js/app.js"></script>
+
 </body>
+
 </html>
