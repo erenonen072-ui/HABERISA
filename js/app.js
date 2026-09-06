@@ -1506,7 +1506,7 @@ document.addEventListener(
 
         setInterval(
             piyasaVerileriniGetir,
-            30000
+            60000
         );
 
     }
