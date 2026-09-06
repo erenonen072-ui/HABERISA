@@ -39,7 +39,155 @@ const haberler = [
     /* =====================================================
        1 - GÜNDEM
     ===================================================== */
+{
+    id: 16,
+    kategori: "Magazin",
+    baslik: "Ünlü oyuncu Serhat Mustafa Kılıç hayatını kaybetti",
 
+    spot: "Türk tiyatro, sinema ve televizyon dünyasının tanınan isimlerinden Serhat Mustafa Kılıç, 51 yaşında hayatını kaybetti. İstanbul Kağıthane'deki evinde ölü bulunan oyuncunun kesin ölüm nedeni yapılacak adli incelemenin ardından netleşecek.",
+
+    icerik: `
+        Türk sanat dünyası acı bir haberle sarsıldı. Tiyatro, sinema ve
+        televizyon projelerinde uzun yıllar boyunca başarılı performanslarıyla
+        izleyicilerin karşısına çıkan ünlü oyuncu Serhat Mustafa Kılıç,
+        51 yaşında hayatını kaybetti.
+
+        Oyuncunun İstanbul Kağıthane'deki evinde hayatını kaybettiği öğrenildi.
+        Kılıç'tan bir süredir haber alamayan yakınlarının durumu fark etmesi
+        üzerine olay yerine sağlık ve polis ekipleri sevk edildi.
+
+        Sağlık ekiplerinin yaptığı kontrollerin ardından oyuncunun hayatını
+        kaybettiği belirlendi. Olayın ardından polis ekipleri tarafından
+        inceleme başlatılırken, Kılıç'ın cenazesi kesin ölüm nedeninin
+        belirlenmesi amacıyla Adli Tıp Kurumu'na gönderildi.
+
+        Ünlü oyuncunun ölüm nedeni konusunda henüz resmi olarak kesinleşmiş
+        bir açıklama yapılmadı. Adli inceleme ve otopsi sonucunun ardından
+        ölüm nedenine ilişkin daha net bilgilerin ortaya çıkması bekleniyor.
+
+        SANAT DÜNYASINI YASA BOĞAN HABER
+
+        Serhat Mustafa Kılıç'ın ölüm haberinin duyulmasının ardından sanat
+        dünyasından çok sayıda başsağlığı mesajı geldi. Oyuncunun uzun yıllar
+        birlikte çalıştığı meslektaşları ve sevenleri, sosyal medya üzerinden
+        yaptıkları paylaşımlarla üzüntülerini dile getirdi.
+
+        Tiyatro, sinema ve televizyon alanlarında önemli çalışmalara imza atan
+        Kılıç, özellikle canlandırdığı farklı karakterlerle geniş bir izleyici
+        kitlesinin tanıdığı oyuncular arasında yer alıyordu.
+
+        TİYATRO KARİYERİ
+
+        Serhat Mustafa Kılıç'ın sanat hayatında tiyatronun önemli bir yeri
+        bulunuyordu. Bilkent Üniversitesi Müzik ve Sahne Sanatları Fakültesi
+        Tiyatro Bölümü'nde eğitim alan oyuncu, profesyonel kariyerine tiyatro
+        sahnesinde başladı.
+
+        Kariyeri boyunca farklı tiyatro topluluklarında ve kurumlarında görev
+        alan Kılıç, oyunculuğun yanı sıra sahne sanatları alanındaki
+        çalışmalarını da sürdürdü.
+
+        Yıllar içerisinde tiyatro sahnesinde çok sayıda karaktere hayat veren
+        oyuncu, sahip olduğu deneyimle genç oyunculara da katkı sağladı.
+
+        TELEVİZYONDA TANINDI
+
+        Serhat Mustafa Kılıç, tiyatronun ardından televizyon projelerinde de
+        önemli roller üstlendi. Hatırla Sevgili, Ezel, Seksenler, Söz,
+        Kuruluş Osman, Kirli Sepeti ve Mehmed: Fetihler Sultanı gibi
+        yapımlarda rol aldı.
+
+        Özellikle Seksenler dizisinde canlandırdığı Ergun Plak karakteri,
+        oyuncunun televizyon izleyicileri tarafından geniş kitlelerce
+        tanınmasını sağlayan rollerinden biri oldu.
+
+        Kılıç, farklı türlerdeki televizyon projelerinde birbirinden farklı
+        karakterleri canlandırarak oyunculuk kariyerini uzun yıllar boyunca
+        sürdürdü.
+
+        SİNEMA KARİYERİ
+
+        Başarılı oyuncu televizyon çalışmalarının yanı sıra sinema filmlerinde
+        de rol aldı. Nokta, Veda, Kış Uykusu, Mavzer ve Cenazemize Hoş
+        Geldiniz gibi yapımlarda yer alan Kılıç, sinema kariyerinde de
+        dikkat çeken performanslar sergiledi.
+
+        Özellikle Nuri Bilge Ceylan'ın Kış Uykusu filminde canlandırdığı
+        İmam Hamdi karakteriyle sinema izleyicisinin karşısına çıktı.
+
+        Farklı yönetmenlerle ve farklı türlerde çalışan oyuncu, kariyeri
+        boyunca tiyatro ile televizyon ve sinemayı birlikte sürdürdü.
+
+        YAKLAŞIK 30 YILLIK SANAT HAYATI
+
+        Serhat Mustafa Kılıç, yaklaşık 30 yıllık sanat hayatı boyunca
+        tiyatrodan televizyona, sinemadan farklı sahne çalışmalarına kadar
+        birçok alanda üretim gerçekleştirdi.
+
+        Oyunculuğunun yanı sıra eğitim çalışmalarına da önem veren Kılıç,
+        sahne sanatları alanındaki bilgi ve deneyimini yeni nesil oyunculara
+        aktarmaya çalıştı.
+
+        Kariyeri boyunca farklı karakterlere hayat veren oyuncu, özellikle
+        televizyon dizilerindeki performanslarıyla geniş bir hayran kitlesine
+        ulaştı.
+
+        ÖLÜMÜYLE İLGİLİ SORUŞTURMA SÜRÜYOR
+
+        Kılıç'ın Kağıthane'deki evinde hayatını kaybetmesinin ardından olayla
+        ilgili inceleme başlatıldı. Oyuncunun kesin ölüm nedeninin yapılacak
+        adli incelemeler sonucunda belirlenmesi bekleniyor.
+
+        Sosyal medyada ölüm nedenine ilişkin çeşitli iddialar gündeme gelse de
+        resmi makamlar tarafından doğrulanmayan bilgilerin kesin gerçek olarak
+        değerlendirilmemesi gerekiyor.
+
+        Yetkililerden gelecek açıklamalar ve Adli Tıp Kurumu'ndaki işlemlerin
+        ardından olayın tüm detaylarının netleşmesi bekleniyor.
+
+        SEVENLERİNDEN VEDA MESAJLARI
+
+        Oyuncunun vefat haberinin ardından sanat dünyasından çok sayıda isim
+        sosyal medya hesaplarından başsağlığı mesajları paylaştı.
+
+        Kılıç'ın yıllar boyunca birlikte çalıştığı oyuncular, yönetmenler,
+        tiyatro sanatçıları ve sevenleri, ünlü oyuncunun ardından duydukları
+        üzüntüyü dile getirdi.
+
+        Oyuncunun canlandırdığı karakterler ve sanat hayatı boyunca ortaya
+        koyduğu çalışmalar, sevenleri tarafından paylaşılan mesajlarda
+        hatırlatıldı.
+
+        CENAZE PROGRAMI BEKLENİYOR
+
+        Serhat Mustafa Kılıç'ın vefatının ardından cenaze töreninin ne zaman
+        ve nerede gerçekleştirileceğine ilişkin gelişmeler takip ediliyor.
+
+        Cenaze programına ilişkin resmi bilgilerin açıklanmasıyla birlikte
+        detayların kamuoyuyla paylaşılması bekleniyor.
+
+        SANAT DÜNYASINDA BÜYÜK KAYIP
+
+        Serhat Mustafa Kılıç'ın 51 yaşında hayatını kaybetmesi, Türk sanat
+        dünyasında büyük üzüntü yarattı.
+
+        Tiyatro sahnesinden televizyon ekranlarına ve sinema filmlerine kadar
+        uzanan kariyerinde çok sayıda projede yer alan Kılıç, geride uzun
+        yıllara yayılan bir sanat kariyeri ve izleyicilerin hafızasında yer
+        eden karakterler bıraktı.
+
+        Ünlü oyuncunun vefatıyla ilgili resmi açıklamalar geldikçe haberimiz
+        güncellenecektir.
+
+        HABERİSTA olarak Serhat Mustafa Kılıç'ın ailesine, yakınlarına,
+        meslektaşlarına ve tüm sevenlerine başsağlığı diliyoruz.
+    `,
+
+    tarih: "6 Eylül 2026",
+    saat: "17:40",
+    gorsel: "images/SERHAT.jpeg",
+    kaynak: "HABERİSTA"
+},
     {
         id: 11,
         kategori: "Gündem",
