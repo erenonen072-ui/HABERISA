@@ -39,7 +39,60 @@ const haberler = [
     /* =====================================================
        1 - KABİNE
     ===================================================== */
+{
+    id: 29,
+    kategori: "Gündem",
+    baslik: "Türkiye'de gündem yoğun: Ekonomi, teknoloji ve günlük yaşamda yeni gelişmeler takip ediliyor",
+    spot: "Türkiye'de gün boyunca farklı alanlarda yaşanan gelişmeler vatandaşların gündemindeki yerini koruyor. Ekonomiden teknolojiye, eğitimden günlük yaşama kadar birçok başlık yakından takip ediliyor.",
+    tarih: "7 Eylül 2026",
+    saat: "15:30",
+    gorsel: "images/gundem.jpeg",
+    kaynak: "HABERİSTA Haber Merkezi",
 
+    icerik: `
+        <p>Türkiye'de yeni günle birlikte birçok farklı başlık kamuoyunun gündeminde yer almaya devam ediyor. Ekonomi, teknoloji, eğitim, spor ve günlük yaşamla ilgili gelişmeler vatandaşlar tarafından yakından takip edilirken, resmi kurumlardan yapılacak açıklamalar da merakla bekleniyor.</p>
+
+        <p>Gündemde öne çıkan konular arasında vatandaşların günlük hayatını doğrudan veya dolaylı olarak etkileyebilecek gelişmeler bulunuyor. Gün içerisinde yapılan açıklamalar, alınan kararlar ve ortaya çıkan yeni bilgiler haber merkezleri tarafından takip ediliyor.</p>
+
+        <h2>Ekonomide gelişmeler izleniyor</h2>
+
+        <p>Ekonomi gündeminde piyasaların genel görünümü, fiyat hareketleri ve yeni ekonomik kararlar öne çıkıyor. Vatandaşlar özellikle günlük harcamalarını etkileyebilecek gelişmeleri yakından takip ediyor. Piyasalarda yaşanan değişimlerin yanı sıra ekonomi yönetiminden gelecek açıklamalar da gündemin önemli başlıkları arasında bulunuyor.</p>
+
+        <p>Uzmanlar ve ekonomi çevreleri tarafından yapılan değerlendirmelerde, güncel gelişmelerin tek bir veri üzerinden değerlendirilmemesi gerektiği belirtilirken, resmi açıklamalar ve açıklanan ekonomik göstergelerin birlikte takip edilmesinin önem taşıdığı ifade ediliyor.</p>
+
+        <h2>Teknoloji gündemindeki hareketlilik sürüyor</h2>
+
+        <p>Teknoloji alanında ise yapay zekâ, dijital hizmetler, akıllı cihazlar ve internet teknolojilerindeki gelişmeler dikkat çekiyor. Dijital teknolojilerin günlük yaşamın daha fazla alanında kullanılmasıyla birlikte yeni uygulamalar ve hizmetler de kullanıcıların ilgisini çekiyor.</p>
+
+        <p>Özellikle yapay zekâ teknolojilerindeki gelişmeler, eğitimden iş dünyasına kadar birçok alanda tartışılmaya devam ediyor. Yeni teknolojilerin sunduğu fırsatların yanında güvenlik, gizlilik ve doğru bilgiye erişim gibi konular da önemini koruyor.</p>
+
+        <h2>Eğitim gündemi de yakından takip ediliyor</h2>
+
+        <p>Eğitim alanında öğrenciler, veliler ve öğretmenler yeni açıklamaları takip ediyor. Sınav takvimleri, eğitim programları ve okullarla ilgili gelişmeler özellikle öğrencilerin gündeminde bulunuyor.</p>
+
+        <p>Yeni eğitim dönemine ilişkin açıklamalar yapılmasıyla birlikte öğrencilerin ders programları, sınav hazırlıkları ve eğitim süreçleriyle ilgili gelişmeler de takip edilmeye devam ediyor. Resmi kurumlar tarafından yapılacak açıklamalar, eğitim gündemindeki belirsizliklerin giderilmesi açısından önem taşıyor.</p>
+
+        <h2>Günlük yaşamla ilgili gelişmeler vatandaşların takibinde</h2>
+
+        <p>Vatandaşların günlük hayatını ilgilendiren ulaşım, hava durumu, kamu hizmetleri ve çeşitli sosyal konular da gün içerisinde takip edilen başlıklar arasında yer alıyor. Özellikle değişiklik veya yeni düzenleme içeren açıklamalar vatandaşların dikkatini çekiyor.</p>
+
+        <p>Gün içerisinde ortaya çıkan gelişmelerin doğrulanması da önem taşıyor. Sosyal medyada hızla yayılan bilgilerin tamamının doğru olmayabileceği belirtilirken, vatandaşların önemli konularda resmi kurumların açıklamalarını ve güvenilir haber kaynaklarını takip etmesi gerekiyor.</p>
+
+        <h2>Dünya gündeminde önemli başlıklar</h2>
+
+        <p>Türkiye'nin yanı sıra dünya gündemindeki gelişmeler de yakından izleniyor. Ülkeler arasındaki diplomatik ilişkiler, ekonomik gelişmeler, bölgesel olaylar ve uluslararası kuruluşların açıklamaları gün içerisinde haber akışının önemli bölümünü oluşturuyor.</p>
+
+        <p>Uluslararası gelişmelerin ekonomi, enerji, ulaşım ve ticaret gibi farklı alanlarda etkileri olabileceği için dünya gündemindeki açıklamalar Türkiye'deki vatandaşlar ve piyasalar tarafından da takip ediliyor.</p>
+
+        <h2>Yeni açıklamalar geldikçe gelişmeler aktarılacak</h2>
+
+        <p>Gün içerisinde gündeme gelen başlıklarla ilgili yeni açıklamaların yapılması halinde haber akışının güncellenmesi bekleniyor. Özellikle resmi kurumlar tarafından paylaşılacak yeni bilgiler, mevcut gelişmelerin daha net anlaşılmasına yardımcı olacak.</p>
+
+        <p>HABERİSTA Haber Merkezi olarak Türkiye ve dünyadaki önemli gelişmeleri takip ediyor, doğrulanmış bilgileri okuyucularımıza aktarmaya devam ediyoruz. Gündemdeki konularla ilgili yeni gelişmeler yaşandıkça haberimiz güncellenecektir.</p>
+
+        <p><strong>Not:</strong> Bu haber genel gündem değerlendirmesi niteliğindedir. Belirli bir olay, karar veya resmi açıklamayla ilgili kesin bilgiler için ilgili kurumların güncel duyuruları takip edilmelidir.</p>
+    `
+}
     {
         id: 21,
         kategori: "Gündem",
