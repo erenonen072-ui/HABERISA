@@ -1,8 +1,4 @@
 {
-  "name": "haberista",
-  "version": "1.0.0",
-  "private": true,
-  "scripts": {
-    "build": "node scripts/generate-news.js"
-  }
+  "buildCommand": "npm run build",
+  "cleanUrls": true
 }
