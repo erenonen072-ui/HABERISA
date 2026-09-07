@@ -1,4 +1,9 @@
 {
-  "buildCommand": "npm run build",
+  "rewrites": [
+    {
+      "source": "/haber/:slug",
+      "destination": "/haber.html"
+    }
+  ],
   "cleanUrls": true
 }
