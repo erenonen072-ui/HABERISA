@@ -40,6 +40,194 @@ const haberler = [
        1 - GÜNDEM
     ===================================================== */
 {
+    id: 19,
+    kategori: "Türkiye",
+    baslik: "Kabine bugün toplanıyor: Gündemde ekonomi, güvenlik ve 'Terörsüz Türkiye' süreci var",
+
+    spot: "Cumhurbaşkanı Recep Tayyip Erdoğan başkanlığındaki Cumhurbaşkanlığı Kabinesi bugün Beştepe'de toplanacak. Saat 15.30'da başlaması beklenen toplantıda ekonomi, enflasyonla mücadele, 'Terörsüz Türkiye' süreci, güvenlik, dış politika ve sosyal konut çalışmaları ele alınacak. Toplantının ardından Cumhurbaşkanı Erdoğan'ın açıklama yapması bekleniyor.",
+
+    icerik: `
+        KABİNE BUGÜN BEŞTEPE'DE TOPLANIYOR
+
+        Cumhurbaşkanı Recep Tayyip Erdoğan başkanlığındaki Cumhurbaşkanlığı
+        Kabinesi, 7 Eylül 2026 Pazartesi günü Cumhurbaşkanlığı Külliyesi'nde
+        bir araya gelecek.
+
+        Kabine Toplantısı'nın saat 15.30'da başlaması bekleniyor. Toplantıda
+        Türkiye'nin iç ve dış gündemindeki önemli gelişmelerin yanı sıra
+        ekonomi, güvenlik, dış politika ve "Terörsüz Türkiye" sürecinin
+        değerlendirilmesi bekleniyor.
+
+        Toplantının ardından Cumhurbaşkanı Erdoğan'ın kamuoyuna açıklamalarda
+        bulunması ve Kabine'de ele alınan başlıklara ilişkin değerlendirmelerini
+        paylaşması bekleniyor.
+
+        "TERÖRSÜZ TÜRKİYE" SÜRECİ MASADA
+
+        Kabine toplantısının en önemli gündem maddelerinden birinin
+        "Terörsüz Türkiye" sürecindeki son gelişmeler olması bekleniyor.
+
+        Süreç kapsamında bugüne kadar yürütülen çalışmalar, güvenlik
+        politikaları ve önümüzdeki dönemde atılması planlanan adımların
+        Kabine'de değerlendirilmesi bekleniyor.
+
+        Türkiye'nin terörle mücadele kapsamında yürüttüğü çalışmalar ile
+        iç güvenlik alanındaki gelişmelerin de toplantının önemli
+        başlıkları arasında bulunması bekleniyor.
+
+        EKONOMİ VE ENFLASYONLA MÜCADELE
+
+        Kabine'nin gündemindeki bir diğer önemli başlık ise ekonomi olacak.
+
+        Türkiye'nin ekonomi programındaki son gelişmeler, enflasyonla
+        mücadele ve ekonomik istikrarın güçlendirilmesine yönelik
+        çalışmaların toplantıda ele alınması bekleniyor.
+
+        Yeni Orta Vadeli Program kapsamında belirlenen ekonomik hedeflerin
+        uygulanması ve önümüzdeki dönemde atılması planlanan adımların da
+        değerlendirilmesi bekleniyor.
+
+        Ekonomide fiyat istikrarının sağlanması, enflasyonun düşürülmesi
+        ve ekonomik büyümenin sürdürülebilir hale getirilmesine yönelik
+        politikalar toplantının dikkat çeken başlıkları arasında yer alıyor.
+
+        YERLİ FİNANSAL SİSTEM VE DİJİTAL TÜRK LİRASI
+
+        Ekonomi başlığı kapsamında Türkiye'nin yerli finansal altyapısının
+        güçlendirilmesine yönelik çalışmalar da gündeme gelebilecek.
+
+        TROY'un kullanımının yaygınlaştırılması ve dijital Türk lirasına
+        ilişkin çalışmalar, Türkiye'nin finansal teknolojiler alanındaki
+        hedefleri açısından önem taşıyor.
+
+        Bu alanlarda önümüzdeki dönemde atılması planlanan adımların
+        değerlendirilmesi bekleniyor.
+
+        SOSYAL KONUT ÇALIŞMALARI
+
+        Kabine toplantısında sosyal konut çalışmaları da gündeme gelecek
+        başlıklardan biri olarak öne çıkıyor.
+
+        Özellikle dar ve orta gelirli vatandaşların konut sahibi olmasını
+        amaçlayan çalışmaların yanı sıra İstanbul'da planlanan kiralık
+        sosyal konut projesine ilişkin gelişmelerin değerlendirilmesi
+        bekleniyor.
+
+        Sosyal konut projelerinin kapsamı, uygulanma takvimi ve ilgili
+        kurumların çalışmaları hakkında yeni bilgilerin toplantı sonrasında
+        paylaşılması bekleniyor.
+
+        GÜVENLİK GÜNDEMİ
+
+        Türkiye'nin iç güvenliği ve bölgesel güvenlik gelişmeleri de
+        Kabine'nin gündeminde olacak.
+
+        Terörle mücadele, sınır güvenliği ve Türkiye'nin güvenlik
+        politikalarındaki son gelişmelerin ilgili bakanlıklar tarafından
+        Kabine üyelerine aktarılması bekleniyor.
+
+        Bölgedeki gelişmelerin Türkiye'nin güvenliğine yönelik oluşturduğu
+        riskler de toplantıda değerlendirilecek konular arasında bulunuyor.
+
+        DIŞ POLİTİKA VE BÖLGESEL GELİŞMELER
+
+        Kabine toplantısında dış politika başlıklarının da ele alınması
+        bekleniyor.
+
+        Türkiye'nin çevresindeki bölgesel gelişmeler, Orta Doğu'daki
+        gelişmeler ve Türkiye'nin diplomatik girişimleri toplantıda
+        değerlendirilecek.
+
+        Bölgedeki gelişmelerin Türkiye'nin güvenliği, ekonomisi,
+        enerji politikaları ve dış ticareti üzerindeki olası etkileri
+        de gündeme gelebilecek.
+
+        ENERJİ VE BÖLGESEL RİSKLER
+
+        Türkiye'nin enerji güvenliği de bölgesel gelişmeler nedeniyle
+        önem taşıyan başlıklardan biri olarak öne çıkıyor.
+
+        Orta Doğu'daki gelişmelerin petrol ve doğal gaz piyasalarına
+        etkileri ile enerji tedarik güvenliği konusunda alınabilecek
+        önlemlerin değerlendirilmesi bekleniyor.
+
+        Türkiye'nin enerji arz güvenliğinin korunması ve bölgesel
+        gelişmelerin ekonomiye olası etkileri toplantıda ele alınabilecek
+        konular arasında bulunuyor.
+
+        ERDOĞAN'IN TOPLANTI SONRASI AÇIKLAMA YAPMASI BEKLENİYOR
+
+        Kabine toplantısının tamamlanmasının ardından Cumhurbaşkanı
+        Recep Tayyip Erdoğan'ın kameraların karşısına geçerek gündemdeki
+        gelişmelere ilişkin açıklama yapması bekleniyor.
+
+        Erdoğan'ın açıklamasında ekonomi, güvenlik, "Terörsüz Türkiye"
+        süreci, sosyal konut çalışmaları ve dış politika başlıklarının
+        öne çıkması bekleniyor.
+
+        Toplantı sonrasında yapılacak açıklamalar, Kabine'de alınan
+        kararların kamuoyuna duyurulması açısından önem taşıyor.
+
+        KABİNE KARARLARI NE ZAMAN AÇIKLANACAK?
+
+        7 Eylül 2026 Kabine Toplantısı'nın ardından alınan kararların
+        Cumhurbaşkanı Erdoğan'ın açıklamalarıyla kamuoyuna duyurulması
+        bekleniyor.
+
+        Şu an için toplantı öncesinde açıklanan gündem maddeleri
+        bulunurken, toplantıda hangi konularda kesin karar alındığı
+        henüz kamuoyuna açıklanmış değil.
+
+        Bu nedenle Kabine toplantısı tamamlanmadan alınmış gibi
+        gösterilen kararların paylaşılması doğru olmayacaktır.
+
+        TOPLANTIDA ÖNE ÇIKAN BAŞLIKLAR
+
+        Kabine toplantısında öne çıkması beklenen başlıklar şöyle:
+
+        - "Terörsüz Türkiye" sürecindeki son gelişmeler
+        - Ekonomi ve enflasyonla mücadele
+        - Yeni Orta Vadeli Program'ın uygulanması
+        - Güvenlik ve terörle mücadele
+        - Dış politika ve bölgesel gelişmeler
+        - Sosyal konut çalışmaları
+        - İstanbul'daki kiralık sosyal konut projesi
+        - Enerji güvenliği ve bölgesel riskler
+        - Yerli finansal sistem ve dijital Türk lirası çalışmaları
+
+        SON DURUM
+
+        Cumhurbaşkanı Recep Tayyip Erdoğan başkanlığındaki Kabine,
+        7 Eylül 2026 Pazartesi günü Beştepe'de toplanacak.
+
+        Saat 15.30'da başlaması beklenen toplantıda ekonomi,
+        güvenlik, dış politika, "Terörsüz Türkiye" süreci ve sosyal
+        konut çalışmalarının başlıca gündem maddeleri olması bekleniyor.
+
+        Toplantının ardından Cumhurbaşkanı Erdoğan'ın yapacağı
+        açıklamalarla yeni kararların ve hükümetin önümüzdeki dönemde
+        atacağı adımların netleşmesi bekleniyor.
+
+        HABERİSTA TAKİPTE
+
+        Kabine toplantısından gelecek yeni açıklamalar ve kararlar
+        yakından takip ediliyor.
+
+        Cumhurbaşkanı Erdoğan'ın toplantı sonrası açıklamalarının
+        ardından haberimiz güncellenecek ve kesinleşen kararlar
+        okuyucularımıza aktarılacaktır.
+
+        HABERİSTA olarak Türkiye'den ve dünyadan önemli gelişmeleri
+        doğrulanmış bilgiler üzerinden hızlı ve anlaşılır şekilde
+        aktarmaya devam ediyoruz.
+    `,
+
+    tarih: "7 Eylül 2026",
+    saat: "16:10",
+    gorsel: "images/WhatsApp Image 2026-09-07 at 16.15.05.jpeg",
+    kaynak: "HABERİSTA"
+},
+{
     id: 18,
     kategori: "Dünya",
     baslik: "ABD ile İran arasında tansiyon yeniden yükseldi: 3 İran tankeri hedef alındı",
