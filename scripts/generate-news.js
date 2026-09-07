@@ -5,6 +5,7 @@ const path = require("path");
 const vm = require("vm");
 
 const ROOT = path.join(__dirname, "..");
+
 const NEWS_FILE = path.join(ROOT, "js", "haberler.js");
 const TEMPLATE_FILE = path.join(ROOT, "haber.html");
 const OUTPUT_DIR = path.join(ROOT, "haber");
@@ -12,7 +13,7 @@ const OUTPUT_DIR = path.join(ROOT, "haber");
 const SITE_URL = "https://haberisa.vercel.app";
 
 /* =========================================================
-   YARDIMCI FONKSİYONLAR
+   SLUG OLUŞTUR
 ========================================================= */
 
 function slugify(text) {
@@ -34,6 +35,10 @@ function slugify(text) {
         .replace(/^-+|-+$/g, "");
 }
 
+/* =========================================================
+   HTML ESCAPE
+========================================================= */
+
 function escapeHtml(value) {
     return String(value ?? "")
         .replace(/&/g, "&amp;")
@@ -43,12 +48,20 @@ function escapeHtml(value) {
         .replace(/'/g, "&#39;");
 }
 
+/* =========================================================
+   JSON ESCAPE
+========================================================= */
+
 function escapeJson(value) {
     return JSON.stringify(value)
         .replace(/</g, "\\u003c")
         .replace(/>/g, "\\u003e")
         .replace(/&/g, "\\u0026");
 }
+
+/* =========================================================
+   SEO DESCRIPTION
+========================================================= */
 
 function makeDescription(haber) {
     const text = String(
@@ -63,7 +76,7 @@ function makeDescription(haber) {
 }
 
 /* =========================================================
-   TARİH
+   TARİH → ISO
 ========================================================= */
 
 function dateToISO(tarih, saat) {
@@ -127,6 +140,7 @@ function contentToHtml(content) {
     /*
      * İçerik zaten HTML ise doğrudan kullan.
      */
+
     if (
         /<(p|h2|h3|strong|ul|li|br)\b/i.test(raw)
     ) {
@@ -136,6 +150,7 @@ function contentToHtml(content) {
     /*
      * Boş satırlara göre parçalara ayır.
      */
+
     const blocks = raw
         .split(/\n\s*\n/)
         .map(function (block) {
@@ -152,6 +167,7 @@ function contentToHtml(content) {
         /*
          * Madde listesi
          */
+
         if (/^[-•]\s+/.test(block)) {
 
             const items = block
@@ -178,6 +194,7 @@ function contentToHtml(content) {
          * Büyük harfle yazılmış kısa satırları
          * başlık olarak kabul et.
          */
+
         const letters = block.replace(
             /[^A-Za-zÇĞİÖŞÜçğıöşü]/g,
             ""
@@ -189,13 +206,9 @@ function contentToHtml(content) {
             block.length <= 120;
 
         if (isHeading) {
-
             html += `<h2>${escapeHtml(block)}</h2>`;
-
         } else {
-
             html += `<p>${escapeHtml(block)}</p>`;
-
         }
     }
 
@@ -324,7 +337,6 @@ function createArticleHtml(
     class="article-card"
     data-static-article="true"
 >
-
     <div class="article-category">
         ${category}
     </div>
@@ -338,7 +350,6 @@ function createArticleHtml(
     </p>
 
     <div class="article-meta">
-
         <span>
             📅 ${date}
         </span>
@@ -350,14 +361,12 @@ function createArticleHtml(
         <span>
             📰 ${source}
         </span>
-
     </div>
 
     <div
         class="voice-reader"
         aria-label="Haber sesli okuma"
     >
-
         <button
             type="button"
             onclick="startVoiceReader()"
@@ -385,21 +394,18 @@ function createArticleHtml(
         >
             ⏹
         </button>
-
     </div>
 
     ${
         image
             ? `
     <figure class="article-image">
-
         <img
             src="/${escapeHtml(image)}"
             alt="${title}"
             loading="eager"
             decoding="async"
         >
-
     </figure>
     `
             : ""
@@ -439,63 +445,44 @@ function createArticleHtml(
     ===================================================== */
 
     const schema = {
+        "@context": "https://schema.org",
 
-        "@context":
-            "https://schema.org",
-
-        "@type":
-            "NewsArticle",
+        "@type": "NewsArticle",
 
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": articleUrl
         },
 
-        "headline":
-            haber.baslik,
+        "headline": haber.baslik,
 
-        "description":
-            makeDescription(haber),
+        "description": makeDescription(haber),
 
         "image": [
             imageUrl
         ],
 
-        "datePublished":
-            publishedISO,
+        "datePublished": publishedISO,
 
-        "dateModified":
-            publishedISO,
+        "dateModified": publishedISO,
 
         "author": {
-            "@type":
-                "Organization",
-
-            "name":
-                haber.kaynak ||
-                "HABERİSTA"
+            "@type": "Organization",
+            "name": haber.kaynak || "HABERİSTA"
         },
 
         "publisher": {
-            "@type":
-                "Organization",
-
-            "name":
-                "HABERİSTA",
-
-            "url":
-                SITE_URL
+            "@type": "Organization",
+            "name": "HABERİSTA",
+            "url": SITE_URL
         },
 
         "articleSection":
-            haber.kategori ||
-            "Haber",
+            haber.kategori || "Haber",
 
-        "inLanguage":
-            "tr-TR",
+        "inLanguage": "tr-TR",
 
-        "url":
-            articleUrl
+        "url": articleUrl
     };
 
     let html = template;
@@ -666,22 +653,26 @@ window.STATIC_ARTICLE = {
 function generate() {
 
     console.log("");
-    console.log(
-        "======================================"
-    );
-    console.log(
-        " HABERİSTA STATİK HABER OLUŞTURUCU"
-    );
-    console.log(
-        "======================================"
-    );
+    console.log("======================================");
+    console.log(" HABERİSTA STATİK HABER OLUŞTURUCU");
+    console.log("======================================");
     console.log("");
 
     /* Haberleri oku */
 
     const news = loadNews();
 
+    console.log(
+        `✓ ${news.length} haber bulundu.`
+    );
+
     /* Template oku */
+
+    if (!fs.existsSync(TEMPLATE_FILE)) {
+        throw new Error(
+            "haber.html dosyası bulunamadı."
+        );
+    }
 
     const template = fs.readFileSync(
         TEMPLATE_FILE,
@@ -701,9 +692,9 @@ function generate() {
 
     }
 
-    /*
-     * Eski statik haber klasörlerini temizle.
-     */
+    /* =====================================================
+       ESKİ STATİK HABERLERİ TEMİZLE
+    ===================================================== */
 
     for (
         const item of fs.readdirSync(
@@ -731,15 +722,18 @@ function generate() {
             );
 
         }
-
     }
+
+    /* =====================================================
+       SLUG KONTROLÜ
+    ===================================================== */
 
     const usedSlugs = new Set();
 
     let generated = 0;
 
     /* =====================================================
-       HER HABER İÇİN STATİK SAYFA
+       HER HABER İÇİN STATİK SAYFA OLUŞTUR
     ===================================================== */
 
     for (const haber of news) {
@@ -782,9 +776,7 @@ function generate() {
 
         usedSlugs.add(slug);
 
-        /*
-         * Haber klasörü
-         */
+        /* Haber klasörü */
 
         const articleDir =
             path.join(
@@ -799,9 +791,7 @@ function generate() {
             }
         );
 
-        /*
-         * HTML oluştur
-         */
+        /* HTML oluştur */
 
         const articleHtml =
             createArticleHtml(
@@ -810,15 +800,16 @@ function generate() {
                 template
             );
 
-        /*
-         * index.html yaz
-         */
+        /* index.html yaz */
 
-        fs.writeFileSync(
+        const outputFile =
             path.join(
                 articleDir,
                 "index.html"
-            ),
+            );
+
+        fs.writeFileSync(
+            outputFile,
             articleHtml,
             "utf8"
         );
@@ -830,6 +821,10 @@ function generate() {
         );
     }
 
+    /* =====================================================
+       SONUÇ
+    ===================================================== */
+
     console.log("");
 
     console.log(
@@ -839,23 +834,14 @@ function generate() {
     console.log("");
 
     console.log(
-        `Çıktı: ${OUTPUT_DIR}`
+        `Çıktı klasörü: ${OUTPUT_DIR}`
     );
 
     console.log("");
 
-    console.log(
-        "======================================"
-    );
-
-    console.log(
-        " İŞLEM TAMAMLANDI"
-    );
-
-    console.log(
-        "======================================"
-    );
-
+    console.log("======================================");
+    console.log(" İŞLEM TAMAMLANDI");
+    console.log("======================================");
     console.log("");
 }
 
@@ -871,12 +857,10 @@ try {
 
     console.error("");
 
-    console.error(
-        "❌ HATA:"
-    );
+    console.error("❌ HATA:");
 
     console.error(
-        error
+        error.stack || error.message || error
     );
 
     console.error("");
