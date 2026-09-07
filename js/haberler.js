@@ -2,7 +2,7 @@
 
 /* =========================================================
    HABERİSTA - HABER VERİTABANI
-   6 EYLÜL 2026
+   Güncellenmiş sürüm
 ========================================================= */
 
 
@@ -37,1676 +37,1335 @@ function slugOlustur(metin) {
 const haberler = [
 
     /* =====================================================
-       1 - GÜNDEM
+       1 - KABİNE
     ===================================================== */
-{
-    id: 19,
-    kategori: "Gündem",
-    baslik: "Kabine bugün toplanıyor: Gündemde ekonomi, güvenlik ve 'Terörsüz Türkiye' süreci var",
 
-    spot: "Cumhurbaşkanı Recep Tayyip Erdoğan başkanlığındaki Cumhurbaşkanlığı Kabinesi bugün Beştepe'de toplanacak. Saat 15.30'da başlaması beklenen toplantıda ekonomi, enflasyonla mücadele, 'Terörsüz Türkiye' süreci, güvenlik, dış politika ve sosyal konut çalışmaları ele alınacak. Toplantının ardından Cumhurbaşkanı Erdoğan'ın açıklama yapması bekleniyor.",
-
-    icerik: `
-        KABİNE BUGÜN BEŞTEPE'DE TOPLANIYOR
-
-        Cumhurbaşkanı Recep Tayyip Erdoğan başkanlığındaki Cumhurbaşkanlığı
-        Kabinesi, 7 Eylül 2026 Pazartesi günü Cumhurbaşkanlığı Külliyesi'nde
-        bir araya gelecek.
-
-        Kabine Toplantısı'nın saat 15.30'da başlaması bekleniyor. Toplantıda
-        Türkiye'nin iç ve dış gündemindeki önemli gelişmelerin yanı sıra
-        ekonomi, güvenlik, dış politika ve "Terörsüz Türkiye" sürecinin
-        değerlendirilmesi bekleniyor.
-
-        Toplantının ardından Cumhurbaşkanı Erdoğan'ın kamuoyuna açıklamalarda
-        bulunması ve Kabine'de ele alınan başlıklara ilişkin değerlendirmelerini
-        paylaşması bekleniyor.
-
-        "TERÖRSÜZ TÜRKİYE" SÜRECİ MASADA
-
-        Kabine toplantısının en önemli gündem maddelerinden birinin
-        "Terörsüz Türkiye" sürecindeki son gelişmeler olması bekleniyor.
-
-        Süreç kapsamında bugüne kadar yürütülen çalışmalar, güvenlik
-        politikaları ve önümüzdeki dönemde atılması planlanan adımların
-        Kabine'de değerlendirilmesi bekleniyor.
-
-        Türkiye'nin terörle mücadele kapsamında yürüttüğü çalışmalar ile
-        iç güvenlik alanındaki gelişmelerin de toplantının önemli
-        başlıkları arasında bulunması bekleniyor.
-
-        EKONOMİ VE ENFLASYONLA MÜCADELE
-
-        Kabine'nin gündemindeki bir diğer önemli başlık ise ekonomi olacak.
-
-        Türkiye'nin ekonomi programındaki son gelişmeler, enflasyonla
-        mücadele ve ekonomik istikrarın güçlendirilmesine yönelik
-        çalışmaların toplantıda ele alınması bekleniyor.
-
-        Yeni Orta Vadeli Program kapsamında belirlenen ekonomik hedeflerin
-        uygulanması ve önümüzdeki dönemde atılması planlanan adımların da
-        değerlendirilmesi bekleniyor.
-
-        Ekonomide fiyat istikrarının sağlanması, enflasyonun düşürülmesi
-        ve ekonomik büyümenin sürdürülebilir hale getirilmesine yönelik
-        politikalar toplantının dikkat çeken başlıkları arasında yer alıyor.
-
-        YERLİ FİNANSAL SİSTEM VE DİJİTAL TÜRK LİRASI
-
-        Ekonomi başlığı kapsamında Türkiye'nin yerli finansal altyapısının
-        güçlendirilmesine yönelik çalışmalar da gündeme gelebilecek.
-
-        TROY'un kullanımının yaygınlaştırılması ve dijital Türk lirasına
-        ilişkin çalışmalar, Türkiye'nin finansal teknolojiler alanındaki
-        hedefleri açısından önem taşıyor.
-
-        Bu alanlarda önümüzdeki dönemde atılması planlanan adımların
-        değerlendirilmesi bekleniyor.
-
-        SOSYAL KONUT ÇALIŞMALARI
-
-        Kabine toplantısında sosyal konut çalışmaları da gündeme gelecek
-        başlıklardan biri olarak öne çıkıyor.
-
-        Özellikle dar ve orta gelirli vatandaşların konut sahibi olmasını
-        amaçlayan çalışmaların yanı sıra İstanbul'da planlanan kiralık
-        sosyal konut projesine ilişkin gelişmelerin değerlendirilmesi
-        bekleniyor.
-
-        Sosyal konut projelerinin kapsamı, uygulanma takvimi ve ilgili
-        kurumların çalışmaları hakkında yeni bilgilerin toplantı sonrasında
-        paylaşılması bekleniyor.
-
-        GÜVENLİK GÜNDEMİ
-
-        Türkiye'nin iç güvenliği ve bölgesel güvenlik gelişmeleri de
-        Kabine'nin gündeminde olacak.
-
-        Terörle mücadele, sınır güvenliği ve Türkiye'nin güvenlik
-        politikalarındaki son gelişmelerin ilgili bakanlıklar tarafından
-        Kabine üyelerine aktarılması bekleniyor.
-
-        Bölgedeki gelişmelerin Türkiye'nin güvenliğine yönelik oluşturduğu
-        riskler de toplantıda değerlendirilecek konular arasında bulunuyor.
-
-        DIŞ POLİTİKA VE BÖLGESEL GELİŞMELER
-
-        Kabine toplantısında dış politika başlıklarının da ele alınması
-        bekleniyor.
-
-        Türkiye'nin çevresindeki bölgesel gelişmeler, Orta Doğu'daki
-        gelişmeler ve Türkiye'nin diplomatik girişimleri toplantıda
-        değerlendirilecek.
-
-        Bölgedeki gelişmelerin Türkiye'nin güvenliği, ekonomisi,
-        enerji politikaları ve dış ticareti üzerindeki olası etkileri
-        de gündeme gelebilecek.
-
-        ENERJİ VE BÖLGESEL RİSKLER
-
-        Türkiye'nin enerji güvenliği de bölgesel gelişmeler nedeniyle
-        önem taşıyan başlıklardan biri olarak öne çıkıyor.
-
-        Orta Doğu'daki gelişmelerin petrol ve doğal gaz piyasalarına
-        etkileri ile enerji tedarik güvenliği konusunda alınabilecek
-        önlemlerin değerlendirilmesi bekleniyor.
-
-        Türkiye'nin enerji arz güvenliğinin korunması ve bölgesel
-        gelişmelerin ekonomiye olası etkileri toplantıda ele alınabilecek
-        konular arasında bulunuyor.
-
-        ERDOĞAN'IN TOPLANTI SONRASI AÇIKLAMA YAPMASI BEKLENİYOR
-
-        Kabine toplantısının tamamlanmasının ardından Cumhurbaşkanı
-        Recep Tayyip Erdoğan'ın kameraların karşısına geçerek gündemdeki
-        gelişmelere ilişkin açıklama yapması bekleniyor.
-
-        Erdoğan'ın açıklamasında ekonomi, güvenlik, "Terörsüz Türkiye"
-        süreci, sosyal konut çalışmaları ve dış politika başlıklarının
-        öne çıkması bekleniyor.
-
-        Toplantı sonrasında yapılacak açıklamalar, Kabine'de alınan
-        kararların kamuoyuna duyurulması açısından önem taşıyor.
-
-        KABİNE KARARLARI NE ZAMAN AÇIKLANACAK?
-
-        7 Eylül 2026 Kabine Toplantısı'nın ardından alınan kararların
-        Cumhurbaşkanı Erdoğan'ın açıklamalarıyla kamuoyuna duyurulması
-        bekleniyor.
-
-        Şu an için toplantı öncesinde açıklanan gündem maddeleri
-        bulunurken, toplantıda hangi konularda kesin karar alındığı
-        henüz kamuoyuna açıklanmış değil.
-
-        Bu nedenle Kabine toplantısı tamamlanmadan alınmış gibi
-        gösterilen kararların paylaşılması doğru olmayacaktır.
-
-        TOPLANTIDA ÖNE ÇIKAN BAŞLIKLAR
-
-        Kabine toplantısında öne çıkması beklenen başlıklar şöyle:
-
-        - "Terörsüz Türkiye" sürecindeki son gelişmeler
-        - Ekonomi ve enflasyonla mücadele
-        - Yeni Orta Vadeli Program'ın uygulanması
-        - Güvenlik ve terörle mücadele
-        - Dış politika ve bölgesel gelişmeler
-        - Sosyal konut çalışmaları
-        - İstanbul'daki kiralık sosyal konut projesi
-        - Enerji güvenliği ve bölgesel riskler
-        - Yerli finansal sistem ve dijital Türk lirası çalışmaları
-
-        SON DURUM
-
-        Cumhurbaşkanı Recep Tayyip Erdoğan başkanlığındaki Kabine,
-        7 Eylül 2026 Pazartesi günü Beştepe'de toplanacak.
-
-        Saat 15.30'da başlaması beklenen toplantıda ekonomi,
-        güvenlik, dış politika, "Terörsüz Türkiye" süreci ve sosyal
-        konut çalışmalarının başlıca gündem maddeleri olması bekleniyor.
-
-        Toplantının ardından Cumhurbaşkanı Erdoğan'ın yapacağı
-        açıklamalarla yeni kararların ve hükümetin önümüzdeki dönemde
-        atacağı adımların netleşmesi bekleniyor.
-
-        HABERİSTA TAKİPTE
-
-        Kabine toplantısından gelecek yeni açıklamalar ve kararlar
-        yakından takip ediliyor.
-
-        Cumhurbaşkanı Erdoğan'ın toplantı sonrası açıklamalarının
-        ardından haberimiz güncellenecek ve kesinleşen kararlar
-        okuyucularımıza aktarılacaktır.
-
-        HABERİSTA olarak Türkiye'den ve dünyadan önemli gelişmeleri
-        doğrulanmış bilgiler üzerinden hızlı ve anlaşılır şekilde
-        aktarmaya devam ediyoruz.
-    `,
-
-    tarih: "7 Eylül 2026",
-    saat: "16:10",
-    gorsel: "images/WhatsApp Image 2026-09-07 at 16.15.05.jpeg",
-    kaynak: "HABERİSTA"
-},
-{
-    id: 18,
-    kategori: "Dünya",
-    baslik: "ABD ile İran arasında tansiyon yeniden yükseldi: 3 İran tankeri hedef alındı",
-
-    spot: "ABD ile İran arasındaki askeri gerilim yeniden tırmanırken, ABD Merkez Komutanlığı tarafından İran'a ait olduğu belirtilen 3 petrol tankerinin hedef alındığı açıklandı. İran yönetimi ise yeni saldırılara daha sert karşılık verileceği mesajını verirken, Hürmüz Boğazı ve küresel enerji piyasalarındaki gelişmeler yakından takip ediliyor.",
-
-    icerik: `
-        ABD VE İRAN ARASINDA TANSİYON YENİDEN TIRMANDI
-
-        ABD ile İran arasında aylardır devam eden askeri ve siyasi gerilimde
-        yeni bir gelişme yaşandı. ABD Merkez Komutanlığı tarafından yapılan
-        açıklamaya göre, İran'a ait olduğu belirtilen 3 petrol tankeri
-        hedef alındı.
-
-        Yeni saldırılar, bölgede karşılıklı askeri operasyonların yeniden
-        yoğunlaştığı bir dönemde gerçekleşti. ABD ve İran arasında yaşanan
-        gelişmeler yalnızca iki ülke arasındaki ilişkileri değil, Orta Doğu
-        güvenliğini, deniz taşımacılığını ve küresel enerji piyasalarını da
-        doğrudan etkiliyor.
-
-        ABD'nin tankerleri hedef aldığı yönündeki açıklamanın ardından
-        bölgede güvenlik önlemleri ve deniz trafiğine ilişkin gelişmeler
-        yakından takip edilmeye başlandı.
-
-        ABD'DEN 3 İRAN TANKERİ AÇIKLAMASI
-
-        ABD Merkez Komutanlığı tarafından yapılan açıklamada, İran'a ait
-        olduğu belirtilen üç petrol tankerinin hedef alındığı bildirildi.
-
-        Washington yönetimi, operasyonların İran ile devam eden askeri
-        çatışmalar çerçevesinde gerçekleştirildiğini belirtirken, bölgedeki
-        deniz faaliyetlerinin de yakından takip edildiği mesajını verdi.
-
-        Tankerlerin hedef alınması, ABD ile İran arasında devam eden
-        çatışmanın yalnızca karadaki ve havadaki askeri hedeflerle sınırlı
-        kalmadığını göstermesi açısından dikkat çekti.
-
-        Yaşanan gelişmenin ardından petrol taşımacılığı yapan şirketlerin
-        bölgedeki güvenlik durumunu daha yakından değerlendirmesi bekleniyor.
-
-        İRAN'DAN SERT KARŞILIK MESAJI
-
-        İran tarafı ise ABD'nin saldırılarına karşılık verileceğini
-        açıklayarak gerilimin daha da yükselmesi ihtimalini gündeme taşıdı.
-
-        İran Meclis Başkanı Muhammed Bakır Kalibaf, gelecekte gerçekleştirilecek
-        saldırılara daha sert karşılık verileceği yönünde mesaj verdi.
-
-        İran yönetimi, ülkesine yönelik askeri operasyonların devam etmesi
-        halinde karşılıklarının daha ağır olabileceğini savunuyor.
-
-        Tahran'dan gelen açıklamalar, ABD ile İran arasındaki çatışmanın
-        yeni bir aşamaya geçebileceği yönündeki endişeleri artırdı.
-
-        HÜRMÜZ BOĞAZI GÜNDEMİN MERKEZİNDE
-
-        Gerilimin en önemli başlıklarından biri ise Hürmüz Boğazı oldu.
-
-        Hürmüz Boğazı, Körfez ülkelerinden dünya piyasalarına gönderilen
-        petrol ve enerji ürünleri açısından dünyanın en stratejik deniz
-        geçiş noktalarından biri olarak biliniyor.
-
-        İran'ın bölgede deniz trafiğine yönelik yeni kısıtlamalar
-        uygulayabileceğine ilişkin açıklamaları, uluslararası enerji
-        piyasalarında yakından izleniyor.
-
-        Bölgede yaşanabilecek yeni saldırılar veya deniz ulaşımının
-        aksaması, petrol sevkiyatının yavaşlamasına ve enerji fiyatlarının
-        yeniden yükselmesine neden olabilir.
-
-        İRAN HÜRMÜZ BOĞAZI'NDA KISITLAMA PLANLIYOR
-
-        İran yönetimi, Hürmüz Boğazı çevresinde daha sıkı bir kontrol
-        mekanizması oluşturulabileceği yönünde mesajlar verdi.
-
-        Tahran yönetiminin, belirli kurallara uymayan gemilere yönelik
-        yaptırım uygulayabileceği belirtilirken, bölgedeki ticari gemilerin
-        güvenliği yeniden uluslararası gündemin önemli başlıklarından biri
-        haline geldi.
-
-        Deniz taşımacılığı şirketleri açısından bölgedeki güvenlik koşulları
-        büyük önem taşıyor. Hürmüz Boğazı'ndan geçen gemilerin rotalarını
-        değiştirmesi veya bölgedeki geçişlerin yavaşlaması durumunda
-        taşımacılık maliyetlerinin artabileceği değerlendiriliyor.
-
-        PETROL FİYATLARI YÜKSELİŞE GEÇTİ
-
-        ABD ile İran arasındaki askeri gerilimin yeniden yükselmesi,
-        küresel petrol piyasalarında da etkisini gösterdi.
-
-        Brent petrolün varil fiyatı haftayı yaklaşık yüzde 7,6 yükselişle
-        96 dolar seviyesinin üzerinde tamamladı. ABD'nin Batı Teksas türü
-        ham petrolünün fiyatında da yaklaşık yüzde 10'a yaklaşan haftalık
-        yükseliş görüldü.
-
-        Piyasalardaki yükselişte Orta Doğu'daki çatışmaların yanı sıra
-        petrol sevkiyatında yaşanabilecek olası kesintilere ilişkin
-        endişeler etkili oldu.
-
-        Uzmanlar, çatışmanın daha geniş bir bölgeye yayılması halinde
-        petrol fiyatları üzerindeki baskının daha da artabileceğine
-        dikkat çekiyor.
-
-        ENERJİ PİYASALARI GELİŞMELERİ YAKINDAN İZLİYOR
-
-        İran dünyanın önemli petrol üreticilerinden biri olduğu için
-        ülkeden gerçekleştirilen petrol ihracatının geleceği küresel
-        piyasalar açısından büyük önem taşıyor.
-
-        ABD'nin İran'a yönelik ekonomik yaptırımları ve deniz ablukası
-        baskısının petrol ihracatını zorlaştırdığı belirtilirken, İran
-        yönetimi ekonomik sorunlarla mücadele etmek için yeni önlemler
-        üzerinde çalışıyor.
-
-        Petrol ihracatındaki olası düşüşün enerji fiyatlarında yeni bir
-        dalgalanmaya yol açabileceği değerlendiriliyor.
-
-        Özellikle Avrupa ve Asya ülkelerinin enerji tedarik zincirlerinde
-        yaşanabilecek sorunlar, küresel ekonominin de gündemine gelebilir.
-
-        DENİZ TİCARETİ İÇİN YENİ RİSK
-
-        İran tankerlerinin hedef alınması, bölgedeki ticari gemiler için
-        güvenlik riskinin yeniden gündeme gelmesine neden oldu.
-
-        Körfez bölgesinde faaliyet gösteren uluslararası denizcilik
-        şirketlerinin güvenlik değerlendirmelerini güncellemesi bekleniyor.
-
-        Bölgede yaşanabilecek yeni saldırılar, gemilerin daha uzun
-        rotaları tercih etmesine ve bunun sonucunda taşıma süreleri ile
-        maliyetlerin yükselmesine neden olabilir.
-
-        Sigorta şirketlerinin savaş ve çatışma riski nedeniyle bölgedeki
-        gemilere yönelik primleri artırması da ihtimaller arasında
-        değerlendiriliyor.
-
-        ABD'NİN BÖLGEDEKİ ASKERİ VARLIĞI
-
-        ABD'nin Orta Doğu'daki askeri varlığı, İran ile yaşanan
-        çatışmanın en önemli unsurlarından biri olmaya devam ediyor.
-
-        ABD yönetimi bölgedeki askeri unsurlarını ve deniz kuvvetlerini
-        korumaya çalışırken, İran da ABD'nin bölgedeki askeri varlıklarını
-        hedef alabilecek kapasiteye sahip olduğunu savunuyor.
-
-        Taraflar arasındaki karşılıklı saldırılar, yanlış hesaplama veya
-        yeni bir saldırının daha geniş kapsamlı bir çatışmayı tetikleyip
-        tetiklemeyeceği konusunda endişelere yol açıyor.
-
-        DİPLOMATİK ÇÖZÜM İHTİMALİ
-
-        Askeri gerilimin yanında diplomatik çözüm ihtimali de gündemde
-        bulunuyor.
-
-        ABD yönetimi İran üzerindeki ekonomik ve askeri baskıyı artırmaya
-        çalışırken, İran yönetimi yaptırımların kaldırılması ve ülkenin
-        bölgesel konumunun tanınması gibi konularda taleplerini sürdürüyor.
-
-        Taraflar arasında yeniden müzakere sürecinin başlayıp başlamayacağı
-        ise önümüzdeki dönemde yaşanacak gelişmelere bağlı olacak.
-
-        Uluslararası aktörler, ABD ile İran arasındaki gerilimin diplomatik
-        yollarla azaltılması için yeni girişimlerde bulunabilir.
-
-        BÖLGE ÜLKELERİ DE GELİŞMELERİ İZLİYOR
-
-        ABD ve İran arasındaki çatışmanın devam etmesi, Körfez ülkeleri
-        başta olmak üzere bölgedeki birçok ülkeyi doğrudan ilgilendiriyor.
-
-        Bölge ülkeleri bir yandan kendi güvenliklerini artırmaya çalışırken,
-        diğer yandan enerji ihracatının ve ticaret yollarının kesintiye
-        uğramaması için gelişmeleri yakından takip ediyor.
-
-        Özellikle Hürmüz Boğazı'nda yaşanabilecek herhangi bir güvenlik
-        sorununun bölgedeki ülkelerin ekonomileri üzerinde ciddi etkiler
-        oluşturabileceği değerlendiriliyor.
-
-        KÜRESEL EKONOMİ İÇİN RİSK ARTIYOR
-
-        ABD ile İran arasındaki çatışmanın uzaması halinde enerji fiyatları
-        üzerinden küresel ekonomide yeni baskılar oluşabileceği belirtiliyor.
-
-        Petrol fiyatlarındaki yükseliş, ulaşım ve üretim maliyetlerinin
-        artmasına neden olabilir. Bu durum birçok ülkede enflasyon
-        baskısının yeniden güçlenmesi riskini beraberinde getirebilir.
-
-        Enerji maliyetlerinin yükselmesi, özellikle petrol ve doğal gaz
-        ithalatına yüksek oranda bağımlı ülkeler açısından daha büyük bir
-        ekonomik sorun oluşturabilir.
-
-        İRAN EKONOMİSİ BASKI ALTINDA
-
-        İran ekonomisi ise uzun süredir ABD yaptırımları ve enerji
-        ihracatındaki sorunlarla mücadele ediyor.
-
-        ABD'nin ekonomik baskısının İran'ın petrol gelirlerini ve yabancı
-        para kaynaklarını önemli ölçüde etkilediği belirtiliyor.
-
-        Tahran yönetimi ekonomik sorunların çözülmesi için çeşitli
-        düzenlemeler yapacağını açıklarken, çatışmanın devam etmesi
-        ekonomideki baskıyı daha da artırabilir.
-
-        İran yönetimi ise ülkenin ekonomik zorluklara rağmen direncini
-        koruyacağını ve ABD'nin baskısına boyun eğmeyeceğini savunuyor.
-
-        YENİ SALDIRI İHTİMALİ GÜNDEMDE
-
-        Üç İran tankerinin hedef alınmasının ardından gözler ABD ve İran'dan
-        gelecek yeni açıklamalara çevrildi.
-
-        Özellikle İran'ın daha sert karşılık verileceği yönündeki açıklaması,
-        bölgede yeni askeri saldırı ihtimalini gündeme getirdi.
-
-        Taraflardan birinin gerçekleştireceği yeni bir saldırının,
-        çatışmanın kapsamını genişletip genişletmeyeceği merak ediliyor.
-
-        ABD VE İRAN ARASINDAKİ GERİLİMİN GELECEĞİ
-
-        ABD ile İran arasında yaşanan son gelişmeler, iki ülke arasındaki
-        çatışmanın kısa sürede sona ermeyebileceğine ilişkin endişeleri
-        artırıyor.
-
-        Askeri operasyonların yanı sıra ekonomik yaptırımlar, enerji
-        sevkiyatı ve deniz güvenliği de gerilimin önemli başlıkları
-        arasında bulunuyor.
-
-        Önümüzdeki günlerde ABD ve İran yönetimlerinden gelecek açıklamalar,
-        bölgedeki gelişmelerin yönünü belirleyecek.
-
-        Hürmüz Boğazı'ndaki deniz trafiği, petrol fiyatları ve askeri
-        hareketlilik de uluslararası kamuoyu tarafından yakından takip
-        edilmeye devam edecek.
-
-        SON DURUM
-
-        ABD'nin 3 İran tankerini hedef aldığını açıklamasının ardından
-        bölgede tansiyon yeniden yükseldi.
-
-        İran yönetimi saldırılara daha sert karşılık verilebileceği
-        mesajını verirken, Hürmüz Boğazı ve petrol taşımacılığına ilişkin
-        gelişmeler de dikkatle izleniyor.
-
-        Yaşanan gelişmelerin enerji fiyatları, deniz ticareti ve bölgesel
-        güvenlik üzerindeki etkilerinin önümüzdeki günlerde daha net
-        ortaya çıkması bekleniyor.
-
-        HABERİSTA TAKİPTE
-
-        ABD ile İran arasındaki gerilimle ilgili yeni gelişmeleri
-        doğrulanmış bilgiler üzerinden takip ediyoruz.
-
-        Bölgede yaşanacak yeni saldırılar, diplomatik açıklamalar,
-        petrol piyasalarındaki hareketlilik ve Hürmüz Boğazı'ndaki
-        gelişmeler oldukça haberimizi güncelleyeceğiz.
-
-        HABERİSTA olarak dünyadan ve Türkiye'den önemli gelişmeleri
-        okuyucularımıza hızlı, anlaşılır ve güvenilir şekilde aktarmaya
-        devam ediyoruz.
-    `,
-
-    tarih: "7 Eylül 2026",
-    saat: "00:01",
-    gorsel: "images/6.jpeg",
-    kaynak: "Reuters / HABERİSTA"
-},
-{
-    id: 17,
-    kategori: "Dünya",
-    baslik: "ABD, 3 İran tankerini vurduğunu açıkladı",
-
-    spot: "ABD yönetimi, İran'a ait olduğu belirtilen 3 petrol tankerinin vurulduğunu açıkladı. Gelişme, ABD ile İran arasındaki gerilimin yeniden tırmandığı bir dönemde yaşanırken, bölgedeki deniz trafiği ve enerji güvenliği açısından da dikkat çekti.",
-
-    icerik: `
-        ABD ile İran arasındaki gerilimde yeni bir gelişme yaşandı. ABD
-        yönetimi, İran'a ait 3 petrol tankerinin vurulduğunu açıkladı.
-        Açıklama, bölgede devam eden yüksek tansiyonun deniz taşımacılığına
-        ve enerji güvenliğine yönelik etkilerine ilişkin endişeleri yeniden
-        gündeme getirdi.
-
-        ABD tarafından yapılan açıklamaya göre, İran'a ait olduğu belirtilen
-        tankerler hedef alındı. Söz konusu gelişmenin ardından bölgedeki
-        güvenlik durumu ve deniz ulaşımının geleceği yakından takip edilmeye
-        başlandı.
-
-        ABD VE İRAN ARASINDA GERİLİM TIRMANIYOR
-
-        Son gelişme, Washington ile Tahran arasındaki karşılıklı gerilimin
-        kritik bir aşamaya geldiğini gösteren gelişmelerden biri olarak
-        değerlendiriliyor.
-
-        ABD'nin tankerleri hedef aldığı yönündeki açıklamasının ardından
-        olayın ayrıntıları ve saldırıların hangi bölgede gerçekleştiğine
-        ilişkin bilgiler kamuoyunun gündemine geldi.
-
-        Bölgedeki gelişmeler yalnızca ABD ve İran arasındaki ilişkiler
-        açısından değil, enerji piyasaları ve uluslararası deniz ticareti
-        bakımından da önem taşıyor.
-
-        PETROL TAŞIMACILIĞI YAKINDAN İZLENİYOR
-
-        İran, dünyanın önemli petrol üreticileri arasında yer alırken,
-        ülkeye ait petrolün deniz yoluyla taşınması bölgesel ve küresel
-        enerji piyasaları açısından önem taşıyor.
-
-        Tankerlerin hedef alınmasına ilişkin gelişme, petrol taşımacılığının
-        güvenliği konusunu yeniden gündeme taşıdı. Bölgede yaşanabilecek
-        yeni saldırıların enerji sevkiyatında aksamalara neden olabileceği
-        değerlendirilirken, uluslararası piyasaların gelişmeleri yakından
-        izlemesi bekleniyor.
-
-        DENİZ GÜVENLİĞİ ENDİŞESİ
-
-        Körfez bölgesi ve çevresindeki deniz yolları, dünya enerji ticareti
-        açısından stratejik öneme sahip. Bu nedenle bölgede meydana gelen
-        askeri hareketlilik, yalnızca taraf ülkeleri değil, uluslararası
-        ticaret yapan şirketleri ve enerji piyasalarını da doğrudan
-        ilgilendiriyor.
-
-        İran tankerlerinin hedef alınmasına ilişkin açıklamanın ardından
-        bölgede yeni bir saldırı yaşanıp yaşanmayacağı ve deniz ulaşımında
-        herhangi bir kısıtlama uygulanıp uygulanmayacağı merak konusu oldu.
-
-        ULUSLARARASI TOPLUMDAN YAKIN TAKİP
-
-        ABD ile İran arasındaki gerilimin yeni bir boyut kazanması,
-        uluslararası toplum tarafından da yakından takip ediliyor.
-
-        Bölgedeki ülkelerin güvenlik önlemlerini artırabileceği
-        değerlendirilirken, diplomatik kanallardan yeni açıklamaların
-        gelmesi bekleniyor.
-
-        Özellikle enerji ihracatı ve deniz ticareti açısından kritik
-        güzergahlarda güvenliğin sağlanması, uluslararası aktörlerin
-        öncelikleri arasında bulunuyor.
-
-        YENİ GELİŞMELER BEKLENİYOR
-
-        ABD'nin 3 İran tankerini vurduğuna ilişkin açıklamasının ardından
-        olayla ilgili ayrıntıların önümüzdeki saatlerde netleşmesi bekleniyor.
-
-        Saldırıların nasıl gerçekleştiği, tankerlerde bulunan personelin
-        durumu ve olayın bölgedeki askeri dengelere etkisi konusunda yeni
-        açıklamaların yapılabileceği değerlendiriliyor.
-
-        ABD VE İRAN ARASINDAKİ GERİLİMİN BÖLGESEL ETKİSİ
-
-        ABD ile İran arasındaki gerilim uzun süredir Orta Doğu'daki
-        gelişmelerin merkezinde yer alıyor. Taraflar arasındaki askeri ve
-        siyasi gerilim, zaman zaman bölgedeki farklı aktörleri de etkileyen
-        gelişmelere neden oluyor.
-
-        Son tanker saldırısı açıklaması da bu nedenle uluslararası kamuoyu
-        tarafından yakından izleniyor.
-
-        Enerji piyasaları, deniz taşımacılığı ve bölgesel güvenlik
-        açısından ortaya çıkabilecek sonuçlar önümüzdeki dönemde daha
-        belirgin hale gelebilir.
-
-        HABERİSTA TAKİPTE
-
-        ABD'nin İran tankerlerine yönelik saldırı açıklamasının ardından
-        bölgede yaşanan gelişmeler yakından takip ediliyor.
-
-        Olayın ayrıntıları ve taraflardan gelecek yeni açıklamalar
-        doğrultusunda haberin detaylarının netleşmesi bekleniyor.
-
-        HABERİSTA olarak bölgedeki gelişmeleri doğrulanmış bilgiler
-        üzerinden takip ediyor ve yeni gelişmeler oldukça okuyucularımıza
-        aktarıyoruz.
-    `,
-
-    tarih: "6 Eylül 2026",
-    saat: "11:17",
-    gorsel: "images/ChatGPT Image 6 Eyl 2026 19_44_18.png",
-    kaynak: "HABERİSTA"
-},
-
-{
-    id: 18,
-    kategori: "Ekonomi",
-    baslik: "Ekonomide 3 yıllık yol haritası belli oluyor",
-
-    spot: "Türkiye ekonomisinin önümüzdeki dönemde izleyeceği politikalar açısından önem taşıyan 3 yıllık yol haritası açıklandı. Yeni Orta Vadeli Program ile büyüme, enflasyon, istihdam ve kamu maliyesine ilişkin hedefler gündeme geldi.",
-
-    icerik: `
-        Türkiye ekonomisinin önümüzdeki üç yıllık dönemde izleyeceği
-        politikalara ilişkin yeni yol haritası kamuoyuyla paylaşıldı.
-        Orta Vadeli Program kapsamında ekonominin temel göstergelerine
-        ilişkin hedefler ve öncelikli politikalar ortaya konuldu.
-
-        Yeni program, Türkiye ekonomisinde fiyat istikrarının sağlanması,
-        sürdürülebilir büyümenin desteklenmesi ve kamu maliyesinin
-        güçlendirilmesi açısından önemli bir çerçeve oluşturuyor.
-
-        ÜÇ YILLIK EKONOMİK PLAN
-
-        Orta Vadeli Program, ekonomi yönetiminin önümüzdeki dönemde
-        uygulayacağı politikalar açısından temel belgelerden biri olma
-        özelliğini taşıyor.
-
-        Program kapsamında büyüme, enflasyon, istihdam, ihracat, kamu
-        harcamaları ve mali disiplin gibi başlıklara ilişkin hedefler
-        belirleniyor.
-
-        Ekonominin daha dengeli ve sürdürülebilir bir yapıya
-        kavuşturulmasının hedeflendiği programda, fiyat istikrarı
-        çalışmalarının da önemli bir yer tuttuğu belirtiliyor.
-
-        ENFLASYONLA MÜCADELE ÖNCELİKLİ KONULAR ARASINDA
-
-        Yeni dönemin en önemli başlıklarından biri enflasyonla mücadele
-        olacak. Fiyat istikrarının sağlanması ve vatandaşların satın alma
-        gücünün korunması ekonomi yönetiminin öncelikleri arasında
-        bulunuyor.
-
-        Enflasyonun düşürülmesine yönelik politikaların yanı sıra
-        ekonomik büyümenin korunması da programın önemli başlıklarından
-        biri olarak öne çıkıyor.
-
-        BÜYÜME VE İSTİHDAM HEDEFİ
-
-        Ekonomik programda sürdürülebilir büyümenin desteklenmesi ve
-        istihdamın artırılması da öncelikli hedefler arasında yer alıyor.
-
-        Üretim kapasitesinin geliştirilmesi, yatırımların artırılması ve
-        ihracatın desteklenmesi yoluyla ekonominin daha güçlü bir yapıya
-        kavuşturulması hedefleniyor.
-
-        İstihdam piyasasındaki gelişmelerin de program süresince yakından
-        takip edilmesi bekleniyor.
-
-        KAMU MALİYESİNE ODAKLANILACAK
-
-        Üç yıllık yol haritasının bir diğer önemli başlığı kamu maliyesi
-        olacak. Kamu kaynaklarının daha etkin kullanılması ve bütçe
-        disiplininin güçlendirilmesi amacıyla çeşitli politikaların
-        uygulanması planlanıyor.
-
-        Kamu harcamalarında verimliliğin artırılması ve mali dengelerin
-        korunması, ekonomik programın temel unsurları arasında bulunuyor.
-
-        YATIRIMLAR VE ÜRETİM DESTEKLENECEK
-
-        Programın hedefleri arasında yatırımların ve üretimin artırılması
-        da bulunuyor. Özellikle katma değerli üretimin ve ihracat
-        kapasitesinin geliştirilmesine yönelik politikaların ön plana
-        çıkması bekleniyor.
-
-        Türkiye'nin küresel ekonomideki rekabet gücünün artırılması için
-        sanayi, teknoloji ve ihracat alanlarında yeni adımların atılması
-        hedefleniyor.
-
-        EKONOMİ YÖNETİMİNİN YOL HARİTASI
-
-        Yeni Orta Vadeli Program, önümüzdeki üç yıllık dönemde ekonomi
-        yönetiminin izleyeceği temel politikalar açısından yol gösterici
-        olacak.
-
-        Programda yer alan hedeflerin hayata geçirilmesiyle birlikte
-        enflasyonun düşürülmesi, büyümenin dengeli şekilde sürdürülmesi ve
-        ekonomik istikrarın güçlendirilmesi amaçlanıyor.
-
-        PİYASALAR YAKINDAN İZLEYECEK
-
-        Açıklanan programın ardından gözler ekonomi yönetiminin atacağı
-        adımlara çevrildi. Piyasalar, belirlenen hedeflerin ne ölçüde
-        gerçekleştirileceğini ve uygulanan politikaların ekonomik
-        göstergeler üzerindeki etkisini yakından takip edecek.
-
-        Özellikle enflasyon, faiz, büyüme ve kamu maliyesine ilişkin
-        gelişmelerin programın başarısı açısından belirleyici olması
-        bekleniyor.
-
-        HABERİSTA olarak Türkiye ekonomisine ilişkin gelişmeleri ve yeni
-        ekonomik programın uygulanma sürecini takip etmeye devam edeceğiz.
-    `,
-
-    tarih: "6 Eylül 2026",
-    saat: "11:01",
-    gorsel: "images/ChatGPT Image 6 Eyl 2026 19_45_31.png",
-    kaynak: "HABERİSTA"
-},
-
-{
-    id: 19,
-    kategori: "Dünya",
-    baslik: "İran'da 'Ekonomik Savaş Karargâhı' kuruldu",
-
-    spot: "İran'da ekonomik koşulların ve dış baskıların yönetilmesi amacıyla 'Ekonomik Savaş Karargâhı' kurulduğu açıklandı. Yeni yapılanmanın ülkenin ekonomik faaliyetlerini ve kritik sektörlerini koordine etmesi bekleniyor.",
-
-    icerik: `
-        İran'da ekonomik gelişmelere ilişkin dikkat çeken bir adım atıldı.
-        Ülkede yaşanan ekonomik baskılar ve mevcut koşulların yönetilmesi
-        amacıyla "Ekonomik Savaş Karargâhı" kurulduğu açıklandı.
-
-        Yeni yapılanmanın, ekonomik alanda karşılaşılan sorunların
-        koordineli şekilde yönetilmesi ve ülkenin kritik ekonomik
-        faaliyetlerinin düzenlenmesi amacıyla görev yapması bekleniyor.
-
-        EKONOMİK BASKILAR GÜNDEMDE
-
-        İran ekonomisi uzun süredir dış baskılar, yaptırımlar ve ekonomik
-        dalgalanmalarla karşı karşıya bulunuyor. Son dönemde bölgede
-        yaşanan gelişmelerin de ekonomik koşullar üzerinde baskı
-        oluşturduğu değerlendiriliyor.
-
-        Bu ortamda Tahran yönetimi ekonomik faaliyetlerin daha etkin
-        şekilde koordine edilmesi amacıyla yeni bir yapılanmaya gitti.
-
-        "EKONOMİK SAVAŞ KARARGÂHI" KURULDU
-
-        İran'da kurulan Ekonomik Savaş Karargâhı'nın, ülkenin ekonomik
-        güvenliğini ilgilendiren konularda koordinasyon sağlaması
-        bekleniyor.
-
-        Yapılanmanın hangi kurumlarla birlikte çalışacağı ve görev
-        alanlarının kapsamının önümüzdeki dönemde yapılacak açıklamalarla
-        daha net hale gelmesi bekleniyor.
-
-        KRİTİK SEKTÖRLER TAKİP EDİLECEK
-
-        Yeni karargâhın özellikle temel ekonomik faaliyetler, ticaret,
-        üretim ve tedarik zincirleri gibi alanlarda yaşanabilecek
-        sorunlara karşı koordinasyon sağlaması bekleniyor.
-
-        İran yönetimi açısından ekonomik kaynakların etkin kullanılması
-        ve kritik ihtiyaçların karşılanması büyük önem taşıyor.
-
-        DIŞ BASKILARA KARŞI EKONOMİK TEDBİRLER
-
-        İran yönetimi daha önce de ekonomik yaptırımların etkilerini
-        azaltmak amacıyla çeşitli önlemler uygulamıştı.
-
-        Yeni karargâhın kurulması, ekonomik baskıların arttığı bir
-        dönemde devlet kurumları arasındaki koordinasyonun güçlendirilmesi
-        amacıyla atılmış yeni bir adım olarak değerlendiriliyor.
-
-        BÖLGESEL GELİŞMELER EKONOMİYİ ETKİLİYOR
-
-        Orta Doğu'daki siyasi ve askeri gelişmeler, bölge ülkelerinin
-        ekonomileri üzerinde doğrudan veya dolaylı etkiler oluşturuyor.
-
-        İran'ın enerji ihracatı, dış ticareti ve finansal sistemi de
-        bölgedeki gelişmelerden etkilenebilecek alanlar arasında yer
-        alıyor.
-
-        Yeni ekonomik yapılanmanın bu risklere karşı ülke içerisindeki
-        koordinasyonu güçlendirmesi amaçlanıyor.
-
-        İRAN EKONOMİSİNDE YENİ DÖNEM
-
-        Ekonomik Savaş Karargâhı'nın kurulması, İran yönetiminin mevcut
-        ekonomik koşullara verdiği önemin yeni bir göstergesi olarak
-        dikkat çekiyor.
-
-        Karargâhın faaliyetleri ve alınacak kararlar, İran ekonomisinin
-        önümüzdeki dönemdeki seyri açısından yakından takip edilecek.
-
-        Yeni yapılanmanın hangi alanlarda somut kararlar alacağı ve
-        ekonomik sorunlara yönelik hangi tedbirlerin uygulanacağı ise
-        önümüzdeki günlerde daha net ortaya çıkacak.
-
-        HABERİSTA olarak İran'daki ekonomik gelişmeleri ve bölgedeki
-        gelişmelerin Türkiye'ye ve küresel piyasalara olası etkilerini
-        takip etmeye devam edeceğiz.
-    `,
-
-    tarih: "6 Eylül 2026",
-    saat: "10:23",
-    gorsel: "images/ChatGPT Image 6 Eyl 2026 19_46_53.png",
-    kaynak: "HABERİSTA"
-},
-
-{
-    id: 20,
-    kategori: "Gündem",
-    baslik: "Tırdan dökülen mazot 10 aracı birbirine kattı",
-
-    spot: "Bursa'da bir tırdan yola dökülen mazot nedeniyle kayganlaşan yolda zincirleme kaza meydana geldi. Yaklaşık 10 aracın karıştığı kazada ekipler bölgede çalışma başlattı.",
-
-    icerik: `
-        Bursa'da trafikte seyir halinde bulunan bir tırdan yola mazot
-        dökülmesi, zincirleme kazaya neden oldu. Mazot nedeniyle yolun
-        kayganlaşmasının ardından sürücüler araçlarının kontrolünü
-        kaybetti.
-
-        Kısa süre içerisinde meydana gelen kazalarda yaklaşık 10 araç
-        birbirine girdi. Olayın ardından bölgeye ekipler sevk edilirken,
-        trafik güvenliğinin sağlanması için çalışma başlatıldı.
-
-        YOL BİR ANDA KAYGANLAŞTI
-
-        Edinilen bilgilere göre olay, tırdan yola mazot dökülmesinin
-        ardından meydana geldi. Asfalt yüzeyine yayılan mazot, yolun
-        kayganlaşmasına neden oldu.
-
-        Sürücülerin zemindeki kayganlığı fark etmekte zorlanması üzerine
-        peş peşe kazalar yaşandı.
-
-        Yaklaşık 10 aracın karıştığı kazanın ardından olay yerine
-        güvenlik ve sağlık ekipleri yönlendirildi.
-
-        10 ARAÇ KAZAYA KARIŞTI
-
-        Mazot nedeniyle meydana gelen zincirleme kazada çok sayıda araç
-        birbirine çarptı. Araçlarda maddi hasar meydana gelirken,
-        ekipler kazanın ardından yol güvenliğini sağlamak için çalışma
-        yaptı.
-
-        Kazanın meydana geldiği bölgede ulaşım bir süre kontrollü şekilde
-        sağlandı.
-
-        EKİPLER SEVK EDİLDİ
-
-        İhbar üzerine bölgeye gelen ekipler, hem kazaya karışan araçlara
-        müdahale etti hem de yola dökülen mazotun oluşturduğu tehlikeyi
-        ortadan kaldırmak için çalışma başlattı.
-
-        Sürücülerin yeni kazalara karışmaması için bölgede gerekli
-        güvenlik önlemlerinin alınması sağlandı.
-
-        TRAFİKTE KAYGAN ZEMİN UYARISI
-
-        Özellikle yağ, mazot ve benzeri maddelerin yola dökülmesi,
-        araçların fren mesafesini ve yol tutuşunu ciddi şekilde
-        etkileyebiliyor.
-
-        Uzmanlar, sürücülerin yol üzerinde kayganlık fark ettikleri
-        durumlarda hızlarını düşürmeleri ve ani manevralardan kaçınmaları
-        gerektiğine dikkat çekiyor.
-
-        KAZANIN NEDENİ İNCELENİYOR
-
-        Yaklaşık 10 aracın karıştığı kazanın ardından olayla ilgili
-        inceleme başlatıldı. Mazotun yola nasıl döküldüğü ve kazaya
-        ilişkin diğer ayrıntıların yapılacak çalışmaların ardından
-        netleşmesi bekleniyor.
-
-        Trafik ekipleri bölgede güvenliği sağlamak ve ulaşımın yeniden
-        normale dönmesi için çalışmalarını sürdürdü.
-
-        SON DAKİKA GELİŞMELERİ TAKİP EDİLİYOR
-
-        Bursa'da yaşanan zincirleme kaza, yola dökülen mazotun trafikte
-        ne kadar ciddi bir risk oluşturabileceğini bir kez daha ortaya
-        koydu.
-
-        Kazayla ilgili yeni bilgiler geldikçe haberin detaylarının
-        güncellenmesi bekleniyor.
-
-        HABERİSTA olarak olayla ilgili gelişmeleri takip ediyoruz.
-    `,
-
-    tarih: "6 Eylül 2026",
-    saat: "09:53",
-    gorsel: "images/ChatGPT Image 6 Eyl 2026 19_48_08.png",
-    kaynak: "HABERİSTA"
-},
-
-
-{
-    id: 16,
-    kategori: "Magazin",
-    baslik: "Ünlü oyuncu Serhat Mustafa Kılıç hayatını kaybetti",
-
-    spot: "Türk tiyatro, sinema ve televizyon dünyasının tanınan isimlerinden Serhat Mustafa Kılıç, 51 yaşında hayatını kaybetti. İstanbul Kağıthane'deki evinde ölü bulunan oyuncunun kesin ölüm nedeni yapılacak adli incelemenin ardından netleşecek.",
-
-    icerik: `
-        Türk sanat dünyası acı bir haberle sarsıldı. Tiyatro, sinema ve
-        televizyon projelerinde uzun yıllar boyunca başarılı performanslarıyla
-        izleyicilerin karşısına çıkan ünlü oyuncu Serhat Mustafa Kılıç,
-        51 yaşında hayatını kaybetti.
-
-        Oyuncunun İstanbul Kağıthane'deki evinde hayatını kaybettiği öğrenildi.
-        Kılıç'tan bir süredir haber alamayan yakınlarının durumu fark etmesi
-        üzerine olay yerine sağlık ve polis ekipleri sevk edildi.
-
-        Sağlık ekiplerinin yaptığı kontrollerin ardından oyuncunun hayatını
-        kaybettiği belirlendi. Olayın ardından polis ekipleri tarafından
-        inceleme başlatılırken, Kılıç'ın cenazesi kesin ölüm nedeninin
-        belirlenmesi amacıyla Adli Tıp Kurumu'na gönderildi.
-
-        Ünlü oyuncunun ölüm nedeni konusunda henüz resmi olarak kesinleşmiş
-        bir açıklama yapılmadı. Adli inceleme ve otopsi sonucunun ardından
-        ölüm nedenine ilişkin daha net bilgilerin ortaya çıkması bekleniyor.
-
-        SANAT DÜNYASINI YASA BOĞAN HABER
-
-        Serhat Mustafa Kılıç'ın ölüm haberinin duyulmasının ardından sanat
-        dünyasından çok sayıda başsağlığı mesajı geldi. Oyuncunun uzun yıllar
-        birlikte çalıştığı meslektaşları ve sevenleri, sosyal medya üzerinden
-        yaptıkları paylaşımlarla üzüntülerini dile getirdi.
-
-        Tiyatro, sinema ve televizyon alanlarında önemli çalışmalara imza atan
-        Kılıç, özellikle canlandırdığı farklı karakterlerle geniş bir izleyici
-        kitlesinin tanıdığı oyuncular arasında yer alıyordu.
-
-        TİYATRO KARİYERİ
-
-        Serhat Mustafa Kılıç'ın sanat hayatında tiyatronun önemli bir yeri
-        bulunuyordu. Bilkent Üniversitesi Müzik ve Sahne Sanatları Fakültesi
-        Tiyatro Bölümü'nde eğitim alan oyuncu, profesyonel kariyerine tiyatro
-        sahnesinde başladı.
-
-        Kariyeri boyunca farklı tiyatro topluluklarında ve kurumlarında görev
-        alan Kılıç, oyunculuğun yanı sıra sahne sanatları alanındaki
-        çalışmalarını da sürdürdü.
-
-        Yıllar içerisinde tiyatro sahnesinde çok sayıda karaktere hayat veren
-        oyuncu, sahip olduğu deneyimle genç oyunculara da katkı sağladı.
-
-        TELEVİZYONDA TANINDI
-
-        Serhat Mustafa Kılıç, tiyatronun ardından televizyon projelerinde de
-        önemli roller üstlendi. Hatırla Sevgili, Ezel, Seksenler, Söz,
-        Kuruluş Osman, Kirli Sepeti ve Mehmed: Fetihler Sultanı gibi
-        yapımlarda rol aldı.
-
-        Özellikle Seksenler dizisinde canlandırdığı Ergun Plak karakteri,
-        oyuncunun televizyon izleyicileri tarafından geniş kitlelerce
-        tanınmasını sağlayan rollerinden biri oldu.
-
-        Kılıç, farklı türlerdeki televizyon projelerinde birbirinden farklı
-        karakterleri canlandırarak oyunculuk kariyerini uzun yıllar boyunca
-        sürdürdü.
-
-        SİNEMA KARİYERİ
-
-        Başarılı oyuncu televizyon çalışmalarının yanı sıra sinema filmlerinde
-        de rol aldı. Nokta, Veda, Kış Uykusu, Mavzer ve Cenazemize Hoş
-        Geldiniz gibi yapımlarda yer alan Kılıç, sinema kariyerinde de
-        dikkat çeken performanslar sergiledi.
-
-        Özellikle Nuri Bilge Ceylan'ın Kış Uykusu filminde canlandırdığı
-        İmam Hamdi karakteriyle sinema izleyicisinin karşısına çıktı.
-
-        Farklı yönetmenlerle ve farklı türlerde çalışan oyuncu, kariyeri
-        boyunca tiyatro ile televizyon ve sinemayı birlikte sürdürdü.
-
-        YAKLAŞIK 30 YILLIK SANAT HAYATI
-
-        Serhat Mustafa Kılıç, yaklaşık 30 yıllık sanat hayatı boyunca
-        tiyatrodan televizyona, sinemadan farklı sahne çalışmalarına kadar
-        birçok alanda üretim gerçekleştirdi.
-
-        Oyunculuğunun yanı sıra eğitim çalışmalarına da önem veren Kılıç,
-        sahne sanatları alanındaki bilgi ve deneyimini yeni nesil oyunculara
-        aktarmaya çalıştı.
-
-        Kariyeri boyunca farklı karakterlere hayat veren oyuncu, özellikle
-        televizyon dizilerindeki performanslarıyla geniş bir hayran kitlesine
-        ulaştı.
-
-        ÖLÜMÜYLE İLGİLİ SORUŞTURMA SÜRÜYOR
-
-        Kılıç'ın Kağıthane'deki evinde hayatını kaybetmesinin ardından olayla
-        ilgili inceleme başlatıldı. Oyuncunun kesin ölüm nedeninin yapılacak
-        adli incelemeler sonucunda belirlenmesi bekleniyor.
-
-        Sosyal medyada ölüm nedenine ilişkin çeşitli iddialar gündeme gelse de
-        resmi makamlar tarafından doğrulanmayan bilgilerin kesin gerçek olarak
-        değerlendirilmemesi gerekiyor.
-
-        Yetkililerden gelecek açıklamalar ve Adli Tıp Kurumu'ndaki işlemlerin
-        ardından olayın tüm detaylarının netleşmesi bekleniyor.
-
-        SEVENLERİNDEN VEDA MESAJLARI
-
-        Oyuncunun vefat haberinin ardından sanat dünyasından çok sayıda isim
-        sosyal medya hesaplarından başsağlığı mesajları paylaştı.
-
-        Kılıç'ın yıllar boyunca birlikte çalıştığı oyuncular, yönetmenler,
-        tiyatro sanatçıları ve sevenleri, ünlü oyuncunun ardından duydukları
-        üzüntüyü dile getirdi.
-
-        Oyuncunun canlandırdığı karakterler ve sanat hayatı boyunca ortaya
-        koyduğu çalışmalar, sevenleri tarafından paylaşılan mesajlarda
-        hatırlatıldı.
-
-        CENAZE PROGRAMI BEKLENİYOR
-
-        Serhat Mustafa Kılıç'ın vefatının ardından cenaze töreninin ne zaman
-        ve nerede gerçekleştirileceğine ilişkin gelişmeler takip ediliyor.
-
-        Cenaze programına ilişkin resmi bilgilerin açıklanmasıyla birlikte
-        detayların kamuoyuyla paylaşılması bekleniyor.
-
-        SANAT DÜNYASINDA BÜYÜK KAYIP
-
-        Serhat Mustafa Kılıç'ın 51 yaşında hayatını kaybetmesi, Türk sanat
-        dünyasında büyük üzüntü yarattı.
-
-        Tiyatro sahnesinden televizyon ekranlarına ve sinema filmlerine kadar
-        uzanan kariyerinde çok sayıda projede yer alan Kılıç, geride uzun
-        yıllara yayılan bir sanat kariyeri ve izleyicilerin hafızasında yer
-        eden karakterler bıraktı.
-
-        Ünlü oyuncunun vefatıyla ilgili resmi açıklamalar geldikçe haberimiz
-        güncellenecektir.
-
-        HABERİSTA olarak Serhat Mustafa Kılıç'ın ailesine, yakınlarına,
-        meslektaşlarına ve tüm sevenlerine başsağlığı diliyoruz.
-    `,
-
-    tarih: "6 Eylül 2026",
-    saat: "17:40",
-    gorsel: "images/SERHAT.jpeg",
-    kaynak: "HABERİSTA"
-},
     {
-        id: 11,
+        id: 21,
         kategori: "Gündem",
-        baslik: "4 il için sel ve heyelan uyarısı",
 
-        spot: "6 Eylül 2026'da bazı bölgelerde etkili olması beklenen yağışlar nedeniyle 4 il için sel ve heyelan uyarısı yapıldı. Yetkililer, vatandaşların kuvvetli yağış sırasında dikkatli olması gerektiğini belirtti.",
+        baslik:
+            "Kabine bugün toplanıyor: Gündemde ekonomi, güvenlik ve 'Terörsüz Türkiye' süreci var",
+
+        spot:
+            "Cumhurbaşkanı Recep Tayyip Erdoğan başkanlığındaki Cumhurbaşkanlığı Kabinesi bugün Beştepe'de toplanacak. Toplantıda ekonomi, güvenlik, dış politika, 'Terörsüz Türkiye' süreci ve sosyal konut çalışmalarının değerlendirilmesi bekleniyor.",
 
         icerik: `
-            Türkiye'nin bazı bölgelerinde etkili olması beklenen yağışlı hava
-            nedeniyle vatandaşlara yönelik uyarılar gündeme geldi. Meteorolojik
-            değerlendirmelerde bazı bölgelerde yağışların yerel olarak kuvvetlenebileceği
-            belirtilirken, özellikle sel ve heyelan riski bulunan alanlarda yaşayan
-            vatandaşların dikkatli olması istendi.
 
-            6 Eylül Pazar günü itibarıyla hava durumundaki değişiklikler ulaşım,
-            tarım ve günlük yaşam açısından yakından takip ediliyor. Kısa süre
-            içerisinde etkili olan kuvvetli yağışlar şehir merkezlerinde su
-            birikintilerine, kırsal bölgelerde ise ulaşım sorunlarına neden
-            olabiliyor.
+            KABİNE BUGÜN BEŞTEPE'DE TOPLANIYOR
 
-            Yetkililer tarafından yapılan değerlendirmelerde vatandaşların
-            meteorolojik uyarıları takip etmeleri ve zorunlu olmadıkça riskli
-            bölgelerde bulunmamaları gerektiği vurgulanıyor.
+            Cumhurbaşkanı Recep Tayyip Erdoğan başkanlığındaki
+            Cumhurbaşkanlığı Kabinesi, 7 Eylül 2026 Pazartesi günü
+            Cumhurbaşkanlığı Külliyesi'nde toplanacak.
 
-            Özellikle dere yatakları, su kanalları, eğimli araziler ve daha
-            önce heyelan yaşanan bölgeler için ekstra dikkat çağrısı yapılıyor.
+            Toplantının saat 15.30'da başlaması bekleniyor.
 
-            SEL RİSKİ ARTIYOR
+            Kabine toplantısında Türkiye'nin iç ve dış gündemindeki
+            gelişmelerin yanı sıra ekonomi, güvenlik, dış politika ve
+            "Terörsüz Türkiye" sürecine ilişkin başlıkların
+            değerlendirilmesi bekleniyor.
 
-            Kuvvetli yağış sırasında kısa süre içerisinde büyük miktarda suyun
-            birikmesi özellikle alçak bölgelerde ani su baskınlarına yol açabiliyor.
-            Bu nedenle vatandaşların yağış sırasında dere yataklarından ve suyun
-            hızla birikebileceği bölgelerden uzak durması önem taşıyor.
+            Toplantının ardından Cumhurbaşkanı Erdoğan'ın kamuoyuna
+            açıklama yapması bekleniyor.
 
-            Araç sürücülerinin de suyla kaplanan yollarda ilerlemeye çalışmaması
-            gerektiği belirtiliyor. Su seviyesinin aracın güvenli geçiş sınırını
-            aşması durumunda sürücülerin alternatif güzergahları tercih etmesi
-            gerekiyor.
+            "TERÖRSÜZ TÜRKİYE" SÜRECİ
 
-            HEYELAN TEHLİKESİ
+            Kabinenin gündeminde bulunması beklenen başlıklardan biri
+            "Terörsüz Türkiye" sürecindeki son gelişmeler olacak.
 
-            Yağışların uzun süre devam ettiği eğimli bölgelerde toprağın
-            hareket etmesi heyelan riskini artırabiliyor. Özellikle dağlık
-            bölgelerdeki yolların kullanılması sırasında dikkatli olunması
-            gerektiği belirtiliyor.
+            Süreç kapsamında yürütülen çalışmalar, güvenlik politikaları
+            ve önümüzdeki dönemde atılması planlanan adımların
+            değerlendirilmesi bekleniyor.
 
-            Uzmanlar, vatandaşların hava durumuna ilişkin resmi uyarıları
-            takip etmelerini ve sosyal medyada doğrulanmamış bilgilere
-            itibar etmemelerini öneriyor.
+            EKONOMİ GÜNDEMİ
 
-            HAVA DURUMU TAKİP EDİLİYOR
+            Ekonomi de toplantının önemli başlıkları arasında yer alacak.
 
-            Yağışların etkisinin bölgeden bölgeye değişebileceği belirtilirken,
-            gün içerisinde yeni meteorolojik uyarıların yapılabileceği ifade
-            ediliyor.
+            Enflasyonla mücadele, ekonomik istikrar, fiyat gelişmeleri
+            ve ekonomi programının uygulanmasına ilişkin gelişmelerin
+            değerlendirilmesi bekleniyor.
 
-            Vatandaşların seyahat planlarını hava koşullarını dikkate alarak
-            yapması, özellikle uzun yola çıkacak kişilerin güzergahlarını
-            önceden kontrol etmesi önem taşıyor.
+            Yeni Orta Vadeli Program kapsamında belirlenen hedefler ve
+            önümüzdeki dönemde uygulanması planlanan politikaların da
+            gündeme gelmesi bekleniyor.
 
-            HABERİSTA olarak hava koşullarına ilişkin gelişmeleri ve resmi
-            açıklamaları takip ediyoruz.
+            SOSYAL KONUT ÇALIŞMALARI
+
+            Toplantıda sosyal konut çalışmalarına ilişkin gelişmelerin
+            de değerlendirilmesi bekleniyor.
+
+            Dar ve orta gelirli vatandaşların konut sahibi olmasına
+            yönelik çalışmaların yanı sıra İstanbul'daki kiralık sosyal
+            konut projesine ilişkin başlıkların gündeme gelmesi bekleniyor.
+
+            GÜVENLİK VE DIŞ POLİTİKA
+
+            Türkiye'nin iç güvenliği, sınır güvenliği ve bölgesel
+            gelişmeler de Kabine toplantısında ele alınabilecek
+            başlıklar arasında bulunuyor.
+
+            Orta Doğu'daki gelişmelerin Türkiye'nin güvenliği,
+            ekonomisi ve enerji politikaları üzerindeki olası
+            etkilerinin de değerlendirilmesi bekleniyor.
+
+            ERDOĞAN'IN AÇIKLAMA YAPMASI BEKLENİYOR
+
+            Toplantının tamamlanmasının ardından Cumhurbaşkanı
+            Erdoğan'ın gündemdeki konulara ilişkin açıklama yapması
+            bekleniyor.
+
+            Açıklamanın ardından toplantıda kesinleşen kararlar
+            kamuoyuna duyurulabilecek.
+
+            HABERİSTA OLARAK TAKİP EDİYORUZ
+
+            Kabine toplantısından gelecek açıklamalar ve kesinleşen
+            kararlar yakından takip ediliyor.
+
+            Toplantı sonrasında resmi açıklamalar geldikçe haber
+            güncellenecektir.
+
+            HABERİSTA, gelişmeleri resmi açıklamalar doğrultusunda
+            okuyucularına aktarmaya devam edecektir.
         `,
 
-        tarih: "6 Eylül 2026",
-        saat: "12:10",
-        gorsel: "images/meteroji.jpeg",
+        tarih: "7 Eylül 2026",
+        saat: "16:10",
+
+        gorsel:
+            "images/WhatsApp Image 2026-09-07 at 16.15.05.jpeg",
+
         kaynak: "HABERİSTA"
     },
 
 
     /* =====================================================
-       2 - TÜRKİYE
+       2 - ABD / İRAN
     ===================================================== */
 
     {
-        id: 12,
-        kategori: "Türkiye",
-        baslik: "Son depremler: AFAD ve Kandilli verileri güncellendi",
-
-        spot: "Türkiye'de vatandaşların yakından takip ettiği son deprem verileri 6 Eylül itibarıyla güncellendi. Gün içerisinde farklı bölgelerde çeşitli büyüklüklerde sarsıntılar kaydedildi.",
-
-        icerik: `
-            Türkiye'nin deprem kuşağında yer alması nedeniyle ülke genelinde
-            meydana gelen sarsıntılar vatandaşlar tarafından yakından takip
-            ediliyor.
-
-            AFAD ve Kandilli Rasathanesi tarafından paylaşılan deprem verileri
-            gün içerisinde düzenli olarak kontrol ediliyor. Vatandaşlar meydana
-            gelen depremlerin merkez üssünü, büyüklüğünü ve derinliğini resmi
-            kaynaklardan öğrenmeye çalışıyor.
-
-            6 Eylül 2026 itibarıyla Türkiye'nin farklı bölgelerinde çeşitli
-            büyüklüklerde sarsıntılar kaydedilirken, özellikle deprem riski
-            bulunan bölgelerde yaşayan vatandaşların gelişmeleri yakından
-            takip ettiği görülüyor.
-
-            RESMİ KAYNAKLAR ÖNEMLİ
-
-            Deprem sonrasında sosyal medya platformlarında çok sayıda paylaşım
-            yapılabiliyor. Ancak bu paylaşımların tamamının doğru olmadığı
-            unutulmamalı.
-
-            Uzmanlar, vatandaşların depremle ilgili bilgi edinirken AFAD ve
-            Kandilli Rasathanesi gibi resmi kaynakları takip etmesi gerektiğini
-            belirtiyor.
-
-            DEPREM SIRASINDA NE YAPILMALI?
-
-            Deprem sırasında öncelikle panik yapılmaması gerekiyor. Bina içerisinde
-            bulunan kişilerin camlardan, balkonlardan ve devrilebilecek ağır
-            eşyalardan uzak durması önem taşıyor.
-
-            Güvenli bir noktaya geçilmesi ve mümkün olduğunca baş ve boyun
-            bölgesinin korunması öneriliyor.
-
-            Deprem sonrasında ise hasar meydana gelmiş olabilecek binalara
-            tekrar girilmemesi gerekiyor.
-
-            DEPREME HAZIRLIK
-
-            Uzmanlara göre deprem hazırlığı yalnızca deprem meydana geldiğinde
-            yapılacaklardan ibaret değil. Evlerde ağır eşyaların sabitlenmesi,
-            acil durum çantasının hazırlanması ve aile bireyleriyle iletişim
-            planı oluşturulması da büyük önem taşıyor.
-
-            Vatandaşların yaşadıkları bölgelerdeki toplanma alanlarını önceden
-            öğrenmeleri de öneriliyor.
-
-            TÜRKİYE'DE DEPREM GÜNDEMİ
-
-            Türkiye'de farklı fay hatlarının bulunması nedeniyle deprem konusu
-            uzun yıllardır ülkenin önemli gündem maddeleri arasında yer alıyor.
-
-            Gün içerisinde meydana gelen her sarsıntı vatandaşların dikkatini
-            çekerken, uzmanlar küçük depremlerin tek başına büyük bir depremin
-            habercisi olarak değerlendirilmemesi gerektiğini vurguluyor.
-
-            HABERİSTA olarak Türkiye'deki deprem gelişmelerini ve resmi
-            açıklamaları takip etmeye devam ediyoruz.
-        `,
-
-        tarih: "6 Eylül 2026",
-        saat: "11:55",
-        gorsel: "images/deprem.jpeg",
-        kaynak: "AFAD / Kandilli Rasathanesi"
-    },
-
-
-    /* =====================================================
-       3 - EĞİTİM
-    ===================================================== */
-
-    {
-        id: 13,
-        kategori: "Eğitim",
-        baslik: "2026 KPSS Lisans sınavı bugün yapılıyor",
-
-        spot: "2026-KPSS Lisans Genel Yetenek-Genel Kültür oturumu 6 Eylül Pazar günü gerçekleştirildi. Binlerce aday kamu personeli olabilmek için sınav merkezlerinde ter döktü.",
-
-        icerik: `
-            Kamu kurumlarında görev almak isteyen adayların uzun süredir
-            hazırlandığı 2026-KPSS Lisans Genel Yetenek-Genel Kültür oturumu
-            6 Eylül Pazar günü gerçekleştirildi.
-
-            ÖSYM tarafından düzenlenen sınav için Türkiye genelindeki sınav
-            merkezlerinde yoğunluk yaşandı.
-
-            Sabahın erken saatlerinden itibaren sınav binalarına gelen adaylar,
-            sınav saatinden önce salonlara giriş yaptı.
-
-            SINAVDA 120 SORU
-
-            Genel Yetenek ve Genel Kültür oturumunda adaylara toplam 120 soru
-            yöneltildi ve sınav için 130 dakika süre verildi.
-
-            Adaylar sınav boyunca Türkçe, matematik, tarih, coğrafya ve
-            vatandaşlık gibi alanlardan gelen soruları yanıtladı.
-
-            SINAV MERKEZLERİNDE YOĞUNLUK
-
-            Türkiye'nin birçok kentinde sınav öncesinde ulaşım yoğunluğu
-            yaşandı. Adaylar sınava geç kalmamak için sınav merkezlerine
-            erken saatlerde geldi.
-
-            Sınav kuralları gereği belirlenen saatten sonra sınav binalarına
-            giriş yapılamaması nedeniyle adaylar sınav saatlerine özellikle
-            dikkat etti.
-
-            SORULAR VE CEVAP ANAHTARI
-
-            Sınavın ardından adayların en çok merak ettiği konulardan biri
-            soru kitapçığı ve cevap anahtarının ne zaman yayımlanacağı oldu.
-
-            ÖSYM'nin yayımlayacağı resmi soru ve cevap anahtarları üzerinden
-            adaylar sınav performanslarını değerlendirebilecek.
-
-            SONUÇLAR BEKLENİYOR
-
-            Sınavın tamamlanmasının ardından adayların gözü sonuç takvimine
-            çevrildi.
-
-            KPSS puanları kamu kurum ve kuruluşlarının çeşitli personel
-            alımlarında önemli bir değerlendirme kriteri olarak kullanılıyor.
-
-            Adaylar sonuçların açıklanmasının ardından tercih ve başvuru
-            süreçlerini takip edecek.
-
-            TERCİH DÖNEMİ ÖNEMLİ
-
-            KPSS puanı alan adayların yalnızca puanlarına değil, başvuracakları
-            kadroların özel şartlarına da dikkat etmesi gerekiyor.
-
-            Mezuniyet şartları, yaş şartları ve diğer özel koşullar tercih
-            sürecinde önem taşıyor.
-
-            HABERİSTA Eğitim Servisi olarak KPSS sonuçları ve kamu personeli
-            alımlarına ilişkin gelişmeleri takip ediyoruz.
-        `,
-
-        tarih: "6 Eylül 2026",
-        saat: "10:15",
-        gorsel: "images/kpss.jpeg",
-        kaynak: "ÖSYM"
-    },
-
-
-    /* =====================================================
-       4 - SPOR
-    ===================================================== */
-
-    {
-        id: 14,
-        kategori: "Spor",
-        baslik: "Beşiktaş derbide Fenerbahçe'yi 2-1 mağlup etti",
-
-        spot: "Trendyol Süper Lig'in 4. haftasındaki dev derbide Beşiktaş, Fenerbahçe'yi deplasmanda 2-1 mağlup ederek üç puanın sahibi oldu.",
-
-        icerik: `
-            Trendyol Süper Lig'in 4. haftasında futbolseverlerin büyük
-            heyecanla beklediği Fenerbahçe-Beşiktaş derbisi oynandı.
-
-            Kadıköy'deki mücadelede iki takım da karşılaşmaya yüksek tempoyla
-            başladı. Tribünlerde büyük bir atmosferin oluştuğu maçta ilk gol
-            Fenerbahçe'den geldi.
-
-            Milan Skriniar'ın golüyle sarı-lacivertli ekip karşılaşmada
-            1-0 öne geçti.
-
-            BEŞİKTAŞ'TAN HIZLI CEVAP
-
-            Fenerbahçe'nin golünün ardından Beşiktaş oyunun kontrolünü
-            yeniden ele geçirmek için baskısını artırdı.
-
-            Siyah-beyazlı takımın çabaları sonuç verdi ve Rıdvan Yılmaz'ın
-            attığı golle skor 1-1'e geldi.
-
-            İlk yarının kalan bölümünde iki takım da üstünlük kurmak için
-            mücadele etti.
-
-            İKİNCİ YARIDA HEYECAN ARTTI
-
-            Karşılaşmanın ikinci yarısında tempo daha da yükseldi.
-
-            Fenerbahçe kendi sahasında yeniden öne geçmek için pozisyonlar
-            üretmeye çalışırken Beşiktaş hızlı hücumlarla rakip kalede
-            tehlike oluşturmaya başladı.
-
-            Mücadelenin ilerleyen dakikalarında Beşiktaş'ın yıldız oyuncusu
-            Dusan Vlahovic sahneye çıktı.
-
-            VLAHOVIC SKORU DEĞİŞTİRDİ
-
-            Vlahovic'in attığı gol Beşiktaş'ı 2-1 öne geçirdi.
-
-            Golden sonra Fenerbahçe beraberlik golünü bulmak için baskısını
-            artırdı. Ancak Beşiktaş savunması karşılaşmanın son bölümünde
-            skor üstünlüğünü korumayı başardı.
-
-            DERBİDE SON DÜDÜK
-
-            Karşılaşmanın son düdüğüyle birlikte Beşiktaş sahadan
-            2-1 galip ayrıldı.
-
-            Siyah-beyazlı ekip deplasmanda aldığı bu önemli galibiyetle
-            üç puanı hanesine yazdırırken Fenerbahçe kendi sahasında
-            mağlubiyet yaşadı.
-
-            MAÇIN ÖNE ÇIKAN İSİMLERİ
-
-            Rıdvan Yılmaz ve Dusan Vlahovic Beşiktaş adına skora katkı
-            sağlayan oyuncular olurken, Fenerbahçe'nin golünü Milan
-            Skriniar kaydetti.
-
-            Karşılaşma sosyal medyada da büyük yankı oluşturdu.
-
-            SEZONUN GERİ KALANI
-
-            Süper Lig'de sezonun henüz başında oynanan derbinin ardından
-            iki takım da önündeki karşılaşmalara odaklanacak.
-
-            Beşiktaş bu galibiyetle moral kazanırken Fenerbahçe'nin önündeki
-            maçlarda nasıl bir reaksiyon göstereceği merak konusu oldu.
-
-            HABERİSTA Spor Servisi olarak Süper Lig'deki tüm gelişmeleri
-            takip ediyoruz.
-        `,
-
-        tarih: "6 Eylül 2026",
-        saat: "00:20",
-        gorsel: "images/bjkfb.jpeg",
-        kaynak: "Spor Servisi"
-    },
-
-
-    /* =====================================================
-       5 - EKONOMİ
-    ===================================================== */
-
-    {
-        id: 15,
-        kategori: "Ekonomi",
-        baslik: "Altın fiyatlarında 6 Eylül hareketliliği",
-
-        spot: "Hafta sonuna girilirken yatırımcıların gözü gram, çeyrek, yarım ve Cumhuriyet altını fiyatlarında. Küresel piyasalardaki gelişmeler yakından takip ediliyor.",
-
-        icerik: `
-            Altın piyasasında hareketlilik yatırımcıların gündemindeki yerini
-            koruyor. Türkiye'de özellikle gram altın ve çeyrek altın fiyatları
-            vatandaşlar tarafından yakından takip ediliyor.
-
-            6 Eylül 2026 itibarıyla yatırımcılar yeni haftaya girilirken
-            altın fiyatlarının nasıl şekilleneceğini merak ediyor.
-
-            Altının fiyatı yalnızca Türkiye'deki gelişmelerden etkilenmiyor.
-            Küresel piyasalarda ons altının seyri, doların değeri, merkez
-            bankalarının kararları ve ekonomik beklentiler de fiyat üzerinde
-            etkili olabiliyor.
-
-            GRAM ALTIN İLGİ GÖRÜYOR
-
-            Gram altın Türkiye'de en çok takip edilen yatırım araçlarından
-            biri olmaya devam ediyor.
-
-            Gün içerisinde fiyatlarda meydana gelen değişimler yatırımcıların
-            alış ve satış rakamlarını ayrı ayrı takip etmesine neden oluyor.
-
-            ÇEYREK ALTIN DA GÜNDEMDE
-
-            Fiziki altın tarafında çeyrek altın da vatandaşların yakından
-            takip ettiği ürünler arasında bulunuyor.
-
-            Özellikle düğün sezonunda çeyrek altın fiyatları daha fazla
-            araştırılıyor.
-
-            KÜRESEL PİYASALARIN ETKİSİ
-
-            ABD ekonomisine ilişkin veriler, faiz beklentileri ve merkez
-            bankalarının para politikaları altın piyasasının yönü açısından
-            önem taşıyor.
-
-            Yatırımcıların riskten kaçınma eğiliminin arttığı dönemlerde
-            değerli metallere olan ilgi de değişebiliyor.
-
-            YENİ HAFTA BEKLENİYOR
-
-            Hafta sonu nedeniyle piyasalarda işlem koşulları hafta içine
-            göre farklılık gösterirken yatırımcılar yeni haftanın açılışını
-            yakından izleyecek.
-
-            Uzmanlar yatırım kararlarının yalnızca günlük fiyat hareketlerine
-            göre verilmemesi gerektiğini vurguluyor.
-
-            Altın alım-satımı yapmak isteyen vatandaşların güncel fiyatları
-            ve işlem maliyetlerini ayrı ayrı değerlendirmesi önem taşıyor.
-
-            HABERİSTA Ekonomi Servisi olarak altın piyasasındaki gelişmeleri
-            takip ediyoruz.
-        `,
-
-        tarih: "6 Eylül 2026",
-        saat: "09:30",
-        gorsel: "images/altın.jpeg",
-        kaynak: "HABERİSTA Ekonomi"
-    },
-
-
-    /* =====================================================
-       6 - EKONOMİ
-    ===================================================== */
-
-    {
-        id: 16,
-        kategori: "Ekonomi",
-        baslik: "Akaryakıt fiyatları yeniden gündemde",
-
-        spot: "Benzin, motorin ve LPG fiyatları küresel petrol piyasaları, döviz kuru ve vergi düzenlemeleri nedeniyle vatandaşların gündemindeki yerini koruyor.",
-
-        icerik: `
-            Türkiye'de milyonlarca araç sahibinin yakından takip ettiği
-            akaryakıt fiyatları gündemdeki yerini koruyor.
-
-            Benzin, motorin ve LPG fiyatları hem bireysel araç sahipleri
-            hem de ticari taşımacılık yapan işletmeler açısından büyük
-            önem taşıyor.
-
-            Akaryakıt fiyatlarının oluşmasında uluslararası petrol fiyatları,
-            döviz kuru ve vergiler önemli rol oynuyor.
-
-            PETROL FİYATLARI TAKİPTE
-
-            Küresel enerji piyasalarında yaşanan gelişmeler petrol fiyatları
-            üzerinde doğrudan etkili olabiliyor.
-
-            Petrol fiyatlarında meydana gelen değişikliklerin yanı sıra
-            döviz kurundaki hareketlilik de Türkiye'deki akaryakıt
-            fiyatlarının takip edilmesine neden oluyor.
-
-            BENZİN VE MOTORİN
-
-            Özellikle uzun yol yapan vatandaşlar için benzin ve motorin
-            fiyatlarındaki değişiklikler önemli bir maliyet oluşturuyor.
-
-            Ticari araç kullanan işletmeler açısından ise yakıt maliyetleri
-            toplam işletme giderlerinin önemli bir bölümünü oluşturabiliyor.
-
-            TAŞIMACILIK MALİYETLERİ
-
-            Akaryakıt fiyatlarının yükselmesi yalnızca sürücüleri değil,
-            taşımacılık sektörünü de etkileyebiliyor.
-
-            Nakliye maliyetlerindeki değişiklikler bazı ürünlerin raf
-            fiyatlarına dolaylı olarak yansıyabiliyor.
-
-            LPG KULLANANLAR DA TAKİP EDİYOR
-
-            LPG'li araç kullanan vatandaşlar da istasyonlardaki güncel
-            fiyatları yakından takip ediyor.
-
-            Yeni haftada petrol piyasası ve döviz kurundaki hareketlilik
-            akaryakıt fiyatları açısından önem taşıyacak.
-
-            Vatandaşların olası zam veya indirim haberlerinde resmi ve
-            güvenilir kaynakları takip etmesi gerekiyor.
-
-            HABERİSTA Ekonomi Servisi olarak akaryakıt piyasasındaki
-            gelişmeleri takip ediyoruz.
-        `,
-
-        tarih: "6 Eylül 2026",
-        saat: "09:10",
-        gorsel: "images/yakıt.jpeg",
-        kaynak: "HABERİSTA Ekonomi"
-    },
-
-
-    /* =====================================================
-       7 - DÜNYA
-    ===================================================== */
-
-    {
-        id: 17,
+        id: 20,
         kategori: "Dünya",
-        baslik: "Rusya'da üniversitenin altında Nazi tankı bulundu",
 
-        spot: "Rusya'nın Kazan kentinde yürütülen çalışmalar sırasında II. Dünya Savaşı döneminden kalma Alman Panther V tankı bulundu.",
+        baslik:
+            "ABD ile İran arasında tansiyon yeniden yükseldi: 3 İran tankeri hedef alındı",
+
+        spot:
+            "ABD ile İran arasındaki gerilimde yeni bir gelişme yaşandı. ABD Merkez Komutanlığı tarafından İran'a ait olduğu belirtilen 3 petrol tankerinin hedef alındığı açıklandı. Gelişme, bölgedeki deniz güvenliği ve enerji piyasalarına ilişkin endişeleri yeniden gündeme taşıdı.",
 
         icerik: `
-            Rusya'nın Kazan kentinde yürütülen çalışmalar sırasında tarih
-            dünyasında dikkat çeken bir keşif gerçekleştirildi.
 
-            Bir üniversite yerleşkesinde yapılan çalışmalar sırasında
-            II. Dünya Savaşı döneminden kaldığı belirtilen Alman yapımı
-            Panther V tankına ulaşıldı.
+            ABD VE İRAN ARASINDA GERİLİM YENİDEN GÜNDEMDE
 
-            Tankın önemli bir bölümünün uzun süredir toprağın altında
-            bulunduğu bildirildi.
+            ABD ile İran arasındaki askeri ve siyasi gerilimde yeni
+            bir gelişme yaşandı.
 
-            TARİHİ ARAÇ TOPRAKTAN ÇIKARILDI
+            ABD Merkez Komutanlığı tarafından yapılan açıklamaya göre,
+            İran'a ait olduğu belirtilen 3 petrol tankeri hedef alındı.
 
-            Çalışmalar sırasında ortaya çıkan metal parçalarının ardından
-            bölgede daha detaylı inceleme gerçekleştirildi.
+            Açıklamanın ardından bölgedeki deniz güvenliği,
+            petrol taşımacılığı ve enerji piyasalarına ilişkin
+            gelişmeler yeniden gündeme geldi.
 
-            İncelemeler sonucunda ortaya çıkan yapının savaş döneminden
-            kalma bir tank olduğu belirlendi.
+            ABD'DEN TANKER AÇIKLAMASI
 
-            Panther tankları II. Dünya Savaşı sırasında Almanya tarafından
-            kullanılan önemli zırhlı araçlar arasında yer alıyordu.
+            ABD tarafının açıklamasında hedef alınan tankerlerin
+            İran'a ait olduğu belirtildi.
 
-            KAZAN'DAKİ KEŞİF DİKKAT ÇEKTİ
+            Operasyonun ayrıntıları ve olayın bölgedeki gelişmelere
+            etkisi uluslararası kamuoyu tarafından takip ediliyor.
 
-            Tankın bir üniversite alanında bulunması keşfi daha da dikkat
-            çekici hale getirdi.
+            TANKERLERİN HEDEF ALINMASI NEDEN ÖNEMLİ?
 
-            Tarihi araçların yıllar sonra toprağın altından çıkarılması,
-            bölgenin geçmişine ilişkin yeni araştırmalar yapılmasına
-            imkan sağlayabiliyor.
+            Petrol tankerlerine yönelik gelişmeler, bölgedeki enerji
+            taşımacılığının güvenliği açısından önem taşıyor.
 
-            TARİHİ ESERLERİN KORUNMASI
+            Körfez bölgesindeki deniz yollarında yaşanabilecek yeni
+            güvenlik sorunlarının petrol taşımacılığını etkileyebileceği
+            değerlendiriliyor.
 
-            Savaş döneminden kalan askeri araçların korunması tarih
-            araştırmaları açısından büyük önem taşıyor.
+            HÜRMÜZ BOĞAZI YAKINDAN TAKİP EDİLİYOR
 
-            Uzmanların araç üzerinde yapacağı incelemeler tankın geçmişi,
-            bulunduğu bölge ve nasıl toprağın altında kaldığı konusunda
-            daha fazla bilgi sağlayabilir.
+            Hürmüz Boğazı, küresel enerji taşımacılığı açısından
+            stratejik öneme sahip geçiş noktalarından biri.
 
-            II. DÜNYA SAVAŞI'NIN İZLERİ
+            Bölgede yaşanabilecek güvenlik sorunları veya deniz
+            trafiğinde meydana gelebilecek aksaklıklar petrol
+            sevkiyatını etkileyebilir.
 
-            II. Dünya Savaşı'ndan onlarca yıl sonra bile farklı ülkelerde
-            savaş dönemine ait araç ve kalıntılara rastlanabiliyor.
+            ENERJİ PİYASALARI
 
-            Bu tür keşifler askeri tarih, arkeoloji ve bölgesel tarih
-            araştırmaları açısından önemli kabul ediliyor.
+            ABD ile İran arasındaki gerilim enerji piyasaları
+            tarafından da yakından takip ediliyor.
 
-            Kazan'daki tankın da uzmanlar tarafından incelenmesi ve
-            gelecekte sergilenip sergilenmeyeceğinin değerlendirilmesi
-            bekleniyor.
+            Petrol arzına ilişkin endişelerin artması halinde
+            fiyatlarda hareketlilik yaşanabileceği değerlendiriliyor.
 
-            HABERİSTA Dünya Servisi olarak gelişmeleri takip ediyoruz.
+            DENİZ TİCARETİ AÇISINDAN RİSK
+
+            Bölgedeki askeri hareketlilik uluslararası denizcilik
+            şirketlerinin güvenlik değerlendirmelerini de etkileyebilir.
+
+            Gemilerin rotalarını değiştirmesi veya güvenlik
+            önlemlerinin artırılması halinde taşımacılık maliyetleri
+            üzerinde baskı oluşabilir.
+
+            YENİ AÇIKLAMALAR BEKLENİYOR
+
+            ABD'nin açıklamasının ardından gözler İran tarafından
+            gelecek açıklamalara çevrildi.
+
+            Taraflardan gelecek yeni açıklamalar, olayın bölgesel
+            etkilerinin daha net anlaşılmasını sağlayabilir.
+
+            HABERİSTA TAKİPTE
+
+            ABD ve İran arasındaki gerilime ilişkin yeni gelişmeler
+            takip ediliyor.
+
+            Resmi açıklamalar ve doğrulanmış bilgiler geldikçe haber
+            güncellenecektir.
         `,
 
-        tarih: "6 Eylül 2026",
-        saat: "08:45",
-        gorsel: "images/rusya ünüversite.jpeg",
-        kaynak: "Dünya Servisi"
+        tarih: "7 Eylül 2026",
+        saat: "00:01",
+
+        gorsel:
+            "images/6.jpeg",
+
+        kaynak: "Reuters / HABERİSTA"
     },
 
 
     /* =====================================================
-       8 - SPOR
-    ===================================================== */
-
-    {
-        id: 18,
-        kategori: "Spor",
-        baslik: "MXGP şampiyonu Afyon'da belli oluyor",
-
-        spot: "Dünya Motokros Şampiyonası'nın 2026 sezonundaki önemli duraklarından MXGP Türkiye'de final yarışları 6 Eylül Pazar günü Afyonkarahisar'da gerçekleştiriliyor.",
-
-        icerik: `
-            Dünya Motokros Şampiyonası'nın önemli etaplarından biri olan
-            MXGP Türkiye'de heyecan doruğa ulaştı.
-
-            2026 sezonundaki önemli yarışlardan biri Afyonkarahisar'da
-            düzenlenirken, dünyanın farklı ülkelerinden gelen sporcular
-            zorlu parkurda mücadele ediyor.
-
-            6 Eylül Pazar günü gerçekleştirilen final yarışları motor
-            sporları tutkunlarının dikkatini Afyonkarahisar'a çevirdi.
-
-            AFYONKARAHİSAR'DA BÜYÜK YARIŞ
-
-            Afyonkarahisar Motor Sporları Merkezi, uluslararası seviyedeki
-            yarışlara ev sahipliği yapmasıyla Türkiye'nin önemli motor
-            sporları merkezlerinden biri haline geldi.
-
-            Parkurun farklı bölümleri sporcular için farklı zorluklar
-            oluşturuyor.
-
-            HIZ VE TEKNİK ÖNEMLİ
-
-            Motokros yarışlarında yalnızca yüksek hız değil, virajlarda
-            doğru çizginin seçilmesi, atlayışların doğru şekilde yapılması
-            ve motosiklet kontrolü de büyük önem taşıyor.
-
-            Pist koşullarının yarış boyunca değişmesi sporcuların
-            performansını etkileyebiliyor.
-
-            ŞAMPİYONLUK MÜCADELESİ
-
-            Sezonun önemli yarışlarından biri olması nedeniyle
-            Afyonkarahisar'daki sonuçlar şampiyona puanları açısından
-            büyük önem taşıyor.
-
-            Sporcular sezon boyunca elde ettikleri puanlarla genel
-            klasmanda üst sıralarda yer almak için mücadele ediyor.
-
-            TÜRKİYE'DE MOTOR SPORLARI
-
-            MXGP Türkiye'nin düzenlenmesi ülkedeki motor sporlarına olan
-            ilgiyi artıran önemli organizasyonlardan biri olarak öne çıkıyor.
-
-            Yarışların yanı sıra organizasyon alanında farklı etkinlikler
-            de düzenlenebiliyor.
-
-            MOTOR SPORLARI TUTKUNLARI PİSTTE
-
-            Yarışları takip etmek için Afyonkarahisar'a gelen motor
-            sporları tutkunları hafta sonu boyunca büyük heyecana ortak
-            oluyor.
-
-            Final yarışlarının ardından sezon sıralamasında oluşacak
-            tablo motor sporları dünyasında yakından takip edilecek.
-
-            HABERİSTA Spor Servisi olarak MXGP Türkiye'deki gelişmeleri
-            takip ediyoruz.
-        `,
-
-        tarih: "6 Eylül 2026",
-        saat: "08:30",
-        gorsel: "images/mxgp yarışması.jpeg",
-        kaynak: "Türkiye Motosiklet Federasyonu"
-    },
-
-
-    /* =====================================================
-       9 - DÜNYA
+       3 - ABD 3 TANKER
     ===================================================== */
 
     {
         id: 19,
         kategori: "Dünya",
-        baslik: "Avrupa seyahatlerinde sınır kontrollerinde yeni dönem",
 
-        spot: "Avrupa'ya seyahat edenleri ilgilendiren EES sınır kontrol sisteminde yeni dönem başlıyor. Sistem kapsamında sınır geçişlerinde biyometrik kontrollerin kullanılması planlanıyor.",
+        baslik:
+            "ABD, 3 İran tankerini vurduğunu açıkladı",
+
+        spot:
+            "ABD yönetimi, İran'a ait olduğu belirtilen 3 petrol tankerinin hedef alındığını açıkladı. Gelişme, ABD ile İran arasındaki gerilimin deniz taşımacılığı ve enerji güvenliği üzerindeki etkilerini yeniden gündeme getirdi.",
 
         icerik: `
-            Avrupa'ya seyahat eden vatandaşları yakından ilgilendiren
-            sınır kontrol uygulamalarında dijitalleşme süreci devam ediyor.
 
-            Avrupa Birliği'nin Entry/Exit System olarak bilinen EES
-            sistemi, Schengen bölgesinin dış sınırlarında giriş ve
-            çıkışların elektronik olarak takip edilmesini amaçlıyor.
+            ABD'DEN 3 İRAN TANKERİ AÇIKLAMASI
 
-            Sistem özellikle Avrupa Birliği dışından Schengen bölgesine
-            seyahat eden kişiler açısından önem taşıyor.
+            ABD ile İran arasındaki gerilimde yeni bir gelişme yaşandı.
 
-            PASAPORT DAMGASI DÖNEMİ DEĞİŞİYOR
+            ABD yönetimi, İran'a ait olduğu belirtilen 3 petrol
+            tankerinin hedef alındığını açıkladı.
 
-            EES sisteminin uygulanmasıyla birlikte geleneksel pasaport
-            damgalarının yerini elektronik kayıtların alması hedefleniyor.
+            Açıklamanın ardından olayın ayrıntıları ve bölgedeki
+            deniz trafiğine olası etkileri yakından takip edilmeye
+            başlandı.
 
-            Böylece yolcuların Schengen bölgesine giriş ve çıkışlarının
-            merkezi bir sistem üzerinden takip edilmesi amaçlanıyor.
+            BÖLGEDE DENİZ GÜVENLİĞİ
+
+            Körfez bölgesindeki deniz yolları küresel enerji
+            taşımacılığı açısından stratejik öneme sahip.
+
+            Bu nedenle petrol tankerlerine yönelik herhangi bir
+            askeri gelişme, enerji ticareti açısından da yakından
+            takip ediliyor.
+
+            PETROL TAŞIMACILIĞI
+
+            İran'ın petrol ihracatı büyük ölçüde deniz yoluyla
+            gerçekleştiriliyor.
+
+            Tankerlerin hedef alınmasına ilişkin gelişme,
+            petrol taşımacılığının güvenliği konusunu yeniden
+            gündeme taşıdı.
+
+            ENERJİ PİYASALARININ GÖZÜ BÖLGEDE
+
+            ABD ile İran arasındaki gerilimin devam etmesi halinde
+            petrol arzı ve deniz taşımacılığına ilişkin endişelerin
+            artabileceği değerlendiriliyor.
+
+            Hürmüz Boğazı çevresindeki gelişmeler de bu nedenle
+            uluslararası enerji piyasaları tarafından takip ediliyor.
+
+            ULUSLARARASI TOPLUM GELİŞMELERİ İZLİYOR
+
+            Bölgedeki ülkelerin güvenlik durumunu yakından takip
+            ettiği belirtilirken, diplomatik açıklamalar da
+            gündemin önemli başlıkları arasında yer alıyor.
+
+            YENİ AÇIKLAMALAR BEKLENİYOR
+
+            Olayın ayrıntıları konusunda taraflardan yeni açıklamalar
+            gelmesi bekleniyor.
+
+            Tankerlerin bulunduğu bölge, saldırının nasıl gerçekleştiği
+            ve olayın sonraki gelişmelere etkisi konusunda yeni
+            bilgilerin ortaya çıkması bekleniyor.
+
+            HABERİSTA TAKİPTE
+
+            ABD ile İran arasındaki gerilime ilişkin yeni gelişmeler
+            doğrulanmış bilgiler üzerinden takip edilmektedir.
+        `,
+
+        tarih: "6 Eylül 2026",
+        saat: "11:17",
+
+        gorsel:
+            "images/ChatGPT Image 6 Eyl 2026 19_44_18.png",
+
+        kaynak: "HABERİSTA"
+    },
+
+
+    /* =====================================================
+       4 - EKONOMİ
+    ===================================================== */
+
+    {
+        id: 18,
+        kategori: "Ekonomi",
+
+        baslik:
+            "Ekonomide 3 yıllık yol haritası belli oluyor",
+
+        spot:
+            "Türkiye ekonomisinin önümüzdeki dönemde izleyeceği politikalara ilişkin 3 yıllık yol haritası gündemde. Yeni Orta Vadeli Program kapsamında büyüme, enflasyon, istihdam ve kamu maliyesine yönelik hedefler öne çıkıyor.",
+
+        icerik: `
+
+            TÜRKİYE EKONOMİSİNDE YENİ DÖNEM
+
+            Türkiye ekonomisinin önümüzdeki üç yıllık dönemde
+            izleyeceği politikalara ilişkin hedefler ekonomi
+            gündeminin önemli başlıkları arasında bulunuyor.
+
+            Orta Vadeli Program kapsamında büyüme, enflasyon,
+            istihdam, kamu maliyesi ve ihracat gibi alanlarda
+            hedefler belirleniyor.
+
+            ENFLASYONLA MÜCADELE
+
+            Ekonomi programının temel başlıklarından biri
+            enflasyonla mücadele.
+
+            Fiyat istikrarının sağlanması ve ekonomik dengelerin
+            güçlendirilmesine yönelik politikaların önümüzdeki
+            dönemde de devam etmesi bekleniyor.
+
+            BÜYÜME VE İSTİHDAM
+
+            Ekonomik büyümenin sürdürülebilir şekilde devam
+            ettirilmesi ve istihdamın artırılması da programın
+            önemli başlıkları arasında yer alıyor.
+
+            Üretim kapasitesinin geliştirilmesi, yatırımların
+            artırılması ve ihracatın desteklenmesine yönelik
+            politikalar izleniyor.
+
+            KAMU MALİYESİ
+
+            Kamu maliyesinde disiplinin korunması ve kamu
+            kaynaklarının daha etkin kullanılması da ekonomik
+            programın önemli unsurları arasında bulunuyor.
+
+            Kamu harcamalarının verimliliği ve bütçe dengeleri
+            önümüzdeki dönemde yakından takip edilecek.
+
+            YATIRIM VE ÜRETİM
+
+            Türkiye'nin üretim kapasitesinin artırılması ve
+            yüksek katma değerli üretimin desteklenmesi
+            hedeflenen alanlar arasında bulunuyor.
+
+            Sanayi, teknoloji ve ihracat kapasitesinin
+            geliştirilmesine yönelik adımların ekonomik
+            büyüme açısından önem taşıdığı değerlendiriliyor.
+
+            PİYASALARIN TAKİBİ
+
+            Ekonomi yönetiminin açıklayacağı hedefler ve
+            uygulayacağı politikalar piyasalar tarafından
+            yakından izlenecek.
+
+            Enflasyon, faiz, büyüme, istihdam ve kamu maliyesi
+            verileri programın uygulanmasında önemli göstergeler
+            arasında yer alacak.
+
+            HABERİSTA EKONOMİ SERVİSİ
+
+            Türkiye ekonomisindeki gelişmeleri resmi açıklamalar
+            ve açıklanan ekonomik veriler üzerinden takip ediyoruz.
+        `,
+
+        tarih: "6 Eylül 2026",
+        saat: "11:01",
+
+        gorsel:
+            "images/ChatGPT Image 6 Eyl 2026 19_45_31.png",
+
+        kaynak: "HABERİSTA"
+    },
+
+
+    /* =====================================================
+       5 - İRAN EKONOMİ
+    ===================================================== */
+
+    {
+        id: 17,
+        kategori: "Dünya",
+
+        baslik:
+            "İran'da 'Ekonomik Savaş Karargâhı' kuruldu",
+
+        spot:
+            "İran'da ekonomik baskıların yönetilmesi amacıyla 'Ekonomik Savaş Karargâhı' kurulduğu açıklandı. Yeni yapılanmanın ekonomik faaliyetler ve kritik sektörler arasında koordinasyon sağlaması bekleniyor.",
+
+        icerik: `
+
+            İRAN'DA YENİ EKONOMİK YAPILANMA
+
+            İran'da ekonomik koşullara ilişkin dikkat çeken bir
+            yapılanma oluşturuldu.
+
+            Ülkede ekonomik baskıların ve dış kaynaklı sorunların
+            yönetilmesi amacıyla "Ekonomik Savaş Karargâhı"
+            kurulduğu açıklandı.
+
+            YAPILANMANIN AMACI
+
+            Yeni yapılanmanın ekonomik alandaki gelişmelerin
+            daha koordineli şekilde yönetilmesine katkı sağlaması
+            bekleniyor.
+
+            Karargâhın hangi kurumlarla birlikte çalışacağı ve
+            görev alanlarının kapsamı yapılacak resmi açıklamalarla
+            daha net hale gelecek.
+
+            KRİTİK SEKTÖRLER TAKİP EDİLECEK
+
+            Ekonomik yapılanmanın temel ekonomik faaliyetler,
+            ticaret, üretim ve tedarik zincirleri gibi alanlarda
+            yaşanabilecek sorunların koordinasyonunda rol
+            üstlenmesi bekleniyor.
+
+            DIŞ BASKILAR
+
+            İran ekonomisi uzun süredir yaptırımlar ve dış
+            ekonomik baskılarla karşı karşıya.
+
+            Enerji ihracatı, dış ticaret ve finansal sistem
+            üzerindeki baskılar ülke ekonomisinin önemli
+            gündem maddeleri arasında bulunuyor.
+
+            BÖLGESEL GELİŞMELER
+
+            Orta Doğu'daki siyasi ve askeri gelişmelerin de
+            İran ekonomisi üzerinde etkili olabileceği
+            değerlendiriliyor.
+
+            Yeni yapılanmanın bu süreçte kurumlar arasındaki
+            koordinasyonu güçlendirmesi amaçlanıyor.
+
+            ÖNÜMÜZDEKİ SÜREÇ
+
+            Ekonomik Savaş Karargâhı'nın faaliyet alanları ve
+            alacağı kararlar önümüzdeki dönemde daha net
+            ortaya çıkacak.
+
+            HABERİSTA Dünya Servisi olarak gelişmeleri resmi
+            açıklamalar doğrultusunda takip ediyoruz.
+        `,
+
+        tarih: "6 Eylül 2026",
+        saat: "10:23",
+
+        gorsel:
+            "images/ChatGPT Image 6 Eyl 2026 19_46_53.png",
+
+        kaynak: "HABERİSTA"
+    },
+
+
+    /* =====================================================
+       6 - BURSA KAZA
+    ===================================================== */
+
+    {
+        id: 16,
+        kategori: "Gündem",
+
+        baslik:
+            "Tırdan dökülen mazot 10 aracı birbirine kattı",
+
+        spot:
+            "Bursa'da bir tırdan yola dökülen mazot nedeniyle kayganlaşan yolda zincirleme kaza meydana geldi. Yaklaşık 10 aracın karıştığı olayın ardından ekipler bölgede çalışma başlattı.",
+
+        icerik: `
+
+            BURSA'DA ZİNCİRLEME KAZA
+
+            Bursa'da trafikte seyreden bir tırdan yola mazot
+            dökülmesi zincirleme kazaya neden oldu.
+
+            Yola yayılan mazot nedeniyle asfaltın kayganlaşmasının
+            ardından sürücüler araçlarının kontrolünü kaybetti.
+
+            Yaklaşık 10 aracın karıştığı kazanın ardından bölgeye
+            ekipler sevk edildi.
+
+            YOL KAYGANLAŞTI
+
+            Mazotun asfalt yüzeyine yayılması sürüş güvenliğini
+            olumsuz etkiledi.
+
+            Kaygan zeminde araçların fren ve yol tutuş özelliklerinin
+            etkilenmesiyle kısa süre içerisinde peş peşe kazalar
+            meydana geldi.
+
+            10 ARAÇ KAZAYA KARIŞTI
+
+            Zincirleme kazada yaklaşık 10 araç birbirine çarptı.
+
+            Olayın ardından bölgede ulaşımın güvenli şekilde
+            sürdürülmesi için çalışma gerçekleştirildi.
+
+            EKİPLER BÖLGEYE SEVK EDİLDİ
+
+            İhbar üzerine olay yerine ekipler yönlendirildi.
+
+            Ekipler hem kazaya karışan araçlarla ilgili işlemleri
+            yürüttü hem de yola dökülen mazotun oluşturduğu
+            tehlikenin giderilmesi için çalışma yaptı.
+
+            SÜRÜCÜLERE UYARI
+
+            Yola yağ, mazot veya benzeri maddelerin dökülmesi
+            araçların yol tutuşunu ciddi şekilde etkileyebilir.
+
+            Sürücülerin böyle durumlarda hızlarını azaltması,
+            ani manevralardan kaçınması ve güvenli bir güzergâh
+            tercih etmesi önem taşıyor.
+
+            İNCELEME BAŞLATILDI
+
+            Kazanın ardından olayın nasıl meydana geldiğine
+            ilişkin inceleme başlatıldı.
+
+            Mazotun yola nasıl döküldüğüne ve kazanın diğer
+            ayrıntılarına ilişkin bilgilerin incelemelerin
+            ardından netleşmesi bekleniyor.
+
+            HABERİSTA olarak olayla ilgili gelişmeleri takip ediyoruz.
+        `,
+
+        tarih: "6 Eylül 2026",
+        saat: "09:53",
+
+        gorsel:
+            "images/ChatGPT Image 6 Eyl 2026 19_48_08.png",
+
+        kaynak: "HABERİSTA"
+    },
+
+
+    /* =====================================================
+       7 - SERHAT MUSTAFA KILIÇ
+    ===================================================== */
+
+    {
+        id: 15,
+        kategori: "Magazin",
+
+        baslik:
+            "Ünlü oyuncu Serhat Mustafa Kılıç hayatını kaybetti",
+
+        spot:
+            "Tiyatro, sinema ve televizyon dünyasının tanınan isimlerinden Serhat Mustafa Kılıç, 51 yaşında hayatını kaybetti. Oyuncunun İstanbul Kağıthane'deki evinde yaşamını yitirdiği öğrenildi.",
+
+        icerik: `
+
+            SERHAT MUSTAFA KILIÇ HAYATINI KAYBETTİ
+
+            Türk tiyatro, sinema ve televizyon dünyasının tanınan
+            isimlerinden Serhat Mustafa Kılıç'ın 51 yaşında
+            hayatını kaybettiği öğrenildi.
+
+            Oyuncunun İstanbul Kağıthane'deki evinde yaşamını
+            yitirdiği bildirildi.
+
+            OLAYLA İLGİLİ İNCELEME
+
+            Kılıç'tan bir süredir haber alamayan yakınlarının
+            durumu fark etmesi üzerine olay yerine sağlık ve
+            polis ekipleri sevk edildi.
+
+            Sağlık ekiplerinin yaptığı kontrollerin ardından
+            oyuncunun hayatını kaybettiği belirlendi.
+
+            Oyuncunun kesin ölüm nedeninin yapılacak adli
+            incelemelerin ardından netleşmesi bekleniyor.
+
+            SANAT DÜNYASINDAN BAŞSAĞLIĞI MESAJLARI
+
+            Vefat haberinin ardından sanat dünyasından çok
+            sayıda isim başsağlığı mesajı paylaştı.
+
+            Oyuncunun meslektaşları ve sevenleri sosyal medya
+            hesaplarından üzüntülerini dile getirdi.
+
+            TİYATRO KARİYERİ
+
+            Serhat Mustafa Kılıç'ın sanat hayatında tiyatronun
+            önemli bir yeri bulunuyordu.
+
+            Bilkent Üniversitesi Müzik ve Sahne Sanatları
+            Fakültesi Tiyatro Bölümü'nde eğitim alan Kılıç,
+            profesyonel kariyerinde çok sayıda tiyatro
+            çalışmasında yer aldı.
+
+            TELEVİZYON ÇALIŞMALARI
+
+            Oyuncu televizyon dünyasında da çeşitli projelerde
+            rol aldı.
+
+            Hatırla Sevgili, Ezel, Seksenler, Söz, Kuruluş Osman,
+            Kirli Sepeti ve Mehmed: Fetihler Sultanı gibi
+            yapımlarda yer aldı.
+
+            Özellikle Seksenler dizisindeki Ergun Plak karakteri
+            geniş bir izleyici kitlesi tarafından tanındı.
+
+            SİNEMA KARİYERİ
+
+            Kılıç, televizyon çalışmalarının yanı sıra sinema
+            filmlerinde de rol aldı.
+
+            Nokta, Veda, Kış Uykusu, Mavzer ve
+            Cenazemize Hoş Geldiniz gibi yapımlarda yer aldı.
+
+            ÖLÜM NEDENİNE İLİŞKİN KESİN BİLGİ BEKLENİYOR
+
+            Oyuncunun ölüm nedeni konusunda resmi olarak
+            kesinleşmemiş bilgilerin gerçekmiş gibi paylaşılmaması
+            önem taşıyor.
+
+            Adli incelemelerin ardından olayın ayrıntılarının
+            netleşmesi bekleniyor.
+
+            CENAZE PROGRAMI
+
+            Cenaze töreninin ne zaman ve nerede yapılacağına
+            ilişkin resmi bilgilerin açıklanması bekleniyor.
+
+            HABERİSTA olarak sanat dünyasındaki gelişmeleri
+            resmi açıklamalar doğrultusunda takip ediyoruz.
+        `,
+
+        tarih: "6 Eylül 2026",
+        saat: "17:40",
+
+        gorsel:
+            "images/SERHAT.jpeg",
+
+        kaynak: "HABERİSTA"
+    },
+
+
+    /* =====================================================
+       8 - METEOROLOJİ
+    ===================================================== */
+
+    {
+        id: 14,
+        kategori: "Gündem",
+
+        baslik:
+            "4 il için sel ve heyelan uyarısı",
+
+        spot:
+            "6 Eylül 2026'da bazı bölgelerde etkili olması beklenen yağışlar nedeniyle 4 il için sel ve heyelan uyarısı yapıldı. Yetkililer, kuvvetli yağış sırasında vatandaşların dikkatli olması gerektiğini belirtti.",
+
+        icerik: `
+
+            4 İL İÇİN UYARI
+
+            Türkiye'nin bazı bölgelerinde beklenen yağışlar
+            nedeniyle sel ve heyelan riskine karşı uyarılar
+            gündeme geldi.
+
+            Meteorolojik değerlendirmelerde bazı bölgelerde
+            yağışların yerel olarak kuvvetlenebileceği belirtildi.
+
+            Riskli bölgelerde yaşayan vatandaşların resmi
+            meteorolojik uyarıları takip etmesi istendi.
+
+            SEL RİSKİ
+
+            Kuvvetli yağışların kısa sürede büyük miktarda
+            su birikmesine neden olması, özellikle alçak
+            bölgelerde su baskını riskini artırabiliyor.
+
+            Dere yatakları ve suyun hızla birikebileceği
+            alanlarda dikkatli olunması gerekiyor.
+
+            HEYELAN TEHLİKESİ
+
+            Uzun süreli ve kuvvetli yağışlar eğimli arazilerde
+            heyelan riskini artırabiliyor.
+
+            Özellikle dağlık bölgelerde ve heyelan riski
+            bulunan yollarda seyahat edenlerin güncel
+            meteorolojik uyarıları takip etmesi önem taşıyor.
+
+            SÜRÜCÜLERE UYARI
+
+            Yağış sırasında görüş mesafesi azalabileceğinden
+            sürücülerin hızlarını hava koşullarına göre
+            ayarlaması gerekiyor.
+
+            Su birikintilerinin bulunduğu yollarda araçların
+            güvenli şekilde ilerleyemeyebileceği unutulmamalı.
+
+            RESMİ UYARILAR TAKİP EDİLMELİ
+
+            Hava koşullarına ilişkin en güncel bilgilerin
+            resmi meteoroloji kaynaklarından takip edilmesi
+            önem taşıyor.
+
+            Sosyal medyada kaynağı belli olmayan hava durumu
+            paylaşımlarının doğrulanmadan paylaşılmaması gerekiyor.
+
+            HABERİSTA olarak meteorolojik gelişmeleri ve
+            resmi uyarıları takip ediyoruz.
+        `,
+
+        tarih: "6 Eylül 2026",
+        saat: "12:10",
+
+        gorsel:
+            "images/meteroji.jpeg",
+
+        kaynak: "HABERİSTA"
+    },
+
+
+    /* =====================================================
+       9 - DEPREMLER
+    ===================================================== */
+
+    {
+        id: 13,
+        kategori: "Türkiye",
+
+        baslik:
+            "Son depremler: AFAD ve Kandilli verileri güncellendi",
+
+        spot:
+            "Türkiye'de meydana gelen son depremlere ilişkin veriler AFAD ve Kandilli Rasathanesi tarafından takip ediliyor. Vatandaşlar sarsıntıların merkez üssü, büyüklüğü ve derinliğine ilişkin resmi verileri takip ediyor.",
+
+        icerik: `
+
+            SON DEPREMLER YAKINDAN TAKİP EDİLİYOR
+
+            Türkiye'nin deprem kuşağında yer alması nedeniyle
+            meydana gelen sarsıntılar vatandaşlar tarafından
+            yakından takip ediliyor.
+
+            Depremlere ilişkin en güncel veriler AFAD ve
+            Kandilli Rasathanesi gibi resmi kaynaklardan
+            takip edilebiliyor.
+
+            DEPREM VERİLERİNDE HANGİ BİLGİLER YER ALIYOR?
+
+            Deprem listelerinde sarsıntının meydana geldiği
+            saat, merkez üssü, büyüklüğü ve derinliği gibi
+            bilgiler yer alabiliyor.
+
+            Vatandaşların depremle ilgili bilgi edinirken
+            resmi kaynaklardaki güncel verileri dikkate
+            alması önem taşıyor.
+
+            SOSYAL MEDYADAKİ BİLGİLERE DİKKAT
+
+            Deprem sonrasında sosyal medya platformlarında
+            çok sayıda paylaşım yapılabiliyor.
+
+            Ancak bu paylaşımların tamamının doğrulanmış
+            bilgi olmadığı unutulmamalı.
+
+            Resmi kurumların açıklamaları dışındaki
+            doğrulanmamış bilgilerin paylaşılmaması gerekiyor.
+
+            DEPREM SIRASINDA
+
+            Deprem sırasında panik yapmamak ve mümkün
+            olduğunca güvenli bir noktaya geçmek önem taşıyor.
+
+            Camlardan, balkonlardan ve devrilebilecek
+            eşyalardan uzak durulması gerekiyor.
+
+            DEPREM SONRASI
+
+            Hasar gördüğünden şüphe edilen binalara
+            tekrar girilmemesi gerekiyor.
+
+            Acil durumlarda resmi ekiplerin yönlendirmelerine
+            uyulması önem taşıyor.
+
+            DEPREME HAZIRLIK
+
+            Deprem hazırlığının yalnızca deprem anında
+            yapılacaklardan ibaret olmadığı belirtiliyor.
+
+            Evlerde ağır eşyaların sabitlenmesi, acil durum
+            çantası hazırlanması ve aile iletişim planının
+            oluşturulması hazırlık açısından önem taşıyor.
+
+            HABERİSTA olarak deprem gelişmelerini AFAD,
+            Kandilli Rasathanesi ve diğer resmi açıklamalar
+            üzerinden takip ediyoruz.
+        `,
+
+        tarih: "6 Eylül 2026",
+        saat: "11:55",
+
+        gorsel:
+            "images/deprem.jpeg",
+
+        kaynak: "AFAD / Kandilli Rasathanesi"
+    },
+
+
+    /* =====================================================
+       10 - KPSS
+    ===================================================== */
+
+    {
+        id: 12,
+        kategori: "Eğitim",
+
+        baslik:
+            "2026 KPSS Lisans Genel Yetenek-Genel Kültür sınavı yapıldı",
+
+        spot:
+            "2026-KPSS Lisans Genel Yetenek-Genel Kültür oturumu 6 Eylül Pazar günü gerçekleştirildi. Adaylar sınavın ardından soru kitapçığı, cevap anahtarı ve sonuç takvimini takip etmeye başladı.",
+
+        icerik: `
+
+            2026 KPSS LİSANS SINAVI GERÇEKLEŞTİRİLDİ
+
+            Kamu kurumlarında görev almak isteyen adayların
+            katıldığı 2026-KPSS Lisans Genel Yetenek-Genel
+            Kültür oturumu 6 Eylül Pazar günü gerçekleştirildi.
+
+            ÖSYM tarafından düzenlenen sınav için Türkiye
+            genelindeki sınav merkezlerinde adaylar sınava girdi.
+
+            SINAVDA GENEL YETENEK VE GENEL KÜLTÜR
+
+            Sınavda adayların Genel Yetenek ve Genel Kültür
+            alanlarındaki bilgileri ölçüldü.
+
+            Türkçe, matematik, tarih, coğrafya ve vatandaşlık
+            gibi alanlara ilişkin sorular adayların
+            performansında belirleyici oldu.
+
+            SINAV MERKEZLERİNDE YOĞUNLUK
+
+            Sınav öncesinde birçok kentte sınav merkezlerinin
+            çevresinde yoğunluk yaşandı.
+
+            Adayların sınav saatinden önce binalarda hazır
+            bulunması gerektiği için ulaşım planlaması
+            önem taşıdı.
+
+            SORULAR VE CEVAP ANAHTARI
+
+            Sınavın ardından adayların en çok merak ettiği
+            konular arasında soru kitapçığı ve cevap anahtarının
+            yayımlanacağı tarih bulunuyor.
+
+            ÖSYM tarafından yayımlanacak resmi dokümanlar
+            üzerinden adaylar sınav performanslarını
+            değerlendirebilecek.
+
+            SONUÇLAR BEKLENİYOR
+
+            Sınavın tamamlanmasının ardından adayların gözü
+            sonuç takvimine çevrildi.
+
+            KPSS puanları kamu kurumlarının personel
+            alımlarında ve ilgili tercih süreçlerinde
+            kullanılabiliyor.
+
+            TERCİH SÜRECİ
+
+            Adayların yalnızca KPSS puanına değil,
+            başvuracakları kadroların özel şartlarına da
+            dikkat etmesi gerekiyor.
+
+            Mezuniyet, yaş ve diğer başvuru koşullarının
+            tercih döneminde kontrol edilmesi önem taşıyor.
+
+            HABERİSTA Eğitim Servisi olarak ÖSYM'nin
+            açıklamalarını takip ediyoruz.
+        `,
+
+        tarih: "6 Eylül 2026",
+        saat: "10:15",
+
+        gorsel:
+            "images/kpss.jpeg",
+
+        kaynak: "ÖSYM"
+    },
+
+
+    /* =====================================================
+       11 - BEŞİKTAŞ FENERBAHÇE
+    ===================================================== */
+
+    {
+        id: 11,
+        kategori: "Spor",
+
+        baslik:
+            "Beşiktaş derbide Fenerbahçe'yi 2-1 mağlup etti",
+
+        spot:
+            "Trendyol Süper Lig'in 4. haftasındaki derbide Beşiktaş, Fenerbahçe'yi deplasmanda 2-1 mağlup ederek üç puanın sahibi oldu.",
+
+        icerik: `
+
+            DERBİDE KAZANAN BEŞİKTAŞ
+
+            Trendyol Süper Lig'in 4. haftasında Fenerbahçe
+            ile Beşiktaş karşı karşıya geldi.
+
+            Kadıköy'de oynanan mücadelede iki takım da
+            karşılaşmaya yüksek tempoyla başladı.
+
+            FENERBAHÇE ÖNE GEÇTİ
+
+            Mücadelenin ilk bölümünde Fenerbahçe'nin golüyle
+            sarı-lacivertli ekip 1-0 öne geçti.
+
+            Beşiktaş ise golün ardından oyundaki baskısını
+            artırarak beraberlik için pozisyonlar geliştirdi.
+
+            BEŞİKTAŞ EŞİTLİĞİ SAĞLADI
+
+            Siyah-beyazlı takımın baskısı sonucunda
+            Rıdvan Yılmaz'ın golüyle skor 1-1'e geldi.
+
+            İlk yarının kalan bölümünde iki takım da
+            üstünlük kurmak için mücadele etti.
+
+            İKİNCİ YARIDA BEŞİKTAŞ ÖNE GEÇTİ
+
+            İkinci yarıda karşılaşmanın temposu yükseldi.
+
+            Beşiktaş'ın hücumları sonucunda Dusan Vlahovic'in
+            attığı golle siyah-beyazlı ekip 2-1 öne geçti.
+
+            FENERBAHÇE BERABERLİK İÇİN YÜKLENDİ
+
+            Fenerbahçe kalan bölümde beraberlik golünü
+            bulmak için baskısını artırdı.
+
+            Ancak Beşiktaş savunması skor üstünlüğünü
+            korumayı başardı.
+
+            MAÇIN SONUCU
+
+            Karşılaşmanın son düdüğüyle birlikte Beşiktaş
+            sahadan 2-1 galip ayrıldı.
+
+            Siyah-beyazlı ekip deplasmanda üç puan alırken
+            Fenerbahçe sahasında mağlubiyet yaşadı.
+
+            HABERİSTA Spor Servisi olarak Süper Lig'deki
+            gelişmeleri takip ediyoruz.
+        `,
+
+        tarih: "6 Eylül 2026",
+        saat: "00:20",
+
+        gorsel:
+            "images/bjkfb.jpeg",
+
+        kaynak: "Spor Servisi"
+    },
+
+
+    /* =====================================================
+       12 - ALTIN
+    ===================================================== */
+
+    {
+        id: 10,
+        kategori: "Ekonomi",
+
+        baslik:
+            "Altın fiyatlarında 6 Eylül hareketliliği",
+
+        spot:
+            "Hafta sonuna girilirken yatırımcıların gözü gram, çeyrek, yarım ve Cumhuriyet altını fiyatlarında. Küresel piyasalardaki gelişmeler altın fiyatlarının yönü açısından yakından takip ediliyor.",
+
+        icerik: `
+
+            ALTIN FİYATLARI GÜNDEMDE
+
+            Altın piyasasındaki hareketlilik yatırımcıların
+            gündemindeki yerini koruyor.
+
+            Türkiye'de özellikle gram altın ve çeyrek altın
+            fiyatları vatandaşlar tarafından yakından takip
+            ediliyor.
+
+            FİYATLARI ETKİLEYEN FAKTÖRLER
+
+            Altın fiyatlarının oluşumunda küresel piyasalardaki
+            ons altın fiyatı, döviz kuru, faiz beklentileri ve
+            merkez bankalarının politikaları gibi birçok faktör
+            etkili olabiliyor.
+
+            GRAM ALTIN
+
+            Gram altın Türkiye'de en fazla takip edilen
+            değerli maden ürünlerinden biri.
+
+            Gün içerisindeki fiyat değişimleri nedeniyle
+            yatırımcılar alış ve satış fiyatlarını ayrı ayrı
+            takip ediyor.
+
+            ÇEYREK ALTIN
+
+            Fiziki altın tarafında çeyrek altın da vatandaşların
+            yakından takip ettiği ürünler arasında bulunuyor.
+
+            Özellikle düğün sezonlarında çeyrek altına
+            yönelik ilgi artabiliyor.
+
+            KÜRESEL PİYASALAR
+
+            ABD ekonomisine ilişkin veriler, faiz beklentileri
+            ve merkez bankalarının kararları altın piyasasının
+            yönü açısından önem taşıyor.
+
+            YENİ HAFTA BEKLENİYOR
+
+            Hafta sonunun ardından küresel piyasaların açılması
+            ile altın fiyatlarının yeni haftadaki seyri
+            yakından izlenecek.
+
+            Yatırımcıların karar verirken yalnızca günlük
+            fiyat hareketlerine değil, piyasa koşullarına
+            ve kendi finansal durumlarına da dikkat etmesi
+            önem taşıyor.
+
+            HABERİSTA Ekonomi Servisi olarak altın piyasasındaki
+            gelişmeleri takip ediyoruz.
+        `,
+
+        tarih: "6 Eylül 2026",
+        saat: "09:30",
+
+        gorsel:
+            "images/altın.jpeg",
+
+        kaynak: "HABERİSTA Ekonomi"
+    },
+
+
+    /* =====================================================
+       13 - AKARYAKIT
+    ===================================================== */
+
+    {
+        id: 9,
+        kategori: "Ekonomi",
+
+        baslik:
+            "Akaryakıt fiyatları yeniden gündemde",
+
+        spot:
+            "Benzin, motorin ve LPG fiyatları küresel petrol piyasaları, döviz kuru ve vergi düzenlemeleri nedeniyle araç sahiplerinin gündemindeki yerini koruyor.",
+
+        icerik: `
+
+            AKARYAKIT FİYATLARI TAKİP EDİLİYOR
+
+            Türkiye'de araç sahiplerinin yakından takip ettiği
+            benzin, motorin ve LPG fiyatları gündemdeki yerini
+            koruyor.
+
+            Akaryakıt fiyatlarının oluşumunda uluslararası
+            petrol fiyatları, döviz kuru ve vergiler gibi
+            çeşitli faktörler etkili olabiliyor.
+
+            PETROL FİYATLARININ ETKİSİ
+
+            Küresel enerji piyasalarında yaşanan gelişmeler
+            petrol fiyatlarında değişikliklere yol açabiliyor.
+
+            Petrol fiyatındaki hareketlerin yanı sıra döviz
+            kurundaki değişimler de Türkiye'deki akaryakıt
+            piyasası açısından önem taşıyor.
+
+            BENZİN VE MOTORİN
+
+            Benzin ve motorin fiyatları bireysel araç sahipleri
+            kadar ticari taşımacılık yapan işletmeler açısından
+            da önemli bir maliyet kalemi.
+
+            TAŞIMACILIK MALİYETLERİ
+
+            Akaryakıt maliyetlerindeki değişimler taşımacılık
+            sektörünü doğrudan etkileyebiliyor.
+
+            Nakliye maliyetlerinde yaşanabilecek değişiklikler
+            bazı ürünlerin tüketici fiyatlarına dolaylı olarak
+            yansıyabiliyor.
+
+            LPG FİYATLARI
+
+            LPG kullanan araç sahipleri de istasyonlardaki
+            güncel fiyatları takip ediyor.
+
+            Vatandaşların fiyat değişiklikleri konusunda
+            güvenilir ve güncel kaynakları kontrol etmesi
+            önem taşıyor.
+
+            HABERİSTA Ekonomi Servisi olarak akaryakıt
+            piyasasındaki gelişmeleri takip ediyoruz.
+        `,
+
+        tarih: "6 Eylül 2026",
+        saat: "09:10",
+
+        gorsel:
+            "images/yakıt.jpeg",
+
+        kaynak: "HABERİSTA Ekonomi"
+    },
+
+
+    /* =====================================================
+       14 - RUSYA TANK
+    ===================================================== */
+
+    {
+        id: 8,
+        kategori: "Dünya",
+
+        baslik:
+            "Rusya'da üniversitenin altında Nazi tankı bulundu",
+
+        spot:
+            "Rusya'nın Kazan kentinde yürütülen çalışmalar sırasında II. Dünya Savaşı döneminden kalma Alman yapımı Panther V tankına ulaşıldığı bildirildi.",
+
+        icerik: `
+
+            KAZAN'DA TARİHİ KEŞİF
+
+            Rusya'nın Kazan kentinde yürütülen çalışmalar sırasında
+            II. Dünya Savaşı döneminden kalma Alman yapımı bir
+            Panther V tankına ulaşıldığı bildirildi.
+
+            Tankın bir üniversite yerleşkesinde, uzun süredir
+            toprağın altında bulunduğu belirtildi.
+
+            TANK TOPRAKTAN ÇIKARILDI
+
+            Çalışmalar sırasında ortaya çıkan metal parçalarının
+            ardından bölgede daha ayrıntılı inceleme yapıldı.
+
+            İncelemelerin sonucunda yapının savaş döneminden
+            kalma bir tank olduğu belirlendi.
+
+            PANTHER TANKLARI
+
+            Panther tankları II. Dünya Savaşı sırasında Almanya
+            tarafından kullanılan zırhlı araçlar arasında
+            bulunuyordu.
+
+            Tarihi araçların günümüzde bulunması askeri tarih
+            açısından dikkat çekici kabul ediliyor.
+
+            ÜNİVERSİTE ALANINDA BULUNMASI DİKKAT ÇEKTİ
+
+            Tankın bir üniversite yerleşkesinde bulunması,
+            keşfin dikkat çeken ayrıntılarından biri oldu.
+
+            Uzmanların araç üzerinde yapacağı çalışmaların,
+            tankın geçmişi ve bulunduğu bölge hakkında daha
+            fazla bilgi sağlaması bekleniyor.
+
+            TARİHİ ARAÇLARIN KORUNMASI
+
+            II. Dünya Savaşı döneminden kalan askeri araçlar,
+            dönemin teknolojisini ve askeri tarihini anlamak
+            açısından önemli kaynaklar arasında bulunuyor.
+
+            HABERİSTA Dünya Servisi olarak gelişmeleri
+            takip ediyoruz.
+        `,
+
+        tarih: "6 Eylül 2026",
+        saat: "08:45",
+
+        gorsel:
+            "images/rusya ünüversite.jpeg",
+
+        kaynak: "Dünya Servisi"
+    },
+
+
+    /* =====================================================
+       15 - MXGP
+    ===================================================== */
+
+    {
+        id: 7,
+        kategori: "Spor",
+
+        baslik:
+            "MXGP şampiyonu Afyon'da belli oluyor",
+
+        spot:
+            "Dünya Motokros Şampiyonası'nın 2026 sezonundaki önemli duraklarından MXGP Türkiye'de final yarışları 6 Eylül Pazar günü Afyonkarahisar'da gerçekleştiriliyor.",
+
+        icerik: `
+
+            MXGP TÜRKİYE'DE HEYECAN
+
+            Dünya Motokros Şampiyonası'nın önemli etaplarından
+            MXGP Türkiye'de sezonun kritik yarışlarından biri
+            Afyonkarahisar'da düzenleniyor.
+
+            6 Eylül Pazar günü gerçekleştirilen final yarışları
+            motor sporları takipçilerinin ilgisini çekiyor.
+
+            AFYONKARAHİSAR'DA YARIŞ
+
+            Afyonkarahisar Motor Sporları Merkezi,
+            uluslararası motokros organizasyonlarına ev
+            sahipliği yapan önemli pistlerden biri.
+
+            Sporcular zorlu parkurda sezon puanlarını
+            artırmak için mücadele ediyor.
+
+            HIZ VE TEKNİK ÖNEMLİ
+
+            Motokros yarışlarında yalnızca hız değil,
+            virajlarda doğru çizginin seçilmesi, motosiklet
+            kontrolü ve parkur şartlarına uyum da önem taşıyor.
+
+            ŞAMPİYONLUK MÜCADELESİ
+
+            Afyonkarahisar'daki yarışların şampiyona
+            sıralaması açısından önem taşıması bekleniyor.
+
+            Sezon boyunca toplanan puanlar genel klasmandaki
+            sıralamayı belirlemede önemli rol oynuyor.
+
+            TÜRKİYE'DE MOTOR SPORLARI
+
+            MXGP Türkiye organizasyonu, Türkiye'de motor
+            sporlarının tanıtımı açısından da dikkat çekiyor.
+
+            Yarışların yanı sıra organizasyon alanında
+            farklı etkinlikler de gerçekleştirilebiliyor.
+
+            HABERİSTA Spor Servisi olarak MXGP Türkiye'deki
+            gelişmeleri takip ediyoruz.
+        `,
+
+        tarih: "6 Eylül 2026",
+        saat: "08:30",
+
+        gorsel:
+            "images/mxgp yarışması.jpeg",
+
+        kaynak: "Türkiye Motosiklet Federasyonu"
+    },
+
+
+    /* =====================================================
+       16 - AVRUPA EES
+    ===================================================== */
+
+    {
+        id: 6,
+        kategori: "Dünya",
+
+        baslik:
+            "Avrupa seyahatlerinde sınır kontrollerinde yeni dönem",
+
+        spot:
+            "Avrupa'ya seyahat edenleri ilgilendiren EES sınır kontrol sisteminde yeni dönem gündemde. Sistem kapsamında Schengen dış sınırlarında elektronik kayıt ve biyometrik kontrollerin kullanılması planlanıyor.",
+
+        icerik: `
+
+            AVRUPA'DA SINIR KONTROLLERİNDE DİJİTALLEŞME
+
+            Avrupa'ya seyahat eden vatandaşları ilgilendiren
+            sınır kontrol uygulamalarında dijitalleşme süreci
+            devam ediyor.
+
+            Avrupa Birliği'nin Entry/Exit System olarak
+            adlandırdığı EES sistemi, Schengen bölgesinin
+            dış sınırlarında giriş ve çıkışların elektronik
+            olarak takip edilmesini amaçlıyor.
+
+            PASAPORT DAMGASI SİSTEMİ DEĞİŞİYOR
+
+            EES sisteminin uygulanmasıyla birlikte yolcuların
+            giriş ve çıkış bilgilerinin elektronik olarak
+            kaydedilmesi hedefleniyor.
+
+            Sistem sayesinde sınır geçişlerinin daha düzenli
+            şekilde kayıt altına alınması amaçlanıyor.
 
             BİYOMETRİK KONTROLLER
 
-            Yeni sistem kapsamında yolcuların belirli biyometrik
-            bilgilerinin kullanılması planlanıyor.
+            Yeni sistem kapsamında belirli biyometrik
+            bilgilerin sınır kontrol süreçlerinde kullanılması
+            planlanıyor.
 
-            Sınır kapılarında yapılacak kontrollerin daha dijital
-            hale getirilmesi ve kimlik doğrulama işlemlerinin
-            elektronik sistemlerle desteklenmesi hedefleniyor.
+            Bu uygulamaların sınır kontrollerinde kimlik
+            doğrulama sürecini desteklemesi hedefleniyor.
 
-            TÜRKİYE'DEN AVRUPA'YA SEYAHAT EDENLER
+            TÜRKİYE'DEN SEYAHAT EDECEKLER
 
-            Avrupa ülkelerine turistik, eğitim, iş veya farklı
-            amaçlarla seyahat eden Türk vatandaşlarının yeni
-            uygulamaları takip etmesi önem taşıyor.
+            Avrupa ülkelerine seyahat edecek Türk vatandaşlarının
+            gidilecek ülkenin güncel giriş şartlarını kontrol
+            etmesi önem taşıyor.
 
-            Seyahat öncesinde pasaport, vize ve gidilecek ülkenin
-            güncel giriş şartlarının kontrol edilmesi gerekiyor.
+            Pasaport ve vize şartlarının yanı sıra sınır
+            uygulamalarındaki değişikliklerin de seyahat
+            öncesinde kontrol edilmesi gerekiyor.
 
-            SINIR KAPLARINDA YOĞUNLUK OLABİLİR
+            SINIR KAPILARINDA İŞLEM SÜRELERİ
 
-            Yeni sistemin uygulanmaya başladığı dönemlerde sınır
-            kapılarında işlem sürelerinin değişmesi mümkün olabilir.
+            Yeni sistemlerin uygulanmaya başladığı dönemlerde
+            sınır kapılarındaki işlem sürelerinin değişmesi
+            mümkün olabilir.
 
-            Özellikle yoğun seyahat dönemlerinde yolcuların sınır
-            kontrolleri için daha fazla zaman ayırması gerekebilir.
+            Yoğun seyahat dönemlerinde yolcuların sınır
+            kontrolleri için yeterli zaman ayırması önem taşıyor.
 
             DİJİTAL SINIR DÖNEMİ
 
-            Avrupa'da sınır yönetiminin giderek daha fazla dijital
-            sistemlere taşınması bekleniyor.
-
-            Yeni sistemin temel hedefleri arasında sınır geçişlerinin
-            daha düzenli şekilde kayıt altına alınması ve güvenlik
-            kontrollerinin geliştirilmesi bulunuyor.
+            Avrupa'da sınır yönetiminin daha fazla dijital
+            sisteme taşınması bekleniyor.
 
             HABERİSTA Dünya Servisi olarak Avrupa'daki sınır
             uygulamalarına ilişkin gelişmeleri takip ediyoruz.
@@ -1714,357 +1373,369 @@ const haberler = [
 
         tarih: "6 Eylül 2026",
         saat: "08:15",
-        gorsel: "images/asrupa seyhat.jpeg",
+
+        gorsel:
+            "images/asrupa seyhat.jpeg",
+
         kaynak: "Avrupa Birliği"
     },
 
 
-    
     /* =====================================================
-       11 - SON DAKİKA
+       17 - RESMİ GAZETE
     ===================================================== */
 
     {
-        id: 1,
+        id: 5,
         kategori: "Son Dakika",
-        baslik: "5 Eylül 2026 Resmî Gazete yayımlandı: Yeni kararlar, atamalar ve önemli düzenlemeler",
 
-        spot: "5 Eylül 2026 tarihli Resmî Gazete yayımlandı. Kamu yönetimi, ekonomi, eğitim ve farklı alanları ilgilendiren kararlar ve düzenlemeler kamuoyuna duyuruldu.",
+        baslik:
+            "5 Eylül 2026 Resmî Gazete yayımlandı: Yeni kararlar, atamalar ve önemli düzenlemeler",
+
+        spot:
+            "5 Eylül 2026 tarihli Resmî Gazete yayımlandı. Kamu yönetimi, ekonomi, eğitim ve farklı alanları ilgilendiren kararlar ve düzenlemeler kamuoyuna duyuruldu.",
 
         icerik: `
-            5 Eylül 2026 tarihli ve günün önemli kararlarını içeren
-            Resmî Gazete yayımlandı.
 
-            Resmî Gazete'de yayımlanan karar, yönetmelik, atama ve
-            düzenlemeler kamu kurumları ve vatandaşlar açısından
-            önemli başlıklar oluşturdu.
+            RESMÎ GAZETE YAYIMLANDI
 
-            Resmî Gazete'de yayımlanan düzenlemeler arasında farklı
-            kamu kurumlarını ve vatandaşları ilgilendiren kararlar
-            yer aldı.
+            5 Eylül 2026 tarihli Resmî Gazete yayımlandı.
 
-            KAMU YÖNETİMİNE İLİŞKİN KARARLAR
+            Resmî Gazete'de yayımlanan kararlar, yönetmelikler,
+            atamalar ve diğer düzenlemeler kamuoyuna duyuruldu.
 
-            Kamu kurumlarının işleyişine ilişkin çeşitli düzenlemeler
-            ve kararlar yayımlanırken, ilgili kurumların görev ve
-            sorumluluklarına ilişkin yeni gelişmeler kamuoyuna
-            duyuruldu.
+            KAMU YÖNETİMİNE İLİŞKİN DÜZENLEMELER
 
-            ATAMALAR
+            Kamu kurumlarının işleyişini ilgilendiren çeşitli
+            düzenlemeler ve kararlar Resmî Gazete'de yer aldı.
 
-            Resmî Gazete'nin önemli bölümlerinden biri de atama
-            kararları oldu.
+            Düzenlemelerin kapsamı ve yürürlük tarihleri ilgili
+            mevzuat metinlerinde belirtiliyor.
 
-            Çeşitli kamu kurumlarında görev değişikliklerine ilişkin
-            kararlar yayımlanırken yeni görevlendirmeler de duyuruldu.
+            ATAMA KARARLARI
+
+            Resmî Gazete'nin önemli bölümleri arasında atama
+            kararları da bulunuyor.
+
+            Kamu kurumlarında görev değişikliklerine ilişkin
+            kararlar yayımlandı.
 
             EKONOMİ VE KAMU MALİYESİ
 
-            Ekonomi alanında yayımlanan kararlar ve düzenlemeler
-            vatandaşların ve iş dünyasının gündeminde yer aldı.
-
-            Kamu maliyesi, ekonomik yönetim ve çeşitli idari
-            düzenlemelere ilişkin hükümler Resmî Gazete üzerinden
-            kamuoyuyla paylaşıldı.
+            Ekonomi ve kamu maliyesine ilişkin çeşitli karar
+            ve düzenlemeler de Resmî Gazete üzerinden
+            kamuoyuna duyuruldu.
 
             EĞİTİM VE DİĞER ALANLAR
 
-            Eğitim başta olmak üzere farklı sektörleri ilgilendiren
-            düzenlemeler de yayımlanan kararlar arasında yer aldı.
+            Eğitim başta olmak üzere farklı alanları ilgilendiren
+            düzenlemeler de yayımlanan kararlar arasında
+            bulunuyor.
 
-            Resmî Gazete'de yayımlanan kararlar yürürlük tarihleri
-            ve kapsamlarına göre ilgili kurumlar tarafından
-            uygulanacak.
+            VATANDAŞLAR RESMİ METİNLERİ KONTROL ETMELİ
 
-            Vatandaşların kendilerini ilgilendiren düzenlemelerin
-            ayrıntılarını resmi metinlerden takip etmesi önem taşıyor.
+            Vatandaşların kendilerini ilgilendiren kararların
+            ayrıntılarını Resmî Gazete'deki resmi metinlerden
+            kontrol etmesi önem taşıyor.
 
-            HABERİSTA olarak Resmî Gazete'deki yeni kararları ve
-            uygulamaların vatandaşlara etkilerini takip ediyoruz.
+            HABERİSTA olarak yayımlanan kararların vatandaşlara
+            etkilerini takip ediyoruz.
         `,
 
         tarih: "5 Eylül 2026",
         saat: "15:20",
-        gorsel: "images/ChatGPT Image 5 Eyl 2026 15_25_02.png",
+
+        gorsel:
+            "images/ChatGPT Image 5 Eyl 2026 15_25_02.png",
+
         kaynak: "Resmî Gazete"
     },
 
 
     /* =====================================================
-       12 - SPOR
+       18 - FİLENİN SULTANLARI
     ===================================================== */
 
     {
-        id: 2,
+        id: 4,
         kategori: "Spor",
-        baslik: "Filenin Sultanları Avrupa şampiyonluğu için sahada! Türkiye-İtalya finali bugün oynanacak",
 
-        spot: "A Milli Kadın Voleybol Takımı Avrupa şampiyonluğu için İtalya karşısında sahaya çıkıyor. Final mücadelesi İstanbul'da oynanacak.",
+        baslik:
+            "Filenin Sultanları Avrupa şampiyonluğu için sahada! Türkiye-İtalya finali bugün oynanacak",
+
+        spot:
+            "A Milli Kadın Voleybol Takımı Avrupa şampiyonluğu için İtalya karşısında sahaya çıkıyor. Türkiye ile İtalya arasındaki final mücadelesi İstanbul'da oynanacak.",
 
         icerik: `
+
+            FİLENİN SULTANLARI FİNALDE
+
             A Milli Kadın Voleybol Takımı Avrupa Şampiyonası'nda
             şampiyonluk için sahaya çıkıyor.
 
-            Filenin Sultanları'nın finaldeki rakibi İtalya oldu.
+            Türkiye'nin finaldeki rakibi İtalya oldu.
 
-            Türkiye'nin ev sahipliği yaptığı turnuvada milli takımın
-            finale kadar yükselmesi büyük heyecan oluşturdu.
+            Turnuvada finale kadar yükselen milli takım,
+            şampiyonluk hedefiyle mücadele edecek.
 
             FİNALİN ADRESİ İSTANBUL
 
-            Türkiye ile İtalya arasındaki final mücadelesi İstanbul'da
-            oynanacak.
+            Türkiye ile İtalya arasındaki final karşılaşması
+            İstanbul'da oynanacak.
 
-            Karşılaşma öncesinde voleybolseverlerin ilgisi büyük olurken
-            milli takımın şampiyonluk hedefiyle sahaya çıkması
-            Türkiye genelinde heyecan oluşturdu.
+            Karşılaşma öncesinde milli takıma destek vermek
+            isteyen taraftarların ilgisi dikkat çekiyor.
 
-            TAKIMIN HEDEFİ ŞAMPİYONLUK
+            ŞAMPİYONLUK HEDEFİ
 
-            Filenin Sultanları turnuva boyunca başarılı bir performans
-            ortaya koyarak finale yükseldi.
+            Filenin Sultanları turnuva boyunca gösterdiği
+            performansla finale yükseldi.
 
-            Milli takım oyuncuları kritik karşılaşmalarda gösterdikleri
-            mücadeleyle dikkat çekti.
-
-            Finalde servis karşılamaları, bloklar, hücum organizasyonları
-            ve savunma performansı karşılaşmanın sonucunda önemli rol
-            oynayacak.
+            Final karşılaşmasında servis, blok, hücum ve
+            savunma performanslarının maçın sonucunda
+            belirleyici olması bekleniyor.
 
             TARAFTAR DESTEĞİ
 
-            Türkiye'nin finalde sahaya çıkacak olması nedeniyle
-            voleybolseverlerin milli takıma desteği de büyük.
+            Türkiye'nin finale yükselmesi sosyal medyada da
+            büyük ilgi gördü.
 
-            Sosyal medyada Filenin Sultanları için çok sayıda destek
-            mesajı paylaşılırken taraftarlar final karşılaşmasına
-            odaklandı.
+            Milli takım için çok sayıda destek mesajı paylaşılırken
+            voleybolseverler final karşılaşmasına odaklandı.
 
-            ŞAMPİYONLUK İÇİN SON MAÇ
+            ŞAMPİYON BELLİ OLACAK
 
-            Turnuvanın en önemli karşılaşması olan finalde Türkiye ve
-            İtalya Avrupa şampiyonluğu için mücadele edecek.
+            Türkiye ile İtalya arasındaki finalin ardından
+            Avrupa şampiyonu belli olacak.
 
-            Maçın ardından turnuvanın şampiyonu belli olacak.
-
-            HABERİSTA Spor Servisi olarak karşılaşmanın tüm gelişmelerini
-            takip ediyoruz.
+            HABERİSTA Spor Servisi olarak karşılaşmanın
+            gelişmelerini takip ediyoruz.
         `,
 
         tarih: "6 Eylül 2026",
         saat: "01:30",
-        gorsel: "images/AVRUPA.jpeg",
+
+        gorsel:
+            "images/AVRUPA.jpeg",
+
         kaynak: "Türkiye Voleybol Federasyonu"
     },
 
 
     /* =====================================================
-       13 - EKONOMİ
+       19 - PARA PİYASASI FONLARI
     ===================================================== */
 
     {
         id: 3,
         kategori: "Ekonomi",
-        baslik: "Para piyasası fonlarında yeni dönem: Stopaj oranı yüzde 10'a çıkarıldı",
 
-        spot: "Para piyasası fonlarına ilişkin stopaj düzenlemesi yatırımcıların gündemine geldi. Yeni düzenlemeyle birlikte stopaj oranında değişikliğe gidildi.",
+        baslik:
+            "Para piyasası fonlarında yeni dönem: Stopaj oranı yüzde 10'a çıkarıldı",
+
+        spot:
+            "Para piyasası fonlarına ilişkin stopaj düzenlemesi yatırımcıların gündemine geldi. Yeni düzenlemeyle birlikte stopaj oranındaki değişiklik yatırımcıların net getiri hesaplamalarını daha önemli hale getirdi.",
 
         icerik: `
-            Finans piyasalarında yatırımcıların yakından takip ettiği
-            para piyasası fonlarına ilişkin yeni düzenleme gündeme geldi.
 
-            Yapılan düzenlemeyle para piyasası fonlarından elde edilen
-            kazançlara uygulanan stopaj oranında değişiklik yapıldı.
+            PARA PİYASASI FONLARINDA YENİ DÖNEM
 
-            Yeni oran yatırımcıların fon tercihlerini ve net getirilerini
-            değerlendirmesinde önemli bir başlık haline geldi.
+            Para piyasası fonlarına ilişkin stopaj düzenlemesi
+            yatırımcıların gündemindeki önemli başlıklardan biri
+            oldu.
+
+            Yapılan düzenlemeyle birlikte fon kazançlarına
+            uygulanan stopaj oranında değişikliğe gidildi.
 
             YATIRIMCILARIN DİKKATİ FONLARDA
 
-            Para piyasası fonları özellikle kısa vadeli yatırım yapmak
-            isteyen yatırımcılar tarafından tercih edilebiliyor.
+            Para piyasası fonları kısa vadeli yatırım ve
+            likidite amacıyla yatırımcılar tarafından tercih
+            edilebiliyor.
 
-            Fonların getirileri piyasa koşullarına göre değişirken,
-            vergi ve stopaj uygulamaları yatırımcıların elde edeceği
-            net kazanç açısından önem taşıyor.
+            Ancak fonların getirileri piyasa koşullarına göre
+            değişebiliyor.
 
-            STOPAJ DEĞİŞİKLİĞİ
+            STOPAJIN NET GETİRİYE ETKİSİ
 
-            Stopaj oranındaki değişiklik sonrasında yatırımcıların
-            brüt getiri ile net getiri arasındaki farkı dikkate alması
-            gerekiyor.
+            Stopaj oranındaki değişiklik, brüt getiri ile
+            yatırımcının eline geçen net getiri arasındaki
+            farkın daha dikkatli değerlendirilmesini gerektiriyor.
 
-            Bir yatırım aracının yalnızca nominal getirisine bakmak
-            yerine vergi sonrası getirinin değerlendirilmesi önem taşıyor.
+            Yatırımcıların fon seçerken vergi, risk, getiri
+            ve yatırım süresini birlikte değerlendirmesi
+            önem taşıyor.
 
-            FONLARA İLGİ DEVAM EDİYOR
+            YATIRIM KARARI VERİRKEN
 
-            Para piyasası fonları likidite avantajları nedeniyle
-            yatırımcıların ilgisini çekmeye devam ediyor.
+            Her yatırım ürününde olduğu gibi para piyasası
+            fonlarında da risk ve getiri unsurlarının
+            birlikte değerlendirilmesi gerekiyor.
 
-            Ancak her yatırım ürününde olduğu gibi fon yatırımlarında
-            da risk, getiri ve vergi koşullarının birlikte değerlendirilmesi
-            gerekiyor.
+            Yatırımcıların resmi düzenlemeleri ve fonların
+            güncel belgelerini kontrol etmesi önem taşıyor.
 
-            YENİ DÖNEMDE YATIRIMCI NE YAPACAK?
-
-            Yatırımcıların yeni düzenlemeyi dikkate alarak kendi
-            yatırım stratejilerini yeniden değerlendirmesi bekleniyor.
-
-            Finans uzmanları yatırım kararlarının kişinin risk profili,
-            yatırım süresi ve nakit ihtiyacı dikkate alınarak verilmesi
-            gerektiğini vurguluyor.
-
-            HABERİSTA Ekonomi Servisi olarak finans piyasalarındaki
-            düzenlemeleri takip ediyoruz.
+            HABERİSTA Ekonomi Servisi olarak finans
+            piyasalarındaki gelişmeleri takip ediyoruz.
         `,
 
         tarih: "5 Eylül 2026",
         saat: "18:10",
-        gorsel: "images/EKENOMİ.jpeg",
+
+        gorsel:
+            "images/EKENOMİ.jpeg",
+
         kaynak: "Ekonomi Servisi"
     },
 
 
     /* =====================================================
-       14 - GÜNDEM
+       20 - YAŞLI / ENGELLİ AYLIĞI
     ===================================================== */
 
     {
-        id: 4,
+        id: 2,
         kategori: "Gündem",
-        baslik: "Eylül ayı yaşlı ve engelli aylıkları hesaplara yatırılmaya başlandı",
 
-        spot: "Eylül ayına ilişkin yaşlı ve engelli aylığı ödemeleri vatandaşların gündeminde. Ödemelerin hak sahiplerinin hesaplarına aktarılması süreci başladı.",
+        baslik:
+            "Eylül ayı yaşlı ve engelli aylıkları hesaplara yatırılmaya başlandı",
+
+        spot:
+            "Eylül ayına ilişkin yaşlı ve engelli aylığı ödemeleri vatandaşların gündeminde. Hak sahipleri ödemelerinin hesaplarına aktarılıp aktarılmadığını resmi kanallar üzerinden kontrol edebiliyor.",
 
         icerik: `
-            Eylül ayına ilişkin yaşlı ve engelli aylığı ödemeleri
-            vatandaşların gündemindeki önemli başlıklardan biri oldu.
 
-            Sosyal destek ödemelerinden yararlanan vatandaşlar,
-            ödemelerin hesaplarına ne zaman aktarılacağını yakından
+            EYLÜL AYI ÖDEMELERİ GÜNDEMDE
+
+            Eylül ayına ilişkin yaşlı ve engelli aylığı
+            ödemeleri vatandaşların takip ettiği konular
+            arasında bulunuyor.
+
+            Sosyal destek ödemelerinden yararlanan hak sahipleri,
+            ödemelerin hesaplarına ne zaman aktarılacağını
             takip ediyor.
 
-            Ödemeler hak sahiplerinin durumlarına göre ilgili ödeme
-            kanalları üzerinden gerçekleştiriliyor.
+            YAŞLI AYLIĞI
 
-            YAŞLI AYLIĞI ÖDEMELERİ
+            Yaşlı aylığı, mevzuatta belirtilen şartları
+            sağlayan vatandaşlara sosyal destek kapsamında
+            ödeniyor.
 
-            Yaşlı aylığı, belirli şartları sağlayan vatandaşlara
-            sosyal destek kapsamında ödeniyor.
-
-            Ödemelerden yararlanabilmek için mevzuatta belirtilen
-            gelir ve diğer şartların sağlanması gerekiyor.
+            Hak sahipliği için ilgili gelir ve diğer şartların
+            karşılanması gerekiyor.
 
             ENGELLİ AYLIKLARI
 
-            Engelli vatandaşlara yönelik sosyal destek ödemeleri de
-            düzenli şekilde gerçekleştiriliyor.
+            Engelli vatandaşlara yönelik sosyal destek ödemeleri
+            de ilgili mevzuat kapsamında gerçekleştiriliyor.
 
-            Desteklerin amacı ihtiyaç sahibi vatandaşların ekonomik
-            yükünü azaltmak ve sosyal destek mekanizmalarını
-            güçlendirmek.
+            ÖDEMELER NASIL TAKİP EDİLİR?
 
-            VATANDAŞLAR ÖDEME DURUMUNU TAKİP EDİYOR
+            Hak sahipleri ödeme durumlarını ilgili resmi
+            kanallar üzerinden kontrol edebiliyor.
 
-            Hak sahipleri ödemelerinin gerçekleşip gerçekleşmediğini
-            ilgili resmi kanallar üzerinden kontrol edebiliyor.
-
-            Ödeme konusunda sorun yaşayan vatandaşların ise ilgili
-            kamu kurumlarına başvurmaları gerekiyor.
+            Ödeme konusunda sorun yaşayan vatandaşların
+            ilgili kamu kurumlarına başvurması gerekiyor.
 
             SOSYAL DESTEKLERİN ÖNEMİ
 
-            Sosyal yardım programları özellikle sabit geliri bulunan
-            veya ekonomik desteğe ihtiyaç duyan vatandaşlar açısından
-            önemli bir kaynak oluşturuyor.
+            Sosyal destek ödemeleri, hak sahiplerinin aylık
+            bütçelerini planlamalarında önemli bir rol
+            oynayabiliyor.
 
-            Ödemelerin düzenli şekilde gerçekleştirilmesi vatandaşların
-            aylık bütçelerini planlamasına yardımcı oluyor.
-
-            HABERİSTA olarak sosyal yardım ödemeleriyle ilgili resmi
-            açıklamaları takip etmeye devam ediyoruz.
+            HABERİSTA olarak sosyal yardım ödemelerine ilişkin
+            resmi açıklamaları takip ediyoruz.
         `,
 
         tarih: "5 Eylül 2026",
         saat: "10:27",
-        gorsel: "images/GÜNDEM.jpeg",
+
+        gorsel:
+            "images/GÜNDEM.jpeg",
+
         kaynak: "HABERİSTA Gündem"
     },
 
 
     /* =====================================================
-       15 - EĞİTİM
+       21 - PISA
     ===================================================== */
 
     {
-        id: 5,
+        id: 1,
         kategori: "Eğitim",
-        baslik: "PISA 2025 sonuçları için geri sayım: Sonuçlar 8 Eylül'de açıklanacak",
 
-        spot: "PISA 2025 araştırmasının sonuçları için geri sayım başladı. Türkiye'nin eğitim performansına ilişkin sonuçların 8 Eylül'de açıklanması bekleniyor.",
+        baslik:
+            "PISA 2025 sonuçları için geri sayım: Sonuçlar 8 Eylül'de açıklanacak",
+
+        spot:
+            "PISA 2025 araştırmasının sonuçları için geri sayım başladı. Türkiye'nin eğitim performansına ilişkin sonuçların 8 Eylül'de açıklanması bekleniyor.",
 
         icerik: `
-            Eğitim dünyasının yakından takip ettiği PISA 2025
-            araştırmasının sonuçları için geri sayım başladı.
 
-            Uluslararası Öğrenci Değerlendirme Programı olarak bilinen
-            PISA araştırması, öğrencilerin bilgi ve becerilerini farklı
-            alanlarda değerlendiren uluslararası çalışmalardan biri.
+            PISA 2025 SONUÇLARI BEKLENİYOR
 
-            SONUÇLAR BEKLENİYOR
+            Uluslararası Öğrenci Değerlendirme Programı olarak
+            bilinen PISA araştırmasının 2025 sonuçları için
+            geri sayım başladı.
 
-            PISA 2025 sonuçlarının açıklanmasıyla birlikte Türkiye'nin
-            uluslararası eğitim performansına ilişkin yeni veriler
-            ortaya çıkacak.
+            Araştırma, öğrencilerin farklı alanlardaki bilgi
+            ve becerilerini uluslararası ölçekte değerlendiren
+            önemli çalışmalardan biri.
 
-            Araştırmada öğrencilerin okuma becerileri, matematik ve
-            fen alanlarındaki performansları gibi çeşitli başlıklar
+            SONUÇLAR 8 EYLÜL'DE BEKLENİYOR
+
+            PISA 2025 sonuçlarının 8 Eylül'de açıklanması
+            bekleniyor.
+
+            Sonuçların yayımlanmasıyla birlikte Türkiye'nin
+            performansına ilişkin yeni veriler ortaya çıkacak.
+
+            HANGİ ALANLAR DEĞERLENDİRİLİYOR?
+
+            PISA araştırmasında öğrencilerin okuma becerileri,
+            matematik ve fen alanlarındaki performansları
             değerlendiriliyor.
 
-            EĞİTİM SİSTEMİ İÇİN ÖNEMLİ VERİ
-
-            PISA sonuçları yalnızca öğrencilerin sınav performansını
-            göstermekle kalmıyor.
-
-            Sonuçlar eğitim politikalarının değerlendirilmesi,
-            öğrencilerin güçlü ve zayıf yönlerinin belirlenmesi ve
-            eğitim sisteminde yapılabilecek iyileştirmelerin
-            tartışılması açısından da önem taşıyor.
+            Sonuçlar ülkelerin eğitim sistemlerini karşılaştırmak
+            amacıyla da kullanılıyor.
 
             TÜRKİYE'NİN PERFORMANSI MERAK EDİLİYOR
 
-            Yeni sonuçlarla birlikte Türkiye'nin önceki araştırmalara
-            kıyasla nasıl bir değişim gösterdiği de değerlendirilecek.
+            Yeni sonuçların açıklanmasının ardından Türkiye'nin
+            önceki araştırmalardaki performansıyla karşılaştırma
+            yapılması bekleniyor.
 
-            Eğitim uzmanları sonuçların tek başına değerlendirilmemesi,
-            sosyoekonomik koşullar ve eğitim imkanları gibi faktörlerin
-            de dikkate alınması gerektiğini belirtiyor.
+            Sonuçların değerlendirilmesinde öğrencilerin
+            performansının yanı sıra sosyoekonomik koşullar
+            ve eğitim imkanları gibi faktörlerin de dikkate
+            alınması önem taşıyor.
 
-            8 EYLÜL'DE AÇIKLANACAK
+            SONUÇLAR AÇIKLANDIKTAN SONRA
 
-            PISA 2025 sonuçlarının 8 Eylül'de açıklanması bekleniyor.
+            Sonuçların açıklanmasının ardından Türkiye'nin
+            sıralaması, puanları ve önceki dönemlerle
+            karşılaştırmaları eğitim gündeminin önemli
+            başlıklarından biri olacak.
 
-            Sonuçların açıklanmasının ardından Türkiye'nin sıralaması,
-            öğrenci performansları ve önceki yıllarla karşılaştırmalar
-            eğitim gündeminin önemli başlıkları arasında yer alacak.
-
-            HABERİSTA Eğitim Servisi olarak PISA sonuçlarını ve
-            eğitim dünyasındaki gelişmeleri takip ediyoruz.
+            HABERİSTA Eğitim Servisi olarak PISA 2025
+            sonuçlarını ve resmi açıklamaları takip ediyoruz.
         `,
 
         tarih: "6 Eylül 2026",
         saat: "09:42",
-        gorsel: "images/PISA.jpeg",
+
+        gorsel:
+            "images/PISA.jpeg",
+
         kaynak: "Eğitim Servisi"
     }
-
 
 ];
 
 
 /* =========================================================
-   HER HABERE OTOMATİK SLUG VE URL EKLE
+   HABERLERE OTOMATİK SLUG VE URL EKLE
 ========================================================= */
 
 haberler.forEach(function (haber) {
@@ -2113,6 +1784,41 @@ function haberIdIleBul(id) {
 
 
 /* =========================================================
+   KATEGORİYE GÖRE HABER BUL
+========================================================= */
+
+function haberKategoriIleBul(kategori) {
+
+    const temizKategori =
+        String(kategori || "")
+            .trim()
+            .toLocaleLowerCase("tr-TR");
+
+    return haberler.filter(function (haber) {
+
+        return String(haber.kategori || "")
+            .trim()
+            .toLocaleLowerCase("tr-TR") === temizKategori;
+
+    });
+
+}
+
+
+/* =========================================================
+   SON HABERLER
+========================================================= */
+
+function sonHaberleriGetir(adet) {
+
+    const sayi = Number(adet) || 10;
+
+    return haberler.slice(0, sayi);
+
+}
+
+
+/* =========================================================
    GLOBAL DEĞİŞKENLER
 ========================================================= */
 
@@ -2124,9 +1830,13 @@ window.haberSlugIleBul = haberSlugIleBul;
 
 window.haberIdIleBul = haberIdIleBul;
 
+window.haberKategoriIleBul = haberKategoriIleBul;
+
+window.sonHaberleriGetir = sonHaberleriGetir;
+
 
 /* =========================================================
-   KONTROL
+   KONTROLLER
 ========================================================= */
 
 console.log(
@@ -2134,6 +1844,56 @@ console.log(
     haberler.length,
     "haber başarıyla yüklendi."
 );
+
+
+/* =========================================================
+   DUPLICATE ID KONTROLÜ
+========================================================= */
+
+const kullanilanIdler = new Set();
+
+haberler.forEach(function (haber) {
+
+    if (kullanilanIdler.has(haber.id)) {
+
+        console.error(
+            "Haberİsta: DUPLICATE ID bulundu:",
+            haber.id,
+            haber.baslik
+        );
+
+    }
+
+    kullanilanIdler.add(haber.id);
+
+});
+
+
+/* =========================================================
+   DUPLICATE SLUG KONTROLÜ
+========================================================= */
+
+const kullanilanSluglar = new Set();
+
+haberler.forEach(function (haber) {
+
+    if (kullanilanSluglar.has(haber.slug)) {
+
+        console.error(
+            "Haberİsta: DUPLICATE SLUG bulundu:",
+            haber.slug
+        );
+
+    }
+
+    kullanilanSluglar.add(haber.slug);
+
+});
+
+
+/* =========================================================
+   HABER URL'LERİ
+========================================================= */
 
 console.log(
     "Haber URL'leri:"
