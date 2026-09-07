@@ -40,6 +40,44 @@ const haberler = [
        1 - KABİNE
     ===================================================== */
 {
+    id: 30,
+    kategori: "Gündem",
+    baslik: "Girne açıklarında batan gemi için arama-kurtarma çalışmaları sürüyor",
+    spot: "KKTC'nin Girne açıklarında meydana gelen gemi kazasının ardından bölgede başlatılan arama-kurtarma çalışmaları devam ediyor.",
+    tarih: "7 Eylül 2026",
+    saat: "23:50",
+    yazar: "Haberİsta Haber Merkezi",
+
+    // Görsel
+    gorsel: "/images/girne-gemi-arama-kurtarma.jpeg",
+
+    icerik: `
+        <p><strong>KKTC'nin Girne açıklarında meydana gelen gemi kazasının</strong> ardından bölgede başlatılan arama kurtarma çalışmaları devam ediyor.</p>
+
+        <p>Türk Deniz Kuvvetleri'ne bağlı arama-kurtarma unsurları bölgede çalışmalarını sürdürüyor. Ekipler, kazanın meydana geldiği deniz sahasında kapsamlı arama faaliyetleri gerçekleştiriyor.</p>
+
+        <h2>Arama kurtarma çalışmaları sürüyor</h2>
+
+        <p>Geminin batmasının ardından başlatılan çalışmalar, kazanın meydana geldiği bölgede yoğunlaştırıldı. Ekipler deniz altında ve yüzeyde arama faaliyetlerine devam ediyor.</p>
+
+        <h2>Robotik sistemlerden yararlanılıyor</h2>
+
+        <p>Arama faaliyetlerinde deniz altında inceleme yapabilen robotik sistemler de kullanılıyor. Ekipler, bölgede detaylı tarama gerçekleştirerek çalışmalarını sürdürüyor.</p>
+
+        <h2>TCG Alemdar ve TCG Işın bölgede</h2>
+
+        <p>Türk Deniz Kuvvetleri'ne bağlı <strong>TCG Alemdar</strong> ve <strong>TCG Işın</strong> gemilerinin bölgede arama-kurtarma faaliyetlerini sürdürdüğü bildirildi.</p>
+
+        <p>Çalışmaların deniz koşulları ve bölgenin özellikleri dikkate alınarak koordineli şekilde yürütüldüğü belirtildi.</p>
+
+        <h2>Yeni gelişmeler bekleniyor</h2>
+
+        <p>Girne açıklarında meydana gelen olayla ilgili ekiplerin çalışmaları devam ederken, resmi makamlar tarafından yapılacak yeni açıklamalar takip ediliyor.</p>
+
+        <p><strong>Haberİsta</strong>, olayla ilgili yeni gelişmeleri okuyucularına aktarmaya devam edecek.</p>
+    `,
+},
+{
     id: 29,
     kategori: "Gündem",
     baslik: "Türkiye'de gündem yoğun: Ekonomi, teknoloji ve günlük yaşamda yeni gelişmeler takip ediliyor",
