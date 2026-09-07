@@ -220,7 +220,6 @@ function contentToHtml(content) {
 ========================================================= */
 
 function loadNews() {
-
     const code = fs.readFileSync(
         NEWS_FILE,
         "utf8"
@@ -283,7 +282,6 @@ function createArticleHtml(
     slug,
     template
 ) {
-
     const title = escapeHtml(
         haber.baslik
     );
@@ -666,7 +664,7 @@ function generate() {
         `✓ ${news.length} haber bulundu.`
     );
 
-    /* Template oku */
+    /* Template kontrol */
 
     if (!fs.existsSync(TEMPLATE_FILE)) {
         throw new Error(
@@ -679,7 +677,7 @@ function generate() {
         "utf8"
     );
 
-    /* Çıktı klasörü oluştur */
+    /* Çıktı klasörü */
 
     if (!fs.existsSync(OUTPUT_DIR)) {
 
@@ -733,7 +731,7 @@ function generate() {
     let generated = 0;
 
     /* =====================================================
-       HER HABER İÇİN STATİK SAYFA OLUŞTUR
+       HER HABER İÇİN STATİK SAYFA
     ===================================================== */
 
     for (const haber of news) {
@@ -759,9 +757,7 @@ function generate() {
 
         let counter = 2;
 
-        /*
-         * Aynı başlık varsa slug çakışmasını önle.
-         */
+        /* Aynı slug varsa numara ekle */
 
         while (
             usedSlugs.has(slug)
@@ -800,7 +796,7 @@ function generate() {
                 template
             );
 
-        /* index.html yaz */
+        /* index.html */
 
         const outputFile =
             path.join(
