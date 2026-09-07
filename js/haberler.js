@@ -41,7 +41,7 @@ const haberler = [
     ===================================================== */
 {
     id: 19,
-    kategori: "Türkiye",
+    kategori: "Gündem",
     baslik: "Kabine bugün toplanıyor: Gündemde ekonomi, güvenlik ve 'Terörsüz Türkiye' süreci var",
 
     spot: "Cumhurbaşkanı Recep Tayyip Erdoğan başkanlığındaki Cumhurbaşkanlığı Kabinesi bugün Beştepe'de toplanacak. Saat 15.30'da başlaması beklenen toplantıda ekonomi, enflasyonla mücadele, 'Terörsüz Türkiye' süreci, güvenlik, dış politika ve sosyal konut çalışmaları ele alınacak. Toplantının ardından Cumhurbaşkanı Erdoğan'ın açıklama yapması bekleniyor.",
