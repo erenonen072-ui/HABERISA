@@ -92,7 +92,7 @@ const haberler = [
 
         <p><strong>Not:</strong> Bu haber genel gündem değerlendirmesi niteliğindedir. Belirli bir olay, karar veya resmi açıklamayla ilgili kesin bilgiler için ilgili kurumların güncel duyuruları takip edilmelidir.</p>
     `
-}
+},
     {
         id: 21,
         kategori: "Gündem",
