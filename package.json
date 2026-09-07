@@ -2,11 +2,7 @@
   "name": "haberista",
   "version": "1.0.0",
   "private": true,
-  "description": "HABERİSTA - Güncel haber platformu",
   "scripts": {
     "build": "node scripts/generate-news.js"
-  },
-  "engines": {
-    "node": ">=18"
   }
 }
