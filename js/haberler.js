@@ -40,6 +40,79 @@ const haberler = [
        1 - KABİNE
     ===================================================== */
 {
+id: 34,
+kategori: "Son dakika",
+baslik: "Bilim dünyasında dikkat çeken gelişme: DNA'nın genetik alfabesi 8 harfe çıkarıldı",
+spot: "ABD'deki UC San Diego araştırmacıları, doğal dört harfli genetik kodun ötesine geçen 8 harfli sentetik DNA sisteminin hücresel bir enzim tarafından okunup RNA'ya aktarılabildiğini gösterdi. Çalışma, sentetik biyoloji ve gelecekteki biyoteknoloji uygulamaları açısından önemli bir adım olarak değerlendiriliyor.",
+tarih: "9 Eylül 2026",
+saat: "00:50",
+gorsel: "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?auto=format&fit=crop&w=1600&q=85",
+yazar: "Haberİsta Bilim Servisi",
+kaynak: "University of California San Diego, Nature Communications",
+icerik: ` <p><strong>Bilim dünyasında genetik bilginin nasıl depolandığı ve işlendiğine ilişkin dikkat çekici bir gelişme yaşandı.</strong> ABD'deki University of California San Diego (UC San Diego) araştırmacıları, yaşamın doğal olarak kullandığı dört harfli genetik alfabeyi genişleten sentetik bir DNA sisteminin, hücresel bir enzim tarafından okunup RNA'ya aktarılabildiğini ortaya koydu.</p>
+
+    <p>Nature Communications dergisinde 2 Eylül 2026 tarihinde yayımlanan araştırmada bilim insanları, DNA'nın doğal genetik harfleri olan adenin (A), timin (T), sitozin (C) ve guaninin (G) yanına sentetik baz çiftlerinin eklenmesiyle oluşturulan <strong>8 harfli genetik alfabeyi</strong> inceledi.</p>
+
+    <h2>DNA'nın alfabesi neden önemli?</h2>
+
+    <p>DNA, canlıların genetik bilgilerini taşıyan temel moleküler yapılardan biri. Bugüne kadar bilinen tüm yaşam formları genetik bilgiyi dört temel baz üzerinden depoluyor. Bu bazlar belirli eşleşmeler oluşturarak DNA'nın yapısını ve genetik bilginin aktarılmasını mümkün kılıyor.</p>
+
+    <p>Araştırmacıların üzerinde çalıştığı sistem ise bu doğal yapıya dört sentetik harf daha eklenmesini hedefliyor. Böylece teorik olarak genetik bilginin depolanması ve nükleik asitlerin sahip olabileceği kimyasal çeşitlilik artırılabiliyor.</p>
+
+    <h2>RNA polimeraz sentetik harfleri okuyabildi</h2>
+
+    <p>Araştırmanın en önemli noktalarından biri, DNA'daki bilgiyi RNA'ya aktaran <strong>RNA polimeraz</strong> enziminin sentetik baz çiftlerini de tanıyabildiğinin gösterilmesi oldu.</p>
+
+    <p>Bilim insanları deneylerde <em>Escherichia coli</em> bakterisinden elde edilen RNA polimerazı kullandı. Yapılan çalışmalar, enzimin doğal baz çiftlerinin yanı sıra <strong>P:Z ve B:S</strong> olarak adlandırılan iki sentetik baz çiftini de işleyebildiğini ortaya koydu.</p>
+
+    <p>Bu durum önemli çünkü sentetik bir genetik alfabenin yalnızca DNA üzerinde bulunması yeterli değil. Hücrenin genetik bilgiyi kullanabilmesi için bu bilginin DNA'dan RNA'ya aktarılabilmesi gerekiyor.</p>
+
+    <h2>Bilim insanları moleküler yapıyı görüntüledi</h2>
+
+    <p>Araştırmacılar yalnızca biyokimyasal deneylerle yetinmedi. RNA polimerazın sentetik bazları nasıl tanıdığını anlamak amacıyla yüksek çözünürlüklü <strong>kriyo-elektron mikroskobu (cryo-EM)</strong> kullandılar.</p>
+
+    <p>Elde edilen yapılar 2,42 ile 2,75 angström arasında çözünürlüğe ulaştı. Görüntüler, sentetik baz çiftlerinin enzimin aktif bölgesinde doğal baz çiftlerine benzer bir geometri oluşturabildiğini gösterdi.</p>
+
+    <p>Bu sonuç, RNA polimerazın tamamen yeni bir moleküler mekanizma geliştirmeden sentetik genetik harfleri tanıyabildiğine ilişkin önemli kanıt sağladı.</p>
+
+    <h2>8 harfli DNA ne işe yarayabilir?</h2>
+
+    <p>Araştırmacılara göre genişletilmiş genetik alfabeler, gelecekte biyoteknoloji ve sentetik biyoloji alanlarında yeni uygulamaların geliştirilmesine katkı sağlayabilir.</p>
+
+    <p>Daha geniş bir genetik alfabe, nükleik asitlerin kimyasal çeşitliliğini artırma potansiyeline sahip. Bu durum gelecekte yeni moleküler araçların, tanı yöntemlerinin veya özel olarak tasarlanmış biyolojik sistemlerin geliştirilmesi için kullanılabilir.</p>
+
+    <p>Ancak araştırma henüz doğrudan insanlarda kullanılabilecek bir teknoloji ortaya koymuş değil. Çalışmanın temel önemi, genişletilmiş genetik bilginin doğal hücresel mekanizmalar tarafından işlenmesinin mümkün olduğunu moleküler düzeyde göstermesi.</p>
+
+    <h2>Hachimoji DNA nedir?</h2>
+
+    <p>Araştırmada ele alınan sistem, literatürde <strong>Hachimoji DNA</strong> olarak bilinen genişletilmiş genetik alfabe yaklaşımıyla bağlantılı. “Hachimoji” Japoncada “sekiz harf” anlamına geliyor.</p>
+
+    <p>Sistem, doğal DNA'daki dört harfe ek olarak sentetik baz çiftleri kullanarak genetik alfabeyi genişletiyor. Araştırmacıların yeni çalışması ise bu sentetik harflerin yalnızca DNA içinde bulunabileceğini değil, genetik bilginin aktarılmasında görev yapan doğal bir enzimin bunları da tanıyabildiğini gösteriyor.</p>
+
+    <h2>Araştırmada bir doğruluk sorunu da incelendi</h2>
+
+    <p>Bilim insanları deneyler sırasında sentetik bazlardan birinin doğal guanin ile istenmeyen şekilde eşleşebilmesi gibi bir sorun da gözlemledi. Araştırmacılar, Z* adı verilen değiştirilmiş bir sentetik baz analoğu kullanarak bu hatalı eşleşme eğilimini azaltmayı başardı.</p>
+
+    <p>Bu ayrıntı, genişletilmiş genetik sistemlerin gelecekte kullanılabilmesi açısından önemli. Çünkü daha fazla genetik harf eklemek kadar, bu harflerin doğru ve güvenilir biçimde tanınması da gerekiyor.</p>
+
+    <h2>Bilim dünyası için neden önemli?</h2>
+
+    <p>Çalışma, sentetik biyolojinin temel hedeflerinden biri olan doğal genetik sistemlerin kontrollü şekilde genişletilmesi konusunda önemli bir adım oluşturuyor.</p>
+
+    <p>Araştırmacılar, doğal yaşamın kullandığı genetik mekanizmaların sentetik bazları belirli koşullar altında işleyebildiğini göstererek gelecekte daha karmaşık yapay biyolojik sistemlerin tasarlanmasına yönelik moleküler bir temel sundu.</p>
+
+    <p>Şimdilik çalışma laboratuvar araştırması seviyesinde bulunuyor. Bununla birlikte elde edilen sonuçlar, gelecekte genetik bilgi taşıyan moleküllerin tasarımında doğadaki dört harften daha geniş bir alfabenin kullanılabileceği fikrini güçlendiriyor.</p>
+
+    <div class="haber-kaynak">
+        <strong>Kaynak:</strong> University of California San Diego ve Nature Communications.
+        <br>
+        <strong>Bilimsel çalışma:</strong> "Structural basis of transcription of the hachimoji eight-letter alphabet by E. coli RNA polymerase"
+    </div>
+`
+
+},
+
+{
     id: 33,
     kategori: "Gündem",
     baslik: "Mersin'in Bozyazı ilçesindeki yangına havadan ve karadan müdahale ediliyor",
