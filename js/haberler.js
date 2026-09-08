@@ -39,7 +39,80 @@ const haberler = [
     /* =====================================================
        1 - KABİNE
     ===================================================== */
+{
+    id: 33,
+    kategori: "Gündem",
+    baslik: "Orgeneral Bayraktaroğlu, KKTC Başbakanı Üstel ile görüştü",
+    spot: "Genelkurmay Başkanı Orgeneral Selçuk Bayraktaroğlu, KKTC Başbakanı Ünal Üstel ile Ankara'da bir araya geldi. Görüşmede Girne açıklarında meydana gelen deniz kazasının ardından devam eden çalışmaların güçlendirilmesi ve yeni teknik imkanlar ele alındı.",
+    tarih: "8 Eylül 2026",
+    saat: "17:50",
+    yazar: "Haberİsta Haber Merkezi",
 
+    // Görsel
+    gorsel: "/images/bayraktaroglu-ustel-gorusmesi.jpeg",
+
+    icerik: `
+        <p><strong>Genelkurmay Başkanı Orgeneral Selçuk Bayraktaroğlu ile Kuzey Kıbrıs Türk Cumhuriyeti Başbakanı Ünal Üstel</strong> Ankara'da bir araya geldi. Görüşme, Girne açıklarında meydana gelen deniz kazasının ardından bölgede devam eden çalışmaların gündemde olduğu bir süreçte gerçekleştirildi.</p>
+
+        <p>Genelkurmay Başkanlığının açıklamasına göre Ünal Üstel, Genelkurmay Başkanı Orgeneral Selçuk Bayraktaroğlu ile Genelkurmay Başkanlığı Karargâhı'nda görüşme gerçekleştirdi. Görüşmeye ilişkin fotoğraflar da Genelkurmay Başkanlığının sosyal medya hesabından paylaşıldı.</p>
+
+        <h2>Görüşmenin gündeminde Girne'deki deniz kazası vardı</h2>
+
+        <p>Ünal Üstel'in Ankara'daki temaslarının önemli başlıklarından birini, <strong>Girne açıklarında meydana gelen deniz kazasının ardından devam eden arama ve kurtarma çalışmaları</strong> oluşturuyor.</p>
+
+        <p>KKTC Başbakanlığı tarafından yapılan açıklamalarda, çalışmaların güçlendirilmesi ve kayıp kişilere mümkün olan en kısa sürede ulaşılması için yeni imkanların değerlendirilmekte olduğu belirtildi.</p>
+
+        <p>Üstel'in Ankara'daki temasları kapsamında Türkiye'nin ilgili kurumlarıyla görüşmeler gerçekleştirmesi, arama çalışmalarında kullanılabilecek teknik imkanların ve süreci hızlandırabilecek alternatif yöntemlerin değerlendirilmesi açısından önem taşıyor.</p>
+
+        <h2>Yeni teknik imkanlar değerlendiriliyor</h2>
+
+        <p>Başbakan Üstel'in Türkiye'deki temaslarında, devam eden çalışmalara destek sağlayabilecek <strong>yeni teknik imkanlar ve ilave uygulamaların</strong> ele alındığı bildirildi.</p>
+
+        <p>Bu kapsamda deniz kazasının ardından yürütülen arama çalışmalarının daha etkin hale getirilmesi ve ihtiyaç duyulan ilave kapasitenin devreye alınması için yapılabilecek çalışmalar değerlendiriliyor.</p>
+
+        <p>Yetkililer, mevcut imkanların yanı sıra sürecin hızlandırılmasına katkı sağlayabilecek alternatif yöntemlerin de değerlendirilmesinin planlandığını belirtiyor.</p>
+
+        <h2>Üstel Ankara'da temaslarını sürdürüyor</h2>
+
+        <p>KKTC Başbakanı Ünal Üstel, Ankara'daki temasları kapsamında yalnızca Genelkurmay Başkanı Orgeneral Selçuk Bayraktaroğlu ile değil, Türkiye'nin farklı kurumlarının üst düzey yetkilileriyle de görüşmeler gerçekleştirdi.</p>
+
+        <p>Üstel'in Adalet Bakanı Akın Gürlek, Milli Savunma Bakanı Yaşar Güler ve Deniz Kuvvetleri Komutanı Oramiral Ercüment Tatlıoğlu ile de görüşmeler yaptığı bildirildi.</p>
+
+        <p>Bu görüşmelerde Girne açıklarında meydana gelen kazanın ardından yürütülen çalışmaların mevcut durumu ve önümüzdeki süreçte atılabilecek adımlar değerlendirildi.</p>
+
+        <h2>Batığın çıkarılması da gündemde</h2>
+
+        <p>Ankara'daki temaslarda yalnızca kayıp kişilere ulaşılması için sürdürülen çalışmaların değil, <strong>batığın çıkarılmasına yönelik teknik imkanların</strong> da değerlendirildiği açıklandı.</p>
+
+        <p>Batığın bulunduğu bölgedeki şartlar, kullanılabilecek teknik ekipmanlar ve operasyonun nasıl gerçekleştirilebileceği konusunda ilgili kurumların değerlendirmeler yaptığı belirtildi.</p>
+
+        <p>Bu çalışmaların, olayın tüm yönleriyle aydınlatılması ve kayıp kişilere ulaşılması açısından önem taşıdığı ifade ediliyor.</p>
+
+        <h2>Ünal Üstel: Öncelik kayıp kişilere ulaşmak</h2>
+
+        <p>KKTC Başbakanı Ünal Üstel, hükümetin temel önceliğinin deniz kazasının ardından kayıp kişilere en kısa sürede ulaşmak olduğunu belirtti.</p>
+
+        <p>Üstel, Türkiye Cumhuriyeti ile tam iş birliği içerisinde mevcut imkanların güçlendirilmesi ve ihtiyaç duyulan ilave kapasitenin devreye alınması için çalışmaların sürdürüldüğünü vurguladı.</p>
+
+        <p>Ankara'daki görüşmelerin de bu kapsamda gerçekleştirildiği ve ilgili kurumlar arasındaki koordinasyonun devam ettiği bildirildi.</p>
+
+        <h2>Üst düzey toplantı gerçekleştirildi</h2>
+
+        <p>Başbakan Üstel'in Ankara temasları kapsamında Cumhurbaşkanı Yardımcısı Cevdet Yılmaz başkanlığında da üst düzey bir toplantı yapılması planlandı. Toplantıda, devam eden arama çalışmalarına destek sağlayabilecek yeni teknik imkanların ve alternatif yöntemlerin kapsamlı şekilde değerlendirilmesi öngörüldü.</p>
+
+        <p>Toplantının gündeminde ayrıca batığın çıkarılması için atılabilecek yeni adımların da bulunduğu belirtildi.</p>
+
+        <h2>Çalışmalar devam ediyor</h2>
+
+        <p>Girne açıklarında meydana gelen deniz kazasının ardından bölgede yürütülen çalışmalar devam ederken, Türkiye ve KKTC makamları arasındaki koordinasyon da sürdürülüyor.</p>
+
+        <p>Yetkililer, arama çalışmalarının mümkün olan en etkin şekilde yürütülmesi ve mevcut imkanların güçlendirilmesi için çalışmalarına devam ediyor.</p>
+
+        <p>Önümüzdeki süreçte yapılacak yeni değerlendirmeler ve alınacak kararların, arama çalışmalarının seyrinde önemli rol oynaması bekleniyor.</p>
+
+        <p><strong>Haberİsta</strong>, Girne açıklarındaki deniz kazası ve devam eden arama çalışmalarına ilişkin yeni gelişmeleri takip ederek okuyucularına aktarmaya devam edecek.</p>
+    `,
+},
 {
     id: 31,
     kategori: "Dünya",
