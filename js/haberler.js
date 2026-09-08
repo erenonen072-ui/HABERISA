@@ -39,6 +39,78 @@ const haberler = [
     /* =====================================================
        1 - KABİNE
     ===================================================== */
+
+{
+    id: 31,
+    kategori: "Dünya",
+    baslik: "Putin ve Trump telefonda görüştü: Ukrayna savaşı ve barış süreci masada",
+    spot: "Rusya Devlet Başkanı Vladimir Putin ile ABD Başkanı Donald Trump, Ukrayna'daki savaşın sona erdirilmesi ve son diplomatik temasların ardından atılabilecek adımları görüştü.",
+    tarih: "8 Eylül 2026",
+    saat: "17:30",
+    yazar: "Haberİsta Haber Merkezi",
+
+    // Görsel
+    gorsel: "/images/putin-trump-telefon-gorusmesi.jpeg",
+
+    icerik: `
+        <p><strong>Rusya Devlet Başkanı Vladimir Putin ile ABD Başkanı Donald Trump</strong>, 8 Eylül 2026 tarihinde yaklaşık bir saat süren bir telefon görüşmesi gerçekleştirdi. Görüşmede Ukrayna'daki savaşın sona erdirilmesine yönelik diplomatik girişimler ve ABD'li temsilcilerin son temasları ele alındı.</p>
+
+        <p>Görüşme, ABD Başkanı Trump'ın özel temsilcileri <strong>Steve Witkoff ve Jared Kushner'ın</strong> Moskova ve Kiev'de gerçekleştirdiği temasların ardından yapıldı. Kremlin tarafından yapılan açıklamada, iki liderin bu ziyaretlerin sonuçlarını değerlendirdiği ve görüşmenin yapıcı geçtiği belirtildi.</p>
+
+        <h2>Telefon görüşmesi yaklaşık bir saat sürdü</h2>
+
+        <p>Kremlin yetkililerinin aktardığı bilgilere göre Putin ve Trump arasındaki telefon görüşmesi tam olarak <strong>bir saat</strong> sürdü. Görüşmenin Ukrayna'daki çatışmanın çözümü konusunda gerçekleştirilen son diplomatik temasların ardından yapılması dikkat çekti.</p>
+
+        <p>Rusya Devlet Başkanı'nın yardımcısı Yuri Uşakov, görüşmenin yapıcı ve oldukça açık bir şekilde gerçekleştiğini açıkladı. Liderlerin son dönemde yürütülen diplomatik çalışmalar hakkında görüş alışverişinde bulunduğu belirtildi.</p>
+
+        <h2>Trump: Savaşın bir an önce sona ermesi gerekiyor</h2>
+
+        <p>Görüşmenin en önemli başlıklarından biri Ukrayna'daki savaşın sona erdirilmesi oldu. Kremlin'in açıklamasına göre Trump, çatışmanın mümkün olan en kısa sürede sona erdirilmesinin önemine dikkat çekti.</p>
+
+        <p>Trump'ın, Ukrayna'daki savaşın sona ermesinin ABD ile Rusya arasındaki ilişkilerin yeniden geliştirilmesi için önemli bir fırsat oluşturabileceğini düşündüğü aktarıldı. ABD Başkanı ayrıca iki ülke arasındaki ticari ve ekonomik ilişkilerin yeniden güçlendirilmesinin her iki taraf için de önemli kazanımlar sağlayabileceğini ifade etti.</p>
+
+        <h2>Putin savaş alanındaki durumu aktardı</h2>
+
+        <p>Rusya Devlet Başkanı Vladimir Putin'in ise Trump'a Ukrayna'daki savaşın mevcut durumu hakkında değerlendirmelerde bulunduğu bildirildi. Putin'in ayrıca çatışmaların daha hızlı şekilde sona erdirilmesi konusunda ABD'nin atabileceği adımlara ilişkin görüşlerini aktardığı belirtildi.</p>
+
+        <p>Rusya tarafı, Ukrayna'daki çatışmanın çözümüne yönelik diplomatik kanalların açık tutulmasının önemine vurgu yaptı. İki liderin görüşmede karşılıklı olarak son gelişmeleri değerlendirdiği kaydedildi.</p>
+
+        <h2>Rusya'dan Avrupa açıklaması</h2>
+
+        <p>Telefon görüşmesinde Avrupa'daki güvenlik tartışmalarının da gündeme geldiği açıklandı. Kremlin'e göre Putin, Rusya'nın Avrupa ülkelerine yönelik saldırgan planları olmadığını Trump'a iletti.</p>
+
+        <p>Putin ayrıca Avrupa'da Rusya kaynaklı tehditlere ilişkin değerlendirmelerin, bazı ülkeler tarafından savunma harcamalarını artırmak ve Ukrayna'ya yönelik desteği sürdürmek için kullanıldığını savundu.</p>
+
+        <h2>Esir değişimleri de görüşüldü</h2>
+
+        <p>Putin ve Trump'ın görüşmesinde insani konuların da ele alındığı bildirildi. Bu kapsamda <strong>esir ve tutuklu değişimlerinin</strong> devam ettirilmesi konusunda çalışmaların sürdürülmesinin önemi üzerinde duruldu.</p>
+
+        <p>Tarafların insani konulardaki temasların devam etmesi konusunda hemfikir olduğu belirtildi. Daha önce gerçekleştirilen esir değişimleri, Rusya-Ukrayna savaşında iki taraf arasındaki sınırlı iletişim kanallarından biri olmuştu.</p>
+
+        <h2>ABD'li temsilcilerin Moskova ve Kiev temasları</h2>
+
+        <p>Putin ve Trump arasındaki telefon görüşmesinin arka planında ABD'li temsilcilerin son günlerde gerçekleştirdiği diplomatik temaslar bulunuyor. Steve Witkoff ve Jared Kushner, Moskova'da Putin ile, Kiev'de ise Ukrayna Devlet Başkanı Volodimir Zelenskiy ile görüşmeler gerçekleştirdi.</p>
+
+        <p>Bu temaslarda Ukrayna'daki savaşın sona erdirilmesine yönelik çeşitli önerilerin değerlendirildiği bildirildi. Ukrayna tarafı bazı önerileri olumlu bulduğunu açıklarken, görüşmelerden henüz kesin bir barış anlaşması veya kapsamlı ateşkes kararı çıkmadı.</p>
+
+        <h2>Yeni görüşmelerin önü açık</h2>
+
+        <p>Putin ve Trump'ın son telefon görüşmesinin ardından iki liderin iletişimi sürdürme konusunda anlaşmaya vardığı açıklandı. Kremlin, liderlerin ihtiyaç duyulması halinde yeniden telefon görüşmeleri gerçekleştireceğini bildirdi.</p>
+
+        <p>Bu gelişme, Washington ile Moskova arasındaki diplomatik temasların devam edeceği şeklinde değerlendiriliyor. Ancak görüşmenin ardından Ukrayna'daki savaşın sona erdiğine veya kesin bir ateşkes anlaşmasına varıldığına ilişkin herhangi bir açıklama yapılmadı.</p>
+
+        <p>Ukrayna'daki savaşın geleceğine ilişkin müzakerelerde özellikle çatışmanın nasıl sona erdirileceği ve tarafların hangi şartlarda anlaşabileceği konusu önemini koruyor.</p>
+
+        <h2>Diplomatik süreç yakından takip ediliyor</h2>
+
+        <p>ABD'nin Moskova ve Kiev arasında yürüttüğü diplomatik girişimlerin önümüzdeki günlerde devam etmesi bekleniyor. Trump yönetimi savaşın sona erdirilmesi için yeni görüşmeler yapılmasını isterken, Rusya ve Ukrayna arasındaki temel anlaşmazlıkların çözümü konusunda henüz net bir sonuç ortaya çıkmış değil.</p>
+
+        <p>Putin ve Trump arasındaki son görüşme de bu nedenle uluslararası kamuoyunun dikkatini çekti. Liderlerin yeniden iletişim kurma konusunda anlaşması, diplomatik sürecin devam edeceğine işaret ederken, somut bir barış anlaşmasına ulaşılıp ulaşılmayacağı ise önümüzdeki dönemde belli olacak.</p>
+
+        <p><strong>Haberİsta</strong>, Putin ve Trump arasındaki görüşmenin ardından yaşanacak yeni gelişmeleri ve Ukrayna'daki diplomatik süreci takip ederek okuyucularına aktarmaya devam edecek.</p>
+    `,
+},
+   
 {
     id: 30,
     kategori: "Gündem",
