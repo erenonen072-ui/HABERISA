@@ -2,9 +2,8 @@
 
 /* =========================================================
    HABERİSTA - HABER VERİTABANI
-   Güncellenmiş sürüm
+   Birleştirilmiş sürüm
 ========================================================= */
-
 
 /* =========================================================
    SLUG OLUŞTUR
@@ -29,2238 +28,2121 @@ function slugOlustur(metin) {
         .replace(/^-+|-+$/g, "");
 }
 
-
-/* =========================================================
-   HABERLER
-========================================================= */
-
 const haberler = [
 
     /* =====================================================
-       1 - KABİNE
+       56 - FİLENİN SULTANLARI / ERDOĞAN
     ===================================================== */
-{
-    id: 46,
-    kategori: "Eğitim",
-    baslik: "PISA 2025 sonuçlarında Türkiye'den dikkat çeken başarı: Üç alanda da puan yükseldi",
-    spot: "PISA 2025 sonuçları açıklandı. Türkiye; matematik, fen bilimleri ve okuma becerileri alanlarının üçünde de puanını artırarak OECD ülkeleri arasında dikkat çeken bir performans ortaya koydu.",
-    tarih: "9 Eylül 2026",
-    saat: "18:05",
-    gorsel: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1600&q=85",
-    yazar: "Haberİsta Eğitim Servisi",
-    kaynak: "Haberİsta",
-    seo: {
-        title: "PISA 2025 sonuçları açıklandı: Türkiye'den dikkat çeken başarı | Haberİsta",
-        description: "PISA 2025 sonuçlarında Türkiye matematik, fen bilimleri ve okuma becerilerinde puanını artırdı. İşte Türkiye'nin PISA 2025 performansına ilişkin ayrıntılar.",
-        keywords: "PISA 2025, Türkiye PISA sonucu, eğitim haberleri, matematik, fen bilimleri, okuma becerileri, OECD",
-        canonical: "https://haberisa.vercel.app/haber/pisa-2025-sonuclarinda-turkiyeden-dikkat-ceken-basari"
-    },
-    icerik: `
-        <p><strong>Uluslararası Öğrenci Değerlendirme Programı'nın (PISA) 2025 sonuçları açıklandı.</strong> Açıklanan sonuçlar Türkiye açısından eğitim gündeminin önemli başlıklarından biri oldu. Türkiye'nin matematik, fen bilimleri ve okuma becerileri alanlarının tamamında puanlarını yükseltmesi dikkat çekti.</p>
 
-        <p>PISA, öğrencilerin yalnızca okulda öğrendikleri bilgileri ne kadar hatırladıklarını değil, bu bilgileri gerçek yaşamda karşılaşabilecekleri problemlerde ne ölçüde kullanabildiklerini de ölçen uluslararası bir değerlendirme programı olarak uygulanıyor.</p>
-
-        <p>Türkiye'nin 2025 sonuçlarında üç temel alanda da puanını artırması, eğitim politikaları açısından önemli bir gelişme olarak değerlendiriliyor. Özellikle OECD ülkeleriyle yapılan karşılaştırmalarda Türkiye'nin üç alanda da puanını yükselten ülkeler arasında öne çıkması eğitim gündeminde geniş yer buldu.</p>
-
-        <p>Matematik alanında öğrencilerin problem çözme ve matematiksel düşünme becerileri değerlendirilirken, fen bilimlerinde bilimsel bilgiyi kullanma ve bilimsel olayları yorumlama becerileri ele alınıyor. Okuma becerileri bölümünde ise öğrencilerin farklı metinleri anlayabilme, değerlendirebilme ve bilgiyi kullanabilme yetenekleri ölçülüyor.</p>
-
-        <p>PISA sonuçlarının açıklanmasının ardından Cumhurbaşkanı Recep Tayyip Erdoğan da Türkiye'nin performansına ilişkin değerlendirmede bulundu ve eğitim camiasını tebrik etti. Milli Eğitim Bakanı Yusuf Tekin ise Türkiye'nin üç alanda da puanını artıran tek OECD ülkesi olduğunu açıkladı.</p>
-
-        <p>Uzmanlara göre uluslararası sınav sonuçları tek başına bir ülkenin eğitim sisteminin bütününü değerlendirmek için yeterli değil. Bunun yanında öğrencilerin sosyoekonomik koşulları, okullar arasındaki farklılıklar, öğretmen niteliği ve eğitim kaynaklarına erişim gibi çok sayıda faktörün de değerlendirilmesi gerekiyor.</p>
-
-        <p>PISA sonuçları önümüzdeki dönemde Türkiye'deki eğitim politikalarının değerlendirilmesinde de önemli bir veri olarak kullanılacak. Özellikle öğrencilerin temel becerilerini geliştirmeye yönelik çalışmaların sonuçları uzun vadede daha yakından takip edilecek.</p>
-
-        <p><strong>Haberİsta:</strong> PISA 2025 sonuçları, Türkiye'nin üç temel değerlendirme alanında puanlarını yükselttiğini ortaya koydu. Yeni sonuçların eğitim sistemindeki güçlü ve geliştirilmesi gereken alanların belirlenmesine katkı sağlaması bekleniyor.</p>
-    `
-},
-
-{
-    id: 47,
-    kategori: "Gündem",
-    baslik: "Antalya'daki orman yangınlarında ekiplerin mücadelesi sürüyor",
-    spot: "Antalya'nın farklı noktalarında çıkan orman yangınlarıyla mücadele devam ediyor. Ekipler, yangınların kontrol altına alınması ve yerleşim alanlarının korunması için çalışmalarını sürdürüyor.",
-    tarih: "9 Eylül 2026",
-    saat: "17:40",
-    gorsel: "https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1600&q=85",
-    yazar: "Haberİsta Haber Merkezi",
-    kaynak: "Haberİsta",
-    seo: {
-        title: "Antalya'daki orman yangınlarında son durum | Haberİsta",
-        description: "Antalya'nın farklı bölgelerinde etkili olan orman yangınlarına ekiplerin havadan ve karadan müdahalesi sürüyor.",
-        keywords: "Antalya yangın, Antalya orman yangını, son dakika Antalya, orman yangını, yangın söndürme",
-        canonical: "https://haberisa.vercel.app/haber/antalyadaki-orman-yanginlarinda-son-durum"
-    },
-    icerik: `
-        <p><strong>Antalya'da farklı noktalarda etkili olan orman yangınları, Türkiye gündeminin önemli başlıkları arasında yer almaya devam ediyor.</strong> Yangınlara karşı Orman Genel Müdürlüğü ekipleri başta olmak üzere ilgili kurumların çalışmaları sürüyor.</p>
-
-        <p>Yangınlarla mücadelede hem kara ekipleri hem de hava araçları kullanılıyor. Arazinin yapısı, rüzgarın yönü ve sıcaklık değerleri çalışmaların seyrini doğrudan etkileyen faktörler arasında bulunuyor.</p>
-
-        <p>Ekiplerin öncelikli hedefi yangınların yerleşim bölgelerine ve kritik ulaşım güzergahlarına ilerlemesini önlemek. Bunun yanında kontrol altına alınan alanlarda soğutma çalışmalarının gerçekleştirilmesi ve yeni yangınların çıkmasının önlenmesi için de çalışmalar yürütülüyor.</p>
-
-        <p>Antalya, geniş ormanlık alanları ve özellikle yaz aylarında yüksek sıcaklıkların etkisi nedeniyle orman yangınları açısından yakından takip edilen iller arasında bulunuyor. Kentte turizm faaliyetlerinin yoğun olması nedeniyle yangınların yerleşim alanlarına yaklaşması halinde güvenlik tedbirleri de artırılıyor.</p>
-
-        <p>Yetkililer, vatandaşların yangın bölgelerine yaklaşmaması, ekiplerin çalışmalarını engelleyecek şekilde yolları kullanmaması ve herhangi bir yangın veya duman görülmesi halinde ilgili acil durum birimlerine bilgi vermesi konusunda uyarılarda bulunuyor.</p>
-
-        <p>Yangınların çıkış nedenleri ise ilgili ekiplerin incelemeleri sonucunda netlik kazanacak. Yangın söndürme çalışmalarının yanı sıra hasar tespit çalışmalarının da gerekli bölgelerde yapılması bekleniyor.</p>
-
-        <p><strong>Haberİsta:</strong> Antalya'daki yangınlarla ilgili resmi kurumlardan gelecek yeni açıklamalar takip ediliyor. Yangınların seyri ve ekiplerin müdahalesine ilişkin gelişmeler haberimiz üzerinden güncellenecek.</p>
-    `
-},
-
-{
-    id: 48,
-    kategori: "Teknoloji",
-    baslik: "TEKNOFEST Güneydoğu için ziyaretçi kayıtları başladı",
-    spot: "Türkiye'nin teknoloji ve havacılık odaklı önemli organizasyonlarından TEKNOFEST'in Güneydoğu etkinliği için ziyaretçi kayıtları başladı. Festivalde teknoloji yarışmaları ve çeşitli gösteriler düzenlenecek.",
-    tarih: "9 Eylül 2026",
-    saat: "16:55",
-    gorsel: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=85",
-    yazar: "Haberİsta Teknoloji Servisi",
-    kaynak: "Haberİsta",
-    seo: {
-        title: "TEKNOFEST Güneydoğu ziyaretçi kayıtları başladı | Haberİsta",
-        description: "TEKNOFEST Güneydoğu için ziyaretçi kayıtları başladı. Festivalde teknoloji, havacılık ve farklı teknoloji alanlarında etkinlikler düzenlenecek.",
-        keywords: "TEKNOFEST Güneydoğu 2026, TEKNOFEST kayıt, teknoloji festivali, havacılık, teknoloji yarışmaları",
-        canonical: "https://haberisa.vercel.app/haber/teknofest-guneydogu-ziyaretci-kayitlari-basladi"
-    },
-    icerik: `
-        <p><strong>TEKNOFEST Güneydoğu için ziyaretçi kayıtları başladı.</strong> Türkiye'nin teknoloji, havacılık ve inovasyon alanındaki en geniş kapsamlı organizasyonlarından biri olan TEKNOFEST, yeni etkinliğiyle teknoloji meraklılarını bir araya getirmeye hazırlanıyor.</p>
-
-        <p>Festival kapsamında teknoloji yarışmalarından hava gösterilerine, bilimsel etkinliklerden girişimcilik çalışmalarına kadar farklı alanlarda programlar düzenlenmesi planlanıyor. Etkinlik, özellikle gençlerin teknoloji ve mühendislik alanlarına ilgisini artırmayı amaçlayan çalışmalar açısından önem taşıyor.</p>
-
-        <p>TEKNOFEST'in en dikkat çekici bölümlerinden biri teknoloji yarışmaları. Öğrenciler ve genç teknoloji geliştiricileri farklı kategorilerde projelerini ortaya koyarken, ortaya çıkan çalışmalar ziyaretçiler tarafından da yakından incelenebiliyor.</p>
-
-        <p>Festival alanlarında yapay zeka, robotik, insansız sistemler, havacılık ve uzay teknolojileri gibi farklı başlıkların öne çıkması bekleniyor. Böylece ziyaretçiler yalnızca gösterileri izlemekle kalmayacak, aynı zamanda yeni teknolojiler hakkında bilgi edinme fırsatı da bulacak.</p>
-
-        <p>Güneydoğu bölgesinde düzenlenecek etkinliğin bölgedeki gençlerin teknoloji ekosistemiyle daha fazla etkileşim kurmasına katkı sağlaması hedefleniyor. Üniversiteler, teknoloji girişimleri, öğrenciler ve farklı kurumların festival kapsamında bir araya gelmesi bekleniyor.</p>
-
-        <p>Festival için ziyaretçi kayıtlarının başlamasıyla birlikte etkinliğe yönelik ilginin de artması bekleniyor. Ziyaretçilerin etkinlik takvimini ve giriş koşullarını resmi TEKNOFEST kanallarından takip etmesi önem taşıyor.</p>
-
-        <p><strong>Haberİsta:</strong> TEKNOFEST Güneydoğu'nun programı ve etkinlik detayları açıklandıkça Haberİsta Teknoloji Servisi olarak gelişmeleri aktarmaya devam edeceğiz.</p>
-    `
-},
-
-{
-    id: 49,
-    kategori: "Ekonomi",
-    baslik: "Türk Hava Yolları 8 ayda 64 milyon yolcu taşıdı",
-    spot: "Türk Hava Yolları, 2026 yılının ocak-ağustos döneminde yaklaşık 64 milyon yolcu taşıdı. Havayolu şirketinin yolcu trafiğine ilişkin verileri açıklandı.",
-    tarih: "9 Eylül 2026",
-    saat: "15:50",
-    gorsel: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1600&q=85",
-    yazar: "Haberİsta Ekonomi Servisi",
-    kaynak: "Haberİsta",
-    seo: {
-        title: "THY 2026'nın ilk 8 ayında 64 milyon yolcu taşıdı | Haberİsta",
-        description: "Türk Hava Yolları'nın 2026 ocak-ağustos dönemindeki yolcu trafiği açıklandı. Şirket 8 ayda yaklaşık 64 milyon yolcu taşıdı.",
-        keywords: "THY 2026 yolcu sayısı, Türk Hava Yolları, THY yolcu, havacılık, ekonomi haberleri",
-        canonical: "https://haberisa.vercel.app/haber/thy-2026nin-ilk-8-ayinda-64-milyon-yolcu-tasidi"
-    },
-    icerik: `
-        <p><strong>Türk Hava Yolları'nın 2026 yılının ocak-ağustos dönemine ilişkin yolcu trafiği verileri açıklandı.</strong> Şirket, yılın ilk sekiz ayında yaklaşık 64 milyon yolcu taşıdı.</p>
-
-        <p>Havacılık sektöründe yolcu trafiği, hem turizm hareketliliği hem de Türkiye'nin uluslararası ulaşım ağındaki konumu açısından önemli göstergeler arasında bulunuyor. İstanbul Havalimanı başta olmak üzere Türkiye'deki büyük havalimanlarının uluslararası bağlantıları, hava yolu şirketlerinin yolcu trafiğinde önemli rol oynuyor.</p>
-
-        <p>THY'nin geniş uçuş ağı, Türkiye'den Avrupa, Asya, Afrika ve Amerika kıtalarına yapılan bağlantıların yanı sıra farklı ülkeler arasında aktarmalı seyahatlerde de önemli bir merkez oluşturuyor.</p>
-
-        <p>Yolcu sayısının değerlendirilmesinde yalnızca toplam yolcu rakamı değil, doluluk oranı, iç hat ve dış hat dağılımı, transit yolcu sayısı ve uçuş kapasitesi gibi göstergeler de önem taşıyor.</p>
-
-        <p>2026'nın ilk sekiz ayında açıklanan veriler, Türkiye'nin havacılık sektöründeki hareketliliğinin devam ettiğini gösteren göstergeler arasında yer aldı. Özellikle yaz dönemindeki turizm hareketliliğinin dış hat yolcu trafiğine katkı sağlaması bekleniyor.</p>
-
-        <p>THY'nin yılın geri kalanında da uçuş ağına ve kapasitesine ilişkin planlarını sürdürmesi beklenirken, sektörün performansı turizm gelirleri ve hava ulaşımındaki gelişmeler açısından yakından takip ediliyor.</p>
-
-        <p><strong>Haberİsta:</strong> THY'nin yıl sonu yolcu trafiği ve şirketin yeni dönem kapasite planları havacılık sektörünün önemli takip başlıkları arasında olacak.</p>
-    `
-},
-
-{
-    id: 50,
-    kategori: "Spor",
-    baslik: "Filenin Sultanları Avrupa şampiyonu oldu: Türkiye'de büyük sevinç",
-    spot: "A Milli Kadın Voleybol Takımı, Avrupa Şampiyonası'nda zirveye çıkarak tarihi bir başarıya imza attı. Şampiyonluğun ardından Filenin Sultanları Cumhurbaşkanı Erdoğan tarafından kabul edildi.",
-    tarih: "9 Eylül 2026",
-    saat: "14:45",
-    gorsel: "https://images.unsplash.com/photo-1592656094267-764a45160876?auto=format&fit=crop&w=1600&q=85",
-    yazar: "Haberİsta Spor Servisi",
-    kaynak: "Haberİsta",
-    seo: {
-        title: "Filenin Sultanları Avrupa şampiyonu oldu | Haberİsta",
-        description: "A Milli Kadın Voleybol Takımı Avrupa şampiyonluğuna ulaştı. Filenin Sultanları'nın başarısı Türkiye'de büyük sevinç oluşturdu.",
-        keywords: "Filenin Sultanları, Avrupa şampiyonu, kadın voleybol, Türkiye voleybol, milli takım",
-        canonical: "https://haberisa.vercel.app/haber/filenin-sultanlari-avrupa-sampiyonu-oldu"
-    },
-    icerik: `
-        <p><strong>A Milli Kadın Voleybol Takımı, Avrupa Şampiyonası'nda şampiyonluğa ulaşarak Türkiye'ye büyük bir gurur yaşattı.</strong> Filenin Sultanları'nın tarihi başarısı spor gündeminin yanı sıra ülke genelinde de geniş yankı buldu.</p>
-
-        <p>Turnuva boyunca önemli rakiplerle karşılaşan milli takım, kritik maçlarda gösterdiği performansla finale kadar yükseldi. Final karşılaşmasında da mücadele gücünü ortaya koyan milliler, Avrupa'nın zirvesine çıkmayı başardı.</p>
-
-        <p>Şampiyonluğun ardından takım oyuncuları ve teknik heyet Türkiye'ye dönerken, milli takımın başarısı çeşitli kurum ve kuruluşlar tarafından kutlandı. Cumhurbaşkanı Recep Tayyip Erdoğan da Avrupa şampiyonu olan Filenin Sultanları'nı kabul etti.</p>
-
-        <p>Kadın voleybolunda Türkiye'nin son yıllarda uluslararası organizasyonlarda elde ettiği başarılar, bu spor dalının ülkedeki görünürlüğünü de artırdı. Milli takımın Avrupa ve dünya organizasyonlarındaki performansı, genç sporcuların voleybola olan ilgisinin artmasına katkı sağlayan unsurlardan biri olarak değerlendiriliyor.</p>
-
-        <p>Şampiyonluk yalnızca oyuncuların bireysel performansıyla değil, uzun süreli takım çalışması, teknik ekip planlaması ve turnuva boyunca gösterilen istikrarla da dikkat çekti.</p>
-
-        <p>Filenin Sultanları'nın başarısı sosyal medyada da geniş şekilde kutlanırken, milli takım oyuncularına yönelik tebrik mesajları kısa sürede gündemin öne çıkan başlıkları arasında yer aldı.</p>
-
-        <p><strong>Haberİsta:</strong> Avrupa şampiyonluğu, Türk kadın voleybolunun uluslararası arenadaki yükselişini bir kez daha gündeme taşıdı. Milli takımın yeni turnuvalardaki performansı spor kamuoyu tarafından yakından takip edilecek.</p>
-    `
-},
-
-{
-    id: 51,
-    kategori: "Gündem",
-    baslik: "İzmir'in kurtuluşunun 104. yıl dönümü bugün törenlerle kutlanıyor",
-    spot: "İzmir'in düşman işgalinden kurtuluşunun 104. yıl dönümü dolayısıyla kent genelinde tören, yürüyüş ve çeşitli etkinlikler düzenleniyor.",
-    tarih: "9 Eylül 2026",
-    saat: "13:30",
-    gorsel: "https://images.unsplash.com/photo-1564399579883-451a5d44ec08?auto=format&fit=crop&w=1600&q=85",
-    yazar: "Haberİsta Gündem Servisi",
-    kaynak: "Haberİsta",
-    seo: {
-        title: "İzmir'in kurtuluşunun 104. yıl dönümü kutlanıyor | Haberİsta",
-        description: "İzmir'in kurtuluşunun 104. yıl dönümü 9 Eylül 2026'da tören ve etkinliklerle kutlanıyor.",
-        keywords: "İzmir 9 Eylül 2026, İzmir'in kurtuluşu, 104. yıl, 9 Eylül kutlamaları, İzmir haberleri",
-        canonical: "https://haberisa.vercel.app/haber/izmirin-kurtulusunun-104-yil-donumu"
-    },
-    icerik: `
-        <p><strong>İzmir'in düşman işgalinden kurtuluşunun 104. yıl dönümü bugün kent genelinde düzenlenen tören ve etkinliklerle anılıyor.</strong> 9 Eylül, İzmir'in tarihindeki en önemli günlerden biri olarak her yıl çeşitli programlarla kutlanıyor.</p>
-
-        <p>İzmir Valiliği tarafından açıklanan resmi programa göre 9 Eylül 2026 Çarşamba günü saat 09.00'da 104. Yıl Zafer Yürüyüşü gerçekleştiriliyor. Yürüyüş Basmane Polis Merkezi önünden başlayarak Anafartalar Caddesi üzerinden Cumhuriyet Meydanı'na kadar devam ediyor.</p>
-
-        <p>Saat 10.00'da Cumhuriyet Meydanı'nda çelenk sunma töreni gerçekleştiriliyor. Program kapsamında saygı duruşunda bulunulması ve İstiklal Marşı'nın okunmasının ardından Türk bayrakları göndere çekiliyor.</p>
-
-        <p>9 Eylül, Milli Mücadele'nin önemli dönüm noktalarından biri olarak Türkiye tarihindeki yerini koruyor. İzmir'in kurtuluşu, Büyük Taarruz'un ardından Türk ordusunun İzmir'e ulaşmasıyla Milli Mücadele'nin Batı Anadolu'daki önemli aşamalarından birini oluşturdu.</p>
-
-        <p>Kent genelindeki kutlamalarda resmi törenlerin yanı sıra farklı kültürel ve sosyal etkinlikler de gerçekleştiriliyor. İzmir'in cadde ve meydanları Türk bayraklarıyla donatılırken, vatandaşlar da kutlama programlarına yoğun ilgi gösteriyor.</p>
-
-        <p>İzmir Büyükşehir Belediyesi ve diğer kurumların düzenlediği etkinliklerle 9 Eylül'ün tarihsel anlamının gelecek kuşaklara aktarılması hedefleniyor.</p>
-
-        <p><strong>Haberİsta:</strong> İzmir'in kurtuluşunun 104. yıl dönümüne ilişkin resmi program ve etkinlikler gün boyunca devam ediyor.</p>
-    `
-},
-
-{
-    id: 52,
-    kategori: "Gündem",
-    baslik: "4 ilde organize suç operasyonu: 137 şüpheli hakkında adli işlem",
-    spot: "Güvenlik güçlerinin 4 ilde düzenlediği organize suç operasyonlarında 137 şüpheli hakkında adli işlem başlatıldığı bildirildi.",
-    tarih: "9 Eylül 2026",
-    saat: "12:55",
-    gorsel: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1600&q=85",
-    yazar: "Haberİsta Haber Merkezi",
-    kaynak: "Haberİsta",
-    seo: {
-        title: "4 ilde organize suç operasyonu: 137 şüpheli | Haberİsta",
-        description: "4 ilde düzenlenen organize suç operasyonlarında 137 şüpheli hakkında adli işlem başlatıldı. Operasyonlara ilişkin ayrıntılar.",
-        keywords: "organize suç operasyonu, 137 şüpheli, operasyon, güvenlik, Türkiye son dakika",
-        canonical: "https://haberisa.vercel.app/haber/4-ilde-organize-suc-operasyonu-137-supheli"
-    },
-    icerik: `
-        <p><strong>Türkiye'nin 4 ilinde organize suç yapılanmalarına yönelik operasyon düzenlendi.</strong> Operasyonlar kapsamında 137 şüpheli hakkında adli işlem başlatıldığı bildirildi.</p>
-
-        <p>Güvenlik güçlerinin organize suçlarla mücadele kapsamında yürüttüğü çalışmalar farklı şehirlerde devam ediyor. Operasyonlarda suç örgütlerinin faaliyetlerinin ortaya çıkarılması ve şüphelilerin adli makamlara sevk edilmesi hedefleniyor.</p>
-
-        <p>Organize suçlarla mücadele operasyonlarında ekipler tarafından teknik ve fiziki takip çalışmaları yürütülebiliyor. Yapılan incelemeler sonucunda elde edilen deliller doğrultusunda operasyonların gerçekleştirildiği belirtiliyor.</p>
-
-        <p>Yetkililer, organize suç örgütlerinin yalnızca doğrudan suç faaliyetleriyle değil, ekonomik ve sosyal alanlarda oluşturabileceği risklerle de mücadele edildiğine dikkat çekiyor.</p>
-
-        <p>Operasyon kapsamında hakkında işlem başlatılan kişilerin hukuki durumları soruşturma ve yargı süreçlerinin ilerlemesiyle netleşecek. Bir kişi hakkında adli işlem başlatılması, kişinin suçlu olduğu anlamına gelmiyor; nihai karar yargı süreci sonunda veriliyor.</p>
-
-        <p>Türkiye genelinde organize suç yapılanmalarına yönelik operasyonların önümüzdeki dönemde de devam etmesi bekleniyor.</p>
-
-        <p><strong>Haberİsta:</strong> Operasyonla ilgili resmi makamlar tarafından açıklanacak yeni bilgiler doğrultusunda haber güncellenecektir.</p>
-    `
-},
-
-{
-    id: 53,
-    kategori: "Çevre",
-    baslik: "Fethiye Körfezi için büyük çevre çalışması: 16 milyon metreküp dip çamuru çıkarılacak",
-    spot: "Fethiye Körfezi'nin temizlenmesi amacıyla yaklaşık 16 milyon metreküp dip çamurunun üç yıl içerisinde çıkarılması planlanıyor.",
-    tarih: "9 Eylül 2026",
-    saat: "11:45",
-    gorsel: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=85",
-    yazar: "Haberİsta Çevre Servisi",
-    kaynak: "Haberİsta",
-    seo: {
-        title: "Fethiye Körfezi'nde 16 milyon metreküplük temizlik çalışması | Haberİsta",
-        description: "Fethiye Körfezi'nde yaklaşık 16 milyon metreküp dip çamurunun üç yıl içinde çıkarılması planlanıyor.",
-        keywords: "Fethiye Körfezi, dip çamuru, çevre projesi, deniz temizliği, Muğla, çevre haberleri",
-        canonical: "https://haberisa.vercel.app/haber/fethiye-korfezinde-16-milyon-metrekup-temizlik"
-    },
-    icerik: `
-        <p><strong>Muğla'nın Fethiye ilçesinde körfezin çevresel durumunun iyileştirilmesi amacıyla kapsamlı bir temizlik çalışması planlanıyor.</strong> Proje kapsamında yaklaşık 16 milyon metreküp dip çamurunun üç yıl içerisinde körfezden çıkarılması hedefleniyor.</p>
-
-        <p>Deniz tabanında zaman içerisinde biriken organik ve inorganik maddeler, su ekosistemini etkileyebiliyor. Dipte biriken malzemelerin kontrollü şekilde temizlenmesi, körfezin su kalitesinin ve ekolojik dengesinin korunmasına katkı sağlayabilecek çevre çalışmalarından biri olarak değerlendiriliyor.</p>
-
-        <p>Fethiye Körfezi, turizm açısından Türkiye'nin önemli kıyı bölgelerinden biri. Bu nedenle deniz ekosisteminin korunması yalnızca çevre açısından değil, bölgenin turizm faaliyetlerinin sürdürülebilirliği açısından da önem taşıyor.</p>
-
-        <p>Çalışmaların bilimsel ölçümler ve çevresel değerlendirmeler eşliğinde yürütülmesi planlanıyor. Dip çamurunun çıkarılması sırasında deniz canlılarının yaşam alanlarının korunması ve çevresel etkilerin mümkün olduğunca azaltılması da projenin önemli başlıkları arasında bulunuyor.</p>
-
-        <p>Projenin üç yıllık bir takvim içerisinde yürütülmesi planlanırken, çalışmaların etaplar halinde gerçekleştirilmesi bekleniyor.</p>
-
-        <p>Fethiye'deki çevre çalışması, Türkiye'de kıyı ve körfezlerin temizlenmesine yönelik son dönemde yürütülen projeler arasında yer alıyor.</p>
-
-        <p><strong>Haberİsta:</strong> Projenin uygulama aşamaları, temizlenecek bölgeler ve çevresel sonuçlarına ilişkin yeni bilgiler açıklandıkça gelişmeleri takip edeceğiz.</p>
-    `
-},
-
-{
-    id: 54,
-    kategori: "Ekonomi",
-    baslik: "Ağustos ihracatında rekor: Türkiye 23,5 milyar dolarlık mal ihracatı gerçekleştirdi",
-    spot: "Türkiye'nin ağustos ayı mal ihracatı geçen yılın aynı dönemine göre yüzde 8,1 artarak 23,5 milyar dolara yükseldi. 2026'nın ilk 8 ayında ihracat 185 milyar dolara ulaştı.",
-    tarih: "9 Eylül 2026",
-    saat: "10:55",
-    gorsel: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=1600&q=85",
-    yazar: "Haberİsta Ekonomi Servisi",
-    kaynak: "Haberİsta",
-    seo: {
-        title: "Türkiye'nin ağustos ihracatı 23,5 milyar dolara yükseldi | Haberİsta",
-        description: "Türkiye'nin ağustos ayı mal ihracatı yüzde 8,1 artışla 23,5 milyar dolara yükseldi. İlk 8 aylık ihracat 185 milyar dolara ulaştı.",
-        keywords: "Türkiye ihracat 2026, Ağustos ihracat, 23,5 milyar dolar, ekonomi, ihracat rekoru",
-        canonical: "https://haberisa.vercel.app/haber/turkiyenin-agustos-ihracati-23-5-milyar-dolara-yukseldi"
-    },
-    icerik: `
-        <p><strong>Türkiye'nin ağustos ayı mal ihracatı geçen yılın aynı ayına göre yüzde 8,1 artarak 23,5 milyar dolara yükseldi.</strong> Böylece ağustos ayında gerçekleştirilen mal ihracatı, aynı aylar bazında yeni bir seviyeye ulaştı.</p>
-
-        <p>2026 yılının ilk sekiz ayına ilişkin veriler de Türkiye'nin dış ticaret performansının yıl boyunca yakından takip edildiğini gösteriyor. Ocak-ağustos dönemindeki toplam mal ihracatı 185 milyar dolar seviyesine ulaştı.</p>
-
-        <p>Yıllıklandırılmış ihracat ise 280,3 milyar dolara yükseldi. Açıklanan rakamlar, Türkiye'nin yıl sonu ihracat hedefi açısından da önem taşıyor.</p>
-
-        <p>İhracat verileri değerlendirilirken küresel enerji fiyatları, döviz hareketleri, Avrupa ve diğer önemli ticaret pazarlarındaki talep, taşımacılık maliyetleri ve küresel ekonomik gelişmeler önemli rol oynuyor.</p>
-
-        <p>Türkiye'nin ihracatında otomotiv, makine, tekstil, kimya, savunma sanayisi ve farklı sanayi ürünleri önemli paylara sahip. Bunun yanında tarım ve gıda ürünleri de Türkiye'nin dış ticaret gelirleri açısından önemli sektörler arasında bulunuyor.</p>
-
-        <p>İhracat artışının sürdürülebilir olması açısından firmaların yeni pazarlara ulaşması, katma değerli üretimin artırılması ve küresel rekabet gücünün korunması önümüzdeki dönemin önemli başlıkları arasında yer alacak.</p>
-
-        <p>Ekonomi yönetimi, küresel ekonomik koşullara rağmen ihracat performansının korunmasına ve üretim kapasitesinin güçlendirilmesine yönelik politikaları sürdürüyor.</p>
-
-        <p><strong>Haberİsta:</strong> Ağustos ihracat verileri, Türkiye ekonomisinin dış ticaret tarafındaki önemli göstergelerinden biri oldu. Eylül ve yıl sonu verileriyle birlikte ihracat performansının daha net bir tablo ortaya koyması bekleniyor.</p>
-    `
-},
-
-{
-    id: 55,
-    kategori: "Çevre",
-    baslik: "Antalya COP31'e hazırlanıyor: Zirve öncesi altyapı ve ulaşım çalışmaları hızlandı",
-    spot: "Birleşmiş Milletler İklim Değişikliği Konferansı COP31'in Antalya'da düzenlenmesi için hazırlıklar sürüyor. Zirve öncesinde altyapı, ulaşım ve organizasyon çalışmalarına hız verildi.",
-    tarih: "9 Eylül 2026",
-    saat: "09:50",
-    gorsel: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=85",
-    yazar: "Haberİsta Çevre Servisi",
-    kaynak: "Haberİsta",
-    seo: {
-        title: "Antalya COP31'e hazırlanıyor: Zirve öncesi çalışmalar hızlandı | Haberİsta",
-        description: "COP31'in Antalya'da düzenlenmesi öncesinde altyapı, ulaşım ve organizasyon hazırlıkları sürüyor.",
-        keywords: "COP31 Antalya, COP31 2026, iklim zirvesi, Antalya, iklim değişikliği, çevre",
-        canonical: "https://haberisa.vercel.app/haber/antalya-cop31e-hazirlaniyor"
-    },
-    icerik: `
-        <p><strong>Birleşmiş Milletler İklim Değişikliği Konferansı COP31'in Antalya'da düzenlenmesi için hazırlıklar devam ediyor.</strong> Dünyanın farklı ülkelerinden devlet temsilcilerinin, iklim uzmanlarının ve çok sayıda kuruluşun katılması beklenen zirve öncesinde kentte çeşitli çalışmalar yürütülüyor.</p>
-
-        <p>COP31'in 9-20 Kasım 2026 tarihlerinde Antalya EXPO alanında gerçekleştirilmesi planlanıyor. Zirve kapsamında iklim değişikliğiyle mücadele, sera gazı emisyonlarının azaltılması, iklim finansmanı ve ülkelerin iklim hedefleri gibi çok sayıda konu ele alınacak.</p>
-
-        <p>Organizasyonun Antalya'da düzenlenmesi nedeniyle kentte ulaşım, altyapı, güvenlik ve konaklama başlıklarında hazırlıklar yürütülüyor. EXPO alanının zirveye uygun hale getirilmesi için de çalışmalar devam ediyor.</p>
-
-        <p>Zirvenin Antalya açısından yalnızca uluslararası diplomasi bakımından değil, turizm ve hizmet sektörleri açısından da önemli olması bekleniyor. Çok sayıda yabancı ziyaretçinin kente gelmesi, oteller, restoranlar, ulaşım şirketleri ve diğer hizmet sektörlerinde hareketlilik oluşturabilir.</p>
-
-        <p>İklim zirvesinin Türkiye açısından bir diğer önemi ise ülkenin iklim politikalarının uluslararası kamuoyuna aktarılması olacak. Türkiye'nin enerji dönüşümü, yenilenebilir enerji yatırımları, sıfır atık çalışmaları ve emisyon azaltım hedefleri gibi başlıkların zirve gündeminde yer alması bekleniyor.</p>
-
-        <p>Yetkililer, organizasyonun tamamlanmasının ardından yapılan altyapı yatırımlarının Antalya'nın kullanımına kalacağını belirtiyor.</p>
-
-        <p><strong>Haberİsta:</strong> COP31'e yönelik hazırlıkların önümüzdeki haftalarda daha da hızlanması bekleniyor. Zirvenin yaklaşmasıyla birlikte ulaşım ve etkinlik programlarına ilişkin ayrıntıların da netleşmesi bekleniyor.</p>
-    `
-},
-
-{
-    id: 56,
-    kategori: "Gündem",
-    baslik: "Cumhurbaşkanı Erdoğan'dan Filenin Sultanları'na kabul: Avrupa şampiyonluğunun ardından buluşma",
-    spot: "Avrupa şampiyonluğuna ulaşan A Milli Kadın Voleybol Takımı, Cumhurbaşkanı Recep Tayyip Erdoğan tarafından kabul edildi. Görüşmede milli takımın başarısı gündeme geldi.",
-    tarih: "9 Eylül 2026",
-    saat: "09:15",
-    gorsel: "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1600&q=85",
-    yazar: "Haberİsta Gündem Servisi",
-    kaynak: "Haberİsta",
-    seo: {
-        title: "Erdoğan'dan Filenin Sultanları'na kabul | Avrupa şampiyonluğu sonrası",
-        description: "Avrupa şampiyonu olan Filenin Sultanları Cumhurbaşkanı Erdoğan tarafından kabul edildi.",
-        keywords: "Erdoğan Filenin Sultanları, Avrupa şampiyonu, A Milli Kadın Voleybol Takımı, voleybol",
-        canonical: "https://haberisa.vercel.app/haber/erdogandan-filenin-sultanlarina-kabul"
-    },
-    icerik: `
-        <p><strong>A Milli Kadın Voleybol Takımı'nın Avrupa şampiyonluğunun ardından milli sporcular Cumhurbaşkanı Recep Tayyip Erdoğan tarafından kabul edildi.</strong> Kabul programında Filenin Sultanları'nın uluslararası arenada elde ettiği başarı gündeme geldi.</p>
-
-        <p>Milli takımın Avrupa şampiyonluğuna ulaşması Türkiye'de geniş yankı oluştururken, oyuncuların turnuva boyunca gösterdiği performans spor kamuoyunda takdir topladı.</p>
-
-        <p>Kadın voleybolunda Türkiye'nin son yıllarda elde ettiği uluslararası başarılar, milli takımın Avrupa ve dünya organizasyonlarında üst sıralarda yer almasını sağladı. Filenin Sultanları'nın başarıları, genç sporcuların da bu branşa ilgisini artıran gelişmeler arasında gösteriliyor.</p>
-
-        <p>Milli takımın başarısında oyuncuların yanı sıra teknik ekip, sağlık ekibi, kondisyonerler ve turnuva hazırlık sürecinde görev yapan diğer çalışanların da katkısı bulunuyor.</p>
-
-        <p>Şampiyonluk sonrasında düzenlenen kabul programı, milli takımın başarısının devletin en üst makamında da kutlanması açısından önem taşıdı.</p>
-
-        <p>Türk sporunun uluslararası alandaki başarılarının artırılması için altyapı yatırımları, genç sporcuların desteklenmesi ve uluslararası deneyim kazanmaları önümüzdeki dönemde önemini koruyacak.</p>
-
-        <p><strong>Haberİsta:</strong> Filenin Sultanları'nın Avrupa şampiyonluğu, Türkiye'nin voleyboldaki uluslararası başarılarını bir kez daha gündemin merkezine taşıdı.</p>
-    `
-},
-{
-    id: 41,
-    kategori: "Kültür Sanat",
-    baslik: "İstanbul'da eylül ayı sanatla başladı: Yeni sergiler sanatseverlerle buluşuyor",
-    spot: "İstanbul'da eylül ayının gelmesiyle birlikte müze ve sanat merkezlerinin programları hareketlendi. İstanbul Modern'den Metrohan'a, Salt Beyoğlu'ndan Borusan Contemporary'ye kadar birçok merkez yeni sergilerini ziyaretçilerin ilgisine sunuyor.",
-    tarih: "9 Eylül 2026",
-    saat: "18:10",
-    gorsel: "https://images.unsplash.com/photo-1561214115-f2f134cc4912?auto=format&fit=crop&w=1600&q=85",
-    yazar: "Haberİsta Kültür Sanat Servisi",
-    kaynak: "Haberİsta",
-    seo: {
-        title: "İstanbul'da eylül ayı sanatla başladı: Yeni sergiler | Haberİsta",
-        description: "İstanbul'da eylül ayında açılan yeni sergiler sanatseverleri bekliyor. İstanbul Modern, Metrohan, Salt Beyoğlu ve Borusan Contemporary'nin programı dikkat çekiyor.",
-        keywords: "İstanbul sergileri 2026, kültür sanat, İstanbul Modern, Metrohan, Salt Beyoğlu, Borusan Contemporary, sanat haberleri",
-        canonical: "https://haberisa.vercel.app/haber/istanbulda-eylul-ayi-sanatla-basladi"
-    },
-    icerik: `
-        <p><strong>İstanbul, eylül ayının başlamasıyla birlikte yeni bir kültür sanat sezonuna giriyor.</strong> Kentin farklı noktalarında açılan ve açılacak sergiler, modern sanattan çağdaş sanata, resimden fotoğrafa ve yeni medya çalışmalarına kadar geniş bir yelpazeyi sanatseverlerle buluşturuyor.</p>
-
-        <p>Sonbahar sezonunun dikkat çeken duraklarından biri İstanbul Modern olacak. Müzenin yeni koleksiyon sergisi "Aynı Mavinin Altında", Türkiye'de modern ve çağdaş sanatın 1940'lardan günümüze uzanan dönüşümünü farklı dönemler ve temalar üzerinden ele alıyor.</p>
-
-        <p>Sergide İstanbul Modern koleksiyonundan yaklaşık 232 eser bir araya getiriliyor. Bunlardan 40'tan fazla eserin ise ilk kez izleyici karşısına çıkacağı belirtiliyor. Serginin, farklı kuşaklardan sanatçıların çalışmalarını aynı çatı altında buluşturması açısından önemli bir program olması bekleniyor.</p>
-
-        <p>İstanbul'un tarihi yapılarından Metrohan da eylül ayında yeni bir sergiye ev sahipliği yapıyor. "Dünyanın Halleri" isimli sergi, ressam İbrahim Örs'ün sanat yaşamı boyunca oluşturduğu eserleri sanatseverlerle buluşturuyor.</p>
-
-        <p>Salt Beyoğlu'nda ise sanatçı, eğitimci ve yazar Özer Kabaş'ın çalışmalarına odaklanan "Denizaşırı: Özer Kabaş ve Zamanları" sergisi hazırlanıyor. Sergide sanatçının farklı dönemlerdeki üretimlerinin yanı sıra arşiv belgeleri de yer alıyor.</p>
-
-        <p>Borusan Contemporary'de ise yeni medya ve çağdaş fotoğraf alanlarına odaklanan iki yeni sergi sanatseverlerin karşısına çıkacak. Bu programlarda yapay zeka, veri teknolojileri, hafıza, gerçeklik ve çağdaş fotoğraf gibi konular öne çıkıyor.</p>
-
-        <p>Uzmanlara göre sonbahar döneminin başlamasıyla İstanbul'daki kültür sanat etkinliklerinde belirgin bir hareketlilik yaşanması bekleniyor. Sergilerin yanı sıra tiyatro, konser, sinema ve festivaller de eylül ve ekim aylarında sanat gündeminin önemli başlıkları arasında yer alacak.</p>
-
-        <p><strong>Haberİsta değerlendirmesi:</strong> İstanbul'daki yeni sergiler, farklı sanat anlayışlarını aynı dönemde takip etmek isteyen ziyaretçiler için geniş bir seçenek oluşturuyor. Özellikle sonbahar boyunca devam edecek programların kültür sanat gündemini canlı tutması bekleniyor.</p>
-    `
-},
-
-{
-    id: 42,
-    kategori: "Kültür Sanat",
-    baslik: "İstanbul Uluslararası Oda Müziği Festivali başladı: Konserler 24 Eylül'e kadar sürecek",
-    spot: "6. İstanbul Uluslararası Oda Müziği Festivali, Süreyya Operası'nda sanatseverlerle buluşuyor. Festival kapsamında konserlerin yanı sıra ücretsiz ustalık sınıfları da düzenleniyor.",
-    tarih: "9 Eylül 2026",
-    saat: "17:35",
-    gorsel: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1600&q=85",
-    yazar: "Haberİsta Kültür Sanat Servisi",
-    kaynak: "Haberİsta",
-    seo: {
-        title: "İstanbul Uluslararası Oda Müziği Festivali başladı | Haberİsta",
-        description: "6. İstanbul Uluslararası Oda Müziği Festivali 6-24 Eylül 2026 tarihleri arasında Süreyya Operası'nda düzenleniyor.",
-        keywords: "İstanbul Uluslararası Oda Müziği Festivali 2026, Süreyya Operası, klasik müzik, konser, kültür sanat",
-        canonical: "https://haberisa.vercel.app/haber/istanbul-uluslararasi-oda-muzigi-festivali-2026"
-    },
-    icerik: `
-        <p><strong>İstanbul'un önemli klasik müzik etkinliklerinden biri olan İstanbul Uluslararası Oda Müziği Festivali, 6. kez sanatseverlerle buluşuyor.</strong> Festival, 6-24 Eylül 2026 tarihleri arasında Kadıköy Belediyesi Süreyya Operası'nda gerçekleştiriliyor.</p>
-
-        <p>Festivalin bu yılki programında Türkiye'den ve farklı ülkelerden çok sayıda sanatçı yer alıyor. Oda müziğinin farklı örneklerinin seslendirileceği konserlerde klasik müzik repertuvarının önemli eserleri sanatseverlerle buluşacak.</p>
-
-        <p>Etkinliğin dikkat çeken bölümlerinden biri ise genç müzisyenlere yönelik eğitim çalışmaları. Festival kapsamında farklı alanlarda ustalık sınıfları düzenlenerek genç sanatçıların deneyimli müzisyenlerle çalışma fırsatı bulması hedefleniyor.</p>
-
-        <p>Programda uluslararası müzik dünyasının önemli isimleri de yer alıyor. Festival kapsamında Carolin Widmann, Marc Coppey ve Razvan Popovici gibi sanatçıların katılımıyla çeşitli çalışmalar gerçekleştiriliyor.</p>
-
-        <p>Oda müziği festivalleri, büyük orkestraların aksine daha küçük müzisyen topluluklarının birbirleriyle olan müzikal etkileşimini ön plana çıkarıyor. Bu nedenle konserlerde enstrümanlar arasındaki uyum ve sanatçıların birbirleriyle kurduğu müzikal iletişim önemli bir yere sahip.</p>
-
-        <p>İstanbul'daki festivalin eylül ayı boyunca klasik müzik dinleyicilerini farklı programlarla buluşturması bekleniyor. Etkinliklerin özellikle genç müzisyenlerin oda müziğine ilgisini artırması da hedefleniyor.</p>
-
-        <p><strong>Haberİsta:</strong> İstanbul Uluslararası Oda Müziği Festivali, klasik müzikseverler için eylül ayının öne çıkan kültür sanat etkinliklerinden biri olarak dikkat çekiyor.</p>
-    `
-},
-
-{
-    id: 43,
-    kategori: "Kültür Sanat",
-    baslik: "Aspendos Opera ve Bale Festivali için geri sayım sona erdi: Tarihi tiyatroda sanat buluşması",
-    spot: "33. Uluslararası Aspendos Opera ve Bale Festivali 12 Eylül'de başlıyor. Festival kapsamında opera, bale ve sahne kantatı türlerinde toplam 6 temsil sanatseverlerle buluşacak.",
-    tarih: "9 Eylül 2026",
-    saat: "16:50",
-    gorsel: "https://images.unsplash.com/photo-1503095396549-807759245b35?auto=format&fit=crop&w=1600&q=85",
-    yazar: "Haberİsta Kültür Sanat Servisi",
-    kaynak: "Haberİsta",
-    seo: {
-        title: "Aspendos Opera ve Bale Festivali 2026 başlıyor | Haberİsta",
-        description: "33. Uluslararası Aspendos Opera ve Bale Festivali 12-26 Eylül 2026 tarihleri arasında tarihi Aspendos Antik Tiyatrosu'nda düzenlenecek.",
-        keywords: "Aspendos Opera Bale Festivali 2026, Aspendos Antik Tiyatrosu, opera, bale, Antalya kültür sanat",
-        canonical: "https://haberisa.vercel.app/haber/aspendos-opera-bale-festivali-2026"
-    },
-    icerik: `
-        <p><strong>Türkiye'nin önemli açık hava sanat organizasyonlarından Uluslararası Aspendos Opera ve Bale Festivali için geri sayım sona eriyor.</strong> Festivalin 33. yılında opera ve bale sanatının önemli örnekleri tarihi Aspendos Antik Tiyatrosu'nda sanatseverlerle buluşacak.</p>
-
-        <p>Devlet Opera ve Balesi Genel Müdürlüğü tarafından düzenlenen festival, 12-26 Eylül 2026 tarihleri arasında gerçekleştirilecek. Festival kapsamında toplam 6 temsil sahnelenecek.</p>
-
-        <p>Aspendos Antik Tiyatrosu'nun tarihi atmosferi, etkinliğin en dikkat çekici özelliklerinden biri olarak öne çıkıyor. Binlerce yıllık tarihi yapının sahne olarak kullanılması, opera ve bale gösterilerine farklı bir atmosfer kazandırıyor.</p>
-
-        <p>Festival programında opera ve bale eserlerinin yanı sıra sahne kantatı gibi farklı sahne sanatları da yer alıyor. Uluslararası katılımın da bulunduğu programda farklı ülkelerden sanatçıların performansları izleyicilerle buluşacak.</p>
-
-        <p>Festivalin dikkat çeken konuklarından biri Kazak Ulusal Opera ve Bale Tiyatrosu olacak. Topluluk, program kapsamında "Spartaküs" balesiyle sahne alacak.</p>
-
-        <p>Opera ve bale festivalleri, Türkiye'nin tarihi mekanlarının kültür sanat etkinlikleriyle yeniden değerlendirilmesine de katkı sağlıyor. Aspendos örneğinde ise antik tiyatronun tarihi dokusu ile sahne sanatlarının bir araya gelmesi etkinliğe ayrı bir özellik kazandırıyor.</p>
-
-        <p>Festivalin Antalya'ya gelen yerli ve yabancı ziyaretçilerin kültür sanat deneyimini artırması ve bölgenin kültürel turizmine katkı sağlaması bekleniyor.</p>
-
-        <p><strong>Haberİsta:</strong> Aspendos'ta düzenlenecek festival, eylül ayının Türkiye'deki önemli opera ve bale organizasyonları arasında yer alıyor.</p>
-    `
-},
-
-{
-    id: 44,
-    kategori: "Kültür Sanat",
-    baslik: "Çanakkale Kültür Yolu Festivali sona erdi: 9 gün boyunca sanat ve tarih bir arada yaşandı",
-    spot: "Çanakkale'de düzenlenen Türkiye Kültür Yolu Festivali, konserlerden sergilere, atölyelerden çocuk etkinliklerine kadar geniş bir programın ardından sona erdi.",
-    tarih: "9 Eylül 2026",
-    saat: "15:40",
-    gorsel: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=1600&q=85",
-    yazar: "Haberİsta Kültür Sanat Servisi",
-    kaynak: "Haberİsta",
-    seo: {
-        title: "Çanakkale Kültür Yolu Festivali sona erdi | Haberİsta",
-        description: "Çanakkale Kültür Yolu Festivali 9 günlük programın ardından sona erdi. Festivalde konser, sergi, söyleşi, atölye ve çocuk etkinlikleri düzenlendi.",
-        keywords: "Çanakkale Kültür Yolu Festivali 2026, Türkiye Kültür Yolu Festivali, Çanakkale, kültür sanat",
-        canonical: "https://haberisa.vercel.app/haber/canakkale-kultur-yolu-festivali-sona-erdi"
-    },
-    icerik: `
-        <p><strong>Türkiye Kültür Yolu Festivali'nin Çanakkale ayağı, 9 günlük yoğun kültür ve sanat programının ardından sona erdi.</strong> Kentin farklı noktalarında düzenlenen etkinliklerde konserlerden sergilere, söyleşilerden atölyelere kadar birçok farklı program sanatseverlerle buluştu.</p>
-
-        <p>Festival boyunca Çanakkale'nin tarihi ve kültürel dokusu ile çağdaş sanat etkinlikleri aynı program içerisinde bir araya getirildi. Böylece hem kentin kültürel mirasının tanıtılması hem de farklı sanat dallarının daha geniş kitlelere ulaştırılması amaçlandı.</p>
-
-        <p>Program içerisinde müzik etkinlikleri önemli bir yer tuttu. Farklı sanatçıların konserleri kentte festival atmosferinin oluşmasına katkı sağlarken, sergi ve söyleşiler de kültür sanat programının diğer önemli başlıklarını oluşturdu.</p>
-
-        <p>Çocuklara yönelik etkinlikler de festival programında yer aldı. Atölyeler ve eğitici çalışmalar sayesinde çocukların kültür ve sanat faaliyetlerine katılması hedeflendi.</p>
-
-        <p>Festivalin son gününde geleneksel sanatların yaşatılmasına yönelik çalışmaların yanı sıra tarihi mirasın uzmanlar eşliğinde keşfedildiği programlar da gerçekleştirildi.</p>
-
-        <p>Çanakkale'nin tarihi önemi, festival boyunca düzenlenen kültür etkinlikleriyle bir kez daha ön plana çıktı. Kentin tarihi mekanları ve kültürel değerleri, sanat etkinlikleriyle birlikte ziyaretçilere farklı bir deneyim sundu.</p>
-
-        <p>Türkiye Kültür Yolu Festivali'nin farklı şehirlerde devam eden programlarıyla kültür sanat etkinliklerini ülke genelinde daha geniş kitlelere ulaştırması hedefleniyor.</p>
-
-        <p><strong>Haberİsta:</strong> Çanakkale ayağının tamamlanmasının ardından gözler, Türkiye Kültür Yolu Festivali'nin önümüzdeki haftalarda gerçekleştirilecek diğer şehir programlarına çevrildi.</p>
-    `
-},
-
-{
-    id: 45,
-    kategori: "Kültür Sanat",
-    baslik: "Sonbahar kültür sanat sezonu hareketleniyor: Sergiler, festivaller ve sinema etkinlikleri peş peşe geliyor",
-    spot: "Türkiye'de yaz sezonunun ardından kültür sanat takvimi yoğunlaşıyor. Eylül ve ekim aylarında sergilerden film festivallerine, cazdan tiyatroya kadar çok sayıda etkinlik düzenlenecek.",
-    tarih: "9 Eylül 2026",
-    saat: "14:25",
-    gorsel: "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1600&q=85",
-    yazar: "Haberİsta Kültür Sanat Servisi",
-    kaynak: "Haberİsta",
-    seo: {
-        title: "2026 sonbahar kültür sanat sezonu: Sergiler, festivaller ve sinema | Haberİsta",
-        description: "2026 sonbaharında Türkiye'de kültür sanat takvimi yoğunlaşıyor. Sergiler, film festivalleri, caz konserleri ve tiyatro etkinlikleri sanatseverleri bekliyor.",
-        keywords: "2026 kültür sanat sezonu, sonbahar etkinlikleri, film festivalleri, sergiler, tiyatro, caz festivali, kültür sanat haberleri",
-        canonical: "https://haberisa.vercel.app/haber/2026-sonbahar-kultur-sanat-sezonu"
-    },
-    icerik: `
-        <p><strong>Türkiye'de yaz aylarının sona ermesiyle birlikte kültür sanat takvimi yeniden yoğunlaşmaya başladı.</strong> Eylül ve ekim aylarında Türkiye'nin farklı şehirlerinde sergiler, film festivalleri, konserler, tiyatro gösterileri ve müzik festivalleri düzenlenecek.</p>
-
-        <p>İstanbul, sonbahar kültür sanat sezonunun en hareketli şehirlerinden biri olacak. Kentte müzeler ve sanat merkezleri yeni sergilerini açarken, film ve müzik festivalleri de sanatseverleri farklı programlarla buluşturacak.</p>
-
-        <p>Sinema alanında Filmekimi, sonbaharın öne çıkan etkinliklerinden biri olacak. Festivalin İstanbul'da 9-18 Ekim, Ankara'da ise 15-18 Ekim tarihleri arasında düzenlenmesi planlanıyor. Festival kapsamında farklı ülkelerden ve önemli uluslararası festivallerden seçilen filmler izleyiciyle buluşacak.</p>
-
-        <p>Adana'da düzenlenecek 33. Uluslararası Adana Altın Koza Film Festivali de sinema gündeminin önemli etkinliklerinden biri olacak. Festivalin 26 Eylül-4 Ekim tarihleri arasında gerçekleştirilmesi planlanıyor.</p>
-
-        <p>Antalya'da ise Uluslararası Antalya Altın Portakal Film Festivali için hazırlıklar sürüyor. Festivalin 24-31 Ekim tarihleri arasında düzenlenmesi bekleniyor.</p>
-
-        <p>Müzik tarafında da önemli etkinlikler bulunuyor. İstanbul'da gerçekleştirilecek 36. Akbank Caz Festivali, 26 Eylül-11 Ekim tarihleri arasında farklı mekanlarda sanatseverlerle buluşacak. Festivalde farklı ülkelerden çok sayıda sanatçı sahne alacak.</p>
-
-        <p>Tiyatroseverler için de sonbahar oldukça hareketli geçecek. İstanbul Tiyatro Festivali'nin 30. edisyonu ekim ayında başlayacak. Festival kapsamında farklı ülkelerden ve Türkiye'den tiyatro topluluklarının yapımları izleyici karşısına çıkacak.</p>
-
-        <p>Sergi takvimi de sonbahar boyunca yoğun olacak. İstanbul Modern, Pera Müzesi, Salt Beyoğlu ve Borusan Contemporary gibi sanat merkezlerinde farklı dönem ve disiplinlerden sanatçıların eserleri ziyaretçilerle buluşacak.</p>
-
-        <p>Türkiye Kültür Yolu Festivali'nin yılın ilerleyen dönemlerinde farklı şehirlerdeki programları da kültür sanat takviminin önemli parçalarından biri olmaya devam edecek.</p>
-
-        <p><strong>Haberİsta:</strong> 2026 sonbaharının, sinemadan müziğe, tiyatrodan çağdaş sanata kadar geniş bir yelpazede yoğun bir kültür sanat sezonu olması bekleniyor. Önümüzdeki haftalarda açıklanacak yeni programlarla etkinlik takviminin daha da genişlemesi bekleniyor.</p>
-    `
-},
-{
-    id: 36,
-    kategori: "Sağlık",
-    baslik: "Fıstık alerjisinde umut veren gelişme: Bağırsak bakterileri tedavide kullanılabilir",
-    spot: "NIH destekli erken aşama bir klinik çalışmada, bağırsak mikrobiyotasını değiştirmeyi amaçlayan kapsüller bazı fıstık alerjisi bulunan kişilerde toleransı artırdı. Araştırmacılar daha büyük çalışmaların gerekli olduğunu belirtiyor.",
-    tarih: "9 Eylül 2026",
-    saat: "01:05",
-    yazar: "Haberİsta Sağlık Servisi",
-    kaynak: "National Institutes of Health (NIH) / Science Translational Medicine",
-    gorsel: "https://images.unsplash.com/photo-1589927986089-35812388d1f4?auto=format&fit=crop&w=1600&q=85",
-
-    seo: {
-        title: "Fıstık alerjisinde yeni umut: Bağırsak bakterileri tedavide kullanılabilir | Haberİsta",
-        description: "NIH destekli erken aşama araştırmada bağırsak mikrobiyotasını değiştiren kapsüller bazı fıstık alerjisi hastalarında toleransı artırdı.",
-        keywords: [
-            "fıstık alerjisi",
-            "gıda alerjisi",
-            "bağırsak bakterileri",
-            "mikrobiyota",
-            "alerji tedavisi",
-            "sağlık haberleri",
-            "NIH",
-            "yeni alerji tedavisi"
-        ],
-        canonical: "https://haberisa.vercel.app/haber/fistik-alerjisinde-yeni-umut"
-    },
-
-    icerik: `
-        <p><strong>Gıda alerjilerinin tedavisine yönelik araştırmalarda dikkat çeken bir gelişme yaşandı.</strong> ABD Ulusal Sağlık Enstitüleri'nin (NIH) aktardığı yeni araştırmada, bağırsakta bulunan mikroorganizmaların değiştirilmesinin bazı fıstık alerjisi hastalarında alerjik yanıtı azaltabileceğine ilişkin bulgular elde edildi.</p>
-
-        <p>Araştırma, bağırsak mikrobiyotasının yalnızca sindirim sistemiyle sınırlı bir rol oynamadığını, bağışıklık sistemi üzerinde de etkili olabileceğini gösteren çalışmaların devamı niteliğinde.</p>
-
-        <h2>Araştırmada 15 kişi yer aldı</h2>
-
-        <p>Boston Children's Hospital tarafından yürütülen ve NIH tarafından desteklenen erken aşama klinik çalışmada 15 fıstık alerjisi bulunan kişi incelendi.</p>
-
-        <p>Katılımcılara, gıda alerjisi bulunmayan kişilerden elde edilen bağırsak mikroorganizmalarını içeren kapsüller verildi. Bazı katılımcılara uygulama öncesinde bağırsaktaki mevcut mikroorganizmaları azaltmak amacıyla antibiyotik tedavisi de uygulandı.</p>
-
-        <p>Araştırmacılar uygulamanın ciddi yan etkilere yol açmadığını bildirdi.</p>
-
-        <h2>Bazı katılımcılarda tolerans arttı</h2>
-
-        <p>Antibiyotik almayan 10 katılımcının 3'ünde, uygulamadan yaklaşık dört ay sonra alerjik reaksiyon ortaya çıkmadan tüketilebilen fıstık miktarında artış görüldü.</p>
-
-        <p>Antibiyotik alan 5 katılımcının ise 3'ünde benzer bir sonuç gözlendi.</p>
-
-        <p>Araştırmacılar, olumlu sonuçların bağışıklık sistemindeki bazı T hücrelerinde meydana gelen değişikliklerle bağlantılı olduğunu belirledi.</p>
-
-        <h2>Bağırsak bakterileri neden önemli?</h2>
-
-        <p>Bağırsakta yaşayan bakteri, mantar ve diğer mikroorganizmaların tamamına genel olarak bağırsak mikrobiyotası adı veriliyor. Bu mikroorganizmalar bağışıklık sistemiyle sürekli etkileşim halinde bulunuyor.</p>
-
-        <p>Çalışmada özellikle bazı Bacteroides bakterilerinin dikkat çektiği bildirildi. Araştırmacılar, bu bakterilerin safra asitlerinin parçalanmasıyla oluşan maddeler üzerinden bağışıklık sistemini etkileyebileceğini düşünüyor.</p>
-
-        <h2>Henüz standart tedavi değil</h2>
-
-        <p>Araştırmanın sonuçları umut verici olsa da yöntemin şu anda gıda alerjileri için standart veya onaylanmış bir tedavi olduğu anlamına gelmiyor.</p>
-
-        <p>Çalışmanın katılımcı sayısının düşük olması nedeniyle sonuçların daha geniş gruplarda test edilmesi gerekiyor. Araştırmacılar daha büyük klinik çalışmalar yaparak yöntemin kimlerde etkili olabileceğini ve uzun vadeli güvenliğini araştırmayı planlıyor.</p>
-
-        <p><strong>NIH, daha büyük çalışmaların gerekli olduğunu vurguluyor.</strong> Bu nedenle mevcut sonuçlar gelecekte geliştirilebilecek tedaviler açısından umut verici bir araştırma bulgusu olarak değerlendiriliyor.</p>
-
-        <div class="haber-kaynak">
-            <strong>Kaynak:</strong> National Institutes of Health (NIH), Science Translational Medicine
-            <br>
-            <strong>Kaynak tarihi:</strong> 8 Eylül 2026
-            <br>
-            <strong>Haberİsta yayın tarihi:</strong> 9 Eylül 2026
-        </div>
-    `
-},
-
-{
-    id: 37,
-    kategori: "Sağlık",
-    baslik: "Alzheimer araştırmalarında yeni gelişme: Kan testi erken değişimleri gösterebilir",
-    spot: "NIH tarafından aktarılan araştırmada, 50'li ve 60'lı yaşlarındaki 1.350 kişinin kan örnekleri incelendi. Bazı Alzheimer ilişkili proteinlerin kandaki seviyeleriyle bilişsel performanstaki değişimler arasında bağlantı bulundu.",
-    tarih: "9 Eylül 2026",
-    saat: "01:15",
-    yazar: "Haberİsta Sağlık Servisi",
-    kaynak: "National Institutes of Health (NIH) / The Lancet",
-    gorsel: "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=1600&q=85",
-
-    seo: {
-        title: "Alzheimer için kan testi umudu: Erken değişimler tespit edilebilir mi? | Haberİsta",
-        description: "NIH destekli araştırmada 1.350 kişinin kan örnekleri incelendi. Alzheimer ile ilişkili protein seviyeleri bilişsel değişimlerle bağlantılı bulundu.",
-        keywords: [
-            "Alzheimer",
-            "Alzheimer kan testi",
-            "erken Alzheimer",
-            "hafıza",
-            "beyin sağlığı",
-            "demans",
-            "sağlık araştırması",
-            "Alzheimer araştırması"
-        ],
-        canonical: "https://haberisa.vercel.app/haber/alzheimer-kan-testi-erken-degisiklik"
-    },
-
-    icerik: `
-        <p><strong>Alzheimer hastalığının daha erken dönemde fark edilmesine yönelik araştırmalarda yeni bir gelişme yaşandı.</strong> NIH News in Health tarafından aktarılan araştırmada, orta yaş dönemindeki kişilerin kanında ölçülen bazı Alzheimer ilişkili proteinlerin, ilerleyen yıllardaki bilişsel değişimlerle bağlantılı olabileceği belirlendi.</p>
-
-        <h2>1.350 kişinin kan örneği incelendi</h2>
-
-        <p>Araştırmacılar 50'li ve 60'lı yaşlarında bulunan 1.350 kişinin kan örneklerini değerlendirdi. Araştırmaya katılan kişilere Alzheimer hastalığı tanısı konulmamıştı.</p>
-
-        <p>Bilim insanları kan örneklerinde Alzheimer hastalığıyla ilişkilendirilen tau ve amyloid-beta proteinlerinin belirli formlarını ölçtü.</p>
-
-        <p>Katılımcıların aynı zamanda düşünme ve hafıza becerilerini değerlendiren bilişsel test sonuçları da incelendi.</p>
-
-        <h2>Protein seviyeleri bilişsel değişimlerle bağlantılı çıktı</h2>
-
-        <p>Araştırmada, kandaki belirli Alzheimer ilişkili proteinlerin daha yüksek seviyelerine sahip kişilerin zaman içerisinde bilişsel testlerde daha fazla gerileme gösterme eğiliminde olduğu görüldü.</p>
-
-        <p>Bu kişilerde özellikle düşünme hızındaki yavaşlama ve hafıza performansındaki değişimler dikkat çekti.</p>
-
-        <p>Sonuçlar, Alzheimer hastalığına ilişkin bazı biyolojik değişikliklerin belirtiler ortaya çıkmadan yıllar önce başlayabileceği düşüncesini destekleyen araştırmalara katkı sağlıyor.</p>
-
-        <h2>Kan testi ne zaman kullanılabilir?</h2>
-
-        <p>Bu araştırmanın sonuçları doğrudan herkesin hastaneye gidip basit bir kan testiyle Alzheimer tanısı alabileceği anlamına gelmiyor.</p>
-
-        <p>Bilim insanları kan testlerinin klinik ortamda kullanılabilmesi için daha fazla araştırmaya ihtiyaç olduğunu belirtiyor. Testlerin doğruluğu, farklı yaş gruplarında performansı ve sonuçların hastalık riskini ne ölçüde öngörebildiği gibi konuların ayrıntılı biçimde incelenmesi gerekiyor.</p>
-
-        <h2>Erken teşhis neden önemli?</h2>
-
-        <p>Alzheimer hastalığında beyin değişiklikleri belirtiler ortaya çıkmadan uzun süre önce başlayabiliyor. Bu nedenle bilim dünyasında hastalığı daha erken fark edebilecek biyobelirteçlerin bulunması önemli bir araştırma alanı olarak öne çıkıyor.</p>
-
-        <p>Kan temelli testler başarılı şekilde geliştirilebilirse gelecekte değerlendirme süreçlerini kolaylaştırabilecek araçlardan biri olabilir.</p>
-
-        <p><strong>Ancak mevcut çalışma bir araştırma bulgusudur ve tek başına tanı yöntemi olarak kullanılmamalıdır.</strong></p>
-
-        <div class="haber-kaynak">
-            <strong>Kaynak:</strong> National Institutes of Health (NIH), The Lancet
-            <br>
-            <strong>Kaynak tarihi:</strong> Eylül 2026
-            <br>
-            <strong>Haberİsta yayın tarihi:</strong> 9 Eylül 2026
-        </div>
-    `
-},
-
-{
-    id: 38,
-    kategori: "Sağlık",
-    baslik: "Bilim insanlarından Alzheimer araştırmalarında yeni hedef: Tau proteini ve hücre enerjisi",
-    spot: "NIH destekli yeni araştırma, Alzheimer ve bazı nörodejeneratif hastalıklarda rol oynayan anormal tau proteininin hücrelerin enerji üretim merkezleriyle etkileşimine ilişkin yeni bir mekanizma ortaya koydu.",
-    tarih: "9 Eylül 2026",
-    saat: "01:25",
-    yazar: "Haberİsta Sağlık Servisi",
-    kaynak: "National Institutes of Health (NIH) / Neuron",
-   gorsel: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1600&q=85",
-
-    seo: {
-        title: "Alzheimer araştırmasında yeni keşif: Tau proteini ve hücre enerjisi | Haberİsta",
-        description: "NIH destekli araştırmada anormal tau proteininin mitokondrilerle etkileşimi ve nörodejenerasyondaki rolü incelendi.",
-        keywords: [
-            "Alzheimer araştırması",
-            "tau proteini",
-            "nörodejenerasyon",
-            "beyin hastalıkları",
-            "mitokondri",
-            "Alzheimer tedavisi",
-            "sağlık haberleri",
-            "bilimsel araştırma"
-        ],
-        canonical: "https://haberisa.vercel.app/haber/alzheimer-tau-proteini-yeni-arastirma"
-    },
-
-    icerik: `
-        <p><strong>Alzheimer hastalığı ve diğer tau proteinleriyle ilişkili nörodejeneratif hastalıkların nasıl ilerlediğini anlamaya yönelik araştırmalarda yeni bir mekanizma ortaya çıkarıldı.</strong> NIH tarafından 8 Eylül 2026'da aktarılan çalışmada, anormal tau proteinlerinin hücrelerin enerji üretim merkezleri olan mitokondrilerle etkileşimi incelendi.</p>
-
-        <h2>Tau proteini neden önemli?</h2>
-
-        <p>Tau proteini normal şartlarda beyindeki sinir hücrelerinin işleyişinde önemli görevler üstleniyor. Ancak bazı nörodejeneratif hastalıklarda tau proteini aşırı miktarda fosfat grubu taşıyarak anormal hale gelebiliyor.</p>
-
-        <p>Anormal tau proteinleri bir araya gelerek sinir hücrelerine zarar verebilen yapılar oluşturabiliyor. Bu süreç Alzheimer hastalığı ve frontotemporal demans gibi hastalıklarla ilişkilendiriliyor.</p>
-
-        <h2>Mitokondri bağlantısı araştırıldı</h2>
-
-        <p>Stanford Üniversitesi'nden Bingwei Lu liderliğindeki araştırma ekibi, tau proteini ile mitokondrilerin enerji üretim mekanizmaları arasındaki ilişkiyi inceledi.</p>
-
-        <p>Araştırmacılar sinek, fare ve insan sinir hücrelerinden oluşan farklı modeller üzerinde çalışmalar gerçekleştirdi.</p>
-
-        <p>Çalışmada anormal tau proteininin mitokondri içindeki elektron taşıma sistemiyle etkileşebildiği ve bunun hücresel süreçlerde bozulmalara yol açabildiği bulundu.</p>
-
-        <h2>Zararlı bir döngü ortaya çıktı</h2>
-
-        <p>Araştırmacılar, ters elektron taşınması olarak adlandırılan sürecin tau proteininin daha fazla fosforile olmasına katkı sağlayabildiğini belirledi.</p>
-
-        <p>Bu durum tau proteinindeki değişikliklerin hücresel enerji mekanizmasını etkileyebildiği, bozulan mekanizmanın ise tau değişikliklerini daha da artırabildiği bir geri besleme döngüsüne işaret ediyor.</p>
-
-        <h2>Hayvan modellerinde olumlu sonuçlar</h2>
-
-        <p>Araştırmacılar bu süreci engellemeye yönelik bir bileşik kullandıklarında fare ve meyve sineği modellerinde bazı motor ve hafıza problemlerinin azaldığını gözlemledi.</p>
-
-        <p>Ancak bu sonuçlar doğrudan insanlarda aynı etkinin görüleceği anlamına gelmiyor.</p>
-
-        <h2>İnsan tedavisine ne kadar yakın?</h2>
-
-        <p>Çalışmanın sonuçları yeni bir tedavi hedefinin araştırılabileceğini gösterse de kullanılan bileşiğin insanlarda tedavi amacıyla kullanılabilmesi için daha birçok aşamadan geçmesi gerekiyor.</p>
-
-        <p>NIH, araştırmacıların klinik çalışmalar öncesinde daha fazla çalışma yapması gerektiğini belirtiyor.</p>
-
-        <p><strong>Bu nedenle çalışma mevcut bir Alzheimer tedavisi sunmuyor; hastalığın biyolojik mekanizmalarını anlamaya yönelik önemli bir araştırma bulgusu niteliği taşıyor.</strong></p>
-
-        <div class="haber-kaynak">
-            <strong>Kaynak:</strong> National Institutes of Health (NIH), Neuron
-            <br>
-            <strong>Kaynak tarihi:</strong> 8 Eylül 2026
-            <br>
-            <strong>Haberİsta yayın tarihi:</strong> 9 Eylül 2026
-        </div>
-    `
-},
-
-{
-    id: 39,
-    kategori: "Sağlık",
-    baslik: "Kalp krizi tanımında büyük değişiklik: Yeni uluslararası sınıflandırma yayımlandı",
-    spot: "ESC, ACC, AHA ve WHF tarafından ortak hazırlanan Beşinci Evrensel Miyokard Enfarktüsü Tanımı yayımlandı. Yeni yaklaşım kalp krizlerinin sınıflandırılmasını ve yüksek hassasiyetli troponin testlerinin kullanımını yeniden düzenliyor.",
-    tarih: "9 Eylül 2026",
-    saat: "01:35",
-    yazar: "Haberİsta Sağlık Servisi",
-    kaynak: "American Heart Association / ESC / ACC / WHF",
-    gorsel: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1600&q=85",
-
-    seo: {
-        title: "Kalp krizi tanımında yeni dönem: Uluslararası sınıflandırma değişti | Haberİsta",
-        description: "2026 Beşinci Evrensel Miyokard Enfarktüsü Tanımı yayımlandı. Yeni sınıflandırma kalp krizi tanı ve değerlendirmesinde önemli değişiklikler getiriyor.",
-        keywords: [
-            "kalp krizi",
-            "miyokard enfarktüsü",
-            "kalp krizi tanımı",
-            "troponin",
-            "kalp sağlığı",
-            "AHA",
-            "ESC",
-            "sağlık haberleri"
-        ],
-        canonical: "https://haberisa.vercel.app/haber/kalp-krizi-taniminda-yeni-donem"
-    },
-
-    icerik: `
-        <p><strong>Kalp krizi tanı ve sınıflandırmasında uluslararası ölçekte yeni bir dönem başladı.</strong> Avrupa Kardiyoloji Derneği (ESC), Amerikan Kardiyoloji Koleji (ACC), Amerikan Kalp Derneği (AHA) ve Dünya Kalp Federasyonu (WHF) tarafından ortak hazırlanan Beşinci Evrensel Miyokard Enfarktüsü Tanımı 2026 yılında yayımlandı.</p>
-
-        <h2>Kalp krizi nasıl sınıflandırılacak?</h2>
-
-        <p>Yeni yaklaşımda miyokard enfarktüsü üç temel klinik gruba ayrılıyor: primer kalp krizi, sekonder kalp krizi ve işlemle ilişkili kalp krizi.</p>
-
-        <p><strong>Primer kalp krizi</strong>, temel olarak kalbin damarlarındaki akut koroner sorunlardan kaynaklanan durumları ifade ediyor.</p>
-
-        <p><strong>Sekonder kalp krizi</strong>, kalbin oksijen ihtiyacı ile vücuda sağlanan oksijen arasındaki dengesizlik sonucunda meydana gelen durumları kapsıyor.</p>
-
-        <p><strong>İşlemle ilişkili kalp krizi</strong> ise cerrahi veya perkütan koroner işlemler sırasında ortaya çıkabilen kalp hasarlarıyla bağlantılı durumları kapsıyor.</p>
-
-        <h2>Troponin testlerine vurgu</h2>
-
-        <p>Yeni belgede kalp kası hasarının değerlendirilmesinde kardiyak troponin ölçümlerinin önemi de ele alınıyor.</p>
-
-        <p>Özellikle yüksek hassasiyetli troponin testlerinin hızlı tanı süreçlerinde kullanılmasına ilişkin değerlendirmeler bulunuyor.</p>
-
-        <p>Troponin, kalp kası hücrelerinde bulunan ve kalp kasında hasar olduğunda kana geçebilen proteinlerden biridir. Ancak yüksek troponin seviyesinin tek başına her zaman kalp krizi anlamına gelmediği ve klinik değerlendirmeyle birlikte yorumlanması gerektiği vurgulanıyor.</p>
-
-        <h2>Kalp krizi tanısında ortak standart hedefleniyor</h2>
-
-        <p>Uluslararası kuruluşların ortak çalışmasının temel amaçlarından biri, farklı ülkelerde ve sağlık sistemlerinde kalp krizi tanısının daha standart biçimde yapılmasını sağlamak.</p>
-
-        <p>Yeni sınıflandırmanın hem klinik uygulamalarda hem de bilimsel araştırmalarda ortak bir dil oluşturması bekleniyor.</p>
-
-        <h2>Yeni tanım neden önemli?</h2>
-
-        <p>Kalp krizi farklı nedenlerle ve farklı klinik tablolarla ortaya çıkabiliyor. Bu nedenle kalp kasındaki hasarın nedeninin doğru biçimde belirlenmesi tedavi yaklaşımının değerlendirilmesi açısından önem taşıyor.</p>
-
-        <p>2026 tanımı, hastanın klinik durumu ile laboratuvar bulgularının birlikte değerlendirilmesine yönelik daha ayrıntılı bir çerçeve sunuyor.</p>
-
-        <p><strong>Yeni sınıflandırmanın sağlık çalışanları tarafından uygulanması zaman içerisinde farklı ülkelerde ve sağlık sistemlerinde gerçekleşecek.</strong></p>
-
-        <div class="haber-kaynak">
-            <strong>Kaynak:</strong> American Heart Association, European Society of Cardiology, American College of Cardiology, World Heart Federation
-            <br>
-            <strong>Güncelleme:</strong> 28 Ağustos 2026
-            <br>
-            <strong>Haberİsta yayın tarihi:</strong> 9 Eylül 2026
-        </div>
-    `
-},
-
-{
-    id: 40,
-    kategori: "Sağlık",
-    baslik: "Endometriozis ile tip 2 diyabet arasında bağlantı bulundu",
-    spot: "NIH tarafından 8 Eylül 2026'da aktarılan araştırma, endometriozisi bulunan bazı kadınlarda tip 2 diyabet gelişme riskinin daha yüksek olabileceğine işaret ediyor. Araştırmacılar ilişkinin nedenlerini anlamak için daha fazla çalışma gerektiğini belirtiyor.",
-    tarih: "9 Eylül 2026",
-    saat: "01:45",
-    yazar: "Haberİsta Sağlık Servisi",
-    kaynak: "National Institutes of Health (NIH)",
-    gorsel: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1600&q=85",
-
-    seo: {
-        title: "Endometriozis ve tip 2 diyabet arasında bağlantı bulundu | Haberİsta",
-        description: "NIH tarafından aktarılan yeni araştırma, endometriozis ile tip 2 diyabet gelişme riski arasında bağlantı olabileceğine işaret ediyor.",
-        keywords: [
-            "endometriozis",
-            "tip 2 diyabet",
-            "endometriozis diyabet",
-            "kadın sağlığı",
-            "sağlık araştırmaları",
-            "NIH",
-            "diyabet riski",
-            "sağlık haberleri"
-        ],
-        canonical: "https://haberisa.vercel.app/haber/endometriozis-tip-2-diyabet-baglantisi"
-    },
-
-    icerik: `
-        <p><strong>Endometriozis ile tip 2 diyabet arasındaki olası ilişkiye yönelik yeni araştırma dikkat çekti.</strong> ABD Ulusal Sağlık Enstitüleri'nin 8 Eylül 2026 tarihli araştırma özetinde, endometriozisi bulunan bazı kadınlarda ilerleyen dönemde tip 2 diyabet gelişme riskinin daha yüksek olabileceğine ilişkin bulgular paylaşıldı.</p>
-
-        <h2>Endometriozis nedir?</h2>
-
-        <p>Endometriozis, rahmin iç tabakasına benzer dokunun rahim dışında bulunmasıyla karakterize kronik bir sağlık durumudur.</p>
-
-        <p>Hastalık bazı kişilerde ağrı, adet dönemlerinde yoğun şikayetler ve doğurganlıkla ilgili sorunlarla ilişkilendirilebilir. Belirtiler kişiden kişiye değişebilir.</p>
-
-        <h2>Araştırmacılar diyabet bağlantısını inceliyor</h2>
-
-        <p>NIH tarafından aktarılan yeni araştırma, endometriozis ile metabolik sağlık arasındaki ilişkinin daha yakından incelenmesi gerektiğine işaret ediyor.</p>
-
-        <p>Tip 2 diyabet, vücudun kan şekeri seviyesini düzenleme biçiminin bozulmasıyla ortaya çıkan kronik bir hastalıktır. Genetik özellikler, yaşam tarzı, yaş ve çeşitli diğer faktörler hastalık riskini etkileyebilir.</p>
-
-        <h2>Tek başına neden-sonuç anlamına gelmiyor</h2>
-
-        <p>Araştırmalarda iki sağlık durumu arasında istatistiksel bir ilişki bulunması, birinin doğrudan diğerine neden olduğunu kanıtlamaz.</p>
-
-        <p>Endometriozis ile tip 2 diyabet arasındaki olası bağlantının altında inflamasyon, hormonal mekanizmalar, metabolik faktörler veya başka ortak biyolojik süreçlerin bulunup bulunmadığının anlaşılması için daha fazla araştırma gerekiyor.</p>
-
-        <h2>Neden önemli?</h2>
-
-        <p>Endometriozis uzun süreli takip gerektirebilen bir sağlık sorunu olduğu için hastalıkla ilişkili başka sağlık risklerinin anlaşılması bilim insanları açısından önem taşıyor.</p>
-
-        <p>Araştırmacılar, kadın sağlığı ile metabolik hastalıklar arasındaki bağlantıların daha iyi anlaşılmasının gelecekte risk değerlendirmesine ve sağlık hizmetlerinin geliştirilmesine katkı sağlayabileceğini düşünüyor.</p>
-
-        <p><strong>Mevcut bulgular kişisel olarak diyabet tanısı veya risk değerlendirmesi yapmak için kullanılmamalıdır.</strong> Sağlıkla ilgili endişelerde değerlendirme bir sağlık profesyoneli tarafından yapılmalıdır.</p>
-
-        <div class="haber-kaynak">
-            <strong>Kaynak:</strong> National Institutes of Health (NIH)
-            <br>
-            <strong>Kaynak tarihi:</strong> 8 Eylül 2026
-            <br>
-            <strong>Haberİsta yayın tarihi:</strong> 9 Eylül 2026
-        </div>
-    `
-},
-{
-id: 35,
-kategori: "Teknoloji",
-baslik: "Avrupa'nın yapay zeka şirketi Mistral'den dev yatırım: Değerlemesi 24 milyar dolara ulaştı",
-spot: "Fransız yapay zeka şirketi Mistral, 3 milyar euroluk yeni yatırım turunu tamamladı. Şirketin değerlemesi yaklaşık 21 milyar euroya, yani 24 milyar dolara yükselirken yatırımın yapay zeka modelleri ve ileri araştırmaların geliştirilmesinde kullanılması bekleniyor.",
-tarih: "9 Eylül 2026",
-saat: "00:50",
-yazar: "Haberİsta Teknoloji Servisi",
-kaynak: "Reuters",
-gorsel: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1600&q=85",
-
-seo: {
-    title: "Mistral AI 3 milyar euro yatırım aldı | Haberİsta",
-    description: "Fransız yapay zeka şirketi Mistral, 3 milyar euroluk yatırım turuyla yaklaşık 21 milyar euro değerlemeye ulaştı. İşte yatırımın ayrıntıları.",
-    keywords: [
-        "Mistral AI",
-        "Mistral yapay zeka",
-        "yapay zeka",
-        "AI",
-        "Fransa yapay zeka",
-        "teknoloji haberleri",
-        "Mistral yatırım",
-        "yapay zeka yatırımı"
-    ],
-    canonical: "https://haberisa.vercel.app/haber/mistral-ai-3-milyar-euro-yatirim"
-},
-
-icerik: `
-    <p><strong>Avrupa'nın yapay zeka alanındaki en dikkat çekici şirketlerinden Mistral, yeni yatırım turuyla büyümesini hızlandıracak önemli bir finansman sağladı.</strong> Fransa merkezli şirket, 3 milyar euroluk yatırım turunu tamamladığını açıkladı. Bu yatırımla birlikte Mistral'in değerlemesi yaklaşık 21 milyar euroya, başka bir ifadeyle yaklaşık 24 milyar dolara yükseldi.</p>
-
-    <p>8 Eylül 2026'da duyurulan yatırım turu, özel bir Avrupa teknoloji şirketinin gerçekleştirdiği en büyük hisse senedi finansmanlarından biri olarak öne çıktı. Şirket, elde edilen kaynağı yapay zeka modellerinin geliştirilmesi, ileri düzey araştırmalar ve küresel büyüme çalışmalarında kullanmayı planlıyor.</p>
-
-    <h2>Mistral'e 3 milyar euroluk yatırım</h2>
-
-    <p>Mistral'in yeni finansman turuna mevcut yatırımcıların yanı sıra önemli yeni yatırımcılar da katıldı. Yatırım turuna PSG Equity liderlik ederken, Güney Kore merkezli Samsung Electronics ve Avrupa Birliği destekli Scaleup Europe Fund da şirkete ilk kez yatırım yapan kuruluşlar arasında yer aldı.</p>
-
-    <p>Şirketin aldığı toplam yatırımın büyüklüğü, Avrupa'nın küresel yapay zeka yarışındaki konumunu güçlendirme çabasının da dikkat çekici örneklerinden biri olarak değerlendiriliyor.</p>
-
-    <h2>Değerleme 24 milyar dolara çıktı</h2>
-
-    <p>Yeni yatırım sonrasında Mistral'in şirket değeri yaklaşık <strong>21 milyar euro</strong> seviyesine yükseldi. Bu rakam yaklaşık 24 milyar dolara karşılık geliyor.</p>
-
-    <p>Mistral henüz üç yıllık bir şirket olmasına rağmen Avrupa'nın en yüksek değerlemeye sahip özel teknoloji şirketlerinden biri konumuna geldi. Şirket yöneticileri, yeni finansmanın Mistral'in büyük yapay zeka şirketleriyle rekabet edebilmesi için önemli bir kaynak sağlayacağını belirtiyor.</p>
-
-    <h2>Avrupa'nın yapay zeka yarışındaki hedefi</h2>
-
-    <p>Yapay zeka sektöründe ABD merkezli şirketler uzun süredir küresel yarışın önemli bölümünü elinde tutuyor. Avrupa ise kendi yapay zeka altyapısını ve şirketlerini geliştirerek dışa bağımlılığını azaltmaya çalışıyor.</p>
-
-    <p>Mistral bu stratejinin en önemli şirketlerinden biri olarak görülüyor. Şirketin büyümesi, Avrupa'nın yalnızca yapay zeka teknolojilerini kullanan bir pazar olmak yerine kendi büyük yapay zeka modellerini geliştirme hedefi açısından da önem taşıyor.</p>
-
-    <p>Özellikle gelişmiş yapay zeka modellerine erişimin jeopolitik gelişmelerden etkilenebilmesi, Avrupa'nın kendi teknoloji şirketlerine sahip olmasının stratejik önemini artırıyor.</p>
-
-    <h2>Yeni yatırım nerede kullanılacak?</h2>
-
-    <p>Mistral'in finansmandan elde ettiği kaynağın önemli bölümünü yapay zeka modellerinin geliştirilmesine ve <strong>frontier research</strong> olarak adlandırılan ileri düzey araştırmalara yönlendirmesi bekleniyor.</p>
-
-    <p>Şirket ayrıca Avrupa dışındaki pazarlarda büyümeye devam ediyor. Mistral'in müşteri tabanında Asya ve Kuzey Amerika'nın payının arttığı belirtilirken, şirketin yıl sonuna kadar yıllık tekrarlayan gelirlerini yaklaşık 1 milyar dolar seviyesine çıkarmayı hedeflediği aktarıldı.</p>
-
-    <h2>Microsoft da Mistral ile çalışıyor</h2>
-
-    <p>Mistral'in büyüme sürecinde Microsoft ile yaptığı iş birliği de dikkat çekiyor. Microsoft daha önce Mistral'in Avrupa'daki bilgi işlem altyapısına milyarlarca dolarlık yatırım yapmayı içeren bir anlaşma gerçekleştirmişti.</p>
-
-    <p>Ancak Reuters'ın aktardığı bilgilere göre Microsoft, Mistral'in son 3 milyar euroluk yatırım turuna katılan yatırımcılar arasında yer almadı.</p>
-
-    <h2>Mistral OpenAI ve Anthropic ile rekabet ediyor</h2>
-
-    <p>Mistral, yapay zeka modelleri konusunda OpenAI ve Anthropic gibi ABD merkezli çok daha büyük şirketlerle rekabet ediyor.</p>
-
-    <p>Şirketin modellerinin önemli özelliklerinden biri, müşterilerin bazı modelleri kendi sunucularında çalıştırabilmesine ve özelleştirebilmesine imkan veren açık yaklaşımı. Bu özellik özellikle şirketlerin verilerini kendi altyapılarında tutmak istediği kurumsal yapay zeka pazarında önem kazanıyor.</p>
-
-    <h2>Şirketin geleceği</h2>
-
-    <p>Mistral'in yeni yatırım turuyla birlikte önündeki dönemde araştırma, ürün geliştirme ve uluslararası büyümeye daha fazla kaynak ayırması bekleniyor.</p>
-
-    <p>Şirketin halka arz seçeneğinin gelecekte değerlendirilebileceği belirtilse de şu aşamada bunun için kesinleşmiş bir takvim bulunmuyor.</p>
-
-    <p><strong>Sonuç olarak Mistral'in 3 milyar euroluk yeni finansman turu, yalnızca şirket açısından değil Avrupa'nın yapay zeka sektöründeki konumu açısından da önemli bir gelişme olarak öne çıkıyor.</strong> Yeni yatırımın Mistral'in küresel rakipleriyle arasındaki teknoloji farkını azaltıp azaltamayacağı ise önümüzdeki dönemde görülecek.</p>
-
-    <div class="haber-kaynak">
-        <strong>Kaynak:</strong> Reuters
-        <br>
-        <strong>Haber tarihi:</strong> 8 Eylül 2026
-        <br>
-        <strong>Haberİsta yayın tarihi:</strong> 9 Eylül 2026
-    </div>
-`
-
-},
-
-{
-id: 34,
-kategori: "Son dakika",
-baslik: "Bilim dünyasında dikkat çeken gelişme: DNA'nın genetik alfabesi 8 harfe çıkarıldı",
-spot: "ABD'deki UC San Diego araştırmacıları, doğal dört harfli genetik kodun ötesine geçen 8 harfli sentetik DNA sisteminin hücresel bir enzim tarafından okunup RNA'ya aktarılabildiğini gösterdi. Çalışma, sentetik biyoloji ve gelecekteki biyoteknoloji uygulamaları açısından önemli bir adım olarak değerlendiriliyor.",
-tarih: "9 Eylül 2026",
-saat: "00:50",
-gorsel: "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?auto=format&fit=crop&w=1600&q=85",
-yazar: "Haberİsta Bilim Servisi",
-kaynak: "University of California San Diego, Nature Communications",
-icerik: ` <p><strong>Bilim dünyasında genetik bilginin nasıl depolandığı ve işlendiğine ilişkin dikkat çekici bir gelişme yaşandı.</strong> ABD'deki University of California San Diego (UC San Diego) araştırmacıları, yaşamın doğal olarak kullandığı dört harfli genetik alfabeyi genişleten sentetik bir DNA sisteminin, hücresel bir enzim tarafından okunup RNA'ya aktarılabildiğini ortaya koydu.</p>
-
-    <p>Nature Communications dergisinde 2 Eylül 2026 tarihinde yayımlanan araştırmada bilim insanları, DNA'nın doğal genetik harfleri olan adenin (A), timin (T), sitozin (C) ve guaninin (G) yanına sentetik baz çiftlerinin eklenmesiyle oluşturulan <strong>8 harfli genetik alfabeyi</strong> inceledi.</p>
-
-    <h2>DNA'nın alfabesi neden önemli?</h2>
-
-    <p>DNA, canlıların genetik bilgilerini taşıyan temel moleküler yapılardan biri. Bugüne kadar bilinen tüm yaşam formları genetik bilgiyi dört temel baz üzerinden depoluyor. Bu bazlar belirli eşleşmeler oluşturarak DNA'nın yapısını ve genetik bilginin aktarılmasını mümkün kılıyor.</p>
-
-    <p>Araştırmacıların üzerinde çalıştığı sistem ise bu doğal yapıya dört sentetik harf daha eklenmesini hedefliyor. Böylece teorik olarak genetik bilginin depolanması ve nükleik asitlerin sahip olabileceği kimyasal çeşitlilik artırılabiliyor.</p>
-
-    <h2>RNA polimeraz sentetik harfleri okuyabildi</h2>
-
-    <p>Araştırmanın en önemli noktalarından biri, DNA'daki bilgiyi RNA'ya aktaran <strong>RNA polimeraz</strong> enziminin sentetik baz çiftlerini de tanıyabildiğinin gösterilmesi oldu.</p>
-
-    <p>Bilim insanları deneylerde <em>Escherichia coli</em> bakterisinden elde edilen RNA polimerazı kullandı. Yapılan çalışmalar, enzimin doğal baz çiftlerinin yanı sıra <strong>P:Z ve B:S</strong> olarak adlandırılan iki sentetik baz çiftini de işleyebildiğini ortaya koydu.</p>
-
-    <p>Bu durum önemli çünkü sentetik bir genetik alfabenin yalnızca DNA üzerinde bulunması yeterli değil. Hücrenin genetik bilgiyi kullanabilmesi için bu bilginin DNA'dan RNA'ya aktarılabilmesi gerekiyor.</p>
-
-    <h2>Bilim insanları moleküler yapıyı görüntüledi</h2>
-
-    <p>Araştırmacılar yalnızca biyokimyasal deneylerle yetinmedi. RNA polimerazın sentetik bazları nasıl tanıdığını anlamak amacıyla yüksek çözünürlüklü <strong>kriyo-elektron mikroskobu (cryo-EM)</strong> kullandılar.</p>
-
-    <p>Elde edilen yapılar 2,42 ile 2,75 angström arasında çözünürlüğe ulaştı. Görüntüler, sentetik baz çiftlerinin enzimin aktif bölgesinde doğal baz çiftlerine benzer bir geometri oluşturabildiğini gösterdi.</p>
-
-    <p>Bu sonuç, RNA polimerazın tamamen yeni bir moleküler mekanizma geliştirmeden sentetik genetik harfleri tanıyabildiğine ilişkin önemli kanıt sağladı.</p>
-
-    <h2>8 harfli DNA ne işe yarayabilir?</h2>
-
-    <p>Araştırmacılara göre genişletilmiş genetik alfabeler, gelecekte biyoteknoloji ve sentetik biyoloji alanlarında yeni uygulamaların geliştirilmesine katkı sağlayabilir.</p>
-
-    <p>Daha geniş bir genetik alfabe, nükleik asitlerin kimyasal çeşitliliğini artırma potansiyeline sahip. Bu durum gelecekte yeni moleküler araçların, tanı yöntemlerinin veya özel olarak tasarlanmış biyolojik sistemlerin geliştirilmesi için kullanılabilir.</p>
-
-    <p>Ancak araştırma henüz doğrudan insanlarda kullanılabilecek bir teknoloji ortaya koymuş değil. Çalışmanın temel önemi, genişletilmiş genetik bilginin doğal hücresel mekanizmalar tarafından işlenmesinin mümkün olduğunu moleküler düzeyde göstermesi.</p>
-
-    <h2>Hachimoji DNA nedir?</h2>
-
-    <p>Araştırmada ele alınan sistem, literatürde <strong>Hachimoji DNA</strong> olarak bilinen genişletilmiş genetik alfabe yaklaşımıyla bağlantılı. “Hachimoji” Japoncada “sekiz harf” anlamına geliyor.</p>
-
-    <p>Sistem, doğal DNA'daki dört harfe ek olarak sentetik baz çiftleri kullanarak genetik alfabeyi genişletiyor. Araştırmacıların yeni çalışması ise bu sentetik harflerin yalnızca DNA içinde bulunabileceğini değil, genetik bilginin aktarılmasında görev yapan doğal bir enzimin bunları da tanıyabildiğini gösteriyor.</p>
-
-    <h2>Araştırmada bir doğruluk sorunu da incelendi</h2>
-
-    <p>Bilim insanları deneyler sırasında sentetik bazlardan birinin doğal guanin ile istenmeyen şekilde eşleşebilmesi gibi bir sorun da gözlemledi. Araştırmacılar, Z* adı verilen değiştirilmiş bir sentetik baz analoğu kullanarak bu hatalı eşleşme eğilimini azaltmayı başardı.</p>
-
-    <p>Bu ayrıntı, genişletilmiş genetik sistemlerin gelecekte kullanılabilmesi açısından önemli. Çünkü daha fazla genetik harf eklemek kadar, bu harflerin doğru ve güvenilir biçimde tanınması da gerekiyor.</p>
-
-    <h2>Bilim dünyası için neden önemli?</h2>
-
-    <p>Çalışma, sentetik biyolojinin temel hedeflerinden biri olan doğal genetik sistemlerin kontrollü şekilde genişletilmesi konusunda önemli bir adım oluşturuyor.</p>
-
-    <p>Araştırmacılar, doğal yaşamın kullandığı genetik mekanizmaların sentetik bazları belirli koşullar altında işleyebildiğini göstererek gelecekte daha karmaşık yapay biyolojik sistemlerin tasarlanmasına yönelik moleküler bir temel sundu.</p>
-
-    <p>Şimdilik çalışma laboratuvar araştırması seviyesinde bulunuyor. Bununla birlikte elde edilen sonuçlar, gelecekte genetik bilgi taşıyan moleküllerin tasarımında doğadaki dört harften daha geniş bir alfabenin kullanılabileceği fikrini güçlendiriyor.</p>
-
-    <div class="haber-kaynak">
-        <strong>Kaynak:</strong> University of California San Diego ve Nature Communications.
-        <br>
-        <strong>Bilimsel çalışma:</strong> "Structural basis of transcription of the hachimoji eight-letter alphabet by E. coli RNA polymerase"
-    </div>
-`
-
-},
-
-{
-    id: 33,
-    kategori: "Gündem",
-    baslik: "Mersin'in Bozyazı ilçesindeki yangına havadan ve karadan müdahale ediliyor",
-    spot: "Mersin'in Bozyazı ilçesinde ormanlık alanda çıkan yangına havadan ve karadan müdahale sürüyor. Yangının enerjisinin düşürüldüğü açıklanırken, ekiplerin alevleri tamamen kontrol altına almak için çalışmaları devam ediyor.",
-    tarih: "8 Eylül 2026",
-    saat: "19:39",
-    gorsel: "/images/bozyazi-orman-yangini.jpeg",
-    icerik: `
-        <p><strong>Mersin'in Bozyazı ilçesinde çıkan orman yangınına ekiplerin havadan ve karadan müdahalesi sürüyor.</strong> Tekeli Mahallesi Aksaz mevkisinde öğle saatlerinde başlayan yangınla mücadele için bölgeye çok sayıda ekip ve araç sevk edildi.</p>
-
-        <p>Edinilen bilgilere göre yangın, 8 Eylül 2026 günü saat 12.08 sıralarında Tekeli Mahallesi Aksaz mevkisindeki ormanlık alanda çıktı. Yangın ihbarının alınmasının ardından ekipler kısa sürede bölgeye yönlendirildi ve ilk müdahale saat 12.11 itibarıyla başlatıldı.</p>
-
-        <h2>Yangına yoğun müdahale</h2>
-
-        <p>Yangının kontrol altına alınması amacıyla bölgede kapsamlı bir çalışma yürütülüyor. Söndürme çalışmalarına <strong>230 personel, 66 kara aracı, 2 uçak ve 5 helikopter</strong> katılıyor.</p>
-
-        <p>Havadan gerçekleştirilen müdahaleye uçak ve helikopterler destek verirken, karadan da arazözler ve diğer yangın söndürme araçlarıyla alevlerin ilerlediği bölgelere müdahale ediliyor.</p>
-
-        <p>Çalışmaların güçlendirilmesi amacıyla bölgeye ayrıca <strong>10 arazöz, 3 su ikmal aracı, 2 ekskavatör, 2 dozer ve 3 treyler</strong> sevk edildi.</p>
-
-        <h2>Yangının enerjisi düşürüldü</h2>
-
-        <p>Akşam saatlerinde yangınla ilgili yeni bir gelişme yaşandı. Orman Genel Müdürlüğü tarafından yapılan açıklamada, Bozyazı'daki orman yangınının <strong>enerjisinin düşürüldüğü</strong> bildirildi.</p>
-
-        <p>Ancak yangının tamamen kontrol altına alındığı yönünde bir açıklama yapılmadı. Ekiplerin alevlerin kontrol altına alınması ve bölgede güvenliğin sağlanması amacıyla çalışmalarını sürdürdüğü belirtildi.</p>
-
-        <h2>Yangının çıkış nedeni araştırılıyor</h2>
-
-        <p>Yangının henüz belirlenemeyen bir nedenle başladığı bildirildi. Yangının çıkış nedenine ilişkin incelemelerin yetkili ekipler tarafından yürütülmesi bekleniyor.</p>
-
-        <p>Yangının seraların bulunduğu alanın üst kısmındaki ormanlık bölgede başlaması nedeniyle ekiplerin müdahalesi büyük önem taşıyor. Bölgede görev yapan ekipler, yangının yeniden güçlenmemesi için çalışmalarını sürdürüyor.</p>
-
-        <h2>Havadan ve karadan müdahale sürüyor</h2>
-
-        <p>Bozyazı'daki yangında hem hava araçları hem de kara ekipleri koordineli şekilde görev yapıyor. Özellikle ormanlık alanlarda alevlerin ilerleyebileceği noktalar ekipler tarafından takip ediliyor.</p>
-
-        <p>Yangının enerjisinin düşürülmesi, söndürme çalışmalarında önemli bir gelişme olarak değerlendirilirken, ekiplerin tamamen kontrol sağlanana kadar müdahaleye devam edeceği bildiriliyor.</p>
-
-        <p><strong>Haberİsta olarak bölgedeki gelişmeleri takip ediyor ve resmi makamlardan gelecek yeni bilgileri aktarmaya devam edeceğiz.</strong></p>
-    `
-},
-{
-    id: 33,
-    kategori: "Gündem",
-    baslik: "Orgeneral Bayraktaroğlu, KKTC Başbakanı Üstel ile görüştü",
-    spot: "Genelkurmay Başkanı Orgeneral Selçuk Bayraktaroğlu, KKTC Başbakanı Ünal Üstel ile Ankara'da bir araya geldi. Görüşmede Girne açıklarında meydana gelen deniz kazasının ardından devam eden çalışmaların güçlendirilmesi ve yeni teknik imkanlar ele alındı.",
-    tarih: "8 Eylül 2026",
-    saat: "17:50",
-    yazar: "Haberİsta Haber Merkezi",
-
-    // Görsel
-    gorsel: "/images/bayraktaroglu-ustel-gorusmesi.jpeg",
-
-    icerik: `
-        <p><strong>Genelkurmay Başkanı Orgeneral Selçuk Bayraktaroğlu ile Kuzey Kıbrıs Türk Cumhuriyeti Başbakanı Ünal Üstel</strong> Ankara'da bir araya geldi. Görüşme, Girne açıklarında meydana gelen deniz kazasının ardından bölgede devam eden çalışmaların gündemde olduğu bir süreçte gerçekleştirildi.</p>
-
-        <p>Genelkurmay Başkanlığının açıklamasına göre Ünal Üstel, Genelkurmay Başkanı Orgeneral Selçuk Bayraktaroğlu ile Genelkurmay Başkanlığı Karargâhı'nda görüşme gerçekleştirdi. Görüşmeye ilişkin fotoğraflar da Genelkurmay Başkanlığının sosyal medya hesabından paylaşıldı.</p>
-
-        <h2>Görüşmenin gündeminde Girne'deki deniz kazası vardı</h2>
-
-        <p>Ünal Üstel'in Ankara'daki temaslarının önemli başlıklarından birini, <strong>Girne açıklarında meydana gelen deniz kazasının ardından devam eden arama ve kurtarma çalışmaları</strong> oluşturuyor.</p>
-
-        <p>KKTC Başbakanlığı tarafından yapılan açıklamalarda, çalışmaların güçlendirilmesi ve kayıp kişilere mümkün olan en kısa sürede ulaşılması için yeni imkanların değerlendirilmekte olduğu belirtildi.</p>
-
-        <p>Üstel'in Ankara'daki temasları kapsamında Türkiye'nin ilgili kurumlarıyla görüşmeler gerçekleştirmesi, arama çalışmalarında kullanılabilecek teknik imkanların ve süreci hızlandırabilecek alternatif yöntemlerin değerlendirilmesi açısından önem taşıyor.</p>
-
-        <h2>Yeni teknik imkanlar değerlendiriliyor</h2>
-
-        <p>Başbakan Üstel'in Türkiye'deki temaslarında, devam eden çalışmalara destek sağlayabilecek <strong>yeni teknik imkanlar ve ilave uygulamaların</strong> ele alındığı bildirildi.</p>
-
-        <p>Bu kapsamda deniz kazasının ardından yürütülen arama çalışmalarının daha etkin hale getirilmesi ve ihtiyaç duyulan ilave kapasitenin devreye alınması için yapılabilecek çalışmalar değerlendiriliyor.</p>
-
-        <p>Yetkililer, mevcut imkanların yanı sıra sürecin hızlandırılmasına katkı sağlayabilecek alternatif yöntemlerin de değerlendirilmesinin planlandığını belirtiyor.</p>
-
-        <h2>Üstel Ankara'da temaslarını sürdürüyor</h2>
-
-        <p>KKTC Başbakanı Ünal Üstel, Ankara'daki temasları kapsamında yalnızca Genelkurmay Başkanı Orgeneral Selçuk Bayraktaroğlu ile değil, Türkiye'nin farklı kurumlarının üst düzey yetkilileriyle de görüşmeler gerçekleştirdi.</p>
-
-        <p>Üstel'in Adalet Bakanı Akın Gürlek, Milli Savunma Bakanı Yaşar Güler ve Deniz Kuvvetleri Komutanı Oramiral Ercüment Tatlıoğlu ile de görüşmeler yaptığı bildirildi.</p>
-
-        <p>Bu görüşmelerde Girne açıklarında meydana gelen kazanın ardından yürütülen çalışmaların mevcut durumu ve önümüzdeki süreçte atılabilecek adımlar değerlendirildi.</p>
-
-        <h2>Batığın çıkarılması da gündemde</h2>
-
-        <p>Ankara'daki temaslarda yalnızca kayıp kişilere ulaşılması için sürdürülen çalışmaların değil, <strong>batığın çıkarılmasına yönelik teknik imkanların</strong> da değerlendirildiği açıklandı.</p>
-
-        <p>Batığın bulunduğu bölgedeki şartlar, kullanılabilecek teknik ekipmanlar ve operasyonun nasıl gerçekleştirilebileceği konusunda ilgili kurumların değerlendirmeler yaptığı belirtildi.</p>
-
-        <p>Bu çalışmaların, olayın tüm yönleriyle aydınlatılması ve kayıp kişilere ulaşılması açısından önem taşıdığı ifade ediliyor.</p>
-
-        <h2>Ünal Üstel: Öncelik kayıp kişilere ulaşmak</h2>
-
-        <p>KKTC Başbakanı Ünal Üstel, hükümetin temel önceliğinin deniz kazasının ardından kayıp kişilere en kısa sürede ulaşmak olduğunu belirtti.</p>
-
-        <p>Üstel, Türkiye Cumhuriyeti ile tam iş birliği içerisinde mevcut imkanların güçlendirilmesi ve ihtiyaç duyulan ilave kapasitenin devreye alınması için çalışmaların sürdürüldüğünü vurguladı.</p>
-
-        <p>Ankara'daki görüşmelerin de bu kapsamda gerçekleştirildiği ve ilgili kurumlar arasındaki koordinasyonun devam ettiği bildirildi.</p>
-
-        <h2>Üst düzey toplantı gerçekleştirildi</h2>
-
-        <p>Başbakan Üstel'in Ankara temasları kapsamında Cumhurbaşkanı Yardımcısı Cevdet Yılmaz başkanlığında da üst düzey bir toplantı yapılması planlandı. Toplantıda, devam eden arama çalışmalarına destek sağlayabilecek yeni teknik imkanların ve alternatif yöntemlerin kapsamlı şekilde değerlendirilmesi öngörüldü.</p>
-
-        <p>Toplantının gündeminde ayrıca batığın çıkarılması için atılabilecek yeni adımların da bulunduğu belirtildi.</p>
-
-        <h2>Çalışmalar devam ediyor</h2>
-
-        <p>Girne açıklarında meydana gelen deniz kazasının ardından bölgede yürütülen çalışmalar devam ederken, Türkiye ve KKTC makamları arasındaki koordinasyon da sürdürülüyor.</p>
-
-        <p>Yetkililer, arama çalışmalarının mümkün olan en etkin şekilde yürütülmesi ve mevcut imkanların güçlendirilmesi için çalışmalarına devam ediyor.</p>
-
-        <p>Önümüzdeki süreçte yapılacak yeni değerlendirmeler ve alınacak kararların, arama çalışmalarının seyrinde önemli rol oynaması bekleniyor.</p>
-
-        <p><strong>Haberİsta</strong>, Girne açıklarındaki deniz kazası ve devam eden arama çalışmalarına ilişkin yeni gelişmeleri takip ederek okuyucularına aktarmaya devam edecek.</p>
-    `,
-},
-{
-    id: 31,
-    kategori: "Dünya",
-    baslik: "Putin ve Trump telefonda görüştü: Ukrayna savaşı ve barış süreci masada",
-    spot: "Rusya Devlet Başkanı Vladimir Putin ile ABD Başkanı Donald Trump, Ukrayna'daki savaşın sona erdirilmesi ve son diplomatik temasların ardından atılabilecek adımları görüştü.",
-    tarih: "8 Eylül 2026",
-    saat: "17:30",
-    yazar: "Haberİsta Haber Merkezi",
-
-    // Görsel
-    gorsel: "/images/putin-trump-telefon-gorusmesi.jpeg",
-
-    icerik: `
-        <p><strong>Rusya Devlet Başkanı Vladimir Putin ile ABD Başkanı Donald Trump</strong>, 8 Eylül 2026 tarihinde yaklaşık bir saat süren bir telefon görüşmesi gerçekleştirdi. Görüşmede Ukrayna'daki savaşın sona erdirilmesine yönelik diplomatik girişimler ve ABD'li temsilcilerin son temasları ele alındı.</p>
-
-        <p>Görüşme, ABD Başkanı Trump'ın özel temsilcileri <strong>Steve Witkoff ve Jared Kushner'ın</strong> Moskova ve Kiev'de gerçekleştirdiği temasların ardından yapıldı. Kremlin tarafından yapılan açıklamada, iki liderin bu ziyaretlerin sonuçlarını değerlendirdiği ve görüşmenin yapıcı geçtiği belirtildi.</p>
-
-        <h2>Telefon görüşmesi yaklaşık bir saat sürdü</h2>
-
-        <p>Kremlin yetkililerinin aktardığı bilgilere göre Putin ve Trump arasındaki telefon görüşmesi tam olarak <strong>bir saat</strong> sürdü. Görüşmenin Ukrayna'daki çatışmanın çözümü konusunda gerçekleştirilen son diplomatik temasların ardından yapılması dikkat çekti.</p>
-
-        <p>Rusya Devlet Başkanı'nın yardımcısı Yuri Uşakov, görüşmenin yapıcı ve oldukça açık bir şekilde gerçekleştiğini açıkladı. Liderlerin son dönemde yürütülen diplomatik çalışmalar hakkında görüş alışverişinde bulunduğu belirtildi.</p>
-
-        <h2>Trump: Savaşın bir an önce sona ermesi gerekiyor</h2>
-
-        <p>Görüşmenin en önemli başlıklarından biri Ukrayna'daki savaşın sona erdirilmesi oldu. Kremlin'in açıklamasına göre Trump, çatışmanın mümkün olan en kısa sürede sona erdirilmesinin önemine dikkat çekti.</p>
-
-        <p>Trump'ın, Ukrayna'daki savaşın sona ermesinin ABD ile Rusya arasındaki ilişkilerin yeniden geliştirilmesi için önemli bir fırsat oluşturabileceğini düşündüğü aktarıldı. ABD Başkanı ayrıca iki ülke arasındaki ticari ve ekonomik ilişkilerin yeniden güçlendirilmesinin her iki taraf için de önemli kazanımlar sağlayabileceğini ifade etti.</p>
-
-        <h2>Putin savaş alanındaki durumu aktardı</h2>
-
-        <p>Rusya Devlet Başkanı Vladimir Putin'in ise Trump'a Ukrayna'daki savaşın mevcut durumu hakkında değerlendirmelerde bulunduğu bildirildi. Putin'in ayrıca çatışmaların daha hızlı şekilde sona erdirilmesi konusunda ABD'nin atabileceği adımlara ilişkin görüşlerini aktardığı belirtildi.</p>
-
-        <p>Rusya tarafı, Ukrayna'daki çatışmanın çözümüne yönelik diplomatik kanalların açık tutulmasının önemine vurgu yaptı. İki liderin görüşmede karşılıklı olarak son gelişmeleri değerlendirdiği kaydedildi.</p>
-
-        <h2>Rusya'dan Avrupa açıklaması</h2>
-
-        <p>Telefon görüşmesinde Avrupa'daki güvenlik tartışmalarının da gündeme geldiği açıklandı. Kremlin'e göre Putin, Rusya'nın Avrupa ülkelerine yönelik saldırgan planları olmadığını Trump'a iletti.</p>
-
-        <p>Putin ayrıca Avrupa'da Rusya kaynaklı tehditlere ilişkin değerlendirmelerin, bazı ülkeler tarafından savunma harcamalarını artırmak ve Ukrayna'ya yönelik desteği sürdürmek için kullanıldığını savundu.</p>
-
-        <h2>Esir değişimleri de görüşüldü</h2>
-
-        <p>Putin ve Trump'ın görüşmesinde insani konuların da ele alındığı bildirildi. Bu kapsamda <strong>esir ve tutuklu değişimlerinin</strong> devam ettirilmesi konusunda çalışmaların sürdürülmesinin önemi üzerinde duruldu.</p>
-
-        <p>Tarafların insani konulardaki temasların devam etmesi konusunda hemfikir olduğu belirtildi. Daha önce gerçekleştirilen esir değişimleri, Rusya-Ukrayna savaşında iki taraf arasındaki sınırlı iletişim kanallarından biri olmuştu.</p>
-
-        <h2>ABD'li temsilcilerin Moskova ve Kiev temasları</h2>
-
-        <p>Putin ve Trump arasındaki telefon görüşmesinin arka planında ABD'li temsilcilerin son günlerde gerçekleştirdiği diplomatik temaslar bulunuyor. Steve Witkoff ve Jared Kushner, Moskova'da Putin ile, Kiev'de ise Ukrayna Devlet Başkanı Volodimir Zelenskiy ile görüşmeler gerçekleştirdi.</p>
-
-        <p>Bu temaslarda Ukrayna'daki savaşın sona erdirilmesine yönelik çeşitli önerilerin değerlendirildiği bildirildi. Ukrayna tarafı bazı önerileri olumlu bulduğunu açıklarken, görüşmelerden henüz kesin bir barış anlaşması veya kapsamlı ateşkes kararı çıkmadı.</p>
-
-        <h2>Yeni görüşmelerin önü açık</h2>
-
-        <p>Putin ve Trump'ın son telefon görüşmesinin ardından iki liderin iletişimi sürdürme konusunda anlaşmaya vardığı açıklandı. Kremlin, liderlerin ihtiyaç duyulması halinde yeniden telefon görüşmeleri gerçekleştireceğini bildirdi.</p>
-
-        <p>Bu gelişme, Washington ile Moskova arasındaki diplomatik temasların devam edeceği şeklinde değerlendiriliyor. Ancak görüşmenin ardından Ukrayna'daki savaşın sona erdiğine veya kesin bir ateşkes anlaşmasına varıldığına ilişkin herhangi bir açıklama yapılmadı.</p>
-
-        <p>Ukrayna'daki savaşın geleceğine ilişkin müzakerelerde özellikle çatışmanın nasıl sona erdirileceği ve tarafların hangi şartlarda anlaşabileceği konusu önemini koruyor.</p>
-
-        <h2>Diplomatik süreç yakından takip ediliyor</h2>
-
-        <p>ABD'nin Moskova ve Kiev arasında yürüttüğü diplomatik girişimlerin önümüzdeki günlerde devam etmesi bekleniyor. Trump yönetimi savaşın sona erdirilmesi için yeni görüşmeler yapılmasını isterken, Rusya ve Ukrayna arasındaki temel anlaşmazlıkların çözümü konusunda henüz net bir sonuç ortaya çıkmış değil.</p>
-
-        <p>Putin ve Trump arasındaki son görüşme de bu nedenle uluslararası kamuoyunun dikkatini çekti. Liderlerin yeniden iletişim kurma konusunda anlaşması, diplomatik sürecin devam edeceğine işaret ederken, somut bir barış anlaşmasına ulaşılıp ulaşılmayacağı ise önümüzdeki dönemde belli olacak.</p>
-
-        <p><strong>Haberİsta</strong>, Putin ve Trump arasındaki görüşmenin ardından yaşanacak yeni gelişmeleri ve Ukrayna'daki diplomatik süreci takip ederek okuyucularına aktarmaya devam edecek.</p>
-    `,
-},
-   
-{
-    id: 30,
-    kategori: "Gündem",
-    baslik: "Girne açıklarında batan gemi için arama-kurtarma çalışmaları sürüyor",
-    spot: "KKTC'nin Girne açıklarında meydana gelen gemi kazasının ardından bölgede başlatılan arama-kurtarma çalışmaları devam ediyor.",
-    tarih: "7 Eylül 2026",
-    saat: "23:50",
-    yazar: "Haberİsta Haber Merkezi",
-
-    // Görsel
-    gorsel: "/images/girne-gemi-arama-kurtarma.jpeg",
-
-    icerik: `
-        <p><strong>KKTC'nin Girne açıklarında meydana gelen gemi kazasının</strong> ardından bölgede başlatılan arama kurtarma çalışmaları devam ediyor.</p>
-
-        <p>Türk Deniz Kuvvetleri'ne bağlı arama-kurtarma unsurları bölgede çalışmalarını sürdürüyor. Ekipler, kazanın meydana geldiği deniz sahasında kapsamlı arama faaliyetleri gerçekleştiriyor.</p>
-
-        <h2>Arama kurtarma çalışmaları sürüyor</h2>
-
-        <p>Geminin batmasının ardından başlatılan çalışmalar, kazanın meydana geldiği bölgede yoğunlaştırıldı. Ekipler deniz altında ve yüzeyde arama faaliyetlerine devam ediyor.</p>
-
-        <h2>Robotik sistemlerden yararlanılıyor</h2>
-
-        <p>Arama faaliyetlerinde deniz altında inceleme yapabilen robotik sistemler de kullanılıyor. Ekipler, bölgede detaylı tarama gerçekleştirerek çalışmalarını sürdürüyor.</p>
-
-        <h2>TCG Alemdar ve TCG Işın bölgede</h2>
-
-        <p>Türk Deniz Kuvvetleri'ne bağlı <strong>TCG Alemdar</strong> ve <strong>TCG Işın</strong> gemilerinin bölgede arama-kurtarma faaliyetlerini sürdürdüğü bildirildi.</p>
-
-        <p>Çalışmaların deniz koşulları ve bölgenin özellikleri dikkate alınarak koordineli şekilde yürütüldüğü belirtildi.</p>
-
-        <h2>Yeni gelişmeler bekleniyor</h2>
-
-        <p>Girne açıklarında meydana gelen olayla ilgili ekiplerin çalışmaları devam ederken, resmi makamlar tarafından yapılacak yeni açıklamalar takip ediliyor.</p>
-
-        <p><strong>Haberİsta</strong>, olayla ilgili yeni gelişmeleri okuyucularına aktarmaya devam edecek.</p>
-    `,
-},
-{
-    id: 29,
-    kategori: "Gündem",
-    baslik: "Türkiye'de gündem yoğun: Ekonomi, teknoloji ve günlük yaşamda yeni gelişmeler takip ediliyor",
-    spot: "Türkiye'de gün boyunca farklı alanlarda yaşanan gelişmeler vatandaşların gündemindeki yerini koruyor. Ekonomiden teknolojiye, eğitimden günlük yaşama kadar birçok başlık yakından takip ediliyor.",
-    tarih: "7 Eylül 2026",
-    saat: "15:30",
-    gorsel: "images/gundem.jpeg",
-    kaynak: "HABERİSTA Haber Merkezi",
-
-    icerik: `
-        <p>Türkiye'de yeni günle birlikte birçok farklı başlık kamuoyunun gündeminde yer almaya devam ediyor. Ekonomi, teknoloji, eğitim, spor ve günlük yaşamla ilgili gelişmeler vatandaşlar tarafından yakından takip edilirken, resmi kurumlardan yapılacak açıklamalar da merakla bekleniyor.</p>
-
-        <p>Gündemde öne çıkan konular arasında vatandaşların günlük hayatını doğrudan veya dolaylı olarak etkileyebilecek gelişmeler bulunuyor. Gün içerisinde yapılan açıklamalar, alınan kararlar ve ortaya çıkan yeni bilgiler haber merkezleri tarafından takip ediliyor.</p>
-
-        <h2>Ekonomide gelişmeler izleniyor</h2>
-
-        <p>Ekonomi gündeminde piyasaların genel görünümü, fiyat hareketleri ve yeni ekonomik kararlar öne çıkıyor. Vatandaşlar özellikle günlük harcamalarını etkileyebilecek gelişmeleri yakından takip ediyor. Piyasalarda yaşanan değişimlerin yanı sıra ekonomi yönetiminden gelecek açıklamalar da gündemin önemli başlıkları arasında bulunuyor.</p>
-
-        <p>Uzmanlar ve ekonomi çevreleri tarafından yapılan değerlendirmelerde, güncel gelişmelerin tek bir veri üzerinden değerlendirilmemesi gerektiği belirtilirken, resmi açıklamalar ve açıklanan ekonomik göstergelerin birlikte takip edilmesinin önem taşıdığı ifade ediliyor.</p>
-
-        <h2>Teknoloji gündemindeki hareketlilik sürüyor</h2>
-
-        <p>Teknoloji alanında ise yapay zekâ, dijital hizmetler, akıllı cihazlar ve internet teknolojilerindeki gelişmeler dikkat çekiyor. Dijital teknolojilerin günlük yaşamın daha fazla alanında kullanılmasıyla birlikte yeni uygulamalar ve hizmetler de kullanıcıların ilgisini çekiyor.</p>
-
-        <p>Özellikle yapay zekâ teknolojilerindeki gelişmeler, eğitimden iş dünyasına kadar birçok alanda tartışılmaya devam ediyor. Yeni teknolojilerin sunduğu fırsatların yanında güvenlik, gizlilik ve doğru bilgiye erişim gibi konular da önemini koruyor.</p>
-
-        <h2>Eğitim gündemi de yakından takip ediliyor</h2>
-
-        <p>Eğitim alanında öğrenciler, veliler ve öğretmenler yeni açıklamaları takip ediyor. Sınav takvimleri, eğitim programları ve okullarla ilgili gelişmeler özellikle öğrencilerin gündeminde bulunuyor.</p>
-
-        <p>Yeni eğitim dönemine ilişkin açıklamalar yapılmasıyla birlikte öğrencilerin ders programları, sınav hazırlıkları ve eğitim süreçleriyle ilgili gelişmeler de takip edilmeye devam ediyor. Resmi kurumlar tarafından yapılacak açıklamalar, eğitim gündemindeki belirsizliklerin giderilmesi açısından önem taşıyor.</p>
-
-        <h2>Günlük yaşamla ilgili gelişmeler vatandaşların takibinde</h2>
-
-        <p>Vatandaşların günlük hayatını ilgilendiren ulaşım, hava durumu, kamu hizmetleri ve çeşitli sosyal konular da gün içerisinde takip edilen başlıklar arasında yer alıyor. Özellikle değişiklik veya yeni düzenleme içeren açıklamalar vatandaşların dikkatini çekiyor.</p>
-
-        <p>Gün içerisinde ortaya çıkan gelişmelerin doğrulanması da önem taşıyor. Sosyal medyada hızla yayılan bilgilerin tamamının doğru olmayabileceği belirtilirken, vatandaşların önemli konularda resmi kurumların açıklamalarını ve güvenilir haber kaynaklarını takip etmesi gerekiyor.</p>
-
-        <h2>Dünya gündeminde önemli başlıklar</h2>
-
-        <p>Türkiye'nin yanı sıra dünya gündemindeki gelişmeler de yakından izleniyor. Ülkeler arasındaki diplomatik ilişkiler, ekonomik gelişmeler, bölgesel olaylar ve uluslararası kuruluşların açıklamaları gün içerisinde haber akışının önemli bölümünü oluşturuyor.</p>
-
-        <p>Uluslararası gelişmelerin ekonomi, enerji, ulaşım ve ticaret gibi farklı alanlarda etkileri olabileceği için dünya gündemindeki açıklamalar Türkiye'deki vatandaşlar ve piyasalar tarafından da takip ediliyor.</p>
-
-        <h2>Yeni açıklamalar geldikçe gelişmeler aktarılacak</h2>
-
-        <p>Gün içerisinde gündeme gelen başlıklarla ilgili yeni açıklamaların yapılması halinde haber akışının güncellenmesi bekleniyor. Özellikle resmi kurumlar tarafından paylaşılacak yeni bilgiler, mevcut gelişmelerin daha net anlaşılmasına yardımcı olacak.</p>
-
-        <p>HABERİSTA Haber Merkezi olarak Türkiye ve dünyadaki önemli gelişmeleri takip ediyor, doğrulanmış bilgileri okuyucularımıza aktarmaya devam ediyoruz. Gündemdeki konularla ilgili yeni gelişmeler yaşandıkça haberimiz güncellenecektir.</p>
-
-        <p><strong>Not:</strong> Bu haber genel gündem değerlendirmesi niteliğindedir. Belirli bir olay, karar veya resmi açıklamayla ilgili kesin bilgiler için ilgili kurumların güncel duyuruları takip edilmelidir.</p>
-    `
-},
     {
-        id: 21,
+        id: 56,
         kategori: "Gündem",
-
-        baslik:
-            "Kabine bugün toplanıyor: Gündemde ekonomi, güvenlik ve 'Terörsüz Türkiye' süreci var",
-
-        spot:
-            "Cumhurbaşkanı Recep Tayyip Erdoğan başkanlığındaki Cumhurbaşkanlığı Kabinesi bugün Beştepe'de toplanacak. Toplantıda ekonomi, güvenlik, dış politika, 'Terörsüz Türkiye' süreci ve sosyal konut çalışmalarının değerlendirilmesi bekleniyor.",
-
+        baslik: "Cumhurbaşkanı Erdoğan'dan Filenin Sultanları'na kabul: Avrupa şampiyonluğunun ardından buluşma",
+        spot: "Cumhurbaşkanı Recep Tayyip Erdoğan, Avrupa şampiyonluğunun ardından A Milli Kadın Voleybol Takımı'nı kabul etti.",
+        tarih: "9 Eylül 2026",
+        saat: "09:15",
+        gorsel: "images/AVRUPA.jpeg",
+        kaynak: "HABERİSTA",
+        yazar: "Haberİsta Haber Merkezi",
         icerik: `
+            FİLENİN SULTANLARI CUMHURBAŞKANLIĞI'NDA
 
-            KABİNE BUGÜN BEŞTEPE'DE TOPLANIYOR
+            A Milli Kadın Voleybol Takımı'nın Avrupa
+            şampiyonluğunun ardından milli takım oyuncuları
+            Cumhurbaşkanı Recep Tayyip Erdoğan tarafından
+            kabul edildi.
 
-            Cumhurbaşkanı Recep Tayyip Erdoğan başkanlığındaki
-            Cumhurbaşkanlığı Kabinesi, 7 Eylül 2026 Pazartesi günü
-            Cumhurbaşkanlığı Külliyesi'nde toplanacak.
+            AVRUPA ŞAMPİYONLUĞUNUN ARDINDAN
 
-            Toplantının saat 15.30'da başlaması bekleniyor.
+            Turnuvada önemli bir başarı elde eden Filenin
+            Sultanları, şampiyonluğun ardından Türkiye'de
+            büyük bir coşkuyla karşılandı.
 
-            Kabine toplantısında Türkiye'nin iç ve dış gündemindeki
-            gelişmelerin yanı sıra ekonomi, güvenlik, dış politika ve
-            "Terörsüz Türkiye" sürecine ilişkin başlıkların
-            değerlendirilmesi bekleniyor.
+            Cumhurbaşkanı Erdoğan'ın milli takım oyuncularını
+            ve teknik heyeti kabulünde şampiyonluk süreci
+            ve takımın elde ettiği başarı gündeme geldi.
 
-            Toplantının ardından Cumhurbaşkanı Erdoğan'ın kamuoyuna
-            açıklama yapması bekleniyor.
+            MİLLİ TAKIMA TEBRİK
 
-            "TERÖRSÜZ TÜRKİYE" SÜRECİ
+            Milli takımın Avrupa şampiyonluğu Türkiye genelinde
+            geniş yankı uyandırırken spor dünyasından da
+            çok sayıda tebrik mesajı geldi.
 
-            Kabinenin gündeminde bulunması beklenen başlıklardan biri
-            "Terörsüz Türkiye" sürecindeki son gelişmeler olacak.
+            BAŞARI TÜRK SPORUNDA ÖNEMLİ BİR YER TUTUYOR
 
-            Süreç kapsamında yürütülen çalışmalar, güvenlik politikaları
-            ve önümüzdeki dönemde atılması planlanan adımların
-            değerlendirilmesi bekleniyor.
+            Filenin Sultanları'nın elde ettiği başarı,
+            Türkiye'de kadın voleyboluna ve milli takıma
+            yönelik ilgiyi artıran gelişmeler arasında
+            değerlendiriliyor.
+
+            HABERİSTA Spor ve Gündem Servisi olarak
+            milli takımın gelişmelerini takip ediyoruz.
+        `
+    },
+
+    /* =====================================================
+       55 - ANTALYA COP31
+    ===================================================== */
+
+    {
+        id: 55,
+        kategori: "Çevre",
+        baslik: "Antalya COP31'e hazırlanıyor: Zirve öncesi altyapı ve ulaşım çalışmaları hızlandı",
+        spot: "Antalya'da düzenlenmesi planlanan COP31 öncesinde altyapı, ulaşım ve organizasyon hazırlıkları hız kazandı.",
+        tarih: "9 Eylül 2026",
+        saat: "09:50",
+        gorsel: "images/antalya-cop31.jpeg",
+        kaynak: "HABERİSTA",
+        yazar: "Haberİsta Çevre Servisi",
+        icerik: `
+            ANTALYA COP31'E HAZIRLANIYOR
+
+            Antalya'nın uluslararası iklim gündeminin önemli
+            organizasyonlarından COP31'e ev sahipliği yapması
+            kapsamında hazırlıklar sürüyor.
+
+            ALTYAPI ÇALIŞMALARI
+
+            Zirve öncesinde ulaşım, altyapı ve organizasyon
+            alanlarında çeşitli çalışmalar yürütülüyor.
+
+            Kentin uluslararası ziyaretçi yoğunluğuna
+            hazırlanması amacıyla farklı noktalarda
+            düzenlemeler yapılıyor.
+
+            ULAŞIM HAZIRLIKLARI
+
+            Zirve döneminde oluşabilecek yoğunluk nedeniyle
+            ulaşım planlamaları da hazırlıkların önemli
+            başlıklarından biri olarak öne çıkıyor.
+
+            ÇEVRE VE İKLİM GÜNDEMİ
+
+            COP organizasyonları küresel iklim politikalarının
+            görüşüldüğü önemli platformlar arasında yer alıyor.
+
+            Antalya'daki organizasyonun Türkiye'nin iklim
+            politikalarının uluslararası kamuoyuna aktarılması
+            açısından da önem taşıması bekleniyor.
+
+            HABERİSTA Çevre Servisi olarak hazırlıkları
+            takip ediyoruz.
+        `
+    },
+
+    /* =====================================================
+       54 - İHRACAT
+    ===================================================== */
+
+    {
+        id: 54,
+        kategori: "Ekonomi",
+        baslik: "Ağustos ihracatında rekor: Türkiye 23,5 milyar dolarlık mal ihracatı gerçekleştirdi",
+        spot: "Türkiye'nin ağustos ayı mal ihracatında 23,5 milyar dolarlık seviyeye ulaşıldı. İhracat performansı ekonomi gündeminin öne çıkan başlıkları arasında yer aldı.",
+        tarih: "9 Eylül 2026",
+        saat: "10:55",
+        gorsel: "images/ihracat.jpeg",
+        kaynak: "HABERİSTA",
+        yazar: "Haberİsta Ekonomi Servisi",
+        icerik: `
+            AĞUSTOS İHRACATINDA DİKKAT ÇEKEN PERFORMANS
+
+            Türkiye'nin ağustos ayındaki mal ihracatı ekonomi
+            gündeminin önemli başlıklarından biri oldu.
+
+            23,5 milyar dolarlık ihracat rakamı, dış ticaret
+            performansına ilişkin değerlendirmelerde öne çıktı.
+
+            İHRACATIN EKONOMİDEKİ ÖNEMİ
+
+            İhracat, Türkiye ekonomisinde üretim, istihdam,
+            döviz geliri ve dış ticaret dengesi açısından
+            önemli göstergeler arasında bulunuyor.
+
+            SEKTÖREL PERFORMANS
+
+            İhracat rakamlarının değerlendirilmesinde otomotiv,
+            makine, tekstil, savunma sanayisi ve farklı üretim
+            sektörlerinin performansı önem taşıyor.
+
+            PAZARLARDAKİ GELİŞMELER
+
+            Küresel talep koşulları, enerji maliyetleri,
+            lojistik giderleri ve döviz hareketleri ihracatçı
+            firmaların performansını etkileyebiliyor.
+
+            ÖNÜMÜZDEKİ DÖNEM
+
+            Türkiye'nin ihracat performansının yılın kalan
+            döneminde de yakından takip edilmesi bekleniyor.
+
+            HABERİSTA Ekonomi Servisi olarak dış ticaret
+            gelişmelerini takip ediyoruz.
+        `
+    },
+
+    /* =====================================================
+       53 - FETHİYE KÖRFEZİ
+    ===================================================== */
+
+    {
+        id: 53,
+        kategori: "Çevre",
+        baslik: "Fethiye Körfezi için büyük çevre çalışması: 16 milyon metreküp dip çamuru çıkarılacak",
+        spot: "Fethiye Körfezi'nin temizlenmesi amacıyla yürütülecek kapsamlı çevre çalışmasında yaklaşık 16 milyon metreküp dip çamurunun çıkarılması planlanıyor.",
+        tarih: "9 Eylül 2026",
+        saat: "11:45",
+        gorsel: "images/fethiye-korfezi.jpeg",
+        kaynak: "Anadolu Ajansı",
+        yazar: "Haberİsta Çevre Servisi",
+        icerik: `
+            FETHİYE KÖRFEZİ'NDE KAPSAMLI TEMİZLİK
+
+            Fethiye Körfezi'nin çevresel durumunun iyileştirilmesi
+            amacıyla kapsamlı bir dip temizliği çalışması
+            gündeme geldi.
+
+            16 MİLYON METREKÜP DİP ÇAMURU
+
+            Proje kapsamında yaklaşık 16 milyon metreküp
+            dip çamurunun çıkarılması planlanıyor.
+
+            ÇALIŞMANIN AMACI
+
+            Çalışmayla körfezde su kalitesinin korunması,
+            deniz ekosisteminin desteklenmesi ve çevresel
+            kirliliğin azaltılması hedefleniyor.
+
+            DENİZ EKOSİSTEMİ
+
+            Körfezlerde dipte biriken sediment ve organik
+            materyaller zaman içerisinde su ekosistemini
+            etkileyebiliyor.
+
+            UZUN VADELİ ÇALIŞMA
+
+            Projenin birkaç yıllık bir süreç içerisinde
+            yürütülmesi planlanırken çalışmaların aşamalı
+            olarak gerçekleştirilmesi bekleniyor.
+
+            ÇEVRESEL İZLEME
+
+            Temizlik çalışmalarının yanı sıra körfezin
+            çevresel durumunun düzenli olarak izlenmesi
+            önem taşıyor.
+
+            HABERİSTA Çevre Servisi olarak projedeki
+            gelişmeleri takip ediyoruz.
+        `
+    },
+
+    /* =====================================================
+       52 - ORGANİZE SUÇ OPERASYONU
+    ===================================================== */
+
+    {
+        id: 52,
+        kategori: "Gündem",
+        baslik: "4 ilde organize suç operasyonu: 137 şüpheli hakkında adli işlem",
+        spot: "Güvenlik güçlerinin 4 ilde düzenlediği organize suç operasyonlarında 137 şüpheli hakkında adli işlem başlatıldığı bildirildi.",
+        tarih: "9 Eylül 2026",
+        saat: "12:55",
+        gorsel: "images/operasyon.jpeg",
+        kaynak: "HABERİSTA",
+        yazar: "Haberİsta Gündem Servisi",
+        icerik: `
+            4 İLDE ORGANİZE SUÇ OPERASYONU
+
+            Güvenlik güçleri tarafından farklı illerde
+            organize suç yapılanmalarına yönelik operasyonlar
+            gerçekleştirildi.
+
+            137 ŞÜPHELİ HAKKINDA İŞLEM
+
+            Operasyonlar kapsamında 137 şüpheli hakkında
+            adli işlem başlatıldığı bildirildi.
+
+            OPERASYONLAR SÜRÜYOR
+
+            Güvenlik birimlerinin organize suçlarla mücadele
+            kapsamında çalışmalarını sürdürdüğü belirtildi.
+
+            SORUŞTURMALAR DEVAM EDİYOR
+
+            Operasyonlarla ilgili adli süreçlerin ilgili
+            makamların koordinasyonunda devam etmesi bekleniyor.
+
+            RESMİ AÇIKLAMALAR ÖNEMLİ
+
+            Soruşturmalarla ilgili kesinleşmiş bilgilerin
+            yetkili kurumların açıklamaları üzerinden
+            takip edilmesi gerekiyor.
+
+            HABERİSTA Gündem Servisi olarak gelişmeleri
+            takip ediyoruz.
+        `
+    },
+
+    /* =====================================================
+       51 - İZMİR'İN KURTULUŞU
+    ===================================================== */
+
+    {
+        id: 51,
+        kategori: "Gündem",
+        baslik: "İzmir'in kurtuluşunun 104. yıl dönümü bugün törenlerle kutlanıyor",
+        spot: "İzmir'in kurtuluşunun 104. yıl dönümü kent genelinde düzenlenen tören ve etkinliklerle anılıyor.",
+        tarih: "9 Eylül 2026",
+        saat: "13:30",
+        gorsel: "images/izmir-kurtulus.jpeg",
+        kaynak: "HABERİSTA",
+        yazar: "Haberİsta Gündem Servisi",
+        icerik: `
+            İZMİR'İN KURTULUŞUNUN 104. YIL DÖNÜMÜ
+
+            İzmir'in kurtuluşunun 104. yıl dönümü kent
+            genelinde düzenlenen törenlerle kutlanıyor.
+
+            TÖRENLER DÜZENLENİYOR
+
+            Gün boyunca farklı noktalarda anma programları,
+            resmi törenler ve çeşitli etkinlikler
+            gerçekleştiriliyor.
+
+            TARİHİ ÖNEMİ
+
+            9 Eylül, İzmir'in Milli Mücadele dönemindeki
+            kurtuluşu açısından önemli bir tarih olarak
+            kabul ediliyor.
+
+            KENTTE COŞKU
+
+            Yıl dönümü nedeniyle İzmir'de çeşitli kültürel
+            ve sosyal etkinlikler düzenleniyor.
+
+            VATANDAŞLAR KATILIYOR
+
+            Törenlere vatandaşların yanı sıra kamu
+            temsilcileri ve farklı kuruluşların temsilcileri
+            de katılıyor.
+
+            HABERİSTA Gündem Servisi olarak 9 Eylül
+            etkinliklerini takip ediyoruz.
+        `
+    },
+
+    /* =====================================================
+       50 - FİLENİN SULTANLARI
+    ===================================================== */
+
+    {
+        id: 50,
+        kategori: "Spor",
+        baslik: "Filenin Sultanları Avrupa şampiyonu oldu: Türkiye'de büyük sevinç",
+        spot: "A Milli Kadın Voleybol Takımı Avrupa şampiyonluğuna ulaşırken Türkiye genelinde büyük sevinç yaşandı.",
+        tarih: "9 Eylül 2026",
+        saat: "14:45",
+        gorsel: "images/AVRUPA.jpeg",
+        kaynak: "HABERİSTA",
+        yazar: "Haberİsta Spor Servisi",
+        icerik: `
+            FİLENİN SULTANLARI AVRUPA ŞAMPİYONU
+
+            A Milli Kadın Voleybol Takımı Avrupa
+            şampiyonluğuna ulaşarak büyük bir başarıya
+            imza attı.
+
+            TÜRKİYE'DE BÜYÜK SEVİNÇ
+
+            Milli takımın başarısı Türkiye genelinde
+            büyük coşkuyla karşılandı.
+
+            FİNAL MÜCADELESİ
+
+            Turnuvanın finalinde mücadele eden milli takım,
+            şampiyonluk hedefini gerçekleştirerek kupaya
+            uzandı.
+
+            TARİHİ BAŞARI
+
+            Elde edilen şampiyonluk Türk voleybolunun
+            uluslararası alandaki önemli başarıları
+            arasında değerlendiriliyor.
+
+            TARAFTARLARDAN DESTEK
+
+            Karşılaşmanın ardından sosyal medya ve
+            meydanlarda milli takıma yönelik çok sayıda
+            tebrik mesajı paylaşıldı.
+
+            HABERİSTA Spor Servisi olarak Filenin
+            Sultanları'nın başarılarını takip ediyoruz.
+        `
+    },
+
+    /* =====================================================
+       49 - THY
+    ===================================================== */
+
+    {
+        id: 49,
+        kategori: "Ekonomi",
+        baslik: "Türk Hava Yolları 8 ayda 64 milyon yolcu taşıdı",
+        spot: "Türk Hava Yolları'nın yılın ilk 8 ayındaki yolcu trafiği 64 milyon seviyesine ulaştı.",
+        tarih: "9 Eylül 2026",
+        saat: "15:50",
+        gorsel: "images/thy.jpeg",
+        kaynak: "HABERİSTA",
+        yazar: "Haberİsta Ekonomi Servisi",
+        icerik: `
+            THY'DE YOLCU TRAFİĞİ
+
+            Türk Hava Yolları'nın yılın ilk 8 ayındaki
+            yolcu trafiği ekonomi gündeminin öne çıkan
+            başlıklarından biri oldu.
+
+            64 MİLYON YOLCU
+
+            Şirketin 8 aylık dönemde yaklaşık 64 milyon
+            yolcu taşıdığı bildirildi.
+
+            HAVACILIK SEKTÖRÜ
+
+            Yolcu sayılarındaki gelişmeler Türkiye'nin
+            havacılık sektöründeki büyüme eğilimi açısından
+            yakından takip ediliyor.
+
+            ULUSLARARASI UÇUŞLAR
+
+            Uluslararası uçuş ağının genişliği THY'nin
+            yolcu trafiğinde önemli rol oynuyor.
+
+            YIL SONU BEKLENTİSİ
+
+            Yılın kalan dönemindeki yolcu trafiğinin
+            şirketin toplam performansı açısından
+            belirleyici olması bekleniyor.
+
+            HABERİSTA Ekonomi Servisi olarak havacılık
+            sektöründeki gelişmeleri takip ediyoruz.
+        `
+    },
+
+    /* =====================================================
+       48 - TEKNOFEST
+    ===================================================== */
+
+    {
+        id: 48,
+        kategori: "Teknoloji",
+        baslik: "TEKNOFEST Güneydoğu için ziyaretçi kayıtları başladı",
+        spot: "TEKNOFEST'in Güneydoğu Anadolu'daki organizasyonu için ziyaretçi kayıt süreci başladı.",
+        tarih: "9 Eylül 2026",
+        saat: "16:55",
+        gorsel: "images/teknofest.jpeg",
+        kaynak: "HABERİSTA",
+        yazar: "Haberİsta Teknoloji Servisi",
+        icerik: `
+            TEKNOFEST GÜNEYDOĞU HAZIRLIKLARI
+
+            TEKNOFEST'in Güneydoğu Anadolu'daki etkinliği
+            için hazırlıklar devam ediyor.
+
+            ZİYARETÇİ KAYITLARI BAŞLADI
+
+            Organizasyonu ziyaret etmek isteyenler için
+            kayıt süreci başlatıldı.
+
+            TEKNOLOJİ VE HAVACILIK
+
+            Festival kapsamında teknoloji, havacılık,
+            uzay ve savunma teknolojilerine ilişkin
+            çeşitli etkinliklerin gerçekleştirilmesi
+            planlanıyor.
+
+            GENÇLERİN İLGİSİ
+
+            TEKNOFEST, gençlerin teknoloji ve mühendislik
+            alanlarına ilgisini artırmaya yönelik
+            etkinlikleriyle dikkat çekiyor.
+
+            YARIŞMALAR VE GÖSTERİLER
+
+            Festival alanında teknoloji yarışmaları,
+            sergiler ve çeşitli gösterilerin yer alması
+            bekleniyor.
+
+            HABERİSTA Teknoloji Servisi olarak etkinlik
+            hazırlıklarını takip ediyoruz.
+        `
+    },
+
+    /* =====================================================
+       47 - ANTALYA ORMAN YANGINLARI
+    ===================================================== */
+
+    {
+        id: 47,
+        kategori: "Gündem",
+        baslik: "Antalya'daki orman yangınlarında ekiplerin mücadelesi sürüyor",
+        spot: "Antalya'da farklı noktalarda etkili olan orman yangınlarına karşı hava ve kara ekiplerinin müdahalesi devam ediyor.",
+        tarih: "9 Eylül 2026",
+        saat: "17:40",
+        gorsel: "images/antalya-yangin.jpeg",
+        kaynak: "HABERİSTA",
+        yazar: "Haberİsta Gündem Servisi",
+        icerik: `
+            ANTALYA'DA ORMAN YANGINI MÜCADELESİ
+
+            Antalya'da etkili olan orman yangınlarına
+            karşı ekiplerin müdahalesi sürüyor.
+
+            HAVADAN VE KARADAN MÜDAHALE
+
+            Yangın bölgelerine hava araçları ve kara
+            ekipleri sevk edilirken söndürme çalışmalarının
+            devam ettiği bildirildi.
+
+            EKİPLER SEFERBER OLDU
+
+            Orman ekipleri, itfaiye ve ilgili kurumların
+            personelleri yangınla mücadelede görev alıyor.
+
+            RÜZGAR VE SICAKLIK ETKİSİ
+
+            Hava koşulları yangınların kontrol altına
+            alınmasında önemli bir faktör oluşturuyor.
+
+            VATANDAŞLARA UYARI
+
+            Yangın bölgelerine yakın alanlarda bulunan
+            vatandaşların resmi kurumların uyarılarını
+            takip etmesi önem taşıyor.
+
+            HABERİSTA Gündem Servisi olarak yangın
+            bölgelerindeki gelişmeleri takip ediyoruz.
+        `
+    },
+
+    /* =====================================================
+       46 - PISA 2025
+    ===================================================== */
+
+    {
+        id: 46,
+        kategori: "Eğitim",
+        baslik: "PISA 2025 sonuçlarında Türkiye'den dikkat çeken başarı: Üç alanda da puan yükseldi",
+        spot: "PISA 2025 sonuçlarında Türkiye'nin okuma, matematik ve fen alanlarındaki performansında dikkat çeken gelişmeler yaşandı.",
+        tarih: "9 Eylül 2026",
+        saat: "18:05",
+        gorsel: "images/PISA.jpeg",
+        kaynak: "HABERİSTA",
+        yazar: "Haberİsta Eğitim Servisi",
+        icerik: `
+            PISA 2025 SONUÇLARI AÇIKLANDI
+
+            PISA 2025 araştırmasının sonuçları eğitim
+            gündeminin önemli başlıklarından biri oldu.
+
+            TÜRKİYE'NİN PERFORMANSI
+
+            Türkiye'nin araştırmada değerlendirilen
+            alanlardaki performansına ilişkin yeni veriler
+            kamuoyuyla paylaşıldı.
+
+            ÜÇ ALANDA GELİŞİM
+
+            Okuma, matematik ve fen alanlarında Türkiye'nin
+            puanlarında önceki dönemlere kıyasla değişimler
+            görüldü.
+
+            EĞİTİM SİSTEMİ AÇISINDAN ÖNEMİ
+
+            PISA sonuçları ülkelerin eğitim sistemlerinin
+            değerlendirilmesinde kullanılan uluslararası
+            göstergeler arasında bulunuyor.
+
+            SONUÇLAR NASIL DEĞERLENDİRİLECEK?
+
+            Uzmanların sonuçları öğrencilerin performansı,
+            eğitim imkanları ve sosyoekonomik koşullarla
+            birlikte değerlendirmesi bekleniyor.
+
+            HABERİSTA Eğitim Servisi olarak PISA sonuçlarını
+            takip ediyoruz.
+        `
+    },
+    /* =====================================================
+       45 - SONBAHAR KÜLTÜR SANAT SEZONU
+    ===================================================== */
+
+    {
+        id: 45,
+        kategori: "Kültür Sanat",
+        baslik: "Sonbahar kültür sanat sezonu hareketleniyor: Sergiler, festivaller ve sinema etkinlikleri peş peşe geliyor",
+        spot: "Türkiye genelinde sonbahar kültür sanat sezonu sergiler, festivaller, konserler ve sinema etkinlikleriyle hareketleniyor.",
+        tarih: "9 Eylül 2026",
+        saat: "14:25",
+        gorsel: "images/kultur-sanat.jpeg",
+        kaynak: "HABERİSTA",
+        yazar: "Haberİsta Kültür Sanat Servisi",
+        icerik: `
+            SONBAHAR KÜLTÜR SANAT SEZONU BAŞLIYOR
+
+            Yaz döneminin ardından Türkiye'nin farklı
+            kentlerinde kültür ve sanat etkinlikleri yeniden
+            yoğunlaşıyor.
+
+            SERGİLER SANATSEVERLERLE BULUŞUYOR
+
+            Müzeler, sanat galerileri ve kültür merkezlerinde
+            yeni sergiler ziyaretçilerini ağırlamaya hazırlanıyor.
+
+            FESTİVALLER DEVAM EDİYOR
+
+            Sonbahar aylarında farklı şehirlerde film,
+            müzik, tiyatro ve sanat festivallerinin
+            gerçekleştirilmesi bekleniyor.
+
+            SİNEMA ETKİNLİKLERİ
+
+            Yeni sinema sezonuyla birlikte yerli ve yabancı
+            yapımlar izleyicilerle buluşurken çeşitli
+            film gösterimleri de düzenleniyor.
+
+            KÜLTÜR MERKEZLERİNDE YOĞUN PROGRAM
+
+            Kültür merkezlerinin sonbahar programlarında
+            tiyatro oyunları, söyleşiler, konserler ve
+            atölye çalışmaları öne çıkıyor.
+
+            SANATSEVERLER İÇİN YENİ SEZON
+
+            Sonbahar döneminin kültür ve sanat etkinlikleri
+            açısından yoğun bir takvim sunması bekleniyor.
+
+            HABERİSTA Kültür Sanat Servisi olarak
+            etkinlikleri takip ediyoruz.
+        `
+    },
+
+    /* =====================================================
+       44 - ÇANAKKALE KÜLTÜR YOLU FESTİVALİ
+    ===================================================== */
+
+    {
+        id: 44,
+        kategori: "Kültür Sanat",
+        baslik: "Çanakkale Kültür Yolu Festivali sona erdi: 9 gün boyunca sanat ve tarih bir arada yaşandı",
+        spot: "Çanakkale Kültür Yolu Festivali 9 günlük programın ardından sona erdi. Kentte çok sayıda kültür, sanat ve tarih etkinliği gerçekleştirildi.",
+        tarih: "9 Eylül 2026",
+        saat: "15:40",
+        gorsel: "images/canakkale-kultur-yolu.jpeg",
+        kaynak: "HABERİSTA",
+        yazar: "Haberİsta Kültür Sanat Servisi",
+        icerik: `
+            ÇANAKKALE KÜLTÜR YOLU FESTİVALİ SONA ERDİ
+
+            Çanakkale'de düzenlenen Kültür Yolu Festivali,
+            9 günlük etkinlik programının ardından sona erdi.
+
+            SANAT VE TARİH BİR ARADA
+
+            Festival kapsamında kentin tarihi ve kültürel
+            değerleri çeşitli etkinliklerle ziyaretçilere
+            ve sanatseverlere aktarıldı.
+
+            KONSERLER VE SAHNE ETKİNLİKLERİ
+
+            Festival programında konserlerin yanı sıra
+            çeşitli sahne gösterileri ve kültür sanat
+            etkinlikleri gerçekleştirildi.
+
+            SERGİLER VE ATÖLYELER
+
+            Farklı mekanlarda düzenlenen sergi ve atölyeler
+            vatandaşlardan ilgi gördü.
+
+            ÇANAKKALE'NİN KÜLTÜREL DEĞERLERİ
+
+            Festival boyunca kentin tarihi mirası ve
+            kültürel kimliğinin tanıtılmasına yönelik
+            çalışmalar da yapıldı.
+
+            YOĞUN KATILIM
+
+            Dokuz günlük program boyunca farklı yaş
+            gruplarından ziyaretçiler etkinliklere katıldı.
+
+            HABERİSTA Kültür Sanat Servisi olarak
+            festival gelişmelerini aktarıyoruz.
+        `
+    },
+
+    /* =====================================================
+       43 - ASPENDOS OPERA VE BALE FESTİVALİ
+    ===================================================== */
+
+    {
+        id: 43,
+        kategori: "Kültür Sanat",
+        baslik: "Aspendos Opera ve Bale Festivali için geri sayım sona erdi: Tarihi tiyatroda sanat buluşması",
+        spot: "Aspendos Opera ve Bale Festivali için hazırlıklar tamamlanırken tarihi tiyatro yeniden opera ve bale gösterilerine ev sahipliği yapmaya hazırlanıyor.",
+        tarih: "9 Eylül 2026",
+        saat: "16:50",
+        gorsel: "images/aspendos.jpeg",
+        kaynak: "HABERİSTA",
+        yazar: "Haberİsta Kültür Sanat Servisi",
+        icerik: `
+            ASPENDOS'TA SANAT BULUŞMASI
+
+            Antalya'nın tarihi Aspendos Tiyatrosu,
+            opera ve bale sanatının önemli etkinliklerinden
+            birine daha ev sahipliği yapmaya hazırlanıyor.
+
+            FESTİVAL İÇİN HAZIRLIKLAR TAMAMLANDI
+
+            Festival kapsamında sahnelenecek eserler için
+            hazırlıkların tamamlanmasıyla birlikte
+            sanatseverler gösterileri beklemeye başladı.
+
+            TARİHİ MEKANIN ATMOSFERİ
+
+            Binlerce yıllık geçmişe sahip Aspendos Tiyatrosu,
+            düzenlenen sanat etkinlikleriyle kültür sanat
+            hayatının önemli merkezlerinden biri olmayı
+            sürdürüyor.
+
+            OPERA VE BALE GÖSTERİLERİ
+
+            Festival programında farklı opera ve bale
+            eserlerinin sanatseverlerle buluşması planlanıyor.
+
+            YERLİ VE YABANCI SANATÇILAR
+
+            Etkinliklerde farklı ülkelerden ve Türkiye'den
+            sanatçıların sahne alması bekleniyor.
+
+            KÜLTÜR TURİZMİNE KATKI
+
+            Festivalin Antalya'nın kültür turizmine
+            katkı sağlaması da bekleniyor.
+
+            HABERİSTA Kültür Sanat Servisi olarak
+            festival programını takip ediyoruz.
+        `
+    },
+
+    /* =====================================================
+       42 - İSTANBUL ODA MÜZİĞİ FESTİVALİ
+    ===================================================== */
+
+    {
+        id: 42,
+        kategori: "Kültür Sanat",
+        baslik: "İstanbul Uluslararası Oda Müziği Festivali başladı: Konserler 24 Eylül'e kadar sürecek",
+        spot: "İstanbul Uluslararası Oda Müziği Festivali başladı. Festival kapsamında düzenlenecek konserler 24 Eylül'e kadar müzikseverlerle buluşacak.",
+        tarih: "9 Eylül 2026",
+        saat: "17:35",
+        gorsel: "images/oda-muzigi.jpeg",
+        kaynak: "HABERİSTA",
+        yazar: "Haberİsta Kültür Sanat Servisi",
+        icerik: `
+            İSTANBUL'DA ODA MÜZİĞİ FESTİVALİ
+
+            İstanbul Uluslararası Oda Müziği Festivali,
+            müzikseverlere yönelik konser programıyla
+            başladı.
+
+            24 EYLÜL'E KADAR DEVAM EDECEK
+
+            Festival kapsamında farklı tarihlerde
+            gerçekleştirilecek konserlerin 24 Eylül'e
+            kadar sürmesi planlanıyor.
+
+            MÜZİKSEVERLER BULUŞUYOR
+
+            Festival programında oda müziğinin farklı
+            örneklerinin sanatseverlerle buluşturulması
+            hedefleniyor.
+
+            FARKLI ESERLER SESLENDİRİLECEK
+
+            Konserlerde klasik müzik repertuvarından
+            çeşitli eserlerin yanı sıra farklı dönemlerden
+            bestecilerin çalışmaları da yer alıyor.
+
+            İSTANBUL'UN KÜLTÜR SANAT TAKVİMİ
+
+            Festival, İstanbul'un eylül ayındaki yoğun
+            kültür sanat programları arasında bulunuyor.
+
+            HABERİSTA Kültür Sanat Servisi olarak
+            festival gelişmelerini takip ediyoruz.
+        `
+    },
+
+    /* =====================================================
+       41 - İSTANBUL'DA SANAT
+    ===================================================== */
+
+    {
+        id: 41,
+        kategori: "Kültür Sanat",
+        baslik: "İstanbul'da eylül ayı sanatla başladı: Yeni sergiler sanatseverlerle buluşuyor",
+        spot: "İstanbul'da eylül ayıyla birlikte çok sayıda yeni sergi ve kültür sanat etkinliği ziyaretçilerini ağırlamaya başladı.",
+        tarih: "9 Eylül 2026",
+        saat: "18:10",
+        gorsel: "images/istanbul-sanat.jpeg",
+        kaynak: "HABERİSTA",
+        yazar: "Haberİsta Kültür Sanat Servisi",
+        icerik: `
+            İSTANBUL'DA EYLÜL AYI SANATLA BAŞLADI
+
+            İstanbul'da yeni kültür sanat sezonuyla birlikte
+            sergi ve etkinlik takvimi hareketlenmeye başladı.
+
+            YENİ SERGİLER AÇILDI
+
+            Kentteki müze ve galerilerde farklı sanat
+            disiplinlerine ait yeni sergiler ziyaretçilerle
+            buluşuyor.
+
+            SANATSEVERLERİN İLGİSİ
+
+            Yeni sezon etkinliklerinin sanatseverlerin
+            ilgisini çekmesi bekleniyor.
+
+            FOTOĞRAF VE RESİM SERGİLERİ
+
+            Eylül programında resim, fotoğraf ve çağdaş
+            sanat çalışmalarının yer aldığı sergiler
+            öne çıkıyor.
+
+            KÜLTÜR SANAT TAKVİMİ YOĞUNLAŞIYOR
+
+            Sonbahar döneminin başlamasıyla birlikte
+            İstanbul'daki kültür sanat etkinliklerinin
+            sayısının artması bekleniyor.
+
+            HABERİSTA Kültür Sanat Servisi olarak
+            İstanbul'daki etkinlikleri takip ediyoruz.
+        `
+    },
+
+    /* =====================================================
+       40 - ENDOMETRİYOZİS
+    ===================================================== */
+
+    {
+        id: 40,
+        kategori: "Sağlık",
+        baslik: "Endometriozis ile tip 2 diyabet arasında bağlantı bulundu",
+        spot: "Yeni araştırmalar endometriozis ile tip 2 diyabet arasında dikkat çeken bir bağlantı olabileceğine işaret ediyor.",
+        tarih: "9 Eylül 2026",
+        saat: "01:45",
+        gorsel: "images/endometriozis.jpeg",
+        kaynak: "NIH",
+        yazar: "Haberİsta Sağlık Servisi",
+        icerik: `
+            ENDOMETRİYOZİS VE TİP 2 DİYABET ARASINDAKİ
+            BAĞLANTI ARAŞTIRILIYOR
+
+            Bilim insanları endometriozis ile tip 2 diyabet
+            arasındaki olası bağlantıyı inceleyen araştırmalar
+            yürütüyor.
+
+            ARAŞTIRMALARIN ÖNEMİ
+
+            Endometriozis, üreme çağındaki kadınlarda
+            görülebilen kronik bir sağlık sorunu olarak
+            biliniyor.
+
+            TİP 2 DİYABET
+
+            Tip 2 diyabet ise vücudun insülini etkili
+            kullanamamasıyla ilişkili kronik bir metabolik
+            hastalık olarak tanımlanıyor.
+
+            OLASI ORTAK MEKANİZMALAR
+
+            Araştırmacılar iki durum arasında inflamasyon,
+            metabolizma ve hormonlarla ilişkili bazı
+            ortak mekanizmaların bulunup bulunmadığını
+            değerlendiriyor.
+
+            DAHA FAZLA ARAŞTIRMA GEREKİYOR
+
+            Bulguların kesin klinik sonuçlara dönüştürülmesi
+            için daha fazla araştırmaya ihtiyaç bulunuyor.
+
+            ÖNEMLİ NOT
+
+            Sağlık araştırmalarındaki yeni bulgular
+            kişisel tanı veya tedavi önerisi anlamına gelmez.
+            Sağlık sorunlarında uzman hekim değerlendirmesi
+            önemlidir.
+
+            HABERİSTA Sağlık Servisi olarak bilimsel
+            gelişmeleri takip ediyoruz.
+        `
+    },
+
+    /* =====================================================
+       39 - KALP KRİZİ TANISI
+    ===================================================== */
+
+    {
+        id: 39,
+        kategori: "Sağlık",
+        baslik: "Kalp krizi tanımında büyük değişiklik: Yeni uluslararası sınıflandırma yayımlandı",
+        spot: "Kalp krizi tanı ve sınıflandırmasına ilişkin yeni uluslararası yaklaşım yayımlandı. Uzmanlar güncel kriterlerin klinik uygulamalarda önem taşıdığını belirtiyor.",
+        tarih: "9 Eylül 2026",
+        saat: "01:35",
+        gorsel: "images/kalp.jpeg",
+        kaynak: "AHA / ESC / ACC / WHF",
+        yazar: "Haberİsta Sağlık Servisi",
+        icerik: `
+            KALP KRİZİ TANIMINDA YENİ YAKLAŞIM
+
+            Kalp krizi tanı ve sınıflandırmasına yönelik
+            uluslararası çalışmaların sonuçları sağlık
+            dünyasının gündeminde.
+
+            YENİ KRİTERLER
+
+            Güncel yaklaşımda kalp kasındaki hasarın
+            değerlendirilmesi ve hastanın klinik
+            bulgularının birlikte ele alınması önem taşıyor.
+
+            TROPONİN TESTLERİ
+
+            Kalp kası hasarının değerlendirilmesinde
+            kanda ölçülen troponin düzeyleri önemli
+            göstergeler arasında bulunuyor.
+
+            KLİNİK BULGULARIN ÖNEMİ
+
+            Laboratuvar sonuçlarının tek başına
+            değerlendirilmemesi, hastanın belirtileri,
+            elektrokardiyografi ve diğer klinik bulgularla
+            birlikte ele alınması gerekiyor.
+
+            ULUSLARARASI UZMANLARIN ÇALIŞMASI
+
+            Yeni sınıflandırmanın farklı ülkelerdeki
+            sağlık profesyonellerine ortak bir yaklaşım
+            sunması hedefleniyor.
+
+            ÖNEMLİ UYARI
+
+            Göğüs ağrısı, nefes darlığı veya kalple ilgili
+            acil belirtiler yaşayan kişilerin vakit
+            kaybetmeden acil sağlık hizmetlerinden
+            yardım alması gerekir.
+
+            HABERİSTA Sağlık Servisi olarak sağlık
+            alanındaki bilimsel gelişmeleri aktarıyoruz.
+        `
+    },
+
+    /* =====================================================
+       38 - TAU PROTEİNİ
+    ===================================================== */
+
+    {
+        id: 38,
+        kategori: "Sağlık",
+        baslik: "Bilim insanlarından Alzheimer araştırmalarında yeni hedef: Tau proteini ve hücre enerjisi",
+        spot: "Alzheimer hastalığı araştırmalarında tau proteini ile hücrelerin enerji mekanizmaları arasındaki ilişki yeni çalışmaların odağında.",
+        tarih: "9 Eylül 2026",
+        saat: "01:25",
+        gorsel: "images/alzheimer-tau.jpeg",
+        kaynak: "NIH / Neuron",
+        yazar: "Haberİsta Sağlık Servisi",
+        icerik: `
+            ALZHEIMER ARAŞTIRMALARINDA YENİ HEDEF
+
+            Alzheimer hastalığının mekanizmalarını anlamaya
+            yönelik çalışmalar devam ediyor.
+
+            TAU PROTEİNİ
+
+            Araştırmalarda Alzheimer hastalığında önemli
+            rol oynadığı düşünülen tau proteini üzerinde
+            çalışmalar sürdürülüyor.
+
+            HÜCRE ENERJİSİ
+
+            Bilim insanları tau proteini ile hücrelerin
+            enerji üretim mekanizmaları arasındaki olası
+            ilişkiyi araştırıyor.
+
+            NEDEN ÖNEMLİ?
+
+            Beyin hücrelerinin sağlıklı çalışması için
+            enerji üretimi büyük önem taşıyor.
+
+            YENİ TEDAVİ HEDEFLERİ
+
+            Hastalığın altında yatan mekanizmaların daha
+            iyi anlaşılması, gelecekte yeni tedavi
+            yaklaşımlarının geliştirilmesine katkı sağlayabilir.
+
+            ARAŞTIRMALAR SÜRÜYOR
+
+            Laboratuvar ve klinik araştırmaların sonuçlarının
+            birlikte değerlendirilmesi gerekiyor.
+
+            HABERİSTA Sağlık Servisi olarak Alzheimer
+            araştırmalarındaki gelişmeleri takip ediyoruz.
+        `
+    },
+
+    /* =====================================================
+       37 - ALZHEIMER KAN TESTİ
+    ===================================================== */
+
+    {
+        id: 37,
+        kategori: "Sağlık",
+        baslik: "Alzheimer araştırmalarında yeni gelişme: Kan testi erken değişimleri gösterebilir",
+        spot: "Alzheimer hastalığının erken dönemindeki biyolojik değişimleri belirlemeye yönelik kan testi araştırmaları devam ediyor.",
+        tarih: "9 Eylül 2026",
+        saat: "01:15",
+        gorsel: "images/alzheimer-kan-testi.jpeg",
+        kaynak: "NIH / The Lancet",
+        yazar: "Haberİsta Sağlık Servisi",
+        icerik: `
+            ALZHEIMER İÇİN KAN TESTİ ARAŞTIRMALARI
+
+            Alzheimer hastalığının erken dönemde tespit
+            edilmesine yönelik araştırmalarda kan testleri
+            önemli bir çalışma alanı haline geliyor.
+
+            ERKEN DEĞİŞİMLERİN BELİRLENMESİ
+
+            Araştırmacılar kandaki çeşitli biyobelirteçlerin
+            beyindeki hastalık süreçleriyle ilişkisini
+            incelemeye devam ediyor.
+
+            BİYOBELİRTEÇLER
+
+            Bazı proteinlerin kandaki seviyelerinin
+            Alzheimer ile ilişkili biyolojik değişimleri
+            yansıtıp yansıtamayacağı araştırılıyor.
+
+            DAHA KOLAY TARAMA İHTİMALİ
+
+            Kan testlerinin doğruluğunun yeterli seviyeye
+            ulaşması halinde gelecekte bazı değerlendirmelerin
+            daha kolay yapılmasına katkı sağlayabileceği
+            düşünülüyor.
+
+            ARAŞTIRMALARIN SINIRLARI
+
+            Bir araştırma sonucunun doğrudan günlük
+            klinik uygulamada kullanılabilmesi için
+            kapsamlı doğrulama çalışmalarına ihtiyaç var.
+
+            UZMAN DEĞERLENDİRMESİ ŞART
+
+            Alzheimer şüphesi bulunan kişiler için tanı
+            süreci yalnızca tek bir test sonucuna
+            dayandırılmamalıdır.
+
+            HABERİSTA Sağlık Servisi olarak bilimsel
+            gelişmeleri takip ediyoruz.
+        `
+    },
+
+    /* =====================================================
+       36 - FISTIK ALERJİSİ
+    ===================================================== */
+
+    {
+        id: 36,
+        kategori: "Sağlık",
+        baslik: "Fıstık alerjisinde umut veren gelişme: Bağırsak bakterileri tedavide kullanılabilir",
+        spot: "Bilim insanlarının çalışmaları, bağırsak mikrobiyotasındaki bazı bakterilerin fıstık alerjisi araştırmalarında potansiyel rol oynayabileceğine işaret ediyor.",
+        tarih: "9 Eylül 2026",
+        saat: "01:05",
+        gorsel: "images/fistik-alerjisi.jpeg",
+        kaynak: "NIH / Science Translational Medicine",
+        yazar: "Haberİsta Sağlık Servisi",
+        icerik: `
+            FISTIK ALERJİSİ ARAŞTIRMALARINDA YENİ GELİŞME
+
+            Fıstık alerjisinin mekanizmalarını ve olası
+            tedavi yöntemlerini araştıran bilim insanları,
+            bağırsak mikrobiyotasının rolüne odaklanıyor.
+
+            BAĞIRSAK BAKTERİLERİ
+
+            Bağırsaklarda yaşayan mikroorganizmaların
+            bağışıklık sistemi üzerinde önemli etkileri
+            bulunabileceği düşünülüyor.
+
+            ALERJİ İLE İLİŞKİ ARAŞTIRILIYOR
+
+            Araştırmacılar belirli bakteri türlerinin
+            bağışıklık yanıtını nasıl etkileyebileceğini
+            inceliyor.
+
+            YENİ TEDAVİ İHTİMALİ
+
+            Bulgular gelecekte yeni tedavi yöntemlerinin
+            araştırılmasına katkı sağlayabilir.
+
+            HENÜZ TEDAVİ DEĞİL
+
+            Araştırma sonuçlarının doğrudan hastaların
+            kendi başına uygulayabileceği bir tedavi
+            anlamına gelmediği özellikle belirtiliyor.
+
+            UZMAN TAKİBİ ÖNEMLİ
+
+            Gıda alerjisi bulunan kişilerin doktorlarının
+            önerilerine uyması ve bilinen alerjenlerden
+            kaçınması gerekiyor.
+
+            HABERİSTA Sağlık Servisi olarak bilimsel
+            araştırmaları takip ediyoruz.
+        `
+    },
+
+    /* =====================================================
+       35 - MISTRAL AI
+    ===================================================== */
+
+    {
+        id: 35,
+        kategori: "Teknoloji",
+        baslik: "Avrupa'nın yapay zeka şirketi Mistral'den dev yatırım: Değerlemesi 24 milyar dolara ulaştı",
+        spot: "Fransız yapay zeka şirketi Mistral AI, aldığı yeni yatırımla değerlemesini 24 milyar dolar seviyesine çıkardı.",
+        tarih: "9 Eylül 2026",
+        saat: "00:50",
+        gorsel: "images/mistral-ai.jpeg",
+        kaynak: "Reuters",
+        yazar: "Haberİsta Teknoloji Servisi",
+        icerik: `
+            MISTRAL AI'DAN YENİ YATIRIM
+
+            Avrupa'nın yapay zeka alanındaki önemli
+            şirketlerinden Mistral AI, aldığı yeni yatırımla
+            gündeme geldi.
+
+            24 MİLYAR DOLAR DEĞERLEME
+
+            Şirketin yeni yatırım turuyla birlikte
+            değerlemesinin yaklaşık 24 milyar dolar
+            seviyesine ulaştığı bildirildi.
+
+            AVRUPA'NIN YAPAY ZEKA HEDEFİ
+
+            Mistral AI, Avrupa'nın ABD merkezli teknoloji
+            şirketleriyle yapay zeka alanında rekabet
+            etme hedefinin önemli temsilcileri arasında
+            değerlendiriliyor.
+
+            YATIRIMLARIN KULLANIM ALANLARI
+
+            Yeni finansmanın yapay zeka modellerinin
+            geliştirilmesi, hesaplama altyapısı ve
+            şirketin uluslararası büyümesi için kullanılması
+            bekleniyor.
+
+            YAPAY ZEKA YARIŞI
+
+            Küresel teknoloji şirketleri arasında yapay
+            zeka yatırımları hızla devam ederken Avrupa'da
+            da güçlü şirketlerin ortaya çıkması hedefleniyor.
+
+            HABERİSTA Teknoloji Servisi olarak yapay zeka
+            sektöründeki gelişmeleri takip ediyoruz.
+        `
+    },
+
+    /* =====================================================
+       34 - DNA
+    ===================================================== */
+
+    {
+        id: 34,
+        kategori: "Son Dakika",
+        baslik: "Bilim dünyasında dikkat çeken gelişme: DNA'nın genetik alfabesi 8 harfe çıkarıldı",
+        spot: "Bilim insanları DNA'nın genetik alfabesini genişletmeye yönelik çalışmalarında dikkat çeken bir gelişmeye imza attı.",
+        tarih: "9 Eylül 2026",
+        saat: "00:50",
+        gorsel: "images/dna.jpeg",
+        kaynak: "University of California San Diego / Nature Communications",
+        yazar: "Haberİsta Bilim Servisi",
+        icerik: `
+            DNA'NIN GENETİK ALFABESİ ÜZERİNE YENİ ÇALIŞMA
+
+            Bilim insanları DNA'nın doğal yapısında bulunan
+            dört bazın ötesine geçerek genetik bilgi
+            kapasitesini genişletmeye yönelik çalışmalar
+            yürütüyor.
+
+            8 HARFLİ GENETİK ALFABE
+
+            Araştırmacıların çalışması DNA benzeri yapıların
+            daha fazla genetik bilgi taşıyabilmesine yönelik
+            önemli bir adım olarak değerlendiriliyor.
+
+            DNA'NIN TEMEL YAPISI
+
+            Doğal DNA dört temel nükleotid bazı kullanarak
+            genetik bilgiyi depoluyor.
+
+            SENTETİK BİYOLOJİ
+
+            Genetik alfabenin genişletilmesi sentetik biyoloji,
+            ilaç araştırmaları ve biyoteknoloji alanlarında
+            yeni araştırma imkanları oluşturabilir.
+
+            HENÜZ GÜNLÜK KULLANIMDA DEĞİL
+
+            Bu tür çalışmalar temel bilim ve araştırma
+            aşamasında bulunuyor. İnsanlarda doğrudan
+            uygulanabilecek bir teknoloji olarak
+            değerlendirilmemesi gerekiyor.
+
+            BİLİM DÜNYASINDA İLGİ ÇEKTİ
+
+            Çalışma, genetik bilginin nasıl depolanabileceği
+            ve biyolojik sistemlerin nasıl tasarlanabileceği
+            konusunda yeni sorular ortaya çıkarıyor.
+
+            HABERİSTA Bilim Servisi olarak bilim dünyasındaki
+            gelişmeleri aktarıyoruz.
+        `
+    },
+    /* =====================================================
+       33 - MERSİN BOZYAZI ORMAN YANGINI
+    ===================================================== */
+
+    {
+        id: 33,
+        kategori: "Gündem",
+        baslik: "Mersin'in Bozyazı ilçesindeki yangına havadan ve karadan müdahale ediliyor",
+        spot: "Mersin'in Bozyazı ilçesinde ormanlık alanda çıkan yangına ekiplerin havadan ve karadan müdahalesi sürüyor.",
+        tarih: "8 Eylül 2026",
+        saat: "19:39",
+        gorsel: "images/bozyazi-orman-yangini.jpeg",
+        kaynak: "HABERİSTA",
+        yazar: "Haberİsta Haber Merkezi",
+        icerik: `
+            MERSİN BOZYAZI'DA ORMAN YANGINI
+
+            Mersin'in Bozyazı ilçesinde ormanlık alanda
+            yangın çıktı. Yangının fark edilmesinin ardından
+            bölgeye çok sayıda ekip sevk edildi.
+
+            HAVADAN VE KARADAN MÜDAHALE
+
+            Yangına karadan ulaşan ekiplerin yanı sıra
+            havadan da müdahale gerçekleştiriliyor.
+
+            Ekipler, alevlerin çevredeki ormanlık alanlara
+            yayılmasını önlemek ve yangını kontrol altına
+            almak için çalışmalarını sürdürüyor.
+
+            EKİPLER BÖLGEYE SEVK EDİLDİ
+
+            İhbar üzerine bölgeye itfaiye, orman ekipleri
+            ve ilgili diğer ekipler yönlendirildi.
+
+            Yangının bulunduğu bölgenin arazi şartları
+            nedeniyle ekiplerin çalışmaları zaman zaman
+            güçlüklerle karşılaşabiliyor.
+
+            YANGININ SEYRİ TAKİP EDİLİYOR
+
+            Yetkililer tarafından yangının ilerleyişi
+            ve çevrede oluşturabileceği risk yakından
+            takip ediliyor.
+
+            RÜZGAR ÇALIŞMALARI ETKİLEYEBİLİYOR
+
+            Orman yangınlarında rüzgarın yönü ve şiddeti,
+            alevlerin yayılma hızını etkileyebildiği için
+            ekipler müdahale planlarını bölgedeki koşullara
+            göre sürdürüyor.
+
+            SOĞUTMA ÇALIŞMALARI ÖNEM TAŞIYOR
+
+            Yangının kontrol altına alınmasının ardından
+            bölgede soğutma çalışmalarının gerçekleştirilmesi
+            bekleniyor.
+
+            YETKİLİLERDEN UYARI
+
+            Yangın bölgelerine görevli ekiplerin çalışmasını
+            engelleyecek şekilde yaklaşılmaması ve yetkililerin
+            uyarılarına uyulması önem taşıyor.
+
+            GELİŞMELER TAKİP EDİLİYOR
+
+            Bozyazı'daki yangınla ilgili gelişmeler,
+            ekiplerin çalışmalarına ilişkin açıklamalar
+            geldikçe güncellenecek.
+
+            HABERİSTA Haber Merkezi
+        `
+    },
+
+    /* =====================================================
+       33 - KKTC GÖRÜŞMESİ
+       NOT: Aynı ID daha önce kullanıldığı için aşağıdaki
+       kayıt daha sonra benzersiz ID ile düzenlenmelidir.
+    ===================================================== */
+
+    {
+        id: 57,
+        kategori: "Gündem",
+        baslik: "Orgeneral Bayraktaroğlu, KKTC Başbakanı Üstel ile görüştü",
+        spot: "Orgeneral Bayraktaroğlu ile KKTC Başbakanı Ünal Üstel arasında gerçekleştirilen görüşmede bölgesel güvenlik ve iş birliği konuları ele alındı.",
+        tarih: "8 Eylül 2026",
+        saat: "17:50",
+        gorsel: "images/bayraktaroglu-ustel-gorusmesi.jpeg",
+        kaynak: "HABERİSTA",
+        yazar: "Haberİsta Haber Merkezi",
+        icerik: `
+            ORGENERAL BAYRAKTAROĞLU KKTC'DE GÖRÜŞME GERÇEKLEŞTİRDİ
+
+            Orgeneral Bayraktaroğlu ile Kuzey Kıbrıs Türk
+            Cumhuriyeti Başbakanı Ünal Üstel arasında
+            görüşme gerçekleştirildi.
+
+            GÜNDEMDE GÜVENLİK VE İŞ BİRLİĞİ
+
+            Görüşmede Kıbrıs'taki güvenlik durumu,
+            bölgesel gelişmeler ve Türkiye ile KKTC
+            arasındaki iş birliği konularının ele alındığı
+            bildirildi.
+
+            BÖLGESEL GELİŞMELER DEĞERLENDİRİLDİ
+
+            Doğu Akdeniz'deki gelişmelerin yanı sıra
+            bölgesel güvenlik başlıklarının da görüşmede
+            değerlendirildiği belirtildi.
+
+            TÜRKİYE-KKTC İLİŞKİLERİ
+
+            Türkiye ile KKTC arasındaki siyasi, ekonomik
+            ve güvenlik alanlarındaki iş birliği
+            çalışmalarının önemine dikkat çekildi.
+
+            GÖRÜŞMELER DEVAM EDİYOR
+
+            Yetkililer arasındaki temasların önümüzdeki
+            dönemde de devam etmesi bekleniyor.
+
+            HABERİSTA Haber Merkezi
+        `
+    },
+
+    /* =====================================================
+       31 - PUTİN TRUMP GÖRÜŞMESİ
+    ===================================================== */
+
+    {
+        id: 31,
+        kategori: "Dünya",
+        baslik: "Putin ve Trump telefonda görüştü: Ukrayna savaşı ve barış süreci masada",
+        spot: "Rusya Devlet Başkanı Vladimir Putin ile ABD Başkanı Donald Trump arasında gerçekleştirilen telefon görüşmesinde Ukrayna savaşı ve barış süreci ele alındı.",
+        tarih: "8 Eylül 2026",
+        saat: "17:30",
+        gorsel: "images/putin-trump-telefon-gorusmesi.jpeg",
+        kaynak: "HABERİSTA",
+        yazar: "Haberİsta Dünya Servisi",
+        icerik: `
+            PUTİN VE TRUMP TELEFONDA GÖRÜŞTÜ
+
+            Rusya Devlet Başkanı Vladimir Putin ile
+            ABD Başkanı Donald Trump arasında telefon
+            görüşmesi gerçekleştirildi.
+
+            UKRAYNA SAVAŞI GÜNDEMDE
+
+            Görüşmenin ana başlıkları arasında Ukrayna'daki
+            savaş ve çatışmaların sona erdirilmesine yönelik
+            diplomatik girişimler yer aldı.
+
+            BARIŞ SÜRECİ ELE ALINDI
+
+            Tarafların Ukrayna'daki savaşın sona erdirilmesi
+            için yürütülen diplomatik temasları ve olası
+            müzakere sürecini değerlendirdiği aktarıldı.
+
+            ABD-RUSYA TEMASLARI
+
+            Görüşme, Washington ile Moskova arasındaki
+            diplomatik temasların sürdüğünü göstermesi
+            açısından önem taşıyor.
+
+            BÖLGESEL GELİŞMELER
+
+            Ukrayna savaşının yanı sıra Avrupa güvenliği
+            ve bölgedeki gelişmelerin de görüşmede gündeme
+            geldiği belirtildi.
+
+            DİPLOMASİ TRAFİĞİ SÜRÜYOR
+
+            ABD, Rusya ve Ukrayna arasında savaşın sona
+            erdirilmesine yönelik diplomatik girişimler
+            uluslararası kamuoyunun gündemindeki yerini
+            koruyor.
+
+            ÖNÜMÜZDEKİ SÜREÇ
+
+            Görüşmenin ardından tarafların yapacağı
+            açıklamalar ve diplomatik temasların seyri
+            yakından takip edilecek.
+
+            HABERİSTA Dünya Servisi
+        `
+    },
+
+    /* =====================================================
+       30 - GİRNE AÇIKLARINDA BATAN GEMİ
+    ===================================================== */
+
+    {
+        id: 30,
+        kategori: "Gündem",
+        baslik: "Girne açıklarında batan gemi için arama-kurtarma çalışmaları sürüyor",
+        spot: "KKTC'nin Girne açıklarında batan gemiyle ilgili bölgede başlatılan arama-kurtarma çalışmaları devam ediyor.",
+        tarih: "7 Eylül 2026",
+        saat: "23:50",
+        gorsel: "images/girne-gemi-arama-kurtarma.jpeg",
+        kaynak: "HABERİSTA",
+        yazar: "Haberİsta Haber Merkezi",
+        icerik: `
+            GİRNE AÇIKLARINDA GEMİDE ARAMA-KURTARMA
+
+            Kuzey Kıbrıs Türk Cumhuriyeti'nin Girne
+            açıklarında meydana gelen deniz kazasının
+            ardından bölgede arama-kurtarma çalışmaları
+            başlatıldı.
+
+            EKİPLER BÖLGEYE SEVK EDİLDİ
+
+            Olayın ardından deniz ve hava unsurları
+            bölgeye yönlendirilerek çalışmalar başlatıldı.
+
+            DENİZDE ARAMA ÇALIŞMALARI
+
+            Ekipler, olayın meydana geldiği bölgede
+            arama-kurtarma faaliyetlerini sürdürüyor.
+
+            HAVA VE DENİZ KOŞULLARI İZLENİYOR
+
+            Arama-kurtarma çalışmalarında bölgedeki
+            hava ve deniz koşulları da dikkate alınıyor.
+
+            YETKİLİLERDEN AÇIKLAMA BEKLENİYOR
+
+            Olayın ayrıntılarına ilişkin yetkili
+            kurumlardan yapılacak açıklamalar takip
+            ediliyor.
+
+            ÇALIŞMALAR SÜRÜYOR
+
+            Bölgedeki ekiplerin çalışmalarının,
+            olayla ilgili durum netleşene kadar
+            devam etmesi bekleniyor.
+
+            HABERİSTA Haber Merkezi
+        `
+    },
+
+    /* =====================================================
+       29 - TÜRKİYE'DE GÜNDEM
+    ===================================================== */
+
+    {
+        id: 29,
+        kategori: "Gündem",
+        baslik: "Türkiye'de gündem yoğun: Ekonomi, teknoloji ve günlük yaşamda yeni gelişmeler takip ediliyor",
+        spot: "Türkiye'de ekonomi, teknoloji, gündem ve günlük yaşama ilişkin gelişmeler vatandaşların gündeminde yer almaya devam ediyor.",
+        tarih: "7 Eylül 2026",
+        saat: "15:30",
+        gorsel: "images/gundem.jpeg",
+        kaynak: "HABERİSTA Haber Merkezi",
+        yazar: "Haberİsta Haber Merkezi",
+        icerik: `
+            TÜRKİYE'DE GÜNDEM YOĞUN
+
+            Türkiye'de yeni haftayla birlikte ekonomi,
+            teknoloji, eğitim ve günlük yaşama ilişkin
+            çok sayıda gelişme takip ediliyor.
 
             EKONOMİ GÜNDEMİ
 
-            Ekonomi de toplantının önemli başlıkları arasında yer alacak.
+            Piyasalardaki hareketlilik, fiyat gelişmeleri
+            ve ekonomik göstergeler vatandaşların yakından
+            takip ettiği başlıklar arasında bulunuyor.
 
-            Enflasyonla mücadele, ekonomik istikrar, fiyat gelişmeleri
-            ve ekonomi programının uygulanmasına ilişkin gelişmelerin
-            değerlendirilmesi bekleniyor.
+            TEKNOLOJİDE YENİ GELİŞMELER
 
-            Yeni Orta Vadeli Program kapsamında belirlenen hedefler ve
-            önümüzdeki dönemde uygulanması planlanan politikaların da
-            gündeme gelmesi bekleniyor.
+            Yapay zeka, dijital hizmetler ve teknoloji
+            sektöründeki gelişmeler de gündemin önemli
+            başlıkları arasında yer alıyor.
 
-            SOSYAL KONUT ÇALIŞMALARI
+            EĞİTİM GÜNDEMİ
 
-            Toplantıda sosyal konut çalışmalarına ilişkin gelişmelerin
-            de değerlendirilmesi bekleniyor.
+            Yeni eğitim dönemi yaklaşırken öğrenciler,
+            veliler ve eğitimciler okullara ilişkin
+            gelişmeleri takip ediyor.
 
-            Dar ve orta gelirli vatandaşların konut sahibi olmasına
-            yönelik çalışmaların yanı sıra İstanbul'daki kiralık sosyal
-            konut projesine ilişkin başlıkların gündeme gelmesi bekleniyor.
+            GÜNLÜK YAŞAM
 
-            GÜVENLİK VE DIŞ POLİTİKA
+            Ulaşım, hava durumu, kamu hizmetleri ve
+            vatandaşları doğrudan ilgilendiren gelişmeler
+            de gündemdeki yerini koruyor.
 
-            Türkiye'nin iç güvenliği, sınır güvenliği ve bölgesel
-            gelişmeler de Kabine toplantısında ele alınabilecek
-            başlıklar arasında bulunuyor.
+            YENİ HAFTADA GÜNDEM
 
-            Orta Doğu'daki gelişmelerin Türkiye'nin güvenliği,
-            ekonomisi ve enerji politikaları üzerindeki olası
-            etkilerinin de değerlendirilmesi bekleniyor.
+            Önümüzdeki günlerde ekonomi, siyaset,
+            teknoloji ve toplum gündemindeki gelişmelerin
+            yakından takip edilmesi bekleniyor.
 
-            ERDOĞAN'IN AÇIKLAMA YAPMASI BEKLENİYOR
+            HABERİSTA Haber Merkezi
+        `
+    },
+    /* =====================================================
+       21 - KABİNE TOPLANTISI
+    ===================================================== */
 
-            Toplantının tamamlanmasının ardından Cumhurbaşkanı
-            Erdoğan'ın gündemdeki konulara ilişkin açıklama yapması
-            bekleniyor.
-
-            Açıklamanın ardından toplantıda kesinleşen kararlar
-            kamuoyuna duyurulabilecek.
-
-            HABERİSTA OLARAK TAKİP EDİYORUZ
-
-            Kabine toplantısından gelecek açıklamalar ve kesinleşen
-            kararlar yakından takip ediliyor.
-
-            Toplantı sonrasında resmi açıklamalar geldikçe haber
-            güncellenecektir.
-
-            HABERİSTA, gelişmeleri resmi açıklamalar doğrultusunda
-            okuyucularına aktarmaya devam edecektir.
-        `,
-
+    {
+        id: 21,
+        kategori: "Gündem",
+        baslik: "Kabine bugün toplanıyor: Gündemde ekonomi, güvenlik ve 'Terörsüz Türkiye' süreci var",
+        spot: "Cumhurbaşkanlığı Kabinesi bugün Cumhurbaşkanı Erdoğan başkanlığında toplanıyor. Toplantıda ekonomi, güvenlik ve 'Terörsüz Türkiye' sürecinin yanı sıra güncel gelişmelerin ele alınması bekleniyor.",
         tarih: "7 Eylül 2026",
         saat: "16:10",
+        gorsel: "images/WhatsApp Image 2026-09-07 at 16.15.05.jpeg",
+        kaynak: "HABERİSTA",
+        yazar: "Haberİsta Haber Merkezi",
+        icerik: `
+            KABİNE TOPLANTISI BUGÜN GERÇEKLEŞTİRİLİYOR
 
-        gorsel:
-            "images/WhatsApp Image 2026-09-07 at 16.15.05.jpeg",
+            Cumhurbaşkanlığı Kabinesi, Cumhurbaşkanı
+            Recep Tayyip Erdoğan başkanlığında bugün
+            toplanıyor.
 
-        kaynak: "HABERİSTA"
+            GÜNDEMDE EKONOMİ VAR
+
+            Toplantının önemli başlıkları arasında
+            Türkiye ekonomisindeki son gelişmeler,
+            enflasyonla mücadele, büyüme ve vatandaşların
+            gündemindeki ekonomik konuların bulunması
+            bekleniyor.
+
+            GÜVENLİK KONULARI ELE ALINACAK
+
+            İç ve dış güvenlik başlıklarının da Kabine
+            toplantısında değerlendirilmesi bekleniyor.
+
+            TERÖRSÜZ TÜRKİYE SÜRECİ
+
+            Türkiye'nin yürüttüğü "Terörsüz Türkiye"
+            sürecine ilişkin gelişmelerin de toplantının
+            gündem maddeleri arasında yer alması bekleniyor.
+
+            BÖLGESEL GELİŞMELER
+
+            Türkiye'nin yakın çevresinde yaşanan siyasi
+            ve güvenlik gelişmelerinin de toplantıda
+            değerlendirilmesi bekleniyor.
+
+            TOPLANTI SONRASI AÇIKLAMA
+
+            Kabine toplantısının ardından Cumhurbaşkanı
+            Erdoğan'ın kamuoyuna yönelik açıklamalarda
+            bulunması bekleniyor.
+
+            VATANDAŞLARIN YAKINDAN TAKİP ETTİĞİ KONULAR
+
+            Ekonomi, güvenlik ve dış politika başlıkları
+            başta olmak üzere toplantıdan çıkacak karar
+            ve açıklamalar vatandaşlar tarafından
+            yakından takip ediliyor.
+
+            HABERİSTA Haber Merkezi
+        `
     },
 
-
     /* =====================================================
-       2 - ABD / İRAN
+       20 - ABD İRAN TANKERLERİ
     ===================================================== */
 
     {
         id: 20,
         kategori: "Dünya",
-
-        baslik:
-            "ABD ile İran arasında tansiyon yeniden yükseldi: 3 İran tankeri hedef alındı",
-
-        spot:
-            "ABD ile İran arasındaki gerilimde yeni bir gelişme yaşandı. ABD Merkez Komutanlığı tarafından İran'a ait olduğu belirtilen 3 petrol tankerinin hedef alındığı açıklandı. Gelişme, bölgedeki deniz güvenliği ve enerji piyasalarına ilişkin endişeleri yeniden gündeme taşıdı.",
-
-        icerik: `
-
-            ABD VE İRAN ARASINDA GERİLİM YENİDEN GÜNDEMDE
-
-            ABD ile İran arasındaki askeri ve siyasi gerilimde yeni
-            bir gelişme yaşandı.
-
-            ABD Merkez Komutanlığı tarafından yapılan açıklamaya göre,
-            İran'a ait olduğu belirtilen 3 petrol tankeri hedef alındı.
-
-            Açıklamanın ardından bölgedeki deniz güvenliği,
-            petrol taşımacılığı ve enerji piyasalarına ilişkin
-            gelişmeler yeniden gündeme geldi.
-
-            ABD'DEN TANKER AÇIKLAMASI
-
-            ABD tarafının açıklamasında hedef alınan tankerlerin
-            İran'a ait olduğu belirtildi.
-
-            Operasyonun ayrıntıları ve olayın bölgedeki gelişmelere
-            etkisi uluslararası kamuoyu tarafından takip ediliyor.
-
-            TANKERLERİN HEDEF ALINMASI NEDEN ÖNEMLİ?
-
-            Petrol tankerlerine yönelik gelişmeler, bölgedeki enerji
-            taşımacılığının güvenliği açısından önem taşıyor.
-
-            Körfez bölgesindeki deniz yollarında yaşanabilecek yeni
-            güvenlik sorunlarının petrol taşımacılığını etkileyebileceği
-            değerlendiriliyor.
-
-            HÜRMÜZ BOĞAZI YAKINDAN TAKİP EDİLİYOR
-
-            Hürmüz Boğazı, küresel enerji taşımacılığı açısından
-            stratejik öneme sahip geçiş noktalarından biri.
-
-            Bölgede yaşanabilecek güvenlik sorunları veya deniz
-            trafiğinde meydana gelebilecek aksaklıklar petrol
-            sevkiyatını etkileyebilir.
-
-            ENERJİ PİYASALARI
-
-            ABD ile İran arasındaki gerilim enerji piyasaları
-            tarafından da yakından takip ediliyor.
-
-            Petrol arzına ilişkin endişelerin artması halinde
-            fiyatlarda hareketlilik yaşanabileceği değerlendiriliyor.
-
-            DENİZ TİCARETİ AÇISINDAN RİSK
-
-            Bölgedeki askeri hareketlilik uluslararası denizcilik
-            şirketlerinin güvenlik değerlendirmelerini de etkileyebilir.
-
-            Gemilerin rotalarını değiştirmesi veya güvenlik
-            önlemlerinin artırılması halinde taşımacılık maliyetleri
-            üzerinde baskı oluşabilir.
-
-            YENİ AÇIKLAMALAR BEKLENİYOR
-
-            ABD'nin açıklamasının ardından gözler İran tarafından
-            gelecek açıklamalara çevrildi.
-
-            Taraflardan gelecek yeni açıklamalar, olayın bölgesel
-            etkilerinin daha net anlaşılmasını sağlayabilir.
-
-            HABERİSTA TAKİPTE
-
-            ABD ve İran arasındaki gerilime ilişkin yeni gelişmeler
-            takip ediliyor.
-
-            Resmi açıklamalar ve doğrulanmış bilgiler geldikçe haber
-            güncellenecektir.
-        `,
-
+        baslik: "ABD ile İran arasında tansiyon yeniden yükseldi: 3 İran tankeri hedef alındı",
+        spot: "ABD ile İran arasındaki gerilim yeniden gündeme gelirken, üç İran tankerinin hedef alındığına ilişkin gelişmeler uluslararası kamuoyunda yankı uyandırdı.",
         tarih: "7 Eylül 2026",
         saat: "00:01",
+        gorsel: "images/6.jpeg",
+        kaynak: "Reuters / HABERİSTA",
+        yazar: "Haberİsta Dünya Servisi",
+        icerik: `
+            ABD İLE İRAN ARASINDA GERİLİM
 
-        gorsel:
-            "images/6.jpeg",
+            ABD ile İran arasındaki gerilim, İran'a ait
+            tankerlerle ilgili gelişmelerin ardından
+            yeniden uluslararası gündemin öne çıkan
+            başlıklarından biri oldu.
 
-        kaynak: "Reuters / HABERİSTA"
+            ÜÇ İRAN TANKERİ HEDEF ALINDI
+
+            ABD tarafından yapılan açıklamalara göre
+            üç İran tankerinin hedef alındığı bildirildi.
+
+            OLAYIN AYRINTILARI ARAŞTIRILIYOR
+
+            Tankerlerle ilgili olayın meydana geliş şekli,
+            hedef alınma gerekçesi ve bölgedeki gelişmeler
+            uluslararası kaynaklar tarafından takip ediliyor.
+
+            ABD'DEN AÇIKLAMA
+
+            ABD yönetimi olayla ilgili açıklamalarında
+            bölgedeki gelişmelere ilişkin değerlendirmelerde
+            bulundu.
+
+            İRAN'IN TEPKİSİ
+
+            Tahran yönetiminin gelişmeye ilişkin açıklamaları
+            ve vereceği tepki, iki ülke arasındaki gerilimin
+            seyri açısından yakından takip ediliyor.
+
+            BÖLGESEL GERİLİM
+
+            ABD ile İran arasındaki gerilim yalnızca iki
+            ülkeyi değil, Orta Doğu'daki güvenlik ve enerji
+            piyasalarını da yakından ilgilendiriyor.
+
+            PETROL PİYASALARI TAKİPTE
+
+            Bölgede yaşanan gelişmelerin enerji piyasaları
+            üzerindeki olası etkileri de yatırımcıların
+            takip ettiği başlıklar arasında bulunuyor.
+
+            DİPLOMASİ TRAFİĞİ ÖNEMLİ
+
+            Taraflar arasındaki diplomatik temasların
+            gelecekteki gelişmeler açısından önem taşıdığı
+            değerlendiriliyor.
+
+            HABERİSTA Dünya Servisi
+        `
     },
 
-
     /* =====================================================
-       3 - ABD 3 TANKER
+       19 - ABD 3 İRAN TANKERİNİ VURDU
     ===================================================== */
 
     {
         id: 19,
         kategori: "Dünya",
-
-        baslik:
-            "ABD, 3 İran tankerini vurduğunu açıkladı",
-
-        spot:
-            "ABD yönetimi, İran'a ait olduğu belirtilen 3 petrol tankerinin hedef alındığını açıkladı. Gelişme, ABD ile İran arasındaki gerilimin deniz taşımacılığı ve enerji güvenliği üzerindeki etkilerini yeniden gündeme getirdi.",
-
-        icerik: `
-
-            ABD'DEN 3 İRAN TANKERİ AÇIKLAMASI
-
-            ABD ile İran arasındaki gerilimde yeni bir gelişme yaşandı.
-
-            ABD yönetimi, İran'a ait olduğu belirtilen 3 petrol
-            tankerinin hedef alındığını açıkladı.
-
-            Açıklamanın ardından olayın ayrıntıları ve bölgedeki
-            deniz trafiğine olası etkileri yakından takip edilmeye
-            başlandı.
-
-            BÖLGEDE DENİZ GÜVENLİĞİ
-
-            Körfez bölgesindeki deniz yolları küresel enerji
-            taşımacılığı açısından stratejik öneme sahip.
-
-            Bu nedenle petrol tankerlerine yönelik herhangi bir
-            askeri gelişme, enerji ticareti açısından da yakından
-            takip ediliyor.
-
-            PETROL TAŞIMACILIĞI
-
-            İran'ın petrol ihracatı büyük ölçüde deniz yoluyla
-            gerçekleştiriliyor.
-
-            Tankerlerin hedef alınmasına ilişkin gelişme,
-            petrol taşımacılığının güvenliği konusunu yeniden
-            gündeme taşıdı.
-
-            ENERJİ PİYASALARININ GÖZÜ BÖLGEDE
-
-            ABD ile İran arasındaki gerilimin devam etmesi halinde
-            petrol arzı ve deniz taşımacılığına ilişkin endişelerin
-            artabileceği değerlendiriliyor.
-
-            Hürmüz Boğazı çevresindeki gelişmeler de bu nedenle
-            uluslararası enerji piyasaları tarafından takip ediliyor.
-
-            ULUSLARARASI TOPLUM GELİŞMELERİ İZLİYOR
-
-            Bölgedeki ülkelerin güvenlik durumunu yakından takip
-            ettiği belirtilirken, diplomatik açıklamalar da
-            gündemin önemli başlıkları arasında yer alıyor.
-
-            YENİ AÇIKLAMALAR BEKLENİYOR
-
-            Olayın ayrıntıları konusunda taraflardan yeni açıklamalar
-            gelmesi bekleniyor.
-
-            Tankerlerin bulunduğu bölge, saldırının nasıl gerçekleştiği
-            ve olayın sonraki gelişmelere etkisi konusunda yeni
-            bilgilerin ortaya çıkması bekleniyor.
-
-            HABERİSTA TAKİPTE
-
-            ABD ile İran arasındaki gerilime ilişkin yeni gelişmeler
-            doğrulanmış bilgiler üzerinden takip edilmektedir.
-        `,
-
+        baslik: "ABD, 3 İran tankerini vurduğunu açıkladı",
+        spot: "ABD yönetimi, İran'a ait üç tankerin vurulduğunu açıkladı. Gelişme bölgede artan gerilim nedeniyle uluslararası kamuoyunun gündemine taşındı.",
         tarih: "6 Eylül 2026",
         saat: "11:17",
+        gorsel: "images/ChatGPT Image 6 Eyl 2026 19_44_18.png",
+        kaynak: "HABERİSTA",
+        yazar: "Haberİsta Dünya Servisi",
+        icerik: `
+            ABD'DEN İRAN TANKERLERİNE İLİŞKİN AÇIKLAMA
 
-        gorsel:
-            "images/ChatGPT Image 6 Eyl 2026 19_44_18.png",
+            ABD yönetimi, İran'a ait üç tankerin
+            vurulduğunu açıkladı.
 
-        kaynak: "HABERİSTA"
+            GELİŞME DÜNYA GÜNDEMİNDE
+
+            Açıklamanın ardından olay uluslararası
+            kamuoyunun gündeminde geniş yer buldu.
+
+            ABD-İRAN GERİLİMİ
+
+            Washington ile Tahran arasındaki gerilim,
+            bölgede yaşanan gelişmelerle birlikte
+            yeniden gündemin önemli başlıklarından
+            biri haline geldi.
+
+            BÖLGEDEKİ GELİŞMELER İZLENİYOR
+
+            Olayın ardından bölgedeki askeri ve siyasi
+            gelişmeler yakından takip ediliyor.
+
+            İRAN'IN TEPKİSİ BEKLENİYOR
+
+            İran yönetiminin gelişmeye yönelik açıklamaları
+            ve atacağı adımlar uluslararası kamuoyunda
+            merakla takip ediliyor.
+
+            ENERJİ GÜVENLİĞİ GÜNDEMDE
+
+            Orta Doğu'daki gerilim, enerji taşımacılığı
+            ve petrol piyasaları açısından da önem taşıyor.
+
+            DİPLOMATİK TEMASLAR
+
+            Bölgede tansiyonun düşürülmesine yönelik
+            diplomatik girişimlerin önemi de artıyor.
+
+            GELİŞMELER TAKİP EDİLİYOR
+
+            Olayla ilgili yeni açıklamalar geldikçe
+            gelişmeler kamuoyuyla paylaşılacak.
+
+            HABERİSTA Dünya Servisi
+        `
     },
 
-
     /* =====================================================
-       4 - EKONOMİ
+       18 - EKONOMİDE 3 YILLIK YOL HARİTASI
     ===================================================== */
 
     {
         id: 18,
         kategori: "Ekonomi",
-
-        baslik:
-            "Ekonomide 3 yıllık yol haritası belli oluyor",
-
-        spot:
-            "Türkiye ekonomisinin önümüzdeki dönemde izleyeceği politikalara ilişkin 3 yıllık yol haritası gündemde. Yeni Orta Vadeli Program kapsamında büyüme, enflasyon, istihdam ve kamu maliyesine yönelik hedefler öne çıkıyor.",
-
+        baslik: "Ekonomide 3 yıllık yol haritası belli oluyor",
+        spot: "Türkiye ekonomisinin önümüzdeki dönemde izleyeceği politikalara ilişkin 3 yıllık yol haritası gündemde. Yeni Orta Vadeli Program kapsamında büyüme, enflasyon, istihdam ve kamu maliyesine yönelik hedefler öne çıkıyor.",
+        tarih: "6 Eylül 2026",
+        saat: "11:01",
+        gorsel: "images/ChatGPT Image 6 Eyl 2026 19_45_31.png",
+        kaynak: "HABERİSTA",
+        yazar: "Haberİsta Ekonomi Servisi",
         icerik: `
-
             TÜRKİYE EKONOMİSİNDE YENİ DÖNEM
 
-            Türkiye ekonomisinin önümüzdeki üç yıllık dönemde
-            izleyeceği politikalara ilişkin hedefler ekonomi
-            gündeminin önemli başlıkları arasında bulunuyor.
+            Türkiye ekonomisinin önümüzdeki üç yıllık
+            dönemde izleyeceği politikalara ilişkin
+            çalışmalar gündemde.
 
-            Orta Vadeli Program kapsamında büyüme, enflasyon,
-            istihdam, kamu maliyesi ve ihracat gibi alanlarda
-            hedefler belirleniyor.
+            Orta Vadeli Program kapsamında büyüme,
+            enflasyon, istihdam ve kamu maliyesi gibi
+            temel ekonomik başlıkların ele alınması
+            bekleniyor.
 
             ENFLASYONLA MÜCADELE
 
-            Ekonomi programının temel başlıklarından biri
-            enflasyonla mücadele.
+            Ekonomide fiyat istikrarının sağlanması,
+            önümüzdeki dönemin temel hedefleri arasında
+            bulunuyor.
 
-            Fiyat istikrarının sağlanması ve ekonomik dengelerin
-            güçlendirilmesine yönelik politikaların önümüzdeki
-            dönemde de devam etmesi bekleniyor.
+            Enflasyonla mücadele kapsamında para ve
+            maliye politikalarının koordineli şekilde
+            uygulanması önem taşıyor.
 
             BÜYÜME VE İSTİHDAM
 
-            Ekonomik büyümenin sürdürülebilir şekilde devam
-            ettirilmesi ve istihdamın artırılması da programın
-            önemli başlıkları arasında yer alıyor.
+            Ekonomik büyümenin sürdürülebilir hale
+            getirilmesi ve istihdamın artırılması da
+            planlamanın önemli başlıkları arasında.
 
-            Üretim kapasitesinin geliştirilmesi, yatırımların
-            artırılması ve ihracatın desteklenmesine yönelik
-            politikalar izleniyor.
+            Üretim kapasitesinin artırılması ve yatırımların
+            desteklenmesiyle ekonomik aktivitenin güçlü
+            tutulması hedefleniyor.
 
             KAMU MALİYESİ
 
-            Kamu maliyesinde disiplinin korunması ve kamu
-            kaynaklarının daha etkin kullanılması da ekonomik
-            programın önemli unsurları arasında bulunuyor.
-
-            Kamu harcamalarının verimliliği ve bütçe dengeleri
-            önümüzdeki dönemde yakından takip edilecek.
+            Kamu harcamalarında disiplin ve bütçe
+            dengesinin korunması da ekonomik programın
+            önemli unsurları arasında yer alıyor.
 
             YATIRIM VE ÜRETİM
 
-            Türkiye'nin üretim kapasitesinin artırılması ve
-            yüksek katma değerli üretimin desteklenmesi
-            hedeflenen alanlar arasında bulunuyor.
-
-            Sanayi, teknoloji ve ihracat kapasitesinin
-            geliştirilmesine yönelik adımların ekonomik
-            büyüme açısından önem taşıdığı değerlendiriliyor.
+            Yatırımların artırılması, sanayi üretiminin
+            desteklenmesi ve ihracat kapasitesinin
+            geliştirilmesi ekonominin uzun vadeli
+            hedefleri arasında bulunuyor.
 
             PİYASALARIN TAKİBİ
 
-            Ekonomi yönetiminin açıklayacağı hedefler ve
-            uygulayacağı politikalar piyasalar tarafından
-            yakından izlenecek.
-
-            Enflasyon, faiz, büyüme, istihdam ve kamu maliyesi
-            verileri programın uygulanmasında önemli göstergeler
-            arasında yer alacak.
+            Yeni ekonomik hedeflerin açıklanmasıyla
+            birlikte piyasaların vereceği tepki de
+            yakından takip edilecek.
 
             HABERİSTA EKONOMİ SERVİSİ
-
-            Türkiye ekonomisindeki gelişmeleri resmi açıklamalar
-            ve açıklanan ekonomik veriler üzerinden takip ediyoruz.
-        `,
-
-        tarih: "6 Eylül 2026",
-        saat: "11:01",
-
-        gorsel:
-            "images/ChatGPT Image 6 Eyl 2026 19_45_31.png",
-
-        kaynak: "HABERİSTA"
+        `
     },
 
-
     /* =====================================================
-       5 - İRAN EKONOMİ
+       17 - İRAN EKONOMİK SAVAŞ KARARGÂHI
     ===================================================== */
 
     {
         id: 17,
         kategori: "Dünya",
-
-        baslik:
-            "İran'da 'Ekonomik Savaş Karargâhı' kuruldu",
-
-        spot:
-            "İran'da ekonomik baskıların yönetilmesi amacıyla 'Ekonomik Savaş Karargâhı' kurulduğu açıklandı. Yeni yapılanmanın ekonomik faaliyetler ve kritik sektörler arasında koordinasyon sağlaması bekleniyor.",
-
+        baslik: "İran'da 'Ekonomik Savaş Karargâhı' kuruldu",
+        spot: "İran'da ekonomik baskıların yönetilmesi amacıyla 'Ekonomik Savaş Karargâhı' kurulduğu açıklandı. Yeni yapılanmanın ekonomik faaliyetler ve kritik sektörler arasında koordinasyon sağlaması bekleniyor.",
+        tarih: "6 Eylül 2026",
+        saat: "10:23",
+        gorsel: "images/ChatGPT Image 6 Eyl 2026 19_46_53.png",
+        kaynak: "HABERİSTA",
+        yazar: "Haberİsta Dünya Servisi",
         icerik: `
-
             İRAN'DA YENİ EKONOMİK YAPILANMA
 
-            İran'da ekonomik koşullara ilişkin dikkat çeken bir
-            yapılanma oluşturuldu.
-
-            Ülkede ekonomik baskıların ve dış kaynaklı sorunların
-            yönetilmesi amacıyla "Ekonomik Savaş Karargâhı"
-            kurulduğu açıklandı.
+            İran'da ekonomik baskılar ve dış kaynaklı
+            sorunlarla mücadele amacıyla yeni bir
+            koordinasyon mekanizması oluşturulduğu
+            açıklandı.
 
             YAPILANMANIN AMACI
 
-            Yeni yapılanmanın ekonomik alandaki gelişmelerin
-            daha koordineli şekilde yönetilmesine katkı sağlaması
-            bekleniyor.
-
-            Karargâhın hangi kurumlarla birlikte çalışacağı ve
-            görev alanlarının kapsamı yapılacak resmi açıklamalarla
-            daha net hale gelecek.
+            "Ekonomik Savaş Karargâhı" olarak adlandırılan
+            yapının ekonomik faaliyetlerin koordinasyonu
+            ve kritik sektörlerin takibi amacıyla
+            oluşturulduğu bildirildi.
 
             KRİTİK SEKTÖRLER TAKİP EDİLECEK
 
-            Ekonomik yapılanmanın temel ekonomik faaliyetler,
-            ticaret, üretim ve tedarik zincirleri gibi alanlarda
-            yaşanabilecek sorunların koordinasyonunda rol
-            üstlenmesi bekleniyor.
+            Enerji, ticaret, finans ve temel ihtiyaç
+            ürünleri gibi stratejik alanların yeni
+            yapılanmanın çalışma alanları arasında
+            bulunması bekleniyor.
 
             DIŞ BASKILAR
 
-            İran ekonomisi uzun süredir yaptırımlar ve dış
-            ekonomik baskılarla karşı karşıya.
-
-            Enerji ihracatı, dış ticaret ve finansal sistem
-            üzerindeki baskılar ülke ekonomisinin önemli
-            gündem maddeleri arasında bulunuyor.
+            İran ekonomisi uzun süredir yaptırımlar,
+            döviz hareketleri ve dış ticaret üzerindeki
+            baskılarla mücadele ediyor.
 
             BÖLGESEL GELİŞMELER
 
-            Orta Doğu'daki siyasi ve askeri gelişmelerin de
-            İran ekonomisi üzerinde etkili olabileceği
-            değerlendiriliyor.
-
-            Yeni yapılanmanın bu süreçte kurumlar arasındaki
-            koordinasyonu güçlendirmesi amaçlanıyor.
+            İran'ın ekonomik politikaları bölgedeki
+            siyasi ve güvenlik gelişmelerinden de
+            etkileniyor.
 
             ÖNÜMÜZDEKİ SÜREÇ
 
-            Ekonomik Savaş Karargâhı'nın faaliyet alanları ve
-            alacağı kararlar önümüzdeki dönemde daha net
-            ortaya çıkacak.
+            Yeni ekonomik yapılanmanın nasıl çalışacağı
+            ve piyasalara nasıl yansıyacağı önümüzdeki
+            dönemde takip edilecek.
 
-            HABERİSTA Dünya Servisi olarak gelişmeleri resmi
-            açıklamalar doğrultusunda takip ediyoruz.
-        `,
-
-        tarih: "6 Eylül 2026",
-        saat: "10:23",
-
-        gorsel:
-            "images/ChatGPT Image 6 Eyl 2026 19_46_53.png",
-
-        kaynak: "HABERİSTA"
+            HABERİSTA Dünya Servisi
+        `
     },
 
-
     /* =====================================================
-       6 - BURSA KAZA
+       16 - BURSA ZİNCİRLEME KAZA
     ===================================================== */
 
     {
         id: 16,
         kategori: "Gündem",
-
-        baslik:
-            "Tırdan dökülen mazot 10 aracı birbirine kattı",
-
-        spot:
-            "Bursa'da bir tırdan yola dökülen mazot nedeniyle kayganlaşan yolda zincirleme kaza meydana geldi. Yaklaşık 10 aracın karıştığı olayın ardından ekipler bölgede çalışma başlattı.",
-
+        baslik: "Tırdan dökülen mazot 10 aracı birbirine kattı",
+        spot: "Bursa'da bir tırdan yola dökülen mazot nedeniyle kayganlaşan yolda zincirleme kaza meydana geldi. Yaklaşık 10 aracın karıştığı olayın ardından ekipler bölgede çalışma başlattı.",
+        tarih: "6 Eylül 2026",
+        saat: "09:53",
+        gorsel: "images/ChatGPT Image 6 Eyl 2026 19_48_08.png",
+        kaynak: "HABERİSTA",
+        yazar: "Haberİsta Haber Merkezi",
         icerik: `
-
             BURSA'DA ZİNCİRLEME KAZA
 
-            Bursa'da trafikte seyreden bir tırdan yola mazot
-            dökülmesi zincirleme kazaya neden oldu.
-
-            Yola yayılan mazot nedeniyle asfaltın kayganlaşmasının
-            ardından sürücüler araçlarının kontrolünü kaybetti.
-
-            Yaklaşık 10 aracın karıştığı kazanın ardından bölgeye
-            ekipler sevk edildi.
+            Bursa'da bir tırdan yola dökülen mazot
+            nedeniyle yolun kayganlaşmasının ardından
+            zincirleme trafik kazası meydana geldi.
 
             YOL KAYGANLAŞTI
 
-            Mazotun asfalt yüzeyine yayılması sürüş güvenliğini
-            olumsuz etkiledi.
+            Tırdan yola dökülen mazot, sürücüler için
+            tehlikeli bir zemin oluşturdu.
 
-            Kaygan zeminde araçların fren ve yol tutuş özelliklerinin
-            etkilenmesiyle kısa süre içerisinde peş peşe kazalar
-            meydana geldi.
+            Kayganlaşan yolda araçların kontrolünün
+            zorlaşmasıyla zincirleme kaza meydana geldi.
 
             10 ARAÇ KAZAYA KARIŞTI
 
-            Zincirleme kazada yaklaşık 10 araç birbirine çarptı.
+            Kazaya yaklaşık 10 aracın karıştığı
+            bildirildi.
 
-            Olayın ardından bölgede ulaşımın güvenli şekilde
-            sürdürülmesi için çalışma gerçekleştirildi.
+            Olayın ardından bölgede trafik akışının
+            kontrollü şekilde sağlandığı aktarıldı.
 
             EKİPLER BÖLGEYE SEVK EDİLDİ
 
-            İhbar üzerine olay yerine ekipler yönlendirildi.
-
-            Ekipler hem kazaya karışan araçlarla ilgili işlemleri
-            yürüttü hem de yola dökülen mazotun oluşturduğu
-            tehlikenin giderilmesi için çalışma yaptı.
+            İhbar üzerine bölgeye polis, sağlık ve
+            yol bakım ekipleri sevk edildi.
 
             SÜRÜCÜLERE UYARI
 
-            Yola yağ, mazot veya benzeri maddelerin dökülmesi
-            araçların yol tutuşunu ciddi şekilde etkileyebilir.
-
-            Sürücülerin böyle durumlarda hızlarını azaltması,
-            ani manevralardan kaçınması ve güvenli bir güzergâh
-            tercih etmesi önem taşıyor.
+            Yetkililer, yol üzerinde yapılan temizlik
+            ve güvenlik çalışmalarına dikkat edilmesi
+            konusunda sürücüleri uyardı.
 
             İNCELEME BAŞLATILDI
 
-            Kazanın ardından olayın nasıl meydana geldiğine
-            ilişkin inceleme başlatıldı.
+            Kazanın meydana geliş nedeninin belirlenmesi
+            amacıyla inceleme başlatıldı.
 
-            Mazotun yola nasıl döküldüğüne ve kazanın diğer
-            ayrıntılarına ilişkin bilgilerin incelemelerin
-            ardından netleşmesi bekleniyor.
-
-            HABERİSTA olarak olayla ilgili gelişmeleri takip ediyoruz.
-        `,
-
-        tarih: "6 Eylül 2026",
-        saat: "09:53",
-
-        gorsel:
-            "images/ChatGPT Image 6 Eyl 2026 19_48_08.png",
-
-        kaynak: "HABERİSTA"
+            HABERİSTA
+        `
     },
 
-
     /* =====================================================
-       7 - SERHAT MUSTAFA KILIÇ
+       15 - SERHAT MUSTAFA KILIÇ
     ===================================================== */
 
     {
         id: 15,
         kategori: "Magazin",
-
-        baslik:
-            "Ünlü oyuncu Serhat Mustafa Kılıç hayatını kaybetti",
-
-        spot:
-            "Tiyatro, sinema ve televizyon dünyasının tanınan isimlerinden Serhat Mustafa Kılıç, 51 yaşında hayatını kaybetti. Oyuncunun İstanbul Kağıthane'deki evinde yaşamını yitirdiği öğrenildi.",
-
+        baslik: "Ünlü oyuncu Serhat Mustafa Kılıç hayatını kaybetti",
+        spot: "Tiyatro, sinema ve televizyon dünyasının tanınan isimlerinden Serhat Mustafa Kılıç, 51 yaşında hayatını kaybetti. Oyuncunun İstanbul Kağıthane'deki evinde yaşamını yitirdiği öğrenildi.",
+        tarih: "6 Eylül 2026",
+        saat: "17:40",
+        gorsel: "images/SERHAT.jpeg",
+        kaynak: "HABERİSTA",
+        yazar: "Haberİsta Magazin Servisi",
         icerik: `
-
             SERHAT MUSTAFA KILIÇ HAYATINI KAYBETTİ
 
-            Türk tiyatro, sinema ve televizyon dünyasının tanınan
-            isimlerinden Serhat Mustafa Kılıç'ın 51 yaşında
-            hayatını kaybettiği öğrenildi.
-
-            Oyuncunun İstanbul Kağıthane'deki evinde yaşamını
-            yitirdiği bildirildi.
+            Tiyatro, sinema ve televizyon dünyasının
+            tanınan isimlerinden Serhat Mustafa Kılıç'ın
+            51 yaşında hayatını kaybettiği bildirildi.
 
             OLAYLA İLGİLİ İNCELEME
 
-            Kılıç'tan bir süredir haber alamayan yakınlarının
-            durumu fark etmesi üzerine olay yerine sağlık ve
-            polis ekipleri sevk edildi.
+            Oyuncunun İstanbul Kağıthane'deki evinde
+            yaşamını yitirdiği öğrenildi.
 
-            Sağlık ekiplerinin yaptığı kontrollerin ardından
-            oyuncunun hayatını kaybettiği belirlendi.
-
-            Oyuncunun kesin ölüm nedeninin yapılacak adli
-            incelemelerin ardından netleşmesi bekleniyor.
+            Olayın ardından ilgili ekiplerin inceleme
+            yaptığı belirtildi.
 
             SANAT DÜNYASINDAN BAŞSAĞLIĞI MESAJLARI
 
-            Vefat haberinin ardından sanat dünyasından çok
-            sayıda isim başsağlığı mesajı paylaştı.
-
-            Oyuncunun meslektaşları ve sevenleri sosyal medya
-            hesaplarından üzüntülerini dile getirdi.
+            Oyuncunun vefat haberinin ardından sanat
+            dünyasından çok sayıda başsağlığı mesajı
+            paylaşılması bekleniyor.
 
             TİYATRO KARİYERİ
 
-            Serhat Mustafa Kılıç'ın sanat hayatında tiyatronun
-            önemli bir yeri bulunuyordu.
-
-            Bilkent Üniversitesi Müzik ve Sahne Sanatları
-            Fakültesi Tiyatro Bölümü'nde eğitim alan Kılıç,
-            profesyonel kariyerinde çok sayıda tiyatro
-            çalışmasında yer aldı.
+            Serhat Mustafa Kılıç, kariyeri boyunca
+            tiyatro sahnesinde çeşitli projelerde yer aldı.
 
             TELEVİZYON ÇALIŞMALARI
 
-            Oyuncu televizyon dünyasında da çeşitli projelerde
-            rol aldı.
-
-            Hatırla Sevgili, Ezel, Seksenler, Söz, Kuruluş Osman,
-            Kirli Sepeti ve Mehmed: Fetihler Sultanı gibi
-            yapımlarda yer aldı.
-
-            Özellikle Seksenler dizisindeki Ergun Plak karakteri
-            geniş bir izleyici kitlesi tarafından tanındı.
+            Oyuncu, televizyon projeleriyle de geniş
+            izleyici kitlesine ulaştı.
 
             SİNEMA KARİYERİ
 
-            Kılıç, televizyon çalışmalarının yanı sıra sinema
-            filmlerinde de rol aldı.
-
-            Nokta, Veda, Kış Uykusu, Mavzer ve
-            Cenazemize Hoş Geldiniz gibi yapımlarda yer aldı.
+            Sinema alanında da çeşitli yapımlarda
+            rol alan Kılıç, oyunculuk kariyeri boyunca
+            farklı karakterleri canlandırdı.
 
             ÖLÜM NEDENİNE İLİŞKİN KESİN BİLGİ BEKLENİYOR
 
-            Oyuncunun ölüm nedeni konusunda resmi olarak
-            kesinleşmemiş bilgilerin gerçekmiş gibi paylaşılmaması
-            önem taşıyor.
-
-            Adli incelemelerin ardından olayın ayrıntılarının
-            netleşmesi bekleniyor.
+            Ölüm nedenine ilişkin resmi açıklamalar
+            ve inceleme sonuçlarının takip edilmesi
+            bekleniyor.
 
             CENAZE PROGRAMI
 
-            Cenaze töreninin ne zaman ve nerede yapılacağına
-            ilişkin resmi bilgilerin açıklanması bekleniyor.
+            Cenaze törenine ilişkin resmi bilgilerin
+            açıklanmasının ardından kamuoyuyla
+            paylaşılması bekleniyor.
 
-            HABERİSTA olarak sanat dünyasındaki gelişmeleri
-            resmi açıklamalar doğrultusunda takip ediyoruz.
-        `,
+            ÖNEMLİ NOT
 
-        tarih: "6 Eylül 2026",
-        saat: "17:40",
+            Haberİsta olarak sanatçının vefatına ilişkin
+            yalnızca resmi ve güvenilir kaynaklardan
+            yapılacak açıklamaları esas alıyoruz.
 
-        gorsel:
-            "images/SERHAT.jpeg",
-
-        kaynak: "HABERİSTA"
+            HABERİSTA Magazin Servisi
+        `
     },
-
-
     /* =====================================================
-       8 - METEOROLOJİ
+       14 - 4 İL İÇİN SEL VE HEYELAN UYARISI
     ===================================================== */
 
     {
         id: 14,
         kategori: "Gündem",
-
-        baslik:
-            "4 il için sel ve heyelan uyarısı",
-
-        spot:
-            "6 Eylül 2026'da bazı bölgelerde etkili olması beklenen yağışlar nedeniyle 4 il için sel ve heyelan uyarısı yapıldı. Yetkililer, kuvvetli yağış sırasında vatandaşların dikkatli olması gerektiğini belirtti.",
-
+        baslik: "4 il için sel ve heyelan uyarısı",
+        spot: "Meteoroloji tarafından 4 il için kuvvetli yağış, sel ve heyelan riskine karşı uyarı yapıldı. Vatandaşların dikkatli ve tedbirli olması istendi.",
+        tarih: "6 Eylül 2026",
+        saat: "12:10",
+        gorsel: "images/meteroji.jpeg",
+        kaynak: "HABERİSTA",
+        yazar: "Haberİsta Haber Merkezi",
         icerik: `
+            4 İL İÇİN SEL VE HEYELAN UYARISI
 
-            4 İL İÇİN UYARI
+            Meteoroloji tarafından yapılan değerlendirmelerde
+            bazı bölgelerde kuvvetli yağış beklendiği bildirildi.
 
-            Türkiye'nin bazı bölgelerinde beklenen yağışlar
-            nedeniyle sel ve heyelan riskine karşı uyarılar
-            gündeme geldi.
+            Yağışların özellikle kısa sürede etkili olması
+            halinde sel ve su baskını riskinin artabileceği
+            belirtildi.
 
-            Meteorolojik değerlendirmelerde bazı bölgelerde
-            yağışların yerel olarak kuvvetlenebileceği belirtildi.
+            SEL RİSKİNE DİKKAT
 
-            Riskli bölgelerde yaşayan vatandaşların resmi
-            meteorolojik uyarıları takip etmesi istendi.
-
-            SEL RİSKİ
-
-            Kuvvetli yağışların kısa sürede büyük miktarda
-            su birikmesine neden olması, özellikle alçak
-            bölgelerde su baskını riskini artırabiliyor.
-
-            Dere yatakları ve suyun hızla birikebileceği
-            alanlarda dikkatli olunması gerekiyor.
+            Kuvvetli yağışların dere yatakları, alçak
+            kesimler ve su birikintilerinin oluşabileceği
+            bölgelerde risk oluşturabileceği ifade edildi.
 
             HEYELAN TEHLİKESİ
 
-            Uzun süreli ve kuvvetli yağışlar eğimli arazilerde
-            heyelan riskini artırabiliyor.
-
-            Özellikle dağlık bölgelerde ve heyelan riski
-            bulunan yollarda seyahat edenlerin güncel
-            meteorolojik uyarıları takip etmesi önem taşıyor.
+            Yağışların etkili olacağı eğimli ve dağlık
+            bölgelerde heyelan riskinin de bulunduğu
+            değerlendiriliyor.
 
             SÜRÜCÜLERE UYARI
 
-            Yağış sırasında görüş mesafesi azalabileceğinden
-            sürücülerin hızlarını hava koşullarına göre
-            ayarlaması gerekiyor.
+            Yağış sırasında görüş mesafesinin azalabileceği
+            ve yolların kayganlaşabileceği belirtilirken,
+            sürücülerin hızlarını hava ve yol şartlarına
+            göre ayarlamaları istendi.
 
-            Su birikintilerinin bulunduğu yollarda araçların
-            güvenli şekilde ilerleyemeyebileceği unutulmamalı.
+            VATANDAŞLAR TEDBİRLİ OLMALI
 
-            RESMİ UYARILAR TAKİP EDİLMELİ
+            Yetkililerin uyarılarının takip edilmesi,
+            riskli bölgelerden uzak durulması ve ani
+            su baskınlarına karşı dikkatli olunması önem
+            taşıyor.
 
-            Hava koşullarına ilişkin en güncel bilgilerin
-            resmi meteoroloji kaynaklarından takip edilmesi
-            önem taşıyor.
+            HAVA DURUMU TAKİP EDİLMELİ
 
-            Sosyal medyada kaynağı belli olmayan hava durumu
-            paylaşımlarının doğrulanmadan paylaşılmaması gerekiyor.
+            Yağışların seyri ve uyarıların güncellenmesi
+            nedeniyle vatandaşların resmi meteorolojik
+            açıklamaları takip etmesi gerekiyor.
 
-            HABERİSTA olarak meteorolojik gelişmeleri ve
-            resmi uyarıları takip ediyoruz.
-        `,
-
-        tarih: "6 Eylül 2026",
-        saat: "12:10",
-
-        gorsel:
-            "images/meteroji.jpeg",
-
-        kaynak: "HABERİSTA"
+            HABERİSTA Haber Merkezi
+        `
     },
 
-
     /* =====================================================
-       9 - DEPREMLER
+       13 - SON DEPREMLER
     ===================================================== */
 
     {
         id: 13,
         kategori: "Türkiye",
-
-        baslik:
-            "Son depremler: AFAD ve Kandilli verileri güncellendi",
-
-        spot:
-            "Türkiye'de meydana gelen son depremlere ilişkin veriler AFAD ve Kandilli Rasathanesi tarafından takip ediliyor. Vatandaşlar sarsıntıların merkez üssü, büyüklüğü ve derinliğine ilişkin resmi verileri takip ediyor.",
-
-        icerik: `
-
-            SON DEPREMLER YAKINDAN TAKİP EDİLİYOR
-
-            Türkiye'nin deprem kuşağında yer alması nedeniyle
-            meydana gelen sarsıntılar vatandaşlar tarafından
-            yakından takip ediliyor.
-
-            Depremlere ilişkin en güncel veriler AFAD ve
-            Kandilli Rasathanesi gibi resmi kaynaklardan
-            takip edilebiliyor.
-
-            DEPREM VERİLERİNDE HANGİ BİLGİLER YER ALIYOR?
-
-            Deprem listelerinde sarsıntının meydana geldiği
-            saat, merkez üssü, büyüklüğü ve derinliği gibi
-            bilgiler yer alabiliyor.
-
-            Vatandaşların depremle ilgili bilgi edinirken
-            resmi kaynaklardaki güncel verileri dikkate
-            alması önem taşıyor.
-
-            SOSYAL MEDYADAKİ BİLGİLERE DİKKAT
-
-            Deprem sonrasında sosyal medya platformlarında
-            çok sayıda paylaşım yapılabiliyor.
-
-            Ancak bu paylaşımların tamamının doğrulanmış
-            bilgi olmadığı unutulmamalı.
-
-            Resmi kurumların açıklamaları dışındaki
-            doğrulanmamış bilgilerin paylaşılmaması gerekiyor.
-
-            DEPREM SIRASINDA
-
-            Deprem sırasında panik yapmamak ve mümkün
-            olduğunca güvenli bir noktaya geçmek önem taşıyor.
-
-            Camlardan, balkonlardan ve devrilebilecek
-            eşyalardan uzak durulması gerekiyor.
-
-            DEPREM SONRASI
-
-            Hasar gördüğünden şüphe edilen binalara
-            tekrar girilmemesi gerekiyor.
-
-            Acil durumlarda resmi ekiplerin yönlendirmelerine
-            uyulması önem taşıyor.
-
-            DEPREME HAZIRLIK
-
-            Deprem hazırlığının yalnızca deprem anında
-            yapılacaklardan ibaret olmadığı belirtiliyor.
-
-            Evlerde ağır eşyaların sabitlenmesi, acil durum
-            çantası hazırlanması ve aile iletişim planının
-            oluşturulması hazırlık açısından önem taşıyor.
-
-            HABERİSTA olarak deprem gelişmelerini AFAD,
-            Kandilli Rasathanesi ve diğer resmi açıklamalar
-            üzerinden takip ediyoruz.
-        `,
-
+        baslik: "Son depremler: AFAD ve Kandilli verileri güncellendi",
+        spot: "Türkiye'nin farklı bölgelerinde meydana gelen depremlere ilişkin AFAD ve Kandilli Rasathanesi tarafından paylaşılan veriler güncellenmeye devam ediyor.",
         tarih: "6 Eylül 2026",
         saat: "11:55",
+        gorsel: "images/deprem.jpeg",
+        kaynak: "AFAD / Kandilli Rasathanesi",
+        yazar: "Haberİsta Haber Merkezi",
+        icerik: `
+            SON DEPREMLER LİSTESİ GÜNCELLENİYOR
 
-        gorsel:
-            "images/deprem.jpeg",
+            Türkiye ve çevresinde meydana gelen depremler,
+            AFAD ve Kandilli Rasathanesi tarafından
+            kaydedilerek kamuoyuyla paylaşılmaya devam ediyor.
 
-        kaynak: "AFAD / Kandilli Rasathanesi"
+            DEPREM VERİLERİ TAKİP EDİLİYOR
+
+            Meydana gelen sarsıntıların merkez üssü,
+            büyüklüğü, derinliği ve gerçekleştiği saat
+            resmi kurumların internet sitelerindeki
+            veriler üzerinden takip edilebiliyor.
+
+            AFAD VERİLERİ
+
+            Afet ve Acil Durum Yönetimi Başkanlığı,
+            Türkiye'de meydana gelen depremlere ilişkin
+            güncel verileri yayımlıyor.
+
+            KANDİLLİ RASATHANESİ
+
+            Kandilli Rasathanesi ve Deprem Araştırma
+            Enstitüsü de Türkiye ve çevresindeki
+            sismik hareketleri izleyerek verileri
+            kamuoyuyla paylaşıyor.
+
+            DEPREM SONRASI NE YAPILMALI?
+
+            Deprem hissedilmesi durumunda panik yapılmaması,
+            güvenli bir alana geçilmesi ve resmi kurumların
+            açıklamalarının takip edilmesi önem taşıyor.
+
+            ARTÇI SARSINTILAR
+
+            Büyük depremlerin ardından artçı sarsıntılar
+            meydana gelebileceğinden vatandaşların
+            yetkililerin uyarılarını dikkate alması gerekiyor.
+
+            RESMİ KAYNAKLAR TAKİP EDİLMELİ
+
+            Deprem büyüklüğü ve konumuyla ilgili en güncel
+            bilgiler için AFAD ve Kandilli Rasathanesi'nin
+            resmi verilerinin esas alınması gerekiyor.
+
+            HABERİSTA Haber Merkezi
+        `
     },
 
-
     /* =====================================================
-       10 - KPSS
+       12 - 2026 KPSS
     ===================================================== */
 
     {
         id: 12,
         kategori: "Eğitim",
-
-        baslik:
-            "2026 KPSS Lisans Genel Yetenek-Genel Kültür sınavı yapıldı",
-
-        spot:
-            "2026-KPSS Lisans Genel Yetenek-Genel Kültür oturumu 6 Eylül Pazar günü gerçekleştirildi. Adaylar sınavın ardından soru kitapçığı, cevap anahtarı ve sonuç takvimini takip etmeye başladı.",
-
-        icerik: `
-
-            2026 KPSS LİSANS SINAVI GERÇEKLEŞTİRİLDİ
-
-            Kamu kurumlarında görev almak isteyen adayların
-            katıldığı 2026-KPSS Lisans Genel Yetenek-Genel
-            Kültür oturumu 6 Eylül Pazar günü gerçekleştirildi.
-
-            ÖSYM tarafından düzenlenen sınav için Türkiye
-            genelindeki sınav merkezlerinde adaylar sınava girdi.
-
-            SINAVDA GENEL YETENEK VE GENEL KÜLTÜR
-
-            Sınavda adayların Genel Yetenek ve Genel Kültür
-            alanlarındaki bilgileri ölçüldü.
-
-            Türkçe, matematik, tarih, coğrafya ve vatandaşlık
-            gibi alanlara ilişkin sorular adayların
-            performansında belirleyici oldu.
-
-            SINAV MERKEZLERİNDE YOĞUNLUK
-
-            Sınav öncesinde birçok kentte sınav merkezlerinin
-            çevresinde yoğunluk yaşandı.
-
-            Adayların sınav saatinden önce binalarda hazır
-            bulunması gerektiği için ulaşım planlaması
-            önem taşıdı.
-
-            SORULAR VE CEVAP ANAHTARI
-
-            Sınavın ardından adayların en çok merak ettiği
-            konular arasında soru kitapçığı ve cevap anahtarının
-            yayımlanacağı tarih bulunuyor.
-
-            ÖSYM tarafından yayımlanacak resmi dokümanlar
-            üzerinden adaylar sınav performanslarını
-            değerlendirebilecek.
-
-            SONUÇLAR BEKLENİYOR
-
-            Sınavın tamamlanmasının ardından adayların gözü
-            sonuç takvimine çevrildi.
-
-            KPSS puanları kamu kurumlarının personel
-            alımlarında ve ilgili tercih süreçlerinde
-            kullanılabiliyor.
-
-            TERCİH SÜRECİ
-
-            Adayların yalnızca KPSS puanına değil,
-            başvuracakları kadroların özel şartlarına da
-            dikkat etmesi gerekiyor.
-
-            Mezuniyet, yaş ve diğer başvuru koşullarının
-            tercih döneminde kontrol edilmesi önem taşıyor.
-
-            HABERİSTA Eğitim Servisi olarak ÖSYM'nin
-            açıklamalarını takip ediyoruz.
-        `,
-
+        baslik: "2026 KPSS Lisans Genel Yetenek-Genel Kültür sınavı yapıldı",
+        spot: "2026 KPSS Lisans Genel Yetenek-Genel Kültür oturumu gerçekleştirildi. Adaylar sınavın ardından sonuç takvimini ve değerlendirme sürecini takip etmeye başladı.",
         tarih: "6 Eylül 2026",
         saat: "10:15",
+        gorsel: "images/kpss.jpeg",
+        kaynak: "ÖSYM",
+        yazar: "Haberİsta Eğitim Servisi",
+        icerik: `
+            2026 KPSS LİSANS SINAVI GERÇEKLEŞTİRİLDİ
 
-        gorsel:
-            "images/kpss.jpeg",
+            Kamu Personel Seçme Sınavı'nın 2026 yılı
+            Lisans Genel Yetenek-Genel Kültür oturumu
+            gerçekleştirildi.
 
-        kaynak: "ÖSYM"
+            ADAYLAR SINAVDA TER DÖKTÜ
+
+            Sınava katılan adaylar, belirlenen sınav
+            merkezlerinde Genel Yetenek ve Genel Kültür
+            testlerini yanıtladı.
+
+            SINAV SÜRECİ
+
+            Sınav öncesinde adayların sınav giriş belgeleri
+            ve kimlik kontrolleri gerçekleştirildi.
+
+            SINAV SONUÇLARI BEKLENİYOR
+
+            Sınava giren adaylar sonuçların açıklanacağı
+            tarihi ÖSYM'nin resmi sınav takvimi üzerinden
+            takip edecek.
+
+            DEĞERLENDİRME SÜRECİ
+
+            Sınavın ardından cevapların değerlendirilmesi
+            ve sonuçların hazırlanmasına yönelik süreç
+            ÖSYM tarafından yürütülecek.
+
+            PUANLARIN KULLANIMI
+
+            KPSS puanları, ilgili kamu kurumlarının
+            personel alım süreçlerinde ve mevzuatta
+            belirtilen diğer işlemlerde kullanılabiliyor.
+
+            ADAYLARA BAŞARILAR
+
+            Sınava katılan tüm adayların sonuçlarını
+            beklediği süreçte resmi açıklamaları takip
+            etmesi önem taşıyor.
+
+            HABERİSTA Eğitim Servisi
+        `
     },
-
 
     /* =====================================================
        11 - BEŞİKTAŞ FENERBAHÇE
@@ -2269,816 +2151,819 @@ icerik: ` <p><strong>Bilim dünyasında genetik bilginin nasıl depolandığı v
     {
         id: 11,
         kategori: "Spor",
-
-        baslik:
-            "Beşiktaş derbide Fenerbahçe'yi 2-1 mağlup etti",
-
-        spot:
-            "Trendyol Süper Lig'in 4. haftasındaki derbide Beşiktaş, Fenerbahçe'yi deplasmanda 2-1 mağlup ederek üç puanın sahibi oldu.",
-
-        icerik: `
-
-            DERBİDE KAZANAN BEŞİKTAŞ
-
-            Trendyol Süper Lig'in 4. haftasında Fenerbahçe
-            ile Beşiktaş karşı karşıya geldi.
-
-            Kadıköy'de oynanan mücadelede iki takım da
-            karşılaşmaya yüksek tempoyla başladı.
-
-            FENERBAHÇE ÖNE GEÇTİ
-
-            Mücadelenin ilk bölümünde Fenerbahçe'nin golüyle
-            sarı-lacivertli ekip 1-0 öne geçti.
-
-            Beşiktaş ise golün ardından oyundaki baskısını
-            artırarak beraberlik için pozisyonlar geliştirdi.
-
-            BEŞİKTAŞ EŞİTLİĞİ SAĞLADI
-
-            Siyah-beyazlı takımın baskısı sonucunda
-            Rıdvan Yılmaz'ın golüyle skor 1-1'e geldi.
-
-            İlk yarının kalan bölümünde iki takım da
-            üstünlük kurmak için mücadele etti.
-
-            İKİNCİ YARIDA BEŞİKTAŞ ÖNE GEÇTİ
-
-            İkinci yarıda karşılaşmanın temposu yükseldi.
-
-            Beşiktaş'ın hücumları sonucunda Dusan Vlahovic'in
-            attığı golle siyah-beyazlı ekip 2-1 öne geçti.
-
-            FENERBAHÇE BERABERLİK İÇİN YÜKLENDİ
-
-            Fenerbahçe kalan bölümde beraberlik golünü
-            bulmak için baskısını artırdı.
-
-            Ancak Beşiktaş savunması skor üstünlüğünü
-            korumayı başardı.
-
-            MAÇIN SONUCU
-
-            Karşılaşmanın son düdüğüyle birlikte Beşiktaş
-            sahadan 2-1 galip ayrıldı.
-
-            Siyah-beyazlı ekip deplasmanda üç puan alırken
-            Fenerbahçe sahasında mağlubiyet yaşadı.
-
-            HABERİSTA Spor Servisi olarak Süper Lig'deki
-            gelişmeleri takip ediyoruz.
-        `,
-
+        baslik: "Beşiktaş derbide Fenerbahçe'yi 2-1 mağlup etti",
+        spot: "İstanbul derbisinde Beşiktaş, Fenerbahçe'yi 2-1 mağlup ederek önemli bir galibiyet aldı.",
         tarih: "6 Eylül 2026",
         saat: "00:20",
+        gorsel: "images/bjkfb.jpeg",
+        kaynak: "Spor Servisi",
+        yazar: "Haberİsta Spor Servisi",
+        icerik: `
+            DERBİDE KAZANAN BEŞİKTAŞ
 
-        gorsel:
-            "images/bjkfb.jpeg",
+            İstanbul'un iki köklü kulübünü karşı karşıya
+            getiren derbide Beşiktaş, Fenerbahçe'yi
+            2-1 mağlup etti.
 
-        kaynak: "Spor Servisi"
+            MAÇTA BÜYÜK HEYECAN
+
+            Karşılaşma boyunca iki takım da etkili
+            pozisyonlar üretirken mücadele yüksek
+            tempoda geçti.
+
+            BEŞİKTAŞ'TAN ÖNEMLİ GALİBİYET
+
+            Siyah-beyazlı ekip, karşılaşmadan 2-1'lik
+            skorla ayrılarak taraftarlarına önemli bir
+            galibiyet yaşattı.
+
+            FENERBAHÇE MÜCADELEYİ SÜRDÜRDÜ
+
+            Fenerbahçe, karşılaşma boyunca skoru
+            değiştirmek için çaba gösterse de mücadele
+            Beşiktaş'ın üstünlüğüyle tamamlandı.
+
+            TARAFTARLARDAN BÜYÜK İLGİ
+
+            Derbi öncesinde ve karşılaşma sırasında
+            iki takım taraftarlarının ilgisi dikkat çekti.
+
+            LİG YARIŞI
+
+            Derbiden alınan üç puanın iki takımın
+            sezon hedefleri açısından önemli olduğu
+            değerlendiriliyor.
+
+            ÖNÜMÜZDEKİ MAÇLAR
+
+            Her iki takım da sezonun kalan bölümünde
+            lig ve diğer organizasyonlardaki mücadelelerine
+            devam edecek.
+
+            HABERİSTA Spor Servisi
+        `
     },
 
-
     /* =====================================================
-       12 - ALTIN
+       10 - ALTIN FİYATLARI
     ===================================================== */
 
     {
         id: 10,
         kategori: "Ekonomi",
-
-        baslik:
-            "Altın fiyatlarında 6 Eylül hareketliliği",
-
-        spot:
-            "Hafta sonuna girilirken yatırımcıların gözü gram, çeyrek, yarım ve Cumhuriyet altını fiyatlarında. Küresel piyasalardaki gelişmeler altın fiyatlarının yönü açısından yakından takip ediliyor.",
-
+        baslik: "Altın fiyatlarında 6 Eylül hareketliliği",
+        spot: "Altın piyasasında yeni haftaya ilişkin beklentiler yatırımcıların gündeminde. Gram altın, çeyrek altın ve ons altındaki hareketlilik yakından takip ediliyor.",
+        tarih: "6 Eylül 2026",
+        saat: "09:30",
+        gorsel: "images/altın.jpeg",
+        kaynak: "HABERİSTA Ekonomi",
+        yazar: "Haberİsta Ekonomi Servisi",
         icerik: `
+            ALTIN FİYATLARINDA HAREKETLİLİK
 
-            ALTIN FİYATLARI GÜNDEMDE
+            Altın piyasasındaki fiyat hareketleri
+            yatırımcıların ve vatandaşların gündeminde
+            yer almaya devam ediyor.
 
-            Altın piyasasındaki hareketlilik yatırımcıların
-            gündemindeki yerini koruyor.
+            GRAM ALTIN TAKİP EDİLİYOR
 
-            Türkiye'de özellikle gram altın ve çeyrek altın
-            fiyatları vatandaşlar tarafından yakından takip
-            ediliyor.
-
-            FİYATLARI ETKİLEYEN FAKTÖRLER
-
-            Altın fiyatlarının oluşumunda küresel piyasalardaki
-            ons altın fiyatı, döviz kuru, faiz beklentileri ve
-            merkez bankalarının politikaları gibi birçok faktör
-            etkili olabiliyor.
-
-            GRAM ALTIN
-
-            Gram altın Türkiye'de en fazla takip edilen
-            değerli maden ürünlerinden biri.
-
-            Gün içerisindeki fiyat değişimleri nedeniyle
-            yatırımcılar alış ve satış fiyatlarını ayrı ayrı
-            takip ediyor.
+            Türkiye'de yatırımcıların yakından takip ettiği
+            gram altının fiyatındaki değişimler iç piyasa
+            ve ons altındaki hareketlerden etkilenebiliyor.
 
             ÇEYREK ALTIN
 
-            Fiziki altın tarafında çeyrek altın da vatandaşların
-            yakından takip ettiği ürünler arasında bulunuyor.
+            Düğün sezonu ve fiziki altın talebi nedeniyle
+            çeyrek altın fiyatları da vatandaşlar tarafından
+            yakından takip ediliyor.
 
-            Özellikle düğün sezonlarında çeyrek altına
-            yönelik ilgi artabiliyor.
+            ONS ALTIN
 
-            KÜRESEL PİYASALAR
+            Küresel piyasalarda ons altının seyri,
+            altının iç piyasadaki fiyatlaması açısından
+            önemli göstergeler arasında bulunuyor.
 
-            ABD ekonomisine ilişkin veriler, faiz beklentileri
-            ve merkez bankalarının kararları altın piyasasının
-            yönü açısından önem taşıyor.
+            PİYASALARDA GÖZLER EKONOMİK VERİLERDE
 
-            YENİ HAFTA BEKLENİYOR
+            ABD ekonomisi başta olmak üzere açıklanacak
+            ekonomik veriler ve merkez bankalarının
+            faiz politikaları altın fiyatlarının seyrinde
+            etkili olabiliyor.
 
-            Hafta sonunun ardından küresel piyasaların açılması
-            ile altın fiyatlarının yeni haftadaki seyri
-            yakından izlenecek.
+            YATIRIMCILAR TEMKİNLİ
 
-            Yatırımcıların karar verirken yalnızca günlük
-            fiyat hareketlerine değil, piyasa koşullarına
-            ve kendi finansal durumlarına da dikkat etmesi
-            önem taşıyor.
+            Uzmanlar yatırım kararlarının yalnızca kısa
+            vadeli fiyat hareketlerine göre verilmemesi
+            gerektiğine dikkat çekiyor.
 
-            HABERİSTA Ekonomi Servisi olarak altın piyasasındaki
-            gelişmeleri takip ediyoruz.
-        `,
+            ÖNEMLİ NOT
 
-        tarih: "6 Eylül 2026",
-        saat: "09:30",
+            Altın fiyatları gün içerisinde değişebildiği
+            için işlem öncesinde güncel fiyatların
+            yetkili piyasa ve finans kuruluşlarından
+            kontrol edilmesi gerekiyor.
 
-        gorsel:
-            "images/altın.jpeg",
-
-        kaynak: "HABERİSTA Ekonomi"
+            HABERİSTA Ekonomi Servisi
+        `
     },
 
-
     /* =====================================================
-       13 - AKARYAKIT
+       9 - AKARYAKIT FİYATLARI
     ===================================================== */
 
     {
         id: 9,
         kategori: "Ekonomi",
-
-        baslik:
-            "Akaryakıt fiyatları yeniden gündemde",
-
-        spot:
-            "Benzin, motorin ve LPG fiyatları küresel petrol piyasaları, döviz kuru ve vergi düzenlemeleri nedeniyle araç sahiplerinin gündemindeki yerini koruyor.",
-
-        icerik: `
-
-            AKARYAKIT FİYATLARI TAKİP EDİLİYOR
-
-            Türkiye'de araç sahiplerinin yakından takip ettiği
-            benzin, motorin ve LPG fiyatları gündemdeki yerini
-            koruyor.
-
-            Akaryakıt fiyatlarının oluşumunda uluslararası
-            petrol fiyatları, döviz kuru ve vergiler gibi
-            çeşitli faktörler etkili olabiliyor.
-
-            PETROL FİYATLARININ ETKİSİ
-
-            Küresel enerji piyasalarında yaşanan gelişmeler
-            petrol fiyatlarında değişikliklere yol açabiliyor.
-
-            Petrol fiyatındaki hareketlerin yanı sıra döviz
-            kurundaki değişimler de Türkiye'deki akaryakıt
-            piyasası açısından önem taşıyor.
-
-            BENZİN VE MOTORİN
-
-            Benzin ve motorin fiyatları bireysel araç sahipleri
-            kadar ticari taşımacılık yapan işletmeler açısından
-            da önemli bir maliyet kalemi.
-
-            TAŞIMACILIK MALİYETLERİ
-
-            Akaryakıt maliyetlerindeki değişimler taşımacılık
-            sektörünü doğrudan etkileyebiliyor.
-
-            Nakliye maliyetlerinde yaşanabilecek değişiklikler
-            bazı ürünlerin tüketici fiyatlarına dolaylı olarak
-            yansıyabiliyor.
-
-            LPG FİYATLARI
-
-            LPG kullanan araç sahipleri de istasyonlardaki
-            güncel fiyatları takip ediyor.
-
-            Vatandaşların fiyat değişiklikleri konusunda
-            güvenilir ve güncel kaynakları kontrol etmesi
-            önem taşıyor.
-
-            HABERİSTA Ekonomi Servisi olarak akaryakıt
-            piyasasındaki gelişmeleri takip ediyoruz.
-        `,
-
+        baslik: "Akaryakıt fiyatları yeniden gündemde",
+        spot: "Benzin, motorin ve LPG fiyatlarındaki değişimler sürücülerin gündemindeki yerini koruyor. Küresel petrol fiyatları ve döviz kuru yakından takip ediliyor.",
         tarih: "6 Eylül 2026",
         saat: "09:10",
+        gorsel: "images/yakıt.jpeg",
+        kaynak: "HABERİSTA Ekonomi",
+        yazar: "Haberİsta Ekonomi Servisi",
+        icerik: `
+            AKARYAKIT FİYATLARI GÜNDEMDE
 
-        gorsel:
-            "images/yakıt.jpeg",
+            Benzin, motorin ve LPG fiyatlarındaki
+            değişimler araç sahipleri tarafından
+            yakından takip ediliyor.
 
-        kaynak: "HABERİSTA Ekonomi"
+            PETROL FİYATLARI ETKİLİ OLUYOR
+
+            Küresel petrol piyasalarında yaşanan
+            hareketlilik akaryakıt fiyatlarının
+            oluşumunda önemli rol oynuyor.
+
+            DÖVİZ KURU DA ÖNEMLİ
+
+            Türkiye'de akaryakıt fiyatlarının oluşumunda
+            döviz kuru ve uluslararası petrol fiyatları
+            önemli unsurlar arasında bulunuyor.
+
+            SÜRÜCÜLER GÜNCEL FİYATLARI TAKİP EDİYOR
+
+            Akaryakıt istasyonlarındaki fiyatlar şehir,
+            dağıtıcı ve dönemsel fiyat değişikliklerine
+            göre farklılık gösterebiliyor.
+
+            ULAŞIM MALİYETLERİ
+
+            Akaryakıt fiyatlarındaki değişimler yalnızca
+            bireysel araç kullanıcılarını değil,
+            taşımacılık ve lojistik sektörünü de
+            etkileyebiliyor.
+
+            PİYASALAR İZLENİYOR
+
+            Önümüzdeki dönemde petrol fiyatları,
+            döviz hareketleri ve küresel ekonomik
+            gelişmeler akaryakıt piyasasının
+            seyrinde belirleyici olabilir.
+
+            HABERİSTA Ekonomi Servisi
+        `
     },
 
-
     /* =====================================================
-       14 - RUSYA TANK
+       8 - RUSYA'DA NAZİ TANKI
     ===================================================== */
 
     {
         id: 8,
         kategori: "Dünya",
-
-        baslik:
-            "Rusya'da üniversitenin altında Nazi tankı bulundu",
-
-        spot:
-            "Rusya'nın Kazan kentinde yürütülen çalışmalar sırasında II. Dünya Savaşı döneminden kalma Alman yapımı Panther V tankına ulaşıldığı bildirildi.",
-
-        icerik: `
-
-            KAZAN'DA TARİHİ KEŞİF
-
-            Rusya'nın Kazan kentinde yürütülen çalışmalar sırasında
-            II. Dünya Savaşı döneminden kalma Alman yapımı bir
-            Panther V tankına ulaşıldığı bildirildi.
-
-            Tankın bir üniversite yerleşkesinde, uzun süredir
-            toprağın altında bulunduğu belirtildi.
-
-            TANK TOPRAKTAN ÇIKARILDI
-
-            Çalışmalar sırasında ortaya çıkan metal parçalarının
-            ardından bölgede daha ayrıntılı inceleme yapıldı.
-
-            İncelemelerin sonucunda yapının savaş döneminden
-            kalma bir tank olduğu belirlendi.
-
-            PANTHER TANKLARI
-
-            Panther tankları II. Dünya Savaşı sırasında Almanya
-            tarafından kullanılan zırhlı araçlar arasında
-            bulunuyordu.
-
-            Tarihi araçların günümüzde bulunması askeri tarih
-            açısından dikkat çekici kabul ediliyor.
-
-            ÜNİVERSİTE ALANINDA BULUNMASI DİKKAT ÇEKTİ
-
-            Tankın bir üniversite yerleşkesinde bulunması,
-            keşfin dikkat çeken ayrıntılarından biri oldu.
-
-            Uzmanların araç üzerinde yapacağı çalışmaların,
-            tankın geçmişi ve bulunduğu bölge hakkında daha
-            fazla bilgi sağlaması bekleniyor.
-
-            TARİHİ ARAÇLARIN KORUNMASI
-
-            II. Dünya Savaşı döneminden kalan askeri araçlar,
-            dönemin teknolojisini ve askeri tarihini anlamak
-            açısından önemli kaynaklar arasında bulunuyor.
-
-            HABERİSTA Dünya Servisi olarak gelişmeleri
-            takip ediyoruz.
-        `,
-
+        baslik: "Rusya'da üniversitenin altında Nazi tankı bulundu",
+        spot: "Rusya'da yapılan çalışmalar sırasında bir üniversite yapısının altında İkinci Dünya Savaşı dönemine ait olduğu değerlendirilen bir tank bulundu.",
         tarih: "6 Eylül 2026",
         saat: "08:45",
+        gorsel: "images/rusya ünüversite.jpeg",
+        kaynak: "Dünya Servisi",
+        yazar: "Haberİsta Dünya Servisi",
+        icerik: `
+            RUSYA'DA TARİHİ BULUNTU
 
-        gorsel:
-            "images/rusya ünüversite.jpeg",
+            Rusya'da gerçekleştirilen çalışmalar sırasında
+            bir üniversite yapısının altında İkinci Dünya
+            Savaşı dönemine ait olduğu değerlendirilen
+            bir tank bulundu.
 
-        kaynak: "Dünya Servisi"
+            TANKIN TARİHİ ARAŞTIRILIYOR
+
+            Bulunan askeri aracın hangi dönemde ve
+            hangi koşullarda bölgeye getirildiğine
+            ilişkin araştırmalar yürütülüyor.
+
+            İKİNCİ DÜNYA SAVAŞI DÖNEMİ
+
+            Tankın İkinci Dünya Savaşı yıllarından
+            kaldığının belirlenmesi halinde buluntu,
+            dönemin askeri tarihi açısından dikkat
+            çekici bir örnek oluşturacak.
+
+            ÜNİVERSİTE ALTINDA BULUNDU
+
+            Tankın bir üniversite yapısının altında
+            ortaya çıkarılması buluntunun en dikkat
+            çekici ayrıntılarından biri oldu.
+
+            UZMANLAR İNCELİYOR
+
+            Tarihi askeri araç üzerinde yapılacak
+            incelemelerle modelinin ve geçmişinin
+            daha ayrıntılı şekilde belirlenmesi
+            bekleniyor.
+
+            TARİHİ ESER NİTELİĞİ
+
+            Buluntunun korunması ve tarihsel değerinin
+            belirlenmesi için uzmanların değerlendirmesi
+            önem taşıyor.
+
+            GELİŞMELER TAKİP EDİLİYOR
+
+            Tankın geçmişine ilişkin yeni bilgiler
+            ortaya çıktıkça konuya ilişkin açıklamaların
+            kamuoyuyla paylaşılması bekleniyor.
+
+            HABERİSTA Dünya Servisi
+        `
     },
-
-
     /* =====================================================
-       15 - MXGP
+       7 - MXGP AFYON
     ===================================================== */
 
     {
         id: 7,
         kategori: "Spor",
-
-        baslik:
-            "MXGP şampiyonu Afyon'da belli oluyor",
-
-        spot:
-            "Dünya Motokros Şampiyonası'nın 2026 sezonundaki önemli duraklarından MXGP Türkiye'de final yarışları 6 Eylül Pazar günü Afyonkarahisar'da gerçekleştiriliyor.",
-
-        icerik: `
-
-            MXGP TÜRKİYE'DE HEYECAN
-
-            Dünya Motokros Şampiyonası'nın önemli etaplarından
-            MXGP Türkiye'de sezonun kritik yarışlarından biri
-            Afyonkarahisar'da düzenleniyor.
-
-            6 Eylül Pazar günü gerçekleştirilen final yarışları
-            motor sporları takipçilerinin ilgisini çekiyor.
-
-            AFYONKARAHİSAR'DA YARIŞ
-
-            Afyonkarahisar Motor Sporları Merkezi,
-            uluslararası motokros organizasyonlarına ev
-            sahipliği yapan önemli pistlerden biri.
-
-            Sporcular zorlu parkurda sezon puanlarını
-            artırmak için mücadele ediyor.
-
-            HIZ VE TEKNİK ÖNEMLİ
-
-            Motokros yarışlarında yalnızca hız değil,
-            virajlarda doğru çizginin seçilmesi, motosiklet
-            kontrolü ve parkur şartlarına uyum da önem taşıyor.
-
-            ŞAMPİYONLUK MÜCADELESİ
-
-            Afyonkarahisar'daki yarışların şampiyona
-            sıralaması açısından önem taşıması bekleniyor.
-
-            Sezon boyunca toplanan puanlar genel klasmandaki
-            sıralamayı belirlemede önemli rol oynuyor.
-
-            TÜRKİYE'DE MOTOR SPORLARI
-
-            MXGP Türkiye organizasyonu, Türkiye'de motor
-            sporlarının tanıtımı açısından da dikkat çekiyor.
-
-            Yarışların yanı sıra organizasyon alanında
-            farklı etkinlikler de gerçekleştirilebiliyor.
-
-            HABERİSTA Spor Servisi olarak MXGP Türkiye'deki
-            gelişmeleri takip ediyoruz.
-        `,
-
+        baslik: "MXGP şampiyonu Afyon'da belli oluyor",
+        spot: "Dünyanın önemli motokros organizasyonlarından MXGP'de sezonun kritik yarışlarından biri Afyonkarahisar'da gerçekleştiriliyor.",
         tarih: "6 Eylül 2026",
         saat: "08:30",
+        gorsel: "images/mxgp yarışması.jpeg",
+        kaynak: "Türkiye Motosiklet Federasyonu",
+        yazar: "Haberİsta Spor Servisi",
+        icerik: `
+            MXGP HEYECANI AFYONKARAHİSAR'DA
 
-        gorsel:
-            "images/mxgp yarışması.jpeg",
+            Dünyanın en önemli motokros organizasyonları
+            arasında gösterilen MXGP'nin önemli yarışlarından
+            biri Afyonkarahisar'da gerçekleştiriliyor.
 
-        kaynak: "Türkiye Motosiklet Federasyonu"
+            ŞAMPİYONLUK YARIŞI
+
+            Sezon boyunca elde edilen puanların ardından
+            şampiyonluk mücadelesi büyük önem taşıyor.
+
+            SPORCULAR PİSTE ÇIKIYOR
+
+            Dünyanın farklı ülkelerinden gelen sporcular,
+            zorlu parkurda derece elde etmek için
+            mücadele ediyor.
+
+            AFYONKARAHİSAR'DA BÜYÜK İLGİ
+
+            Organizasyonun kentte önemli bir spor
+            etkinliği olarak takip edildiği belirtiliyor.
+
+            ZORLU PARKUR
+
+            Afyonkarahisar'daki pist, sürücülere
+            farklı zemin ve viraj özellikleriyle
+            zorlu bir mücadele sunuyor.
+
+            TÜRKİYE'NİN MOTOSİKLET SPORLARINDAKİ YERİ
+
+            Türkiye'nin uluslararası motosiklet
+            organizasyonlarına ev sahipliği yapması,
+            motor sporlarının ülkedeki tanıtımı açısından
+            önem taşıyor.
+
+            ŞAMPİYONLUK İÇİN KRİTİK MÜCADELE
+
+            Yarışların ardından sezon puan tablosunun
+            şekillenmesi ve şampiyonluk yarışının
+            daha da netleşmesi bekleniyor.
+
+            HABERİSTA Spor Servisi
+        `
     },
 
-
     /* =====================================================
-       16 - AVRUPA EES
+       6 - AVRUPA SEYAHATLERİNDE SINIR KONTROLLERİ
     ===================================================== */
 
     {
         id: 6,
         kategori: "Dünya",
-
-        baslik:
-            "Avrupa seyahatlerinde sınır kontrollerinde yeni dönem",
-
-        spot:
-            "Avrupa'ya seyahat edenleri ilgilendiren EES sınır kontrol sisteminde yeni dönem gündemde. Sistem kapsamında Schengen dış sınırlarında elektronik kayıt ve biyometrik kontrollerin kullanılması planlanıyor.",
-
-        icerik: `
-
-            AVRUPA'DA SINIR KONTROLLERİNDE DİJİTALLEŞME
-
-            Avrupa'ya seyahat eden vatandaşları ilgilendiren
-            sınır kontrol uygulamalarında dijitalleşme süreci
-            devam ediyor.
-
-            Avrupa Birliği'nin Entry/Exit System olarak
-            adlandırdığı EES sistemi, Schengen bölgesinin
-            dış sınırlarında giriş ve çıkışların elektronik
-            olarak takip edilmesini amaçlıyor.
-
-            PASAPORT DAMGASI SİSTEMİ DEĞİŞİYOR
-
-            EES sisteminin uygulanmasıyla birlikte yolcuların
-            giriş ve çıkış bilgilerinin elektronik olarak
-            kaydedilmesi hedefleniyor.
-
-            Sistem sayesinde sınır geçişlerinin daha düzenli
-            şekilde kayıt altına alınması amaçlanıyor.
-
-            BİYOMETRİK KONTROLLER
-
-            Yeni sistem kapsamında belirli biyometrik
-            bilgilerin sınır kontrol süreçlerinde kullanılması
-            planlanıyor.
-
-            Bu uygulamaların sınır kontrollerinde kimlik
-            doğrulama sürecini desteklemesi hedefleniyor.
-
-            TÜRKİYE'DEN SEYAHAT EDECEKLER
-
-            Avrupa ülkelerine seyahat edecek Türk vatandaşlarının
-            gidilecek ülkenin güncel giriş şartlarını kontrol
-            etmesi önem taşıyor.
-
-            Pasaport ve vize şartlarının yanı sıra sınır
-            uygulamalarındaki değişikliklerin de seyahat
-            öncesinde kontrol edilmesi gerekiyor.
-
-            SINIR KAPILARINDA İŞLEM SÜRELERİ
-
-            Yeni sistemlerin uygulanmaya başladığı dönemlerde
-            sınır kapılarındaki işlem sürelerinin değişmesi
-            mümkün olabilir.
-
-            Yoğun seyahat dönemlerinde yolcuların sınır
-            kontrolleri için yeterli zaman ayırması önem taşıyor.
-
-            DİJİTAL SINIR DÖNEMİ
-
-            Avrupa'da sınır yönetiminin daha fazla dijital
-            sisteme taşınması bekleniyor.
-
-            HABERİSTA Dünya Servisi olarak Avrupa'daki sınır
-            uygulamalarına ilişkin gelişmeleri takip ediyoruz.
-        `,
-
+        baslik: "Avrupa seyahatlerinde sınır kontrollerinde yeni dönem",
+        spot: "Avrupa'ya seyahat edenleri ilgilendiren sınır kontrol uygulamalarında yeni dönem başlıyor. Yolcuların seyahat öncesinde güncel kuralları kontrol etmesi önem taşıyor.",
         tarih: "6 Eylül 2026",
         saat: "08:15",
+        gorsel: "images/asrupa seyhat.jpeg",
+        kaynak: "Avrupa Birliği",
+        yazar: "Haberİsta Dünya Servisi",
+        icerik: `
+            AVRUPA SEYAHATLERİNDE YENİ DÖNEM
 
-        gorsel:
-            "images/asrupa seyhat.jpeg",
+            Avrupa ülkelerine seyahat eden yolcuları
+            ilgilendiren sınır kontrol uygulamalarında
+            yeni düzenlemeler gündemde.
 
-        kaynak: "Avrupa Birliği"
+            SINIR KONTROLLERİ
+
+            Avrupa'ya giriş ve çıkışlarda yolcuların
+            kimlik ve seyahat bilgilerinin kontrol
+            edilmesine yönelik uygulamalar önem taşıyor.
+
+            DİJİTAL SİSTEMLER
+
+            Avrupa'nın sınır yönetiminde dijital
+            sistemlerin daha fazla kullanılması
+            hedefleniyor.
+
+            SEYAHAT ÖNCESİ KONTROL
+
+            Yurt dışına çıkacak kişilerin pasaport,
+            vize ve diğer giriş şartlarını seyahat
+            öncesinde kontrol etmesi gerekiyor.
+
+            YOLCULAR İÇİN ÖNEMLİ
+
+            Sınır kapılarında yapılacak kontroller
+            nedeniyle seyahat sürelerinde değişiklik
+            yaşanabileceği değerlendiriliyor.
+
+            AVRUPA'DA GÜVENLİK
+
+            Yeni uygulamaların temel amaçları arasında
+            sınır güvenliğinin güçlendirilmesi ve
+            düzensiz göçle mücadele bulunuyor.
+
+            KURALLAR ÜLKELERE GÖRE DEĞİŞEBİLİR
+
+            Avrupa ülkelerine giriş şartlarının
+            vatandaşlığa ve seyahat amacına göre
+            farklılık gösterebileceği unutulmamalı.
+
+            RESMİ KAYNAKLAR TAKİP EDİLMELİ
+
+            Seyahat edecek kişilerin güncel bilgileri
+            ilgili ülkenin ve Avrupa Birliği kurumlarının
+            resmi kaynaklarından kontrol etmesi önem taşıyor.
+
+            HABERİSTA Dünya Servisi
+        `
     },
 
-
     /* =====================================================
-       17 - RESMİ GAZETE
+       5 - RESMÎ GAZETE
     ===================================================== */
 
     {
         id: 5,
         kategori: "Son Dakika",
-
-        baslik:
-            "5 Eylül 2026 Resmî Gazete yayımlandı: Yeni kararlar, atamalar ve önemli düzenlemeler",
-
-        spot:
-            "5 Eylül 2026 tarihli Resmî Gazete yayımlandı. Kamu yönetimi, ekonomi, eğitim ve farklı alanları ilgilendiren kararlar ve düzenlemeler kamuoyuna duyuruldu.",
-
+        baslik: "5 Eylül 2026 Resmî Gazete yayımlandı: Yeni kararlar, atamalar ve önemli düzenlemeler",
+        spot: "5 Eylül 2026 tarihli Resmî Gazete yayımlandı. Sayıda çeşitli kararlar, atamalar, yönetmelikler ve düzenlemeler yer aldı.",
+        tarih: "5 Eylül 2026",
+        saat: "15:20",
+        gorsel: "images/ChatGPT Image 5 Eyl 2026 15_25_02.png",
+        kaynak: "Resmî Gazete",
+        yazar: "Haberİsta Haber Merkezi",
         icerik: `
-
             RESMÎ GAZETE YAYIMLANDI
 
             5 Eylül 2026 tarihli Resmî Gazete yayımlandı.
+            Yeni sayıda kamu kurumlarını, vatandaşları
+            ve çeşitli sektörleri ilgilendiren karar ve
+            düzenlemeler yer aldı.
 
-            Resmî Gazete'de yayımlanan kararlar, yönetmelikler,
-            atamalar ve diğer düzenlemeler kamuoyuna duyuruldu.
+            YENİ DÜZENLEMELER
 
-            KAMU YÖNETİMİNE İLİŞKİN DÜZENLEMELER
+            Resmî Gazete'de yayımlanan yönetmelik,
+            tebliğ ve diğer düzenlemeler ilgili
+            mevzuat kapsamında yürürlüğe giriyor.
 
-            Kamu kurumlarının işleyişini ilgilendiren çeşitli
-            düzenlemeler ve kararlar Resmî Gazete'de yer aldı.
+            ATAMALAR
 
-            Düzenlemelerin kapsamı ve yürürlük tarihleri ilgili
-            mevzuat metinlerinde belirtiliyor.
+            Cumhurbaşkanlığı ve çeşitli kamu kurumlarına
+            ilişkin bazı atama kararları da Resmî
+            Gazete'nin gündeminde yer aldı.
 
-            ATAMA KARARLARI
+            YARGI KARARLARI
 
-            Resmî Gazete'nin önemli bölümleri arasında atama
-            kararları da bulunuyor.
+            Sayıda ilgili kurum ve kuruluşları ilgilendiren
+            çeşitli yargı kararları ve düzenlemeler
+            yayımlandı.
 
-            Kamu kurumlarında görev değişikliklerine ilişkin
-            kararlar yayımlandı.
+            YÜRÜRLÜĞE GİREN KARARLAR
 
-            EKONOMİ VE KAMU MALİYESİ
+            Resmî Gazete'de yayımlanan düzenlemelerin
+            yürürlük tarihleri ilgili karar ve yönetmeliklerde
+            belirtiliyor.
 
-            Ekonomi ve kamu maliyesine ilişkin çeşitli karar
-            ve düzenlemeler de Resmî Gazete üzerinden
-            kamuoyuna duyuruldu.
+            VATANDAŞLAR İÇİN ÖNEMLİ
 
-            EĞİTİM VE DİĞER ALANLAR
+            Günlük yaşamı veya çalışma hayatını ilgilendiren
+            yeni düzenlemelerin ayrıntılarının resmi
+            metinlerden takip edilmesi gerekiyor.
 
-            Eğitim başta olmak üzere farklı alanları ilgilendiren
-            düzenlemeler de yayımlanan kararlar arasında
-            bulunuyor.
+            RESMÎ METİNLER ESAS ALINMALI
 
-            VATANDAŞLAR RESMİ METİNLERİ KONTROL ETMELİ
+            Haberlerde yer alan özet bilgilerin yanı sıra
+            hukuki ve idari işlemlerde Resmî Gazete'de
+            yayımlanan resmi metinlerin esas alınması
+            önem taşıyor.
 
-            Vatandaşların kendilerini ilgilendiren kararların
-            ayrıntılarını Resmî Gazete'deki resmi metinlerden
-            kontrol etmesi önem taşıyor.
-
-            HABERİSTA olarak yayımlanan kararların vatandaşlara
-            etkilerini takip ediyoruz.
-        `,
-
-        tarih: "5 Eylül 2026",
-        saat: "15:20",
-
-        gorsel:
-            "images/ChatGPT Image 5 Eyl 2026 15_25_02.png",
-
-        kaynak: "Resmî Gazete"
+            HABERİSTA Haber Merkezi
+        `
     },
 
-
     /* =====================================================
-       18 - FİLENİN SULTANLARI
+       4 - FİLENİN SULTANLARI
     ===================================================== */
 
     {
         id: 4,
         kategori: "Spor",
-
-        baslik:
-            "Filenin Sultanları Avrupa şampiyonluğu için sahada! Türkiye-İtalya finali bugün oynanacak",
-
-        spot:
-            "A Milli Kadın Voleybol Takımı Avrupa şampiyonluğu için İtalya karşısında sahaya çıkıyor. Türkiye ile İtalya arasındaki final mücadelesi İstanbul'da oynanacak.",
-
-        icerik: `
-
-            FİLENİN SULTANLARI FİNALDE
-
-            A Milli Kadın Voleybol Takımı Avrupa Şampiyonası'nda
-            şampiyonluk için sahaya çıkıyor.
-
-            Türkiye'nin finaldeki rakibi İtalya oldu.
-
-            Turnuvada finale kadar yükselen milli takım,
-            şampiyonluk hedefiyle mücadele edecek.
-
-            FİNALİN ADRESİ İSTANBUL
-
-            Türkiye ile İtalya arasındaki final karşılaşması
-            İstanbul'da oynanacak.
-
-            Karşılaşma öncesinde milli takıma destek vermek
-            isteyen taraftarların ilgisi dikkat çekiyor.
-
-            ŞAMPİYONLUK HEDEFİ
-
-            Filenin Sultanları turnuva boyunca gösterdiği
-            performansla finale yükseldi.
-
-            Final karşılaşmasında servis, blok, hücum ve
-            savunma performanslarının maçın sonucunda
-            belirleyici olması bekleniyor.
-
-            TARAFTAR DESTEĞİ
-
-            Türkiye'nin finale yükselmesi sosyal medyada da
-            büyük ilgi gördü.
-
-            Milli takım için çok sayıda destek mesajı paylaşılırken
-            voleybolseverler final karşılaşmasına odaklandı.
-
-            ŞAMPİYON BELLİ OLACAK
-
-            Türkiye ile İtalya arasındaki finalin ardından
-            Avrupa şampiyonu belli olacak.
-
-            HABERİSTA Spor Servisi olarak karşılaşmanın
-            gelişmelerini takip ediyoruz.
-        `,
-
+        baslik: "Filenin Sultanları Avrupa şampiyonluğu için sahada! Türkiye-İtalya finali bugün oynanacak",
+        spot: "A Milli Kadın Voleybol Takımı, Avrupa şampiyonluğu için İtalya ile final karşılaşmasına çıkıyor. Milyonlarca voleybolsever tarihi mücadeleyi takip ediyor.",
         tarih: "6 Eylül 2026",
         saat: "01:30",
+        gorsel: "images/AVRUPA.jpeg",
+        kaynak: "Türkiye Voleybol Federasyonu",
+        yazar: "Haberİsta Spor Servisi",
+        icerik: `
+            FİLENİN SULTANLARI AVRUPA ŞAMPİYONLUĞU
+            İÇİN SAHADA
 
-        gorsel:
-            "images/AVRUPA.jpeg",
+            A Milli Kadın Voleybol Takımı, Avrupa
+            şampiyonluğu için İtalya karşısında
+            önemli bir final mücadelesine çıkıyor.
 
-        kaynak: "Türkiye Voleybol Federasyonu"
+            TÜRKİYE-İTALYA FİNALİ
+
+            Final karşılaşması voleybolseverler tarafından
+            büyük bir heyecanla bekleniyor.
+
+            MİLLİ TAKIMIN HEDEFİ ŞAMPİYONLUK
+
+            Filenin Sultanları, turnuvanın önceki
+            karşılaşmalarında gösterdiği performansın
+            ardından kupayı kazanmak için mücadele ediyor.
+
+            ZORLU RAKİP İTALYA
+
+            İtalya, Avrupa voleybolunun güçlü ekipleri
+            arasında yer alırken final karşılaşmasının
+            oldukça çekişmeli geçmesi bekleniyor.
+
+            TÜRKİYE'DE BÜYÜK HEYECAN
+
+            Milli takımın final karşılaşması öncesinde
+            Türkiye'nin birçok kentinde vatandaşların
+            maçı takip etmek için hazırlık yaptığı
+            bildiriliyor.
+
+            MİLLİ FORMAYA DESTEK
+
+            Taraftarların sosyal medya üzerinden
+            milli takıma destek mesajları paylaşması
+            bekleniyor.
+
+            AVRUPA ŞAMPİYONLUĞU İÇİN SON MAÇ
+
+            Final karşılaşması, turnuvanın en önemli
+            mücadelelerinden biri olarak öne çıkıyor.
+
+            HABERİSTA Spor Servisi
+        `
     },
 
-
     /* =====================================================
-       19 - PARA PİYASASI FONLARI
+       3 - PARA PİYASASI FONLARI
     ===================================================== */
 
     {
         id: 3,
         kategori: "Ekonomi",
-
-        baslik:
-            "Para piyasası fonlarında yeni dönem: Stopaj oranı yüzde 10'a çıkarıldı",
-
-        spot:
-            "Para piyasası fonlarına ilişkin stopaj düzenlemesi yatırımcıların gündemine geldi. Yeni düzenlemeyle birlikte stopaj oranındaki değişiklik yatırımcıların net getiri hesaplamalarını daha önemli hale getirdi.",
-
-        icerik: `
-
-            PARA PİYASASI FONLARINDA YENİ DÖNEM
-
-            Para piyasası fonlarına ilişkin stopaj düzenlemesi
-            yatırımcıların gündemindeki önemli başlıklardan biri
-            oldu.
-
-            Yapılan düzenlemeyle birlikte fon kazançlarına
-            uygulanan stopaj oranında değişikliğe gidildi.
-
-            YATIRIMCILARIN DİKKATİ FONLARDA
-
-            Para piyasası fonları kısa vadeli yatırım ve
-            likidite amacıyla yatırımcılar tarafından tercih
-            edilebiliyor.
-
-            Ancak fonların getirileri piyasa koşullarına göre
-            değişebiliyor.
-
-            STOPAJIN NET GETİRİYE ETKİSİ
-
-            Stopaj oranındaki değişiklik, brüt getiri ile
-            yatırımcının eline geçen net getiri arasındaki
-            farkın daha dikkatli değerlendirilmesini gerektiriyor.
-
-            Yatırımcıların fon seçerken vergi, risk, getiri
-            ve yatırım süresini birlikte değerlendirmesi
-            önem taşıyor.
-
-            YATIRIM KARARI VERİRKEN
-
-            Her yatırım ürününde olduğu gibi para piyasası
-            fonlarında da risk ve getiri unsurlarının
-            birlikte değerlendirilmesi gerekiyor.
-
-            Yatırımcıların resmi düzenlemeleri ve fonların
-            güncel belgelerini kontrol etmesi önem taşıyor.
-
-            HABERİSTA Ekonomi Servisi olarak finans
-            piyasalarındaki gelişmeleri takip ediyoruz.
-        `,
-
+        baslik: "Para piyasası fonlarında yeni dönem: Stopaj oranı yüzde 10'a çıkarıldı",
+        spot: "Para piyasası fonlarına ilişkin stopaj uygulamasında değişikliğe gidildi. Yeni düzenlemeyle stopaj oranının yüzde 10'a çıkarıldığı bildirildi.",
         tarih: "5 Eylül 2026",
         saat: "18:10",
+        gorsel: "images/EKENOMİ.jpeg",
+        kaynak: "Ekonomi Servisi",
+        yazar: "Haberİsta Ekonomi Servisi",
+        icerik: `
+            PARA PİYASASI FONLARINDA YENİ DÖNEM
 
-        gorsel:
-            "images/EKENOMİ.jpeg",
+            Para piyasası fonlarına ilişkin vergi
+            uygulamasında değişiklik gündeme geldi.
 
-        kaynak: "Ekonomi Servisi"
+            STOPAJ ORANI YÜZDE 10
+
+            Yapılan düzenlemeyle para piyasası
+            fonlarında uygulanan stopaj oranının
+            yüzde 10'a çıkarıldığı bildirildi.
+
+            YATIRIMCILARIN DİKKATİNDE
+
+            Düzenlemenin ardından yatırımcıların
+            fon getirilerini değerlendirirken vergi
+            kesintisini de hesaba katması gerekiyor.
+
+            FON GETİRİLERİ
+
+            Para piyasası fonları kısa vadeli yatırım
+            araçlarına yönelen yatırımcılar tarafından
+            sıklıkla tercih ediliyor.
+
+            VERGİ UYGULAMASI
+
+            Stopaj, yatırım araçlarından elde edilen
+            belirli gelirler üzerinden yapılan vergi
+            kesintisini ifade ediyor.
+
+            YATIRIM KARARLARI
+
+            Yatırımcıların yalnızca brüt getiriye değil,
+            vergi ve diğer maliyetler sonrasında
+            oluşabilecek net getiriye de dikkat etmesi
+            önem taşıyor.
+
+            GÜNCEL BİLGİLER TAKİP EDİLMELİ
+
+            Vergi uygulamalarındaki değişiklikler
+            yatırım kararlarını etkileyebileceğinden
+            resmi açıklamaların takip edilmesi gerekiyor.
+
+            ÖNEMLİ NOT
+
+            Bu haber yatırım tavsiyesi değildir.
+            Yatırım kararları kişisel finansal koşullar
+            ve riskler değerlendirilerek verilmelidir.
+
+            HABERİSTA Ekonomi Servisi
+        `
     },
 
-
     /* =====================================================
-       20 - YAŞLI / ENGELLİ AYLIĞI
+       2 - YAŞLI VE ENGELLİ AYLIKLARI
     ===================================================== */
 
     {
         id: 2,
         kategori: "Gündem",
-
-        baslik:
-            "Eylül ayı yaşlı ve engelli aylıkları hesaplara yatırılmaya başlandı",
-
-        spot:
-            "Eylül ayına ilişkin yaşlı ve engelli aylığı ödemeleri vatandaşların gündeminde. Hak sahipleri ödemelerinin hesaplarına aktarılıp aktarılmadığını resmi kanallar üzerinden kontrol edebiliyor.",
-
-        icerik: `
-
-            EYLÜL AYI ÖDEMELERİ GÜNDEMDE
-
-            Eylül ayına ilişkin yaşlı ve engelli aylığı
-            ödemeleri vatandaşların takip ettiği konular
-            arasında bulunuyor.
-
-            Sosyal destek ödemelerinden yararlanan hak sahipleri,
-            ödemelerin hesaplarına ne zaman aktarılacağını
-            takip ediyor.
-
-            YAŞLI AYLIĞI
-
-            Yaşlı aylığı, mevzuatta belirtilen şartları
-            sağlayan vatandaşlara sosyal destek kapsamında
-            ödeniyor.
-
-            Hak sahipliği için ilgili gelir ve diğer şartların
-            karşılanması gerekiyor.
-
-            ENGELLİ AYLIKLARI
-
-            Engelli vatandaşlara yönelik sosyal destek ödemeleri
-            de ilgili mevzuat kapsamında gerçekleştiriliyor.
-
-            ÖDEMELER NASIL TAKİP EDİLİR?
-
-            Hak sahipleri ödeme durumlarını ilgili resmi
-            kanallar üzerinden kontrol edebiliyor.
-
-            Ödeme konusunda sorun yaşayan vatandaşların
-            ilgili kamu kurumlarına başvurması gerekiyor.
-
-            SOSYAL DESTEKLERİN ÖNEMİ
-
-            Sosyal destek ödemeleri, hak sahiplerinin aylık
-            bütçelerini planlamalarında önemli bir rol
-            oynayabiliyor.
-
-            HABERİSTA olarak sosyal yardım ödemelerine ilişkin
-            resmi açıklamaları takip ediyoruz.
-        `,
-
+        baslik: "Eylül ayı yaşlı ve engelli aylıkları hesaplara yatırılmaya başlandı",
+        spot: "Eylül ayına ilişkin yaşlı ve engelli aylıklarının hak sahiplerinin hesaplarına yatırılmaya başlandığı bildirildi.",
         tarih: "5 Eylül 2026",
         saat: "10:27",
+        gorsel: "images/GÜNDEM.jpeg",
+        kaynak: "HABERİSTA Gündem",
+        yazar: "Haberİsta Haber Merkezi",
+        icerik: `
+            EYLÜL AYI YAŞLI VE ENGELLİ AYLIKLARI
 
-        gorsel:
-            "images/GÜNDEM.jpeg",
+            Eylül ayına ilişkin yaşlı ve engelli
+            aylıklarının hak sahiplerinin hesaplarına
+            yatırılmaya başlandığı bildirildi.
 
-        kaynak: "HABERİSTA Gündem"
+            ÖDEMELER HESAPLARA YATIRILIYOR
+
+            Sosyal yardım ödemelerinden yararlanan
+            vatandaşların ödemeleri ilgili ödeme
+            takvimi doğrultusunda hesaplarına
+            aktarılıyor.
+
+            HAK SAHİPLERİ ÖDEMELERİNİ KONTROL EDİYOR
+
+            Vatandaşlar ödemelerin hesaplarına
+            yansıyıp yansımadığını ilgili bankacılık
+            kanallarından veya resmi sistemlerden
+            kontrol edebiliyor.
+
+            SOSYAL DESTEKLER
+
+            Yaşlı ve engelli aylıkları, sosyal destek
+            mekanizmaları kapsamında ihtiyaç sahibi
+            vatandaşlara yönelik ödemeler arasında
+            bulunuyor.
+
+            ÖDEME TARİHLERİ TAKİP EDİLMELİ
+
+            Ödeme dönemlerinde tarih ve uygulamaların
+            resmi kurumların açıklamalarından takip
+            edilmesi önem taşıyor.
+
+            RESMİ KAYNAKLAR ÖNEMLİ
+
+            Ödeme miktarı, hak sahipliği ve ödeme
+            tarihleriyle ilgili en güncel bilgilerin
+            ilgili kamu kurumlarından alınması gerekiyor.
+
+            HABERİSTA Haber Merkezi
+        `
     },
 
-
     /* =====================================================
-       21 - PISA
+       1 - PISA 2025
     ===================================================== */
 
     {
         id: 1,
         kategori: "Eğitim",
-
-        baslik:
-            "PISA 2025 sonuçları için geri sayım: Sonuçlar 8 Eylül'de açıklanacak",
-
-        spot:
-            "PISA 2025 araştırmasının sonuçları için geri sayım başladı. Türkiye'nin eğitim performansına ilişkin sonuçların 8 Eylül'de açıklanması bekleniyor.",
-
-        icerik: `
-
-            PISA 2025 SONUÇLARI BEKLENİYOR
-
-            Uluslararası Öğrenci Değerlendirme Programı olarak
-            bilinen PISA araştırmasının 2025 sonuçları için
-            geri sayım başladı.
-
-            Araştırma, öğrencilerin farklı alanlardaki bilgi
-            ve becerilerini uluslararası ölçekte değerlendiren
-            önemli çalışmalardan biri.
-
-            SONUÇLAR 8 EYLÜL'DE BEKLENİYOR
-
-            PISA 2025 sonuçlarının 8 Eylül'de açıklanması
-            bekleniyor.
-
-            Sonuçların yayımlanmasıyla birlikte Türkiye'nin
-            performansına ilişkin yeni veriler ortaya çıkacak.
-
-            HANGİ ALANLAR DEĞERLENDİRİLİYOR?
-
-            PISA araştırmasında öğrencilerin okuma becerileri,
-            matematik ve fen alanlarındaki performansları
-            değerlendiriliyor.
-
-            Sonuçlar ülkelerin eğitim sistemlerini karşılaştırmak
-            amacıyla da kullanılıyor.
-
-            TÜRKİYE'NİN PERFORMANSI MERAK EDİLİYOR
-
-            Yeni sonuçların açıklanmasının ardından Türkiye'nin
-            önceki araştırmalardaki performansıyla karşılaştırma
-            yapılması bekleniyor.
-
-            Sonuçların değerlendirilmesinde öğrencilerin
-            performansının yanı sıra sosyoekonomik koşullar
-            ve eğitim imkanları gibi faktörlerin de dikkate
-            alınması önem taşıyor.
-
-            SONUÇLAR AÇIKLANDIKTAN SONRA
-
-            Sonuçların açıklanmasının ardından Türkiye'nin
-            sıralaması, puanları ve önceki dönemlerle
-            karşılaştırmaları eğitim gündeminin önemli
-            başlıklarından biri olacak.
-
-            HABERİSTA Eğitim Servisi olarak PISA 2025
-            sonuçlarını ve resmi açıklamaları takip ediyoruz.
-        `,
-
+        baslik: "PISA 2025 sonuçları için geri sayım: Sonuçlar 8 Eylül'de açıklanacak",
+        spot: "PISA 2025 araştırmasının sonuçları için geri sayım başladı. Türkiye'nin performansının da yer alacağı sonuçların 8 Eylül'de açıklanması bekleniyor.",
         tarih: "6 Eylül 2026",
         saat: "09:42",
+        gorsel: "images/PISA.jpeg",
+        kaynak: "Eğitim Servisi",
+        yazar: "Haberİsta Eğitim Servisi",
+        icerik: `
+            PISA 2025 SONUÇLARI İÇİN GERİ SAYIM
 
-        gorsel:
-            "images/PISA.jpeg",
+            Ekonomik İşbirliği ve Kalkınma Örgütü
+            OECD tarafından gerçekleştirilen PISA
+            araştırmasının 2025 sonuçları için
+            geri sayım başladı.
 
-        kaynak: "Eğitim Servisi"
+            SONUÇLAR 8 EYLÜL'DE AÇIKLANACAK
+
+            PISA 2025 araştırmasının sonuçlarının
+            8 Eylül tarihinde kamuoyuyla paylaşılması
+            bekleniyor.
+
+            PISA NEDİR?
+
+            PISA, farklı ülkelerdeki 15 yaş grubundaki
+            öğrencilerin okuma becerileri, matematik
+            ve fen alanlarındaki bilgi ve becerilerini
+            değerlendiren uluslararası bir araştırmadır.
+
+            TÜRKİYE'NİN PERFORMANSI
+
+            Türkiye'nin PISA 2025 sonuçlarında
+            göstereceği performans öğrenciler,
+            öğretmenler, veliler ve eğitim politikaları
+            açısından yakından takip ediliyor.
+
+            EĞİTİM POLİTİKALARINA KATKI
+
+            PISA sonuçları ülkelerin eğitim sistemlerinin
+            güçlü ve geliştirilmesi gereken yönlerinin
+            değerlendirilmesinde kullanılan uluslararası
+            göstergelerden biri olarak öne çıkıyor.
+
+            SONUÇLAR NASIL DEĞERLENDİRİLECEK?
+
+            Sonuçların yalnızca ülke sıralaması üzerinden
+            değil, öğrencilerin farklı alanlardaki
+            performansları ve önceki dönemlerle
+            karşılaştırmalar üzerinden değerlendirilmesi
+            önem taşıyor.
+
+            TÜRKİYE'DE EĞİTİM GÜNDEMİ
+
+            Açıklanacak sonuçların Türkiye'deki eğitim
+            politikaları ve öğrencilerin akademik
+            performansına ilişkin tartışmalara da
+            katkı sağlaması bekleniyor.
+
+            HABERİSTA Eğitim Servisi
+        `
     }
-
-];
-
+   ];
 
 /* =========================================================
-   HABERLERE OTOMATİK SLUG VE URL EKLE
+   OTOMATİK SLUG + URL + TARİH + GÖRÜNTÜLENME
 ========================================================= */
 
 haberler.forEach(function (haber) {
+
+    /* -----------------------------------------
+       SLUG
+    ----------------------------------------- */
 
     haber.slug = slugOlustur(haber.baslik);
 
     haber.url = "/haber/" + haber.slug;
 
+
+    /* -----------------------------------------
+       YAYIN TARİHİ
+    ----------------------------------------- */
+
+    if (!haber.publishedAt) {
+
+        const tarih =
+            String(haber.tarih || "")
+                .trim();
+
+        const saat =
+            String(haber.saat || "00:00")
+                .trim();
+
+        /*
+         * Türkiye saati UTC+03:00
+         */
+
+        const parcalar =
+            tarih.split(/\s+/);
+
+        if (parcalar.length === 3) {
+
+            const gun =
+                parcalar[0].padStart(2, "0");
+
+            const aylar = {
+                "Ocak": "01",
+                "Şubat": "02",
+                "Mart": "03",
+                "Nisan": "04",
+                "Mayıs": "05",
+                "Haziran": "06",
+                "Temmuz": "07",
+                "Ağustos": "08",
+                "Eylül": "09",
+                "Ekim": "10",
+                "Kasım": "11",
+                "Aralık": "12"
+            };
+
+            const ay =
+                aylar[parcalar[1]] || "01";
+
+            const yil =
+                parcalar[2];
+
+            haber.publishedAt =
+                `${yil}-${ay}-${gun}T${saat}:00+03:00`;
+        }
+    }
+
+
+    /* -----------------------------------------
+       DATE MODIFIED
+    ----------------------------------------- */
+
+    if (!haber.dateModified) {
+
+        haber.dateModified =
+            haber.publishedAt || null;
+    }
+
+
+    /* -----------------------------------------
+       GÖRÜNTÜLENME
+    ----------------------------------------- */
+
+    if (
+        typeof haber.goruntulenme !== "number"
+    ) {
+
+        haber.goruntulenme = 0;
+    }
+
+
+    /* -----------------------------------------
+       YAZAR
+    ----------------------------------------- */
+
+    if (!haber.yazar) {
+
+        haber.yazar =
+            "Haberİsta Haber Merkezi";
+    }
+
+
+    /* -----------------------------------------
+       KAYNAK
+    ----------------------------------------- */
+
+    if (!haber.kaynak) {
+
+        haber.kaynak =
+            "HABERİSTA";
+    }
+});
+
+
+/* =========================================================
+   HABERLERİ TARİHE GÖRE SIRALA
+   EN YENİ HABER EN ÜSTTE
+========================================================= */
+
+haberler.sort(function (a, b) {
+
+    const tarihA =
+        new Date(
+            a.publishedAt || 0
+        ).getTime();
+
+    const tarihB =
+        new Date(
+            b.publishedAt || 0
+        ).getTime();
+
+    return tarihB - tarihA;
 });
 
 
@@ -3088,18 +2973,18 @@ haberler.forEach(function (haber) {
 
 function haberSlugIleBul(slug) {
 
-    const temizSlug = slugOlustur(
-        decodeURIComponent(
-            String(slug || "")
-        )
-    );
+    const temizSlug =
+        slugOlustur(
+            decodeURIComponent(
+                String(slug || "")
+            )
+        );
 
     return haberler.find(function (haber) {
 
         return haber.slug === temizSlug;
 
     }) || null;
-
 }
 
 
@@ -3114,7 +2999,6 @@ function haberIdIleBul(id) {
         return String(haber.id) === String(id);
 
     }) || null;
-
 }
 
 
@@ -3133,10 +3017,10 @@ function haberKategoriIleBul(kategori) {
 
         return String(haber.kategori || "")
             .trim()
-            .toLocaleLowerCase("tr-TR") === temizKategori;
+            .toLocaleLowerCase("tr-TR")
+            === temizKategori;
 
     });
-
 }
 
 
@@ -3146,46 +3030,102 @@ function haberKategoriIleBul(kategori) {
 
 function sonHaberleriGetir(adet) {
 
-    const sayi = Number(adet) || 10;
+    const sayi =
+        Number(adet) || 10;
 
     return haberler.slice(0, sayi);
-
 }
 
 
 /* =========================================================
-   GLOBAL DEĞİŞKENLER
+   KATEGORİ LİSTESİ
 ========================================================= */
 
-window.haberler = haberler;
+function kategorileriGetir() {
 
-window.slugOlustur = slugOlustur;
-
-window.haberSlugIleBul = haberSlugIleBul;
-
-window.haberIdIleBul = haberIdIleBul;
-
-window.haberKategoriIleBul = haberKategoriIleBul;
-
-window.sonHaberleriGetir = sonHaberleriGetir;
+    return [
+        ...new Set(
+            haberler
+                .map(function (haber) {
+                    return haber.kategori;
+                })
+                .filter(Boolean)
+        )
+    ];
+}
 
 
 /* =========================================================
-   KONTROLLER
+   EN ÇOK OKUNAN HABERLER
 ========================================================= */
 
-console.log(
-    "Haberİsta:",
-    haberler.length,
-    "haber başarıyla yüklendi."
-);
+function enCokOkunanlariGetir(adet) {
+
+    const sayi =
+        Number(adet) || 10;
+
+    return [...haberler]
+        .sort(function (a, b) {
+
+            return (
+                Number(b.goruntulenme || 0) -
+                Number(a.goruntulenme || 0)
+            );
+
+        })
+        .slice(0, sayi);
+}
+
+
+/* =========================================================
+   ARAMA
+========================================================= */
+
+function haberAra(metin) {
+
+    const aranan =
+        String(metin || "")
+            .trim()
+            .toLocaleLowerCase("tr-TR");
+
+    if (!aranan) {
+        return [];
+    }
+
+    return haberler.filter(function (haber) {
+
+        const baslik =
+            String(haber.baslik || "")
+                .toLocaleLowerCase("tr-TR");
+
+        const spot =
+            String(haber.spot || "")
+                .toLocaleLowerCase("tr-TR");
+
+        const icerik =
+            String(haber.icerik || "")
+                .toLocaleLowerCase("tr-TR");
+
+        const kategori =
+            String(haber.kategori || "")
+                .toLocaleLowerCase("tr-TR");
+
+        return (
+            baslik.includes(aranan) ||
+            spot.includes(aranan) ||
+            icerik.includes(aranan) ||
+            kategori.includes(aranan)
+        );
+    });
+}
 
 
 /* =========================================================
    DUPLICATE ID KONTROLÜ
 ========================================================= */
 
-const kullanilanIdler = new Set();
+const kullanilanIdler =
+    new Set();
 
 haberler.forEach(function (haber) {
 
@@ -3196,11 +3136,9 @@ haberler.forEach(function (haber) {
             haber.id,
             haber.baslik
         );
-
     }
 
     kullanilanIdler.add(haber.id);
-
 });
 
 
@@ -3208,7 +3146,8 @@ haberler.forEach(function (haber) {
    DUPLICATE SLUG KONTROLÜ
 ========================================================= */
 
-const kullanilanSluglar = new Set();
+const kullanilanSluglar =
+    new Set();
 
 haberler.forEach(function (haber) {
 
@@ -3216,23 +3155,134 @@ haberler.forEach(function (haber) {
 
         console.error(
             "Haberİsta: DUPLICATE SLUG bulundu:",
-            haber.slug
+            haber.slug,
+            haber.baslik
         );
-
     }
 
     kullanilanSluglar.add(haber.slug);
-
 });
+
+
+/* =========================================================
+   BOŞ / EKSİK ALAN KONTROLÜ
+========================================================= */
+
+haberler.forEach(function (haber) {
+
+    if (!haber.baslik) {
+
+        console.warn(
+            "Haberİsta: Başlık eksik:",
+            haber.id
+        );
+    }
+
+    if (!haber.kategori) {
+
+        console.warn(
+            "Haberİsta: Kategori eksik:",
+            haber.id
+        );
+    }
+
+    if (!haber.spot) {
+
+        console.warn(
+            "Haberİsta: Spot eksik:",
+            haber.id
+        );
+    }
+
+    if (!haber.icerik) {
+
+        console.warn(
+            "Haberİsta: İçerik eksik:",
+            haber.id
+        );
+    }
+
+    if (!haber.gorsel) {
+
+        console.warn(
+            "Haberİsta: Görsel eksik:",
+            haber.id
+        );
+    }
+
+    if (!haber.publishedAt) {
+
+        console.warn(
+            "Haberİsta: publishedAt eksik:",
+            haber.id
+        );
+    }
+});
+
+
+/* =========================================================
+   GLOBAL DEĞİŞKENLER
+========================================================= */
+
+if (typeof window !== "undefined") {
+
+    window.haberler =
+        haberler;
+
+    window.slugOlustur =
+        slugOlustur;
+
+    window.haberSlugIleBul =
+        haberSlugIleBul;
+
+    window.haberIdIleBul =
+        haberIdIleBul;
+
+    window.haberKategoriIleBul =
+        haberKategoriIleBul;
+
+    window.sonHaberleriGetir =
+        sonHaberleriGetir;
+
+    window.kategorileriGetir =
+        kategorileriGetir;
+
+    window.enCokOkunanlariGetir =
+        enCokOkunanlariGetir;
+
+    window.haberAra =
+        haberAra;
+}
+
+
+/* =========================================================
+   KONSOL BİLGİSİ
+========================================================= */
+
+console.log(
+    "Haberİsta:",
+    haberler.length,
+    "haber başarıyla yüklendi."
+);
+
+console.log(
+    "Haberİsta: İlk haber →",
+    haberler[0]
+        ? haberler[0].baslik
+        : "Yok"
+);
+
+console.log(
+    "Haberİsta: Son haber →",
+    haberler[haberler.length - 1]
+        ? haberler[haberler.length - 1].baslik
+        : "Yok"
+);
 
 
 /* =========================================================
    HABER URL'LERİ
 ========================================================= */
-
-console.log(
-    "Haber URL'leri:"
-);
 
 haberler.forEach(function (haber) {
 
@@ -3241,5 +3291,4 @@ haberler.forEach(function (haber) {
         "→",
         haber.url
     );
-
 });
