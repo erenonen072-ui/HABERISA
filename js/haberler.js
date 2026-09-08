@@ -190,7 +190,7 @@ const haberler = [
     saat: "01:25",
     yazar: "Haberİsta Sağlık Servisi",
     kaynak: "National Institutes of Health (NIH) / Neuron",
-    gorsel: "https://images.unsplash.com/photo-1559757175-7cb057fba93c?auto=format&fit=crop&w=1600&q=85",
+   gorsel: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1600&q=85",
 
     seo: {
         title: "Alzheimer araştırmasında yeni keşif: Tau proteini ve hücre enerjisi | Haberİsta",
