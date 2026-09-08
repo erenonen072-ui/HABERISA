@@ -80,7 +80,7 @@ const haberler = [
 
         <p><strong>Haberİsta olarak bölgedeki gelişmeleri takip ediyor ve resmi makamlardan gelecek yeni bilgileri aktarmaya devam edeceğiz.</strong></p>
     `
-}
+},
 {
     id: 33,
     kategori: "Gündem",
