@@ -42,6 +42,48 @@ const haberler = [
 {
     id: 33,
     kategori: "Gündem",
+    baslik: "Mersin'in Bozyazı ilçesindeki yangına havadan ve karadan müdahale ediliyor",
+    spot: "Mersin'in Bozyazı ilçesinde ormanlık alanda çıkan yangına havadan ve karadan müdahale sürüyor. Yangının enerjisinin düşürüldüğü açıklanırken, ekiplerin alevleri tamamen kontrol altına almak için çalışmaları devam ediyor.",
+    tarih: "8 Eylül 2026",
+    saat: "19:39",
+    gorsel: "/images/bozyazi-orman-yangini.jpeg",
+    icerik: `
+        <p><strong>Mersin'in Bozyazı ilçesinde çıkan orman yangınına ekiplerin havadan ve karadan müdahalesi sürüyor.</strong> Tekeli Mahallesi Aksaz mevkisinde öğle saatlerinde başlayan yangınla mücadele için bölgeye çok sayıda ekip ve araç sevk edildi.</p>
+
+        <p>Edinilen bilgilere göre yangın, 8 Eylül 2026 günü saat 12.08 sıralarında Tekeli Mahallesi Aksaz mevkisindeki ormanlık alanda çıktı. Yangın ihbarının alınmasının ardından ekipler kısa sürede bölgeye yönlendirildi ve ilk müdahale saat 12.11 itibarıyla başlatıldı.</p>
+
+        <h2>Yangına yoğun müdahale</h2>
+
+        <p>Yangının kontrol altına alınması amacıyla bölgede kapsamlı bir çalışma yürütülüyor. Söndürme çalışmalarına <strong>230 personel, 66 kara aracı, 2 uçak ve 5 helikopter</strong> katılıyor.</p>
+
+        <p>Havadan gerçekleştirilen müdahaleye uçak ve helikopterler destek verirken, karadan da arazözler ve diğer yangın söndürme araçlarıyla alevlerin ilerlediği bölgelere müdahale ediliyor.</p>
+
+        <p>Çalışmaların güçlendirilmesi amacıyla bölgeye ayrıca <strong>10 arazöz, 3 su ikmal aracı, 2 ekskavatör, 2 dozer ve 3 treyler</strong> sevk edildi.</p>
+
+        <h2>Yangının enerjisi düşürüldü</h2>
+
+        <p>Akşam saatlerinde yangınla ilgili yeni bir gelişme yaşandı. Orman Genel Müdürlüğü tarafından yapılan açıklamada, Bozyazı'daki orman yangınının <strong>enerjisinin düşürüldüğü</strong> bildirildi.</p>
+
+        <p>Ancak yangının tamamen kontrol altına alındığı yönünde bir açıklama yapılmadı. Ekiplerin alevlerin kontrol altına alınması ve bölgede güvenliğin sağlanması amacıyla çalışmalarını sürdürdüğü belirtildi.</p>
+
+        <h2>Yangının çıkış nedeni araştırılıyor</h2>
+
+        <p>Yangının henüz belirlenemeyen bir nedenle başladığı bildirildi. Yangının çıkış nedenine ilişkin incelemelerin yetkili ekipler tarafından yürütülmesi bekleniyor.</p>
+
+        <p>Yangının seraların bulunduğu alanın üst kısmındaki ormanlık bölgede başlaması nedeniyle ekiplerin müdahalesi büyük önem taşıyor. Bölgede görev yapan ekipler, yangının yeniden güçlenmemesi için çalışmalarını sürdürüyor.</p>
+
+        <h2>Havadan ve karadan müdahale sürüyor</h2>
+
+        <p>Bozyazı'daki yangında hem hava araçları hem de kara ekipleri koordineli şekilde görev yapıyor. Özellikle ormanlık alanlarda alevlerin ilerleyebileceği noktalar ekipler tarafından takip ediliyor.</p>
+
+        <p>Yangının enerjisinin düşürülmesi, söndürme çalışmalarında önemli bir gelişme olarak değerlendirilirken, ekiplerin tamamen kontrol sağlanana kadar müdahaleye devam edeceği bildiriliyor.</p>
+
+        <p><strong>Haberİsta olarak bölgedeki gelişmeleri takip ediyor ve resmi makamlardan gelecek yeni bilgileri aktarmaya devam edeceğiz.</strong></p>
+    `
+}
+{
+    id: 33,
+    kategori: "Gündem",
     baslik: "Orgeneral Bayraktaroğlu, KKTC Başbakanı Üstel ile görüştü",
     spot: "Genelkurmay Başkanı Orgeneral Selçuk Bayraktaroğlu, KKTC Başbakanı Ünal Üstel ile Ankara'da bir araya geldi. Görüşmede Girne açıklarında meydana gelen deniz kazasının ardından devam eden çalışmaların güçlendirilmesi ve yeni teknik imkanlar ele alındı.",
     tarih: "8 Eylül 2026",
