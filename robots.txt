@@ -2,4 +2,3 @@ User-agent: *
 Allow: /
 
 Sitemap: https://haberisa.vercel.app/sitemap.xml
-Sitemap: https://haberisa.vercel.app/news-sitemap.xml
