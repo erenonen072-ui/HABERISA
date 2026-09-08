@@ -1,327 +1,606 @@
 <!DOCTYPE html>
+
 <html lang="tr">
 <head>
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6348449846402791"
      crossorigin="anonymous"></script>
+
 <link rel="icon" type="image/png" href="images/logo.jpeg">
+
 <!-- Google tag (gtag.js) -->
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-H6TTCSCZR2"></script>
+
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'G-H6TTCSCZR2');
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag("js", new Date());
+
+    gtag("config", "G-H6TTCSCZR2");
 </script>
-<meta name="google-site-verification" content="vQ7jx3fnqLHiLgqgLDnPluUm6fbkhSsjTq1CCeI2vGc" />
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Haberİsta - Son Dakika Haberleri</title>
+<meta
+ name="google-site-verification"
+ content="vQ7jx3fnqLHiLgqgLDnPluUm6fbkhSsjTq1CCeI2vGc"
+/>
 
-    <meta
-        name="description"
-        content="Haberİsta - Türkiye ve dünyadan son dakika haberleri."
-    >
+<meta charset="UTF-8">
 
-    <link rel="stylesheet" href="css/style.css">
+<meta
+ name="viewport"
+ content="width=device-width, initial-scale=1.0"
+/>
 
+<title>Haberİsta - Son Dakika Haberleri</title>
 
-    <!-- Diğer head kodların -->
+<meta
+ name="description"
+ content="Haberİsta - Türkiye ve dünyadan son dakika haberleri."
+/>
+
+<meta
+ name="robots"
+ content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+/>
+
+<meta
+ name="author"
+ content="Haberİsta Haber Merkezi"
+/>
+
+<meta
+ name="theme-color"
+ content="#e11d48"
+/>
+
+<link
+    rel="canonical"
+    href="https://haberisa.vercel.app/"
+/>
+
+<!-- Open Graph -->
+
+<meta
+ property="og:type"
+ content="website"
+/>
+
+<meta
+ property="og:site_name"
+ content="HABERİSTA"
+/>
+
+<meta
+ property="og:locale"
+ content="tr_TR"
+/>
+
+<meta
+ property="og:title"
+ content="Haberİsta - Son Dakika Haberleri"
+/>
+
+<meta
+ property="og:description"
+ content="Türkiye ve dünyadan son dakika haberleri."
+/>
+
+<meta
+ property="og:url"
+ content="https://haberisa.vercel.app/"
+/>
+
+<meta
+ property="og:image"
+ content="https://haberisa.vercel.app/images/logo.jpeg"
+/>
+
+<meta
+ property="og:image:alt"
+ content="Haberİsta"
+/>
+
+<!-- Twitter / X -->
+
+<meta
+ name="twitter:card"
+ content="summary_large_image"
+/>
+
+<meta
+ name="twitter:title"
+ content="Haberİsta - Son Dakika Haberleri"
+/>
+
+<meta
+ name="twitter:description"
+ content="Türkiye ve dünyadan son dakika haberleri."
+/>
+
+<meta
+ name="twitter:image"
+ content="https://haberisa.vercel.app/images/logo.jpeg"
+/>
+
+<link
+    rel="stylesheet"
+    href="css/style.css"
+/>
+
+<!-- OneSignal -->
+
 <script
     src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js"
     defer>
 </script>
 
 <script>
-    window.OneSignalDeferred = window.OneSignalDeferred || [];
+    window.OneSignalDeferred =
+        window.OneSignalDeferred || [];
 
-    OneSignalDeferred.push(async function(OneSignal) {
+    OneSignalDeferred.push(
+        async function(OneSignal) {
 
-        await OneSignal.init({
-            appId: "7d85b114-8807-4eea-8a34-3518fc2d76e3",
+            await OneSignal.init({
+                appId: "7d85b114-8807-4eea-8a34-3518fc2d76e3",
 
-            safari_web_id:
-                "web.onesignal.auto.6a2e4cfc-4f7f-4e0a-b787-2d0bd3e78806",
+                safari_web_id:
+                    "web.onesignal.auto.6a2e4cfc-4f7f-4e0a-b787-2d0bd3e78806",
 
-            notifyButton: {
-                enable: false
-            }
-        });
+                notifyButton: {
+                    enable: false
+                }
+            });
 
-        console.log("OneSignal başarıyla başlatıldı.");
-
-    });
+            console.log(
+                "OneSignal başarıyla başlatıldı."
+            );
+        }
+    );
 </script>
-
-   
-    
-
 
 </head>
 
 <body>
 
 <header class="site-header">
-    <div class="top-header">
-        <div class="container header-inner">
 
-            <button id="menuBtn" class="menu-btn">
-                ☰
+```
+<div class="top-header">
+
+    <div class="container header-inner">
+
+        <button
+            id="menuBtn"
+            class="menu-btn"
+            aria-label="Menüyü aç"
+            type="button"
+        >
+            ☰
+        </button>
+
+        <!-- LOGO -->
+
+        <a
+            href="index.html"
+            class="brand"
+        >
+
+            <img
+                src="images/logo.jpeg"
+                alt="Haberİsta Logo"
+            >
+
+            <span>
+                Haberİsta
+            </span>
+
+        </a>
+
+        <!-- ARAMA -->
+
+        <div class="search-area">
+
+            <button
+                id="searchBtn"
+                class="search-icon"
+                aria-label="Ara"
+                type="button"
+            >
+                🔍
             </button>
 
-            <!-- LOGO + SİTE ADI -->
-            <a href="index.html" class="brand">
-                <img src="images/logo.jpeg" alt="Haberİsta Logo">
-                <span>Haberİsta</span>
-            </a>
+            <button
+                id="notificationBtn"
+                class="notification-menu-btn"
+                type="button"
+            >
+                🔔 Bildirimleri Aç
+            </button>
 
-            <!-- SADECE ARAMA İKONU -->
-            <div class="search-area">
-                <button id="searchBtn" class="search-icon" aria-label="Ara">
-                    🔍
-                </button>
-              <button id="notificationBtn" class="notification-menu-btn" type="button">
-    🔔 Bildirimleri Aç
-</button>
-  
-                <div id="searchBox" class="search-box">
-                    <input
-                        id="searchInput"
-                        type="search"
-                        placeholder="Haber ara..."
-                    >
-                </div>
+            <div
+                id="searchBox"
+                class="search-box"
+            >
+
+                <input
+                    id="searchInput"
+                    type="search"
+                    placeholder="Haber ara..."
+                    aria-label="Haber ara"
+                >
+
             </div>
 
         </div>
+
     </div>
 
-    <nav class="category-nav">
-        <div class="container nav-inner">
-            <a class="active" href="index.html">Ana Sayfa</a>
-            <a href="son-dakika.html">Son Dakika</a>
-            <a href="gundem.html">Gündem</a>
-            <a href="ekonomi.html">Ekonomi</a>
-            <a href="spor.html">Spor</a>
-            <a href="magazin.html">Magazin</a>
-            <a href="dunya.html">Dünya</a>
-            <a href="teknoloji.html">Teknoloji</a>
-            <a href="saglik.html">Sağlık</a>
-            <a href="kultur-sanat.html">Kültür Sanat</a>
-        </div>
-    </nav>
+</div>
+
+<nav
+    class="category-nav"
+    aria-label="Ana navigasyon"
+>
+
+    <div class="container nav-inner">
+
+        <a
+            class="active"
+            href="index.html"
+        >
+            Ana Sayfa
+        </a>
+
+        <a href="son-dakika.html">
+            Son Dakika
+        </a>
+
+        <a href="gundem.html">
+            Gündem
+        </a>
+
+        <a href="ekonomi.html">
+            Ekonomi
+        </a>
+
+        <a href="spor.html">
+            Spor
+        </a>
+
+        <a href="magazin.html">
+            Magazin
+        </a>
+
+        <a href="dunya.html">
+            Dünya
+        </a>
+
+        <a href="teknoloji.html">
+            Teknoloji
+        </a>
+
+        <a href="saglik.html">
+            Sağlık
+        </a>
+
+        <a href="kultur-sanat.html">
+            Kültür Sanat
+        </a>
+
+    </div>
+
+</nav>
+```
+
 </header>
 
-<section class="market-bar">
-    <div class="container">
-        <div class="market-bar-inner">
+<!-- PİYASA -->
 
-            <div class="market-live">
-                <span class="live-dot"></span>
-                CANLI
-            </div>
+<section
+    class="market-bar"
+    aria-label="Piyasa verileri"
+>
 
-            <div id="marketItems" class="market-items">
+```
+<div class="container">
 
-                <div class="market-loading">
-                    Piyasa verileri yükleniyor...
-                </div>
+    <div class="market-bar-inner">
 
-            </div>
+        <div class="market-live">
 
-            <div id="marketUpdated" class="market-updated">
-                --
+            <span class="live-dot"></span>
+
+            CANLI
+
+        </div>
+
+        <div
+            id="marketItems"
+            class="market-items"
+        >
+
+            <div class="market-loading">
+                Piyasa verileri yükleniyor...
             </div>
 
         </div>
+
+        <div
+            id="marketUpdated"
+            class="market-updated"
+        >
+            --
+        </div>
+
     </div>
+
+</div>
+```
+
 </section>
-<!-- =====================================================
-     SON DAKİKA
-===================================================== -->
+
+<!-- SON DAKİKA -->
 
 <div class="breaking-bar">
 
-    <div class="container breaking-inner">
+```
+<div class="container breaking-inner">
 
-        <div class="breaking-title">
-            <span></span>
-            SON DAKİKA
-        </div>
+    <div class="breaking-title">
 
-        <div id="breakingNews" class="breaking-news"></div>
+        <span></span>
+
+        SON DAKİKA
 
     </div>
 
-</div>
+    <div
+        id="breakingNews"
+        class="breaking-news"
+    >
+        <!-- BUILD TARAFINDAN DOLDURULUR -->
+    </div>
 
+</div>
+```
+
+</div>
 
 <main class="container">
 
-    <!-- =================================================
-         MANŞET
-    ================================================= -->
+```
+<!-- MANŞET -->
 
-    <section class="hero-slider">
+<section
+    class="hero-slider"
+    aria-label="Manşet haberler"
+>
 
-        <button
-            id="heroPrev"
-            class="hero-arrow hero-prev"
-        >
-            ‹
-        </button>
+    <button
+        id="heroPrev"
+        class="hero-arrow hero-prev"
+        type="button"
+        aria-label="Önceki haber"
+    >
+        ‹
+    </button>
 
-        <div id="heroMain" class="hero-main"></div>
+    <div
+        id="heroMain"
+        class="hero-main"
+    >
+        <!-- BUILD TARAFINDAN DOLDURULUR -->
+    </div>
 
-        <button
-            id="heroNext"
-            class="hero-arrow hero-next"
-        >
-            ›
-        </button>
+    <button
+        id="heroNext"
+        class="hero-arrow hero-next"
+        type="button"
+        aria-label="Sonraki haber"
+    >
+        ›
+    </button>
 
+    <div
+        id="heroNumbers"
+        class="hero-numbers"
+    >
+        <!-- BUILD TARAFINDAN DOLDURULUR -->
+    </div>
 
-        <div
-            id="heroNumbers"
-            class="hero-numbers"
-        ></div>
+</section>
 
-    </section>
+<!-- SON HABERLER -->
 
+<section class="latest-section">
 
-    <!-- =================================================
-         HABERLER
-    ================================================= -->
+    <div class="section-title">
 
-    <section class="latest-section">
+        <h2>
+            Son Haberler
+        </h2>
 
-        <div class="section-title">
+        <div></div>
 
-            <h2>
-                Son Haberler
-            </h2>
+    </div>
 
-            <div></div>
+    <div
+        id="searchResultInfo"
+        class="search-result-info"
+    ></div>
 
-        </div>
+    <div
+        id="newsGrid"
+        class="news-grid"
+    >
+        <!-- BUILD TARAFINDAN DOLDURULUR -->
+    </div>
 
-
-        <div
-            id="searchResultInfo"
-            class="search-result-info"
-        ></div>
-
-
-        <div
-            id="newsGrid"
-            class="news-grid"
-        ></div>
-
-    </section>
+</section>
+```
 
 </main>
 
+<!-- FOOTER -->
 
 <footer class="site-footer">
 
-    <div class="container footer-inner">
-
-        <!-- Haberİsta -->
-        <div>
-            <div class="footer-logo">
-                <span>Haber</span>İsta
-            </div>
-
-            <p>
-                Türkiye ve dünyadan güncel haberler.
-            </p>
-        </div>
-
-
-        <!-- Kategoriler -->
-        <div>
-            <h4>Kategoriler</h4>
-
-            <a href="gundem.html">Gündem</a>
-            <a href="ekonomi.html">Ekonomi</a>
-            <a href="spor.html">Spor</a>
-            <a href="dunya.html">Dünya</a>
-        </div>
-
-
-        <!-- Haberİsta -->
-        <div>
-            <h4>Haberİsta</h4>
-
-            <a href="hakkimizda.html">Hakkımızda</a>
-            <a href="iletisim.html">İletişim</a>
-            <a href="gizlilik.html">Gizlilik</a>
-        </div>
-
-
-        <!-- SOSYAL MEDYA -->
-        <div class="footer-social">
-            <h4>Bizi Takip Et</h4>
-
-            <div class="social-links">
-
-                <a
-                    href="https://www.tiktok.com/@haberista"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    🎵 TikTok
-                </a>
-
-                <a
-                    href="https://www.instagram.com/haber_ista"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    📷 Instagram
-                </a>
-
-                <a
-                    href="https://x.com/HABER_ISTA"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    𝕏 X
-                </a>
-
-            </div>
-        </div>
-
-    </div>
-
-
-    <div class="footer-bottom">
-        © 2026 Haberİsta. Tüm hakları saklıdır.
-    </div>
-
-</footer>
-
-
-<div id="cookieBox" class="cookie-box">
+```
+<div class="container footer-inner">
 
     <div>
-        <strong>Çerez Kullanımı</strong>
+
+        <div class="footer-logo">
+
+            <span>
+                Haber
+            </span>İsta
+
+        </div>
 
         <p>
-            Site deneyimini geliştirmek için gerekli
-            çerezleri kullanıyoruz.
+            Türkiye ve dünyadan güncel haberler.
         </p>
+
     </div>
 
-    <button id="cookieAccept">
-        Kabul Et
-    </button>
+    <div>
+
+        <h4>
+            Kategoriler
+        </h4>
+
+        <a href="gundem.html">
+            Gündem
+        </a>
+
+        <a href="ekonomi.html">
+            Ekonomi
+        </a>
+
+        <a href="spor.html">
+            Spor
+        </a>
+
+        <a href="dunya.html">
+            Dünya
+        </a>
+
+    </div>
+
+    <div>
+
+        <h4>
+            Haberİsta
+        </h4>
+
+        <a href="hakkimizda.html">
+            Hakkımızda
+        </a>
+
+        <a href="iletisim.html">
+            İletişim
+        </a>
+
+        <a href="gizlilik.html">
+            Gizlilik
+        </a>
+
+        <a href="cerez-politikasi.html">
+            Çerez Politikası
+        </a>
+
+    </div>
+
+    <!-- SOSYAL MEDYA -->
+
+    <div class="footer-social">
+
+        <h4>
+            Bizi Takip Et
+        </h4>
+
+        <div class="social-links">
+
+            <a
+                href="https://www.tiktok.com/@haberista"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                🎵 TikTok
+            </a>
+
+            <a
+                href="https://www.instagram.com/haber_ista"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                📷 Instagram
+            </a>
+
+            <a
+                href="https://x.com/HABER_ISTA"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                𝕏 X
+            </a>
+
+        </div>
+
+    </div>
 
 </div>
 
+<div class="footer-bottom">
+
+    © 2026 Haberİsta.
+    Tüm hakları saklıdır.
+
+</div>
+```
+
+</footer>
+
+<!-- ÇEREZ -->
+
+<div
+    id="cookieBox"
+    class="cookie-box"
+>
+
+```
+<div>
+
+    <strong>
+        Çerez Kullanımı
+    </strong>
+
+    <p>
+        Site deneyimini geliştirmek için
+        gerekli çerezleri kullanıyoruz.
+    </p>
+
+</div>
+
+<button
+    id="cookieAccept"
+    type="button"
+>
+    Kabul Et
+</button>
+```
+
+</div>
 
 <script src="js/haberler.js"></script>
+
 <script src="js/app.js"></script>
 
 </body>
