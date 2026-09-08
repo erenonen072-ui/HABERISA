@@ -5,15 +5,14 @@ const path = require("path");
 const vm = require("vm");
 
 const ROOT = __dirname;
-
 const INDEX_HTML = path.join(ROOT, "index.html");
 const HABER_HTML = path.join(ROOT, "haber.html");
 const HABERLER_JS = path.join(ROOT, "js", "haberler.js");
-
 const OUTPUT_DIR = path.join(ROOT, "haber");
 
 const SITE_URL = "https://haberisa.vercel.app";
 const SITE_NAME = "HABERİSTA";
+const LOGO_URL = `${SITE_URL}/images/logo.jpeg`;
 
 /* =========================================================
    YARDIMCI FONKSİYONLAR
@@ -56,37 +55,19 @@ function slugOlustur(metin) {
 ========================================================= */
 
 function getTitle(haber) {
-    return (
-        haber.baslik ||
-        haber.title ||
-        "Haber"
-    );
+    return haber.baslik || haber.title || "Haber";
 }
 
 function getCategory(haber) {
-    return (
-        haber.kategori ||
-        haber.category ||
-        "Haber"
-    );
+    return haber.kategori || haber.category || "Haber";
 }
 
 function getSpot(haber) {
-    return (
-        haber.spot ||
-        haber.ozet ||
-        haber.description ||
-        ""
-    );
+    return haber.spot || haber.ozet || haber.description || "";
 }
 
 function getContent(haber) {
-    return (
-        haber.icerik ||
-        haber.content ||
-        haber.metin ||
-        ""
-    );
+    return haber.icerik || haber.content || haber.metin || "";
 }
 
 function getImage(haber) {
@@ -114,19 +95,11 @@ function getDate(haber) {
 }
 
 function getTime(haber) {
-    return (
-        haber.saat ||
-        haber.time ||
-        ""
-    );
+    return haber.saat || haber.time || "";
 }
 
 function getSource(haber) {
-    return (
-        haber.kaynak ||
-        haber.source ||
-        "HABERİSTA"
-    );
+    return haber.kaynak || haber.source || "HABERİSTA";
 }
 
 function getAuthor(haber) {
@@ -138,22 +111,15 @@ function getAuthor(haber) {
 }
 
 function getViews(haber) {
-    return (
-        haber.goruntulenme ??
-        haber.views ??
-        0
-    );
+    return haber.goruntulenme ?? haber.views ?? 0;
 }
 
 function getSlug(haber) {
-    return (
-        haber.slug ||
-        slugOlustur(getTitle(haber))
-    );
+    return haber.slug || slugOlustur(getTitle(haber));
 }
 
 function getNewsURL(haber) {
-    return `${SITE_URL}/haber/${getSlug(haber)}`;
+    return `${SITE_URL}/haber/${encodeURIComponent(getSlug(haber))}`;
 }
 
 /* =========================================================
@@ -161,17 +127,13 @@ function getNewsURL(haber) {
 ========================================================= */
 
 function getImageURL(image) {
-
     if (!image) {
         return "";
     }
 
     const value = String(image).trim();
 
-    if (
-        value.startsWith("http://") ||
-        value.startsWith("https://")
-    ) {
+    if (/^https?:\/\//i.test(value)) {
         return value;
     }
 
@@ -179,11 +141,15 @@ function getImageURL(image) {
         return "";
     }
 
-    if (value.startsWith("/")) {
-        return SITE_URL + value;
+    if (value.startsWith("//")) {
+        return `https:${value}`;
     }
 
-    return SITE_URL + "/" + value;
+    if (value.startsWith("/")) {
+        return `${SITE_URL}${value}`;
+    }
+
+    return `${SITE_URL}/${value.replace(/^\/+/, "")}`;
 }
 
 /* =========================================================
@@ -191,17 +157,24 @@ function getImageURL(image) {
 ========================================================= */
 
 function getISODate(haber) {
-
-    if (
+    const directDate =
         haber.publishedAt ||
         haber.published_at ||
-        haber.datePublished
-    ) {
-        return (
-            haber.publishedAt ||
-            haber.published_at ||
-            haber.datePublished
-        );
+        haber.datePublished;
+
+    if (directDate) {
+        const date = new Date(directDate);
+
+        if (!Number.isNaN(date.getTime())) {
+            return date.toISOString();
+        }
+
+        if (
+            typeof directDate === "string" &&
+            /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}/.test(directDate)
+        ) {
+            return directDate;
+        }
     }
 
     const tarih = getDate(haber);
@@ -240,7 +213,7 @@ function getISODate(haber) {
     let saat = getTime(haber) || "00:00";
 
     const saatMatch = String(saat).match(
-        /(\d{1,2}):(\d{2})/
+        /(\d{1,2}):(\d{2})(?::(\d{2}))?/
     );
 
     let saatISO = "00:00:00";
@@ -250,7 +223,8 @@ function getISODate(haber) {
             String(saatMatch[1]).padStart(2, "0") +
             ":" +
             saatMatch[2] +
-            ":00";
+            ":" +
+            (saatMatch[3] || "00");
     }
 
     return `${yil}-${ay}-${gun}T${saatISO}+03:00`;
@@ -261,13 +235,27 @@ function getISODate(haber) {
 ========================================================= */
 
 function getModifiedDate(haber) {
-
-    return (
+    const modified =
         haber.guncellendi ||
         haber.updatedAt ||
-        haber.dateModified ||
-        getISODate(haber)
-    );
+        haber.dateModified;
+
+    if (modified) {
+        const date = new Date(modified);
+
+        if (!Number.isNaN(date.getTime())) {
+            return date.toISOString();
+        }
+
+        if (
+            typeof modified === "string" &&
+            /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}/.test(modified)
+        ) {
+            return modified;
+        }
+    }
+
+    return getISODate(haber);
 }
 
 /* =========================================================
@@ -275,7 +263,6 @@ function getModifiedDate(haber) {
 ========================================================= */
 
 function getDescription(haber) {
-
     let description =
         getSpot(haber) ||
         stripHTML(getContent(haber));
@@ -302,9 +289,7 @@ function getDescription(haber) {
 ========================================================= */
 
 function renderContent(content) {
-
     if (!content) {
-
         return `
             <p>
                 Bu haberin detayları yakında güncellenecektir.
@@ -314,17 +299,9 @@ function renderContent(content) {
 
     const value = String(content).trim();
 
-    /*
-     * İçerik zaten HTML ise olduğu gibi bırak.
-     */
-
     if (/<[a-z][^>]*>/i.test(value)) {
         return value;
     }
-
-    /*
-     * Düz metinse paragraflara ayır.
-     */
 
     return value
         .split(/\n+/)
@@ -339,12 +316,8 @@ function renderContent(content) {
 ========================================================= */
 
 function loadNews() {
-
     if (!fs.existsSync(HABERLER_JS)) {
-
-        throw new Error(
-            "js/haberler.js bulunamadı."
-        );
+        throw new Error("js/haberler.js bulunamadı.");
     }
 
     const code = fs.readFileSync(
@@ -367,13 +340,11 @@ function loadNews() {
         }
     );
 
-    const haberler =
-        context.window.haberler;
+    const haberler = context.window.haberler;
 
     if (!Array.isArray(haberler)) {
-
         throw new Error(
-            "window.haberler bulunamadı."
+            "window.haberler bulunamadı veya dizi değil."
         );
     }
 
@@ -385,23 +356,16 @@ function loadNews() {
 ========================================================= */
 
 function validateNews(haberler) {
-
     if (!haberler.length) {
-
-        console.warn(
-            "⚠️ Haber listesi boş."
-        );
-
+        console.warn("⚠️ Haber listesi boş.");
         return;
     }
 
     for (const haber of haberler) {
-
         const title = getTitle(haber);
         const slug = getSlug(haber);
 
         if (!title || title === "Haber") {
-
             console.warn(
                 "⚠️ Başlığı eksik haber:",
                 haber.id
@@ -409,7 +373,6 @@ function validateNews(haberler) {
         }
 
         if (!slug) {
-
             console.warn(
                 "⚠️ Slug oluşturulamadı:",
                 title
@@ -417,7 +380,6 @@ function validateNews(haberler) {
         }
 
         if (!getDate(haber)) {
-
             console.warn(
                 "⚠️ Tarihi eksik haber:",
                 title
@@ -425,7 +387,6 @@ function validateNews(haberler) {
         }
 
         if (!getSpot(haber)) {
-
             console.warn(
                 "⚠️ Spotu eksik haber:",
                 title
@@ -433,9 +394,15 @@ function validateNews(haberler) {
         }
 
         if (!getContent(haber)) {
-
             console.warn(
                 "⚠️ İçeriği eksik haber:",
+                title
+            );
+        }
+
+        if (!getImage(haber)) {
+            console.warn(
+                "⚠️ Görseli eksik haber:",
                 title
             );
         }
@@ -447,46 +414,34 @@ function validateNews(haberler) {
 ========================================================= */
 
 function createStaticBreakingNews(haberler) {
-
-    const breaking =
-        haberler.slice(0, 5);
+    const breaking = haberler.slice(0, 5);
 
     if (!breaking.length) {
-
         return `
             <div class="breaking-track">
-
                 <span class="breaking-link">
                     Haberİsta'dan son gelişmeler...
                 </span>
-
             </div>
         `;
     }
 
     const links = breaking
         .map(haber => `
-
             <a
                 href="/haber/${escapeHTML(getSlug(haber))}"
                 class="breaking-link"
             >
                 ${escapeHTML(getTitle(haber))}
             </a>
-
         `)
         .join("");
 
     return `
-
         <div class="breaking-track">
-
             ${links}
-
             ${links}
-
         </div>
-
     `;
 }
 
@@ -495,11 +450,9 @@ function createStaticBreakingNews(haberler) {
 ========================================================= */
 
 function createStaticHero(haberler) {
-
     const haber = haberler[0];
 
     if (!haber) {
-
         return `
             <div class="hero-empty">
                 Henüz haber bulunmuyor.
@@ -507,50 +460,38 @@ function createStaticHero(haberler) {
         `;
     }
 
-    const image =
-        getImage(haber);
-
-    const imageURL =
-        getImageURL(image);
-
-    const slug =
-        getSlug(haber);
+    const imageURL = getImageURL(getImage(haber));
+    const slug = getSlug(haber);
 
     return `
-
         <a
             href="/haber/${escapeHTML(slug)}"
             class="hero-slide-link"
         >
-
             ${
                 imageURL
                     ? `
-
                         <img
                             src="${escapeHTML(imageURL)}"
                             alt="${escapeHTML(getTitle(haber))}"
                             class="hero-image"
                             loading="eager"
+                            fetchpriority="high"
                             decoding="async"
                             width="1200"
                             height="675"
                         >
-
                     `
                     : `
-
                         <div class="hero-image hero-image-empty">
                             Haberİsta
                         </div>
-
                     `
             }
 
             <div class="hero-overlay"></div>
 
             <div class="hero-content">
-
                 <span class="hero-category">
                     ${escapeHTML(getCategory(haber))}
                 </span>
@@ -564,29 +505,19 @@ function createStaticHero(haberler) {
                 </p>
 
                 <div class="hero-meta">
-
                     ${escapeHTML(getDate(haber))}
 
                     ${
                         getTime(haber)
                             ? `
-
                                 <span>•</span>
-
-                                ${escapeHTML(
-                                    getTime(haber)
-                                )}
-
-                              `
+                                ${escapeHTML(getTime(haber))}
+                            `
                             : ""
                     }
-
                 </div>
-
             </div>
-
         </a>
-
     `;
 }
 
@@ -595,24 +526,17 @@ function createStaticHero(haberler) {
 ========================================================= */
 
 function createStaticHeroNumbers(haberler) {
-
     return haberler
         .slice(0, 5)
         .map((_, index) => `
-
             <button
                 type="button"
-                class="hero-number ${
-                    index === 0
-                        ? "active"
-                        : ""
-                }"
+                class="hero-number ${index === 0 ? "active" : ""}"
                 data-index="${index}"
                 aria-label="${index + 1}. haber"
             >
                 ${index + 1}
             </button>
-
         `)
         .join("");
 }
@@ -622,13 +546,9 @@ function createStaticHeroNumbers(haberler) {
 ========================================================= */
 
 function createStaticNewsGrid(haberler) {
-
     if (!haberler.length) {
-
         return `
-
             <div class="no-news">
-
                 <div class="no-news-icon">
                     📰
                 </div>
@@ -640,20 +560,14 @@ function createStaticNewsGrid(haberler) {
                 <p>
                     Henüz yayınlanmış haber bulunmuyor.
                 </p>
-
             </div>
-
         `;
     }
 
     return haberler
         .map(haber => {
-
-            const image =
-                getImage(haber);
-
             const imageURL =
-                getImageURL(image);
+                getImageURL(getImage(haber));
 
             const slug =
                 getSlug(haber);
@@ -665,23 +579,19 @@ function createStaticNewsGrid(haberler) {
                 getViews(haber);
 
             return `
-
                 <article
                     class="news-card"
                     data-id="${escapeHTML(haber.id)}"
                 >
-
                     <a
                         href="/haber/${escapeHTML(slug)}"
                         class="news-card-link"
                     >
-
                         <div class="news-card-image">
 
                             ${
                                 imageURL
                                     ? `
-
                                         <img
                                             src="${escapeHTML(imageURL)}"
                                             alt="${escapeHTML(title)}"
@@ -690,71 +600,52 @@ function createStaticNewsGrid(haberler) {
                                             width="800"
                                             height="450"
                                         >
-
-                                      `
+                                    `
                                     : `
-
                                         <div class="image-placeholder">
                                             Haberİsta
                                         </div>
-
-                                      `
+                                    `
                             }
 
                             <span class="news-category">
-
                                 ${escapeHTML(
                                     getCategory(haber)
                                 )}
-
                             </span>
-
                         </div>
 
                         <div class="news-card-content">
 
                             <div class="news-card-meta">
-
                                 <span>
-
                                     ${escapeHTML(
                                         getDate(haber)
                                     )}
-
                                 </span>
 
                                 ${
                                     getTime(haber)
                                         ? `
-
                                             <span>•</span>
-
                                             <span>
-
                                                 ${escapeHTML(
                                                     getTime(haber)
                                                 )}
-
                                             </span>
-
-                                          `
+                                        `
                                         : ""
                                 }
-
                             </div>
 
                             <h3>
-
                                 ${escapeHTML(title)}
-
                             </h3>
 
                             <p>
-
                                 ${escapeHTML(
                                     getSpot(haber)
                                 )}
-
                             </p>
 
                             <div class="news-card-bottom">
@@ -766,30 +657,20 @@ function createStaticNewsGrid(haberler) {
                                 ${
                                     views
                                         ? `
-
                                             <span class="views">
-
                                                 👁
                                                 ${Number(
                                                     views
-                                                ).toLocaleString(
-                                                    "tr-TR"
-                                                )}
-
+                                                ).toLocaleString("tr-TR")}
                                             </span>
-
-                                          `
+                                        `
                                         : ""
                                 }
 
                             </div>
-
                         </div>
-
                     </a>
-
                 </article>
-
             `;
         })
         .join("\n");
@@ -799,15 +680,16 @@ function createStaticNewsGrid(haberler) {
    HTML ELEMENT DEĞİŞTİRME
 ========================================================= */
 
-function replaceElementById(
-    html,
-    id,
-    newElement
-) {
+function replaceElementById(html, id, newElement) {
+    const escapedId =
+        String(id).replace(
+            /[.*+?^${}()|[\]\\]/g,
+            "\\$&"
+        );
 
     const idRegex =
         new RegExp(
-            `id=["']${id}["']`,
+            `id=["']${escapedId}["']`,
             "i"
         );
 
@@ -815,7 +697,6 @@ function replaceElementById(
         html.match(idRegex);
 
     if (!idMatch) {
-
         throw new Error(
             `${id} elementi bulunamadı.`
         );
@@ -825,26 +706,18 @@ function replaceElementById(
         idMatch.index;
 
     const startIndex =
-        html.lastIndexOf(
-            "<",
-            idIndex
-        );
+        html.lastIndexOf("<", idIndex);
 
     if (startIndex === -1) {
-
         throw new Error(
             `${id} elementinin başlangıcı bulunamadı.`
         );
     }
 
     const openingTagEnd =
-        html.indexOf(
-            ">",
-            idIndex
-        );
+        html.indexOf(">", idIndex);
 
     if (openingTagEnd === -1) {
-
         throw new Error(
             `${id} elementinin açılış etiketi bozuk.`
         );
@@ -862,7 +735,6 @@ function replaceElementById(
         );
 
     if (!tagNameMatch) {
-
         throw new Error(
             `${id} elementinin etiketi bulunamadı.`
         );
@@ -872,7 +744,6 @@ function replaceElementById(
         tagNameMatch[1];
 
     if (/\/>$/.test(openingTag)) {
-
         return (
             html.slice(0, startIndex) +
             newElement +
@@ -895,9 +766,7 @@ function replaceElementById(
     while (
         (match = tagRegex.exec(html))
     ) {
-
-        const tag =
-            match[0];
+        const tag = match[0];
 
         if (
             new RegExp(
@@ -905,22 +774,18 @@ function replaceElementById(
                 "i"
             ).test(tag)
         ) {
-
             depth--;
-
         } else if (
             new RegExp(
-                `<${tagName}\\b`,
+                `^<${tagName}\\b`,
                 "i"
             ).test(tag) &&
             !/\/>$/.test(tag)
         ) {
-
             depth++;
         }
 
         if (depth === 0) {
-
             const endIndex =
                 tagRegex.lastIndex;
 
@@ -941,11 +806,7 @@ function replaceElementById(
    ANA SAYFA
 ========================================================= */
 
-function buildHomepage(
-    template,
-    haberler
-) {
-
+function buildHomepage(template, haberler) {
     let html = template;
 
     const hero =
@@ -1021,7 +882,7 @@ function buildHomepage(
     );
 
     /* =====================================================
-       HOMEPAGE ITEMLIST SCHEMA
+       HOMEPAGE SCHEMA
     ===================================================== */
 
     const itemList =
@@ -1035,50 +896,44 @@ function buildHomepage(
         );
 
     const homepageSchema = {
-
         "@context": "https://schema.org",
-
-        "@type": "CollectionPage",
-
-        "@id":
-            `${SITE_URL}/#collectionpage`,
-
-        "name":
-            "Haberİsta - Son Dakika Haberleri",
-
-        "url":
-            `${SITE_URL}/`,
-
-        "inLanguage":
-            "tr-TR",
-
-        "isPartOf": {
-
-            "@type": "WebSite",
-
-            "@id":
-                `${SITE_URL}/#website`,
-
-            "name":
-                SITE_NAME,
-
-            "url":
-                SITE_URL
-        },
-
-        "mainEntity": {
-
-            "@type": "ItemList",
-
-            "numberOfItems":
-                itemList.length,
-
-            "itemListElement":
-                itemList
-        }
+        "@graph": [
+            {
+                "@type": "WebSite",
+                "@id": `${SITE_URL}/#website`,
+                "name": SITE_NAME,
+                "url": `${SITE_URL}/`,
+                "inLanguage": "tr-TR",
+                "publisher": {
+                    "@type": "Organization",
+                    "@id": `${SITE_URL}/#organization`,
+                    "name": SITE_NAME,
+                    "url": SITE_URL,
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": LOGO_URL
+                    }
+                }
+            },
+            {
+                "@type": "CollectionPage",
+                "@id": `${SITE_URL}/#collectionpage`,
+                "name": "Haberİsta - Son Dakika Haberleri",
+                "url": `${SITE_URL}/`,
+                "inLanguage": "tr-TR",
+                "isPartOf": {
+                    "@id": `${SITE_URL}/#website`
+                },
+                "mainEntity": {
+                    "@type": "ItemList",
+                    "numberOfItems": itemList.length,
+                    "itemListElement": itemList
+                }
+            }
+        ]
     };
 
-    /* Eski schema'yı temizle */
+    /* Eski schema temizle */
 
     html = html.replace(
         /<script[^>]*id=["']homepageSchema["'][^>]*>[\s\S]*?<\/script>/gi,
@@ -1088,18 +943,12 @@ function buildHomepage(
     /* Yeni schema */
 
     const schemaTag = `
-
 <script
     id="homepageSchema"
     type="application/ld+json"
 >
-${JSON.stringify(
-    homepageSchema,
-    null,
-    4
-)}
+${JSON.stringify(homepageSchema, null, 4)}
 </script>
-
 `;
 
     html = html.replace(
@@ -1107,23 +956,18 @@ ${JSON.stringify(
         `${schemaTag}</head>`
     );
 
-    /* =====================================================
-       STATIC NEWS FLAG
-    ===================================================== */
+    /* STATIC NEWS FLAG */
 
     html = html.replace(
         /<body\b([^>]*)>/i,
         (match, attrs) => {
-
             const cleanAttrs =
                 attrs.replace(
                     /\sdata-static-news=["'][^"']*["']/gi,
                     ""
                 );
 
-            return `
-<body${cleanAttrs} data-static-news="true">
-            `.trim();
+            return `<body${cleanAttrs} data-static-news="true">`;
         }
     );
 
@@ -1135,7 +979,6 @@ ${JSON.stringify(
 ========================================================= */
 
 function createArticleHTML(haber) {
-
     const title =
         getTitle(haber);
 
@@ -1148,11 +991,8 @@ function createArticleHTML(haber) {
     const content =
         getContent(haber);
 
-    const image =
-        getImage(haber);
-
     const imageURL =
-        getImageURL(image);
+        getImageURL(getImage(haber));
 
     const date =
         getDate(haber);
@@ -1170,7 +1010,6 @@ function createArticleHTML(haber) {
         getViews(haber);
 
     return `
-
 <div class="article-layout">
 
     <article
@@ -1189,32 +1028,22 @@ function createArticleHTML(haber) {
             </div>
 
             <div class="article-title">
-
                 <h1 itemprop="headline">
-
                     ${escapeHTML(title)}
-
                 </h1>
-
             </div>
 
             ${
                 spot
                     ? `
-
                         <div class="article-spot">
-
                             <p itemprop="description">
-
                                 ${escapeHTML(
                                     stripHTML(spot)
                                 )}
-
                             </p>
-
                         </div>
-
-                      `
+                    `
                     : ""
             }
 
@@ -1227,12 +1056,10 @@ function createArticleHTML(haber) {
                 ${
                     time
                         ? `
-
                             <span>
                                 🕒 ${escapeHTML(time)}
                             </span>
-
-                          `
+                        `
                         : ""
                 }
 
@@ -1303,7 +1130,6 @@ function createArticleHTML(haber) {
         ${
             imageURL
                 ? `
-
                     <div class="article-image-wrap">
 
                         <img
@@ -1313,14 +1139,14 @@ function createArticleHTML(haber) {
                             title="${escapeHTML(title)}"
                             itemprop="image"
                             loading="eager"
+                            fetchpriority="high"
                             decoding="async"
                             width="1200"
                             height="675"
                         >
 
                     </div>
-
-                  `
+                `
                 : ""
         }
 
@@ -1356,7 +1182,6 @@ function createArticleHTML(haber) {
 
     </article>
 
-
     <aside class="article-sidebar">
 
         <div class="sidebar-box">
@@ -1366,75 +1191,54 @@ function createArticleHTML(haber) {
             </h3>
 
             <div class="sidebar-info">
-
                 <strong>Kategori</strong>
-
                 <span>
                     ${escapeHTML(category)}
                 </span>
-
             </div>
 
             <div class="sidebar-info">
-
                 <strong>Tarih</strong>
-
                 <span>
                     ${escapeHTML(date)}
                 </span>
-
             </div>
 
             ${
                 time
                     ? `
-
                         <div class="sidebar-info">
-
                             <strong>Saat</strong>
-
                             <span>
                                 ${escapeHTML(time)}
                             </span>
-
                         </div>
-
-                      `
+                    `
                     : ""
             }
 
             <div class="sidebar-info">
-
                 <strong>Görüntülenme</strong>
-
                 <span>
                     ${escapeHTML(views)}
                 </span>
-
             </div>
 
             <div class="sidebar-info">
-
                 <strong>Yazar</strong>
-
                 <span>
                     ${escapeHTML(author)}
                 </span>
-
             </div>
 
             <div class="sidebar-info">
-
                 <strong>Kaynak</strong>
-
                 <span>
                     ${escapeHTML(source)}
                 </span>
-
             </div>
 
         </div>
-
 
         <div class="sidebar-box">
 
@@ -1450,11 +1254,9 @@ function createArticleHTML(haber) {
                     line-height:1.7;
                 "
             >
-
                 Türkiye ve dünyadan güncel haberleri
                 hızlı, anlaşılır ve güvenilir şekilde
                 takip edin.
-
             </p>
 
         </div>
@@ -1462,7 +1264,6 @@ function createArticleHTML(haber) {
     </aside>
 
 </div>
-
 `;
 }
 
@@ -1470,11 +1271,7 @@ function createArticleHTML(haber) {
    NEWSARTICLE SCHEMA
 ========================================================= */
 
-function createArticleSchema(
-    haber,
-    canonical
-) {
-
+function createArticleSchema(haber, canonical) {
     const title =
         getTitle(haber);
 
@@ -1482,9 +1279,7 @@ function createArticleSchema(
         getDescription(haber);
 
     const image =
-        getImageURL(
-            getImage(haber)
-        );
+        getImageURL(getImage(haber));
 
     const category =
         getCategory(haber);
@@ -1498,98 +1293,57 @@ function createArticleSchema(
     const modifiedDate =
         getModifiedDate(haber);
 
+    const authorIsDefault =
+        !haber.yazar &&
+        !haber.author;
+
     const schema = {
-
-        "@context":
-            "https://schema.org",
-
-        "@type":
-            "NewsArticle",
-
-        "@id":
-            `${canonical}#article`,
+        "@context": "https://schema.org",
+        "@type": "NewsArticle",
+        "@id": `${canonical}#article`,
 
         "mainEntityOfPage": {
-
-            "@type":
-                "WebPage",
-
-            "@id":
-                canonical
+            "@type": "WebPage",
+            "@id": canonical
         },
 
-        "headline":
-            title,
+        "headline": title,
+        "description": description,
+        "url": canonical,
 
-        "description":
-            description,
-
-        "url":
-            canonical,
-
-        "inLanguage":
-            "tr-TR",
-
-        "articleSection":
-            category,
-
-        "isAccessibleForFree":
-            true,
+        "inLanguage": "tr-TR",
+        "articleSection": category,
+        "isAccessibleForFree": true,
 
         "author": {
-
-            "@type":
-                "Organization",
-
-            "name":
-                author
+            "@type": authorIsDefault
+                ? "Organization"
+                : "Person",
+            "name": author
         },
 
         "publisher": {
-
-            "@type":
-                "Organization",
-
-            "name":
-                SITE_NAME,
-
-            "url":
-                SITE_URL,
-
+            "@type": "Organization",
+            "@id": `${SITE_URL}/#organization`,
+            "name": SITE_NAME,
+            "url": SITE_URL,
             "logo": {
-
-                "@type":
-                    "ImageObject",
-
-                "url":
-                    `${SITE_URL}/images/logo.jpeg`
+                "@type": "ImageObject",
+                "url": LOGO_URL
             }
         }
     };
 
     if (image) {
-
-        schema.image = [
-            image
-        ];
+        schema.image = [image];
     }
 
     if (isoDate) {
-
-        schema.datePublished =
-            isoDate;
+        schema.datePublished = isoDate;
     }
 
     if (modifiedDate) {
-
-        schema.dateModified =
-            modifiedDate;
-    }
-
-    if (getSource(haber)) {
-
-        schema.isBasedOn =
-            getSource(haber);
+        schema.dateModified = modifiedDate;
     }
 
     return JSON.stringify(
@@ -1603,11 +1357,7 @@ function createArticleSchema(
    HABER SAYFASI
 ========================================================= */
 
-function buildArticlePage(
-    template,
-    haber
-) {
-
+function buildArticlePage(template, haber) {
     const title =
         getTitle(haber);
 
@@ -1617,11 +1367,8 @@ function buildArticlePage(
     const description =
         getDescription(haber);
 
-    const image =
-        getImage(haber);
-
     const imageURL =
-        getImageURL(image);
+        getImageURL(getImage(haber));
 
     const slug =
         getSlug(haber);
@@ -1690,7 +1437,6 @@ function buildArticlePage(
     /* OG IMAGE */
 
     if (imageURL) {
-
         html = html.replace(
             /(<meta\s+id="ogImage"[\s\S]*?content=")[^"]*(")/i,
             `$1${escapeHTML(imageURL)}$2`
@@ -1714,7 +1460,6 @@ function buildArticlePage(
     /* TWITTER IMAGE */
 
     if (imageURL) {
-
         html = html.replace(
             /(<meta\s+id="twitterImage"[\s\S]*?content=")[^"]*(")/i,
             `$1${escapeHTML(imageURL)}$2`
@@ -1723,17 +1468,21 @@ function buildArticlePage(
 
     /* ARTICLE PUBLISHED */
 
-    html = html.replace(
-        /(<meta\s+id="articlePublishedTime"[\s\S]*?content=")[^"]*(")/i,
-        `$1${escapeHTML(isoDate)}$2`
-    );
+    if (isoDate) {
+        html = html.replace(
+            /(<meta\s+id="articlePublishedTime"[\s\S]*?content=")[^"]*(")/i,
+            `$1${escapeHTML(isoDate)}$2`
+        );
+    }
 
     /* ARTICLE MODIFIED */
 
-    html = html.replace(
-        /(<meta\s+id="articleModifiedTime"[\s\S]*?content=")[^"]*(")/i,
-        `$1${escapeHTML(modifiedDate)}$2`
-    );
+    if (modifiedDate) {
+        html = html.replace(
+            /(<meta\s+id="articleModifiedTime"[\s\S]*?content=")[^"]*(")/i,
+            `$1${escapeHTML(modifiedDate)}$2`
+        );
+    }
 
     /* ARTICLE SECTION */
 
@@ -1759,38 +1508,29 @@ function buildArticlePage(
         `
     );
 
-    /* =====================================================
-       STATIC ARTICLE FLAG
-    ===================================================== */
+    /* STATIC ARTICLE FLAG */
 
     html = html.replace(
         /<body\b([^>]*)>/i,
         (match, attrs) => {
-
             const cleanAttrs =
                 attrs.replace(
                     /\sdata-static-article=["'][^"']*["']/gi,
                     ""
                 );
 
-            return `
-<body${cleanAttrs} data-static-article="true">
-            `.trim();
+            return `<body${cleanAttrs} data-static-article="true">`;
         }
     );
 
-    /* =====================================================
-       ESKİ SCHEMA TEMİZLE
-    ===================================================== */
+    /* ESKİ SCHEMA TEMİZLE */
 
     html = html.replace(
         /<script[^>]*id=["']newsArticleSchema["'][^>]*>[\s\S]*?<\/script>/gi,
         ""
     );
 
-    /* =====================================================
-       NEWSARTICLE SCHEMA
-    ===================================================== */
+    /* NEWSARTICLE SCHEMA */
 
     const schema =
         createArticleSchema(
@@ -1799,14 +1539,12 @@ function buildArticlePage(
         );
 
     const schemaTag = `
-
 <script
     id="newsArticleSchema"
     type="application/ld+json"
 >
 ${schema}
 </script>
-
 `;
 
     html = html.replace(
@@ -1822,9 +1560,7 @@ ${schema}
 ========================================================= */
 
 function cleanOutputDirectory() {
-
     if (!fs.existsSync(OUTPUT_DIR)) {
-
         fs.mkdirSync(
             OUTPUT_DIR,
             {
@@ -1844,7 +1580,6 @@ function cleanOutputDirectory() {
         );
 
     for (const entry of entries) {
-
         const fullPath =
             path.join(
                 OUTPUT_DIR,
@@ -1866,93 +1601,58 @@ function cleanOutputDirectory() {
 ========================================================= */
 
 function buildSitemap(haberler) {
-
     const urls = [
-
         {
-            loc:
-                `${SITE_URL}/`,
-            lastmod:
-                new Date().toISOString()
+            loc: `${SITE_URL}/`
         },
-
         {
-            loc:
-                `${SITE_URL}/son-dakika.html`
+            loc: `${SITE_URL}/son-dakika.html`
         },
-
         {
-            loc:
-                `${SITE_URL}/gundem.html`
+            loc: `${SITE_URL}/gundem.html`
         },
-
         {
-            loc:
-                `${SITE_URL}/ekonomi.html`
+            loc: `${SITE_URL}/ekonomi.html`
         },
-
         {
-            loc:
-                `${SITE_URL}/spor.html`
+            loc: `${SITE_URL}/spor.html`
         },
-
         {
-            loc:
-                `${SITE_URL}/magazin.html`
+            loc: `${SITE_URL}/magazin.html`
         },
-
         {
-            loc:
-                `${SITE_URL}/dunya.html`
+            loc: `${SITE_URL}/dunya.html`
         },
-
         {
-            loc:
-                `${SITE_URL}/teknoloji.html`
+            loc: `${SITE_URL}/teknoloji.html`
         },
-
         {
-            loc:
-                `${SITE_URL}/saglik.html`
+            loc: `${SITE_URL}/saglik.html`
         },
-
         {
-            loc:
-                `${SITE_URL}/kultur-sanat.html`
+            loc: `${SITE_URL}/kultur-sanat.html`
         },
-
         {
-            loc:
-                `${SITE_URL}/hakkimizda.html`
+            loc: `${SITE_URL}/hakkimizda.html`
         },
-
         {
-            loc:
-                `${SITE_URL}/iletisim.html`
+            loc: `${SITE_URL}/iletisim.html`
         },
-
         {
-            loc:
-                `${SITE_URL}/gizlilik.html`
+            loc: `${SITE_URL}/gizlilik.html`
         },
-
         {
-            loc:
-                `${SITE_URL}/cerez-politikasi.html`
+            loc: `${SITE_URL}/cerez-politikasi.html`
         }
-
     ];
 
     for (const haber of haberler) {
+        const lastmod =
+            getModifiedDate(haber);
 
         urls.push({
-
-            loc:
-                getNewsURL(haber),
-
-            lastmod:
-                getModifiedDate(haber) || undefined
-
+            loc: getNewsURL(haber),
+            lastmod: lastmod || undefined
         });
     }
 
@@ -1960,9 +1660,7 @@ function buildSitemap(haberler) {
         new Map();
 
     for (const item of urls) {
-
         if (!uniqueUrls.has(item.loc)) {
-
             uniqueUrls.set(
                 item.loc,
                 item
@@ -1972,39 +1670,23 @@ function buildSitemap(haberler) {
 
     const items =
         [...uniqueUrls.values()]
-            .map(item => {
-
-                return `
-
+            .map(item => `
     <url>
-
-        <loc>
-            ${escapeHTML(item.loc)}
-        </loc>
-
+        <loc>${escapeHTML(item.loc)}</loc>
         ${
             item.lastmod
-                ? `
-        <lastmod>
-            ${escapeHTML(item.lastmod)}
-        </lastmod>
-        `
+                ? `<lastmod>${escapeHTML(item.lastmod)}</lastmod>`
                 : ""
         }
-
-    </url>`;
-
-            })
+    </url>
+`)
             .join("\n");
 
     return `<?xml version="1.0" encoding="UTF-8"?>
-
 <urlset
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
 >
-
 ${items}
-
 </urlset>
 `;
 }
@@ -2014,7 +1696,6 @@ ${items}
 ========================================================= */
 
 function buildRobots() {
-
     return `User-agent: *
 Allow: /
 
@@ -2027,7 +1708,6 @@ Sitemap: ${SITE_URL}/sitemap.xml
 ========================================================= */
 
 function main() {
-
     console.log("");
     console.log("========================================");
     console.log(" HABERİSTA - STATIC SEO BUILD");
@@ -2037,21 +1717,18 @@ function main() {
     /* DOSYA KONTROLLERİ */
 
     if (!fs.existsSync(INDEX_HTML)) {
-
         throw new Error(
             "index.html bulunamadı."
         );
     }
 
     if (!fs.existsSync(HABER_HTML)) {
-
         throw new Error(
             "haber.html bulunamadı."
         );
     }
 
     if (!fs.existsSync(HABERLER_JS)) {
-
         throw new Error(
             "js/haberler.js bulunamadı."
         );
@@ -2094,33 +1771,30 @@ function main() {
         new Map();
 
     for (const haber of haberler) {
-
-        if (ids.has(haber.id)) {
-
-            console.warn("");
-
-            console.warn(
-                "⚠️ DUPLICATE ID"
-            );
-
-            console.warn(
-                `ID: ${haber.id}`
-            );
-
-            console.warn(
-                `Eski: ${ids.get(haber.id)}`
-            );
-
-            console.warn(
-                `Yeni: ${getTitle(haber)}`
-            );
-
-        } else {
-
-            ids.set(
-                haber.id,
-                getTitle(haber)
-            );
+        if (
+            haber.id !== undefined &&
+            haber.id !== null
+        ) {
+            if (ids.has(haber.id)) {
+                console.warn("");
+                console.warn(
+                    "⚠️ DUPLICATE ID"
+                );
+                console.warn(
+                    `ID: ${haber.id}`
+                );
+                console.warn(
+                    `Eski: ${ids.get(haber.id)}`
+                );
+                console.warn(
+                    `Yeni: ${getTitle(haber)}`
+                );
+            } else {
+                ids.set(
+                    haber.id,
+                    getTitle(haber)
+                );
+            }
         }
     }
 
@@ -2131,38 +1805,44 @@ function main() {
     const slugs =
         new Map();
 
-    for (const haber of haberler) {
+    const duplicateSlugs = [];
 
+    for (const haber of haberler) {
         const slug =
             getSlug(haber);
 
+        if (!slug) {
+            continue;
+        }
+
         if (slugs.has(slug)) {
-
-            console.warn("");
-
-            console.warn(
-                "⚠️ DUPLICATE SLUG"
+            console.error("");
+            console.error(
+                "❌ DUPLICATE SLUG"
             );
-
-            console.warn(
+            console.error(
                 `Slug: ${slug}`
             );
-
-            console.warn(
+            console.error(
                 `Eski: ${slugs.get(slug)}`
             );
-
-            console.warn(
+            console.error(
                 `Yeni: ${getTitle(haber)}`
             );
 
+            duplicateSlugs.push(slug);
         } else {
-
             slugs.set(
                 slug,
                 getTitle(haber)
             );
         }
+    }
+
+    if (duplicateSlugs.length) {
+        throw new Error(
+            "Duplicate slug bulundu. Haberler.js içindeki slug değerlerini düzeltin."
+        );
     }
 
     /* =====================================================
@@ -2194,7 +1874,6 @@ function main() {
     ===================================================== */
 
     console.log("");
-
     console.log(
         "Haber sayfaları oluşturuluyor..."
     );
@@ -2207,7 +1886,6 @@ function main() {
         new Set();
 
     for (const haber of haberler) {
-
         const title =
             getTitle(haber);
 
@@ -2215,7 +1893,6 @@ function main() {
             getSlug(haber);
 
         if (!slug) {
-
             console.warn(
                 `⚠️ Slug oluşturulamadı: ${title}`
             );
@@ -2226,12 +1903,9 @@ function main() {
         if (
             generatedSlugs.has(slug)
         ) {
-
-            console.warn(
-                `⚠️ Haber atlandı, duplicate slug: ${slug}`
+            throw new Error(
+                `Duplicate slug nedeniyle build durduruldu: ${slug}`
             );
-
-            continue;
         }
 
         generatedSlugs.add(slug);
@@ -2334,7 +2008,7 @@ function main() {
     );
 
     console.log(
-        "✓ Homepage ItemList Schema oluşturuldu."
+        "✓ WebSite + CollectionPage + ItemList Schema oluşturuldu."
     );
 
     console.log(
@@ -2346,11 +2020,15 @@ function main() {
     );
 
     console.log(
-        "✓ Görsel URL'leri SEO uyumlu hale getirildi."
+        "✓ Görsel URL'leri mutlak URL olarak oluşturuldu."
     );
 
     console.log(
-        "✓ Google taraması için yapı hazır."
+        "✓ Duplicate slug kontrolü yapıldı."
+    );
+
+    console.log(
+        "✓ Google taraması için statik HTML hazır."
     );
 
     console.log(
@@ -2365,22 +2043,16 @@ function main() {
 ========================================================= */
 
 try {
-
     main();
-
 } catch (error) {
-
     console.error("");
-
     console.error(
         "❌ BUILD HATASI"
     );
-
     console.error(
         error.stack ||
         error.message
     );
-
     console.error("");
 
     process.exit(1);
