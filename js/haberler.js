@@ -40,6 +40,160 @@ const haberler = [
        1 - KABİNE
     ===================================================== */
 {
+    id: 41,
+    kategori: "Kültür Sanat",
+    baslik: "ZKS Kültür Sanat Yıllığı 2026 yayımlandı",
+    spot: "Zeytinburnu Kültür Sanat tarafından hazırlanan 2026 Kültür Sanat Yıllığı, Türkiye'nin sanat ve kültür hayatındaki gelişmeleri kapsamlı şekilde ele alıyor.",
+    tarih: "8 Eylül 2026",
+    saat: "14:20",
+    gorsel: "https://images.unsplash.com/photo-1577083552431-6e5fd01988b5?auto=format&fit=crop&w=1600&q=85",
+    yazar: "Haberİsta Kültür Sanat",
+    kaynak: "Anadolu Ajansı",
+    seo: {
+        title: "ZKS Kültür Sanat Yıllığı 2026 yayımlandı | Haberİsta",
+        description: "ZKS Kültür Sanat Yıllığı 2026 yayımlandı. Edebiyat, sinema, tiyatro, müzik, tarih ve çağdaş sanat alanındaki gelişmeler ele alınıyor.",
+        keywords: "ZKS Kültür Sanat Yıllığı 2026, kültür sanat, edebiyat, sinema, tiyatro, müzik, sanat haberleri",
+        canonical: "https://haberisa.vercel.app/haber/zks-kultur-sanat-yilligi-2026-yayimlandi"
+    },
+    icerik: `
+        <p><strong>Zeytinburnu Kültür Sanat tarafından hazırlanan "ZKS Kültür Sanat Yıllığı 2026" okurlarla buluştu.</strong> Yayın, Türkiye'nin kültür ve sanat hayatında yıl boyunca öne çıkan gelişmeleri ve tartışmaları bir araya getiriyor.</p>
+
+        <p>Çalışmada edebiyattan sinemaya, tiyatrodan müziğe, felsefeden tarihe ve çağdaş sanata kadar çok sayıda alan ele alınıyor. Böylece kültür sanat dünyasında yaşanan gelişmelerin yıl boyunca takip edilebileceği kapsamlı bir kaynak oluşturulması amaçlanıyor.</p>
+
+        <p>Yıllıkta ayrıca yapay zeka, dijital yayıncılık, teknomedyatik dünya, kültürel diplomasi, çocuk yayınları, müzeler, uluslararası kitap fuarları ve şehir kültürü gibi son yıllarda giderek önem kazanan başlıklara da yer veriliyor.</p>
+
+        <p>Çeşitli söyleşi, portre, inceleme ve değerlendirme yazılarından oluşan çalışmaya farklı alanlardan yazarlar, uzmanlar ve akademisyenler katkı sundu.</p>
+
+        <p>Yayın, yalnızca güncel gelişmeleri aktarmakla kalmayarak Türkiye'nin kültür sanat hayatında oluşan birikimin gelecek yıllara aktarılmasına da katkı sağlamayı hedefliyor.</p>
+
+        <p><strong>Kaynak:</strong> Anadolu Ajansı</p>
+    `
+},
+
+{
+    id: 42,
+    kategori: "Kültür Sanat",
+    baslik: "İstanbul'da sanat dolu hafta: Tiyatro, konser ve sergiler izleyiciyle buluşuyor",
+    spot: "İstanbul'da eylül ayının ikinci haftasında çok sayıda tiyatro oyunu, konser, sergi ve söyleşi sanatseverleri bekliyor.",
+    tarih: "7 Eylül 2026",
+    saat: "16:10",
+    gorsel: "https://images.unsplash.com/photo-1503095396549-807759245b35?auto=format&fit=crop&w=1600&q=85",
+    yazar: "Haberİsta Kültür Sanat",
+    kaynak: "Anadolu Ajansı",
+    seo: {
+        title: "İstanbul'da kültür sanat etkinlikleri: Tiyatro, konser ve sergiler | Haberİsta",
+        description: "İstanbul'da bu hafta tiyatro, konser, sergi ve söyleşi programları sanatseverlerle buluşuyor.",
+        keywords: "İstanbul kültür sanat, İstanbul etkinlikleri, tiyatro, konser, sergi, sanat haberleri",
+        canonical: "https://haberisa.vercel.app/haber/istanbulda-sanat-dolu-hafta"
+    },
+    icerik: `
+        <p><strong>İstanbul, eylül ayının ikinci haftasında yine yoğun bir kültür sanat programına ev sahipliği yapıyor.</strong> Kentin farklı noktalarında tiyatro oyunlarından konserlere, sergilerden söyleşilere kadar birçok etkinlik düzenleniyor.</p>
+
+        <p>Tiyatro programında farklı türlerde yapımlar izleyiciyle buluşurken, klasik eserlerin yeni yorumları da sanatseverlerin karşısına çıkıyor. Victor Hugo'nun "Bir İdam Mahkumunun Son Günü" adlı eseri de 12 ve 13 Eylül tarihlerinde sahnelenecek.</p>
+
+        <p>Müzik tarafında ise İstanbul'un önemli açık hava sahnelerinde konserler devam ediyor. Harbiye Cemil Topuzlu Açıkhava Tiyatrosu'nda Candan Erçetin, Serdar Ortaç, Ajda Pekkan ve farklı sanatçıların konserleri gerçekleştirilecek.</p>
+
+        <p>İstanbul Modern'de açılacak "Aynı Mavinin Altında" sergisi de haftanın dikkat çeken sanat etkinlikleri arasında bulunuyor. Sergide resim, fotoğraf, yerleştirme ve video gibi farklı sanat disiplinlerinden eserler bir araya getiriliyor.</p>
+
+        <p>Şehir genelindeki etkinliklerin, sonbahar sezonunun kültür sanat hareketliliğini artırması bekleniyor.</p>
+
+        <p><strong>Kaynak:</strong> Anadolu Ajansı</p>
+    `
+},
+
+{
+    id: 43,
+    kategori: "Kültür Sanat",
+    baslik: "Filmekimi 2026 için geri sayım başladı: Festival ekim ayında düzenlenecek",
+    spot: "Filmekimi, dünya festivallerinden ödüllerle dönen filmlerden oluşan seçkisiyle ekim ayında sinemaseverlerle buluşacak.",
+    tarih: "4 Eylül 2026",
+    saat: "13:45",
+    gorsel: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1600&q=85",
+    yazar: "Haberİsta Kültür Sanat",
+    kaynak: "Anadolu Ajansı",
+    seo: {
+        title: "Filmekimi 2026 ne zaman? Festival tarihleri ve program | Haberİsta",
+        description: "Filmekimi 2026, ekim ayında İstanbul, Ankara, İzmir ve Mersin'de sinemaseverlerle buluşacak.",
+        keywords: "Filmekimi 2026, Filmekimi, sinema festivali, İstanbul film festivali, sinema haberleri",
+        canonical: "https://haberisa.vercel.app/haber/filmekimi-2026-geri-sayim-basladi"
+    },
+    icerik: `
+        <p><strong>Sinema dünyasının önemli etkinliklerinden Filmekimi için hazırlıklar devam ediyor.</strong> İstanbul Kültür Sanat Vakfı tarafından düzenlenen festival, sonbaharda farklı şehirlerde sinemaseverlerle buluşacak.</p>
+
+        <p>Festival bu yıl 9-18 Ekim tarihlerinde İstanbul'da gerçekleştirilecek. Ankara'da 15-18 Ekim, İzmir ve Mersin'de ise 22-25 Ekim tarihlerinde gösterimler yapılacak.</p>
+
+        <p>Filmekimi'nin 2026 seçkisinde dünyanın önemli film festivallerinde gösterilen ve ödüller kazanan yapımlar dikkat çekiyor. Cannes Film Festivali'nin farklı bölümlerinden seçilen filmler de programda yer alacak.</p>
+
+        <p>Festivalin dikkat çeken yapımlarından biri, 79. Cannes Film Festivali'nde Altın Palmiye kazanan Cristian Mungiu imzalı "Fjord" oldu.</p>
+
+        <p>Festival, farklı tür ve ülkelerden sinema örneklerini Türkiye'deki izleyiciyle buluştururken sinema kültürünün gelişmesine de katkı sağlamayı amaçlıyor.</p>
+
+        <p><strong>Kaynak:</strong> Anadolu Ajansı</p>
+    `
+},
+
+{
+    id: 44,
+    kategori: "Kültür Sanat",
+    baslik: "Dünyanın önemli sanat merkezlerinde yoğun etkinlik haftası",
+    spot: "Venedik Film Festivali, BBC Proms ve Lucerne Festivali gibi önemli kültür sanat etkinliklerinde eylül programı devam ediyor.",
+    tarih: "7 Eylül 2026",
+    saat: "18:30",
+    gorsel: "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1600&q=85",
+    yazar: "Haberİsta Kültür Sanat",
+    kaynak: "Anadolu Ajansı",
+    seo: {
+        title: "Dünyada kültür sanat haftası: Film, müzik ve festivaller | Haberİsta",
+        description: "Venedik Film Festivali, BBC Proms ve Lucerne Festivali başta olmak üzere dünyanın farklı merkezlerinde kültür sanat etkinlikleri sürüyor.",
+        keywords: "dünya kültür sanat, Venedik Film Festivali, BBC Proms, Lucerne Festivali, sanat haberleri",
+        canonical: "https://haberisa.vercel.app/haber/dunyada-kultur-sanat-etkinlikleri"
+    },
+    icerik: `
+        <p><strong>Dünyanın farklı kültür merkezlerinde eylül ayının ikinci haftasında yoğun bir sanat programı yaşanıyor.</strong> Sinemadan klasik müziğe, tiyatrodan çağdaş sanata kadar farklı alanlarda etkinlikler düzenleniyor.</p>
+
+        <p>83. Venedik Uluslararası Film Festivali'nde film gösterimlerinin yanı sıra oyuncu ve yönetmenlerin katıldığı masterclass programları gerçekleştiriliyor. Festivalin Altın Aslan ödülü için düzenlenecek tören ise 12 Eylül'de yapılacak.</p>
+
+        <p>Londra'da düzenlenen BBC Proms da final haftasına girdi. Royal Albert Hall'da gerçekleştirilen etkinliklerin ardından festival 12 Eylül'deki geleneksel kapanış konseriyle sona erecek.</p>
+
+        <p>İsviçre'deki Lucerne Festivali'nde de klasik müzik, caz, müzikal tiyatro ve çağdaş müzik farklı programlarda bir araya geliyor. Festivalin 2026 programında "American Dreams" teması öne çıkıyor.</p>
+
+        <p>Bu etkinlikler, sonbaharın başlamasıyla birlikte uluslararası kültür sanat takviminin de hareketlendiğini gösteriyor.</p>
+
+        <p><strong>Kaynak:</strong> Anadolu Ajansı</p>
+    `
+},
+
+{
+    id: 45,
+    kategori: "Kültür Sanat",
+    baslik: "Troya Kültür Yolu Festivali için geri sayım başladı",
+    spot: "Türkiye Kültür Yolu Festivali'nin önemli duraklarından Troya Kültür Yolu Festivali, eylül ayında Çanakkale'de sanatseverlerle buluşacak.",
+    tarih: "9 Eylül 2026",
+    saat: "10:00",
+    gorsel: "https://images.unsplash.com/photo-1603566231077-4f0e7c1e7f9e?auto=format&fit=crop&w=1600&q=85",
+    yazar: "Haberİsta Kültür Sanat",
+    kaynak: "Kültür ve Turizm Bakanlığı",
+    seo: {
+        title: "Troya Kültür Yolu Festivali 2026 ne zaman? | Haberİsta",
+        description: "Troya Kültür Yolu Festivali için geri sayım başladı. Festival kapsamında Çanakkale'de kültür, sanat ve çeşitli etkinlikler düzenlenecek.",
+        keywords: "Troya Kültür Yolu Festivali 2026, Çanakkale festival, kültür yolu festivali, sanat etkinlikleri",
+        canonical: "https://haberisa.vercel.app/haber/troya-kultur-yolu-festivali-2026"
+    },
+    icerik: `
+        <p><strong>Türkiye Kültür Yolu Festivali kapsamında düzenlenen Troya Kültür Yolu Festivali için geri sayım başladı.</strong> Çanakkale'nin tarihi ve kültürel değerlerini merkeze alan etkinlikler, sanatseverleri farklı programlarla buluşturacak.</p>
+
+        <p>Festival kapsamında konserlerden sergilere, kültürel etkinliklerden çeşitli sanat çalışmalarına kadar çok sayıda programın gerçekleştirilmesi planlanıyor.</p>
+
+        <p>Troya bölgesinin binlerce yıllık tarihi mirası, festival programıyla birlikte sanat ve kültür etkinlikleriyle yeniden gündeme taşınacak.</p>
+
+        <p>Türkiye Kültür Yolu Festivali 2026 yılında 26 şehirde düzenlenen geniş kapsamlı bir kültür sanat organizasyonu olarak gerçekleştiriliyor. Festival takvimi yıl boyunca farklı şehirlerde sanatseverlerle buluşuyor.</p>
+
+        <p>Çanakkale'deki etkinliklerin hem bölge halkına hem de kenti ziyaret edenlere kültür sanat açısından farklı deneyimler sunması bekleniyor.</p>
+
+        <p><strong>Kaynak:</strong> T.C. Kültür ve Turizm Bakanlığı</p>
+    `
+},
+{
     id: 36,
     kategori: "Sağlık",
     baslik: "Fıstık alerjisinde umut veren gelişme: Bağırsak bakterileri tedavide kullanılabilir",
