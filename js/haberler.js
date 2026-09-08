@@ -40,6 +40,372 @@ const haberler = [
        1 - KABİNE
     ===================================================== */
 {
+    id: 46,
+    kategori: "Eğitim",
+    baslik: "PISA 2025 sonuçlarında Türkiye'den dikkat çeken başarı: Üç alanda da puan yükseldi",
+    spot: "PISA 2025 sonuçları açıklandı. Türkiye; matematik, fen bilimleri ve okuma becerileri alanlarının üçünde de puanını artırarak OECD ülkeleri arasında dikkat çeken bir performans ortaya koydu.",
+    tarih: "9 Eylül 2026",
+    saat: "18:05",
+    gorsel: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1600&q=85",
+    yazar: "Haberİsta Eğitim Servisi",
+    kaynak: "Haberİsta",
+    seo: {
+        title: "PISA 2025 sonuçları açıklandı: Türkiye'den dikkat çeken başarı | Haberİsta",
+        description: "PISA 2025 sonuçlarında Türkiye matematik, fen bilimleri ve okuma becerilerinde puanını artırdı. İşte Türkiye'nin PISA 2025 performansına ilişkin ayrıntılar.",
+        keywords: "PISA 2025, Türkiye PISA sonucu, eğitim haberleri, matematik, fen bilimleri, okuma becerileri, OECD",
+        canonical: "https://haberisa.vercel.app/haber/pisa-2025-sonuclarinda-turkiyeden-dikkat-ceken-basari"
+    },
+    icerik: `
+        <p><strong>Uluslararası Öğrenci Değerlendirme Programı'nın (PISA) 2025 sonuçları açıklandı.</strong> Açıklanan sonuçlar Türkiye açısından eğitim gündeminin önemli başlıklarından biri oldu. Türkiye'nin matematik, fen bilimleri ve okuma becerileri alanlarının tamamında puanlarını yükseltmesi dikkat çekti.</p>
+
+        <p>PISA, öğrencilerin yalnızca okulda öğrendikleri bilgileri ne kadar hatırladıklarını değil, bu bilgileri gerçek yaşamda karşılaşabilecekleri problemlerde ne ölçüde kullanabildiklerini de ölçen uluslararası bir değerlendirme programı olarak uygulanıyor.</p>
+
+        <p>Türkiye'nin 2025 sonuçlarında üç temel alanda da puanını artırması, eğitim politikaları açısından önemli bir gelişme olarak değerlendiriliyor. Özellikle OECD ülkeleriyle yapılan karşılaştırmalarda Türkiye'nin üç alanda da puanını yükselten ülkeler arasında öne çıkması eğitim gündeminde geniş yer buldu.</p>
+
+        <p>Matematik alanında öğrencilerin problem çözme ve matematiksel düşünme becerileri değerlendirilirken, fen bilimlerinde bilimsel bilgiyi kullanma ve bilimsel olayları yorumlama becerileri ele alınıyor. Okuma becerileri bölümünde ise öğrencilerin farklı metinleri anlayabilme, değerlendirebilme ve bilgiyi kullanabilme yetenekleri ölçülüyor.</p>
+
+        <p>PISA sonuçlarının açıklanmasının ardından Cumhurbaşkanı Recep Tayyip Erdoğan da Türkiye'nin performansına ilişkin değerlendirmede bulundu ve eğitim camiasını tebrik etti. Milli Eğitim Bakanı Yusuf Tekin ise Türkiye'nin üç alanda da puanını artıran tek OECD ülkesi olduğunu açıkladı.</p>
+
+        <p>Uzmanlara göre uluslararası sınav sonuçları tek başına bir ülkenin eğitim sisteminin bütününü değerlendirmek için yeterli değil. Bunun yanında öğrencilerin sosyoekonomik koşulları, okullar arasındaki farklılıklar, öğretmen niteliği ve eğitim kaynaklarına erişim gibi çok sayıda faktörün de değerlendirilmesi gerekiyor.</p>
+
+        <p>PISA sonuçları önümüzdeki dönemde Türkiye'deki eğitim politikalarının değerlendirilmesinde de önemli bir veri olarak kullanılacak. Özellikle öğrencilerin temel becerilerini geliştirmeye yönelik çalışmaların sonuçları uzun vadede daha yakından takip edilecek.</p>
+
+        <p><strong>Haberİsta:</strong> PISA 2025 sonuçları, Türkiye'nin üç temel değerlendirme alanında puanlarını yükselttiğini ortaya koydu. Yeni sonuçların eğitim sistemindeki güçlü ve geliştirilmesi gereken alanların belirlenmesine katkı sağlaması bekleniyor.</p>
+    `
+},
+
+{
+    id: 47,
+    kategori: "Gündem",
+    baslik: "Antalya'daki orman yangınlarında ekiplerin mücadelesi sürüyor",
+    spot: "Antalya'nın farklı noktalarında çıkan orman yangınlarıyla mücadele devam ediyor. Ekipler, yangınların kontrol altına alınması ve yerleşim alanlarının korunması için çalışmalarını sürdürüyor.",
+    tarih: "9 Eylül 2026",
+    saat: "17:40",
+    gorsel: "https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1600&q=85",
+    yazar: "Haberİsta Haber Merkezi",
+    kaynak: "Haberİsta",
+    seo: {
+        title: "Antalya'daki orman yangınlarında son durum | Haberİsta",
+        description: "Antalya'nın farklı bölgelerinde etkili olan orman yangınlarına ekiplerin havadan ve karadan müdahalesi sürüyor.",
+        keywords: "Antalya yangın, Antalya orman yangını, son dakika Antalya, orman yangını, yangın söndürme",
+        canonical: "https://haberisa.vercel.app/haber/antalyadaki-orman-yanginlarinda-son-durum"
+    },
+    icerik: `
+        <p><strong>Antalya'da farklı noktalarda etkili olan orman yangınları, Türkiye gündeminin önemli başlıkları arasında yer almaya devam ediyor.</strong> Yangınlara karşı Orman Genel Müdürlüğü ekipleri başta olmak üzere ilgili kurumların çalışmaları sürüyor.</p>
+
+        <p>Yangınlarla mücadelede hem kara ekipleri hem de hava araçları kullanılıyor. Arazinin yapısı, rüzgarın yönü ve sıcaklık değerleri çalışmaların seyrini doğrudan etkileyen faktörler arasında bulunuyor.</p>
+
+        <p>Ekiplerin öncelikli hedefi yangınların yerleşim bölgelerine ve kritik ulaşım güzergahlarına ilerlemesini önlemek. Bunun yanında kontrol altına alınan alanlarda soğutma çalışmalarının gerçekleştirilmesi ve yeni yangınların çıkmasının önlenmesi için de çalışmalar yürütülüyor.</p>
+
+        <p>Antalya, geniş ormanlık alanları ve özellikle yaz aylarında yüksek sıcaklıkların etkisi nedeniyle orman yangınları açısından yakından takip edilen iller arasında bulunuyor. Kentte turizm faaliyetlerinin yoğun olması nedeniyle yangınların yerleşim alanlarına yaklaşması halinde güvenlik tedbirleri de artırılıyor.</p>
+
+        <p>Yetkililer, vatandaşların yangın bölgelerine yaklaşmaması, ekiplerin çalışmalarını engelleyecek şekilde yolları kullanmaması ve herhangi bir yangın veya duman görülmesi halinde ilgili acil durum birimlerine bilgi vermesi konusunda uyarılarda bulunuyor.</p>
+
+        <p>Yangınların çıkış nedenleri ise ilgili ekiplerin incelemeleri sonucunda netlik kazanacak. Yangın söndürme çalışmalarının yanı sıra hasar tespit çalışmalarının da gerekli bölgelerde yapılması bekleniyor.</p>
+
+        <p><strong>Haberİsta:</strong> Antalya'daki yangınlarla ilgili resmi kurumlardan gelecek yeni açıklamalar takip ediliyor. Yangınların seyri ve ekiplerin müdahalesine ilişkin gelişmeler haberimiz üzerinden güncellenecek.</p>
+    `
+},
+
+{
+    id: 48,
+    kategori: "Teknoloji",
+    baslik: "TEKNOFEST Güneydoğu için ziyaretçi kayıtları başladı",
+    spot: "Türkiye'nin teknoloji ve havacılık odaklı önemli organizasyonlarından TEKNOFEST'in Güneydoğu etkinliği için ziyaretçi kayıtları başladı. Festivalde teknoloji yarışmaları ve çeşitli gösteriler düzenlenecek.",
+    tarih: "9 Eylül 2026",
+    saat: "16:55",
+    gorsel: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=85",
+    yazar: "Haberİsta Teknoloji Servisi",
+    kaynak: "Haberİsta",
+    seo: {
+        title: "TEKNOFEST Güneydoğu ziyaretçi kayıtları başladı | Haberİsta",
+        description: "TEKNOFEST Güneydoğu için ziyaretçi kayıtları başladı. Festivalde teknoloji, havacılık ve farklı teknoloji alanlarında etkinlikler düzenlenecek.",
+        keywords: "TEKNOFEST Güneydoğu 2026, TEKNOFEST kayıt, teknoloji festivali, havacılık, teknoloji yarışmaları",
+        canonical: "https://haberisa.vercel.app/haber/teknofest-guneydogu-ziyaretci-kayitlari-basladi"
+    },
+    icerik: `
+        <p><strong>TEKNOFEST Güneydoğu için ziyaretçi kayıtları başladı.</strong> Türkiye'nin teknoloji, havacılık ve inovasyon alanındaki en geniş kapsamlı organizasyonlarından biri olan TEKNOFEST, yeni etkinliğiyle teknoloji meraklılarını bir araya getirmeye hazırlanıyor.</p>
+
+        <p>Festival kapsamında teknoloji yarışmalarından hava gösterilerine, bilimsel etkinliklerden girişimcilik çalışmalarına kadar farklı alanlarda programlar düzenlenmesi planlanıyor. Etkinlik, özellikle gençlerin teknoloji ve mühendislik alanlarına ilgisini artırmayı amaçlayan çalışmalar açısından önem taşıyor.</p>
+
+        <p>TEKNOFEST'in en dikkat çekici bölümlerinden biri teknoloji yarışmaları. Öğrenciler ve genç teknoloji geliştiricileri farklı kategorilerde projelerini ortaya koyarken, ortaya çıkan çalışmalar ziyaretçiler tarafından da yakından incelenebiliyor.</p>
+
+        <p>Festival alanlarında yapay zeka, robotik, insansız sistemler, havacılık ve uzay teknolojileri gibi farklı başlıkların öne çıkması bekleniyor. Böylece ziyaretçiler yalnızca gösterileri izlemekle kalmayacak, aynı zamanda yeni teknolojiler hakkında bilgi edinme fırsatı da bulacak.</p>
+
+        <p>Güneydoğu bölgesinde düzenlenecek etkinliğin bölgedeki gençlerin teknoloji ekosistemiyle daha fazla etkileşim kurmasına katkı sağlaması hedefleniyor. Üniversiteler, teknoloji girişimleri, öğrenciler ve farklı kurumların festival kapsamında bir araya gelmesi bekleniyor.</p>
+
+        <p>Festival için ziyaretçi kayıtlarının başlamasıyla birlikte etkinliğe yönelik ilginin de artması bekleniyor. Ziyaretçilerin etkinlik takvimini ve giriş koşullarını resmi TEKNOFEST kanallarından takip etmesi önem taşıyor.</p>
+
+        <p><strong>Haberİsta:</strong> TEKNOFEST Güneydoğu'nun programı ve etkinlik detayları açıklandıkça Haberİsta Teknoloji Servisi olarak gelişmeleri aktarmaya devam edeceğiz.</p>
+    `
+},
+
+{
+    id: 49,
+    kategori: "Ekonomi",
+    baslik: "Türk Hava Yolları 8 ayda 64 milyon yolcu taşıdı",
+    spot: "Türk Hava Yolları, 2026 yılının ocak-ağustos döneminde yaklaşık 64 milyon yolcu taşıdı. Havayolu şirketinin yolcu trafiğine ilişkin verileri açıklandı.",
+    tarih: "9 Eylül 2026",
+    saat: "15:50",
+    gorsel: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1600&q=85",
+    yazar: "Haberİsta Ekonomi Servisi",
+    kaynak: "Haberİsta",
+    seo: {
+        title: "THY 2026'nın ilk 8 ayında 64 milyon yolcu taşıdı | Haberİsta",
+        description: "Türk Hava Yolları'nın 2026 ocak-ağustos dönemindeki yolcu trafiği açıklandı. Şirket 8 ayda yaklaşık 64 milyon yolcu taşıdı.",
+        keywords: "THY 2026 yolcu sayısı, Türk Hava Yolları, THY yolcu, havacılık, ekonomi haberleri",
+        canonical: "https://haberisa.vercel.app/haber/thy-2026nin-ilk-8-ayinda-64-milyon-yolcu-tasidi"
+    },
+    icerik: `
+        <p><strong>Türk Hava Yolları'nın 2026 yılının ocak-ağustos dönemine ilişkin yolcu trafiği verileri açıklandı.</strong> Şirket, yılın ilk sekiz ayında yaklaşık 64 milyon yolcu taşıdı.</p>
+
+        <p>Havacılık sektöründe yolcu trafiği, hem turizm hareketliliği hem de Türkiye'nin uluslararası ulaşım ağındaki konumu açısından önemli göstergeler arasında bulunuyor. İstanbul Havalimanı başta olmak üzere Türkiye'deki büyük havalimanlarının uluslararası bağlantıları, hava yolu şirketlerinin yolcu trafiğinde önemli rol oynuyor.</p>
+
+        <p>THY'nin geniş uçuş ağı, Türkiye'den Avrupa, Asya, Afrika ve Amerika kıtalarına yapılan bağlantıların yanı sıra farklı ülkeler arasında aktarmalı seyahatlerde de önemli bir merkez oluşturuyor.</p>
+
+        <p>Yolcu sayısının değerlendirilmesinde yalnızca toplam yolcu rakamı değil, doluluk oranı, iç hat ve dış hat dağılımı, transit yolcu sayısı ve uçuş kapasitesi gibi göstergeler de önem taşıyor.</p>
+
+        <p>2026'nın ilk sekiz ayında açıklanan veriler, Türkiye'nin havacılık sektöründeki hareketliliğinin devam ettiğini gösteren göstergeler arasında yer aldı. Özellikle yaz dönemindeki turizm hareketliliğinin dış hat yolcu trafiğine katkı sağlaması bekleniyor.</p>
+
+        <p>THY'nin yılın geri kalanında da uçuş ağına ve kapasitesine ilişkin planlarını sürdürmesi beklenirken, sektörün performansı turizm gelirleri ve hava ulaşımındaki gelişmeler açısından yakından takip ediliyor.</p>
+
+        <p><strong>Haberİsta:</strong> THY'nin yıl sonu yolcu trafiği ve şirketin yeni dönem kapasite planları havacılık sektörünün önemli takip başlıkları arasında olacak.</p>
+    `
+},
+
+{
+    id: 50,
+    kategori: "Spor",
+    baslik: "Filenin Sultanları Avrupa şampiyonu oldu: Türkiye'de büyük sevinç",
+    spot: "A Milli Kadın Voleybol Takımı, Avrupa Şampiyonası'nda zirveye çıkarak tarihi bir başarıya imza attı. Şampiyonluğun ardından Filenin Sultanları Cumhurbaşkanı Erdoğan tarafından kabul edildi.",
+    tarih: "9 Eylül 2026",
+    saat: "14:45",
+    gorsel: "https://images.unsplash.com/photo-1592656094267-764a45160876?auto=format&fit=crop&w=1600&q=85",
+    yazar: "Haberİsta Spor Servisi",
+    kaynak: "Haberİsta",
+    seo: {
+        title: "Filenin Sultanları Avrupa şampiyonu oldu | Haberİsta",
+        description: "A Milli Kadın Voleybol Takımı Avrupa şampiyonluğuna ulaştı. Filenin Sultanları'nın başarısı Türkiye'de büyük sevinç oluşturdu.",
+        keywords: "Filenin Sultanları, Avrupa şampiyonu, kadın voleybol, Türkiye voleybol, milli takım",
+        canonical: "https://haberisa.vercel.app/haber/filenin-sultanlari-avrupa-sampiyonu-oldu"
+    },
+    icerik: `
+        <p><strong>A Milli Kadın Voleybol Takımı, Avrupa Şampiyonası'nda şampiyonluğa ulaşarak Türkiye'ye büyük bir gurur yaşattı.</strong> Filenin Sultanları'nın tarihi başarısı spor gündeminin yanı sıra ülke genelinde de geniş yankı buldu.</p>
+
+        <p>Turnuva boyunca önemli rakiplerle karşılaşan milli takım, kritik maçlarda gösterdiği performansla finale kadar yükseldi. Final karşılaşmasında da mücadele gücünü ortaya koyan milliler, Avrupa'nın zirvesine çıkmayı başardı.</p>
+
+        <p>Şampiyonluğun ardından takım oyuncuları ve teknik heyet Türkiye'ye dönerken, milli takımın başarısı çeşitli kurum ve kuruluşlar tarafından kutlandı. Cumhurbaşkanı Recep Tayyip Erdoğan da Avrupa şampiyonu olan Filenin Sultanları'nı kabul etti.</p>
+
+        <p>Kadın voleybolunda Türkiye'nin son yıllarda uluslararası organizasyonlarda elde ettiği başarılar, bu spor dalının ülkedeki görünürlüğünü de artırdı. Milli takımın Avrupa ve dünya organizasyonlarındaki performansı, genç sporcuların voleybola olan ilgisinin artmasına katkı sağlayan unsurlardan biri olarak değerlendiriliyor.</p>
+
+        <p>Şampiyonluk yalnızca oyuncuların bireysel performansıyla değil, uzun süreli takım çalışması, teknik ekip planlaması ve turnuva boyunca gösterilen istikrarla da dikkat çekti.</p>
+
+        <p>Filenin Sultanları'nın başarısı sosyal medyada da geniş şekilde kutlanırken, milli takım oyuncularına yönelik tebrik mesajları kısa sürede gündemin öne çıkan başlıkları arasında yer aldı.</p>
+
+        <p><strong>Haberİsta:</strong> Avrupa şampiyonluğu, Türk kadın voleybolunun uluslararası arenadaki yükselişini bir kez daha gündeme taşıdı. Milli takımın yeni turnuvalardaki performansı spor kamuoyu tarafından yakından takip edilecek.</p>
+    `
+},
+
+{
+    id: 51,
+    kategori: "Gündem",
+    baslik: "İzmir'in kurtuluşunun 104. yıl dönümü bugün törenlerle kutlanıyor",
+    spot: "İzmir'in düşman işgalinden kurtuluşunun 104. yıl dönümü dolayısıyla kent genelinde tören, yürüyüş ve çeşitli etkinlikler düzenleniyor.",
+    tarih: "9 Eylül 2026",
+    saat: "13:30",
+    gorsel: "https://images.unsplash.com/photo-1564399579883-451a5d44ec08?auto=format&fit=crop&w=1600&q=85",
+    yazar: "Haberİsta Gündem Servisi",
+    kaynak: "Haberİsta",
+    seo: {
+        title: "İzmir'in kurtuluşunun 104. yıl dönümü kutlanıyor | Haberİsta",
+        description: "İzmir'in kurtuluşunun 104. yıl dönümü 9 Eylül 2026'da tören ve etkinliklerle kutlanıyor.",
+        keywords: "İzmir 9 Eylül 2026, İzmir'in kurtuluşu, 104. yıl, 9 Eylül kutlamaları, İzmir haberleri",
+        canonical: "https://haberisa.vercel.app/haber/izmirin-kurtulusunun-104-yil-donumu"
+    },
+    icerik: `
+        <p><strong>İzmir'in düşman işgalinden kurtuluşunun 104. yıl dönümü bugün kent genelinde düzenlenen tören ve etkinliklerle anılıyor.</strong> 9 Eylül, İzmir'in tarihindeki en önemli günlerden biri olarak her yıl çeşitli programlarla kutlanıyor.</p>
+
+        <p>İzmir Valiliği tarafından açıklanan resmi programa göre 9 Eylül 2026 Çarşamba günü saat 09.00'da 104. Yıl Zafer Yürüyüşü gerçekleştiriliyor. Yürüyüş Basmane Polis Merkezi önünden başlayarak Anafartalar Caddesi üzerinden Cumhuriyet Meydanı'na kadar devam ediyor.</p>
+
+        <p>Saat 10.00'da Cumhuriyet Meydanı'nda çelenk sunma töreni gerçekleştiriliyor. Program kapsamında saygı duruşunda bulunulması ve İstiklal Marşı'nın okunmasının ardından Türk bayrakları göndere çekiliyor.</p>
+
+        <p>9 Eylül, Milli Mücadele'nin önemli dönüm noktalarından biri olarak Türkiye tarihindeki yerini koruyor. İzmir'in kurtuluşu, Büyük Taarruz'un ardından Türk ordusunun İzmir'e ulaşmasıyla Milli Mücadele'nin Batı Anadolu'daki önemli aşamalarından birini oluşturdu.</p>
+
+        <p>Kent genelindeki kutlamalarda resmi törenlerin yanı sıra farklı kültürel ve sosyal etkinlikler de gerçekleştiriliyor. İzmir'in cadde ve meydanları Türk bayraklarıyla donatılırken, vatandaşlar da kutlama programlarına yoğun ilgi gösteriyor.</p>
+
+        <p>İzmir Büyükşehir Belediyesi ve diğer kurumların düzenlediği etkinliklerle 9 Eylül'ün tarihsel anlamının gelecek kuşaklara aktarılması hedefleniyor.</p>
+
+        <p><strong>Haberİsta:</strong> İzmir'in kurtuluşunun 104. yıl dönümüne ilişkin resmi program ve etkinlikler gün boyunca devam ediyor.</p>
+    `
+},
+
+{
+    id: 52,
+    kategori: "Gündem",
+    baslik: "4 ilde organize suç operasyonu: 137 şüpheli hakkında adli işlem",
+    spot: "Güvenlik güçlerinin 4 ilde düzenlediği organize suç operasyonlarında 137 şüpheli hakkında adli işlem başlatıldığı bildirildi.",
+    tarih: "9 Eylül 2026",
+    saat: "12:55",
+    gorsel: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1600&q=85",
+    yazar: "Haberİsta Haber Merkezi",
+    kaynak: "Haberİsta",
+    seo: {
+        title: "4 ilde organize suç operasyonu: 137 şüpheli | Haberİsta",
+        description: "4 ilde düzenlenen organize suç operasyonlarında 137 şüpheli hakkında adli işlem başlatıldı. Operasyonlara ilişkin ayrıntılar.",
+        keywords: "organize suç operasyonu, 137 şüpheli, operasyon, güvenlik, Türkiye son dakika",
+        canonical: "https://haberisa.vercel.app/haber/4-ilde-organize-suc-operasyonu-137-supheli"
+    },
+    icerik: `
+        <p><strong>Türkiye'nin 4 ilinde organize suç yapılanmalarına yönelik operasyon düzenlendi.</strong> Operasyonlar kapsamında 137 şüpheli hakkında adli işlem başlatıldığı bildirildi.</p>
+
+        <p>Güvenlik güçlerinin organize suçlarla mücadele kapsamında yürüttüğü çalışmalar farklı şehirlerde devam ediyor. Operasyonlarda suç örgütlerinin faaliyetlerinin ortaya çıkarılması ve şüphelilerin adli makamlara sevk edilmesi hedefleniyor.</p>
+
+        <p>Organize suçlarla mücadele operasyonlarında ekipler tarafından teknik ve fiziki takip çalışmaları yürütülebiliyor. Yapılan incelemeler sonucunda elde edilen deliller doğrultusunda operasyonların gerçekleştirildiği belirtiliyor.</p>
+
+        <p>Yetkililer, organize suç örgütlerinin yalnızca doğrudan suç faaliyetleriyle değil, ekonomik ve sosyal alanlarda oluşturabileceği risklerle de mücadele edildiğine dikkat çekiyor.</p>
+
+        <p>Operasyon kapsamında hakkında işlem başlatılan kişilerin hukuki durumları soruşturma ve yargı süreçlerinin ilerlemesiyle netleşecek. Bir kişi hakkında adli işlem başlatılması, kişinin suçlu olduğu anlamına gelmiyor; nihai karar yargı süreci sonunda veriliyor.</p>
+
+        <p>Türkiye genelinde organize suç yapılanmalarına yönelik operasyonların önümüzdeki dönemde de devam etmesi bekleniyor.</p>
+
+        <p><strong>Haberİsta:</strong> Operasyonla ilgili resmi makamlar tarafından açıklanacak yeni bilgiler doğrultusunda haber güncellenecektir.</p>
+    `
+},
+
+{
+    id: 53,
+    kategori: "Çevre",
+    baslik: "Fethiye Körfezi için büyük çevre çalışması: 16 milyon metreküp dip çamuru çıkarılacak",
+    spot: "Fethiye Körfezi'nin temizlenmesi amacıyla yaklaşık 16 milyon metreküp dip çamurunun üç yıl içerisinde çıkarılması planlanıyor.",
+    tarih: "9 Eylül 2026",
+    saat: "11:45",
+    gorsel: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=85",
+    yazar: "Haberİsta Çevre Servisi",
+    kaynak: "Haberİsta",
+    seo: {
+        title: "Fethiye Körfezi'nde 16 milyon metreküplük temizlik çalışması | Haberİsta",
+        description: "Fethiye Körfezi'nde yaklaşık 16 milyon metreküp dip çamurunun üç yıl içinde çıkarılması planlanıyor.",
+        keywords: "Fethiye Körfezi, dip çamuru, çevre projesi, deniz temizliği, Muğla, çevre haberleri",
+        canonical: "https://haberisa.vercel.app/haber/fethiye-korfezinde-16-milyon-metrekup-temizlik"
+    },
+    icerik: `
+        <p><strong>Muğla'nın Fethiye ilçesinde körfezin çevresel durumunun iyileştirilmesi amacıyla kapsamlı bir temizlik çalışması planlanıyor.</strong> Proje kapsamında yaklaşık 16 milyon metreküp dip çamurunun üç yıl içerisinde körfezden çıkarılması hedefleniyor.</p>
+
+        <p>Deniz tabanında zaman içerisinde biriken organik ve inorganik maddeler, su ekosistemini etkileyebiliyor. Dipte biriken malzemelerin kontrollü şekilde temizlenmesi, körfezin su kalitesinin ve ekolojik dengesinin korunmasına katkı sağlayabilecek çevre çalışmalarından biri olarak değerlendiriliyor.</p>
+
+        <p>Fethiye Körfezi, turizm açısından Türkiye'nin önemli kıyı bölgelerinden biri. Bu nedenle deniz ekosisteminin korunması yalnızca çevre açısından değil, bölgenin turizm faaliyetlerinin sürdürülebilirliği açısından da önem taşıyor.</p>
+
+        <p>Çalışmaların bilimsel ölçümler ve çevresel değerlendirmeler eşliğinde yürütülmesi planlanıyor. Dip çamurunun çıkarılması sırasında deniz canlılarının yaşam alanlarının korunması ve çevresel etkilerin mümkün olduğunca azaltılması da projenin önemli başlıkları arasında bulunuyor.</p>
+
+        <p>Projenin üç yıllık bir takvim içerisinde yürütülmesi planlanırken, çalışmaların etaplar halinde gerçekleştirilmesi bekleniyor.</p>
+
+        <p>Fethiye'deki çevre çalışması, Türkiye'de kıyı ve körfezlerin temizlenmesine yönelik son dönemde yürütülen projeler arasında yer alıyor.</p>
+
+        <p><strong>Haberİsta:</strong> Projenin uygulama aşamaları, temizlenecek bölgeler ve çevresel sonuçlarına ilişkin yeni bilgiler açıklandıkça gelişmeleri takip edeceğiz.</p>
+    `
+},
+
+{
+    id: 54,
+    kategori: "Ekonomi",
+    baslik: "Ağustos ihracatında rekor: Türkiye 23,5 milyar dolarlık mal ihracatı gerçekleştirdi",
+    spot: "Türkiye'nin ağustos ayı mal ihracatı geçen yılın aynı dönemine göre yüzde 8,1 artarak 23,5 milyar dolara yükseldi. 2026'nın ilk 8 ayında ihracat 185 milyar dolara ulaştı.",
+    tarih: "9 Eylül 2026",
+    saat: "10:55",
+    gorsel: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=1600&q=85",
+    yazar: "Haberİsta Ekonomi Servisi",
+    kaynak: "Haberİsta",
+    seo: {
+        title: "Türkiye'nin ağustos ihracatı 23,5 milyar dolara yükseldi | Haberİsta",
+        description: "Türkiye'nin ağustos ayı mal ihracatı yüzde 8,1 artışla 23,5 milyar dolara yükseldi. İlk 8 aylık ihracat 185 milyar dolara ulaştı.",
+        keywords: "Türkiye ihracat 2026, Ağustos ihracat, 23,5 milyar dolar, ekonomi, ihracat rekoru",
+        canonical: "https://haberisa.vercel.app/haber/turkiyenin-agustos-ihracati-23-5-milyar-dolara-yukseldi"
+    },
+    icerik: `
+        <p><strong>Türkiye'nin ağustos ayı mal ihracatı geçen yılın aynı ayına göre yüzde 8,1 artarak 23,5 milyar dolara yükseldi.</strong> Böylece ağustos ayında gerçekleştirilen mal ihracatı, aynı aylar bazında yeni bir seviyeye ulaştı.</p>
+
+        <p>2026 yılının ilk sekiz ayına ilişkin veriler de Türkiye'nin dış ticaret performansının yıl boyunca yakından takip edildiğini gösteriyor. Ocak-ağustos dönemindeki toplam mal ihracatı 185 milyar dolar seviyesine ulaştı.</p>
+
+        <p>Yıllıklandırılmış ihracat ise 280,3 milyar dolara yükseldi. Açıklanan rakamlar, Türkiye'nin yıl sonu ihracat hedefi açısından da önem taşıyor.</p>
+
+        <p>İhracat verileri değerlendirilirken küresel enerji fiyatları, döviz hareketleri, Avrupa ve diğer önemli ticaret pazarlarındaki talep, taşımacılık maliyetleri ve küresel ekonomik gelişmeler önemli rol oynuyor.</p>
+
+        <p>Türkiye'nin ihracatında otomotiv, makine, tekstil, kimya, savunma sanayisi ve farklı sanayi ürünleri önemli paylara sahip. Bunun yanında tarım ve gıda ürünleri de Türkiye'nin dış ticaret gelirleri açısından önemli sektörler arasında bulunuyor.</p>
+
+        <p>İhracat artışının sürdürülebilir olması açısından firmaların yeni pazarlara ulaşması, katma değerli üretimin artırılması ve küresel rekabet gücünün korunması önümüzdeki dönemin önemli başlıkları arasında yer alacak.</p>
+
+        <p>Ekonomi yönetimi, küresel ekonomik koşullara rağmen ihracat performansının korunmasına ve üretim kapasitesinin güçlendirilmesine yönelik politikaları sürdürüyor.</p>
+
+        <p><strong>Haberİsta:</strong> Ağustos ihracat verileri, Türkiye ekonomisinin dış ticaret tarafındaki önemli göstergelerinden biri oldu. Eylül ve yıl sonu verileriyle birlikte ihracat performansının daha net bir tablo ortaya koyması bekleniyor.</p>
+    `
+},
+
+{
+    id: 55,
+    kategori: "Çevre",
+    baslik: "Antalya COP31'e hazırlanıyor: Zirve öncesi altyapı ve ulaşım çalışmaları hızlandı",
+    spot: "Birleşmiş Milletler İklim Değişikliği Konferansı COP31'in Antalya'da düzenlenmesi için hazırlıklar sürüyor. Zirve öncesinde altyapı, ulaşım ve organizasyon çalışmalarına hız verildi.",
+    tarih: "9 Eylül 2026",
+    saat: "09:50",
+    gorsel: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=85",
+    yazar: "Haberİsta Çevre Servisi",
+    kaynak: "Haberİsta",
+    seo: {
+        title: "Antalya COP31'e hazırlanıyor: Zirve öncesi çalışmalar hızlandı | Haberİsta",
+        description: "COP31'in Antalya'da düzenlenmesi öncesinde altyapı, ulaşım ve organizasyon hazırlıkları sürüyor.",
+        keywords: "COP31 Antalya, COP31 2026, iklim zirvesi, Antalya, iklim değişikliği, çevre",
+        canonical: "https://haberisa.vercel.app/haber/antalya-cop31e-hazirlaniyor"
+    },
+    icerik: `
+        <p><strong>Birleşmiş Milletler İklim Değişikliği Konferansı COP31'in Antalya'da düzenlenmesi için hazırlıklar devam ediyor.</strong> Dünyanın farklı ülkelerinden devlet temsilcilerinin, iklim uzmanlarının ve çok sayıda kuruluşun katılması beklenen zirve öncesinde kentte çeşitli çalışmalar yürütülüyor.</p>
+
+        <p>COP31'in 9-20 Kasım 2026 tarihlerinde Antalya EXPO alanında gerçekleştirilmesi planlanıyor. Zirve kapsamında iklim değişikliğiyle mücadele, sera gazı emisyonlarının azaltılması, iklim finansmanı ve ülkelerin iklim hedefleri gibi çok sayıda konu ele alınacak.</p>
+
+        <p>Organizasyonun Antalya'da düzenlenmesi nedeniyle kentte ulaşım, altyapı, güvenlik ve konaklama başlıklarında hazırlıklar yürütülüyor. EXPO alanının zirveye uygun hale getirilmesi için de çalışmalar devam ediyor.</p>
+
+        <p>Zirvenin Antalya açısından yalnızca uluslararası diplomasi bakımından değil, turizm ve hizmet sektörleri açısından da önemli olması bekleniyor. Çok sayıda yabancı ziyaretçinin kente gelmesi, oteller, restoranlar, ulaşım şirketleri ve diğer hizmet sektörlerinde hareketlilik oluşturabilir.</p>
+
+        <p>İklim zirvesinin Türkiye açısından bir diğer önemi ise ülkenin iklim politikalarının uluslararası kamuoyuna aktarılması olacak. Türkiye'nin enerji dönüşümü, yenilenebilir enerji yatırımları, sıfır atık çalışmaları ve emisyon azaltım hedefleri gibi başlıkların zirve gündeminde yer alması bekleniyor.</p>
+
+        <p>Yetkililer, organizasyonun tamamlanmasının ardından yapılan altyapı yatırımlarının Antalya'nın kullanımına kalacağını belirtiyor.</p>
+
+        <p><strong>Haberİsta:</strong> COP31'e yönelik hazırlıkların önümüzdeki haftalarda daha da hızlanması bekleniyor. Zirvenin yaklaşmasıyla birlikte ulaşım ve etkinlik programlarına ilişkin ayrıntıların da netleşmesi bekleniyor.</p>
+    `
+},
+
+{
+    id: 56,
+    kategori: "Gündem",
+    baslik: "Cumhurbaşkanı Erdoğan'dan Filenin Sultanları'na kabul: Avrupa şampiyonluğunun ardından buluşma",
+    spot: "Avrupa şampiyonluğuna ulaşan A Milli Kadın Voleybol Takımı, Cumhurbaşkanı Recep Tayyip Erdoğan tarafından kabul edildi. Görüşmede milli takımın başarısı gündeme geldi.",
+    tarih: "9 Eylül 2026",
+    saat: "09:15",
+    gorsel: "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1600&q=85",
+    yazar: "Haberİsta Gündem Servisi",
+    kaynak: "Haberİsta",
+    seo: {
+        title: "Erdoğan'dan Filenin Sultanları'na kabul | Avrupa şampiyonluğu sonrası",
+        description: "Avrupa şampiyonu olan Filenin Sultanları Cumhurbaşkanı Erdoğan tarafından kabul edildi.",
+        keywords: "Erdoğan Filenin Sultanları, Avrupa şampiyonu, A Milli Kadın Voleybol Takımı, voleybol",
+        canonical: "https://haberisa.vercel.app/haber/erdogandan-filenin-sultanlarina-kabul"
+    },
+    icerik: `
+        <p><strong>A Milli Kadın Voleybol Takımı'nın Avrupa şampiyonluğunun ardından milli sporcular Cumhurbaşkanı Recep Tayyip Erdoğan tarafından kabul edildi.</strong> Kabul programında Filenin Sultanları'nın uluslararası arenada elde ettiği başarı gündeme geldi.</p>
+
+        <p>Milli takımın Avrupa şampiyonluğuna ulaşması Türkiye'de geniş yankı oluştururken, oyuncuların turnuva boyunca gösterdiği performans spor kamuoyunda takdir topladı.</p>
+
+        <p>Kadın voleybolunda Türkiye'nin son yıllarda elde ettiği uluslararası başarılar, milli takımın Avrupa ve dünya organizasyonlarında üst sıralarda yer almasını sağladı. Filenin Sultanları'nın başarıları, genç sporcuların da bu branşa ilgisini artıran gelişmeler arasında gösteriliyor.</p>
+
+        <p>Milli takımın başarısında oyuncuların yanı sıra teknik ekip, sağlık ekibi, kondisyonerler ve turnuva hazırlık sürecinde görev yapan diğer çalışanların da katkısı bulunuyor.</p>
+
+        <p>Şampiyonluk sonrasında düzenlenen kabul programı, milli takımın başarısının devletin en üst makamında da kutlanması açısından önem taşıdı.</p>
+
+        <p>Türk sporunun uluslararası alandaki başarılarının artırılması için altyapı yatırımları, genç sporcuların desteklenmesi ve uluslararası deneyim kazanmaları önümüzdeki dönemde önemini koruyacak.</p>
+
+        <p><strong>Haberİsta:</strong> Filenin Sultanları'nın Avrupa şampiyonluğu, Türkiye'nin voleyboldaki uluslararası başarılarını bir kez daha gündemin merkezine taşıdı.</p>
+    `
+},
+{
     id: 41,
     kategori: "Kültür Sanat",
     baslik: "İstanbul'da eylül ayı sanatla başladı: Yeni sergiler sanatseverlerle buluşuyor",
