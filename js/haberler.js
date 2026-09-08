@@ -40,6 +40,95 @@ const haberler = [
        1 - KABİNE
     ===================================================== */
 {
+id: 35,
+kategori: "Teknoloji",
+baslik: "Avrupa'nın yapay zeka şirketi Mistral'den dev yatırım: Değerlemesi 24 milyar dolara ulaştı",
+spot: "Fransız yapay zeka şirketi Mistral, 3 milyar euroluk yeni yatırım turunu tamamladı. Şirketin değerlemesi yaklaşık 21 milyar euroya, yani 24 milyar dolara yükselirken yatırımın yapay zeka modelleri ve ileri araştırmaların geliştirilmesinde kullanılması bekleniyor.",
+tarih: "9 Eylül 2026",
+saat: "00:50",
+yazar: "Haberİsta Teknoloji Servisi",
+kaynak: "Reuters",
+gorsel: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1600&q=85",
+
+seo: {
+    title: "Mistral AI 3 milyar euro yatırım aldı | Haberİsta",
+    description: "Fransız yapay zeka şirketi Mistral, 3 milyar euroluk yatırım turuyla yaklaşık 21 milyar euro değerlemeye ulaştı. İşte yatırımın ayrıntıları.",
+    keywords: [
+        "Mistral AI",
+        "Mistral yapay zeka",
+        "yapay zeka",
+        "AI",
+        "Fransa yapay zeka",
+        "teknoloji haberleri",
+        "Mistral yatırım",
+        "yapay zeka yatırımı"
+    ],
+    canonical: "https://haberisa.vercel.app/haber/mistral-ai-3-milyar-euro-yatirim"
+},
+
+icerik: `
+    <p><strong>Avrupa'nın yapay zeka alanındaki en dikkat çekici şirketlerinden Mistral, yeni yatırım turuyla büyümesini hızlandıracak önemli bir finansman sağladı.</strong> Fransa merkezli şirket, 3 milyar euroluk yatırım turunu tamamladığını açıkladı. Bu yatırımla birlikte Mistral'in değerlemesi yaklaşık 21 milyar euroya, başka bir ifadeyle yaklaşık 24 milyar dolara yükseldi.</p>
+
+    <p>8 Eylül 2026'da duyurulan yatırım turu, özel bir Avrupa teknoloji şirketinin gerçekleştirdiği en büyük hisse senedi finansmanlarından biri olarak öne çıktı. Şirket, elde edilen kaynağı yapay zeka modellerinin geliştirilmesi, ileri düzey araştırmalar ve küresel büyüme çalışmalarında kullanmayı planlıyor.</p>
+
+    <h2>Mistral'e 3 milyar euroluk yatırım</h2>
+
+    <p>Mistral'in yeni finansman turuna mevcut yatırımcıların yanı sıra önemli yeni yatırımcılar da katıldı. Yatırım turuna PSG Equity liderlik ederken, Güney Kore merkezli Samsung Electronics ve Avrupa Birliği destekli Scaleup Europe Fund da şirkete ilk kez yatırım yapan kuruluşlar arasında yer aldı.</p>
+
+    <p>Şirketin aldığı toplam yatırımın büyüklüğü, Avrupa'nın küresel yapay zeka yarışındaki konumunu güçlendirme çabasının da dikkat çekici örneklerinden biri olarak değerlendiriliyor.</p>
+
+    <h2>Değerleme 24 milyar dolara çıktı</h2>
+
+    <p>Yeni yatırım sonrasında Mistral'in şirket değeri yaklaşık <strong>21 milyar euro</strong> seviyesine yükseldi. Bu rakam yaklaşık 24 milyar dolara karşılık geliyor.</p>
+
+    <p>Mistral henüz üç yıllık bir şirket olmasına rağmen Avrupa'nın en yüksek değerlemeye sahip özel teknoloji şirketlerinden biri konumuna geldi. Şirket yöneticileri, yeni finansmanın Mistral'in büyük yapay zeka şirketleriyle rekabet edebilmesi için önemli bir kaynak sağlayacağını belirtiyor.</p>
+
+    <h2>Avrupa'nın yapay zeka yarışındaki hedefi</h2>
+
+    <p>Yapay zeka sektöründe ABD merkezli şirketler uzun süredir küresel yarışın önemli bölümünü elinde tutuyor. Avrupa ise kendi yapay zeka altyapısını ve şirketlerini geliştirerek dışa bağımlılığını azaltmaya çalışıyor.</p>
+
+    <p>Mistral bu stratejinin en önemli şirketlerinden biri olarak görülüyor. Şirketin büyümesi, Avrupa'nın yalnızca yapay zeka teknolojilerini kullanan bir pazar olmak yerine kendi büyük yapay zeka modellerini geliştirme hedefi açısından da önem taşıyor.</p>
+
+    <p>Özellikle gelişmiş yapay zeka modellerine erişimin jeopolitik gelişmelerden etkilenebilmesi, Avrupa'nın kendi teknoloji şirketlerine sahip olmasının stratejik önemini artırıyor.</p>
+
+    <h2>Yeni yatırım nerede kullanılacak?</h2>
+
+    <p>Mistral'in finansmandan elde ettiği kaynağın önemli bölümünü yapay zeka modellerinin geliştirilmesine ve <strong>frontier research</strong> olarak adlandırılan ileri düzey araştırmalara yönlendirmesi bekleniyor.</p>
+
+    <p>Şirket ayrıca Avrupa dışındaki pazarlarda büyümeye devam ediyor. Mistral'in müşteri tabanında Asya ve Kuzey Amerika'nın payının arttığı belirtilirken, şirketin yıl sonuna kadar yıllık tekrarlayan gelirlerini yaklaşık 1 milyar dolar seviyesine çıkarmayı hedeflediği aktarıldı.</p>
+
+    <h2>Microsoft da Mistral ile çalışıyor</h2>
+
+    <p>Mistral'in büyüme sürecinde Microsoft ile yaptığı iş birliği de dikkat çekiyor. Microsoft daha önce Mistral'in Avrupa'daki bilgi işlem altyapısına milyarlarca dolarlık yatırım yapmayı içeren bir anlaşma gerçekleştirmişti.</p>
+
+    <p>Ancak Reuters'ın aktardığı bilgilere göre Microsoft, Mistral'in son 3 milyar euroluk yatırım turuna katılan yatırımcılar arasında yer almadı.</p>
+
+    <h2>Mistral OpenAI ve Anthropic ile rekabet ediyor</h2>
+
+    <p>Mistral, yapay zeka modelleri konusunda OpenAI ve Anthropic gibi ABD merkezli çok daha büyük şirketlerle rekabet ediyor.</p>
+
+    <p>Şirketin modellerinin önemli özelliklerinden biri, müşterilerin bazı modelleri kendi sunucularında çalıştırabilmesine ve özelleştirebilmesine imkan veren açık yaklaşımı. Bu özellik özellikle şirketlerin verilerini kendi altyapılarında tutmak istediği kurumsal yapay zeka pazarında önem kazanıyor.</p>
+
+    <h2>Şirketin geleceği</h2>
+
+    <p>Mistral'in yeni yatırım turuyla birlikte önündeki dönemde araştırma, ürün geliştirme ve uluslararası büyümeye daha fazla kaynak ayırması bekleniyor.</p>
+
+    <p>Şirketin halka arz seçeneğinin gelecekte değerlendirilebileceği belirtilse de şu aşamada bunun için kesinleşmiş bir takvim bulunmuyor.</p>
+
+    <p><strong>Sonuç olarak Mistral'in 3 milyar euroluk yeni finansman turu, yalnızca şirket açısından değil Avrupa'nın yapay zeka sektöründeki konumu açısından da önemli bir gelişme olarak öne çıkıyor.</strong> Yeni yatırımın Mistral'in küresel rakipleriyle arasındaki teknoloji farkını azaltıp azaltamayacağı ise önümüzdeki dönemde görülecek.</p>
+
+    <div class="haber-kaynak">
+        <strong>Kaynak:</strong> Reuters
+        <br>
+        <strong>Haber tarihi:</strong> 8 Eylül 2026
+        <br>
+        <strong>Haberİsta yayın tarihi:</strong> 9 Eylül 2026
+    </div>
+`
+
+},
+
+{
 id: 34,
 kategori: "Son dakika",
 baslik: "Bilim dünyasında dikkat çeken gelişme: DNA'nın genetik alfabesi 8 harfe çıkarıldı",
