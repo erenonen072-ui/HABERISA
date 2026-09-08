@@ -42,155 +42,177 @@ const haberler = [
 {
     id: 41,
     kategori: "Kültür Sanat",
-    baslik: "ZKS Kültür Sanat Yıllığı 2026 yayımlandı",
-    spot: "Zeytinburnu Kültür Sanat tarafından hazırlanan 2026 Kültür Sanat Yıllığı, Türkiye'nin sanat ve kültür hayatındaki gelişmeleri kapsamlı şekilde ele alıyor.",
-    tarih: "8 Eylül 2026",
-    saat: "14:20",
+    baslik: "İstanbul'da eylül ayı sanatla başladı: Yeni sergiler sanatseverlerle buluşuyor",
+    spot: "İstanbul'da eylül ayının gelmesiyle birlikte müze ve sanat merkezlerinin programları hareketlendi. İstanbul Modern'den Metrohan'a, Salt Beyoğlu'ndan Borusan Contemporary'ye kadar birçok merkez yeni sergilerini ziyaretçilerin ilgisine sunuyor.",
+    tarih: "9 Eylül 2026",
+    saat: "18:10",
     gorsel: "https://images.unsplash.com/photo-1577083552431-6e5fd01988b5?auto=format&fit=crop&w=1600&q=85",
-    yazar: "Haberİsta Kültür Sanat",
-    kaynak: "Anadolu Ajansı",
+    yazar: "Haberİsta Kültür Sanat Servisi",
+    kaynak: "Haberİsta",
     seo: {
-        title: "ZKS Kültür Sanat Yıllığı 2026 yayımlandı | Haberİsta",
-        description: "ZKS Kültür Sanat Yıllığı 2026 yayımlandı. Edebiyat, sinema, tiyatro, müzik, tarih ve çağdaş sanat alanındaki gelişmeler ele alınıyor.",
-        keywords: "ZKS Kültür Sanat Yıllığı 2026, kültür sanat, edebiyat, sinema, tiyatro, müzik, sanat haberleri",
-        canonical: "https://haberisa.vercel.app/haber/zks-kultur-sanat-yilligi-2026-yayimlandi"
+        title: "İstanbul'da eylül ayı sanatla başladı: Yeni sergiler | Haberİsta",
+        description: "İstanbul'da eylül ayında açılan yeni sergiler sanatseverleri bekliyor. İstanbul Modern, Metrohan, Salt Beyoğlu ve Borusan Contemporary'nin programı dikkat çekiyor.",
+        keywords: "İstanbul sergileri 2026, kültür sanat, İstanbul Modern, Metrohan, Salt Beyoğlu, Borusan Contemporary, sanat haberleri",
+        canonical: "https://haberisa.vercel.app/haber/istanbulda-eylul-ayi-sanatla-basladi"
     },
     icerik: `
-        <p><strong>Zeytinburnu Kültür Sanat tarafından hazırlanan "ZKS Kültür Sanat Yıllığı 2026" okurlarla buluştu.</strong> Yayın, Türkiye'nin kültür ve sanat hayatında yıl boyunca öne çıkan gelişmeleri ve tartışmaları bir araya getiriyor.</p>
+        <p><strong>İstanbul, eylül ayının başlamasıyla birlikte yeni bir kültür sanat sezonuna giriyor.</strong> Kentin farklı noktalarında açılan ve açılacak sergiler, modern sanattan çağdaş sanata, resimden fotoğrafa ve yeni medya çalışmalarına kadar geniş bir yelpazeyi sanatseverlerle buluşturuyor.</p>
 
-        <p>Çalışmada edebiyattan sinemaya, tiyatrodan müziğe, felsefeden tarihe ve çağdaş sanata kadar çok sayıda alan ele alınıyor. Böylece kültür sanat dünyasında yaşanan gelişmelerin yıl boyunca takip edilebileceği kapsamlı bir kaynak oluşturulması amaçlanıyor.</p>
+        <p>Sonbahar sezonunun dikkat çeken duraklarından biri İstanbul Modern olacak. Müzenin yeni koleksiyon sergisi "Aynı Mavinin Altında", Türkiye'de modern ve çağdaş sanatın 1940'lardan günümüze uzanan dönüşümünü farklı dönemler ve temalar üzerinden ele alıyor.</p>
 
-        <p>Yıllıkta ayrıca yapay zeka, dijital yayıncılık, teknomedyatik dünya, kültürel diplomasi, çocuk yayınları, müzeler, uluslararası kitap fuarları ve şehir kültürü gibi son yıllarda giderek önem kazanan başlıklara da yer veriliyor.</p>
+        <p>Sergide İstanbul Modern koleksiyonundan yaklaşık 232 eser bir araya getiriliyor. Bunlardan 40'tan fazla eserin ise ilk kez izleyici karşısına çıkacağı belirtiliyor. Serginin, farklı kuşaklardan sanatçıların çalışmalarını aynı çatı altında buluşturması açısından önemli bir program olması bekleniyor.</p>
 
-        <p>Çeşitli söyleşi, portre, inceleme ve değerlendirme yazılarından oluşan çalışmaya farklı alanlardan yazarlar, uzmanlar ve akademisyenler katkı sundu.</p>
+        <p>İstanbul'un tarihi yapılarından Metrohan da eylül ayında yeni bir sergiye ev sahipliği yapıyor. "Dünyanın Halleri" isimli sergi, ressam İbrahim Örs'ün sanat yaşamı boyunca oluşturduğu eserleri sanatseverlerle buluşturuyor.</p>
 
-        <p>Yayın, yalnızca güncel gelişmeleri aktarmakla kalmayarak Türkiye'nin kültür sanat hayatında oluşan birikimin gelecek yıllara aktarılmasına da katkı sağlamayı hedefliyor.</p>
+        <p>Salt Beyoğlu'nda ise sanatçı, eğitimci ve yazar Özer Kabaş'ın çalışmalarına odaklanan "Denizaşırı: Özer Kabaş ve Zamanları" sergisi hazırlanıyor. Sergide sanatçının farklı dönemlerdeki üretimlerinin yanı sıra arşiv belgeleri de yer alıyor.</p>
 
-        <p><strong>Kaynak:</strong> Anadolu Ajansı</p>
+        <p>Borusan Contemporary'de ise yeni medya ve çağdaş fotoğraf alanlarına odaklanan iki yeni sergi sanatseverlerin karşısına çıkacak. Bu programlarda yapay zeka, veri teknolojileri, hafıza, gerçeklik ve çağdaş fotoğraf gibi konular öne çıkıyor.</p>
+
+        <p>Uzmanlara göre sonbahar döneminin başlamasıyla İstanbul'daki kültür sanat etkinliklerinde belirgin bir hareketlilik yaşanması bekleniyor. Sergilerin yanı sıra tiyatro, konser, sinema ve festivaller de eylül ve ekim aylarında sanat gündeminin önemli başlıkları arasında yer alacak.</p>
+
+        <p><strong>Haberİsta değerlendirmesi:</strong> İstanbul'daki yeni sergiler, farklı sanat anlayışlarını aynı dönemde takip etmek isteyen ziyaretçiler için geniş bir seçenek oluşturuyor. Özellikle sonbahar boyunca devam edecek programların kültür sanat gündemini canlı tutması bekleniyor.</p>
     `
 },
 
 {
     id: 42,
     kategori: "Kültür Sanat",
-    baslik: "İstanbul'da sanat dolu hafta: Tiyatro, konser ve sergiler izleyiciyle buluşuyor",
-    spot: "İstanbul'da eylül ayının ikinci haftasında çok sayıda tiyatro oyunu, konser, sergi ve söyleşi sanatseverleri bekliyor.",
-    tarih: "7 Eylül 2026",
-    saat: "16:10",
-    gorsel: "https://images.unsplash.com/photo-1503095396549-807759245b35?auto=format&fit=crop&w=1600&q=85",
-    yazar: "Haberİsta Kültür Sanat",
-    kaynak: "Anadolu Ajansı",
+    baslik: "İstanbul Uluslararası Oda Müziği Festivali başladı: Konserler 24 Eylül'e kadar sürecek",
+    spot: "6. İstanbul Uluslararası Oda Müziği Festivali, Süreyya Operası'nda sanatseverlerle buluşuyor. Festival kapsamında konserlerin yanı sıra ücretsiz ustalık sınıfları da düzenleniyor.",
+    tarih: "9 Eylül 2026",
+    saat: "17:35",
+    gorsel: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1600&q=85",
+    yazar: "Haberİsta Kültür Sanat Servisi",
+    kaynak: "Haberİsta",
     seo: {
-        title: "İstanbul'da kültür sanat etkinlikleri: Tiyatro, konser ve sergiler | Haberİsta",
-        description: "İstanbul'da bu hafta tiyatro, konser, sergi ve söyleşi programları sanatseverlerle buluşuyor.",
-        keywords: "İstanbul kültür sanat, İstanbul etkinlikleri, tiyatro, konser, sergi, sanat haberleri",
-        canonical: "https://haberisa.vercel.app/haber/istanbulda-sanat-dolu-hafta"
+        title: "İstanbul Uluslararası Oda Müziği Festivali başladı | Haberİsta",
+        description: "6. İstanbul Uluslararası Oda Müziği Festivali 6-24 Eylül 2026 tarihleri arasında Süreyya Operası'nda düzenleniyor.",
+        keywords: "İstanbul Uluslararası Oda Müziği Festivali 2026, Süreyya Operası, klasik müzik, konser, kültür sanat",
+        canonical: "https://haberisa.vercel.app/haber/istanbul-uluslararasi-oda-muzigi-festivali-2026"
     },
     icerik: `
-        <p><strong>İstanbul, eylül ayının ikinci haftasında yine yoğun bir kültür sanat programına ev sahipliği yapıyor.</strong> Kentin farklı noktalarında tiyatro oyunlarından konserlere, sergilerden söyleşilere kadar birçok etkinlik düzenleniyor.</p>
+        <p><strong>İstanbul'un önemli klasik müzik etkinliklerinden biri olan İstanbul Uluslararası Oda Müziği Festivali, 6. kez sanatseverlerle buluşuyor.</strong> Festival, 6-24 Eylül 2026 tarihleri arasında Kadıköy Belediyesi Süreyya Operası'nda gerçekleştiriliyor.</p>
 
-        <p>Tiyatro programında farklı türlerde yapımlar izleyiciyle buluşurken, klasik eserlerin yeni yorumları da sanatseverlerin karşısına çıkıyor. Victor Hugo'nun "Bir İdam Mahkumunun Son Günü" adlı eseri de 12 ve 13 Eylül tarihlerinde sahnelenecek.</p>
+        <p>Festivalin bu yılki programında Türkiye'den ve farklı ülkelerden çok sayıda sanatçı yer alıyor. Oda müziğinin farklı örneklerinin seslendirileceği konserlerde klasik müzik repertuvarının önemli eserleri sanatseverlerle buluşacak.</p>
 
-        <p>Müzik tarafında ise İstanbul'un önemli açık hava sahnelerinde konserler devam ediyor. Harbiye Cemil Topuzlu Açıkhava Tiyatrosu'nda Candan Erçetin, Serdar Ortaç, Ajda Pekkan ve farklı sanatçıların konserleri gerçekleştirilecek.</p>
+        <p>Etkinliğin dikkat çeken bölümlerinden biri ise genç müzisyenlere yönelik eğitim çalışmaları. Festival kapsamında farklı alanlarda ustalık sınıfları düzenlenerek genç sanatçıların deneyimli müzisyenlerle çalışma fırsatı bulması hedefleniyor.</p>
 
-        <p>İstanbul Modern'de açılacak "Aynı Mavinin Altında" sergisi de haftanın dikkat çeken sanat etkinlikleri arasında bulunuyor. Sergide resim, fotoğraf, yerleştirme ve video gibi farklı sanat disiplinlerinden eserler bir araya getiriliyor.</p>
+        <p>Programda uluslararası müzik dünyasının önemli isimleri de yer alıyor. Festival kapsamında Carolin Widmann, Marc Coppey ve Razvan Popovici gibi sanatçıların katılımıyla çeşitli çalışmalar gerçekleştiriliyor.</p>
 
-        <p>Şehir genelindeki etkinliklerin, sonbahar sezonunun kültür sanat hareketliliğini artırması bekleniyor.</p>
+        <p>Oda müziği festivalleri, büyük orkestraların aksine daha küçük müzisyen topluluklarının birbirleriyle olan müzikal etkileşimini ön plana çıkarıyor. Bu nedenle konserlerde enstrümanlar arasındaki uyum ve sanatçıların birbirleriyle kurduğu müzikal iletişim önemli bir yere sahip.</p>
 
-        <p><strong>Kaynak:</strong> Anadolu Ajansı</p>
+        <p>İstanbul'daki festivalin eylül ayı boyunca klasik müzik dinleyicilerini farklı programlarla buluşturması bekleniyor. Etkinliklerin özellikle genç müzisyenlerin oda müziğine ilgisini artırması da hedefleniyor.</p>
+
+        <p><strong>Haberİsta:</strong> İstanbul Uluslararası Oda Müziği Festivali, klasik müzikseverler için eylül ayının öne çıkan kültür sanat etkinliklerinden biri olarak dikkat çekiyor.</p>
     `
 },
 
 {
     id: 43,
     kategori: "Kültür Sanat",
-    baslik: "Filmekimi 2026 için geri sayım başladı: Festival ekim ayında düzenlenecek",
-    spot: "Filmekimi, dünya festivallerinden ödüllerle dönen filmlerden oluşan seçkisiyle ekim ayında sinemaseverlerle buluşacak.",
-    tarih: "4 Eylül 2026",
-    saat: "13:45",
-    gorsel: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1600&q=85",
-    yazar: "Haberİsta Kültür Sanat",
-    kaynak: "Anadolu Ajansı",
+    baslik: "Aspendos Opera ve Bale Festivali için geri sayım sona erdi: Tarihi tiyatroda sanat buluşması",
+    spot: "33. Uluslararası Aspendos Opera ve Bale Festivali 12 Eylül'de başlıyor. Festival kapsamında opera, bale ve sahne kantatı türlerinde toplam 6 temsil sanatseverlerle buluşacak.",
+    tarih: "9 Eylül 2026",
+    saat: "16:50",
+    gorsel: "https://images.unsplash.com/photo-1503095396549-807759245b35?auto=format&fit=crop&w=1600&q=85",
+    yazar: "Haberİsta Kültür Sanat Servisi",
+    kaynak: "Haberİsta",
     seo: {
-        title: "Filmekimi 2026 ne zaman? Festival tarihleri ve program | Haberİsta",
-        description: "Filmekimi 2026, ekim ayında İstanbul, Ankara, İzmir ve Mersin'de sinemaseverlerle buluşacak.",
-        keywords: "Filmekimi 2026, Filmekimi, sinema festivali, İstanbul film festivali, sinema haberleri",
-        canonical: "https://haberisa.vercel.app/haber/filmekimi-2026-geri-sayim-basladi"
+        title: "Aspendos Opera ve Bale Festivali 2026 başlıyor | Haberİsta",
+        description: "33. Uluslararası Aspendos Opera ve Bale Festivali 12-26 Eylül 2026 tarihleri arasında tarihi Aspendos Antik Tiyatrosu'nda düzenlenecek.",
+        keywords: "Aspendos Opera Bale Festivali 2026, Aspendos Antik Tiyatrosu, opera, bale, Antalya kültür sanat",
+        canonical: "https://haberisa.vercel.app/haber/aspendos-opera-bale-festivali-2026"
     },
     icerik: `
-        <p><strong>Sinema dünyasının önemli etkinliklerinden Filmekimi için hazırlıklar devam ediyor.</strong> İstanbul Kültür Sanat Vakfı tarafından düzenlenen festival, sonbaharda farklı şehirlerde sinemaseverlerle buluşacak.</p>
+        <p><strong>Türkiye'nin önemli açık hava sanat organizasyonlarından Uluslararası Aspendos Opera ve Bale Festivali için geri sayım sona eriyor.</strong> Festivalin 33. yılında opera ve bale sanatının önemli örnekleri tarihi Aspendos Antik Tiyatrosu'nda sanatseverlerle buluşacak.</p>
 
-        <p>Festival bu yıl 9-18 Ekim tarihlerinde İstanbul'da gerçekleştirilecek. Ankara'da 15-18 Ekim, İzmir ve Mersin'de ise 22-25 Ekim tarihlerinde gösterimler yapılacak.</p>
+        <p>Devlet Opera ve Balesi Genel Müdürlüğü tarafından düzenlenen festival, 12-26 Eylül 2026 tarihleri arasında gerçekleştirilecek. Festival kapsamında toplam 6 temsil sahnelenecek.</p>
 
-        <p>Filmekimi'nin 2026 seçkisinde dünyanın önemli film festivallerinde gösterilen ve ödüller kazanan yapımlar dikkat çekiyor. Cannes Film Festivali'nin farklı bölümlerinden seçilen filmler de programda yer alacak.</p>
+        <p>Aspendos Antik Tiyatrosu'nun tarihi atmosferi, etkinliğin en dikkat çekici özelliklerinden biri olarak öne çıkıyor. Binlerce yıllık tarihi yapının sahne olarak kullanılması, opera ve bale gösterilerine farklı bir atmosfer kazandırıyor.</p>
 
-        <p>Festivalin dikkat çeken yapımlarından biri, 79. Cannes Film Festivali'nde Altın Palmiye kazanan Cristian Mungiu imzalı "Fjord" oldu.</p>
+        <p>Festival programında opera ve bale eserlerinin yanı sıra sahne kantatı gibi farklı sahne sanatları da yer alıyor. Uluslararası katılımın da bulunduğu programda farklı ülkelerden sanatçıların performansları izleyicilerle buluşacak.</p>
 
-        <p>Festival, farklı tür ve ülkelerden sinema örneklerini Türkiye'deki izleyiciyle buluştururken sinema kültürünün gelişmesine de katkı sağlamayı amaçlıyor.</p>
+        <p>Festivalin dikkat çeken konuklarından biri Kazak Ulusal Opera ve Bale Tiyatrosu olacak. Topluluk, program kapsamında "Spartaküs" balesiyle sahne alacak.</p>
 
-        <p><strong>Kaynak:</strong> Anadolu Ajansı</p>
+        <p>Opera ve bale festivalleri, Türkiye'nin tarihi mekanlarının kültür sanat etkinlikleriyle yeniden değerlendirilmesine de katkı sağlıyor. Aspendos örneğinde ise antik tiyatronun tarihi dokusu ile sahne sanatlarının bir araya gelmesi etkinliğe ayrı bir özellik kazandırıyor.</p>
+
+        <p>Festivalin Antalya'ya gelen yerli ve yabancı ziyaretçilerin kültür sanat deneyimini artırması ve bölgenin kültürel turizmine katkı sağlaması bekleniyor.</p>
+
+        <p><strong>Haberİsta:</strong> Aspendos'ta düzenlenecek festival, eylül ayının Türkiye'deki önemli opera ve bale organizasyonları arasında yer alıyor.</p>
     `
 },
 
 {
     id: 44,
     kategori: "Kültür Sanat",
-    baslik: "Dünyanın önemli sanat merkezlerinde yoğun etkinlik haftası",
-    spot: "Venedik Film Festivali, BBC Proms ve Lucerne Festivali gibi önemli kültür sanat etkinliklerinde eylül programı devam ediyor.",
-    tarih: "7 Eylül 2026",
-    saat: "18:30",
-    gorsel: "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1600&q=85",
-    yazar: "Haberİsta Kültür Sanat",
-    kaynak: "Anadolu Ajansı",
+    baslik: "Çanakkale Kültür Yolu Festivali sona erdi: 9 gün boyunca sanat ve tarih bir arada yaşandı",
+    spot: "Çanakkale'de düzenlenen Türkiye Kültür Yolu Festivali, konserlerden sergilere, atölyelerden çocuk etkinliklerine kadar geniş bir programın ardından sona erdi.",
+    tarih: "9 Eylül 2026",
+    saat: "15:40",
+    gorsel: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=1600&q=85",
+    yazar: "Haberİsta Kültür Sanat Servisi",
+    kaynak: "Haberİsta",
     seo: {
-        title: "Dünyada kültür sanat haftası: Film, müzik ve festivaller | Haberİsta",
-        description: "Venedik Film Festivali, BBC Proms ve Lucerne Festivali başta olmak üzere dünyanın farklı merkezlerinde kültür sanat etkinlikleri sürüyor.",
-        keywords: "dünya kültür sanat, Venedik Film Festivali, BBC Proms, Lucerne Festivali, sanat haberleri",
-        canonical: "https://haberisa.vercel.app/haber/dunyada-kultur-sanat-etkinlikleri"
+        title: "Çanakkale Kültür Yolu Festivali sona erdi | Haberİsta",
+        description: "Çanakkale Kültür Yolu Festivali 9 günlük programın ardından sona erdi. Festivalde konser, sergi, söyleşi, atölye ve çocuk etkinlikleri düzenlendi.",
+        keywords: "Çanakkale Kültür Yolu Festivali 2026, Türkiye Kültür Yolu Festivali, Çanakkale, kültür sanat",
+        canonical: "https://haberisa.vercel.app/haber/canakkale-kultur-yolu-festivali-sona-erdi"
     },
     icerik: `
-        <p><strong>Dünyanın farklı kültür merkezlerinde eylül ayının ikinci haftasında yoğun bir sanat programı yaşanıyor.</strong> Sinemadan klasik müziğe, tiyatrodan çağdaş sanata kadar farklı alanlarda etkinlikler düzenleniyor.</p>
+        <p><strong>Türkiye Kültür Yolu Festivali'nin Çanakkale ayağı, 9 günlük yoğun kültür ve sanat programının ardından sona erdi.</strong> Kentin farklı noktalarında düzenlenen etkinliklerde konserlerden sergilere, söyleşilerden atölyelere kadar birçok farklı program sanatseverlerle buluştu.</p>
 
-        <p>83. Venedik Uluslararası Film Festivali'nde film gösterimlerinin yanı sıra oyuncu ve yönetmenlerin katıldığı masterclass programları gerçekleştiriliyor. Festivalin Altın Aslan ödülü için düzenlenecek tören ise 12 Eylül'de yapılacak.</p>
+        <p>Festival boyunca Çanakkale'nin tarihi ve kültürel dokusu ile çağdaş sanat etkinlikleri aynı program içerisinde bir araya getirildi. Böylece hem kentin kültürel mirasının tanıtılması hem de farklı sanat dallarının daha geniş kitlelere ulaştırılması amaçlandı.</p>
 
-        <p>Londra'da düzenlenen BBC Proms da final haftasına girdi. Royal Albert Hall'da gerçekleştirilen etkinliklerin ardından festival 12 Eylül'deki geleneksel kapanış konseriyle sona erecek.</p>
+        <p>Program içerisinde müzik etkinlikleri önemli bir yer tuttu. Farklı sanatçıların konserleri kentte festival atmosferinin oluşmasına katkı sağlarken, sergi ve söyleşiler de kültür sanat programının diğer önemli başlıklarını oluşturdu.</p>
 
-        <p>İsviçre'deki Lucerne Festivali'nde de klasik müzik, caz, müzikal tiyatro ve çağdaş müzik farklı programlarda bir araya geliyor. Festivalin 2026 programında "American Dreams" teması öne çıkıyor.</p>
+        <p>Çocuklara yönelik etkinlikler de festival programında yer aldı. Atölyeler ve eğitici çalışmalar sayesinde çocukların kültür ve sanat faaliyetlerine katılması hedeflendi.</p>
 
-        <p>Bu etkinlikler, sonbaharın başlamasıyla birlikte uluslararası kültür sanat takviminin de hareketlendiğini gösteriyor.</p>
+        <p>Festivalin son gününde geleneksel sanatların yaşatılmasına yönelik çalışmaların yanı sıra tarihi mirasın uzmanlar eşliğinde keşfedildiği programlar da gerçekleştirildi.</p>
 
-        <p><strong>Kaynak:</strong> Anadolu Ajansı</p>
+        <p>Çanakkale'nin tarihi önemi, festival boyunca düzenlenen kültür etkinlikleriyle bir kez daha ön plana çıktı. Kentin tarihi mekanları ve kültürel değerleri, sanat etkinlikleriyle birlikte ziyaretçilere farklı bir deneyim sundu.</p>
+
+        <p>Türkiye Kültür Yolu Festivali'nin farklı şehirlerde devam eden programlarıyla kültür sanat etkinliklerini ülke genelinde daha geniş kitlelere ulaştırması hedefleniyor.</p>
+
+        <p><strong>Haberİsta:</strong> Çanakkale ayağının tamamlanmasının ardından gözler, Türkiye Kültür Yolu Festivali'nin önümüzdeki haftalarda gerçekleştirilecek diğer şehir programlarına çevrildi.</p>
     `
 },
 
 {
     id: 45,
     kategori: "Kültür Sanat",
-    baslik: "Troya Kültür Yolu Festivali için geri sayım başladı",
-    spot: "Türkiye Kültür Yolu Festivali'nin önemli duraklarından Troya Kültür Yolu Festivali, eylül ayında Çanakkale'de sanatseverlerle buluşacak.",
+    baslik: "Sonbahar kültür sanat sezonu hareketleniyor: Sergiler, festivaller ve sinema etkinlikleri peş peşe geliyor",
+    spot: "Türkiye'de yaz sezonunun ardından kültür sanat takvimi yoğunlaşıyor. Eylül ve ekim aylarında sergilerden film festivallerine, cazdan tiyatroya kadar çok sayıda etkinlik düzenlenecek.",
     tarih: "9 Eylül 2026",
-    saat: "10:00",
-    gorsel: "https://images.unsplash.com/photo-1603566231077-4f0e7c1e7f9e?auto=format&fit=crop&w=1600&q=85",
-    yazar: "Haberİsta Kültür Sanat",
-    kaynak: "Kültür ve Turizm Bakanlığı",
+    saat: "14:25",
+    gorsel: "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1600&q=85",
+    yazar: "Haberİsta Kültür Sanat Servisi",
+    kaynak: "Haberİsta",
     seo: {
-        title: "Troya Kültür Yolu Festivali 2026 ne zaman? | Haberİsta",
-        description: "Troya Kültür Yolu Festivali için geri sayım başladı. Festival kapsamında Çanakkale'de kültür, sanat ve çeşitli etkinlikler düzenlenecek.",
-        keywords: "Troya Kültür Yolu Festivali 2026, Çanakkale festival, kültür yolu festivali, sanat etkinlikleri",
-        canonical: "https://haberisa.vercel.app/haber/troya-kultur-yolu-festivali-2026"
+        title: "2026 sonbahar kültür sanat sezonu: Sergiler, festivaller ve sinema | Haberİsta",
+        description: "2026 sonbaharında Türkiye'de kültür sanat takvimi yoğunlaşıyor. Sergiler, film festivalleri, caz konserleri ve tiyatro etkinlikleri sanatseverleri bekliyor.",
+        keywords: "2026 kültür sanat sezonu, sonbahar etkinlikleri, film festivalleri, sergiler, tiyatro, caz festivali, kültür sanat haberleri",
+        canonical: "https://haberisa.vercel.app/haber/2026-sonbahar-kultur-sanat-sezonu"
     },
     icerik: `
-        <p><strong>Türkiye Kültür Yolu Festivali kapsamında düzenlenen Troya Kültür Yolu Festivali için geri sayım başladı.</strong> Çanakkale'nin tarihi ve kültürel değerlerini merkeze alan etkinlikler, sanatseverleri farklı programlarla buluşturacak.</p>
+        <p><strong>Türkiye'de yaz aylarının sona ermesiyle birlikte kültür sanat takvimi yeniden yoğunlaşmaya başladı.</strong> Eylül ve ekim aylarında Türkiye'nin farklı şehirlerinde sergiler, film festivalleri, konserler, tiyatro gösterileri ve müzik festivalleri düzenlenecek.</p>
 
-        <p>Festival kapsamında konserlerden sergilere, kültürel etkinliklerden çeşitli sanat çalışmalarına kadar çok sayıda programın gerçekleştirilmesi planlanıyor.</p>
+        <p>İstanbul, sonbahar kültür sanat sezonunun en hareketli şehirlerinden biri olacak. Kentte müzeler ve sanat merkezleri yeni sergilerini açarken, film ve müzik festivalleri de sanatseverleri farklı programlarla buluşturacak.</p>
 
-        <p>Troya bölgesinin binlerce yıllık tarihi mirası, festival programıyla birlikte sanat ve kültür etkinlikleriyle yeniden gündeme taşınacak.</p>
+        <p>Sinema alanında Filmekimi, sonbaharın öne çıkan etkinliklerinden biri olacak. Festivalin İstanbul'da 9-18 Ekim, Ankara'da ise 15-18 Ekim tarihleri arasında düzenlenmesi planlanıyor. Festival kapsamında farklı ülkelerden ve önemli uluslararası festivallerden seçilen filmler izleyiciyle buluşacak.</p>
 
-        <p>Türkiye Kültür Yolu Festivali 2026 yılında 26 şehirde düzenlenen geniş kapsamlı bir kültür sanat organizasyonu olarak gerçekleştiriliyor. Festival takvimi yıl boyunca farklı şehirlerde sanatseverlerle buluşuyor.</p>
+        <p>Adana'da düzenlenecek 33. Uluslararası Adana Altın Koza Film Festivali de sinema gündeminin önemli etkinliklerinden biri olacak. Festivalin 26 Eylül-4 Ekim tarihleri arasında gerçekleştirilmesi planlanıyor.</p>
 
-        <p>Çanakkale'deki etkinliklerin hem bölge halkına hem de kenti ziyaret edenlere kültür sanat açısından farklı deneyimler sunması bekleniyor.</p>
+        <p>Antalya'da ise Uluslararası Antalya Altın Portakal Film Festivali için hazırlıklar sürüyor. Festivalin 24-31 Ekim tarihleri arasında düzenlenmesi bekleniyor.</p>
 
-        <p><strong>Kaynak:</strong> T.C. Kültür ve Turizm Bakanlığı</p>
+        <p>Müzik tarafında da önemli etkinlikler bulunuyor. İstanbul'da gerçekleştirilecek 36. Akbank Caz Festivali, 26 Eylül-11 Ekim tarihleri arasında farklı mekanlarda sanatseverlerle buluşacak. Festivalde farklı ülkelerden çok sayıda sanatçı sahne alacak.</p>
+
+        <p>Tiyatroseverler için de sonbahar oldukça hareketli geçecek. İstanbul Tiyatro Festivali'nin 30. edisyonu ekim ayında başlayacak. Festival kapsamında farklı ülkelerden ve Türkiye'den tiyatro topluluklarının yapımları izleyici karşısına çıkacak.</p>
+
+        <p>Sergi takvimi de sonbahar boyunca yoğun olacak. İstanbul Modern, Pera Müzesi, Salt Beyoğlu ve Borusan Contemporary gibi sanat merkezlerinde farklı dönem ve disiplinlerden sanatçıların eserleri ziyaretçilerle buluşacak.</p>
+
+        <p>Türkiye Kültür Yolu Festivali'nin yılın ilerleyen dönemlerinde farklı şehirlerdeki programları da kültür sanat takviminin önemli parçalarından biri olmaya devam edecek.</p>
+
+        <p><strong>Haberİsta:</strong> 2026 sonbaharının, sinemadan müziğe, tiyatrodan çağdaş sanata kadar geniş bir yelpazede yoğun bir kültür sanat sezonu olması bekleniyor. Önümüzdeki haftalarda açıklanacak yeni programlarla etkinlik takviminin daha da genişlemesi bekleniyor.</p>
     `
 },
 {
