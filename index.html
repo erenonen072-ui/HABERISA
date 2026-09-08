@@ -1,47 +1,12 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
 
     <!-- ==============================
-         GOOGLE ADSENSE
+         TEMEL META
     =============================== -->
-    <script async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6348449846402791"
-        crossorigin="anonymous">
-    </script>
 
-    <!-- FAVICON -->
-    <link
-        rel="icon"
-        type="image/jpeg"
-        href="images/logo.jpeg"
-    >
-
-    <!-- ==============================
-         GOOGLE ANALYTICS
-    =============================== -->
-    <script async
-        src="https://www.googletagmanager.com/gtag/js?id=G-H6TTCSCZR2">
-    </script>
-
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-
-        gtag("js", new Date());
-        gtag("config", "G-H6TTCSCZR2");
-    </script>
-
-    <!-- GOOGLE SEARCH CONSOLE -->
-    <meta
-        name="google-site-verification"
-        content="vQ7jx3fnqLHiLgqgLDnPluUm6fbkhSsjTq1CCeI2vGc"
-    >
-
-    <!-- TEMEL META -->
     <meta charset="UTF-8">
 
     <meta
@@ -53,7 +18,7 @@
 
     <meta
         name="description"
-        content="Haberİsta - Türkiye ve dünyadan son dakika haberleri, gündem, ekonomi, spor, dünya, teknoloji ve daha fazlası."
+        content="Haberİsta; Türkiye ve dünyadan son dakika haberleri, gündem, ekonomi, spor, dünya, teknoloji, sağlık, magazin ve kültür sanat gelişmelerini takip edebileceğiniz güncel haber platformudur."
     >
 
     <meta
@@ -71,11 +36,77 @@
         content="#e11d48"
     >
 
-    <!-- CANONICAL -->
+    <meta
+        name="format-detection"
+        content="telephone=no"
+    >
+
+    <!-- Canonical -->
     <link
         rel="canonical"
         href="https://haberisa.vercel.app/"
     >
+
+    <link
+        rel="alternate"
+        hreflang="tr"
+        href="https://haberisa.vercel.app/"
+    >
+
+    <!-- ==============================
+         FAVICON
+    =============================== -->
+
+    <link
+        rel="icon"
+        type="image/jpeg"
+        href="images/logo.jpeg"
+    >
+
+    <link
+        rel="apple-touch-icon"
+        href="images/logo.jpeg"
+    >
+
+    <!-- ==============================
+         GOOGLE SEARCH CONSOLE
+    =============================== -->
+
+    <meta
+        name="google-site-verification"
+        content="vQ7jx3fnqLHiLgqgLDnPluUm6fbkhSsjTq1CCeI2vGc"
+    >
+
+    <!-- ==============================
+         GOOGLE ADSENSE
+    =============================== -->
+
+    <script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6348449846402791"
+        crossorigin="anonymous">
+    </script>
+
+    <!-- ==============================
+         GOOGLE ANALYTICS
+    =============================== -->
+
+    <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-H6TTCSCZR2">
+    </script>
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag("js", new Date());
+
+        gtag("config", "G-H6TTCSCZR2");
+    </script>
 
     <!-- ==============================
          OPEN GRAPH
@@ -103,7 +134,7 @@
 
     <meta
         property="og:description"
-        content="Türkiye ve dünyadan son dakika haberleri, gündem, ekonomi, spor, dünya ve teknoloji haberleri."
+        content="Türkiye ve dünyadan son dakika haberleri, gündem, ekonomi, spor, dünya, teknoloji, sağlık ve daha fazlası."
     >
 
     <meta
@@ -118,7 +149,12 @@
 
     <meta
         property="og:image:alt"
-        content="Haberİsta Logo"
+        content="Haberİsta Haber Sitesi Logosu"
+    >
+
+    <meta
+        property="og:image:type"
+        content="image/jpeg"
     >
 
     <!-- ==============================
@@ -145,11 +181,92 @@
         content="https://haberisa.vercel.app/images/logo.jpeg"
     >
 
-    <!-- CSS -->
+    <meta
+        name="twitter:image:alt"
+        content="Haberİsta Haber Sitesi Logosu"
+    >
+
+    <!-- ==============================
+         PERFORMANCE
+    =============================== -->
+
+    <link
+        rel="preconnect"
+        href="https://www.googletagmanager.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://pagead2.googlesyndication.com"
+    >
+
+    <!-- ==============================
+         CSS
+    =============================== -->
+
     <link
         rel="stylesheet"
         href="css/style.css"
     >
+
+    <!-- ==============================
+         WEBSITE STRUCTURED DATA
+    =============================== -->
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "@id": "https://haberisa.vercel.app/#website",
+        "url": "https://haberisa.vercel.app/",
+        "name": "Haberİsta",
+        "alternateName": "HABERİSTA",
+        "description": "Türkiye ve dünyadan güncel haberleri takip edebileceğiniz Haberİsta haber platformu.",
+        "inLanguage": "tr-TR",
+        "publisher": {
+            "@type": "Organization",
+            "@id": "https://haberisa.vercel.app/#organization",
+            "name": "Haberİsta",
+            "url": "https://haberisa.vercel.app/",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://haberisa.vercel.app/images/logo.jpeg"
+            }
+        },
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://haberisa.vercel.app/?q={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+
+    <!-- ==============================
+         ORGANIZATION STRUCTURED DATA
+    =============================== -->
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "NewsMediaOrganization",
+        "@id": "https://haberisa.vercel.app/#organization",
+        "name": "Haberİsta",
+        "url": "https://haberisa.vercel.app/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://haberisa.vercel.app/images/logo.jpeg"
+        },
+        "description": "Türkiye ve dünyadan güncel haberleri yayınlayan Haberİsta haber platformu.",
+        "sameAs": [
+            "https://www.tiktok.com/@haberista",
+            "https://www.instagram.com/haber_ista",
+            "https://x.com/HABER_ISTA"
+        ]
+    }
+    </script>
 
     <!-- ==============================
          ONESIGNAL
@@ -187,7 +304,9 @@
 
 </head>
 
+
 <body>
+
 
     <!-- ==============================
          HEADER
@@ -200,6 +319,7 @@
             <div class="container header-inner">
 
                 <!-- MOBİL MENÜ -->
+
                 <button
                     id="menuBtn"
                     class="menu-btn"
@@ -209,40 +329,53 @@
                     ☰
                 </button>
 
+
                 <!-- LOGO -->
+
                 <a
                     href="index.html"
                     class="brand"
+                    aria-label="Haberİsta ana sayfa"
                 >
+
                     <img
                         src="images/logo.jpeg"
                         alt="Haberİsta Logo"
+                        width="60"
+                        height="60"
+                        decoding="async"
                     >
 
                     <span>
                         Haberİsta
                     </span>
+
                 </a>
 
+
                 <!-- ARAMA -->
+
                 <div class="search-area">
 
                     <button
                         id="searchBtn"
                         class="search-icon"
-                        aria-label="Ara"
+                        aria-label="Haberlerde ara"
                         type="button"
                     >
                         🔍
                     </button>
 
+
                     <button
                         id="notificationBtn"
                         class="notification-menu-btn"
                         type="button"
+                        aria-label="Bildirimleri aç"
                     >
                         🔔 Bildirimleri Aç
                     </button>
+
 
                     <div
                         id="searchBox"
@@ -265,7 +398,11 @@
 
         </div>
 
-        <!-- KATEGORİ NAVİGASYONU -->
+
+        <!-- ==============================
+             KATEGORİ NAVİGASYONU
+        =============================== -->
+
         <nav
             class="category-nav"
             aria-label="Ana navigasyon"
@@ -337,9 +474,16 @@
             <div class="market-bar-inner">
 
                 <div class="market-live">
-                    <span class="live-dot"></span>
+
+                    <span
+                        class="live-dot"
+                        aria-hidden="true"
+                    ></span>
+
                     CANLI
+
                 </div>
+
 
                 <div
                     id="marketItems"
@@ -352,9 +496,11 @@
 
                 </div>
 
+
                 <div
                     id="marketUpdated"
                     class="market-updated"
+                    aria-live="polite"
                 >
                     --
                 </div>
@@ -376,17 +522,21 @@
 
             <div class="breaking-title">
 
-                <span></span>
+                <span aria-hidden="true"></span>
 
                 SON DAKİKA
 
             </div>
 
+
             <div
                 id="breakingNews"
                 class="breaking-news"
+                aria-live="polite"
             >
+
                 <!-- BUILD TARAFINDAN DOLDURULUR -->
+
             </div>
 
         </div>
@@ -400,7 +550,20 @@
 
     <main class="container">
 
-        <!-- MANŞET -->
+        <!-- SEO / ANA BAŞLIK -->
+
+        <header class="homepage-heading">
+
+            <h1>
+                Son Dakika Haberleri ve Güncel Gelişmeler
+            </h1>
+
+        </header>
+
+
+        <!-- ==============================
+             MANŞET
+        =============================== -->
 
         <section
             class="hero-slider"
@@ -411,44 +574,57 @@
                 id="heroPrev"
                 class="hero-arrow hero-prev"
                 type="button"
-                aria-label="Önceki haber"
+                aria-label="Önceki manşet habere geç"
             >
                 ‹
             </button>
+
 
             <div
                 id="heroMain"
                 class="hero-main"
             >
+
                 <!-- BUILD TARAFINDAN DOLDURULUR -->
+
             </div>
+
 
             <button
                 id="heroNext"
                 class="hero-arrow hero-next"
                 type="button"
-                aria-label="Sonraki haber"
+                aria-label="Sonraki manşet habere geç"
             >
                 ›
             </button>
 
+
             <div
                 id="heroNumbers"
                 class="hero-numbers"
+                aria-label="Manşet haber navigasyonu"
             >
+
                 <!-- BUILD TARAFINDAN DOLDURULUR -->
+
             </div>
 
         </section>
 
 
-        <!-- SON HABERLER -->
+        <!-- ==============================
+             SON HABERLER
+        =============================== -->
 
-        <section class="latest-section">
+        <section
+            class="latest-section"
+            aria-labelledby="latestNewsTitle"
+        >
 
             <div class="section-title">
 
-                <h2>
+                <h2 id="latestNewsTitle">
                     Son Haberler
                 </h2>
 
@@ -456,18 +632,53 @@
 
             </div>
 
+
             <div
                 id="searchResultInfo"
                 class="search-result-info"
                 aria-live="polite"
             ></div>
 
+
             <div
                 id="newsGrid"
                 class="news-grid"
             >
+
                 <!-- BUILD TARAFINDAN DOLDURULUR -->
+
             </div>
+
+        </section>
+
+
+        <!-- ==============================
+             SEO İÇERİK
+        =============================== -->
+
+        <section
+            class="homepage-seo"
+            aria-labelledby="aboutNewsTitle"
+        >
+
+            <h2 id="aboutNewsTitle">
+                Türkiye ve Dünyadan Güncel Haberler
+            </h2>
+
+            <p>
+                Haberİsta, Türkiye ve dünyada yaşanan güncel gelişmeleri
+                takip edebileceğiniz bağımsız bir haber platformudur.
+                Gündem, son dakika, ekonomi, spor, dünya, teknoloji,
+                sağlık, magazin ve kültür sanat kategorilerindeki
+                gelişmeleri okuyuculara ulaştırmayı amaçlar.
+            </p>
+
+            <p>
+                Haberİsta'da gün içerisinde meydana gelen önemli gelişmeler,
+                haber başlıkları ve gündemde öne çıkan konular düzenli olarak
+                yayınlanır. Okuyucular son dakika gelişmelerini ve farklı
+                kategorilerdeki haberleri kolayca takip edebilir.
+            </p>
 
         </section>
 
@@ -481,6 +692,7 @@
     <footer class="site-footer">
 
         <div class="container footer-inner">
+
 
             <!-- HAKKIMIZDA -->
 
@@ -519,6 +731,14 @@
 
                 <a href="dunya.html">
                     Dünya
+                </a>
+
+                <a href="teknoloji.html">
+                    Teknoloji
+                </a>
+
+                <a href="saglik.html">
+                    Sağlık
                 </a>
 
             </div>
@@ -612,6 +832,8 @@
     <div
         id="cookieBox"
         class="cookie-box"
+        role="dialog"
+        aria-label="Çerez bildirimi"
     >
 
         <div>
@@ -627,6 +849,7 @@
 
         </div>
 
+
         <button
             id="cookieAccept"
             type="button"
@@ -637,10 +860,15 @@
     </div>
 
 
-    <!-- JAVASCRIPT -->
+    <!-- ==============================
+         JAVASCRIPT
+    =============================== -->
 
     <script src="js/haberler.js"></script>
+
     <script src="js/app.js"></script>
 
+
 </body>
+
 </html>
