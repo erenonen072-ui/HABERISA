@@ -46,7 +46,7 @@ const haberler = [
     spot: "İstanbul'da eylül ayının gelmesiyle birlikte müze ve sanat merkezlerinin programları hareketlendi. İstanbul Modern'den Metrohan'a, Salt Beyoğlu'ndan Borusan Contemporary'ye kadar birçok merkez yeni sergilerini ziyaretçilerin ilgisine sunuyor.",
     tarih: "9 Eylül 2026",
     saat: "18:10",
-    gorsel: "https://images.unsplash.com/photo-1577083552431-6e5fd01988b5?auto=format&fit=crop&w=1600&q=85",
+    gorsel: "https://images.unsplash.com/photo-1561214115-f2f134cc4912?auto=format&fit=crop&w=1600&q=85",
     yazar: "Haberİsta Kültür Sanat Servisi",
     kaynak: "Haberİsta",
     seo: {
