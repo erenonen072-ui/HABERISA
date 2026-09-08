@@ -1,8 +1,13 @@
 {
+  "buildCommand": "node build.js",
   "rewrites": [
     {
       "source": "/haber/:slug",
-      "destination": "/haber.html"
+      "destination": "/haber/:slug/index.html"
+    },
+    {
+      "source": "/haber/:slug/",
+      "destination": "/haber/:slug/index.html"
     }
   ]
 }
