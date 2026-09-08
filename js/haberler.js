@@ -40,6 +40,359 @@ const haberler = [
        1 - KABİNE
     ===================================================== */
 {
+    id: 36,
+    kategori: "Sağlık",
+    baslik: "Fıstık alerjisinde umut veren gelişme: Bağırsak bakterileri tedavide kullanılabilir",
+    spot: "NIH destekli erken aşama bir klinik çalışmada, bağırsak mikrobiyotasını değiştirmeyi amaçlayan kapsüller bazı fıstık alerjisi bulunan kişilerde toleransı artırdı. Araştırmacılar daha büyük çalışmaların gerekli olduğunu belirtiyor.",
+    tarih: "9 Eylül 2026",
+    saat: "01:05",
+    yazar: "Haberİsta Sağlık Servisi",
+    kaynak: "National Institutes of Health (NIH) / Science Translational Medicine",
+    gorsel: "https://images.unsplash.com/photo-1589927986089-35812388d1f4?auto=format&fit=crop&w=1600&q=85",
+
+    seo: {
+        title: "Fıstık alerjisinde yeni umut: Bağırsak bakterileri tedavide kullanılabilir | Haberİsta",
+        description: "NIH destekli erken aşama araştırmada bağırsak mikrobiyotasını değiştiren kapsüller bazı fıstık alerjisi hastalarında toleransı artırdı.",
+        keywords: [
+            "fıstık alerjisi",
+            "gıda alerjisi",
+            "bağırsak bakterileri",
+            "mikrobiyota",
+            "alerji tedavisi",
+            "sağlık haberleri",
+            "NIH",
+            "yeni alerji tedavisi"
+        ],
+        canonical: "https://haberisa.vercel.app/haber/fistik-alerjisinde-yeni-umut"
+    },
+
+    icerik: `
+        <p><strong>Gıda alerjilerinin tedavisine yönelik araştırmalarda dikkat çeken bir gelişme yaşandı.</strong> ABD Ulusal Sağlık Enstitüleri'nin (NIH) aktardığı yeni araştırmada, bağırsakta bulunan mikroorganizmaların değiştirilmesinin bazı fıstık alerjisi hastalarında alerjik yanıtı azaltabileceğine ilişkin bulgular elde edildi.</p>
+
+        <p>Araştırma, bağırsak mikrobiyotasının yalnızca sindirim sistemiyle sınırlı bir rol oynamadığını, bağışıklık sistemi üzerinde de etkili olabileceğini gösteren çalışmaların devamı niteliğinde.</p>
+
+        <h2>Araştırmada 15 kişi yer aldı</h2>
+
+        <p>Boston Children's Hospital tarafından yürütülen ve NIH tarafından desteklenen erken aşama klinik çalışmada 15 fıstık alerjisi bulunan kişi incelendi.</p>
+
+        <p>Katılımcılara, gıda alerjisi bulunmayan kişilerden elde edilen bağırsak mikroorganizmalarını içeren kapsüller verildi. Bazı katılımcılara uygulama öncesinde bağırsaktaki mevcut mikroorganizmaları azaltmak amacıyla antibiyotik tedavisi de uygulandı.</p>
+
+        <p>Araştırmacılar uygulamanın ciddi yan etkilere yol açmadığını bildirdi.</p>
+
+        <h2>Bazı katılımcılarda tolerans arttı</h2>
+
+        <p>Antibiyotik almayan 10 katılımcının 3'ünde, uygulamadan yaklaşık dört ay sonra alerjik reaksiyon ortaya çıkmadan tüketilebilen fıstık miktarında artış görüldü.</p>
+
+        <p>Antibiyotik alan 5 katılımcının ise 3'ünde benzer bir sonuç gözlendi.</p>
+
+        <p>Araştırmacılar, olumlu sonuçların bağışıklık sistemindeki bazı T hücrelerinde meydana gelen değişikliklerle bağlantılı olduğunu belirledi.</p>
+
+        <h2>Bağırsak bakterileri neden önemli?</h2>
+
+        <p>Bağırsakta yaşayan bakteri, mantar ve diğer mikroorganizmaların tamamına genel olarak bağırsak mikrobiyotası adı veriliyor. Bu mikroorganizmalar bağışıklık sistemiyle sürekli etkileşim halinde bulunuyor.</p>
+
+        <p>Çalışmada özellikle bazı Bacteroides bakterilerinin dikkat çektiği bildirildi. Araştırmacılar, bu bakterilerin safra asitlerinin parçalanmasıyla oluşan maddeler üzerinden bağışıklık sistemini etkileyebileceğini düşünüyor.</p>
+
+        <h2>Henüz standart tedavi değil</h2>
+
+        <p>Araştırmanın sonuçları umut verici olsa da yöntemin şu anda gıda alerjileri için standart veya onaylanmış bir tedavi olduğu anlamına gelmiyor.</p>
+
+        <p>Çalışmanın katılımcı sayısının düşük olması nedeniyle sonuçların daha geniş gruplarda test edilmesi gerekiyor. Araştırmacılar daha büyük klinik çalışmalar yaparak yöntemin kimlerde etkili olabileceğini ve uzun vadeli güvenliğini araştırmayı planlıyor.</p>
+
+        <p><strong>NIH, daha büyük çalışmaların gerekli olduğunu vurguluyor.</strong> Bu nedenle mevcut sonuçlar gelecekte geliştirilebilecek tedaviler açısından umut verici bir araştırma bulgusu olarak değerlendiriliyor.</p>
+
+        <div class="haber-kaynak">
+            <strong>Kaynak:</strong> National Institutes of Health (NIH), Science Translational Medicine
+            <br>
+            <strong>Kaynak tarihi:</strong> 8 Eylül 2026
+            <br>
+            <strong>Haberİsta yayın tarihi:</strong> 9 Eylül 2026
+        </div>
+    `
+},
+
+{
+    id: 37,
+    kategori: "Sağlık",
+    baslik: "Alzheimer araştırmalarında yeni gelişme: Kan testi erken değişimleri gösterebilir",
+    spot: "NIH tarafından aktarılan araştırmada, 50'li ve 60'lı yaşlarındaki 1.350 kişinin kan örnekleri incelendi. Bazı Alzheimer ilişkili proteinlerin kandaki seviyeleriyle bilişsel performanstaki değişimler arasında bağlantı bulundu.",
+    tarih: "9 Eylül 2026",
+    saat: "01:15",
+    yazar: "Haberİsta Sağlık Servisi",
+    kaynak: "National Institutes of Health (NIH) / The Lancet",
+    gorsel: "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=1600&q=85",
+
+    seo: {
+        title: "Alzheimer için kan testi umudu: Erken değişimler tespit edilebilir mi? | Haberİsta",
+        description: "NIH destekli araştırmada 1.350 kişinin kan örnekleri incelendi. Alzheimer ile ilişkili protein seviyeleri bilişsel değişimlerle bağlantılı bulundu.",
+        keywords: [
+            "Alzheimer",
+            "Alzheimer kan testi",
+            "erken Alzheimer",
+            "hafıza",
+            "beyin sağlığı",
+            "demans",
+            "sağlık araştırması",
+            "Alzheimer araştırması"
+        ],
+        canonical: "https://haberisa.vercel.app/haber/alzheimer-kan-testi-erken-degisiklik"
+    },
+
+    icerik: `
+        <p><strong>Alzheimer hastalığının daha erken dönemde fark edilmesine yönelik araştırmalarda yeni bir gelişme yaşandı.</strong> NIH News in Health tarafından aktarılan araştırmada, orta yaş dönemindeki kişilerin kanında ölçülen bazı Alzheimer ilişkili proteinlerin, ilerleyen yıllardaki bilişsel değişimlerle bağlantılı olabileceği belirlendi.</p>
+
+        <h2>1.350 kişinin kan örneği incelendi</h2>
+
+        <p>Araştırmacılar 50'li ve 60'lı yaşlarında bulunan 1.350 kişinin kan örneklerini değerlendirdi. Araştırmaya katılan kişilere Alzheimer hastalığı tanısı konulmamıştı.</p>
+
+        <p>Bilim insanları kan örneklerinde Alzheimer hastalığıyla ilişkilendirilen tau ve amyloid-beta proteinlerinin belirli formlarını ölçtü.</p>
+
+        <p>Katılımcıların aynı zamanda düşünme ve hafıza becerilerini değerlendiren bilişsel test sonuçları da incelendi.</p>
+
+        <h2>Protein seviyeleri bilişsel değişimlerle bağlantılı çıktı</h2>
+
+        <p>Araştırmada, kandaki belirli Alzheimer ilişkili proteinlerin daha yüksek seviyelerine sahip kişilerin zaman içerisinde bilişsel testlerde daha fazla gerileme gösterme eğiliminde olduğu görüldü.</p>
+
+        <p>Bu kişilerde özellikle düşünme hızındaki yavaşlama ve hafıza performansındaki değişimler dikkat çekti.</p>
+
+        <p>Sonuçlar, Alzheimer hastalığına ilişkin bazı biyolojik değişikliklerin belirtiler ortaya çıkmadan yıllar önce başlayabileceği düşüncesini destekleyen araştırmalara katkı sağlıyor.</p>
+
+        <h2>Kan testi ne zaman kullanılabilir?</h2>
+
+        <p>Bu araştırmanın sonuçları doğrudan herkesin hastaneye gidip basit bir kan testiyle Alzheimer tanısı alabileceği anlamına gelmiyor.</p>
+
+        <p>Bilim insanları kan testlerinin klinik ortamda kullanılabilmesi için daha fazla araştırmaya ihtiyaç olduğunu belirtiyor. Testlerin doğruluğu, farklı yaş gruplarında performansı ve sonuçların hastalık riskini ne ölçüde öngörebildiği gibi konuların ayrıntılı biçimde incelenmesi gerekiyor.</p>
+
+        <h2>Erken teşhis neden önemli?</h2>
+
+        <p>Alzheimer hastalığında beyin değişiklikleri belirtiler ortaya çıkmadan uzun süre önce başlayabiliyor. Bu nedenle bilim dünyasında hastalığı daha erken fark edebilecek biyobelirteçlerin bulunması önemli bir araştırma alanı olarak öne çıkıyor.</p>
+
+        <p>Kan temelli testler başarılı şekilde geliştirilebilirse gelecekte değerlendirme süreçlerini kolaylaştırabilecek araçlardan biri olabilir.</p>
+
+        <p><strong>Ancak mevcut çalışma bir araştırma bulgusudur ve tek başına tanı yöntemi olarak kullanılmamalıdır.</strong></p>
+
+        <div class="haber-kaynak">
+            <strong>Kaynak:</strong> National Institutes of Health (NIH), The Lancet
+            <br>
+            <strong>Kaynak tarihi:</strong> Eylül 2026
+            <br>
+            <strong>Haberİsta yayın tarihi:</strong> 9 Eylül 2026
+        </div>
+    `
+},
+
+{
+    id: 38,
+    kategori: "Sağlık",
+    baslik: "Bilim insanlarından Alzheimer araştırmalarında yeni hedef: Tau proteini ve hücre enerjisi",
+    spot: "NIH destekli yeni araştırma, Alzheimer ve bazı nörodejeneratif hastalıklarda rol oynayan anormal tau proteininin hücrelerin enerji üretim merkezleriyle etkileşimine ilişkin yeni bir mekanizma ortaya koydu.",
+    tarih: "9 Eylül 2026",
+    saat: "01:25",
+    yazar: "Haberİsta Sağlık Servisi",
+    kaynak: "National Institutes of Health (NIH) / Neuron",
+    gorsel: "https://images.unsplash.com/photo-1559757175-7cb057fba93c?auto=format&fit=crop&w=1600&q=85",
+
+    seo: {
+        title: "Alzheimer araştırmasında yeni keşif: Tau proteini ve hücre enerjisi | Haberİsta",
+        description: "NIH destekli araştırmada anormal tau proteininin mitokondrilerle etkileşimi ve nörodejenerasyondaki rolü incelendi.",
+        keywords: [
+            "Alzheimer araştırması",
+            "tau proteini",
+            "nörodejenerasyon",
+            "beyin hastalıkları",
+            "mitokondri",
+            "Alzheimer tedavisi",
+            "sağlık haberleri",
+            "bilimsel araştırma"
+        ],
+        canonical: "https://haberisa.vercel.app/haber/alzheimer-tau-proteini-yeni-arastirma"
+    },
+
+    icerik: `
+        <p><strong>Alzheimer hastalığı ve diğer tau proteinleriyle ilişkili nörodejeneratif hastalıkların nasıl ilerlediğini anlamaya yönelik araştırmalarda yeni bir mekanizma ortaya çıkarıldı.</strong> NIH tarafından 8 Eylül 2026'da aktarılan çalışmada, anormal tau proteinlerinin hücrelerin enerji üretim merkezleri olan mitokondrilerle etkileşimi incelendi.</p>
+
+        <h2>Tau proteini neden önemli?</h2>
+
+        <p>Tau proteini normal şartlarda beyindeki sinir hücrelerinin işleyişinde önemli görevler üstleniyor. Ancak bazı nörodejeneratif hastalıklarda tau proteini aşırı miktarda fosfat grubu taşıyarak anormal hale gelebiliyor.</p>
+
+        <p>Anormal tau proteinleri bir araya gelerek sinir hücrelerine zarar verebilen yapılar oluşturabiliyor. Bu süreç Alzheimer hastalığı ve frontotemporal demans gibi hastalıklarla ilişkilendiriliyor.</p>
+
+        <h2>Mitokondri bağlantısı araştırıldı</h2>
+
+        <p>Stanford Üniversitesi'nden Bingwei Lu liderliğindeki araştırma ekibi, tau proteini ile mitokondrilerin enerji üretim mekanizmaları arasındaki ilişkiyi inceledi.</p>
+
+        <p>Araştırmacılar sinek, fare ve insan sinir hücrelerinden oluşan farklı modeller üzerinde çalışmalar gerçekleştirdi.</p>
+
+        <p>Çalışmada anormal tau proteininin mitokondri içindeki elektron taşıma sistemiyle etkileşebildiği ve bunun hücresel süreçlerde bozulmalara yol açabildiği bulundu.</p>
+
+        <h2>Zararlı bir döngü ortaya çıktı</h2>
+
+        <p>Araştırmacılar, ters elektron taşınması olarak adlandırılan sürecin tau proteininin daha fazla fosforile olmasına katkı sağlayabildiğini belirledi.</p>
+
+        <p>Bu durum tau proteinindeki değişikliklerin hücresel enerji mekanizmasını etkileyebildiği, bozulan mekanizmanın ise tau değişikliklerini daha da artırabildiği bir geri besleme döngüsüne işaret ediyor.</p>
+
+        <h2>Hayvan modellerinde olumlu sonuçlar</h2>
+
+        <p>Araştırmacılar bu süreci engellemeye yönelik bir bileşik kullandıklarında fare ve meyve sineği modellerinde bazı motor ve hafıza problemlerinin azaldığını gözlemledi.</p>
+
+        <p>Ancak bu sonuçlar doğrudan insanlarda aynı etkinin görüleceği anlamına gelmiyor.</p>
+
+        <h2>İnsan tedavisine ne kadar yakın?</h2>
+
+        <p>Çalışmanın sonuçları yeni bir tedavi hedefinin araştırılabileceğini gösterse de kullanılan bileşiğin insanlarda tedavi amacıyla kullanılabilmesi için daha birçok aşamadan geçmesi gerekiyor.</p>
+
+        <p>NIH, araştırmacıların klinik çalışmalar öncesinde daha fazla çalışma yapması gerektiğini belirtiyor.</p>
+
+        <p><strong>Bu nedenle çalışma mevcut bir Alzheimer tedavisi sunmuyor; hastalığın biyolojik mekanizmalarını anlamaya yönelik önemli bir araştırma bulgusu niteliği taşıyor.</strong></p>
+
+        <div class="haber-kaynak">
+            <strong>Kaynak:</strong> National Institutes of Health (NIH), Neuron
+            <br>
+            <strong>Kaynak tarihi:</strong> 8 Eylül 2026
+            <br>
+            <strong>Haberİsta yayın tarihi:</strong> 9 Eylül 2026
+        </div>
+    `
+},
+
+{
+    id: 39,
+    kategori: "Sağlık",
+    baslik: "Kalp krizi tanımında büyük değişiklik: Yeni uluslararası sınıflandırma yayımlandı",
+    spot: "ESC, ACC, AHA ve WHF tarafından ortak hazırlanan Beşinci Evrensel Miyokard Enfarktüsü Tanımı yayımlandı. Yeni yaklaşım kalp krizlerinin sınıflandırılmasını ve yüksek hassasiyetli troponin testlerinin kullanımını yeniden düzenliyor.",
+    tarih: "9 Eylül 2026",
+    saat: "01:35",
+    yazar: "Haberİsta Sağlık Servisi",
+    kaynak: "American Heart Association / ESC / ACC / WHF",
+    gorsel: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1600&q=85",
+
+    seo: {
+        title: "Kalp krizi tanımında yeni dönem: Uluslararası sınıflandırma değişti | Haberİsta",
+        description: "2026 Beşinci Evrensel Miyokard Enfarktüsü Tanımı yayımlandı. Yeni sınıflandırma kalp krizi tanı ve değerlendirmesinde önemli değişiklikler getiriyor.",
+        keywords: [
+            "kalp krizi",
+            "miyokard enfarktüsü",
+            "kalp krizi tanımı",
+            "troponin",
+            "kalp sağlığı",
+            "AHA",
+            "ESC",
+            "sağlık haberleri"
+        ],
+        canonical: "https://haberisa.vercel.app/haber/kalp-krizi-taniminda-yeni-donem"
+    },
+
+    icerik: `
+        <p><strong>Kalp krizi tanı ve sınıflandırmasında uluslararası ölçekte yeni bir dönem başladı.</strong> Avrupa Kardiyoloji Derneği (ESC), Amerikan Kardiyoloji Koleji (ACC), Amerikan Kalp Derneği (AHA) ve Dünya Kalp Federasyonu (WHF) tarafından ortak hazırlanan Beşinci Evrensel Miyokard Enfarktüsü Tanımı 2026 yılında yayımlandı.</p>
+
+        <h2>Kalp krizi nasıl sınıflandırılacak?</h2>
+
+        <p>Yeni yaklaşımda miyokard enfarktüsü üç temel klinik gruba ayrılıyor: primer kalp krizi, sekonder kalp krizi ve işlemle ilişkili kalp krizi.</p>
+
+        <p><strong>Primer kalp krizi</strong>, temel olarak kalbin damarlarındaki akut koroner sorunlardan kaynaklanan durumları ifade ediyor.</p>
+
+        <p><strong>Sekonder kalp krizi</strong>, kalbin oksijen ihtiyacı ile vücuda sağlanan oksijen arasındaki dengesizlik sonucunda meydana gelen durumları kapsıyor.</p>
+
+        <p><strong>İşlemle ilişkili kalp krizi</strong> ise cerrahi veya perkütan koroner işlemler sırasında ortaya çıkabilen kalp hasarlarıyla bağlantılı durumları kapsıyor.</p>
+
+        <h2>Troponin testlerine vurgu</h2>
+
+        <p>Yeni belgede kalp kası hasarının değerlendirilmesinde kardiyak troponin ölçümlerinin önemi de ele alınıyor.</p>
+
+        <p>Özellikle yüksek hassasiyetli troponin testlerinin hızlı tanı süreçlerinde kullanılmasına ilişkin değerlendirmeler bulunuyor.</p>
+
+        <p>Troponin, kalp kası hücrelerinde bulunan ve kalp kasında hasar olduğunda kana geçebilen proteinlerden biridir. Ancak yüksek troponin seviyesinin tek başına her zaman kalp krizi anlamına gelmediği ve klinik değerlendirmeyle birlikte yorumlanması gerektiği vurgulanıyor.</p>
+
+        <h2>Kalp krizi tanısında ortak standart hedefleniyor</h2>
+
+        <p>Uluslararası kuruluşların ortak çalışmasının temel amaçlarından biri, farklı ülkelerde ve sağlık sistemlerinde kalp krizi tanısının daha standart biçimde yapılmasını sağlamak.</p>
+
+        <p>Yeni sınıflandırmanın hem klinik uygulamalarda hem de bilimsel araştırmalarda ortak bir dil oluşturması bekleniyor.</p>
+
+        <h2>Yeni tanım neden önemli?</h2>
+
+        <p>Kalp krizi farklı nedenlerle ve farklı klinik tablolarla ortaya çıkabiliyor. Bu nedenle kalp kasındaki hasarın nedeninin doğru biçimde belirlenmesi tedavi yaklaşımının değerlendirilmesi açısından önem taşıyor.</p>
+
+        <p>2026 tanımı, hastanın klinik durumu ile laboratuvar bulgularının birlikte değerlendirilmesine yönelik daha ayrıntılı bir çerçeve sunuyor.</p>
+
+        <p><strong>Yeni sınıflandırmanın sağlık çalışanları tarafından uygulanması zaman içerisinde farklı ülkelerde ve sağlık sistemlerinde gerçekleşecek.</strong></p>
+
+        <div class="haber-kaynak">
+            <strong>Kaynak:</strong> American Heart Association, European Society of Cardiology, American College of Cardiology, World Heart Federation
+            <br>
+            <strong>Güncelleme:</strong> 28 Ağustos 2026
+            <br>
+            <strong>Haberİsta yayın tarihi:</strong> 9 Eylül 2026
+        </div>
+    `
+},
+
+{
+    id: 40,
+    kategori: "Sağlık",
+    baslik: "Endometriozis ile tip 2 diyabet arasında bağlantı bulundu",
+    spot: "NIH tarafından 8 Eylül 2026'da aktarılan araştırma, endometriozisi bulunan bazı kadınlarda tip 2 diyabet gelişme riskinin daha yüksek olabileceğine işaret ediyor. Araştırmacılar ilişkinin nedenlerini anlamak için daha fazla çalışma gerektiğini belirtiyor.",
+    tarih: "9 Eylül 2026",
+    saat: "01:45",
+    yazar: "Haberİsta Sağlık Servisi",
+    kaynak: "National Institutes of Health (NIH)",
+    gorsel: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1600&q=85",
+
+    seo: {
+        title: "Endometriozis ve tip 2 diyabet arasında bağlantı bulundu | Haberİsta",
+        description: "NIH tarafından aktarılan yeni araştırma, endometriozis ile tip 2 diyabet gelişme riski arasında bağlantı olabileceğine işaret ediyor.",
+        keywords: [
+            "endometriozis",
+            "tip 2 diyabet",
+            "endometriozis diyabet",
+            "kadın sağlığı",
+            "sağlık araştırmaları",
+            "NIH",
+            "diyabet riski",
+            "sağlık haberleri"
+        ],
+        canonical: "https://haberisa.vercel.app/haber/endometriozis-tip-2-diyabet-baglantisi"
+    },
+
+    icerik: `
+        <p><strong>Endometriozis ile tip 2 diyabet arasındaki olası ilişkiye yönelik yeni araştırma dikkat çekti.</strong> ABD Ulusal Sağlık Enstitüleri'nin 8 Eylül 2026 tarihli araştırma özetinde, endometriozisi bulunan bazı kadınlarda ilerleyen dönemde tip 2 diyabet gelişme riskinin daha yüksek olabileceğine ilişkin bulgular paylaşıldı.</p>
+
+        <h2>Endometriozis nedir?</h2>
+
+        <p>Endometriozis, rahmin iç tabakasına benzer dokunun rahim dışında bulunmasıyla karakterize kronik bir sağlık durumudur.</p>
+
+        <p>Hastalık bazı kişilerde ağrı, adet dönemlerinde yoğun şikayetler ve doğurganlıkla ilgili sorunlarla ilişkilendirilebilir. Belirtiler kişiden kişiye değişebilir.</p>
+
+        <h2>Araştırmacılar diyabet bağlantısını inceliyor</h2>
+
+        <p>NIH tarafından aktarılan yeni araştırma, endometriozis ile metabolik sağlık arasındaki ilişkinin daha yakından incelenmesi gerektiğine işaret ediyor.</p>
+
+        <p>Tip 2 diyabet, vücudun kan şekeri seviyesini düzenleme biçiminin bozulmasıyla ortaya çıkan kronik bir hastalıktır. Genetik özellikler, yaşam tarzı, yaş ve çeşitli diğer faktörler hastalık riskini etkileyebilir.</p>
+
+        <h2>Tek başına neden-sonuç anlamına gelmiyor</h2>
+
+        <p>Araştırmalarda iki sağlık durumu arasında istatistiksel bir ilişki bulunması, birinin doğrudan diğerine neden olduğunu kanıtlamaz.</p>
+
+        <p>Endometriozis ile tip 2 diyabet arasındaki olası bağlantının altında inflamasyon, hormonal mekanizmalar, metabolik faktörler veya başka ortak biyolojik süreçlerin bulunup bulunmadığının anlaşılması için daha fazla araştırma gerekiyor.</p>
+
+        <h2>Neden önemli?</h2>
+
+        <p>Endometriozis uzun süreli takip gerektirebilen bir sağlık sorunu olduğu için hastalıkla ilişkili başka sağlık risklerinin anlaşılması bilim insanları açısından önem taşıyor.</p>
+
+        <p>Araştırmacılar, kadın sağlığı ile metabolik hastalıklar arasındaki bağlantıların daha iyi anlaşılmasının gelecekte risk değerlendirmesine ve sağlık hizmetlerinin geliştirilmesine katkı sağlayabileceğini düşünüyor.</p>
+
+        <p><strong>Mevcut bulgular kişisel olarak diyabet tanısı veya risk değerlendirmesi yapmak için kullanılmamalıdır.</strong> Sağlıkla ilgili endişelerde değerlendirme bir sağlık profesyoneli tarafından yapılmalıdır.</p>
+
+        <div class="haber-kaynak">
+            <strong>Kaynak:</strong> National Institutes of Health (NIH)
+            <br>
+            <strong>Kaynak tarihi:</strong> 8 Eylül 2026
+            <br>
+            <strong>Haberİsta yayın tarihi:</strong> 9 Eylül 2026
+        </div>
+    `
+},
+{
 id: 35,
 kategori: "Teknoloji",
 baslik: "Avrupa'nın yapay zeka şirketi Mistral'den dev yatırım: Değerlemesi 24 milyar dolara ulaştı",
