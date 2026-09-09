@@ -444,92 +444,362 @@ img {
     white-space: nowrap;
 }
 
-
 /* =====================================================
    HABERİSTA MANŞET
-   TEK SİSTEM
 ===================================================== */
 
 .hero-section {
-    width: 100%;
-
     margin-top: 18px;
+    width: min(1180px, calc(100% - 32px));
 }
 
-
-/*
-   Hem .hero-slider hem .hero destekleniyor.
-   Böylece mevcut HTML yapısı değişse bile
-   manşet boyutu kontrol altında kalır.
-*/
-
-.hero-slider,
+/* MANŞET */
 .hero {
     position: relative;
-
     width: 100%;
-
     height: 250px !important;
     min-height: 250px !important;
     max-height: 250px !important;
-
     overflow: hidden;
-
     border-radius: 10px;
-
     background: #15171b;
 }
 
-
 /* HERO MAIN */
-
-.hero-slider .hero-main,
-.hero .hero-main {
+.hero-main {
+    position: relative;
     width: 100%;
-
-    height: 250px !important;
-    min-height: 250px !important;
-    max-height: 250px !important;
+    height: 100% !important;
 }
 
-
 /* SLIDE */
-
-.hero-slider .hero-slide-link,
-.hero .hero-slide-link {
+.hero-slide-link {
     position: relative;
-
     display: block;
-
     width: 100%;
-
-    height: 250px !important;
-    min-height: 250px !important;
-    max-height: 250px !important;
-
+    height: 100% !important;
     overflow: hidden;
 }
 
-
-/* IMAGE */
-
-.hero-slider .hero-image,
-.hero .hero-image {
+/* GÖRSEL */
+.hero-image {
     position: absolute;
-
     inset: 0;
-
     display: block;
-
     width: 100% !important;
-
-    height: 250px !important;
-    min-height: 250px !important;
-    max-height: 250px !important;
-
+    height: 100% !important;
     object-fit: cover;
 }
 
+/* KARARTMA */
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, .78) 0%,
+            rgba(0, 0, 0, .40) 50%,
+            rgba(0, 0, 0, .08) 100%
+        ),
+        linear-gradient(
+            0deg,
+            rgba(0, 0, 0, .70) 0%,
+            rgba(0, 0, 0, .08) 70%,
+            transparent 100%
+        );
+}
+
+/* İÇERİK */
+.hero-content {
+    position: absolute;
+    z-index: 3;
+    left: 28px !important;
+    right: 80px !important;
+    bottom: 22px !important;
+    max-width: 650px !important;
+    color: #fff;
+}
+
+/* KATEGORİ */
+.hero-category {
+    display: inline-block;
+    padding: 4px 8px;
+    margin-bottom: 7px;
+    border-radius: 4px;
+    background: var(--red);
+    color: #fff;
+    font-size: 10px;
+    line-height: 1;
+    font-weight: 800;
+}
+
+/* BAŞLIK */
+.hero-content h1 {
+    max-width: 650px;
+    margin: 0 0 7px;
+    color: #fff;
+    font-size: 26px;
+    line-height: 1.12;
+    letter-spacing: -.4px;
+}
+
+/* SPOT */
+.hero-content p {
+    max-width: 520px;
+    margin: 0;
+    color: rgba(255,255,255,.82);
+    font-size: 12px;
+    line-height: 1.4;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+/* META */
+.hero-meta {
+    margin-top: 7px;
+    color: rgba(255,255,255,.65);
+    font-size: 10px;
+}
+
+/* OKLAR */
+.hero-arrow {
+    position: absolute;
+    z-index: 5;
+
+    width: 32px !important;
+    height: 32px !important;
+
+    display: grid;
+    place-items: center;
+
+    border: 1px solid rgba(255,255,255,.45);
+    border-radius: 50%;
+
+    background: rgba(0,0,0,.35);
+    color: #fff;
+
+    font-size: 20px !important;
+    line-height: 1;
+}
+
+.hero-arrow:hover {
+    border-color: var(--red);
+    background: var(--red);
+}
+
+.hero-prev {
+    left: 10px !important;
+}
+
+.hero-next {
+    right: 10px !important;
+}
+
+/* NUMARALAR
+   HTML'de hero-bottom .hero'un dışında olduğu için
+   burada normal akışta gösteriyoruz.
+*/
+.hero-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    margin-top: 9px;
+}
+
+.hero-numbers {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.hero-number {
+    width: 24px !important;
+    height: 24px !important;
+    min-width: 24px !important;
+
+    display: grid;
+    place-items: center;
+
+    border: 1px solid var(--border);
+    border-radius: 50%;
+
+    background: #fff;
+    color: #555;
+
+    font-size: 9px !important;
+    font-weight: 800;
+}
+
+.hero-number:hover {
+    border-color: var(--red);
+    color: var(--red);
+}
+
+.hero-number.active {
+    border-color: var(--red);
+    background: var(--red);
+    color: #fff;
+}
+
+/* YÜKLENİYOR */
+.hero-loading {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    color: #aaa;
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .hero-section {
+        width: min(1180px, calc(100% - 32px));
+    }
+
+    .hero {
+        height: 230px !important;
+        min-height: 230px !important;
+        max-height: 230px !important;
+    }
+
+    .hero-content {
+        left: 25px !important;
+        right: 65px !important;
+        bottom: 20px !important;
+    }
+
+    .hero-content h1 {
+        font-size: 23px !important;
+    }
+}
+
+
+/* =====================================================
+   TELEFON
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .hero-section {
+        width: calc(100% - 20px);
+        margin-top: 10px;
+    }
+
+    .hero {
+        height: 195px !important;
+        min-height: 195px !important;
+        max-height: 195px !important;
+        border-radius: 8px;
+    }
+
+    .hero-content {
+        left: 16px !important;
+        right: 45px !important;
+        bottom: 15px !important;
+        max-width: none !important;
+    }
+
+    .hero-category {
+        padding: 3px 6px;
+        margin-bottom: 5px;
+        font-size: 8px;
+    }
+
+    .hero-content h1 {
+        margin-bottom: 4px;
+        font-size: 18px !important;
+        line-height: 1.12;
+    }
+
+    .hero-content p {
+        display: none;
+    }
+
+    .hero-meta {
+        margin-top: 4px;
+        font-size: 8px;
+    }
+
+    .hero-arrow {
+        width: 28px !important;
+        height: 28px !important;
+        font-size: 17px !important;
+    }
+
+    .hero-prev {
+        left: 7px !important;
+    }
+
+    .hero-next {
+        right: 7px !important;
+    }
+
+    .hero-number {
+        width: 22px !important;
+        height: 22px !important;
+        min-width: 22px !important;
+        font-size: 8px !important;
+    }
+
+    .hero-bottom {
+        margin-top: 7px;
+    }
+}
+
+
+/* =====================================================
+   KÜÇÜK TELEFON
+===================================================== */
+
+@media (max-width: 380px) {
+
+    .hero {
+        height: 185px !important;
+        min-height: 185px !important;
+        max-height: 185px !important;
+    }
+
+    .hero-content h1 {
+        font-size: 17px !important;
+    }
+}
+
+
+/* =====================================================
+   ÇOK KÜÇÜK EKRAN
+===================================================== */
+
+@media (max-width: 340px) {
+
+    .hero {
+        height: 175px !important;
+        min-height: 175px !important;
+        max-height: 175px !important;
+    }
+
+    .hero-content h1 {
+        font-size: 16px !important;
+    }
+
+    .hero-meta {
+        display: none;
+    }
+}
 
 /* =====================================================
    HERO DARK OVERLAY
