@@ -3,6 +3,7 @@
 /* =========================================================
    HABERİSTA - APP.JS
    PROFESYONEL ANA SAYFA + KATEGORİ SİSTEMİ
+   20 MANŞET SEÇİMİ
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -28,28 +29,35 @@ document.addEventListener("DOMContentLoaded", function () {
     const aktifKategori =
         document.body.getAttribute("data-kategori");
 
+
     /* =========================================================
        HTML GÜVENLİĞİ
        ========================================================= */
 
     function escapeHTML(value) {
+
         return String(value ?? "")
             .replace(/&/g, "&amp;")
             .replace(/</g, "&lt;")
             .replace(/>/g, "&gt;")
             .replace(/"/g, "&quot;")
             .replace(/'/g, "&#039;");
+
     }
+
 
     /* =========================================================
        TÜRKÇE NORMALİZASYON
        ========================================================= */
 
     function normalizeCategory(value) {
+
         return String(value || "")
             .trim()
             .toLocaleLowerCase("tr-TR");
+
     }
+
 
     /* =========================================================
        ELEMENTLER
@@ -100,6 +108,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const notificationBtn =
         document.getElementById("notificationBtn");
 
+
     /* =========================================================
        HABER YARDIMCILARI
        ========================================================= */
@@ -111,7 +120,11 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         if (typeof window.slugOlustur === "function") {
-            return window.slugOlustur(haber.baslik);
+
+            return window.slugOlustur(
+                haber.baslik
+            );
+
         }
 
         return String(haber.baslik || "")
@@ -130,7 +143,9 @@ document.addEventListener("DOMContentLoaded", function () {
             .replace(/\s+/g, "-")
             .replace(/-+/g, "-")
             .replace(/^-+|-+$/g, "");
+
     }
+
 
     function getUrl(haber) {
 
@@ -144,35 +159,47 @@ document.addEventListener("DOMContentLoaded", function () {
          */
 
         if (haber.id !== undefined) {
+
             return "haber.html?id=" +
                 encodeURIComponent(haber.id);
+
         }
 
         return "haber.html";
+
     }
+
 
     function getImage(haber) {
 
         return haber.gorsel ||
             "/images/logo.jpeg";
+
     }
+
 
     function getCategory(haber) {
 
         return haber.kategori ||
             "Gündem";
+
     }
+
 
     function getTitle(haber) {
 
         return haber.baslik ||
             "Haberİsta";
+
     }
+
 
     function getSpot(haber) {
 
         return haber.spot || "";
+
     }
+
 
     /* =========================================================
        TARİH
@@ -180,7 +207,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function formatDate(haber) {
 
-        if (haber.tarih && haber.saat) {
+        if (
+            haber.tarih &&
+            haber.saat
+        ) {
 
             return `${haber.tarih} • ${haber.saat}`;
 
@@ -195,9 +225,15 @@ document.addEventListener("DOMContentLoaded", function () {
         if (haber.publishedAt) {
 
             const date =
-                new Date(haber.publishedAt);
+                new Date(
+                    haber.publishedAt
+                );
 
-            if (!Number.isNaN(date.getTime())) {
+            if (
+                !Number.isNaN(
+                    date.getTime()
+                )
+            ) {
 
                 return date.toLocaleDateString(
                     "tr-TR",
@@ -207,23 +243,31 @@ document.addEventListener("DOMContentLoaded", function () {
                         year: "numeric"
                     }
                 );
+
             }
+
         }
 
         return "";
+
     }
+
 
     /* =========================================================
        TARİH SIRALAMA
        ========================================================= */
 
-    function parseTurkishDate(tarih, saat) {
+    function parseTurkishDate(
+        tarih,
+        saat
+    ) {
 
         if (!tarih) {
             return 0;
         }
 
         const aylar = {
+
             "ocak": 0,
             "şubat": 1,
             "mart": 2,
@@ -236,6 +280,7 @@ document.addEventListener("DOMContentLoaded", function () {
             "ekim": 9,
             "kasım": 10,
             "aralık": 11
+
         };
 
         const parcalar =
@@ -262,14 +307,19 @@ document.addEventListener("DOMContentLoaded", function () {
             ) {
 
                 const saatParcalari =
-                    String(saat || "00:00")
-                        .split(":");
+                    String(
+                        saat || "00:00"
+                    ).split(":");
 
                 const saatNum =
-                    Number(saatParcalari[0]) || 0;
+                    Number(
+                        saatParcalari[0]
+                    ) || 0;
 
                 const dakikaNum =
-                    Number(saatParcalari[1]) || 0;
+                    Number(
+                        saatParcalari[1]
+                    ) || 0;
 
                 return new Date(
                     yil,
@@ -278,7 +328,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     saatNum,
                     dakikaNum
                 ).getTime();
+
             }
+
         }
 
         const normalDate =
@@ -286,31 +338,47 @@ document.addEventListener("DOMContentLoaded", function () {
                 `${tarih} ${saat || ""}`
             );
 
-        if (!Number.isNaN(normalDate.getTime())) {
+        if (
+            !Number.isNaN(
+                normalDate.getTime()
+            )
+        ) {
+
             return normalDate.getTime();
+
         }
 
         return 0;
+
     }
+
 
     function getNewsTime(haber) {
 
         if (haber.publishedAt) {
 
             const timestamp =
-                new Date(haber.publishedAt)
-                    .getTime();
+                new Date(
+                    haber.publishedAt
+                ).getTime();
 
-            if (!Number.isNaN(timestamp)) {
+            if (
+                !Number.isNaN(timestamp)
+            ) {
+
                 return timestamp;
+
             }
+
         }
 
         return parseTurkishDate(
             haber.tarih,
             haber.saat
         );
+
     }
+
 
     function sortNews(list) {
 
@@ -323,15 +391,26 @@ document.addEventListener("DOMContentLoaded", function () {
                 const dateB =
                     getNewsTime(b);
 
-                if (dateA !== dateB) {
+                if (
+                    dateA !== dateB
+                ) {
+
                     return dateB - dateA;
+
                 }
 
-                return Number(b.id || 0) -
-                    Number(a.id || 0);
+                return Number(
+                    b.id || 0
+                ) -
+                Number(
+                    a.id || 0
+                );
+
             }
         );
+
     }
+
 
     /* =========================================================
        KATEGORİ FİLTRESİ
@@ -342,23 +421,28 @@ document.addEventListener("DOMContentLoaded", function () {
     if (aktifKategori) {
 
         filteredNews =
-            haberler.filter(function (haber) {
+            haberler.filter(
+                function (haber) {
 
-                return normalizeCategory(
-                    haber.kategori
-                ) === normalizeCategory(
-                    aktifKategori
-                );
+                    return normalizeCategory(
+                        haber.kategori
+                    ) === normalizeCategory(
+                        aktifKategori
+                    );
 
-            });
+                }
+            );
 
     }
+
 
     const sortedNews =
         sortNews(filteredNews);
 
+
     /*
      * Kategori sayfasında kullanılacak veri.
+     *
      * Ana sayfada bütün haberler.
      */
 
@@ -366,6 +450,7 @@ document.addEventListener("DOMContentLoaded", function () {
         aktifKategori
             ? sortedNews
             : sortNews(haberler);
+
 
     /* =========================================================
        KATEGORİ SAYFASI BAŞLIK BİLGİLERİ
@@ -419,7 +504,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
             "Eğitim":
                 "Eğitim gündeminden son gelişmeler, sınavlar ve öğrencileri ilgilendiren haberler."
+
         };
+
 
         if (kategoriBaslik) {
 
@@ -427,6 +514,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 aktifKategori;
 
         }
+
 
         if (kategoriAciklama) {
 
@@ -436,6 +524,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         }
 
+
         if (sectionTitle) {
 
             sectionTitle.textContent =
@@ -443,16 +532,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
         }
 
+
         document.title =
             `${aktifKategori} Haberleri - Haberİsta`;
 
     }
 
+
     /* =========================================================
-       HERO
+       HERO - 20 MANŞET
        ========================================================= */
 
     let currentHero = 0;
+
+    /*
+     * Ana sayfadaki haberlerden ilk 20 tanesi
+     * manşet olarak kullanılacak.
+     */
 
     const heroSource =
         pageNews;
@@ -460,31 +556,60 @@ document.addEventListener("DOMContentLoaded", function () {
     const heroNews =
         heroSource.slice(
             0,
-            Math.min(5, heroSource.length)
+            Math.min(
+                20,
+                heroSource.length
+            )
         );
+
+
+    /* =========================================================
+       HERO GÖSTER
+       ========================================================= */
 
     function renderHero() {
 
-        if (!heroMain || !heroNews.length) {
+        if (
+            !heroMain ||
+            !heroNews.length
+        ) {
+
+            if (heroNumbers) {
+                heroNumbers.innerHTML = "";
+            }
+
             return;
+
         }
+
+
+        /*
+         * Döngü kontrolü
+         */
 
         if (
             currentHero >=
             heroNews.length
         ) {
+
             currentHero = 0;
+
         }
 
-        if (currentHero < 0) {
+
+        if (
+            currentHero < 0
+        ) {
 
             currentHero =
                 heroNews.length - 1;
 
         }
 
+
         const haber =
             heroNews[currentHero];
+
 
         heroMain.innerHTML = `
 
@@ -554,19 +679,45 @@ document.addEventListener("DOMContentLoaded", function () {
                 </div>
 
             </a>
+
         `;
 
+
+        /*
+         * Sayıları güncelle
+         */
+
         renderHeroNumbers();
+
     }
+
+
+    /* =========================================================
+       HERO NUMARALARI
+       1 - 20
+       ========================================================= */
 
     function renderHeroNumbers() {
 
-        if (
-            !heroNumbers ||
-            !heroNews.length
-        ) {
+        if (!heroNumbers) {
             return;
         }
+
+
+        if (!heroNews.length) {
+
+            heroNumbers.innerHTML = "";
+
+            return;
+
+        }
+
+
+        /*
+         * Haber sayısı kadar numara oluştur.
+         *
+         * En fazla 20.
+         */
 
         heroNumbers.innerHTML =
             heroNews
@@ -589,15 +740,28 @@ document.addEventListener("DOMContentLoaded", function () {
                                 data-hero-index="${index}"
                                 aria-label="${
                                     index + 1
-                                }. manşet"
+                                }. manşet: ${
+                                    escapeHTML(
+                                        getTitle(haber)
+                                    )
+                                }"
+                                title="${escapeHTML(
+                                    getTitle(haber)
+                                )}"
                             >
                                 ${index + 1}
                             </button>
 
                         `;
+
                     }
                 )
                 .join("");
+
+
+        /*
+         * Numara tıklamaları
+         */
 
         heroNumbers
             .querySelectorAll(
@@ -616,14 +780,35 @@ document.addEventListener("DOMContentLoaded", function () {
                                         .heroIndex
                                 );
 
+
+                            /*
+                             * Manşeti değiştir.
+                             */
+
                             renderHero();
+
+
+                            /*
+                             * Kullanıcı seçim
+                             * yaptıktan sonra
+                             * otomatik geçişi
+                             * yeniden başlat.
+                             */
+
+                            startHeroTimer();
 
                         }
                     );
 
                 }
             );
+
     }
+
+
+    /* =========================================================
+       HERO ÖNCEKİ BUTONU
+       ========================================================= */
 
     if (heroPrev) {
 
@@ -633,12 +818,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 currentHero--;
 
+                if (
+                    currentHero < 0
+                ) {
+
+                    currentHero =
+                        heroNews.length - 1;
+
+                }
+
                 renderHero();
+
+                startHeroTimer();
 
             }
         );
 
     }
+
+
+    /* =========================================================
+       HERO SONRAKİ BUTONU
+       ========================================================= */
 
     if (heroNext) {
 
@@ -648,20 +849,38 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 currentHero++;
 
+                if (
+                    currentHero >=
+                    heroNews.length
+                ) {
+
+                    currentHero = 0;
+
+                }
+
                 renderHero();
+
+                startHeroTimer();
 
             }
         );
 
     }
 
+
+    /*
+     * İlk manşeti göster.
+     */
+
     renderHero();
+
 
     /* =========================================================
        HERO OTOMATİK GEÇİŞ
        ========================================================= */
 
     let heroTimer = null;
+
 
     function stopHeroTimer() {
 
@@ -672,22 +891,32 @@ document.addEventListener("DOMContentLoaded", function () {
             );
 
             heroTimer = null;
+
         }
+
     }
+
 
     function startHeroTimer() {
 
         stopHeroTimer();
 
-        if (heroNews.length <= 1) {
+
+        if (
+            heroNews.length <= 1
+        ) {
+
             return;
+
         }
+
 
         heroTimer =
             setInterval(
                 function () {
 
                     currentHero++;
+
 
                     if (
                         currentHero >=
@@ -698,14 +927,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     }
 
+
                     renderHero();
 
                 },
                 6500
             );
+
     }
 
+
     startHeroTimer();
+
+
+    /* =========================================================
+       MOUSE ÜZERİNE GELİNCE DUR
+       ========================================================= */
 
     if (heroMain) {
 
@@ -721,6 +958,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
+
     /* =========================================================
        SON DAKİKA
        ========================================================= */
@@ -731,6 +969,7 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
+
         const latest =
             pageNews.slice(
                 0,
@@ -740,12 +979,15 @@ document.addEventListener("DOMContentLoaded", function () {
                 )
             );
 
+
         if (!latest.length) {
 
             breakingNews.innerHTML = "";
 
             return;
+
         }
+
 
         const items =
             latest
@@ -779,13 +1021,16 @@ document.addEventListener("DOMContentLoaded", function () {
                 )
                 .join("");
 
+
         breakingNews.innerHTML = `
 
             <div class="breaking-inner">
 
                 <div class="breaking-heading">
 
-                    <span class="breaking-pulse"></span>
+                    <span
+                        class="breaking-pulse"
+                    ></span>
 
                     <strong>
                         SON DAKİKA
@@ -796,7 +1041,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 <div class="breaking-track">
 
                     <div class="breaking-list">
+
                         ${items}
+
                     </div>
 
                 </div>
@@ -804,9 +1051,12 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
 
         `;
+
     }
 
+
     renderBreakingNews();
+
 
     /* =========================================================
        HABER KARTI
@@ -848,46 +1098,37 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     </div>
 
+
                     <div class="news-card-content">
 
                         <span class="news-card-category">
-
                             ${escapeHTML(
                                 getCategory(haber)
                             )}
-
                         </span>
 
                         <h3>
-
                             ${escapeHTML(
                                 getTitle(haber)
                             )}
-
                         </h3>
 
                         ${
                             getSpot(haber)
                                 ? `
-
                                     <p class="news-card-spot">
-
                                         ${escapeHTML(
                                             getSpot(haber)
                                         )}
-
                                     </p>
-
                                 `
                                 : ""
                         }
 
                         <div class="news-card-meta">
-
                             ${escapeHTML(
                                 formatDate(haber)
                             )}
-
                         </div>
 
                     </div>
@@ -897,7 +1138,9 @@ document.addEventListener("DOMContentLoaded", function () {
             </article>
 
         `;
+
     }
+
 
     /* =========================================================
        HABERLERİ GÖSTER
@@ -908,6 +1151,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!newsGrid) {
             return;
         }
+
 
         if (!list.length) {
 
@@ -933,13 +1177,19 @@ document.addEventListener("DOMContentLoaded", function () {
             `;
 
             return;
+
         }
+
 
         newsGrid.innerHTML =
             list
-                .map(createNewsCard)
+                .map(
+                    createNewsCard
+                )
                 .join("");
+
     }
+
 
     /*
      * ANA SAYFA:
@@ -950,6 +1200,7 @@ document.addEventListener("DOMContentLoaded", function () {
      */
 
     renderNews(pageNews);
+
 
     /* =========================================================
        ÇOK OKUNAN HABERLER
@@ -970,8 +1221,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 }
             )
-            .slice(0, 5);
+            .slice(
+                0,
+                5
+            );
+
     }
+
 
     function renderPopularNews() {
 
@@ -979,15 +1235,19 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
+
         const popular =
             getPopularNews();
+
 
         if (!popular.length) {
 
             popularNews.innerHTML = "";
 
             return;
+
         }
+
 
         popularNews.innerHTML =
             popular
@@ -1010,6 +1270,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                     ${index + 1}
                                 </span>
 
+
                                 <div class="popular-image">
 
                                     <img
@@ -1028,30 +1289,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
                                 </div>
 
+
                                 <div class="popular-content">
 
                                     <span class="popular-category">
-
                                         ${escapeHTML(
                                             getCategory(haber)
                                         )}
-
                                     </span>
 
                                     <h3>
-
                                         ${escapeHTML(
                                             getTitle(haber)
                                         )}
-
                                     </h3>
 
                                     <span class="popular-date">
-
                                         ${escapeHTML(
                                             formatDate(haber)
                                         )}
-
                                     </span>
 
                                 </div>
@@ -1063,9 +1319,12 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
                 )
                 .join("");
+
     }
 
+
     renderPopularNews();
+
 
     /* =========================================================
        ARAMA
@@ -1077,21 +1336,27 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
+
         searchPanel.classList.add(
             "active"
         );
+
 
         setTimeout(
             function () {
 
                 if (searchInput) {
+
                     searchInput.focus();
+
                 }
 
             },
             100
         );
+
     }
+
 
     function closeSearchPanel() {
 
@@ -1099,13 +1364,18 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
+
         searchPanel.classList.remove(
             "active"
         );
 
+
         if (searchInput) {
+
             searchInput.value = "";
+
         }
+
 
         if (searchResultInfo) {
 
@@ -1114,13 +1384,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
         }
 
+
         /*
          * Kategori sayfasında tekrar
          * kategori haberlerini getir.
          */
 
         renderNews(pageNews);
+
     }
+
 
     if (searchBtn) {
 
@@ -1131,6 +1404,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
+
     if (closeSearch) {
 
         closeSearch.addEventListener(
@@ -1139,6 +1413,7 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
     }
+
 
     if (searchInput) {
 
@@ -1153,6 +1428,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             "tr-TR"
                         );
 
+
                 if (!query) {
 
                     if (searchResultInfo) {
@@ -1162,10 +1438,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     }
 
-                    renderNews(pageNews);
+                    renderNews(
+                        pageNews
+                    );
 
                     return;
+
                 }
+
 
                 const results =
                     pageNews.filter(
@@ -1179,6 +1459,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                     "tr-TR"
                                 );
 
+
                             const spot =
                                 String(
                                     haber.spot ||
@@ -1186,6 +1467,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                 ).toLocaleLowerCase(
                                     "tr-TR"
                                 );
+
 
                             const category =
                                 String(
@@ -1195,6 +1477,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                     "tr-TR"
                                 );
 
+
                             const content =
                                 String(
                                     haber.icerik ||
@@ -1203,23 +1486,30 @@ document.addEventListener("DOMContentLoaded", function () {
                                     "tr-TR"
                                 );
 
+
                             return (
+
                                 title.includes(
                                     query
                                 ) ||
+
                                 spot.includes(
                                     query
                                 ) ||
+
                                 category.includes(
                                     query
                                 ) ||
+
                                 content.includes(
                                     query
                                 )
+
                             );
 
                         }
                     );
+
 
                 if (searchResultInfo) {
 
@@ -1241,10 +1531,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 }
 
-                renderNews(results);
+
+                renderNews(
+                    results
+                );
 
             }
         );
+
 
         searchInput.addEventListener(
             "keydown",
@@ -1259,6 +1553,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 }
 
+
                 if (
                     event.key ===
                     "Enter"
@@ -1267,12 +1562,14 @@ document.addEventListener("DOMContentLoaded", function () {
                     const query =
                         searchInput.value.trim();
 
+
                     if (query) {
 
                         const latestSection =
                             document.querySelector(
                                 ".latest-section"
                             );
+
 
                         window.scrollTo({
 
@@ -1293,7 +1590,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
             }
         );
+
     }
+
 
     /* =========================================================
        MOBİL MENÜ
@@ -1305,9 +1604,11 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
+
         mobileMenu.classList.add(
             "active"
         );
+
 
         if (menuBtn) {
 
@@ -1322,10 +1623,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
         }
 
+
         document.body.classList.add(
             "menu-open"
         );
+
     }
+
 
     function closeMobileMenu() {
 
@@ -1333,9 +1637,11 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
+
         mobileMenu.classList.remove(
             "active"
         );
+
 
         if (menuBtn) {
 
@@ -1350,10 +1656,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
         }
 
+
         document.body.classList.remove(
             "menu-open"
         );
+
     }
+
 
     if (menuBtn) {
 
@@ -1361,6 +1670,7 @@ document.addEventListener("DOMContentLoaded", function () {
             "aria-expanded",
             "false"
         );
+
 
         menuBtn.addEventListener(
             "click",
@@ -1386,6 +1696,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
+
     /* =========================================================
        KATEGORİ AKTİF NAV
        ========================================================= */
@@ -1396,10 +1707,12 @@ document.addEventListener("DOMContentLoaded", function () {
             return "/";
         }
 
+
         let result =
             String(path)
                 .split("?")[0]
                 .split("#")[0];
+
 
         /*
          * Başındaki slash'ı normalize et.
@@ -1414,11 +1727,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
         }
 
+
         result =
             result.replace(
                 /\/+/g,
                 "/"
             );
+
 
         /*
          * Son slash'ı kaldır.
@@ -1430,8 +1745,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 ""
             );
 
+
         return result || "/";
+
     }
+
 
     function setActiveCategory() {
 
@@ -1440,10 +1758,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 window.location.pathname
             );
 
+
         const categoryLinks =
             document.querySelectorAll(
                 ".category-nav a, .mobile-menu a, nav a"
             );
+
 
         categoryLinks.forEach(
             function (link) {
@@ -1453,9 +1773,11 @@ document.addEventListener("DOMContentLoaded", function () {
                         "href"
                     );
 
+
                 if (!href) {
                     return;
                 }
+
 
                 if (
                     href === "#" ||
@@ -1472,17 +1794,22 @@ document.addEventListener("DOMContentLoaded", function () {
                         "javascript:"
                     )
                 ) {
+
                     return;
+
                 }
+
 
                 const linkPath =
                     normalizePath(
                         href
                     );
 
+
                 link.classList.remove(
                     "active"
                 );
+
 
                 if (
                     linkPath ===
@@ -1497,9 +1824,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
             }
         );
+
     }
 
+
     setActiveCategory();
+
 
     /* =========================================================
        MOBİL MENÜ LİNKLERİ
@@ -1526,6 +1856,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
+
     /* =========================================================
        DIŞARI TIKLAYINCA MENÜ KAPAT
        ========================================================= */
@@ -1538,8 +1869,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 !mobileMenu ||
                 !menuBtn
             ) {
+
                 return;
+
             }
+
 
             if (
                 mobileMenu.classList.contains(
@@ -1560,6 +1894,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     );
 
+
     /* =========================================================
        ESC
        ========================================================= */
@@ -1572,14 +1907,19 @@ document.addEventListener("DOMContentLoaded", function () {
                 event.key !==
                 "Escape"
             ) {
+
                 return;
+
             }
 
+
             closeSearchPanel();
+
             closeMobileMenu();
 
         }
     );
+
 
     /* =========================================================
        BİLDİRİMLER
@@ -1603,13 +1943,16 @@ document.addEventListener("DOMContentLoaded", function () {
                     );
 
                     return;
+
                 }
+
 
                 try {
 
                     const permission =
                         await Notification
                             .requestPermission();
+
 
                     if (
                         permission ===
@@ -1622,8 +1965,10 @@ document.addEventListener("DOMContentLoaded", function () {
                                 "enabled"
                             );
 
+
                         notificationBtn.innerHTML =
                             "🔔 Bildirimler Açık";
+
 
                         new Notification(
                             "Haberİsta",
@@ -1654,6 +1999,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
+
     /* =========================================================
        YUKARI ÇIK
        ========================================================= */
@@ -1663,6 +2009,7 @@ document.addEventListener("DOMContentLoaded", function () {
             "backToTop"
         );
 
+
     if (!backTop) {
 
         backTop =
@@ -1670,27 +2017,35 @@ document.addEventListener("DOMContentLoaded", function () {
                 "button"
             );
 
+
         backTop.id =
             "backToTop";
+
 
         backTop.className =
             "back-to-top";
 
+
         backTop.type =
             "button";
+
 
         backTop.setAttribute(
             "aria-label",
             "Yukarı çık"
         );
 
+
         backTop.innerHTML =
             "↑";
+
 
         document.body.appendChild(
             backTop
         );
+
     }
+
 
     function updateBackTop() {
 
@@ -1710,7 +2065,9 @@ document.addEventListener("DOMContentLoaded", function () {
             );
 
         }
+
     }
+
 
     window.addEventListener(
         "scroll",
@@ -1719,6 +2076,7 @@ document.addEventListener("DOMContentLoaded", function () {
             passive: true
         }
     );
+
 
     backTop.addEventListener(
         "click",
@@ -1736,7 +2094,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     );
 
+
     updateBackTop();
+
 
     /* =========================================================
        GÖRSEL HATA KONTROLÜ
@@ -1748,6 +2108,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             const element =
                 event.target;
+
 
             if (
                 element &&
@@ -1761,13 +2122,16 @@ document.addEventListener("DOMContentLoaded", function () {
                     .fallback =
                     "true";
 
+
                 element.src =
                     "/images/logo.jpeg";
+
             }
 
         },
         true
     );
+
 
     /* =========================================================
        UYGULAMA HAZIR
@@ -1777,14 +2141,23 @@ document.addEventListener("DOMContentLoaded", function () {
         "app-ready"
     );
 
+
     console.log(
         "Haberİsta başlatıldı."
     );
+
 
     console.log(
         "Toplam haber:",
         haberler.length
     );
+
+
+    console.log(
+        "Manşet haber sayısı:",
+        heroNews.length
+    );
+
 
     if (aktifKategori) {
 
@@ -1792,6 +2165,7 @@ document.addEventListener("DOMContentLoaded", function () {
             "Aktif kategori:",
             aktifKategori
         );
+
 
         console.log(
             "Kategori haber sayısı:",
