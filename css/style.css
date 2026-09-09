@@ -1,16 +1,19 @@
+/* =========================================================
+   HABERİSTA — FINAL STYLE.CSS
+   ========================================================= */
+
 :root {
     --red: #d71920;
+    --red-dark: #b9141a;
     --dark: #111318;
     --text: #17191d;
     --muted: #73777f;
     --border: #e7e8eb;
     --bg: #f5f6f8;
     --white: #ffffff;
+    --shadow: 0 8px 24px rgba(0, 0, 0, .07);
+    --radius: 10px;
 }
-
-/* =====================================================
-   RESET
-===================================================== */
 
 * {
     box-sizing: border-box;
@@ -23,14 +26,20 @@ html {
 }
 
 body {
+    font-family: Arial, Helvetica, sans-serif;
     background: var(--bg);
     color: var(--text);
-    font-family:
-        Inter,
-        Arial,
-        Helvetica,
-        sans-serif;
     line-height: 1.5;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
 }
 
 button,
@@ -39,184 +48,140 @@ input {
 }
 
 button {
+    border: 0;
     cursor: pointer;
 }
 
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-img {
-    max-width: 100%;
-}
-
-
-/* =====================================================
+/* =========================================================
    CONTAINER
-===================================================== */
+   ========================================================= */
 
 .container {
     width: min(1180px, calc(100% - 32px));
     margin: 0 auto;
 }
 
-
-/* =====================================================
+/* =========================================================
    HEADER
-===================================================== */
+   ========================================================= */
 
 .header {
     position: sticky;
     top: 0;
     z-index: 1000;
-
     background: var(--white);
     border-bottom: 1px solid var(--border);
 }
 
 .header-top {
-    height: 70px;
+    background: var(--white);
 }
 
 .header-inner {
-    height: 70px;
-
+    height: 72px;
     display: flex;
     align-items: center;
-
-    gap: 25px;
+    gap: 24px;
 }
 
-
-/* LOGO */
+/* Logo */
 
 .logo {
     display: flex;
     align-items: center;
-
     gap: 9px;
-
-    font-size: 23px;
-    font-weight: 900;
-
-    white-space: nowrap;
+    flex-shrink: 0;
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: -.7px;
 }
 
 .logo img {
-    width: 43px;
-    height: 43px;
-
-    border-radius: 50%;
-
+    width: 38px;
+    height: 38px;
     object-fit: cover;
+    border-radius: 8px;
 }
 
-.logo span span {
+.logo > span > span {
     color: var(--red);
 }
 
-
-/* NAV */
+/* Desktop navigation */
 
 .desktop-nav {
     display: flex;
     align-items: center;
-
-    gap: 21px;
-
-    margin-left: 15px;
-
-    flex: 1;
+    gap: 4px;
+    margin-left: auto;
 }
 
 .desktop-nav a {
-    color: #41444a;
-
+    padding: 9px 10px;
+    border-radius: 7px;
     font-size: 14px;
-    font-weight: 650;
-
-    transition: color .2s ease;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: .2s ease;
 }
 
 .desktop-nav a:hover {
     color: var(--red);
+    background: #f8f8f8;
 }
 
-
-/* HEADER ACTIONS */
+/* Header actions */
 
 .header-actions {
     display: flex;
     align-items: center;
-
-    gap: 8px;
+    gap: 7px;
+    margin-left: 6px;
 }
 
 .icon-btn,
 .notification-btn {
-    width: 40px;
-    height: 40px;
-
-    display: grid;
-    place-items: center;
-
-    border: 1px solid var(--border);
-    border-radius: 10px;
-
-    background: #fff;
-
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: transparent;
     font-size: 17px;
-
-    transition:
-        border-color .2s ease,
-        color .2s ease,
-        background .2s ease;
+    transition: .2s ease;
 }
 
 .icon-btn:hover,
 .notification-btn:hover {
-    border-color: var(--red);
-    color: var(--red);
+    background: #f1f2f4;
 }
-
-
-/* MOBILE MENU BUTTON */
 
 .menu-btn {
     display: none;
-
-    width: 40px;
-    height: 40px;
-
-    border: 0;
-
+    width: 38px;
+    height: 38px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
     background: transparent;
 }
 
 .menu-btn span {
-    display: block;
-
-    width: 22px;
+    width: 20px;
     height: 2px;
-
-    margin: 5px auto;
-
     background: var(--dark);
+    border-radius: 3px;
 }
 
-
-/* =====================================================
+/* =========================================================
    SEARCH
-===================================================== */
+   ========================================================= */
 
 .search-box {
     display: none;
-
-    padding: 12px 0;
-
-    background: #fff;
-
+    background: var(--white);
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
 }
@@ -225,1420 +190,869 @@ img {
     display: block;
 }
 
+.search-box .container {
+    padding: 12px 0;
+}
+
 .search-box input {
     width: 100%;
     height: 44px;
-
-    padding: 0 15px;
-
     border: 1px solid var(--border);
-    border-radius: 9px;
-
+    border-radius: 8px;
+    padding: 0 14px;
     outline: none;
-
-    background: #fff;
+    font-size: 15px;
+    background: #fafafa;
 }
 
 .search-box input:focus {
     border-color: var(--red);
+    background: var(--white);
 }
 
-
-/* =====================================================
+/* =========================================================
    MOBILE NAV
-===================================================== */
+   ========================================================= */
 
 .mobile-nav {
     display: none;
-
-    background: #fff;
-
+    background: var(--white);
     border-top: 1px solid var(--border);
 }
 
 .mobile-nav.active {
-    display: block;
+    display: flex;
+    flex-direction: column;
 }
 
 .mobile-nav a {
-    display: block;
-
-    padding: 14px 20px;
-
+    padding: 13px 20px;
     border-bottom: 1px solid var(--border);
-
+    font-size: 15px;
     font-weight: 600;
 }
 
+.mobile-nav a:hover {
+    color: var(--red);
+    background: #fafafa;
+}
 
-/* =====================================================
-   SON DAKİKA
-===================================================== */
+/* =========================================================
+   BREAKING NEWS
+   ========================================================= */
 
 .breaking {
     background: var(--dark);
-    color: #fff;
+    color: var(--white);
 }
 
 .breaking-inner {
-    height: 42px;
-
+    min-height: 40px;
     display: flex;
     align-items: center;
+    gap: 16px;
 }
 
 .breaking-label {
-    min-width: 125px;
-    height: 100%;
-
     display: flex;
     align-items: center;
-
-    gap: 8px;
-
-    font-size: 12px;
-    font-weight: 900;
-
-    letter-spacing: .4px;
+    gap: 7px;
+    flex-shrink: 0;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .5px;
 }
 
 .breaking-dot {
-    width: 8px;
-    height: 8px;
-
-    flex-shrink: 0;
-
+    width: 7px;
+    height: 7px;
     border-radius: 50%;
-
     background: var(--red);
-
-    box-shadow:
-        0 0 0 4px rgba(215, 25, 32, .15);
+    box-shadow: 0 0 0 3px rgba(215, 25, 32, .15);
 }
 
 .breaking-window {
-    flex: 1;
-
+    min-width: 0;
     overflow: hidden;
+    flex: 1;
 }
 
 .breaking-track {
-    display: flex;
-
-    gap: 40px;
-
-    width: max-content;
-
-    animation:
-        breakingMove 35s linear infinite;
-}
-
-.breaking-track:hover {
-    animation-play-state: paused;
-}
-
-.breaking-link {
-    color: #ddd;
-
-    font-size: 13px;
-
     white-space: nowrap;
+    overflow: hidden;
 }
 
-.breaking-link:hover {
-    color: #fff;
+.breaking-track a {
+    font-size: 13px;
+    color: #e7e8eb;
 }
 
-@keyframes breakingMove {
-    from {
-        transform: translateX(0);
-    }
-
-    to {
-        transform: translateX(-50%);
-    }
+.breaking-track a:hover {
+    color: var(--white);
 }
 
-
-/* =====================================================
+/* =========================================================
    MARKET
-===================================================== */
+   ========================================================= */
 
 .market {
-    background: #fff;
-
+    background: var(--white);
     border-bottom: 1px solid var(--border);
 }
 
 .market-inner {
-    min-height: 43px;
-
+    min-height: 42px;
     display: flex;
     align-items: center;
-
-    gap: 18px;
+    gap: 20px;
+    overflow: hidden;
 }
 
 .market-title {
-    padding-right: 18px;
-
+    flex-shrink: 0;
     color: var(--red);
-
     font-size: 11px;
-    font-weight: 900;
-
-    border-right: 1px solid var(--border);
+    font-weight: 800;
+    letter-spacing: .7px;
 }
 
 .market-items {
     display: flex;
+    align-items: center;
+    gap: 20px;
+    min-width: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
 
-    gap: 25px;
-
-    flex: 1;
-
-    overflow: hidden;
+.market-items::-webkit-scrollbar {
+    display: none;
 }
 
 .market-item {
     display: flex;
     align-items: center;
-
     gap: 7px;
-
-    font-size: 12px;
-
     white-space: nowrap;
+    font-size: 12px;
 }
 
 .market-name {
-    font-weight: 700;
+    color: var(--muted);
+    font-weight: 600;
 }
 
-.market-price {
-    font-weight: 800;
-}
-
-.market-change {
-    font-size: 11px;
+.market-value {
     font-weight: 700;
 }
 
 .market-up {
-    color: #198754;
+    color: #16834b;
 }
 
 .market-down {
-    color: #dc3545;
+    color: var(--red);
 }
 
-.market-neutral {
-    color: #777;
-}
-
+.market-loading,
 .market-updated {
-    color: #999;
-
-    font-size: 10px;
-
+    color: var(--muted);
+    font-size: 11px;
     white-space: nowrap;
 }
 
-/* =====================================================
-   HABERİSTA MANŞET
-===================================================== */
+.market-updated {
+    margin-left: auto;
+}
+
+/* =========================================================
+   HERO / MANŞET
+   ========================================================= */
 
 .hero-section {
     margin-top: 18px;
     width: min(1180px, calc(100% - 32px));
 }
 
-/* MANŞET */
+/*
+   ÖNEMLİ:
+   .hero-section artık width:100% değil.
+   Böylece container genişliğini aşmaz.
+*/
+
 .hero {
     position: relative;
     width: 100%;
-    height: 250px !important;
-    min-height: 250px !important;
-    max-height: 250px !important;
+    height: 250px;
+    min-height: 250px;
+    max-height: 250px;
     overflow: hidden;
-    border-radius: 10px;
+    border-radius: var(--radius);
     background: #15171b;
+    box-shadow: var(--shadow);
 }
 
-/* HERO MAIN */
 .hero-main {
-    position: relative;
     width: 100%;
-    height: 100% !important;
+    height: 100%;
 }
 
-/* SLIDE */
 .hero-slide-link {
     position: relative;
     display: block;
     width: 100%;
-    height: 100% !important;
+    height: 100%;
     overflow: hidden;
 }
 
-/* GÖRSEL */
 .hero-image {
     position: absolute;
     inset: 0;
-    display: block;
-    width: 100% !important;
-    height: 100% !important;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 
-/* KARARTMA */
-.hero::after {
+.hero-slide-link::after {
     content: "";
     position: absolute;
     inset: 0;
-    z-index: 1;
-    pointer-events: none;
-
     background:
         linear-gradient(
             90deg,
-            rgba(0, 0, 0, .78) 0%,
-            rgba(0, 0, 0, .40) 50%,
-            rgba(0, 0, 0, .08) 100%
-        ),
-        linear-gradient(
-            0deg,
-            rgba(0, 0, 0, .70) 0%,
-            rgba(0, 0, 0, .08) 70%,
-            transparent 100%
+            rgba(0, 0, 0, .82) 0%,
+            rgba(0, 0, 0, .58) 35%,
+            rgba(0, 0, 0, .16) 72%,
+            rgba(0, 0, 0, .04) 100%
         );
+    pointer-events: none;
 }
 
-/* İÇERİK */
 .hero-content {
     position: absolute;
-    z-index: 3;
-    left: 28px !important;
-    right: 80px !important;
-    bottom: 22px !important;
-    max-width: 650px !important;
-    color: #fff;
+    z-index: 2;
+    left: 32px;
+    bottom: 28px;
+    width: min(620px, calc(100% - 64px));
+    color: var(--white);
 }
 
-/* KATEGORİ */
 .hero-category {
-    display: inline-block;
-    padding: 4px 8px;
-    margin-bottom: 7px;
-    border-radius: 4px;
+    display: inline-flex;
+    margin-bottom: 9px;
+    padding: 5px 9px;
+    border-radius: 5px;
     background: var(--red);
-    color: #fff;
+    color: var(--white);
     font-size: 10px;
     line-height: 1;
     font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .35px;
 }
 
-/* BAŞLIK */
-.hero-content h1 {
-    max-width: 650px;
-    margin: 0 0 7px;
-    color: #fff;
-    font-size: 26px;
-    line-height: 1.12;
-    letter-spacing: -.4px;
-}
-
-/* SPOT */
-.hero-content p {
-    max-width: 520px;
+.hero h1 {
     margin: 0;
-    color: rgba(255,255,255,.82);
-    font-size: 12px;
-    line-height: 1.4;
+    font-size: clamp(24px, 3vw, 38px);
+    line-height: 1.08;
+    letter-spacing: -.8px;
+    font-weight: 800;
+    text-wrap: balance;
+}
 
+.hero p {
+    margin-top: 9px;
+    color: rgba(255, 255, 255, .86);
+    font-size: 14px;
+    line-height: 1.45;
+    max-width: 600px;
     display: -webkit-box;
-    -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
     overflow: hidden;
 }
 
-/* META */
 .hero-meta {
-    margin-top: 7px;
-    color: rgba(255,255,255,.65);
-    font-size: 10px;
+    margin-top: 9px;
+    color: rgba(255, 255, 255, .7);
+    font-size: 11px;
 }
 
-/* OKLAR */
-.hero-arrow {
-    position: absolute;
-    z-index: 5;
-
-    width: 32px !important;
-    height: 32px !important;
-
-    display: grid;
-    place-items: center;
-
-    border: 1px solid rgba(255,255,255,.45);
-    border-radius: 50%;
-
-    background: rgba(0,0,0,.35);
-    color: #fff;
-
-    font-size: 20px !important;
-    line-height: 1;
-}
-
-.hero-arrow:hover {
-    border-color: var(--red);
-    background: var(--red);
-}
-
-.hero-prev {
-    left: 10px !important;
-}
-
-.hero-next {
-    right: 10px !important;
-}
-
-/* NUMARALAR
-   HTML'de hero-bottom .hero'un dışında olduğu için
-   burada normal akışta gösteriyoruz.
-*/
-.hero-bottom {
+.hero-loading {
+    width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 7px;
-    margin-top: 9px;
+    color: #aaa;
+    font-size: 14px;
+}
+
+/* =========================================================
+   HERO CONTROLS
+   ========================================================= */
+
+.hero-bottom {
+    min-height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 8px;
 }
 
 .hero-numbers {
     display: flex;
     align-items: center;
-    gap: 4px;
+    justify-content: center;
+    gap: 6px;
 }
 
 .hero-number {
-    width: 24px !important;
-    height: 24px !important;
-    min-width: 24px !important;
-
-    display: grid;
-    place-items: center;
-
-    border: 1px solid var(--border);
+    width: 7px;
+    height: 7px;
+    padding: 0;
     border-radius: 50%;
-
-    background: #fff;
-    color: #555;
-
-    font-size: 9px !important;
-    font-weight: 800;
-}
-
-.hero-number:hover {
-    border-color: var(--red);
-    color: var(--red);
+    background: #cfd1d5;
+    transition: .2s ease;
 }
 
 .hero-number.active {
-    border-color: var(--red);
+    width: 22px;
+    border-radius: 5px;
     background: var(--red);
-    color: #fff;
 }
 
-/* YÜKLENİYOR */
-.hero-loading {
-    width: 100%;
-    height: 100%;
-    display: grid;
-    place-items: center;
-    color: #aaa;
-    font-size: 13px;
-}
-
-
-/* =====================================================
-   TABLET
-===================================================== */
-
-@media (max-width: 900px) {
-
-    .hero-section {
-        width: min(1180px, calc(100% - 32px));
-    }
-
-    .hero {
-        height: 230px !important;
-        min-height: 230px !important;
-        max-height: 230px !important;
-    }
-
-    .hero-content {
-        left: 25px !important;
-        right: 65px !important;
-        bottom: 20px !important;
-    }
-
-    .hero-content h1 {
-        font-size: 23px !important;
-    }
-}
-
-
-/* =====================================================
-   TELEFON
-===================================================== */
-
-@media (max-width: 600px) {
-
-    .hero-section {
-        width: calc(100% - 20px);
-        margin-top: 10px;
-    }
-
-    .hero {
-        height: 195px !important;
-        min-height: 195px !important;
-        max-height: 195px !important;
-        border-radius: 8px;
-    }
-
-    .hero-content {
-        left: 16px !important;
-        right: 45px !important;
-        bottom: 15px !important;
-        max-width: none !important;
-    }
-
-    .hero-category {
-        padding: 3px 6px;
-        margin-bottom: 5px;
-        font-size: 8px;
-    }
-
-    .hero-content h1 {
-        margin-bottom: 4px;
-        font-size: 18px !important;
-        line-height: 1.12;
-    }
-
-    .hero-content p {
-        display: none;
-    }
-
-    .hero-meta {
-        margin-top: 4px;
-        font-size: 8px;
-    }
-
-    .hero-arrow {
-        width: 28px !important;
-        height: 28px !important;
-        font-size: 17px !important;
-    }
-
-    .hero-prev {
-        left: 7px !important;
-    }
-
-    .hero-next {
-        right: 7px !important;
-    }
-
-    .hero-number {
-        width: 22px !important;
-        height: 22px !important;
-        min-width: 22px !important;
-        font-size: 8px !important;
-    }
-
-    .hero-bottom {
-        margin-top: 7px;
-    }
-}
-
-
-/* =====================================================
-   KÜÇÜK TELEFON
-===================================================== */
-
-@media (max-width: 380px) {
-
-    .hero {
-        height: 185px !important;
-        min-height: 185px !important;
-        max-height: 185px !important;
-    }
-
-    .hero-content h1 {
-        font-size: 17px !important;
-    }
-}
-
-
-/* =====================================================
-   ÇOK KÜÇÜK EKRAN
-===================================================== */
-
-@media (max-width: 340px) {
-
-    .hero {
-        height: 175px !important;
-        min-height: 175px !important;
-        max-height: 175px !important;
-    }
-
-    .hero-content h1 {
-        font-size: 16px !important;
-    }
-
-    .hero-meta {
-        display: none;
-    }
-}
-
-/* =====================================================
-   HERO DARK OVERLAY
-===================================================== */
-
-.hero-slider::after,
-.hero::after {
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    z-index: 1;
-
-    pointer-events: none;
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(0, 0, 0, .76) 0%,
-            rgba(0, 0, 0, .42) 45%,
-            rgba(0, 0, 0, .08) 100%
-        ),
-        linear-gradient(
-            0deg,
-            rgba(0, 0, 0, .72) 0%,
-            rgba(0, 0, 0, .08) 65%,
-            transparent 100%
-        );
-}
-
-
-/* =====================================================
-   HERO CONTENT
-===================================================== */
-
-.hero-slider .hero-content,
-.hero .hero-content {
-    position: absolute;
-
-    z-index: 3;
-
-    left: 30px !important;
-    right: 100px !important;
-    bottom: 24px !important;
-
-    width: auto !important;
-
-    max-width: 620px !important;
-
-    color: #fff;
-}
-
-
-/* CATEGORY */
-
-.hero-slider .hero-category,
-.hero .hero-category {
-    display: inline-block;
-
-    padding: 4px 8px !important;
-
-    margin-bottom: 7px !important;
-
-    border-radius: 4px;
-
-    background: var(--red);
-
-    color: #fff;
-
-    font-size: 10px !important;
-    line-height: 1;
-
-    font-weight: 800;
-}
-
-
-/* TITLE */
-
-.hero-slider .hero-content h1,
-.hero .hero-content h1 {
-    max-width: 620px;
-
-    margin: 0 0 7px !important;
-
-    color: #fff;
-
-    font-size: 26px !important;
-    line-height: 1.12 !important;
-
-    letter-spacing: -.4px;
-}
-
-
-/* SPOT */
-
-.hero-slider .hero-content p,
-.hero .hero-content p {
-    max-width: 500px;
-
-    margin: 0 !important;
-
-    color: rgba(255, 255, 255, .82);
-
-    font-size: 12px !important;
-    line-height: 1.4 !important;
-
-    display: -webkit-box;
-
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-
-    overflow: hidden;
-}
-
-
-/* META */
-
-.hero-slider .hero-meta,
-.hero .hero-meta {
-    margin-top: 7px !important;
-
-    color: rgba(255, 255, 255, .65);
-
-    font-size: 10px !important;
-}
-
-
-/* =====================================================
-   HERO ARROWS
-===================================================== */
-
-.hero-slider .hero-arrow,
-.hero .hero-arrow {
-    position: absolute;
-
-    z-index: 5;
-
-    width: 32px !important;
-    height: 32px !important;
-
-    display: grid;
-
-    place-items: center;
-
-    border: 1px solid rgba(255, 255, 255, .45);
-
+.hero-arrow {
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
-
-    background: rgba(0, 0, 0, .35);
-
-    color: #fff;
-
-    font-size: 20px !important;
-    line-height: 1;
-
-    transition:
-        background .2s ease,
-        border-color .2s ease;
-}
-
-.hero-slider .hero-arrow:hover,
-.hero .hero-arrow:hover {
-    border-color: var(--red);
-
-    background: var(--red);
-
-    color: #fff;
-}
-
-.hero-slider .hero-prev,
-.hero .hero-prev {
-    left: 10px !important;
-}
-
-.hero-slider .hero-next,
-.hero .hero-next {
-    right: 10px !important;
-}
-
-
-/* =====================================================
-   HERO NUMBERS
-===================================================== */
-
-.hero-slider .hero-bottom,
-.hero .hero-bottom {
-    position: absolute;
-
-    z-index: 6;
-
-    left: 50%;
-    bottom: -42px;
-
-    transform: translateX(-50%);
-
+    background: var(--white);
+    border: 1px solid var(--border);
+    color: var(--dark);
     display: flex;
-
     align-items: center;
     justify-content: center;
+    font-size: 23px;
+    line-height: 1;
+    transition: .2s ease;
 }
 
-.hero-slider .hero-numbers,
-.hero .hero-numbers {
-    display: flex;
-
-    gap: 4px !important;
+.hero-arrow:hover {
+    background: var(--dark);
+    border-color: var(--dark);
+    color: var(--white);
 }
 
-.hero-slider .hero-number,
-.hero .hero-number {
-    width: 24px !important;
-    height: 24px !important;
-    min-width: 24px !important;
-
-    display: grid;
-
-    place-items: center;
-
-    border: 1px solid var(--border);
-
-    border-radius: 50%;
-
-    background: #fff;
-
-    color: #555;
-
-    font-size: 9px !important;
-
-    font-weight: 800;
+#heroPrev {
+    margin-right: 12px;
 }
 
-.hero-slider .hero-number:hover,
-.hero .hero-number:hover {
-    border-color: var(--red);
-
-    color: var(--red);
+#heroNext {
+    margin-left: 12px;
 }
 
-.hero-slider .hero-number.active,
-.hero .hero-number.active {
-    border-color: var(--red);
-
-    background: var(--red);
-
-    color: #fff;
-}
-
-
-/* =====================================================
-   HERO LOADING
-===================================================== */
-
-.hero-loading {
-    width: 100%;
-    height: 100%;
-
-    display: grid;
-
-    place-items: center;
-
-    color: #aaa;
-
-    font-size: 13px;
-}
-
-
-/* =====================================================
-   SON HABERLER
-===================================================== */
+/* =========================================================
+   LATEST NEWS
+   ========================================================= */
 
 .latest-section {
-    margin-top: 32px;
-
-    padding-bottom: 70px;
+    margin-top: 20px;
+    margin-bottom: 50px;
 }
 
 .section-header {
     display: flex;
-
-    align-items: end;
+    align-items: flex-end;
     justify-content: space-between;
-
-    margin-bottom: 19px;
+    gap: 20px;
+    margin-bottom: 18px;
+    padding-bottom: 13px;
+    border-bottom: 1px solid var(--border);
 }
 
 .section-kicker {
+    display: block;
+    margin-bottom: 3px;
     color: var(--red);
-
-    font-size: 11px;
-    font-weight: 900;
-
+    font-size: 10px;
+    font-weight: 800;
     letter-spacing: 1px;
 }
 
 .section-header h2 {
-    margin-top: 2px;
-
-    font-size: 26px;
-
-    line-height: 1.15;
+    font-size: 25px;
+    line-height: 1.1;
+    letter-spacing: -.5px;
 }
 
 .all-news {
     color: var(--red);
-
     font-size: 13px;
-    font-weight: 750;
+    font-weight: 700;
+    white-space: nowrap;
 }
 
+.all-news:hover {
+    text-decoration: underline;
+}
 
-/* =====================================================
+/* =========================================================
    NEWS GRID
-===================================================== */
+   ========================================================= */
 
 .news-grid {
     display: grid;
-
-    grid-template-columns:
-        repeat(4, 1fr);
-
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 18px;
 }
 
-
-/* =====================================================
-   NEWS CARD
-===================================================== */
-
 .news-card {
-    overflow: hidden;
-
+    min-width: 0;
+    background: var(--white);
     border: 1px solid var(--border);
-
-    border-radius: 11px;
-
-    background: #fff;
-
+    border-radius: 9px;
+    overflow: hidden;
     transition:
         transform .2s ease,
-        box-shadow .2s ease;
+        box-shadow .2s ease,
+        border-color .2s ease;
 }
 
 .news-card:hover {
     transform: translateY(-3px);
-
-    box-shadow:
-        0 8px 25px rgba(0, 0, 0, .07);
+    box-shadow: var(--shadow);
+    border-color: #dddfe3;
 }
 
 .news-card-image {
-    display: block;
-
-    width: 100%;
-    height: 170px;
-
-    object-fit: cover;
+    position: relative;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: #e8e9eb;
 }
 
-.news-card-content {
-    padding: 13px 14px 16px;
+.news-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .35s ease;
+}
+
+.news-card:hover .news-card-image img {
+    transform: scale(1.035);
+}
+
+.news-card-body {
+    padding: 13px 14px 15px;
 }
 
 .news-card-category {
     display: inline-block;
-
-    margin-bottom: 6px;
-
+    margin-bottom: 7px;
     color: var(--red);
-
     font-size: 10px;
-
-    font-weight: 900;
-
+    font-weight: 800;
     text-transform: uppercase;
 }
 
-.news-card h3 {
+.news-card-title {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
     font-size: 16px;
+    line-height: 1.28;
+    font-weight: 750;
+}
 
-    line-height: 1.3;
-
-    letter-spacing: -.2px;
+.news-card-spot {
+    margin-top: 7px;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .news-card-meta {
-    margin-top: 9px;
-
-    color: #999;
-
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 11px;
+    color: var(--muted);
     font-size: 10px;
 }
 
-
-/* =====================================================
+/* =========================================================
    SEARCH RESULT
-===================================================== */
+   ========================================================= */
 
 .search-result-info {
+    display: none;
     margin-bottom: 15px;
-
-    color: #777;
-
+    padding: 10px 13px;
+    border-left: 3px solid var(--red);
+    background: var(--white);
+    border-radius: 5px;
+    color: var(--muted);
     font-size: 13px;
 }
 
+.search-result-info.active {
+    display: block;
+}
 
-/* =====================================================
+/* =========================================================
    COOKIE
-===================================================== */
+   ========================================================= */
 
 .cookie-box {
     position: fixed;
-
     left: 20px;
     bottom: 20px;
-
     z-index: 2000;
-
     width: min(420px, calc(100% - 40px));
-
     display: flex;
-
     align-items: center;
-
-    gap: 15px;
-
-    padding: 16px;
-
+    justify-content: space-between;
+    gap: 16px;
+    padding: 15px 16px;
+    background: var(--white);
     border: 1px solid var(--border);
-
-    border-radius: 12px;
-
-    background: #fff;
-
-    box-shadow:
-        0 10px 35px rgba(0, 0, 0, .12);
+    border-radius: 10px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, .14);
 }
 
 .cookie-box strong {
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .cookie-box p {
     margin-top: 3px;
-
-    color: #777;
-
+    color: var(--muted);
     font-size: 11px;
+    line-height: 1.35;
 }
 
 .cookie-box button {
     flex-shrink: 0;
-
-    margin-left: auto;
-
     padding: 8px 13px;
-
-    border: 0;
-
-    border-radius: 7px;
-
+    border-radius: 6px;
     background: var(--red);
-
-    color: #fff;
-
+    color: var(--white);
     font-size: 12px;
-
-    font-weight: 800;
+    font-weight: 700;
 }
 
-
-/* =====================================================
-   MARKET LOADING
-===================================================== */
-
-.market-loading {
-    height: 100%;
-
-    display: grid;
-
-    place-items: center;
-
-    color: #aaa;
-
-    font-size: 13px;
+.cookie-box button:hover {
+    background: var(--red-dark);
 }
 
-
-/* =====================================================
+/* =========================================================
    TABLET
-===================================================== */
+   ========================================================= */
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
+
+    .desktop-nav {
+        gap: 0;
+    }
+
+    .desktop-nav a {
+        padding-left: 7px;
+        padding-right: 7px;
+        font-size: 13px;
+    }
+
+    .news-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .hero {
+        height: 230px;
+        min-height: 230px;
+        max-height: 230px;
+    }
+
+    .hero-content {
+        left: 26px;
+        bottom: 24px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+    .container,
+    .hero-section {
+        width: calc(100% - 24px);
+    }
+
+    .header-inner {
+        height: 62px;
+        gap: 10px;
+    }
+
+    .menu-btn {
+        display: flex;
+        flex-shrink: 0;
+    }
 
     .desktop-nav {
         display: none;
     }
 
-    .menu-btn {
-        display: block;
+    .logo {
+        font-size: 21px;
+        gap: 7px;
     }
 
-    .header-inner {
+    .logo img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .header-actions {
+        margin-left: auto;
+        gap: 2px;
+    }
+
+    .notification-btn {
+        display: none;
+    }
+
+    .breaking-inner {
+        min-height: 37px;
         gap: 10px;
     }
 
-    .logo {
-        flex: 1;
+    .breaking-label {
+        font-size: 9px;
     }
 
-
-    /* NEWS */
-
-    .news-grid {
-        grid-template-columns:
-            repeat(2, 1fr);
+    .breaking-track a {
+        font-size: 11px;
     }
 
-
-    /* HERO */
-
-    .hero-slider,
-    .hero {
-        height: 230px !important;
-        min-height: 230px !important;
-        max-height: 230px !important;
+    .market-inner {
+        min-height: 39px;
+        gap: 12px;
     }
 
-    .hero-slider .hero-main,
-    .hero .hero-main,
-    .hero-slider .hero-slide-link,
-    .hero .hero-slide-link,
-    .hero-slider .hero-image,
-    .hero .hero-image {
-        height: 230px !important;
-        min-height: 230px !important;
-        max-height: 230px !important;
+    .market-items {
+        gap: 14px;
     }
-
-    .hero-slider .hero-content,
-    .hero .hero-content {
-        left: 25px !important;
-        right: 70px !important;
-        bottom: 20px !important;
-    }
-
-    .hero-slider .hero-content h1,
-    .hero .hero-content h1 {
-        font-size: 23px !important;
-    }
-
-
-    /* MARKET */
 
     .market-updated {
         display: none;
     }
-}
 
-
-/* =====================================================
-   TELEFON
-===================================================== */
-
-@media (max-width: 600px) {
-
-    .container {
-        width: calc(100% - 20px);
-    }
-
-
-    /* HEADER */
-
-    .header-top,
-    .header-inner {
-        height: 60px;
-    }
-
-    .logo {
-        font-size: 19px;
-    }
-
-    .logo img {
-        width: 38px;
-        height: 38px;
-    }
-
-    .notification-btn,
-    .icon-btn {
-        width: 37px;
-        height: 37px;
-    }
-
-
-    /* BREAKING */
-
-    .breaking-label {
-        min-width: 105px;
-
-        font-size: 10px;
-    }
-
-    .breaking-link {
-        font-size: 11px;
-    }
-
-
-    /* MARKET */
-
-    .market-inner {
-        gap: 10px;
-    }
-
-    .market-title {
-        padding-right: 10px;
-    }
-
-    .market-items {
-        gap: 18px;
-    }
-
-
-    /* HERO */
+    /* Hero */
 
     .hero-section {
-        margin-top: 10px;
+        margin-top: 12px;
     }
 
-    .hero-slider,
     .hero {
-        height: 195px !important;
-        min-height: 195px !important;
-        max-height: 195px !important;
-
+        height: 195px;
+        min-height: 195px;
+        max-height: 195px;
         border-radius: 8px;
     }
 
-    .hero-slider .hero-main,
-    .hero .hero-main,
-    .hero-slider .hero-slide-link,
-    .hero .hero-slide-link,
-    .hero-slider .hero-image,
-    .hero .hero-image {
-        height: 195px !important;
-        min-height: 195px !important;
-        max-height: 195px !important;
+    .hero-slide-link::after {
+        background:
+            linear-gradient(
+                90deg,
+                rgba(0, 0, 0, .82) 0%,
+                rgba(0, 0, 0, .48) 60%,
+                rgba(0, 0, 0, .12) 100%
+            );
     }
 
-    .hero-slider .hero-content,
-    .hero .hero-content {
-        left: 16px !important;
-        right: 45px !important;
-        bottom: 16px !important;
-
-        max-width: none !important;
+    .hero-content {
+        left: 18px;
+        bottom: 18px;
+        width: calc(100% - 36px);
     }
 
-    .hero-slider .hero-category,
-    .hero .hero-category {
-        padding: 3px 6px !important;
-
-        margin-bottom: 5px !important;
-
-        font-size: 8px !important;
+    .hero-category {
+        margin-bottom: 6px;
+        padding: 4px 7px;
+        font-size: 9px;
     }
 
-    .hero-slider .hero-content h1,
-    .hero .hero-content h1 {
-        margin-bottom: 4px !important;
-
-        font-size: 18px !important;
-        line-height: 1.12 !important;
-    }
-
-    .hero-slider .hero-content p,
-    .hero .hero-content p {
-        display: none !important;
-    }
-
-    .hero-slider .hero-meta,
-    .hero .hero-meta {
-        margin-top: 4px !important;
-
-        font-size: 8px !important;
-    }
-
-
-    /* HERO ARROWS */
-
-    .hero-slider .hero-arrow,
-    .hero .hero-arrow {
-        width: 28px !important;
-        height: 28px !important;
-
-        font-size: 17px !important;
-    }
-
-    .hero-slider .hero-prev,
-    .hero .hero-prev {
-        left: 7px !important;
-    }
-
-    .hero-slider .hero-next,
-    .hero .hero-next {
-        right: 7px !important;
-    }
-
-
-    /* HERO NUMBERS */
-
-    .hero-slider .hero-number,
-    .hero .hero-number {
-        width: 22px !important;
-        height: 22px !important;
-        min-width: 22px !important;
-
-        font-size: 8px !important;
-    }
-
-
-    /* LATEST */
-
-    .latest-section {
-        margin-top: 27px;
-    }
-
-    .section-header h2 {
+    .hero h1 {
         font-size: 22px;
+        line-height: 1.08;
+        letter-spacing: -.4px;
     }
 
-
-    /* NEWS */
-
-    .news-grid {
-        grid-template-columns: 1fr;
-
-        gap: 12px;
+    .hero p {
+        margin-top: 6px;
+        font-size: 11px;
+        -webkit-line-clamp: 2;
     }
 
-    .news-card {
-        display: grid;
-
-        grid-template-columns:
-            125px 1fr;
+    .hero-meta {
+        margin-top: 6px;
+        font-size: 9px;
     }
 
-    .news-card-image {
-        width: 125px;
-        height: 125px;
-    }
-
-    .news-card-content {
-        padding: 11px;
-    }
-
-    .news-card h3 {
-        font-size: 14px;
-    }
-
-    .news-card-meta {
+    .hero-bottom {
+        min-height: 36px;
         margin-top: 5px;
     }
 
+    .hero-arrow {
+        width: 29px;
+        height: 29px;
+        font-size: 20px;
+    }
 
-    /* COOKIE */
+    #heroPrev {
+        margin-right: 8px;
+    }
+
+    #heroNext {
+        margin-left: 8px;
+    }
+
+    /* Latest */
+
+    .latest-section {
+        margin-top: 12px;
+        margin-bottom: 35px;
+    }
+
+    .section-header {
+        align-items: center;
+        margin-bottom: 13px;
+        padding-bottom: 10px;
+    }
+
+    .section-header h2 {
+        font-size: 21px;
+    }
+
+    .all-news {
+        font-size: 11px;
+    }
+
+    .news-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .news-card-body {
+        padding: 10px 11px 12px;
+    }
+
+    .news-card-category {
+        margin-bottom: 5px;
+        font-size: 8px;
+    }
+
+    .news-card-title {
+        font-size: 13px;
+        line-height: 1.25;
+        -webkit-line-clamp: 3;
+    }
+
+    .news-card-spot {
+        font-size: 10px;
+        margin-top: 5px;
+    }
+
+    .news-card-meta {
+        margin-top: 8px;
+        font-size: 8px;
+    }
 
     .cookie-box {
-        left: 10px;
-        bottom: 10px;
-
-        width: calc(100% - 20px);
+        left: 12px;
+        bottom: 12px;
+        width: calc(100% - 24px);
+        padding: 12px;
     }
 }
 
+/* =========================================================
+   SMALL PHONE
+   ========================================================= */
 
-/* =====================================================
-   KÜÇÜK TELEFON
-===================================================== */
+@media (max-width: 420px) {
 
-@media (max-width: 380px) {
-
-    .hero-slider,
     .hero {
-        height: 185px !important;
-        min-height: 185px !important;
-        max-height: 185px !important;
+        height: 180px;
+        min-height: 180px;
+        max-height: 180px;
     }
 
-    .hero-slider .hero-main,
-    .hero .hero-main,
-    .hero-slider .hero-slide-link,
-    .hero .hero-slide-link,
-    .hero-slider .hero-image,
-    .hero .hero-image {
-        height: 185px !important;
-        min-height: 185px !important;
-        max-height: 185px !important;
+    .hero h1 {
+        font-size: 20px;
     }
 
-    .hero-slider .hero-content h1,
-    .hero .hero-content h1 {
-        font-size: 17px !important;
-    }
-}
-
-
-/* =====================================================
-   ÇOK KÜÇÜK EKRAN
-===================================================== */
-
-@media (max-width: 340px) {
-
-    .hero-slider,
-    .hero {
-        height: 175px !important;
-        min-height: 175px !important;
-        max-height: 175px !important;
-    }
-
-    .hero-slider .hero-main,
-    .hero .hero-main,
-    .hero-slider .hero-slide-link,
-    .hero .hero-slide-link,
-    .hero-slider .hero-image,
-    .hero .hero-image {
-        height: 175px !important;
-        min-height: 175px !important;
-        max-height: 175px !important;
-    }
-
-    .hero-slider .hero-content h1,
-    .hero .hero-content h1 {
-        font-size: 16px !important;
-    }
-
-    .hero-slider .hero-meta,
-    .hero .hero-meta {
+    .hero p {
         display: none;
+    }
+
+    .hero-content {
+        bottom: 15px;
+    }
+
+    .news-grid {
+        gap: 8px;
+    }
+
+    .news-card-body {
+        padding: 9px;
+    }
+
+    .news-card-title {
+        font-size: 12px;
+    }
+
+    .section-header h2 {
+        font-size: 19px;
+    }
+}
+
+/* =========================================================
+   VERY SMALL PHONE
+   ========================================================= */
+
+@media (max-width: 350px) {
+
+    .container,
+    .hero-section {
+        width: calc(100% - 18px);
+    }
+
+    .hero {
+        height: 165px;
+        min-height: 165px;
+        max-height: 165px;
+    }
+
+    .hero h1 {
+        font-size: 18px;
+    }
+
+    .hero-category {
+        font-size: 8px;
+    }
+
+    .news-card-title {
+        font-size: 11px;
     }
 }
