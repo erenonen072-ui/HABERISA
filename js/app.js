@@ -57,31 +57,43 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* =====================================================
-       SON DAKİKA
-       ===================================================== */
+/* =====================================================
+   SON DAKİKA - KAYAN BANT
+   ===================================================== */
 
-    const breakingContainer =
-        document.getElementById("breakingNews");
+const breakingContainer =
+    document.getElementById("breakingNews");
 
-    if (breakingContainer) {
+if (breakingContainer) {
 
-        breakingContainer.innerHTML = "";
+    const sonDakikaHaberleri =
+        haberListesi.slice(0, 5);
 
-        haberListesi
-            .slice(0, 5)
-            .forEach(haber => {
+    const haberLinkleri =
+        sonDakikaHaberleri.map(haber => {
 
-                const link = document.createElement("a");
+            return `
+                <a
+                    href="${haberUrl(haber)}"
+                    title="${haberBaslik(haber)}"
+                >
+                    ${haberBaslik(haber)}
+                </a>
+            `;
 
-                link.href = haberUrl(haber);
-                link.textContent = haberBaslik(haber);
-                link.title = haberBaslik(haber);
+        }).join("");
 
-                breakingContainer.appendChild(link);
-            });
-    }
-
+    /*
+     * İki kez ekliyoruz ki bant kesintisiz
+     * şekilde dönsün.
+     */
+    breakingContainer.innerHTML = `
+        <div class="breaking-news-track">
+            ${haberLinkleri}
+            ${haberLinkleri}
+        </div>
+    `;
+}
 
     /* =====================================================
        MANŞET - İLK 20 HABER
