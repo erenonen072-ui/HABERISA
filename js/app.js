@@ -27,7 +27,9 @@
     ================================================== */
 
     const $ = selector => document.querySelector(selector);
-    const $$ = selector => [...document.querySelectorAll(selector)];
+
+    const $$ = selector =>
+        [...document.querySelectorAll(selector)];
 
     const body = document.body;
 
@@ -45,14 +47,10 @@
 
         heroMain: $("#heroMain"),
         heroSide: $("#heroSide"),
-
         newsGrid: $("#newsGrid"),
         popularNews: $("#popularNews"),
-
         breakingContent: $("#breakingContent"),
-
         categoryButtons: $("#categoryButtons"),
-
         resultCount: $("#resultCount"),
 
         detailOverlay: $("#detailOverlay"),
@@ -67,7 +65,10 @@
 
     function escapeHTML(value) {
 
-        if (value === undefined || value === null) {
+        if (
+            value === undefined ||
+            value === null
+        ) {
             return "";
         }
 
@@ -86,35 +87,49 @@
 
     function getCurrentDate() {
 
-        return new Intl.DateTimeFormat("tr-TR", {
-            weekday: "long",
-            day: "numeric",
-            month: "long",
-            year: "numeric"
-        }).format(new Date());
+        return new Intl.DateTimeFormat(
+            "tr-TR",
+            {
+                weekday: "long",
+                day: "numeric",
+                month: "long",
+                year: "numeric"
+            }
+        ).format(new Date());
 
     }
 
 
     function addLiveClock() {
 
-        const clock = document.querySelector(".site-clock");
+        const clock =
+            document.querySelector(".site-clock");
 
-        if (!clock) return;
+        if (!clock) {
+            return;
+        }
 
         const update = () => {
 
-            clock.textContent = new Intl.DateTimeFormat("tr-TR", {
-                hour: "2-digit",
-                minute: "2-digit",
-                second: "2-digit"
-            }).format(new Date());
+            clock.textContent =
+                new Intl.DateTimeFormat(
+                    "tr-TR",
+                    {
+                        hour: "2-digit",
+                        minute: "2-digit",
+                        second: "2-digit"
+                    }
+                ).format(new Date());
 
         };
 
         update();
 
-        setInterval(update, 1000);
+        setInterval(
+            update,
+            1000
+        );
+
     }
 
 
@@ -124,29 +139,59 @@
 
     function initHeaderScroll() {
 
-        if (!elements.header) return;
+        if (!elements.header) {
+            return;
+        }
 
         let lastScroll = 0;
 
-        window.addEventListener("scroll", () => {
+        window.addEventListener(
+            "scroll",
+            () => {
 
-            const current = window.scrollY;
+                const current =
+                    window.scrollY;
 
-            if (current > 20) {
-                elements.header.classList.add("scrolled");
-            } else {
-                elements.header.classList.remove("scrolled");
+                if (current > 20) {
+
+                    elements.header.classList.add(
+                        "scrolled"
+                    );
+
+                } else {
+
+                    elements.header.classList.remove(
+                        "scrolled"
+                    );
+
+                }
+
+
+                if (
+                    current > lastScroll &&
+                    current > 180
+                ) {
+
+                    elements.header.classList.add(
+                        "header-hidden"
+                    );
+
+                } else {
+
+                    elements.header.classList.remove(
+                        "header-hidden"
+                    );
+
+                }
+
+
+                lastScroll = current;
+
+            },
+            {
+                passive: true
             }
-
-            if (current > lastScroll && current > 180) {
-                elements.header.classList.add("header-hidden");
-            } else {
-                elements.header.classList.remove("header-hidden");
-            }
-
-            lastScroll = current;
-
-        }, { passive: true });
+        );
 
     }
 
@@ -157,54 +202,99 @@
 
     function initMobileMenu() {
 
-        if (!elements.menuBtn || !elements.mobileMenu) return;
-
-        elements.menuBtn.addEventListener("click", event => {
-
-            event.stopPropagation();
-
-            const opened =
-                elements.mobileMenu.classList.toggle("open");
-
-            elements.menuBtn.classList.toggle("active", opened);
-
-            elements.menuBtn.setAttribute(
-                "aria-expanded",
-                String(opened)
-            );
-
-            body.classList.toggle("menu-open", opened);
-
-        });
+        if (
+            !elements.menuBtn ||
+            !elements.mobileMenu
+        ) {
+            return;
+        }
 
 
-        document.addEventListener("click", event => {
+        elements.menuBtn.addEventListener(
+            "click",
+            event => {
 
-            if (
-                !elements.mobileMenu.contains(event.target) &&
-                !elements.menuBtn.contains(event.target)
-            ) {
+                event.stopPropagation();
 
-                elements.mobileMenu.classList.remove("open");
-                elements.menuBtn.classList.remove("active");
-                body.classList.remove("menu-open");
+                const opened =
+                    elements.mobileMenu.classList.toggle(
+                        "open"
+                    );
 
-            }
+                elements.menuBtn.classList.toggle(
+                    "active",
+                    opened
+                );
 
-        });
+                elements.menuBtn.setAttribute(
+                    "aria-expanded",
+                    String(opened)
+                );
 
-
-        window.addEventListener("resize", () => {
-
-            if (window.innerWidth > 900) {
-
-                elements.mobileMenu.classList.remove("open");
-                elements.menuBtn.classList.remove("active");
-                body.classList.remove("menu-open");
+                body.classList.toggle(
+                    "menu-open",
+                    opened
+                );
 
             }
+        );
 
-        });
+
+        document.addEventListener(
+            "click",
+            event => {
+
+                if (
+                    !elements.mobileMenu.contains(
+                        event.target
+                    ) &&
+                    !elements.menuBtn.contains(
+                        event.target
+                    )
+                ) {
+
+                    elements.mobileMenu.classList.remove(
+                        "open"
+                    );
+
+                    elements.menuBtn.classList.remove(
+                        "active"
+                    );
+
+                    body.classList.remove(
+                        "menu-open"
+                    );
+
+                }
+
+            }
+        );
+
+
+        window.addEventListener(
+            "resize",
+            () => {
+
+                if (
+                    window.innerWidth > 900
+                ) {
+
+                    elements.mobileMenu.classList.remove(
+                        "open"
+                    );
+
+                    elements.menuBtn.classList.remove(
+                        "active"
+                    );
+
+                    body.classList.remove(
+                        "menu-open"
+                    );
+
+                }
+
+            }
+        );
 
     }
 
@@ -215,81 +305,125 @@
 
     function initSearch() {
 
-        if (!elements.searchBtn || !elements.searchPanel) return;
-
-        elements.searchBtn.addEventListener("click", () => {
-
-            const opened =
-                elements.searchPanel.classList.toggle("open");
-
-            if (opened) {
-
-                setTimeout(() => {
-
-                    elements.searchInput?.focus();
-
-                }, 100);
-
-            }
-
-        });
+        if (
+            !elements.searchBtn ||
+            !elements.searchPanel
+        ) {
+            return;
+        }
 
 
-        elements.closeSearch?.addEventListener("click", () => {
+        elements.searchBtn.addEventListener(
+            "click",
+            () => {
 
-            closeSearch();
+                const opened =
+                    elements.searchPanel.classList.toggle(
+                        "open"
+                    );
 
-        });
+                if (opened) {
 
+                    setTimeout(
+                        () => {
 
-        document.addEventListener("keydown", event => {
+                            elements.searchInput?.focus();
 
-            if (
-                (event.ctrlKey || event.metaKey) &&
-                event.key.toLowerCase() === "k"
-            ) {
+                        },
+                        100
+                    );
 
-                event.preventDefault();
-
-                elements.searchPanel.classList.add("open");
-
-                setTimeout(() => {
-                    elements.searchInput?.focus();
-                }, 100);
+                }
 
             }
+        );
 
-            if (event.key === "Escape") {
+
+        elements.closeSearch?.addEventListener(
+            "click",
+            () => {
 
                 closeSearch();
 
             }
+        );
 
-        });
+
+        document.addEventListener(
+            "keydown",
+            event => {
+
+                if (
+                    (event.ctrlKey ||
+                        event.metaKey) &&
+                    event.key.toLowerCase() === "k"
+                ) {
+
+                    event.preventDefault();
+
+                    elements.searchPanel.classList.add(
+                        "open"
+                    );
+
+                    setTimeout(
+                        () => {
+
+                            elements.searchInput?.focus();
+
+                        },
+                        100
+                    );
+
+                }
 
 
-        document.addEventListener("click", event => {
+                if (
+                    event.key === "Escape"
+                ) {
 
-            if (
-                elements.searchPanel.classList.contains("open") &&
-                !elements.searchPanel.contains(event.target) &&
-                !elements.searchBtn.contains(event.target)
-            ) {
+                    closeSearch();
 
-                closeSearch();
+                }
 
             }
+        );
 
-        });
+
+        document.addEventListener(
+            "click",
+            event => {
+
+                if (
+                    elements.searchPanel.classList.contains(
+                        "open"
+                    ) &&
+                    !elements.searchPanel.contains(
+                        event.target
+                    ) &&
+                    !elements.searchBtn.contains(
+                        event.target
+                    )
+                ) {
+
+                    closeSearch();
+
+                }
+
+            }
+        );
 
     }
 
 
     function closeSearch() {
 
-        if (!elements.searchPanel) return;
+        if (!elements.searchPanel) {
+            return;
+        }
 
-        elements.searchPanel.classList.remove("open");
+        elements.searchPanel.classList.remove(
+            "open"
+        );
 
     }
 
@@ -300,51 +434,86 @@
 
     function initAdvancedSearch() {
 
-        if (!elements.searchInput || typeof haberler === "undefined") {
+        if (
+            !elements.searchInput ||
+            typeof haberler === "undefined"
+        ) {
             return;
         }
 
         let timer = null;
 
-        elements.searchInput.addEventListener("input", () => {
 
-            clearTimeout(timer);
+        elements.searchInput.addEventListener(
+            "input",
+            () => {
 
-            timer = setTimeout(() => {
+                clearTimeout(timer);
 
-                const query =
-                    elements.searchInput.value
-                        .trim()
-                        .toLocaleLowerCase("tr-TR");
+                timer = setTimeout(
+                    () => {
 
-                if (!query) {
-
-                    if (typeof renderNews === "function") {
-                        renderNews(haberler);
-                    }
-
-                    return;
-
-                }
-
-                const results = haberler.filter(haber => {
-
-                    const content =
-                        `${haber.baslik || ""} ${haber.spot || ""} ${haber.kategori || ""} ${haber.icerik || ""}`
-                            .toLocaleLowerCase("tr-TR");
-
-                    return content.includes(query);
-
-                });
+                        const query =
+                            elements.searchInput.value
+                                .trim()
+                                .toLocaleLowerCase(
+                                    "tr-TR"
+                                );
 
 
-                if (typeof renderNews === "function") {
-                    renderNews(results);
-                }
+                        if (!query) {
 
-            }, CONFIG.searchDelay);
+                            if (
+                                typeof renderNews ===
+                                "function"
+                            ) {
 
-        });
+                                renderNews(
+                                    haberler
+                                );
+
+                            }
+
+                            return;
+
+                        }
+
+
+                        const results =
+                            haberler.filter(
+                                haber => {
+
+                                    const content =
+                                        `${haber.baslik || ""} ${haber.spot || ""} ${haber.kategori || ""} ${haber.icerik || ""}`
+                                            .toLocaleLowerCase(
+                                                "tr-TR"
+                                            );
+
+                                    return content.includes(
+                                        query
+                                    );
+
+                                }
+                            );
+
+
+                        if (
+                            typeof renderNews ===
+                            "function"
+                        ) {
+
+                            renderNews(
+                                results
+                            );
+
+                        }
+
+                    },
+                    CONFIG.searchDelay
+                );
+
+            }
+        );
 
     }
 
@@ -355,50 +524,98 @@
 
     function initTheme() {
 
-        const saved =
-            localStorage.getItem(CONFIG.storageTheme);
+        try {
 
-        if (saved === "dark") {
-            body.classList.add("dark");
+            const saved =
+                localStorage.getItem(
+                    CONFIG.storageTheme
+                );
+
+            if (
+                saved === "dark"
+            ) {
+
+                body.classList.add(
+                    "dark"
+                );
+
+            }
+
+        } catch (error) {
+
+            console.warn(
+                "Tema ayarı okunamadı:",
+                error
+            );
+
         }
 
 
-        elements.themeBtn?.addEventListener("click", () => {
+        elements.themeBtn?.addEventListener(
+            "click",
+            () => {
 
-            const dark =
-                body.classList.toggle("dark");
+                const dark =
+                    body.classList.toggle(
+                        "dark"
+                    );
 
-            localStorage.setItem(
-                CONFIG.storageTheme,
-                dark ? "dark" : "light"
-            );
 
-            animateThemeButton();
+                try {
 
-        });
+                    localStorage.setItem(
+                        CONFIG.storageTheme,
+                        dark
+                            ? "dark"
+                            : "light"
+                    );
+
+                } catch (error) {
+
+                    console.warn(
+                        "Tema kaydedilemedi:",
+                        error
+                    );
+
+                }
+
+
+                animateThemeButton();
+
+            }
+        );
 
     }
 
 
     function animateThemeButton() {
 
-        if (!elements.themeBtn) return;
+        if (
+            !elements.themeBtn
+        ) {
+            return;
+        }
+
 
         elements.themeBtn.animate(
             [
                 {
-                    transform: "rotate(0deg) scale(1)"
+                    transform:
+                        "rotate(0deg) scale(1)"
                 },
                 {
-                    transform: "rotate(180deg) scale(.8)"
+                    transform:
+                        "rotate(180deg) scale(.8)"
                 },
                 {
-                    transform: "rotate(360deg) scale(1)"
+                    transform:
+                        "rotate(360deg) scale(1)"
                 }
             ],
             {
                 duration: 450,
-                easing: "cubic-bezier(.2,.8,.2,1)"
+                easing:
+                    "cubic-bezier(.2,.8,.2,1)"
             }
         );
 
@@ -411,40 +628,67 @@
 
     function initCategories() {
 
-        $$("[data-category]").forEach(button => {
+        $$(
+            "[data-category]"
+        ).forEach(
+            button => {
 
-            button.addEventListener("click", event => {
+                button.addEventListener(
+                    "click",
+                    event => {
 
-                const category =
-                    button.dataset.category;
+                        const category =
+                            button.dataset.category;
 
-                if (!category) return;
+                        if (!category) {
+                            return;
+                        }
 
-                event.preventDefault();
+                        event.preventDefault();
 
-                if (typeof filterCategory === "function") {
-                    filterCategory(category);
-                }
 
-                updateActiveCategory(category);
+                        if (
+                            typeof filterCategory ===
+                            "function"
+                        ) {
 
-            });
+                            filterCategory(
+                                category
+                            );
 
-        });
+                        }
+
+
+                        updateActiveCategory(
+                            category
+                        );
+
+                    }
+                );
+
+            }
+        );
 
     }
 
 
-    function updateActiveCategory(category) {
+    function updateActiveCategory(
+        category
+    ) {
 
-        $$("[data-category]").forEach(item => {
+        $$(
+            "[data-category]"
+        ).forEach(
+            item => {
 
-            item.classList.toggle(
-                "active",
-                item.dataset.category === category
-            );
+                item.classList.toggle(
+                    "active",
+                    item.dataset.category ===
+                        category
+                );
 
-        });
+            }
+        );
 
     }
 
@@ -455,30 +699,55 @@
 
     function initNewsCards() {
 
-        document.addEventListener("click", event => {
+        document.addEventListener(
+            "click",
+            event => {
 
-            const card =
-                event.target.closest("[data-id]");
+                const card =
+                    event.target.closest(
+                        "[data-id]"
+                    );
 
-            if (!card) return;
+                if (!card) {
+                    return;
+                }
 
-            const id = Number(card.dataset.id);
 
-            if (!id) return;
+                const id =
+                    Number(
+                        card.dataset.id
+                    );
 
-            if (
-                card.classList.contains("news-card") ||
-                card.classList.contains("side-story") ||
-                card.classList.contains("popular-item")
-            ) {
+                if (!id) {
+                    return;
+                }
 
-                if (typeof openDetail === "function") {
-                    openDetail(id);
+
+                if (
+                    card.classList.contains(
+                        "news-card"
+                    ) ||
+                    card.classList.contains(
+                        "side-story"
+                    ) ||
+                    card.classList.contains(
+                        "popular-item"
+                    )
+                ) {
+
+                    if (
+                        typeof openDetail ===
+                        "function"
+                    ) {
+
+                        openDetail(id);
+
+                    }
+
                 }
 
             }
-
-        });
+        );
 
     }
 
@@ -489,7 +758,12 @@
 
     function initDetail() {
 
-        if (!elements.detailOverlay) return;
+        if (
+            !elements.detailOverlay
+        ) {
+            return;
+        }
+
 
         elements.detailClose?.addEventListener(
             "click",
@@ -502,38 +776,55 @@
             event => {
 
                 if (
-                    event.target === elements.detailOverlay
+                    event.target ===
+                    elements.detailOverlay
                 ) {
+
                     closeDetail();
+
                 }
 
             }
         );
 
 
-        document.addEventListener("keydown", event => {
+        document.addEventListener(
+            "keydown",
+            event => {
 
-            if (
-                event.key === "Escape" &&
-                elements.detailOverlay.classList.contains("open")
-            ) {
+                if (
+                    event.key === "Escape" &&
+                    elements.detailOverlay.classList.contains(
+                        "open"
+                    )
+                ) {
 
-                closeDetail();
+                    closeDetail();
+
+                }
 
             }
-
-        });
+        );
 
     }
 
 
     function closeDetail() {
 
-        if (!elements.detailOverlay) return;
+        if (
+            !elements.detailOverlay
+        ) {
+            return;
+        }
 
-        elements.detailOverlay.classList.remove("open");
 
-        body.classList.remove("detail-open");
+        elements.detailOverlay.classList.remove(
+            "open"
+        );
+
+        body.classList.remove(
+            "detail-open"
+        );
 
         body.style.overflow = "";
 
@@ -546,107 +837,220 @@
 
     function initReadingProgress() {
 
-        const progress = document.createElement("div");
+        /*
+           Aynı element ikinci kez eklenmesin.
+        */
 
-        progress.className = "reading-progress";
+        let progress =
+            document.querySelector(
+                ".reading-progress"
+            );
 
-        document.body.appendChild(progress);
 
-        window.addEventListener("scroll", () => {
+        if (!progress) {
 
-            const scrollTop = window.scrollY;
+            progress =
+                document.createElement(
+                    "div"
+                );
+
+            progress.className =
+                "reading-progress";
+
+            document.body.appendChild(
+                progress
+            );
+
+        }
+
+
+        const updateProgress = () => {
+
+            const scrollTop =
+                window.scrollY;
 
             const height =
-                document.documentElement.scrollHeight -
+                document.documentElement
+                    .scrollHeight -
                 window.innerHeight;
 
             const percentage =
                 height > 0
-                    ? (scrollTop / height) * 100
+                    ? (
+                        scrollTop /
+                        height
+                    ) * 100
                     : 0;
 
             progress.style.width =
-                `${Math.min(100, Math.max(0, percentage))}%`;
+                `${Math.min(
+                    100,
+                    Math.max(
+                        0,
+                        percentage
+                    )
+                )}%`;
 
-        }, { passive: true });
+        };
+
+
+        window.addEventListener(
+            "scroll",
+            updateProgress,
+            {
+                passive: true
+            }
+        );
+
+
+        updateProgress();
 
     }
 
 
     /* ==================================================
        SCROLL REVEAL
+       HATA DÜZELTİLDİ
     ================================================== */
 
     function initScrollReveal() {
 
         if (
-            !("IntersectionObserver" in window)
+            !(
+                "IntersectionObserver" in
+                window
+            )
         ) {
             return;
         }
+
 
         const observer =
             new IntersectionObserver(
                 entries => {
 
-                    entries.forEach(entry => {
+                    entries.forEach(
+                        entry => {
 
-                        if (!entry.isIntersecting) {
-                            return;
+                            if (
+                                !entry.isIntersecting
+                            ) {
+                                return;
+                            }
+
+
+                            entry.target.classList.add(
+                                "visible"
+                            );
+
+
+                            observer.unobserve(
+                                entry.target
+                            );
+
                         }
-
-                        entry.target.classList.add(
-                            "visible"
-                        );
-
-                        observer.unobserve(
-                            entry.target
-                        );
-
-                    });
+                    );
 
                 },
                 {
-                    threshold: .08,
-                    rootMargin: "0px 0px -40px"
+                    threshold: 0.08,
+                    rootMargin:
+                        "0px 0px -40px"
                 }
             );
 
 
+        /*
+           ÖNEMLİ:
+           Burada $() DEĞİL $$() kullanıyoruz.
+           Çünkü birden fazla element olabilir.
+        */
+
         const observe = () => {
 
-            $(
-                ".news-card, .sidebar-card, .section-heading"
-            ).forEach(element => {
+            const elementsToObserve =
+                $$(
+                    ".news-card, .sidebar-card, .section-heading"
+                );
 
-                if (
-                    !element.classList.contains("reveal-ready")
-                ) {
 
-                    element.classList.add(
-                        "reveal-ready"
-                    );
+            /*
+               Sayfada bu elementlerden hiçbiri
+               yoksa hata verme.
+            */
 
-                    observer.observe(element);
+            if (
+                !elementsToObserve.length
+            ) {
+                return;
+            }
+
+
+            elementsToObserve.forEach(
+                element => {
+
+                    if (
+                        !element.classList.contains(
+                            "reveal-ready"
+                        )
+                    ) {
+
+                        element.classList.add(
+                            "reveal-ready"
+                        );
+
+                        observer.observe(
+                            element
+                        );
+
+                    }
 
                 }
-
-            });
+            );
 
         };
 
+
+        /*
+           İlk tarama
+        */
+
         observe();
 
-        const mutation =
-            new MutationObserver(observe);
 
-        mutation.observe(
-            document.body,
-            {
-                childList: true,
-                subtree: true
+        /*
+           Haberler sonradan oluşturulursa
+           yeni kartları da yakala.
+        */
+
+        if (
+            "MutationObserver" in
+            window
+        ) {
+
+            const mutation =
+                new MutationObserver(
+                    () => {
+
+                        observe();
+
+                    }
+                );
+
+
+            if (document.body) {
+
+                mutation.observe(
+                    document.body,
+                    {
+                        childList: true,
+                        subtree: true
+                    }
+                );
+
             }
-        );
+
+        }
 
     }
 
@@ -660,29 +1064,61 @@
         const images =
             $$("img");
 
-        images.forEach(img => {
 
-            if (!img.hasAttribute("loading")) {
-                img.setAttribute("loading", "lazy");
-            }
+        if (!images.length) {
+            return;
+        }
 
-            img.setAttribute("decoding", "async");
 
-            img.addEventListener(
-                "error",
-                () => {
+        images.forEach(
+            img => {
 
-                    img.classList.add(
-                        "image-error"
+                if (
+                    !img.hasAttribute(
+                        "loading"
+                    )
+                ) {
+
+                    img.setAttribute(
+                        "loading",
+                        "lazy"
                     );
 
-                },
-                {
-                    once: true
                 }
-            );
 
-        });
+
+                img.setAttribute(
+                    "decoding",
+                    "async"
+                );
+
+
+                if (
+                    !img.dataset.errorHandler
+                ) {
+
+                    img.dataset.errorHandler =
+                        "true";
+
+
+                    img.addEventListener(
+                        "error",
+                        () => {
+
+                            img.classList.add(
+                                "image-error"
+                            );
+
+                        },
+                        {
+                            once: true
+                        }
+                    );
+
+                }
+
+            }
+        );
 
     }
 
@@ -698,10 +1134,13 @@
             event => {
 
                 if (
-                    event.target.tagName !== "IMG"
+                    !event.target ||
+                    event.target.tagName !==
+                        "IMG"
                 ) {
                     return;
                 }
+
 
                 event.target.classList.add(
                     "loaded"
@@ -715,75 +1154,88 @@
 
 
     /* ==================================================
-       KOPYALAMA ENGELİ YERİNE KULLANICI DOSTU
-       SEÇİM / PAYLAŞIM
+       PAYLAŞIM
     ================================================== */
 
     function initShareSupport() {
 
-        document.addEventListener("click", async event => {
+        document.addEventListener(
+            "click",
+            async event => {
 
-            const button =
-                event.target.closest("[data-share]");
+                const button =
+                    event.target.closest(
+                        "[data-share]"
+                    );
 
-            if (!button) return;
-
-            const title =
-                button.dataset.shareTitle ||
-                document.title;
-
-            const url =
-                button.dataset.shareUrl ||
-                window.location.href;
+                if (!button) {
+                    return;
+                }
 
 
-            if (
-                navigator.share &&
-                window.isSecureContext
-            ) {
+                const title =
+                    button.dataset.shareTitle ||
+                    document.title;
 
-                try {
 
-                    await navigator.share({
-                        title,
-                        url
-                    });
+                const url =
+                    button.dataset.shareUrl ||
+                    window.location.href;
 
-                } catch (error) {
 
-                    if (
-                        error.name !== "AbortError"
-                    ) {
-                        console.warn(
-                            "Paylaşım başarısız:",
-                            error
-                        );
+                if (
+                    navigator.share &&
+                    window.isSecureContext
+                ) {
+
+                    try {
+
+                        await navigator.share({
+                            title,
+                            url
+                        });
+
+                    } catch (error) {
+
+                        if (
+                            error.name !==
+                            "AbortError"
+                        ) {
+
+                            console.warn(
+                                "Paylaşım başarısız:",
+                                error
+                            );
+
+                        }
+
                     }
+
+                    return;
 
                 }
 
-                return;
+
+                try {
+
+                    await navigator.clipboard.writeText(
+                        url
+                    );
+
+                    showToast(
+                        "Haber bağlantısı kopyalandı."
+                    );
+
+                } catch {
+
+                    showToast(
+                        "Bağlantı kopyalanamadı."
+                    );
+
+                }
 
             }
-
-
-            try {
-
-                await navigator.clipboard.writeText(url);
-
-                showToast(
-                    "Haber bağlantısı kopyalandı."
-                );
-
-            } catch {
-
-                showToast(
-                    "Bağlantı kopyalanamadı."
-                );
-
-            }
-
-        });
+        );
 
     }
 
@@ -792,34 +1244,58 @@
        TOAST
     ================================================== */
 
-    function showToast(message) {
+    function showToast(
+        message
+    ) {
 
         let toast =
-            document.querySelector(".toast");
+            document.querySelector(
+                ".toast"
+            );
+
 
         if (!toast) {
 
             toast =
-                document.createElement("div");
+                document.createElement(
+                    "div"
+                );
 
-            toast.className = "toast";
+            toast.className =
+                "toast";
 
-            document.body.appendChild(toast);
+            document.body.appendChild(
+                toast
+            );
 
         }
 
-        toast.textContent = message;
 
-        toast.classList.add("show");
+        toast.textContent =
+            message;
 
-        clearTimeout(toast._timer);
+
+        toast.classList.add(
+            "show"
+        );
+
+
+        clearTimeout(
+            toast._timer
+        );
+
 
         toast._timer =
-            setTimeout(() => {
+            setTimeout(
+                () => {
 
-                toast.classList.remove("show");
+                    toast.classList.remove(
+                        "show"
+                    );
 
-            }, 2500);
+                },
+                2500
+            );
 
     }
 
@@ -830,39 +1306,78 @@
 
     function initBackToTop() {
 
-        const button =
-            document.createElement("button");
-
-        button.className = "back-to-top";
-
-        button.setAttribute(
-            "aria-label",
-            "Yukarı çık"
-        );
-
-        button.innerHTML = "↑";
-
-        document.body.appendChild(button);
-
-
-        window.addEventListener("scroll", () => {
-
-            button.classList.toggle(
-                "show",
-                window.scrollY > 600
+        let button =
+            document.querySelector(
+                ".back-to-top"
             );
 
-        }, { passive: true });
+
+        /*
+           Aynı buton tekrar oluşturulmasın.
+        */
+
+        if (!button) {
+
+            button =
+                document.createElement(
+                    "button"
+                );
+
+            button.className =
+                "back-to-top";
+
+            button.setAttribute(
+                "aria-label",
+                "Yukarı çık"
+            );
+
+            button.type =
+                "button";
+
+            button.innerHTML =
+                "↑";
+
+            document.body.appendChild(
+                button
+            );
+
+        }
 
 
-        button.addEventListener("click", () => {
+        const update =
+            () => {
 
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
+                button.classList.toggle(
+                    "show",
+                    window.scrollY > 600
+                );
 
-        });
+            };
+
+
+        window.addEventListener(
+            "scroll",
+            update,
+            {
+                passive: true
+            }
+        );
+
+
+        update();
+
+
+        button.addEventListener(
+            "click",
+            () => {
+
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+
+            }
+        );
 
     }
 
@@ -873,90 +1388,128 @@
 
     function initKeyboardShortcuts() {
 
-        document.addEventListener("keydown", event => {
+        document.addEventListener(
+            "keydown",
+            event => {
 
-            if (
-                event.target.matches(
-                    "input, textarea, select"
-                )
-            ) {
-                return;
-            }
-
-
-            switch (event.key.toLowerCase()) {
-
-                case "/":
-
-                    event.preventDefault();
-
-                    elements.searchPanel?.classList.add(
-                        "open"
-                    );
-
-                    setTimeout(() => {
-                        elements.searchInput?.focus();
-                    }, 50);
-
-                    break;
+                if (
+                    event.target &&
+                    typeof event.target.matches ===
+                        "function" &&
+                    event.target.matches(
+                        "input, textarea, select"
+                    )
+                ) {
+                    return;
+                }
 
 
-                case "home":
+                switch (
+                    event.key.toLowerCase()
+                ) {
 
-                    if (event.ctrlKey) {
+                    case "/":
 
                         event.preventDefault();
 
-                        window.scrollTo({
-                            top: 0,
-                            behavior: "smooth"
-                        });
+                        elements.searchPanel?.classList.add(
+                            "open"
+                        );
 
-                    }
 
-                    break;
+                        setTimeout(
+                            () => {
+
+                                elements.searchInput?.focus();
+
+                            },
+                            50
+                        );
+
+                        break;
+
+
+                    case "home":
+
+                        if (
+                            event.ctrlKey
+                        ) {
+
+                            event.preventDefault();
+
+                            window.scrollTo({
+                                top: 0,
+                                behavior:
+                                    "smooth"
+                            });
+
+                        }
+
+                        break;
+
+                }
 
             }
-
-        });
+        );
 
     }
 
 
     /* ==================================================
-       DIŞARIDAN GELEN HABERLER İÇİN
-       GÜVENLİ YENİLEME
+       DIŞARIDAN GELEN HABERLER
     ================================================== */
 
     function refreshUI() {
 
-        if (typeof haberler === "undefined") {
+        if (
+            typeof haberler ===
+            "undefined"
+        ) {
             return;
         }
 
+
         if (
-            typeof renderHero === "function"
+            typeof renderHero ===
+            "function"
         ) {
+
             renderHero();
+
         }
 
-        if (
-            typeof renderNews === "function"
-        ) {
-            renderNews(haberler);
-        }
 
         if (
-            typeof renderPopular === "function"
+            typeof renderNews ===
+            "function"
         ) {
+
+            renderNews(
+                haberler
+            );
+
+        }
+
+
+        if (
+            typeof renderPopular ===
+            "function"
+        ) {
+
             renderPopular();
+
         }
 
+
         if (
-            typeof renderBreaking === "function"
+            typeof renderBreaking ===
+            "function"
         ) {
+
             renderBreaking();
+
         }
+
 
         initImageOptimization();
 
@@ -971,6 +1524,7 @@
 
         if (
             "connection" in navigator &&
+            navigator.connection &&
             navigator.connection.saveData
         ) {
 
@@ -1016,44 +1570,198 @@
 
 
     /* ==================================================
+       PROMISE HATA YÖNETİMİ
+    ================================================== */
+
+    window.addEventListener(
+        "unhandledrejection",
+        event => {
+
+            console.warn(
+                "Haberİsta:",
+                "Beklenmeyen Promise hatası",
+                event.reason
+            );
+
+        }
+    );
+
+
+    /* ==================================================
        BAŞLAT
     ================================================== */
 
     function init() {
 
-        initHeaderScroll();
+        try {
+            initHeaderScroll();
+        } catch (error) {
+            console.warn(
+                "Header başlatılamadı:",
+                error
+            );
+        }
 
-        initMobileMenu();
 
-        initSearch();
+        try {
+            initMobileMenu();
+        } catch (error) {
+            console.warn(
+                "Mobil menü başlatılamadı:",
+                error
+            );
+        }
 
-        initAdvancedSearch();
 
-        initTheme();
+        try {
+            initSearch();
+        } catch (error) {
+            console.warn(
+                "Arama başlatılamadı:",
+                error
+            );
+        }
 
-        initCategories();
 
-        initNewsCards();
+        try {
+            initAdvancedSearch();
+        } catch (error) {
+            console.warn(
+                "Gelişmiş arama başlatılamadı:",
+                error
+            );
+        }
 
-        initDetail();
 
-        initReadingProgress();
+        try {
+            initTheme();
+        } catch (error) {
+            console.warn(
+                "Tema başlatılamadı:",
+                error
+            );
+        }
 
-        initScrollReveal();
 
-        initImageOptimization();
+        try {
+            initCategories();
+        } catch (error) {
+            console.warn(
+                "Kategoriler başlatılamadı:",
+                error
+            );
+        }
 
-        initImagePlaceholders();
 
-        initShareSupport();
+        try {
+            initNewsCards();
+        } catch (error) {
+            console.warn(
+                "Haber kartları başlatılamadı:",
+                error
+            );
+        }
 
-        initBackToTop();
 
-        initKeyboardShortcuts();
+        try {
+            initDetail();
+        } catch (error) {
+            console.warn(
+                "Haber detay sistemi başlatılamadı:",
+                error
+            );
+        }
 
-        initPerformance();
 
-        addLiveClock();
+        try {
+            initReadingProgress();
+        } catch (error) {
+            console.warn(
+                "Okuma ilerlemesi başlatılamadı:",
+                error
+            );
+        }
+
+
+        try {
+            initScrollReveal();
+        } catch (error) {
+            console.warn(
+                "Scroll reveal başlatılamadı:",
+                error
+            );
+        }
+
+
+        try {
+            initImageOptimization();
+        } catch (error) {
+            console.warn(
+                "Resim optimizasyonu başlatılamadı:",
+                error
+            );
+        }
+
+
+        try {
+            initImagePlaceholders();
+        } catch (error) {
+            console.warn(
+                "Resim placeholder sistemi başlatılamadı:",
+                error
+            );
+        }
+
+
+        try {
+            initShareSupport();
+        } catch (error) {
+            console.warn(
+                "Paylaşım sistemi başlatılamadı:",
+                error
+            );
+        }
+
+
+        try {
+            initBackToTop();
+        } catch (error) {
+            console.warn(
+                "Yukarı çık sistemi başlatılamadı:",
+                error
+            );
+        }
+
+
+        try {
+            initKeyboardShortcuts();
+        } catch (error) {
+            console.warn(
+                "Klavye kısayolları başlatılamadı:",
+                error
+            );
+        }
+
+
+        try {
+            initPerformance();
+        } catch (error) {
+            console.warn(
+                "Performans sistemi başlatılamadı:",
+                error
+            );
+        }
+
+
+        try {
+            addLiveClock();
+        } catch (error) {
+            console.warn(
+                "Saat sistemi başlatılamadı:",
+                error
+            );
+        }
+
 
         document.documentElement.classList.add(
             "app-loaded"
@@ -1064,7 +1772,6 @@
 
     /* ==================================================
        GLOBAL API
-       İleride başka JS dosyalarından kullanılabilir.
     ================================================== */
 
     window.HaberIsta = {
@@ -1086,7 +1793,10 @@
        DOM READY
     ================================================== */
 
-    if (document.readyState === "loading") {
+    if (
+        document.readyState ===
+        "loading"
+    ) {
 
         document.addEventListener(
             "DOMContentLoaded",
