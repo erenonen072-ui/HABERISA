@@ -5,27 +5,20 @@ const path = require("path");
 const vm = require("vm");
 
 /* =========================================================
-   HABERİSTA - STATIC BUILD SYSTEM
+   HABERİSTA STATIC BUILD SYSTEM
    ========================================================= */
 
 const ROOT = __dirname;
 
-const INDEX_HTML = path.join(ROOT, "index.html");
 const HABER_HTML = path.join(ROOT, "haber.html");
 const HABERLER_JS = path.join(ROOT, "js", "haberler.js");
-
-const OUTPUT_DIR = ROOT;
 
 const SITE_URL = "https://haberisa.vercel.app";
 const SITE_NAME = "Haberİsta";
 
 /* =========================================================
-   YARDIMCI FONKSİYONLAR
+   DOSYA İŞLEMLERİ
    ========================================================= */
-
-function log(message) {
-    console.log(`[Haberİsta] ${message}`);
-}
 
 function fileExists(file) {
     return fs.existsSync(file);
@@ -36,9 +29,20 @@ function readFile(file) {
 }
 
 function writeFile(file, content) {
-    fs.mkdirSync(path.dirname(file), { recursive: true });
-    fs.writeFileSync(file, content, "utf8");
+    fs.mkdirSync(path.dirname(file), {
+        recursive: true
+    });
+
+    fs.writeFileSync(
+        file,
+        content,
+        "utf8"
+    );
 }
+
+/* =========================================================
+   HTML ESCAPE
+   ========================================================= */
 
 function escapeHTML(value) {
     return String(value ?? "")
@@ -52,6 +56,10 @@ function escapeHTML(value) {
 function escapeAttribute(value) {
     return escapeHTML(value);
 }
+
+/* =========================================================
+   SLUG
+   ========================================================= */
 
 function slugOlustur(metin) {
     return String(metin || "")
@@ -81,25 +89,24 @@ function getSlug(haber) {
 }
 
 function getNewsURL(haber) {
-    return `${SITE_URL}/haber/${encodeURIComponent(getSlug(haber))}/`;
+    return (
+        SITE_URL +
+        "/haber/" +
+        encodeURIComponent(getSlug(haber)) +
+        "/"
+    );
 }
 
-function getImage(haber) {
-    return (
-        haber.gorsel ||
-        haber.gorselUrl ||
-        haber.image ||
-        haber.imageUrl ||
-        "/images/default-news.jpg"
-    );
+/* =========================================================
+   HABER ALANLARI
+   ========================================================= */
+
+function getTitle(haber) {
+    return haber.baslik || "Haberİsta";
 }
 
 function getCategory(haber) {
     return haber.kategori || "Gündem";
-}
-
-function getTitle(haber) {
-    return haber.baslik || "Haberİsta";
 }
 
 function getSpot(haber) {
@@ -114,62 +121,84 @@ function getTime(haber) {
     return haber.saat || "";
 }
 
+function getImage(haber) {
+    return (
+        haber.gorsel ||
+        haber.gorselUrl ||
+        haber.image ||
+        haber.imageUrl ||
+        "/images/default-news.jpg"
+    );
+}
+
 function getContent(haber) {
     return haber.icerik || haber.content || "";
 }
 
 /* =========================================================
-   HABERLER.JS OKUMA
+   HABERLER.JS OKU
    ========================================================= */
 
 function loadNews() {
     if (!fileExists(HABERLER_JS)) {
         throw new Error(
-            `haberler.js bulunamadı: ${HABERLER_JS}`
+            "js/haberler.js bulunamadı."
         );
     }
 
     const source = readFile(HABERLER_JS);
 
     const context = {
-        console,
+        console: console,
         window: {},
         globalThis: {},
         self: {},
-        document: {},
-        URL,
-        URLSearchParams
+        URL: URL,
+        URLSearchParams: URLSearchParams
     };
 
     vm.createContext(context);
 
     try {
-        vm.runInContext(source, context, {
-            filename: HABERLER_JS
-        });
+        vm.runInContext(
+            source,
+            context,
+            {
+                filename: HABERLER_JS
+            }
+        );
     } catch (error) {
         throw new Error(
-            `haberler.js çalıştırılamadı:\n${error.message}`
+            "haberler.js çalıştırılırken hata oluştu:\n" +
+            error.message
         );
     }
 
-    let haberler = context.window.haberler;
+    let haberler =
+        context.window.haberler;
 
     if (!Array.isArray(haberler)) {
-        haberler = context.globalThis.haberler;
+        haberler =
+            context.globalThis.haberler;
     }
 
     if (!Array.isArray(haberler)) {
         throw new Error(
-            "haberler.js içinde window.haberler dizisi bulunamadı."
+            "haberler.js içinde window.haberler bulunamadı."
         );
     }
 
-    return haberler.map((haber) => {
-        const copy = { ...haber };
+    return haberler.map(function (haber) {
 
-        copy.slug = getSlug(copy);
-        copy.url = getNewsURL(copy);
+        const copy = {
+            ...haber
+        };
+
+        copy.slug =
+            getSlug(copy);
+
+        copy.url =
+            getNewsURL(copy);
 
         return copy;
     });
@@ -180,6 +209,7 @@ function loadNews() {
    ========================================================= */
 
 function renderContent(content) {
+
     if (!content) {
         return `
             <p class="article-empty">
@@ -188,47 +218,68 @@ function renderContent(content) {
         `;
     }
 
-    const text = String(content).trim();
+    const text =
+        String(content).trim();
 
     /*
-       Eğer içerik HTML olarak verilmişse direkt kullan.
-       Plain text ise satırlara göre paragraflara ayır.
+       İçerik zaten HTML ise
+       olduğu gibi bırak.
     */
 
-    if (/<(p|h2|h3|ul|ol|li|strong|em|blockquote|br)[\s>]/i.test(text)) {
+    if (
+        /<(p|h2|h3|ul|ol|li|strong|em|blockquote|br)[\s>]/i
+            .test(text)
+    ) {
         return text;
     }
 
-    const lines = text
-        .replace(/\r\n/g, "\n")
-        .replace(/\r/g, "\n")
-        .split("\n");
+    /*
+       Normal metin ise
+       paragraflara ayır.
+    */
+
+    const lines =
+        text
+            .replace(/\r\n/g, "\n")
+            .replace(/\r/g, "\n")
+            .split("\n");
 
     let html = "";
 
     for (const line of lines) {
-        const temiz = line.trim();
+
+        const temiz =
+            line.trim();
 
         if (!temiz) {
             continue;
         }
 
         /*
-           BÜYÜK HARFLİ başlıkları bölüm başlığı olarak göster.
+           Tamamen büyük harfli kısa satırları
+           bölüm başlığı olarak göster.
         */
 
         if (
             temiz.length > 3 &&
             temiz.length < 120 &&
-            temiz === temiz.toLocaleUpperCase("tr-TR") &&
+            temiz ===
+                temiz.toLocaleUpperCase("tr-TR") &&
             !/[.!?]$/.test(temiz)
         ) {
+
             html += `
-                <h2>${escapeHTML(temiz)}</h2>
+                <h2>
+                    ${escapeHTML(temiz)}
+                </h2>
             `;
+
         } else {
+
             html += `
-                <p>${escapeHTML(temiz)}</p>
+                <p>
+                    ${escapeHTML(temiz)}
+                </p>
             `;
         }
     }
@@ -237,81 +288,125 @@ function renderContent(content) {
 }
 
 /* =========================================================
-   HABER LİSTESİ
+   SIDEBAR
    ========================================================= */
 
-function createNewsCard(haber) {
-    const title = escapeHTML(getTitle(haber));
-    const category = escapeHTML(getCategory(haber));
-    const image = escapeAttribute(getImage(haber));
-    const url = escapeAttribute(getNewsURL(haber));
-    const date = escapeHTML(getDate(haber));
+let GLOBAL_NEWS = [];
 
-    return `
-        <article class="news-card">
-            <a href="${url}" class="news-card-link">
+function createSidebarNews(currentHaber) {
 
-                <div class="news-card-image">
+    const others =
+        GLOBAL_NEWS
+            .filter(function (haber) {
+                return String(haber.id) !==
+                    String(currentHaber.id);
+            })
+            .slice(0, 5);
+
+    if (!others.length) {
+        return `
+            <p>
+                Henüz başka haber bulunmuyor.
+            </p>
+        `;
+    }
+
+    return others
+        .map(function (haber) {
+
+            const title =
+                escapeHTML(
+                    getTitle(haber)
+                );
+
+            const image =
+                escapeAttribute(
+                    getImage(haber)
+                );
+
+            const url =
+                escapeAttribute(
+                    getNewsURL(haber)
+                );
+
+            return `
+                <a
+                    href="${url}"
+                    class="sidebar-news-item"
+                >
+
                     <img
                         src="${image}"
                         alt="${title}"
                         loading="lazy"
                     >
-                </div>
 
-                <div class="news-card-body">
-
-                    <span class="news-card-category">
-                        ${category}
+                    <span>
+                        ${title}
                     </span>
 
-                    <h3 class="news-card-title">
-                        ${title}
-                    </h3>
-
-                    ${
-                        date
-                            ? `<time class="news-card-date">${date}</time>`
-                            : ""
-                    }
-
-                </div>
-
-            </a>
-        </article>
-    `;
-}
-
-function createNewsList(haberler) {
-    return haberler
-        .map(createNewsCard)
+                </a>
+            `;
+        })
         .join("\n");
 }
 
 /* =========================================================
-   HABER DETAY SAYFASI
+   HABER HTML
    ========================================================= */
 
 function createArticleHTML(haber) {
-    const title = escapeHTML(getTitle(haber));
-    const category = escapeHTML(getCategory(haber));
-    const spot = escapeHTML(getSpot(haber));
 
-    const image = escapeAttribute(getImage(haber));
-    const date = escapeHTML(getDate(haber));
-    const time = escapeHTML(getTime(haber));
+    const title =
+        escapeHTML(
+            getTitle(haber)
+        );
 
-    const url = getNewsURL(haber);
+    const category =
+        escapeHTML(
+            getCategory(haber)
+        );
 
-    const content = renderContent(getContent(haber));
+    const spot =
+        escapeHTML(
+            getSpot(haber)
+        );
 
-    const shareText = encodeURIComponent(
-        `${getTitle(haber)} - ${SITE_NAME}`
-    );
+    const image =
+        escapeAttribute(
+            getImage(haber)
+        );
 
-    const shareURL = encodeURIComponent(url);
+    const date =
+        escapeHTML(
+            getDate(haber)
+        );
+
+    const time =
+        escapeHTML(
+            getTime(haber)
+        );
+
+    const url =
+        getNewsURL(haber);
+
+    const content =
+        renderContent(
+            getContent(haber)
+        );
+
+    const shareText =
+        encodeURIComponent(
+            getTitle(haber) +
+            " - " +
+            SITE_NAME
+        );
+
+    const shareURL =
+        encodeURIComponent(url);
 
     return `
+
 <div class="article-layout">
 
     <article
@@ -351,12 +446,12 @@ function createArticleHTML(haber) {
             ${
                 spot
                     ? `
-                    <p
-                        class="article-spot"
-                        itemprop="description"
-                    >
-                        ${spot}
-                    </p>
+                        <p
+                            class="article-spot"
+                            itemprop="description"
+                        >
+                            ${spot}
+                        </p>
                     `
                     : ""
             }
@@ -366,12 +461,12 @@ function createArticleHTML(haber) {
                 ${
                     date
                         ? `
-                        <time
-                            datetime="${escapeAttribute(date)}"
-                            itemprop="datePublished"
-                        >
-                            ${date}
-                        </time>
+                            <time
+                                datetime="${escapeAttribute(date)}"
+                                itemprop="datePublished"
+                            >
+                                ${date}
+                            </time>
                         `
                         : ""
                 }
@@ -379,9 +474,9 @@ function createArticleHTML(haber) {
                 ${
                     time
                         ? `
-                        <span>
-                            ${time}
-                        </span>
+                            <span>
+                                ${time}
+                            </span>
                         `
                         : ""
                 }
@@ -393,6 +488,7 @@ function createArticleHTML(haber) {
             </div>
 
         </header>
+
 
         <figure class="article-image-wrap">
 
@@ -409,6 +505,7 @@ function createArticleHTML(haber) {
 
         </figure>
 
+
         <div
             id="articleContent"
             class="article-content"
@@ -417,9 +514,12 @@ function createArticleHTML(haber) {
 
             ${content}
 
+
             <div class="article-share">
 
-                <strong>Bu haberi paylaş</strong>
+                <strong>
+                    Bu haberi paylaş
+                </strong>
 
                 <div class="article-share-buttons">
 
@@ -456,9 +556,12 @@ function createArticleHTML(haber) {
 
         </div>
 
+
         <div class="article-source-box">
 
-            <strong>Haberİsta</strong>
+            <strong>
+                Haberİsta
+            </strong>
 
             <p>
                 Bu haber Haberİsta tarafından
@@ -470,11 +573,14 @@ function createArticleHTML(haber) {
 
     </article>
 
+
     <aside class="article-sidebar">
 
         <div class="sidebar-box">
 
-            <h2>Son Haberler</h2>
+            <h2>
+                Son Haberler
+            </h2>
 
             <div class="sidebar-news-list">
 
@@ -487,167 +593,184 @@ function createArticleHTML(haber) {
     </aside>
 
 </div>
+
 `;
 }
 
 /* =========================================================
-   SIDEBAR
-   ========================================================= */
-
-let GLOBAL_NEWS = [];
-
-function createSidebarNews(currentHaber) {
-    const others = GLOBAL_NEWS
-        .filter((haber) => {
-            return String(haber.id) !== String(currentHaber.id);
-        })
-        .slice(0, 5);
-
-    if (!others.length) {
-        return `
-            <p>
-                Henüz başka haber bulunmuyor.
-            </p>
-        `;
-    }
-
-    return others
-        .map((haber) => {
-            const title = escapeHTML(getTitle(haber));
-            const image = escapeAttribute(getImage(haber));
-            const url = escapeAttribute(getNewsURL(haber));
-
-            return `
-                <a
-                    class="sidebar-news-item"
-                    href="${url}"
-                >
-
-                    <img
-                        src="${image}"
-                        alt="${title}"
-                        loading="lazy"
-                    >
-
-                    <span>
-                        ${title}
-                    </span>
-
-                </a>
-            `;
-        })
-        .join("");
-}
-
-/* =========================================================
-   META DEĞİŞTİRME
+   TITLE DEĞİŞTİR
    ========================================================= */
 
 function replaceTitle(html, title) {
-    const escapedTitle = escapeHTML(title);
 
-    if (/<title>[\s\S]*?<\/title>/i.test(html)) {
+    const newTitle =
+        `<title>${escapeHTML(title)} | ${SITE_NAME}</title>`;
+
+    const titleRegex =
+        /<title\b[^>]*>[\s\S]*?<\/title>/i;
+
+    if (titleRegex.test(html)) {
         return html.replace(
-            /<title>[\s\S]*?<\/title>/i,
-            `<title>${escapedTitle} | ${SITE_NAME}</title>`
+            titleRegex,
+            newTitle
         );
     }
 
     return html.replace(
         /<\/head>/i,
-        `<title>${escapedTitle} | ${SITE_NAME}</title></head>`
-    );
-}
-
-function replaceMeta(html, name, content) {
-    const escapedContent = escapeAttribute(content);
-
-    const regex = new RegExp(
-        `<meta\\s+[^>]*name=["']${name}["'][^>]*>`,
-        "i"
-    );
-
-    if (regex.test(html)) {
-        return html.replace(
-            regex,
-            `<meta name="${name}" content="${escapedContent}">`
-        );
-    }
-
-    return html.replace(
-        /<\/head>/i,
-        `<meta name="${name}" content="${escapedContent}">\n</head>`
-    );
-}
-
-function replacePropertyMeta(html, property, content) {
-    const escapedContent = escapeAttribute(content);
-
-    const regex = new RegExp(
-        `<meta\\s+[^>]*property=["']${property}["'][^>]*>`,
-        "i"
-    );
-
-    if (regex.test(html)) {
-        return html.replace(
-            regex,
-            `<meta property="${property}" content="${escapedContent}">`
-        );
-    }
-
-    return html.replace(
-        /<\/head>/i,
-        `<meta property="${property}" content="${escapedContent}">\n</head>`
-    );
-}
-
-function replaceCanonical(html, url) {
-    const escapedURL = escapeAttribute(url);
-
-    const regex = /<link\s+[^>]*rel=["']canonical["'][^>]*>/i;
-
-    if (regex.test(html)) {
-        return html.replace(
-            regex,
-            `<link rel="canonical" href="${escapedURL}">`
-        );
-    }
-
-    return html.replace(
-        /<\/head>/i,
-        `<link rel="canonical" href="${escapedURL}">\n</head>`
+        newTitle + "\n</head>"
     );
 }
 
 /* =========================================================
-   SCHEMA.ORG
+   META
+   ========================================================= */
+
+function replaceMeta(
+    html,
+    name,
+    content
+) {
+
+    const value =
+        escapeAttribute(content);
+
+    const regex =
+        new RegExp(
+            `<meta\\s+[^>]*name=["']${name}["'][^>]*>`,
+            "i"
+        );
+
+    if (regex.test(html)) {
+
+        return html.replace(
+            regex,
+            `<meta name="${name}" content="${value}">`
+        );
+    }
+
+    return html.replace(
+        /<\/head>/i,
+        `<meta name="${name}" content="${value}">\n</head>`
+    );
+}
+
+/* =========================================================
+   OG META
+   ========================================================= */
+
+function replacePropertyMeta(
+    html,
+    property,
+    content
+) {
+
+    const value =
+        escapeAttribute(content);
+
+    const regex =
+        new RegExp(
+            `<meta\\s+[^>]*property=["']${property}["'][^>]*>`,
+            "i"
+        );
+
+    if (regex.test(html)) {
+
+        return html.replace(
+            regex,
+            `<meta property="${property}" content="${value}">`
+        );
+    }
+
+    return html.replace(
+        /<\/head>/i,
+        `<meta property="${property}" content="${value}">\n</head>`
+    );
+}
+
+/* =========================================================
+   CANONICAL
+   ========================================================= */
+
+function replaceCanonical(
+    html,
+    url
+) {
+
+    const value =
+        escapeAttribute(url);
+
+    const regex =
+        /<link\s+[^>]*rel=["']canonical["'][^>]*>/i;
+
+    if (regex.test(html)) {
+
+        return html.replace(
+            regex,
+            `<link rel="canonical" href="${value}">`
+        );
+    }
+
+    return html.replace(
+        /<\/head>/i,
+        `<link rel="canonical" href="${value}">\n</head>`
+    );
+}
+
+/* =========================================================
+   ARTICLE SCHEMA
    ========================================================= */
 
 function createArticleSchema(haber) {
+
     const schema = {
+
         "@context": "https://schema.org",
+
         "@type": "NewsArticle",
-        headline: getTitle(haber),
-        description: getSpot(haber),
-        image: [getImage(haber)],
+
+        headline:
+            getTitle(haber),
+
+        description:
+            getSpot(haber),
+
+        image: [
+            getImage(haber)
+        ],
+
         datePublished:
-            `${getDate(haber)} ${getTime(haber)}`.trim(),
+            (
+                getDate(haber) +
+                " " +
+                getTime(haber)
+            ).trim(),
+
         dateModified:
-            `${getDate(haber)} ${getTime(haber)}`.trim(),
+            (
+                getDate(haber) +
+                " " +
+                getTime(haber)
+            ).trim(),
+
         author: {
             "@type": "Organization",
             name: SITE_NAME
         },
+
         publisher: {
             "@type": "Organization",
             name: SITE_NAME,
             url: SITE_URL
         },
+
         mainEntityOfPage: {
             "@type": "WebPage",
             "@id": getNewsURL(haber)
         },
-        url: getNewsURL(haber)
+
+        url:
+            getNewsURL(haber)
     };
 
     return `
@@ -658,405 +781,399 @@ ${JSON.stringify(schema, null, 2)}
 }
 
 /* =========================================================
-   PLACEHOLDER DEĞİŞTİRME
+   ARTICLE CONTAINER DEĞİŞTİR
    ========================================================= */
 
-function replaceElementById(html, id, replacement) {
-    const escapedId = id.replace(
-        /[.*+?^${}()|[\]\\]/g,
-        "\\$&"
-    );
+function replaceArticleContainer(
+    html,
+    articleHTML
+) {
 
-    const regex = new RegExp(
-        `<([a-zA-Z0-9]+)([^>]*\\bid=["']${escapedId}["'][^>]*)>[\\s\\S]*?<\\/\\1>`,
-        "i"
-    );
+    /*
+       haber.html'de:
+
+       <div id="articleContainer">
+           ...
+       </div>
+
+       bulunmasını bekliyoruz.
+    */
+
+    const regex =
+        /<([a-zA-Z0-9]+)([^>]*\bid=["']articleContainer["'][^>]*)>[\s\S]*?<\/\1>/i;
 
     if (!regex.test(html)) {
+
         throw new Error(
-            `#${id} elementi bulunamadı.`
+            "haber.html içinde #articleContainer bulunamadı."
         );
     }
 
-    return html.replace(regex, replacement);
+    return html.replace(
+        regex,
+        `<div id="articleContainer">
+            ${articleHTML}
+        </div>`
+    );
 }
 
 /* =========================================================
-   HABER DETAY SAYFASI OLUŞTUR
+   STATIC FLAG
    ========================================================= */
 
-function buildArticlePage(template, haber) {
-    const title = getTitle(haber);
+function addStaticFlag(html) {
+
+    const bodyRegex =
+        /<body\b([^>]*)>/i;
+
+    if (!bodyRegex.test(html)) {
+        return html;
+    }
+
+    return html.replace(
+        bodyRegex,
+        function (
+            match,
+            attributes
+        ) {
+
+            if (
+                /data-static-article\s*=/i
+                    .test(attributes)
+            ) {
+                return match;
+            }
+
+            return (
+                `<body${attributes} ` +
+                `data-static-article="true">`
+            );
+        }
+    );
+}
+
+/* =========================================================
+   HABER SAYFASI OLUŞTUR
+   ========================================================= */
+
+function buildArticlePage(
+    template,
+    haber
+) {
+
+    const title =
+        getTitle(haber);
+
     const description =
         getSpot(haber) ||
-        `${title} - Haberİsta`;
+        title +
+        " - Haberİsta";
 
-    const image = getImage(haber);
-    const url = getNewsURL(haber);
+    const image =
+        getImage(haber);
 
-    let html = template;
+    const url =
+        getNewsURL(haber);
+
+    let html =
+        template;
 
     /* TITLE */
 
-    html = replaceTitle(html, title);
+    html =
+        replaceTitle(
+            html,
+            title
+        );
 
     /* DESCRIPTION */
 
-    html = replaceMeta(
-        html,
-        "description",
-        description
-    );
+    html =
+        replaceMeta(
+            html,
+            "description",
+            description
+        );
 
     /* ROBOTS */
 
-    html = replaceMeta(
-        html,
-        "robots",
-        "index, follow, max-image-preview:large"
-    );
+    html =
+        replaceMeta(
+            html,
+            "robots",
+            "index, follow, max-image-preview:large"
+        );
 
     /* CANONICAL */
 
-    html = replaceCanonical(html, url);
+    html =
+        replaceCanonical(
+            html,
+            url
+        );
 
-    /* OPEN GRAPH */
+    /* OG */
 
-    html = replacePropertyMeta(
-        html,
-        "og:title",
-        title
-    );
+    html =
+        replacePropertyMeta(
+            html,
+            "og:title",
+            title
+        );
 
-    html = replacePropertyMeta(
-        html,
-        "og:description",
-        description
-    );
+    html =
+        replacePropertyMeta(
+            html,
+            "og:description",
+            description
+        );
 
-    html = replacePropertyMeta(
-        html,
-        "og:url",
-        url
-    );
+    html =
+        replacePropertyMeta(
+            html,
+            "og:url",
+            url
+        );
 
-    html = replacePropertyMeta(
-        html,
-        "og:image",
-        image
-    );
+    html =
+        replacePropertyMeta(
+            html,
+            "og:image",
+            image
+        );
 
-    html = replacePropertyMeta(
-        html,
-        "og:type",
-        "article"
-    );
+    html =
+        replacePropertyMeta(
+            html,
+            "og:type",
+            "article"
+        );
 
     /* TWITTER */
 
-    html = replaceMeta(
-        html,
-        "twitter:card",
-        "summary_large_image"
-    );
+    html =
+        replaceMeta(
+            html,
+            "twitter:card",
+            "summary_large_image"
+        );
 
-    html = replaceMeta(
-        html,
-        "twitter:title",
-        title
-    );
+    html =
+        replaceMeta(
+            html,
+            "twitter:title",
+            title
+        );
 
-    html = replaceMeta(
-        html,
-        "twitter:description",
-        description
-    );
+    html =
+        replaceMeta(
+            html,
+            "twitter:description",
+            description
+        );
 
-    html = replaceMeta(
-        html,
-        "twitter:image",
-        image
-    );
+    html =
+        replaceMeta(
+            html,
+            "twitter:image",
+            image
+        );
 
     /* ARTICLE */
 
-    const articleHTML = createArticleHTML(haber);
+    const articleHTML =
+        createArticleHTML(haber);
 
-    /*
-       ÖNEMLİ:
-       haber.html içinde mutlaka #articleContainer bulunmalı.
-    */
-
-    html = replaceElementById(
-        html,
-        "articleContainer",
-        `
-        <div id="articleContainer">
-            ${articleHTML}
-        </div>
-        `
-    );
+    html =
+        replaceArticleContainer(
+            html,
+            articleHTML
+        );
 
     /* STATIC FLAG */
 
-    if (/<body\b[^>]*>/i.test(html)) {
-        html = html.replace(
-            /<body\b([^>]*)>/i,
-            function (match, attrs) {
-
-                if (/data-static-article\s*=/i.test(attrs)) {
-                    return match;
-                }
-
-                return `<body${attrs} data-static-article="true">`;
-            }
-        );
-    }
+    html =
+        addStaticFlag(html);
 
     /* SCHEMA */
 
-    html = html.replace(
-        /<\/head>/i,
-        `${createArticleSchema(haber)}\n</head>`
-    );
+    html =
+        html.replace(
+            /<\/head>/i,
+            createArticleSchema(haber) +
+            "\n</head>"
+        );
 
     return html;
 }
 
 /* =========================================================
-   ANA SAYFA HABER LİSTELERİ
-   ========================================================= */
-
-function injectHomepageNews(html, haberler) {
-    const newsHTML = createNewsList(haberler);
-
-    /*
-       Eğer index.html içinde #news-container varsa
-       otomatik olarak doldur.
-    */
-
-    if (html.includes('id="news-container"')) {
-        try {
-            html = replaceElementById(
-                html,
-                "news-container",
-                `
-                <div id="news-container">
-                    ${newsHTML}
-                </div>
-                `
-            );
-        } catch (error) {
-            log(
-                "news-container bulunamadı, ana sayfa mevcut yapısı korunuyor."
-            );
-        }
-    }
-
-    /*
-       Alternatif placeholder
-    */
-
-    if (html.includes('id="haberler-container"')) {
-        try {
-            html = replaceElementById(
-                html,
-                "haberler-container",
-                `
-                <div id="haberler-container">
-                    ${newsHTML}
-                </div>
-                `
-            );
-        } catch (error) {
-            log(
-                "haberler-container değiştirilemedi."
-            );
-        }
-    }
-
-    return html;
-}
-
-/* =========================================================
-   ANA BUILD
+   BUILD
    ========================================================= */
 
 function build() {
+
     console.log("");
     console.log("========================================");
-    console.log("        HABERİSTA STATIC BUILD");
+    console.log("       HABERİSTA BUILD BAŞLADI");
     console.log("========================================");
     console.log("");
 
-    /* DOSYALARI KONTROL ET */
-
-    if (!fileExists(INDEX_HTML)) {
-        throw new Error(
-            `index.html bulunamadı: ${INDEX_HTML}`
-        );
-    }
+    /* DOSYALAR */
 
     if (!fileExists(HABER_HTML)) {
         throw new Error(
-            `haber.html bulunamadı: ${HABER_HTML}`
+            "haber.html bulunamadı."
         );
     }
 
     if (!fileExists(HABERLER_JS)) {
         throw new Error(
-            `js/haberler.js bulunamadı: ${HABERLER_JS}`
+            "js/haberler.js bulunamadı."
         );
     }
 
-    log("Dosyalar bulundu.");
+    console.log(
+        "✓ haber.html bulundu"
+    );
+
+    console.log(
+        "✓ haberler.js bulundu"
+    );
 
     /* HABERLER */
 
-    const haberler = loadNews();
+    const haberler =
+        loadNews();
 
-    GLOBAL_NEWS = haberler;
+    GLOBAL_NEWS =
+        haberler;
 
-    log(
-        `${haberler.length} haber başarıyla yüklendi.`
+    console.log(
+        `✓ ${haberler.length} haber yüklendi`
     );
 
     /* TEMPLATE */
 
-    const indexTemplate = readFile(INDEX_HTML);
-    const articleTemplate = readFile(HABER_HTML);
+    const articleTemplate =
+        readFile(HABER_HTML);
 
-    /* HABER TEMPLATE KONTROLÜ */
-
-    if (!articleTemplate.includes('id="articleContainer"') &&
-        !articleTemplate.includes("id='articleContainer'")) {
+    if (
+        !articleTemplate.includes(
+            'id="articleContainer"'
+        ) &&
+        !articleTemplate.includes(
+            "id='articleContainer'"
+        )
+    ) {
 
         throw new Error(
-            `haber.html içinde #articleContainer bulunamadı.
-
-haber.html içinde şu yapı bulunmalı:
-
-<div id="articleContainer">
-    ...
-</div>`
+            "haber.html içinde #articleContainer bulunamadı."
         );
     }
 
-    log(
-        "#articleContainer bulundu."
+    console.log(
+        "✓ #articleContainer bulundu"
     );
 
     /* =====================================================
-       ANA SAYFA
+       ÖNEMLİ:
+       INDEX.HTML'E DOKUNMUYORUZ!
        ===================================================== */
 
-    let homepage = indexTemplate;
-
-    homepage = injectHomepageNews(
-        homepage,
-        haberler
+    console.log(
+        "✓ index.html korunuyor"
     );
 
-    writeFile(
-        INDEX_HTML,
-        homepage
-    );
+    /* HABERLER */
 
-    log("Ana sayfa güncellendi.");
+    let success =
+        0;
 
-    /* =====================================================
-       HABER SAYFALARI
-       ===================================================== */
+    let failed =
+        0;
 
-    let successCount = 0;
-    let errorCount = 0;
-
-    for (const haber of haberler) {
+    for (
+        const haber of haberler
+    ) {
 
         try {
 
-            const slug = getSlug(haber);
+            const slug =
+                getSlug(haber);
 
             if (!slug) {
+
                 throw new Error(
-                    `Geçersiz slug: ${getTitle(haber)}`
+                    "Haber slug oluşturulamadı."
                 );
             }
 
-            const articlePage =
+            const articleHTML =
                 buildArticlePage(
                     articleTemplate,
                     haber
                 );
 
-            const articleDir =
+            const articleDirectory =
                 path.join(
-                    OUTPUT_DIR,
+                    ROOT,
                     "haber",
                     slug
                 );
 
-            fs.mkdirSync(
-                articleDir,
-                {
-                    recursive: true
-                }
-            );
-
-            const articlePath =
+            const articleFile =
                 path.join(
-                    articleDir,
+                    articleDirectory,
                     "index.html"
                 );
 
             writeFile(
-                articlePath,
-                articlePage
+                articleFile,
+                articleHTML
             );
 
-            successCount++;
+            success++;
 
-            log(
-                `✓ ${getTitle(haber)}`
+            console.log(
+                `✓ /haber/${slug}/`
             );
 
         } catch (error) {
 
-            errorCount++;
+            failed++;
 
             console.error(
                 `✗ ${getTitle(haber)}`
             );
 
             console.error(
+                "  " +
                 error.message
             );
         }
     }
 
-    /* =====================================================
-       SONUÇ
-       ===================================================== */
-
     console.log("");
     console.log("========================================");
-    console.log("BUILD TAMAMLANDI");
+    console.log("       HABERİSTA BUILD BİTTİ");
     console.log("========================================");
     console.log(
-        `Toplam haber : ${haberler.length}`
+        `Toplam : ${haberler.length}`
     );
     console.log(
-        `Başarılı     : ${successCount}`
+        `Başarılı : ${success}`
     );
     console.log(
-        `Hatalı       : ${errorCount}`
+        `Hatalı : ${failed}`
     );
     console.log("========================================");
     console.log("");
 
-    if (errorCount > 0) {
+    if (failed > 0) {
+
         throw new Error(
-            `${errorCount} haber sayfası oluşturulamadı.`
+            `${failed} haber sayfası oluşturulamadı.`
         );
     }
 }
@@ -1066,7 +1183,9 @@ haber.html içinde şu yapı bulunmalı:
    ========================================================= */
 
 try {
+
     build();
+
 } catch (error) {
 
     console.error("");
