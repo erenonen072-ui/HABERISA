@@ -2910,7 +2910,7 @@ body.dark-mode .no-news {
 
 .hero-main {
     width: 100% !important;
-    height: 430px !important;
+    height: 600px !important;
     min-height: 430px !important;
     max-height: 430px !important;
     border-radius: 14px !important;
@@ -2922,7 +2922,7 @@ body.dark-mode .no-news {
 .hero-slide-link,
 .hero-image {
     width: 100% !important;
-    height: 430px !important;
+    height: 400px !important;
     min-height: 430px !important;
     max-height: 430px !important;
 }
