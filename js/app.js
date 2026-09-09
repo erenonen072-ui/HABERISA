@@ -2,101 +2,110 @@ document.addEventListener("DOMContentLoaded", () => {
 
     "use strict";
 
-    /* =====================================================
-       HABER VERİSİ
-       ===================================================== */
-
     const haberListesi = Array.isArray(window.haberler)
         ? window.haberler
         : [];
 
-    const slugOlustur = window.slugOlustur;
+    /* =====================================================
+       HABER YARDIMCILARI
+       ===================================================== */
+
+    function baslik(haber) {
+        return haber.baslik || haber.title || "Haber";
+    }
+
+    function gorsel(haber) {
+        return haber.gorsel || haber.image || "images/logo.jpeg";
+    }
+
+    function kategori(haber) {
+        return haber.kategori || haber.category || "Gündem";
+    }
+
+    function temizSlug(metin) {
+
+        return String(metin || "")
+            .toLocaleLowerCase("tr-TR")
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/ı/g, "i")
+            .replace(/ğ/g, "g")
+            .replace(/ü/g, "u")
+            .replace(/ş/g, "s")
+            .replace(/ö/g, "o")
+            .replace(/ç/g, "c")
+            .replace(/[^a-z0-9]+/g, "-")
+            .replace(/^-+|-+$/g, "");
+    }
 
     function haberUrl(haber) {
+
         let slug = "";
 
-        if (typeof slugOlustur === "function") {
+        if (typeof window.slugOlustur === "function") {
+
             try {
-                slug = slugOlustur(haber);
-            } catch (e) {
+                slug = window.slugOlustur(haber);
+            } catch (error) {
                 slug = "";
             }
         }
 
         /*
-         * object-object hatasını engelle
+         * [object Object] ve object-object
+         * kesinlikle URL'ye girmesin.
          */
-        if (!slug || slug === "[object Object]" || slug === "object-object") {
-            slug = String(haber.baslik || haber.title || haber.id || "")
-                .toLowerCase()
-                .normalize("NFD")
-                .replace(/[\u0300-\u036f]/g, "")
-                .replace(/ı/g, "i")
-                .replace(/ğ/g, "g")
-                .replace(/ü/g, "u")
-                .replace(/ş/g, "s")
-                .replace(/ö/g, "o")
-                .replace(/ç/g, "c")
-                .replace(/[^a-z0-9]+/g, "-")
-                .replace(/^-+|-+$/g, "");
+
+        if (
+            !slug ||
+            slug === "[object Object]" ||
+            slug === "object-object"
+        ) {
+            slug = temizSlug(
+                haber.slug ||
+                haber.baslik ||
+                haber.id
+            );
         }
 
-        return `haber.html?slug=${encodeURIComponent(slug)}`;
+        return "haber.html?slug=" +
+            encodeURIComponent(slug);
     }
 
-    function haberBaslik(haber) {
-        return haber.baslik || haber.title || "Haber";
-    }
-
-    function haberGorsel(haber) {
-        return haber.gorsel || haber.image || "images/logo.jpeg";
-    }
-
-    function haberKategori(haber) {
-        return haber.kategori || haber.category || "Gündem";
-    }
-
-
-/* =====================================================
-   SON DAKİKA - KAYAN BANT
-   ===================================================== */
-
-const breakingContainer =
-    document.getElementById("breakingNews");
-
-if (breakingContainer) {
-
-    const sonDakikaHaberleri =
-        haberListesi.slice(0, 5);
-
-    const haberLinkleri =
-        sonDakikaHaberleri.map(haber => {
-
-            return `
-                <a
-                    href="${haberUrl(haber)}"
-                    title="${haberBaslik(haber)}"
-                >
-                    ${haberBaslik(haber)}
-                </a>
-            `;
-
-        }).join("");
-
-    /*
-     * İki kez ekliyoruz ki bant kesintisiz
-     * şekilde dönsün.
-     */
-    breakingContainer.innerHTML = `
-        <div class="breaking-news-track">
-            ${haberLinkleri}
-            ${haberLinkleri}
-        </div>
-    `;
-}
 
     /* =====================================================
-       MANŞET - İLK 20 HABER
+       SON DAKİKA
+       ===================================================== */
+
+    const breakingNews =
+        document.getElementById("breakingNews");
+
+    if (breakingNews) {
+
+        const sonBes =
+            haberListesi.slice(0, 5);
+
+        const html =
+            sonBes.map(haber => `
+                <a
+                    href="${haberUrl(haber)}"
+                    title="${baslik(haber)}"
+                >
+                    ${baslik(haber)}
+                </a>
+            `).join("");
+
+        breakingNews.innerHTML = `
+            <div class="breaking-news-track">
+                ${html}
+                ${html}
+            </div>
+        `;
+    }
+
+
+    /* =====================================================
+       MANŞET 1-20
        ===================================================== */
 
     const heroMain =
@@ -111,59 +120,65 @@ if (breakingContainer) {
     const heroNumbers =
         document.getElementById("heroNumbers");
 
-    const manşetler =
+    const mansetler =
         haberListesi.slice(0, 20);
 
-    let aktifManşet = 0;
+    let aktifManset = 0;
 
 
-    function manşetGöster(index) {
+    function mansetGoster(index) {
 
-        if (!heroMain || !manşetler.length) {
+        if (!heroMain || !mansetler.length) {
             return;
         }
 
         if (index < 0) {
-            index = manşetler.length - 1;
+            index = mansetler.length - 1;
         }
 
-        if (index >= manşetler.length) {
+        if (index >= mansetler.length) {
             index = 0;
         }
 
-        aktifManşet = index;
+        aktifManset = index;
 
-        const haber = manşetler[aktifManşet];
+        const haber =
+            mansetler[index];
 
         heroMain.innerHTML = `
             <a
-                href="${haberUrl(haber)}"
                 class="hero-main-link"
-                aria-label="${haberBaslik(haber)}"
+                href="${haberUrl(haber)}"
             >
+
                 <img
-                    src="${haberGorsel(haber)}"
-                    alt="${haberBaslik(haber)}"
-                    loading="${aktifManşet === 0 ? "eager" : "lazy"}"
+                    src="${gorsel(haber)}"
+                    alt="${baslik(haber)}"
+                    loading="${index === 0 ? "eager" : "lazy"}"
                 >
 
                 <div class="hero-main-content">
 
                     <span class="hero-category">
-                        ${haberKategori(haber)}
+                        ${kategori(haber)}
                     </span>
 
                     <h1 class="hero-title">
-                        ${haberBaslik(haber)}
+                        ${baslik(haber)}
                     </h1>
 
                     ${
                         haber.spot
-                            ? `<p class="hero-description">${haber.spot}</p>`
-                            : ""
+                        ? `
+                            <p class="hero-description">
+                                ${haber.spot}
+                            </p>
+                        `
+                        : ""
                     }
 
                 </div>
+
             </a>
         `;
 
@@ -175,26 +190,27 @@ if (breakingContainer) {
 
                     button.classList.toggle(
                         "active",
-                        i === aktifManşet
+                        i === index
                     );
+
                 });
         }
     }
 
 
-    /* 1-20 numaraları */
-
     if (heroNumbers) {
 
         heroNumbers.innerHTML = "";
 
-        manşetler.forEach((haber, index) => {
+        mansetler.forEach((haber, index) => {
 
             const button =
                 document.createElement("button");
 
             button.type = "button";
-            button.textContent = index + 1;
+            button.textContent =
+                String(index + 1);
+
             button.setAttribute(
                 "aria-label",
                 `${index + 1}. manşet`
@@ -202,7 +218,7 @@ if (breakingContainer) {
 
             button.addEventListener(
                 "click",
-                () => manşetGöster(index)
+                () => mansetGoster(index)
             );
 
             heroNumbers.appendChild(button);
@@ -211,24 +227,32 @@ if (breakingContainer) {
 
 
     if (heroPrev) {
+
         heroPrev.addEventListener(
             "click",
-            () => manşetGöster(aktifManşet - 1)
+            () => mansetGoster(
+                aktifManset - 1
+            )
         );
     }
+
 
     if (heroNext) {
+
         heroNext.addEventListener(
             "click",
-            () => manşetGöster(aktifManşet + 1)
+            () => mansetGoster(
+                aktifManset + 1
+            )
         );
     }
 
-    manşetGöster(0);
+
+    mansetGoster(0);
 
 
     /* =====================================================
-       PİYASALAR
+       PİYASA BANDI
        ===================================================== */
 
     const marketItems =
@@ -236,58 +260,74 @@ if (breakingContainer) {
 
     if (marketItems) {
 
-        /*
-         * Canlı veri kaynağın yoksa sahte fiyat göstermiyoruz.
-         * Bunun yerine profesyonel ve temiz bir piyasa alanı
-         * bırakıyoruz.
-         *
-         * Canlı API bağlandığında burası doldurulabilir.
-         */
-
         marketItems.innerHTML = `
+
             <div class="market-item">
-                <span class="market-name">BIST 100</span>
-                <span class="market-value">—</span>
-                <span class="market-change">Veri bekleniyor</span>
+                <span class="market-name">
+                    BIST 100
+                </span>
+                <span class="market-value">
+                    —
+                </span>
+                <span class="market-change">
+                    Bekleniyor
+                </span>
             </div>
 
             <div class="market-item">
-                <span class="market-name">Dolar</span>
-                <span class="market-value">—</span>
-                <span class="market-change">Veri bekleniyor</span>
+                <span class="market-name">
+                    DOLAR
+                </span>
+                <span class="market-value">
+                    —
+                </span>
+                <span class="market-change">
+                    Bekleniyor
+                </span>
             </div>
 
             <div class="market-item">
-                <span class="market-name">Euro</span>
-                <span class="market-value">—</span>
-                <span class="market-change">Veri bekleniyor</span>
+                <span class="market-name">
+                    EURO
+                </span>
+                <span class="market-value">
+                    —
+                </span>
+                <span class="market-change">
+                    Bekleniyor
+                </span>
             </div>
 
             <div class="market-item">
-                <span class="market-name">Altın</span>
-                <span class="market-value">—</span>
-                <span class="market-change">Veri bekleniyor</span>
+                <span class="market-name">
+                    ALTIN
+                </span>
+                <span class="market-value">
+                    —
+                </span>
+                <span class="market-change">
+                    Bekleniyor
+                </span>
             </div>
 
             <div class="market-item">
-                <span class="market-name">Bitcoin</span>
-                <span class="market-value">—</span>
-                <span class="market-change">Veri bekleniyor</span>
+                <span class="market-name">
+                    BITCOIN
+                </span>
+                <span class="market-value">
+                    —
+                </span>
+                <span class="market-change">
+                    Bekleniyor
+                </span>
             </div>
+
         `;
-    }
-
-    const marketUpdated =
-        document.getElementById("marketUpdated");
-
-    if (marketUpdated) {
-        marketUpdated.textContent =
-            "Piyasa verileri";
     }
 
 
     /* =====================================================
-       ÇEREZ İZNİ
+       ÇEREZ
        ===================================================== */
 
     const cookieBox =
@@ -300,15 +340,19 @@ if (breakingContainer) {
 
     try {
         cookieAccepted =
-            localStorage.getItem("haberista_cookie") === "accepted";
-    } catch (e) {
+            localStorage.getItem(
+                "haberista_cookie"
+            ) === "accepted";
+    } catch (error) {
         cookieAccepted = false;
     }
 
     if (cookieBox) {
 
         cookieBox.style.display =
-            cookieAccepted ? "none" : "block";
+            cookieAccepted
+                ? "none"
+                : "block";
     }
 
     if (cookieAccept) {
@@ -318,15 +362,16 @@ if (breakingContainer) {
             () => {
 
                 try {
+
                     localStorage.setItem(
                         "haberista_cookie",
                         "accepted"
                     );
-                } catch (e) {}
 
-                if (cookieBox) {
-                    cookieBox.style.display = "none";
-                }
+                } catch (error) {}
+
+                cookieBox.style.display =
+                    "none";
             }
         );
     }
@@ -336,7 +381,7 @@ if (breakingContainer) {
        BİLDİRİM İZNİ
        ===================================================== */
 
-    function bildirimKutusuOlustur() {
+    function bildirimKutusu() {
 
         if (
             document.getElementById(
@@ -349,35 +394,42 @@ if (breakingContainer) {
         const box =
             document.createElement("div");
 
-        box.id = "notificationPermission";
+        box.id =
+            "notificationPermission";
+
         box.className =
             "notification-permission";
 
         box.innerHTML = `
-            <h3>🔔 Son dakika haberlerini kaçırma</h3>
+
+            <h3>
+                🔔 Haber bildirimlerini aç
+            </h3>
 
             <p>
-                Haberİsta'dan önemli gelişmeler ve son dakika
-                haberleri için bildirimleri açabilirsiniz.
+                Önemli gelişmeler ve son dakika
+                haberlerinden anında haberdar ol.
             </p>
 
             <button
-                type="button"
                 id="enableNotifications"
+                type="button"
             >
                 Bildirimleri Aç
             </button>
 
             <button
-                type="button"
-                class="notification-close"
                 id="closeNotifications"
+                class="notification-close"
+                type="button"
             >
                 Şimdi Değil
             </button>
+
         `;
 
         document.body.appendChild(box);
+
 
         const enable =
             document.getElementById(
@@ -389,43 +441,41 @@ if (breakingContainer) {
                 "closeNotifications"
             );
 
+
         if (enable) {
 
             enable.addEventListener(
                 "click",
-                async () => {
+                () => {
 
-                    try {
+                    if (
+                        window.OneSignalDeferred
+                    ) {
 
-                        if (
-                            window.OneSignalDeferred
-                        ) {
+                        window.OneSignalDeferred.push(
+                            async function (OneSignal) {
 
-                            window.OneSignalDeferred.push(
-                                async function (OneSignal) {
+                                try {
 
-                                    try {
-                                        await OneSignal.Slidedown
-                                            .promptPush();
-                                    } catch (e) {
-                                        console.log(
-                                            "Bildirim izni açılamadı:",
-                                            e
-                                        );
-                                    }
+                                    await OneSignal.Slidedown
+                                        .promptPush();
 
+                                } catch (error) {
+
+                                    console.log(
+                                        "Bildirim izni:",
+                                        error
+                                    );
                                 }
-                            );
-                        }
-
-                    } finally {
-
-                        box.remove();
-
+                            }
+                        );
                     }
+
+                    box.remove();
                 }
             );
         }
+
 
         if (close) {
 
@@ -437,11 +487,8 @@ if (breakingContainer) {
     }
 
 
-    /*
-     * OneSignal hazır olduğunda bildirim kutusunu göster.
-     */
     setTimeout(
-        bildirimKutusuOlustur,
+        bildirimKutusu,
         700
     );
 
@@ -465,7 +512,6 @@ if (breakingContainer) {
                 mobileMenu.classList.toggle(
                     "active"
                 );
-
             }
         );
     }
@@ -488,7 +534,9 @@ if (breakingContainer) {
         document.getElementById("newsGrid");
 
     const searchResultInfo =
-        document.getElementById("searchResultInfo");
+        document.getElementById(
+            "searchResultInfo"
+        );
 
 
     if (searchBtn && searchBox) {
@@ -502,7 +550,9 @@ if (breakingContainer) {
                 );
 
                 if (
-                    searchBox.classList.contains("active") &&
+                    searchBox.classList.contains(
+                        "active"
+                    ) &&
                     searchInput
                 ) {
                     searchInput.focus();
@@ -512,7 +562,7 @@ if (breakingContainer) {
     }
 
 
-    function aramaYap() {
+    function ara() {
 
         if (!searchInput || !newsGrid) {
             return;
@@ -550,6 +600,7 @@ if (breakingContainer) {
 
         newsGrid.innerHTML = "";
 
+
         sonuçlar.forEach(haber => {
 
             const card =
@@ -562,19 +613,21 @@ if (breakingContainer) {
                 haberUrl(haber);
 
             card.innerHTML = `
+
                 <img
-                    src="${haberGorsel(haber)}"
-                    alt="${haberBaslik(haber)}"
+                    src="${gorsel(haber)}"
+                    alt="${baslik(haber)}"
                     loading="lazy"
                 >
 
                 <span class="news-card-category">
-                    ${haberKategori(haber)}
+                    ${kategori(haber)}
                 </span>
 
                 <h3>
-                    ${haberBaslik(haber)}
+                    ${baslik(haber)}
                 </h3>
+
             `;
 
             newsGrid.appendChild(card);
@@ -596,31 +649,15 @@ if (breakingContainer) {
             event => {
 
                 if (event.key === "Enter") {
-                    aramaYap();
+                    ara();
                 }
-            }
-        );
-
-        searchInput.addEventListener(
-            "input",
-            () => {
-
-                if (
-                    searchInput.value.trim() === ""
-                ) {
-
-                    if (searchResultInfo) {
-                        searchResultInfo.textContent = "";
-                    }
-                }
-
             }
         );
     }
 
 
     /* =====================================================
-       KLAVYEYLE MANŞET GEÇİŞİ
+       MANŞET KLAVYE KONTROLÜ
        ===================================================== */
 
     document.addEventListener(
@@ -628,17 +665,22 @@ if (breakingContainer) {
         event => {
 
             if (
-                event.key === "ArrowLeft" &&
-                document.activeElement.tagName !== "INPUT"
+                document.activeElement &&
+                document.activeElement.tagName === "INPUT"
             ) {
-                manşetGöster(aktifManşet - 1);
+                return;
             }
 
-            if (
-                event.key === "ArrowRight" &&
-                document.activeElement.tagName !== "INPUT"
-            ) {
-                manşetGöster(aktifManşet + 1);
+            if (event.key === "ArrowLeft") {
+                mansetGoster(
+                    aktifManset - 1
+                );
+            }
+
+            if (event.key === "ArrowRight") {
+                mansetGoster(
+                    aktifManset + 1
+                );
             }
         }
     );
