@@ -631,40 +631,170 @@
         );
     }
 
-    /* =====================================================
-       ÇEREZ
-    ===================================================== */
 
-    function cookieKontrol() {
-        if (!cookieBox) {
-            return;
-        }
+/* =========================================================
+   ÇEREZ BİLDİRİMİ
+   Siteye ilk girişte göster
+   ========================================================= */
 
-        const kabul =
-            localStorage.getItem("haberista_cookie");
-
-        if (kabul === "accepted") {
-            cookieBox.style.display = "none";
-        } else {
-            cookieBox.style.display = "flex";
-        }
+function cookieKontrol() {
+    if (!cookieBox) {
+        return;
     }
 
-    if (cookieAccept) {
-        cookieAccept.addEventListener(
-            "click",
-            function () {
-                localStorage.setItem(
-                    "haberista_cookie",
-                    "accepted"
-                );
+    const kabul =
+        localStorage.getItem("haberista_cookie");
 
-                if (cookieBox) {
-                    cookieBox.style.display = "none";
-                }
+    if (kabul === "accepted") {
+        cookieBox.style.display = "none";
+    } else {
+        /*
+         * İlk girişte hemen göster
+         */
+        cookieBox.style.display = "flex";
+    }
+}
+
+if (cookieAccept) {
+    cookieAccept.addEventListener(
+        "click",
+        function () {
+            localStorage.setItem(
+                "haberista_cookie",
+                "accepted"
+            );
+
+            if (cookieBox) {
+                cookieBox.style.display = "none";
             }
+        }
+    );
+}
+
+
+/* =========================================================
+   ONESIGNAL BİLDİRİMİ
+   Site açılır açılmaz bildirim izni iste
+   ========================================================= */
+
+async function bildirimIzniniIste() {
+    try {
+        /*
+         * OneSignal henüz yüklenmediyse
+         * kuyruğa ekliyoruz.
+         */
+        if (
+            window.OneSignalDeferred &&
+            Array.isArray(window.OneSignalDeferred)
+        ) {
+            window.OneSignalDeferred.push(
+                async function (OneSignal) {
+
+                    try {
+
+                        /*
+                         * Kullanıcı daha önce izin verdiyse
+                         * tekrar pencere açma.
+                         */
+                        const permission =
+                            await OneSignal.Notifications
+                                .permissionNative();
+
+                        if (permission === true) {
+                            console.log(
+                                "Haberİsta bildirim izni zaten verilmiş."
+                            );
+
+                            return;
+                        }
+
+                        /*
+                         * Site açıldıktan hemen sonra
+                         * OneSignal bildirim istemini aç.
+                         */
+                        await OneSignal.Slidedown.promptPush();
+
+                    } catch (error) {
+
+                        console.warn(
+                            "OneSignal bildirim istemi açılamadı:",
+                            error
+                        );
+
+                    }
+
+                }
+            );
+        }
+
+    } catch (error) {
+
+        console.warn(
+            "Bildirim sistemi başlatılamadı:",
+            error
         );
+
     }
+}
+
+
+/* =========================================================
+   BİLDİRİM BUTONU
+   Kullanıcı daha sonra da açabilsin
+   ========================================================= */
+
+if (notificationBtn) {
+
+    notificationBtn.addEventListener(
+        "click",
+        function () {
+
+            bildirimIzniniIste();
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   İLK GİRİŞTE ÇALIŞTIR
+   ========================================================= */
+
+function ilkGirisBildirimVeCookie() {
+
+    /*
+     * Çerez bildirimi
+     */
+    cookieKontrol();
+
+    /*
+     * Bildirim istemi
+     *
+     * OneSignal'ın tamamen yüklenmesi için
+     * kısa bir gecikme bırakıyoruz.
+     */
+    setTimeout(
+        function () {
+            bildirimIzniniIste();
+        },
+        800
+    );
+}
+
+
+Ardından `uygulamayiBaslat()` içindeki şu bölümü:
+
+/* 5. Çerez */
+cookieKontrol();
+
+
+şununla değiştir:
+
+
+/* 5. Çerez + ilk giriş bildirim isteği */
+ilkGirisBildirimVeCookie();
+
 
     /* =====================================================
        PİYASA
