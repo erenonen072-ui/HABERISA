@@ -2896,3 +2896,157 @@ body.dark-mode .no-news {
         font-size: 20px !important;
     }
 }
+/* =========================================================
+   HABERİSTA — MANŞET
+   DAR + YÜKSEK + KAREYE YAKIN
+   ========================================================= */
+
+.hero-section {
+    width: 100% !important;
+    max-width: 680px !important;
+    margin: 26px auto 30px !important;
+    padding: 0 !important;
+}
+
+.hero-main {
+    width: 100% !important;
+    height: 430px !important;
+    min-height: 430px !important;
+    max-height: 430px !important;
+    border-radius: 14px !important;
+    overflow: hidden !important;
+    position: relative !important;
+}
+
+.hero-slide,
+.hero-slide-link,
+.hero-image {
+    width: 100% !important;
+    height: 430px !important;
+    min-height: 430px !important;
+    max-height: 430px !important;
+}
+
+.hero-image {
+    display: block !important;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+
+.hero-overlay {
+    padding: 26px !important;
+}
+
+.hero-overlay h2 {
+    max-width: 570px !important;
+    margin: 0 !important;
+    font-size: 28px !important;
+    line-height: 1.08 !important;
+    font-weight: 900 !important;
+    letter-spacing: -0.7px !important;
+}
+
+/* 1 - 20 NUMARALAR */
+.hero-numbers {
+    width: 100% !important;
+    max-width: 680px !important;
+    margin: 10px auto 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    gap: 5px !important;
+}
+
+.hero-number {
+    width: 29px !important;
+    height: 29px !important;
+    min-width: 29px !important;
+    padding: 0 !important;
+    border-radius: 6px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* TABLET */
+@media (max-width: 700px) {
+
+    .hero-section {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 12px !important;
+        box-sizing: border-box !important;
+    }
+
+    .hero-main {
+        width: 100% !important;
+        height: 360px !important;
+        min-height: 360px !important;
+        max-height: 360px !important;
+    }
+
+    .hero-slide,
+    .hero-slide-link,
+    .hero-image {
+        height: 360px !important;
+        min-height: 360px !important;
+        max-height: 360px !important;
+    }
+
+    .hero-overlay {
+        padding: 20px !important;
+    }
+
+    .hero-overlay h2 {
+        font-size: 23px !important;
+    }
+
+    .hero-numbers {
+        gap: 4px !important;
+    }
+
+    .hero-number {
+        width: 27px !important;
+        height: 27px !important;
+        min-width: 27px !important;
+    }
+}
+
+/* TELEFON */
+@media (max-width: 450px) {
+
+    .hero-section {
+        padding: 0 10px !important;
+    }
+
+    .hero-main {
+        height: 310px !important;
+        min-height: 310px !important;
+        max-height: 310px !important;
+        border-radius: 12px !important;
+    }
+
+    .hero-slide,
+    .hero-slide-link,
+    .hero-image {
+        height: 310px !important;
+        min-height: 310px !important;
+        max-height: 310px !important;
+    }
+
+    .hero-overlay {
+        padding: 17px !important;
+    }
+
+    .hero-overlay h2 {
+        font-size: 20px !important;
+        line-height: 1.1 !important;
+    }
+
+    .hero-number {
+        width: 25px !important;
+        height: 25px !important;
+        min-width: 25px !important;
+        font-size: 11px !important;
+    }
+}
