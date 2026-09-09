@@ -9,13 +9,35 @@ const vm = require("vm");
    ========================================================= */
 
 const ROOT = __dirname;
-
 const HABER_HTML = path.join(ROOT, "haber.html");
 const HABERLER_JS = path.join(ROOT, "js", "haberler.js");
 const HABER_ROOT = path.join(ROOT, "haber");
+const SITEMAP_FILE = path.join(ROOT, "sitemap.xml");
 
 const SITE_URL = "https://haberisa.vercel.app";
 const SITE_NAME = "Haberİsta";
+
+/* =========================================================
+   SABİT SAYFALAR
+   ========================================================= */
+
+const STATIC_PAGES = [
+    "/",
+    "/gundem.html",
+    "/ekonomi.html",
+    "/spor.html",
+    "/magazin.html",
+    "/dunya.html",
+    "/teknoloji.html",
+    "/saglik.html",
+    "/kultur-sanat.html",
+
+    "/hakkimizda.html",
+    "/iletisim.html",
+    "/gizlilik.html",
+    "/cerez-politikasi.html",
+    "/kullanim-sartlari.html"
+];
 
 /* =========================================================
    DOSYA İŞLEMLERİ
@@ -34,7 +56,11 @@ function writeFile(file, content) {
         recursive: true
     });
 
-    fs.writeFileSync(file, content, "utf8");
+    fs.writeFileSync(
+        file,
+        content,
+        "utf8"
+    );
 }
 
 /* =========================================================
@@ -52,6 +78,19 @@ function escapeHTML(value) {
 
 function escapeAttribute(value) {
     return escapeHTML(value);
+}
+
+/* =========================================================
+   XML ESCAPE
+   ========================================================= */
+
+function escapeXML(value) {
+    return String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&apos;");
 }
 
 /* =========================================================
@@ -151,6 +190,7 @@ function getImage(haber) {
     }
 
     /* Harici URL */
+
     if (
         /^https?:\/\//i.test(image) ||
         /^data:/i.test(image)
@@ -159,6 +199,7 @@ function getImage(haber) {
     }
 
     /* Root-relative URL */
+
     if (image.startsWith("/")) {
         return image;
     }
@@ -166,14 +207,12 @@ function getImage(haber) {
     /*
        images/haber.jpg
        ./images/haber.jpg
-
        ->
-       
        /images/haber.jpg
     */
 
     image = image
-        .replace(/^\.\/+/, "")
+        .replace(/^\.\//, "")
         .replace(/^\/+/, "");
 
     return "/" + image;
@@ -366,7 +405,6 @@ function createSidebarNews(currentHaber) {
                         loading="lazy"
                         decoding="async"
                     >
-
                     <span>
                         ${title}
                     </span>
@@ -488,9 +526,11 @@ function createArticleHTML(haber) {
                         ? `
                             <time
                                 itemprop="datePublished"
-                                datetime="${escapeAttribute(
-                                    haber.publishedAt || ""
-                                )}"
+                                ${
+                                    haber.publishedAt
+                                        ? `datetime="${escapeAttribute(haber.publishedAt)}"`
+                                        : ""
+                                }
                             >
                                 ${date}
                             </time>
@@ -607,7 +647,9 @@ function createArticleHTML(haber) {
             </h2>
 
             <div class="sidebar-news-list">
+
                 ${createSidebarNews(haber)}
+
             </div>
 
         </div>
@@ -622,14 +664,9 @@ function createArticleHTML(haber) {
    HTML ELEMENT BULMA
    ========================================================= */
 
-/*
-   İç içe div'ler bulunduğu için basit regex yerine
-   gerçek bir tag sayacı kullanıyoruz.
-*/
-
 function findElementById(html, id) {
     const idRegex = new RegExp(
-        `<([a-zA-Z0-9]+)\\b[^>]*\\bid=["']${id}["'][^>]*>`,
+        `<([a-zA-Z0-9]+)\\b[^>]*\\bid=["']${escapeRegex(id)}["'][^>]*>`,
         "i"
     );
 
@@ -640,8 +677,12 @@ function findElementById(html, id) {
     }
 
     const tagName = match[1];
+
     const openingStart = match.index;
-    const openingEnd = match.index + match[0].length;
+
+    const openingEnd =
+        match.index +
+        match[0].length;
 
     const tagRegex = new RegExp(
         `<\\/?${tagName}\\b[^>]*>`,
@@ -651,9 +692,12 @@ function findElementById(html, id) {
     tagRegex.lastIndex = openingEnd;
 
     let depth = 1;
+
     let tagMatch;
 
-    while ((tagMatch = tagRegex.exec(html)) !== null) {
+    while (
+        (tagMatch = tagRegex.exec(html)) !== null
+    ) {
         const tag = tagMatch[0];
 
         if (/^<\//.test(tag)) {
@@ -729,7 +773,7 @@ function replaceTitle(
 }
 
 /* =========================================================
-   META NAME
+   REGEX ESCAPE
    ========================================================= */
 
 function escapeRegex(value) {
@@ -738,6 +782,10 @@ function escapeRegex(value) {
         "\\$&"
     );
 }
+
+/* =========================================================
+   META NAME
+   ========================================================= */
 
 function replaceMeta(
     html,
@@ -892,19 +940,13 @@ function createArticleSchema(haber) {
 
         headline: getTitle(haber),
 
-        description: getSpot(haber),
+        description:
+            getSpot(haber) ||
+            getTitle(haber),
 
         image: [
             fullImageURL
         ],
-
-        datePublished:
-            haber.publishedAt || "",
-
-        dateModified:
-            haber.dateModified ||
-            haber.publishedAt ||
-            "",
 
         author: {
             "@type": "Organization",
@@ -924,6 +966,20 @@ function createArticleSchema(haber) {
 
         url: getNewsURL(haber)
     };
+
+    if (haber.publishedAt) {
+        schema.datePublished =
+            haber.publishedAt;
+    }
+
+    if (
+        haber.dateModified ||
+        haber.publishedAt
+    ) {
+        schema.dateModified =
+            haber.dateModified ||
+            haber.publishedAt;
+    }
 
     return `
 <script type="application/ld+json">
@@ -1124,7 +1180,10 @@ function checkDuplicates(haberler) {
         const slug =
             getSlug(haber);
 
-        if (!id || id === "undefined") {
+        if (
+            !id ||
+            id === "undefined"
+        ) {
             throw new Error(
                 `ID bulunmayan haber: ${getTitle(haber)}`
             );
@@ -1156,6 +1215,92 @@ function checkDuplicates(haberler) {
 }
 
 /* =========================================================
+   SITEMAP OLUŞTUR
+   ========================================================= */
+
+function createSitemap(haberler) {
+    const urls = [];
+
+    /* ANA VE SABİT SAYFALAR */
+
+    for (const page of STATIC_PAGES) {
+        urls.push({
+            loc: SITE_URL + page
+        });
+    }
+
+    /* HABERLER */
+
+    for (const haber of haberler) {
+        urls.push({
+            loc: getNewsURL(haber)
+        });
+    }
+
+    /* DUPLICATE URL TEMİZLE */
+
+    const uniqueUrls = [];
+    const seen = new Set();
+
+    for (const item of urls) {
+        if (seen.has(item.loc)) {
+            continue;
+        }
+
+        seen.add(item.loc);
+        uniqueUrls.push(item);
+    }
+
+    /* XML */
+
+    let xml = `<?xml version="1.0" encoding="UTF-8"?>\n`;
+
+    xml += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`;
+
+    for (const item of uniqueUrls) {
+        xml += `    <url>\n`;
+        xml += `        <loc>${escapeXML(item.loc)}</loc>\n`;
+        xml += `    </url>\n`;
+    }
+
+    xml += `</urlset>\n`;
+
+    return xml;
+}
+
+function buildSitemap(haberler) {
+    const sitemap =
+        createSitemap(haberler);
+
+    writeFile(
+        SITEMAP_FILE,
+        sitemap
+    );
+
+    const articleCount =
+        haberler.length;
+
+    const staticCount =
+        STATIC_PAGES.length;
+
+    console.log(
+        `✓ sitemap.xml oluşturuldu`
+    );
+
+    console.log(
+        `  → ${staticCount} sabit sayfa`
+    );
+
+    console.log(
+        `  → ${articleCount} haber sayfası`
+    );
+
+    console.log(
+        `  → Toplam ${staticCount + articleCount} URL`
+    );
+}
+
+/* =========================================================
    BUILD
    ========================================================= */
 
@@ -1180,8 +1325,13 @@ function build() {
         );
     }
 
-    console.log("✓ haber.html bulundu");
-    console.log("✓ haberler.js bulundu");
+    console.log(
+        "✓ haber.html bulundu"
+    );
+
+    console.log(
+        "✓ haberler.js bulundu"
+    );
 
     /* HABERLER */
 
@@ -1247,15 +1397,6 @@ function build() {
         );
     }
 
-    /*
-       Eski klasörü silmiyoruz.
-       Böylece yanlışlıkla manuel eklenen
-       dosyalar kaybolmaz.
-
-       Yeni oluşturulan sayfalar aynı slug
-       üzerine yazılır.
-    */
-
     console.log(
         "✓ haber/ klasörü hazır"
     );
@@ -1319,7 +1460,16 @@ function build() {
         }
     }
 
+    /* =====================================================
+       SITEMAP
+       ===================================================== */
+
+    if (failed === 0) {
+        buildSitemap(haberler);
+    }
+
     console.log("");
+
     console.log("========================================");
     console.log("       HABERİSTA BUILD BİTTİ");
     console.log("========================================");
@@ -1336,7 +1486,14 @@ function build() {
         `Hatalı   : ${failed}`
     );
 
-    console.log("========================================");
+    console.log(
+        `Sitemap  : ${failed === 0 ? "OK" : "OLUŞTURULMADI"}`
+    );
+
+    console.log(
+        "========================================"
+    );
+
     console.log("");
 
     if (failed > 0) {
@@ -1356,6 +1513,10 @@ function build() {
     console.log(
         "📌 haberler.js değiştirilmedi."
     );
+
+    console.log(
+        "📌 sitemap.xml otomatik oluşturuldu."
+    );
 }
 
 /* =========================================================
@@ -1370,7 +1531,10 @@ try {
     console.error("");
     console.error("❌ BUILD HATASI");
     console.error("");
-    console.error(error.stack || error.message);
+    console.error(
+        error.stack ||
+        error.message
+    );
     console.error("");
 
     process.exit(1);
