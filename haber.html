@@ -6,8 +6,10 @@
 
     <title>Haber Detayı | Haberİsta</title>
 
-    <meta name="description"
-          content="Haberİsta haber detay sayfası. Türkiye ve dünyadan güncel gelişmeler.">
+    <meta
+        name="description"
+        content="Haberİsta haber detay sayfası. Türkiye ve dünyadan güncel gelişmeler."
+    >
 
     <meta name="robots" content="index, follow">
 
@@ -21,8 +23,7 @@
     <style>
         /* =========================================
            HABER DETAY SAYFASI
-           Mevcut site tasarımını bozmadan
-           profesyonel haber okuma görünümü
+           Haberİsta
         ========================================= */
 
         .haber-detail-page {
@@ -57,7 +58,7 @@
             opacity: .55;
         }
 
-        /* Ana kart */
+        /* Ana haber kartı */
 
         .haber-article {
             background: #ffffff;
@@ -67,7 +68,7 @@
             border: 1px solid rgba(15, 23, 42, .06);
         }
 
-        /* Üst alan */
+        /* Haber üst alanı */
 
         .haber-header {
             padding: 36px 42px 30px;
@@ -105,7 +106,7 @@
             font-weight: 500;
         }
 
-        /* Meta */
+        /* Meta bilgiler */
 
         .haber-meta {
             display: flex;
@@ -137,7 +138,7 @@
             color: #374151;
         }
 
-        /* Görsel */
+        /* Haber görseli */
 
         .haber-image-wrapper {
             width: 100%;
@@ -151,7 +152,7 @@
             object-fit: cover;
         }
 
-        /* İçerik alanı */
+        /* İçerik */
 
         .haber-content-wrapper {
             max-width: 900px;
@@ -236,7 +237,7 @@
             margin: 30px 0;
         }
 
-        /* Haber sonu */
+        /* Kaynak */
 
         .haber-source-box {
             margin-top: 38px;
@@ -288,7 +289,10 @@
             font-size: 13px;
             font-weight: 750;
             cursor: pointer;
-            transition: transform .2s ease, box-shadow .2s ease;
+            transition:
+                transform .2s ease,
+                box-shadow .2s ease,
+                background .2s ease;
         }
 
         .haber-share-button:hover {
@@ -320,7 +324,7 @@
             transform: translateY(-2px);
         }
 
-        /* Bulunamadı */
+        /* Hata */
 
         .haber-error {
             max-width: 700px;
@@ -342,7 +346,9 @@
             line-height: 1.6;
         }
 
-        /* Mobil */
+        /* =========================================
+           MOBİL
+        ========================================= */
 
         @media (max-width: 768px) {
 
@@ -445,334 +451,527 @@
     <main class="haber-detail-page">
 
         <!-- Breadcrumb -->
-        <nav class="haber-breadcrumb" aria-label="Breadcrumb">
+
+        <nav
+            class="haber-breadcrumb"
+            aria-label="Breadcrumb"
+        >
             <a href="/">Ana Sayfa</a>
+
             <span>›</span>
-            <span id="breadcrumb-category">Haber</span>
+
+            <span id="breadcrumb-category">
+                Haber
+            </span>
+
             <span>›</span>
-            <span>Haber Detayı</span>
+
+            <span>
+                Haber Detayı
+            </span>
         </nav>
 
-        <!-- Haber -->
-        <article class="haber-article" id="haber-container">
+        <!-- =========================================
+             BUILD.JS İÇİN ÖNEMLİ
+             ID: articleContainer
+        ========================================== -->
+
+        <article
+            class="haber-article"
+            id="articleContainer"
+        >
 
             <!-- JS burayı dolduracak -->
 
             <div class="haber-error">
-                <h1>Haber yükleniyor...</h1>
+
+                <h1>
+                    Haber yükleniyor...
+                </h1>
+
                 <p>
-                    Haber içeriği hazırlanıyor, lütfen bekleyin.
+                    Haber içeriği hazırlanıyor,
+                    lütfen bekleyin.
                 </p>
+
             </div>
 
         </article>
 
     </main>
 
-    <!-- Mevcut site JS -->
+    <!-- Haber verileri -->
+
     <script src="js/haberler.js"></script>
 
     <script>
         "use strict";
 
-        document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
 
-            const container = document.getElementById("haber-container");
+                /* =====================================
+                   ANA CONTAINER
+                   build.js ile uyumlu ID
+                ===================================== */
 
-            /*
-             * URL'den haber ID'sini alır.
-             * Örnek:
-             * /haber.html?id=10
-             */
-            const params = new URLSearchParams(window.location.search);
-            const id = params.get("id");
+                const container =
+                    document.getElementById(
+                        "articleContainer"
+                    );
 
-            /*
-             * haberler.js içindeki haberler dizisini bul.
-             */
-            let haberListesi = [];
+                if (!container) {
+                    console.error(
+                        "Haberİsta: articleContainer bulunamadı."
+                    );
+                    return;
+                }
 
-            if (typeof haberler !== "undefined" && Array.isArray(haberler)) {
-                haberListesi = haberler;
-            } else if (
-                typeof haberlerData !== "undefined" &&
-                Array.isArray(haberlerData)
-            ) {
-                haberListesi = haberlerData;
-            } else if (
-                typeof HABERLER !== "undefined" &&
-                Array.isArray(HABERLER)
-            ) {
-                haberListesi = HABERLER;
-            }
+                /* =====================================
+                   URL'DEN ID AL
+                   
+                   Örnek:
+                   /haber.html?id=10
+                ===================================== */
 
-            /*
-             * ID eşleşmesi
-             */
-            const haber = haberListesi.find(function (item) {
-                return String(item.id) === String(id);
-            });
+                const params =
+                    new URLSearchParams(
+                        window.location.search
+                    );
 
-            if (!haber) {
+                const id =
+                    params.get("id");
+
+                /* =====================================
+                   HABER LİSTESİNİ BUL
+                ===================================== */
+
+                let haberListesi = [];
+
+                if (
+                    typeof haberler !== "undefined" &&
+                    Array.isArray(haberler)
+                ) {
+
+                    haberListesi = haberler;
+
+                } else if (
+                    typeof haberlerData !== "undefined" &&
+                    Array.isArray(haberlerData)
+                ) {
+
+                    haberListesi = haberlerData;
+
+                } else if (
+                    typeof HABERLER !== "undefined" &&
+                    Array.isArray(HABERLER)
+                ) {
+
+                    haberListesi = HABERLER;
+                }
+
+                /* =====================================
+                   HABERİ BUL
+                ===================================== */
+
+                const haber =
+                    haberListesi.find(
+                        function (item) {
+
+                            return String(item.id) ===
+                                String(id);
+
+                        }
+                    );
+
+                /* =====================================
+                   HABER YOKSA
+                ===================================== */
+
+                if (!haber) {
+
+                    container.innerHTML = `
+                        <div class="haber-error">
+
+                            <h1>
+                                Haber bulunamadı
+                            </h1>
+
+                            <p>
+                                Aradığınız haber mevcut değil
+                                veya kaldırılmış olabilir.
+                            </p>
+
+                            <div class="haber-back">
+
+                                <a href="/">
+                                    ← Ana Sayfaya Dön
+                                </a>
+
+                            </div>
+
+                        </div>
+                    `;
+
+                    return;
+                }
+
+                /* =====================================
+                   SAYFA BAŞLIĞI
+                ===================================== */
+
+                document.title =
+                    haber.baslik +
+                    " | Haberİsta";
+
+                /* =====================================
+                   BREADCRUMB
+                ===================================== */
+
+                const breadcrumbCategory =
+                    document.getElementById(
+                        "breadcrumb-category"
+                    );
+
+                if (breadcrumbCategory) {
+
+                    breadcrumbCategory.textContent =
+                        haber.kategori ||
+                        "Haber";
+                }
+
+                /* =====================================
+                   META DESCRIPTION
+                ===================================== */
+
+                const description =
+                    haber.spot ||
+                    haber.baslik ||
+                    "Haberİsta güncel haberler.";
+
+                const metaDescription =
+                    document.querySelector(
+                        'meta[name="description"]'
+                    );
+
+                if (metaDescription) {
+
+                    metaDescription.setAttribute(
+                        "content",
+                        description
+                    );
+                }
+
+                /* =====================================
+                   GÖRSEL
+                ===================================== */
+
+                const image =
+                    haber.gorsel ||
+                    haber.gorselUrl ||
+                    haber.image ||
+                    "";
+
+                /* =====================================
+                   TARİH
+                ===================================== */
+
+                const tarih =
+                    haber.tarih ||
+                    "";
+
+                /* =====================================
+                   SAAT
+                ===================================== */
+
+                const saat =
+                    haber.saat ||
+                    "";
+
+                /* =====================================
+                   YAZAR
+                ===================================== */
+
+                const yazar =
+                    haber.yazar ||
+                    "Haberİsta Haber Merkezi";
+
+                /* =====================================
+                   KAYNAK
+                ===================================== */
+
+                const kaynak =
+                    haber.kaynak ||
+                    "Haberİsta";
+
+                /* =====================================
+                   İÇERİK
+                   
+                   ÖNEMLİ:
+                   haberler.js içindeki içerikler
+                   HTML içeriyorsa direkt kullanılır.
+                ===================================== */
+
+                const icerik =
+                    haber.icerik ||
+                    haber.metin ||
+                    haber.content ||
+                    "<p>Bu haber için içerik bulunamadı.</p>";
+
+                /* =====================================
+                   GÖRSEL HTML
+                ===================================== */
+
+                const imageHTML =
+                    image
+                        ? `
+                            <div class="haber-image-wrapper">
+
+                                <img
+                                    class="haber-image"
+                                    src="${escapeHTML(image)}"
+                                    alt="${escapeHTML(
+                                        haber.baslik ||
+                                        "Haber görseli"
+                                    )}"
+                                    loading="eager"
+                                >
+
+                            </div>
+                        `
+                        : "";
+
+                /* =====================================
+                   SAAT HTML
+                ===================================== */
+
+                const saatHTML =
+                    saat
+                        ? `
+                            <span class="haber-meta-dot">
+                            </span>
+
+                            <div class="haber-meta-item">
+
+                                <span>
+                                    🕐
+                                </span>
+
+                                <span>
+                                    ${escapeHTML(saat)}
+                                </span>
+
+                            </div>
+                        `
+                        : "";
+
+                /* =====================================
+                   HABERİ OLUŞTUR
+                ===================================== */
 
                 container.innerHTML = `
-                    <div class="haber-error">
-                        <h1>Haber bulunamadı</h1>
-                        <p>
-                            Aradığınız haber mevcut değil veya kaldırılmış olabilir.
-                        </p>
-                        <div class="haber-back">
-                            <a href="/">
-                                ← Ana Sayfaya Dön
-                            </a>
+
+                    <header class="haber-header">
+
+                        <div class="haber-category">
+
+                            ${escapeHTML(
+                                haber.kategori ||
+                                "HABER"
+                            )}
+
                         </div>
+
+                        <h1 class="haber-title">
+
+                            ${escapeHTML(
+                                haber.baslik ||
+                                "Haber"
+                            )}
+
+                        </h1>
+
+                        <p class="haber-spot">
+
+                            ${escapeHTML(
+                                haber.spot ||
+                                ""
+                            )}
+
+                        </p>
+
+                        <div class="haber-meta">
+
+                            <div class="haber-meta-item">
+
+                                <span>
+                                    ✍️
+                                </span>
+
+                                <span class="haber-author">
+
+                                    ${escapeHTML(
+                                        yazar
+                                    )}
+
+                                </span>
+
+                            </div>
+
+                            <span class="haber-meta-dot">
+                            </span>
+
+                            <div class="haber-meta-item">
+
+                                <span>
+                                    📅
+                                </span>
+
+                                <span>
+
+                                    ${escapeHTML(
+                                        tarih
+                                    )}
+
+                                </span>
+
+                            </div>
+
+                            ${saatHTML}
+
+                        </div>
+
+                    </header>
+
+                    ${imageHTML}
+
+                    <div class="haber-content-wrapper">
+
+                        <div class="haber-content">
+
+                            ${icerik}
+
+                        </div>
+
+                        <div class="haber-source-box">
+
+                            <strong>
+                                Kaynak:
+                            </strong>
+
+                            ${escapeHTML(
+                                kaynak
+                            )}
+
+                            <br>
+
+                            <strong>
+                                Yayın:
+                            </strong>
+
+                            Haberİsta
+
+                        </div>
+
                     </div>
+
+                    <div class="haber-share">
+
+                        <div class="haber-share-title">
+
+                            Bu haberi paylaş
+
+                        </div>
+
+                        <div class="haber-share-buttons">
+
+                            <button
+                                class="haber-share-button"
+                                onclick="copyHaberLink()"
+                                type="button"
+                            >
+
+                                🔗 Bağlantıyı Kopyala
+
+                            </button>
+
+                            <a
+                                class="haber-share-button"
+                                id="whatsapp-share"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+
+                                WhatsApp
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
                 `;
 
-                return;
-            }
+                /* =====================================
+                   WHATSAPP PAYLAŞIMI
+                ===================================== */
 
-            /*
-             * Sayfa başlığı
-             */
-            document.title =
-                haber.baslik + " | Haberİsta";
+                const currentURL =
+                    window.location.href;
 
-            /*
-             * Breadcrumb
-             */
-            const breadcrumbCategory =
-                document.getElementById("breadcrumb-category");
-
-            if (breadcrumbCategory) {
-                breadcrumbCategory.textContent =
-                    haber.kategori || "Haber";
-            }
-
-            /*
-             * Meta bilgileri
-             */
-            const description =
-                haber.spot ||
-                haber.baslik ||
-                "Haberİsta güncel haberler.";
-
-            const metaDescription =
-                document.querySelector('meta[name="description"]');
-
-            if (metaDescription) {
-                metaDescription.setAttribute(
-                    "content",
-                    description
-                );
-            }
-
-            /*
-             * Görsel
-             */
-            const image =
-                haber.gorsel ||
-                haber.gorselUrl ||
-                haber.image ||
-                "";
-
-            /*
-             * Tarih
-             */
-            const tarih =
-                haber.tarih || "";
-
-            /*
-             * Saat
-             */
-            const saat =
-                haber.saat || "";
-
-            /*
-             * Yazar
-             */
-            const yazar =
-                haber.yazar ||
-                "Haberİsta Editör";
-
-            /*
-             * Kaynak
-             */
-            const kaynak =
-                haber.kaynak ||
-                "Haberİsta";
-
-            /*
-             * İçerik
-             */
-            const icerik =
-                haber.icerik ||
-                haber.metin ||
-                haber.content ||
-                "<p>Bu haber için içerik bulunamadı.</p>";
-
-            /*
-             * Görsel HTML
-             */
-            const imageHTML = image
-                ? `
-                    <div class="haber-image-wrapper">
-                        <img
-                            class="haber-image"
-                            src="${image}"
-                            alt="${escapeHTML(haber.baslik || "Haber görseli")}"
-                            loading="eager"
-                        >
-                    </div>
-                `
-                : "";
-
-            /*
-             * Haber HTML
-             */
-            container.innerHTML = `
-
-                <header class="haber-header">
-
-                    <div class="haber-category">
-                        ${escapeHTML(haber.kategori || "HABER")}
-                    </div>
-
-                    <h1 class="haber-title">
-                        ${escapeHTML(haber.baslik || "Haber")}
-                    </h1>
-
-                    <p class="haber-spot">
-                        ${escapeHTML(haber.spot || "")}
-                    </p>
-
-                    <div class="haber-meta">
-
-                        <div class="haber-meta-item">
-                            <span>✍️</span>
-                            <span class="haber-author">
-                                ${escapeHTML(yazar)}
-                            </span>
-                        </div>
-
-                        <span class="haber-meta-dot"></span>
-
-                        <div class="haber-meta-item">
-                            <span>📅</span>
-                            <span>
-                                ${escapeHTML(tarih)}
-                            </span>
-                        </div>
-
-                        ${
-                            saat
-                            ? `
-                                <span class="haber-meta-dot"></span>
-
-                                <div class="haber-meta-item">
-                                    <span>🕐</span>
-                                    <span>
-                                        ${escapeHTML(saat)}
-                                    </span>
-                                </div>
-                            `
-                            : ""
-                        }
-
-                    </div>
-
-                </header>
-
-                ${imageHTML}
-
-                <div class="haber-content-wrapper">
-
-                    <div class="haber-content">
-                        ${icerik}
-                    </div>
-
-                    <div class="haber-source-box">
-
-                        <strong>Kaynak:</strong>
-                        ${escapeHTML(kaynak)}
-
-                        <br>
-
-                        <strong>Yayın:</strong>
-                        Haberİsta
-
-                    </div>
-
-                </div>
-
-                <div class="haber-share">
-
-                    <div class="haber-share-title">
-                        Bu haberi paylaş
-                    </div>
-
-                    <div class="haber-share-buttons">
-
-                        <button
-                            class="haber-share-button"
-                            onclick="copyHaberLink()"
-                            type="button"
-                        >
-                            🔗 Bağlantıyı Kopyala
-                        </button>
-
-                        <a
-                            class="haber-share-button"
-                            id="whatsapp-share"
-                            target="_blank"
-                            rel="noopener"
-                        >
-                            WhatsApp
-                        </a>
-
-                    </div>
-
-                </div>
-
-            `;
-
-            /*
-             * WhatsApp paylaşım linki
-             */
-            const currentURL =
-                window.location.href;
-
-            const whatsapp =
-                document.getElementById("whatsapp-share");
-
-            if (whatsapp) {
-                whatsapp.href =
-                    "https://wa.me/?text=" +
-                    encodeURIComponent(
-                        haber.baslik + " - " + currentURL
+                const whatsapp =
+                    document.getElementById(
+                        "whatsapp-share"
                     );
+
+                if (whatsapp) {
+
+                    whatsapp.href =
+                        "https://wa.me/?text=" +
+                        encodeURIComponent(
+                            haber.baslik +
+                            " - " +
+                            currentURL
+                        );
+                }
+
             }
+        );
 
-        });
+        /* =========================================
+           HTML GÜVENLİĞİ
+        ========================================= */
 
-
-        /*
-         * HTML güvenliği
-         */
         function escapeHTML(value) {
 
             return String(value)
-                .replace(/&/g, "&amp;")
-                .replace(/</g, "&lt;")
-                .replace(/>/g, "&gt;")
-                .replace(/"/g, "&quot;")
-                .replace(/'/g, "&#039;");
+                .replace(
+                    /&/g,
+                    "&amp;"
+                )
+                .replace(
+                    /</g,
+                    "&lt;"
+                )
+                .replace(
+                    />/g,
+                    "&gt;"
+                )
+                .replace(
+                    /"/g,
+                    "&quot;"
+                )
+                .replace(
+                    /'/g,
+                    "&#039;"
+                );
         }
 
+        /* =========================================
+           HABER LİNKİNİ KOPYALA
+        ========================================= */
 
-        /*
-         * Haber bağlantısını kopyala
-         */
         function copyHaberLink() {
 
             const url =
@@ -785,18 +984,22 @@
 
                 navigator.clipboard
                     .writeText(url)
-                    .then(function () {
+                    .then(
+                        function () {
 
-                        alert(
-                            "Haber bağlantısı kopyalandı."
-                        );
+                            alert(
+                                "Haber bağlantısı kopyalandı."
+                            );
 
-                    })
-                    .catch(function () {
+                        }
+                    )
+                    .catch(
+                        function () {
 
-                        fallbackCopy(url);
+                            fallbackCopy(url);
 
-                    });
+                        }
+                    );
 
             } else {
 
@@ -805,27 +1008,37 @@
             }
         }
 
+        /* =========================================
+           ESKİ TARAYICILAR İÇİN KOPYALAMA
+        ========================================= */
 
-        /*
-         * Eski tarayıcılar için
-         */
         function fallbackCopy(text) {
 
             const textarea =
-                document.createElement("textarea");
+                document.createElement(
+                    "textarea"
+                );
 
-            textarea.value = text;
+            textarea.value =
+                text;
 
-            textarea.style.position = "fixed";
-            textarea.style.opacity = "0";
+            textarea.style.position =
+                "fixed";
 
-            document.body.appendChild(textarea);
+            textarea.style.opacity =
+                "0";
+
+            document.body.appendChild(
+                textarea
+            );
 
             textarea.select();
 
             try {
 
-                document.execCommand("copy");
+                document.execCommand(
+                    "copy"
+                );
 
                 alert(
                     "Haber bağlantısı kopyalandı."
@@ -833,13 +1046,20 @@
 
             } catch (error) {
 
+                console.error(
+                    "Kopyalama hatası:",
+                    error
+                );
+
                 alert(
                     "Bağlantı kopyalanamadı."
                 );
 
             }
 
-            document.body.removeChild(textarea);
+            document.body.removeChild(
+                textarea
+            );
         }
     </script>
 
