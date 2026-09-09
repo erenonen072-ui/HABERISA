@@ -4450,3 +4450,180 @@ body.dark-mode .no-news {
         flex-basis: 31px !important;
     }
 }
+/* =========================================
+   MANŞET OKLARI - SADECE 2 OK
+========================================= */
+
+.hero-slide > .hero-arrow {
+    display: flex !important;
+}
+
+.hero-slider .hero-arrow:not(.hero-prev):not(.hero-next) {
+    display: none !important;
+}
+
+/* =========================================
+   MANŞET NUMARALARI
+========================================= */
+
+#heroNumbers {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: 5;
+}
+
+#heroNumbers .hero-numbers {
+    position: relative !important;
+    width: 100%;
+    height: 62px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 0;
+    padding: 0 15px;
+    background: #07111f;
+    border-radius: 0 0 20px 20px;
+    box-sizing: border-box;
+    overflow-x: auto;
+}
+
+#heroNumbers .hero-number {
+    position: relative !important;
+    flex: 0 0 35px;
+    width: 35px;
+    height: 35px;
+    min-width: 35px;
+    margin: 0;
+    border: 1px solid rgba(255,255,255,.14);
+    border-radius: 9px;
+    background: rgba(255,255,255,.06);
+    color: rgba(255,255,255,.65);
+    font-size: 11px;
+    font-weight: 900;
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+#heroNumbers .hero-number:hover {
+    background: rgba(37,99,235,.25);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+#heroNumbers .hero-number.active {
+    background: linear-gradient(135deg,#06b6d4,#2563eb);
+    color: #fff;
+    border-color: transparent;
+    box-shadow: 0 5px 18px rgba(37,99,235,.35);
+}
+
+/* =========================================
+   HABER KARTLARINI BÜYÜT
+========================================= */
+
+#newsGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 24px !important;
+}
+
+#newsGrid .news-card {
+    min-height: 390px !important;
+    border-radius: 18px !important;
+    overflow: hidden;
+}
+
+#newsGrid .news-card img,
+#newsGrid .news-image {
+    height: 230px !important;
+    min-height: 230px !important;
+    object-fit: cover;
+}
+
+#newsGrid .news-content {
+    padding: 20px !important;
+}
+
+#newsGrid .news-title {
+    font-size: 20px !important;
+    line-height: 1.35 !important;
+}
+
+#newsGrid .news-spot {
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+}
+
+/* =========================================
+   MASAÜSTÜDE DAHA BÜYÜK KARTLAR
+========================================= */
+
+@media (min-width: 1200px) {
+    #newsGrid {
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        gap: 28px !important;
+    }
+
+    #newsGrid .news-card {
+        min-height: 410px !important;
+    }
+
+    #newsGrid .news-card img,
+    #newsGrid .news-image {
+        height: 245px !important;
+        min-height: 245px !important;
+    }
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+    #newsGrid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 18px !important;
+    }
+
+    #newsGrid .news-card img,
+    #newsGrid .news-image {
+        height: 210px !important;
+        min-height: 210px !important;
+    }
+}
+
+/* =========================================
+   MOBİL
+========================================= */
+
+@media (max-width: 600px) {
+    #newsGrid {
+        grid-template-columns: 1fr !important;
+        gap: 18px !important;
+    }
+
+    #newsGrid .news-card {
+        min-height: 0 !important;
+    }
+
+    #newsGrid .news-card img,
+    #newsGrid .news-image {
+        height: 220px !important;
+        min-height: 220px !important;
+    }
+
+    #newsGrid .news-content {
+        padding: 17px !important;
+    }
+
+    #newsGrid .news-title {
+        font-size: 18px !important;
+    }
+
+    #heroNumbers .hero-numbers {
+        height: 58px;
+        justify-content: flex-start;
+    }
+}
