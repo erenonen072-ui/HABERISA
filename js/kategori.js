@@ -1,17 +1,10 @@
 "use strict";
 
 /* =========================================================
-   HABERİSTA - KATEGORİ SAYFASI
-   Her kategori kendi haberlerini gösterir
-   ========================================================= */
+   HABERİSTA - KATEGORİ HABERLERİ
+========================================================= */
 
-document.addEventListener("DOMContentLoaded", () => {
-
-    // Haberler yoksa çık
-    if (!Array.isArray(window.haberler)) {
-        console.error("haberler.js bulunamadı veya haberler dizisi yok.");
-        return;
-    }
+document.addEventListener("DOMContentLoaded", function () {
 
     const container = document.getElementById("kategori-listesi");
 
@@ -20,207 +13,144 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
-    /* =====================================================
-       KATEGORİ AYARLARI
-       ===================================================== */
-
-    const kategoriler = {
-        "Gündem": {
-            dosya: "gundem.html",
-            ikon: "📰",
-            aciklama: "Türkiye'den son dakika ve önemli gelişmeler.",
-            sinif: "gundem"
-        },
-
-        "Türkiye": {
-            dosya: "turkiye.html",
-            ikon: "🇹🇷",
-            aciklama: "Türkiye'nin dört bir yanından güncel gelişmeler.",
-            sinif: "turkiye"
-        },
-
-        "Dünya": {
-            dosya: "dunya.html",
-            ikon: "🌍",
-            aciklama: "Dünyadan son dakika gelişmeleri ve önemli haberler.",
-            sinif: "dunya"
-        },
-
-        "Ekonomi": {
-            dosya: "ekonomi.html",
-            ikon: "💰",
-            aciklama: "Ekonomi, finans, piyasalar ve para gündemi.",
-            sinif: "ekonomi"
-        },
-
-        "Spor": {
-            dosya: "spor.html",
-            ikon: "⚽",
-            aciklama: "Futbol ve spor dünyasından son gelişmeler.",
-            sinif: "spor"
-        },
-
-        "Eğitim": {
-            dosya: "egitim.html",
-            ikon: "🎓",
-            aciklama: "Eğitim, sınavlar, okullar ve öğrencilerden haberler.",
-            sinif: "egitim"
-        },
-
-        "Magazin": {
-            dosya: "magazin.html",
-            ikon: "⭐",
-            aciklama: "Magazin dünyasından en yeni gelişmeler.",
-            sinif: "magazin"
-        },
-
-        "Teknoloji": {
-            dosya: "teknoloji.html",
-            ikon: "💻",
-            aciklama: "Teknoloji, yapay zeka, telefonlar ve dijital dünya.",
-            sinif: "teknoloji"
-        },
-
-        "Kültür Sanat": {
-            dosya: "kultur-sanat.html",
-            ikon: "🎨",
-            aciklama: "Kültür, sanat, sinema, müzik ve etkinlik haberleri.",
-            sinif: "kultur-sanat"
-        },
-
-        "Sağlık": {
-            dosya: "saglik.html",
-            ikon: "🩺",
-            aciklama: "Sağlık dünyasından bilgilendirici ve güncel haberler.",
-            sinif: "saglik"
-        }
-    };
+    if (!Array.isArray(window.haberler)) {
+        console.error("haberler.js yüklenmemiş.");
+        container.innerHTML = `
+            <div class="kategori-bos">
+                <h2>Haberler yüklenemedi</h2>
+                <p>haberler.js dosyasını kontrol edin.</p>
+            </div>
+        `;
+        return;
+    }
 
     /* =====================================================
-       KATEGORİYİ BUL
-       ===================================================== */
+       BODY'DEN KATEGORİYİ AL
+    ===================================================== */
 
-    const urlParams = new URLSearchParams(window.location.search);
-
-    let aktifKategori = urlParams.get("kategori");
-
-    /*
-       Eğer kategori parametresi yoksa,
-       sayfanın dosya adına göre bul.
-    */
+    const aktifKategori = document.body.dataset.kategori;
 
     if (!aktifKategori) {
-
-        const dosya = window.location.pathname
-            .split("/")
-            .pop()
-            .toLowerCase();
-
-        const dosyaEslesme = {
-            "gundem.html": "Gündem",
-            "turkiye.html": "Türkiye",
-            "dunya.html": "Dünya",
-            "ekonomi.html": "Ekonomi",
-            "spor.html": "Spor",
-            "egitim.html": "Eğitim",
-            "magazin.html": "Magazin",
-            "teknoloji.html": "Teknoloji",
-            "kultur-sanat.html": "Kültür Sanat",
-            "saglik.html": "Sağlık"
-        };
-
-        aktifKategori = dosyaEslesme[dosya] || "Gündem";
+        console.error("body üzerinde data-kategori yok.");
+        return;
     }
 
-    /* =====================================================
-       KATEGORİYİ NORMALLEŞTİR
-       ===================================================== */
+    console.log("Aktif kategori:", aktifKategori);
 
-    function normalize(text) {
-        return String(text || "")
+    /* =====================================================
+       TÜRKÇE KARŞILAŞTIRMA
+    ===================================================== */
+
+    function normalize(metin) {
+        return String(metin || "")
             .trim()
-            .toLocaleLowerCase("tr-TR")
-            .replace(/ı/g, "i")
-            .replace(/İ/g, "i");
+            .toLocaleLowerCase("tr-TR");
     }
 
-    const hedefKategori = normalize(aktifKategori);
-
     /* =====================================================
-       SADECE AKTİF KATEGORİNİN HABERLERİ
-       ===================================================== */
+       SADECE BU KATEGORİNİN HABERLERİNİ AL
+    ===================================================== */
 
-    let kategoriHaberleri = window.haberler.filter(haber => {
+    const filtrelenmisHaberler = window.haberler.filter(function (haber) {
 
-        if (!haber || !haber.kategori) {
-            return false;
-        }
+        if (!haber) return false;
 
-        return normalize(haber.kategori) === hedefKategori;
+        return normalize(haber.kategori) === normalize(aktifKategori);
+
     });
 
-    /* =====================================================
-       KATEGORİ YAZIMINI DÜZELT
-       ===================================================== */
-
-    const gercekKategori =
-        Object.keys(kategoriler).find(
-            kategori => normalize(kategori) === hedefKategori
-        ) || aktifKategori;
-
-    const ayar = kategoriler[gercekKategori] || {
-        ikon: "📰",
-        aciklama: "Güncel haberler.",
-        sinif: "genel"
-    };
-
-    /* =====================================================
-       SAYFA BAŞLIĞINI GÜNCELLE
-       ===================================================== */
-
-    document.title = `${gercekKategori} Haberleri | HABERİSTA`;
-
-    const kategoriBaslik =
-        document.querySelector("[data-kategori-baslik]");
-
-    if (kategoriBaslik) {
-        kategoriBaslik.textContent = gercekKategori;
-    }
-
-    const kategoriAciklama =
-        document.querySelector("[data-kategori-aciklama]");
-
-    if (kategoriAciklama) {
-        kategoriAciklama.textContent = ayar.aciklama;
-    }
-
-    /* =====================================================
-       KATEGORİ SINIFINI BODY'YE EKLE
-       ===================================================== */
-
-    document.body.classList.add(
-        "kategori-" + ayar.sinif
+    console.log(
+        aktifKategori +
+        " kategorisindeki haber sayısı:",
+        filtrelenmisHaberler.length
     );
 
     /* =====================================================
-       HABER YOKSA
-       ===================================================== */
+       BAŞLIK
+    ===================================================== */
 
-    if (kategoriHaberleri.length === 0) {
+    const baslik = document.querySelector("[data-kategori-baslik]");
+
+    if (baslik) {
+        baslik.textContent = aktifKategori;
+    }
+
+    const aciklama = document.querySelector("[data-kategori-aciklama]");
+
+    if (aciklama) {
+
+        const aciklamalar = {
+
+            "Gündem":
+                "Türkiye gündeminden son gelişmeler ve önemli haberler.",
+
+            "Türkiye":
+                "Türkiye'nin dört bir yanından güncel gelişmeler.",
+
+            "Dünya":
+                "Dünyadan son dakika gelişmeleri ve uluslararası haberler.",
+
+            "Ekonomi":
+                "Ekonomi, finans, piyasalar ve para gündeminden gelişmeler.",
+
+            "Spor":
+                "Futbol ve spor dünyasından son dakika gelişmeleri.",
+
+            "Eğitim":
+                "Eğitim, okullar, sınavlar ve öğrencilerden güncel haberler.",
+
+            "Magazin":
+                "Magazin dünyasından son gelişmeler ve gündem.",
+
+            "Teknoloji":
+                "Teknoloji, yapay zeka, telefon ve dijital dünyadan haberler.",
+
+            "Kültür Sanat":
+                "Kültür, sanat, sinema, müzik ve etkinlik haberleri.",
+
+            "Sağlık":
+                "Sağlık dünyasından güncel ve bilgilendirici haberler."
+
+        };
+
+        aciklama.textContent =
+            aciklamalar[aktifKategori] ||
+            `${aktifKategori} kategorisinden güncel haberler.`;
+    }
+
+    /* =====================================================
+       HABER SAYISI
+    ===================================================== */
+
+    const sayac =
+        document.querySelector("[data-haber-sayisi]");
+
+    if (sayac) {
+        sayac.textContent =
+            `${filtrelenmisHaberler.length} Haber`;
+    }
+
+    /* =====================================================
+       HABER YOKSA
+    ===================================================== */
+
+    if (filtrelenmisHaberler.length === 0) {
 
         container.innerHTML = `
             <div class="kategori-bos">
-                <div class="bos-ikon">${ayar.ikon}</div>
 
-                <h2>${gercekKategori}</h2>
+                <div class="bos-ikon">📰</div>
+
+                <h2>${aktifKategori}</h2>
 
                 <p>
-                    Bu kategoride henüz yayınlanmış haber bulunmuyor.
+                    Bu kategoride henüz haber bulunmuyor.
                 </p>
 
                 <a href="index.html" class="bos-btn">
                     Ana Sayfaya Dön
                 </a>
+
             </div>
         `;
 
@@ -228,37 +158,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /* =====================================================
-       HABER SAYISINI GÖSTER
-       ===================================================== */
-
-    const haberSayisi =
-        document.querySelector("[data-haber-sayisi]");
-
-    if (haberSayisi) {
-        haberSayisi.textContent =
-            `${kategoriHaberleri.length} haber`;
-    }
-
-    /* =====================================================
-       HABER TARİHİ
-       ===================================================== */
-
-    function haberTarihi(haber) {
-
-        if (haber.tarih && haber.saat) {
-            return `${haber.tarih} • ${haber.saat}`;
-        }
-
-        if (haber.tarih) {
-            return haber.tarih;
-        }
-
-        return "Güncel";
-    }
-
-    /* =====================================================
-       HTML GÜVENLİK
-       ===================================================== */
+       HTML GÜVENLİĞİ
+    ===================================================== */
 
     function escapeHTML(text) {
 
@@ -271,111 +172,56 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /* =====================================================
-       HABERLERİ OLUŞTUR
-       ===================================================== */
+       HABER KARTI
+    ===================================================== */
 
-    container.innerHTML = kategoriHaberleri
-        .map((haber, index) => {
+    function haberKarti(haber, buyuk) {
 
-            const gorsel =
+        const id =
+            encodeURIComponent(haber.id);
+
+        const baslik =
+            escapeHTML(haber.baslik);
+
+        const spot =
+            escapeHTML(haber.spot);
+
+        const gorsel =
+            escapeHTML(
                 haber.gorsel ||
-                "images/haber-default.jpg";
+                "images/haber-default.jpg"
+            );
 
-            const baslik =
-                escapeHTML(haber.baslik);
+        const tarih =
+            escapeHTML(haber.tarih || "");
 
-            const spot =
-                escapeHTML(
-                    haber.spot ||
-                    haber.aciklama ||
-                    "Haberin ayrıntıları için tıklayın."
-                );
+        const saat =
+            escapeHTML(haber.saat || "");
 
-            const kategori =
-                escapeHTML(haber.kategori);
-
-            const tarih =
-                escapeHTML(haberTarihi(haber));
-
-            const id =
-                encodeURIComponent(haber.id);
-
-            /*
-              İlk haber büyük,
-              diğerleri normal kart.
-            */
-
-            if (index === 0) {
-
-                return `
-                    <article class="kategori-one-cikan">
-                        
-                        <a href="haber.html?id=${id}">
-                            <img
-                                src="${escapeHTML(gorsel)}"
-                                alt="${baslik}"
-                                loading="eager"
-                            >
-                        </a>
-
-                        <div class="one-cikan-icerik">
-
-                            <span class="haber-kategori">
-                                ${ayar.ikon} ${kategori}
-                            </span>
-
-                            <h2>
-                                <a href="haber.html?id=${id}">
-                                    ${baslik}
-                                </a>
-                            </h2>
-
-                            <p>
-                                ${spot}
-                            </p>
-
-                            <div class="haber-meta">
-                                ${tarih}
-                            </div>
-
-                            <a
-                                href="haber.html?id=${id}"
-                                class="haberi-oku"
-                            >
-                                Haberin tamamını oku →
-                            </a>
-
-                        </div>
-
-                    </article>
-                `;
-            }
+        if (buyuk) {
 
             return `
-                <article class="kategori-haber-card">
+                <article class="kategori-one-cikan">
 
-                    <a
-                        href="haber.html?id=${id}"
-                        class="kategori-haber-gorsel"
-                    >
+                    <a href="haber.html?id=${id}">
                         <img
-                            src="${escapeHTML(gorsel)}"
+                            src="${gorsel}"
                             alt="${baslik}"
-                            loading="lazy"
+                            loading="eager"
                         >
                     </a>
 
-                    <div class="kategori-haber-icerik">
+                    <div class="one-cikan-icerik">
 
                         <span class="haber-kategori">
-                            ${ayar.ikon} ${kategori}
+                            ${escapeHTML(aktifKategori)}
                         </span>
 
-                        <h3>
+                        <h2>
                             <a href="haber.html?id=${id}">
                                 ${baslik}
                             </a>
-                        </h3>
+                        </h2>
 
                         <p>
                             ${spot}
@@ -383,13 +229,78 @@ document.addEventListener("DOMContentLoaded", () => {
 
                         <div class="haber-meta">
                             ${tarih}
+                            ${saat ? " • " + saat : ""}
                         </div>
+
+                        <a
+                            href="haber.html?id=${id}"
+                            class="haberi-oku"
+                        >
+                            Haberin tamamını oku →
+                        </a>
 
                     </div>
 
                 </article>
             `;
-        })
-        .join("");
+        }
+
+        return `
+            <article class="kategori-haber-card">
+
+                <a
+                    href="haber.html?id=${id}"
+                    class="kategori-haber-gorsel"
+                >
+                    <img
+                        src="${gorsel}"
+                        alt="${baslik}"
+                        loading="lazy"
+                    >
+                </a>
+
+                <div class="kategori-haber-icerik">
+
+                    <span class="haber-kategori">
+                        ${escapeHTML(aktifKategori)}
+                    </span>
+
+                    <h3>
+                        <a href="haber.html?id=${id}">
+                            ${baslik}
+                        </a>
+                    </h3>
+
+                    <p>
+                        ${spot}
+                    </p>
+
+                    <div class="haber-meta">
+                        ${tarih}
+                        ${saat ? " • " + saat : ""}
+                    </div>
+
+                </div>
+
+            </article>
+        `;
+    }
+
+    /* =====================================================
+       HABERLERİ EKRANA BAS
+    ===================================================== */
+
+    let html = "";
+
+    filtrelenmisHaberler.forEach(function (haber, index) {
+
+        html += haberKarti(
+            haber,
+            index === 0
+        );
+
+    });
+
+    container.innerHTML = html;
 
 });
