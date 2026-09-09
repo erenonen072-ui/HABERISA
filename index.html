@@ -5,70 +5,63 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Haberİsta - Son Dakika Haberleri</title>
+    <title>Haberİsta - Son Dakika, Güncel Haberler</title>
 
-    <meta
-        name="description"
-        content="Haberİsta ile son dakika haberleri, gündem, ekonomi, spor, dünya, teknoloji, sağlık ve magazin haberlerini takip edin."
-    >
+    <meta name="description"
+          content="Haberİsta ile Türkiye ve dünyadan son dakika haberleri, gündem, ekonomi, spor, teknoloji ve daha fazlasını takip edin.">
 
-    <meta
-        name="keywords"
-        content="haber, son dakika, gündem, ekonomi, spor, dünya, teknoloji, sağlık, magazin, Haberİsta"
-    >
+    <meta name="keywords"
+          content="haber, son dakika, güncel haberler, Türkiye haberleri, dünya haberleri, spor haberleri, ekonomi, teknoloji">
+
+    <meta name="author" content="Haberİsta">
 
     <meta name="robots" content="index, follow">
 
-    <link
-        rel="canonical"
-        href="https://haberisa.vercel.app/"
-    >
+    <link rel="canonical" href="https://haberisa.vercel.app/">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Haberİsta - Son Dakika Haberleri">
-    <meta
-        property="og:description"
-        content="Türkiye ve dünyadan son dakika gelişmeleri Haberİsta'da."
-    >
+    <meta property="og:title" content="Haberİsta - Son Dakika ve Güncel Haberler">
+    <meta property="og:description"
+          content="Türkiye ve dünyadan en güncel haberleri Haberİsta'da takip edin.">
     <meta property="og:url" content="https://haberisa.vercel.app/">
-    <meta
-        property="og:image"
-        content="https://haberisa.vercel.app/images/logo.jpeg"
-    >
     <meta property="og:site_name" content="Haberİsta">
-    <meta property="og:locale" content="tr_TR">
+    <meta property="og:image" content="https://haberisa.vercel.app/images/logo.jpeg">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta
-        name="twitter:title"
-        content="Haberİsta - Son Dakika Haberleri"
-    >
-    <meta
-        name="twitter:description"
-        content="Son dakika haberleri ve güncel gelişmeler."
-    >
-    <meta
-        name="twitter:image"
-        content="https://haberisa.vercel.app/images/logo.jpeg"
-    >
+    <meta name="twitter:title" content="Haberİsta - Son Dakika ve Güncel Haberler">
+    <meta name="twitter:description"
+          content="Türkiye ve dünyadan en güncel haberler Haberİsta'da.">
+    <meta name="twitter:image"
+          content="https://haberisa.vercel.app/images/logo.jpeg">
 
     <!-- Favicon -->
-    <link
-        rel="icon"
-        type="image/jpeg"
-        href="/images/logo.jpeg"
-    >
+    <link rel="icon" type="image/jpeg" href="/images/logo.jpeg">
 
     <!-- CSS -->
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/haber.css">
+    <link rel="stylesheet" href="/css/kategori.css">
+    <link rel="stylesheet" href="/css/shorts.css">
 
     <!-- OneSignal -->
-    <script
-        src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js"
-        defer
-    ></script>
+    <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js"
+            defer></script>
+
+    <script>
+        window.OneSignalDeferred = window.OneSignalDeferred || [];
+
+        OneSignalDeferred.push(async function(OneSignal) {
+            try {
+                await OneSignal.init({
+                    appId: "BURAYA-ONESIGNAL-APP-ID"
+                });
+            } catch (error) {
+                console.warn("OneSignal başlatılamadı:", error);
+            }
+        });
+    </script>
 
     <!-- WebSite Schema -->
     <script type="application/ld+json">
@@ -77,8 +70,12 @@
         "@type": "WebSite",
         "name": "Haberİsta",
         "url": "https://haberisa.vercel.app/",
-        "description": "Son dakika haberleri ve güncel gelişmeler",
-        "inLanguage": "tr-TR"
+        "description": "Türkiye ve dünyadan son dakika ve güncel haberler.",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://haberisa.vercel.app/?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
     }
     </script>
 </head>
@@ -91,77 +88,73 @@
 
     <header class="site-header">
 
-        <div class="header-inner">
+        <div class="header-container">
 
-            <a href="/" class="brand">
-
-                <div class="brand-logo">
-                    <img
-                        src="/images/logo.jpeg"
-                        alt="Haberİsta"
-                    >
-                </div>
-
-                <div class="brand-text">
-                    <span>Haberİsta</span>
-                    <small>Son Dakika Haberleri</small>
-                </div>
-
+            <!-- Logo -->
+            <a href="/" class="logo">
+                <img src="/images/logo.jpeg"
+                     alt="Haberİsta"
+                     loading="eager">
             </a>
 
+            <!-- Desktop Navigation -->
+            <nav class="desktop-nav" aria-label="Ana menü">
+
+                <a href="/">Ana Sayfa</a>
+
+                <a href="/kategori.html?kategori=Gündem">
+                    Gündem
+                </a>
+
+                <a href="/kategori.html?kategori=Dünya">
+                    Dünya
+                </a>
+
+                <a href="/kategori.html?kategori=Spor">
+                    Spor
+                </a>
+
+                <a href="/kategori.html?kategori=Ekonomi">
+                    Ekonomi
+                </a>
+
+                <a href="/kategori.html?kategori=Teknoloji">
+                    Teknoloji
+                </a>
+
+            </nav>
+
+            <!-- Header Actions -->
             <div class="header-actions">
 
                 <button
-                    type="button"
-                    class="search-toggle"
                     id="searchBtn"
+                    class="header-btn"
                     aria-label="Arama"
-                >
+                    type="button">
+
                     🔍
                 </button>
 
                 <button
-                    type="button"
-                    class="notification-btn"
                     id="notificationBtn"
-                >
-                    <span>🔔</span>
-                    <strong>Bildirimleri Aç</strong>
+                    class="header-btn notification-btn"
+                    aria-label="Bildirimleri aç"
+                    type="button">
+
+                    🔔
                 </button>
 
+                <!-- ÖNEMLİ:
+                     app.js bu ID'yi bekliyor -->
                 <button
-                    type="button"
-                    class="mobile-menu-btn"
-                    id="menuToggle"
+                    id="menuBtn"
+                    class="menu-toggle"
                     aria-label="Menüyü aç"
-                >
+                    aria-expanded="false"
+                    type="button">
+
                     ☰
-                </button>
-
-            </div>
-
-        </div>
-
-        <!-- Arama -->
-        <div class="search-area" id="searchArea">
-
-            <div class="search-box">
-
-                <span class="search-icon">🔎</span>
-
-                <input
-                    type="search"
-                    id="searchInput"
-                    placeholder="Haber ara..."
-                    autocomplete="off"
-                >
-
-                <button
-                    type="button"
-                    id="searchClose"
-                    aria-label="Aramayı kapat"
-                >
-                    ×
                 </button>
 
             </div>
@@ -172,46 +165,44 @@
 
 
     <!-- =====================================================
-         NAVIGATION
+         SEARCH
     ====================================================== -->
 
-    <nav class="main-nav">
+    <!-- ÖNEMLİ:
+         app.js searchPanel ID'sini bekliyor -->
+    <section
+        id="searchPanel"
+        class="search-area"
+        aria-label="Haber arama">
 
-        <div class="nav-inner">
+        <div class="search-container">
 
-            <a href="/" class="active">Ana Sayfa</a>
-            <a href="/gundem.html">Gündem</a>
-            <a href="/ekonomi.html">Ekonomi</a>
-            <a href="/spor.html">Spor</a>
-            <a href="/magazin.html">Magazin</a>
-            <a href="/dunya.html">Dünya</a>
-            <a href="/teknoloji.html">Teknoloji</a>
-            <a href="/saglik.html">Sağlık</a>
-            <a href="/kultur-sanat.html">Kültür Sanat</a>
+            <div class="search-box">
 
-        </div>
+                <span class="search-icon">🔍</span>
 
-    </nav>
+                <input
+                    id="searchInput"
+                    type="search"
+                    placeholder="Haberlerde ara..."
+                    autocomplete="off"
+                    aria-label="Haber ara">
 
+                <!-- ÖNEMLİ:
+                     app.js closeSearch ID'sini bekliyor -->
+                <button
+                    id="closeSearch"
+                    type="button"
+                    aria-label="Aramayı kapat">
 
-    <!-- =====================================================
-         SON DAKİKA BANDI
-    ====================================================== -->
+                    ✕
+                </button>
 
-    <section class="breaking-bar">
-
-        <div class="breaking-label">
-            <span class="breaking-dot"></span>
-            <strong>SON DAKİKA</strong>
-        </div>
-
-        <div class="breaking-track">
+            </div>
 
             <div
-                class="breaking-content"
-                id="breakingNews"
-            >
-                Son dakika gelişmeleri yükleniyor...
+                id="searchResultInfo"
+                class="search-result-info">
             </div>
 
         </div>
@@ -220,39 +211,112 @@
 
 
     <!-- =====================================================
-         CANLI / BİLGİ BANDI
+         ANA NAVİGASYON
+    ====================================================== -->
+
+    <nav class="main-nav" aria-label="Haber kategorileri">
+
+        <div class="nav-container">
+
+            <a href="/" class="active">
+                Ana Sayfa
+            </a>
+
+            <a href="/kategori.html?kategori=Gündem">
+                Gündem
+            </a>
+
+            <a href="/kategori.html?kategori=Dünya">
+                Dünya
+            </a>
+
+            <a href="/kategori.html?kategori=Spor">
+                Spor
+            </a>
+
+            <a href="/kategori.html?kategori=Ekonomi">
+                Ekonomi
+            </a>
+
+            <a href="/kategori.html?kategori=Teknoloji">
+                Teknoloji
+            </a>
+
+            <a href="/kategori.html?kategori=Sağlık">
+                Sağlık
+            </a>
+
+            <a href="/kategori.html?kategori=Kültür">
+                Kültür
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =====================================================
+         SON DAKİKA
+    ====================================================== -->
+
+    <section class="breaking-bar">
+
+        <div class="breaking-container">
+
+            <div class="breaking-label">
+                <span class="breaking-dot"></span>
+                SON DAKİKA
+            </div>
+
+            <!-- app.js burayı dolduruyor -->
+            <div
+                id="breakingNews"
+                class="breaking-news">
+
+                <span>Son dakika haberleri yükleniyor...</span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CANLI / PİYASA BAR
     ====================================================== -->
 
     <section class="live-bar">
 
-        <div class="live-inner">
+        <div class="live-container">
 
-            <div class="live-status">
-                <span></span>
-                <strong>CANLI</strong>
+            <div class="live-title">
+                <span class="live-dot"></span>
+                CANLI
             </div>
 
             <div class="market-items">
 
                 <div class="market-item">
-                    <small>DOLAR</small>
-                    <strong id="dolarValue">--</strong>
+                    <span>DOLAR</span>
+                    <strong>₺</strong>
                 </div>
 
                 <div class="market-item">
-                    <small>EURO</small>
-                    <strong id="euroValue">--</strong>
+                    <span>EURO</span>
+                    <strong>€</strong>
                 </div>
 
                 <div class="market-item">
-                    <small>ALTIN</small>
-                    <strong id="goldValue">--</strong>
+                    <span>ALTIN</span>
+                    <strong>₺</strong>
                 </div>
 
-            </div>
+                <div class="market-item">
+                    <span>BIST</span>
+                    <strong>—</strong>
+                </div>
 
-            <div class="live-message">
-                Güncel gelişmeler Haberİsta'da
             </div>
 
         </div>
@@ -264,37 +328,61 @@
          MAIN
     ====================================================== -->
 
-    <main class="main-container">
+    <main class="main-content">
 
-        <!-- Sayfa başlığı -->
-
-        <div class="section-heading">
-
-            <div class="heading-line"></div>
-
-            <div>
-                <h1>Son Dakika Haberleri ve Güncel Gelişmeler</h1>
-
-                <p>
-                    Türkiye ve dünyadan en güncel haberler
-                </p>
-            </div>
-
-        </div>
+        <div class="container">
 
 
-        <!-- =================================================
-             MANŞET
-        ================================================== -->
+            <!-- =================================================
+                 SAYFA BAŞLIĞI
+            ================================================== -->
 
-        <section class="hero-section">
+            <section class="section-heading">
 
-            <div
-                class="hero-slider"
+                <div>
+
+                    <span class="section-kicker">
+                        HABERİSTA
+                    </span>
+
+                    <h1>
+                        Günün Haberleri
+                    </h1>
+
+                </div>
+
+                <a
+                    href="/kategori.html"
+                    class="view-all">
+
+                    Tüm Haberler
+                    <span>→</span>
+
+                </a>
+
+            </section>
+
+
+            <!-- =================================================
+                 HERO
+            ================================================== -->
+
+            <!--
+                ÇOK ÖNEMLİ:
+
+                Eski:
                 id="heroSlider"
-            >
 
-                <!-- app.js burayı dolduracak -->
+                app.js:
+                heroMain arıyor.
+
+                Bu yüzden:
+                id="heroMain"
+            -->
+
+            <section
+                id="heroMain"
+                class="hero-slider">
 
                 <div class="hero-loading">
 
@@ -306,190 +394,329 @@
 
                 </div>
 
-            </div>
-
-        </section>
+            </section>
 
 
-        <!-- =================================================
-             ÖNE ÇIKAN HABERLER
-        ================================================== -->
+            <!-- =================================================
+                 HERO CONTROLS
+            ================================================== -->
 
-        <section class="featured-section">
+            <div class="hero-navigation">
 
-            <div class="section-title-row">
+                <button
+                    id="heroPrev"
+                    class="hero-nav-btn"
+                    type="button"
+                    aria-label="Önceki haber">
 
-                <div>
-                    <span class="section-kicker">
-                        ÖNE ÇIKANLAR
-                    </span>
+                    ‹
 
-                    <h2>Günün Öne Çıkan Haberleri</h2>
+                </button>
+
+                <div
+                    id="heroNumbers"
+                    class="hero-numbers">
                 </div>
 
-                <a href="/" class="section-more">
-                    Tüm Haberler →
-                </a>
+                <button
+                    id="heroNext"
+                    class="hero-nav-btn"
+                    type="button"
+                    aria-label="Sonraki haber">
+
+                    ›
+
+                </button>
 
             </div>
 
-            <div
-                class="featured-grid"
-                id="featuredNews"
-            >
 
-                <!-- app.js -->
+            <!-- =================================================
+                 ÖNE ÇIKAN
+            ================================================== -->
 
-            </div>
-
-        </section>
-
-
-        <!-- =================================================
-             HABER + ÇOK OKUNANLAR
-        ================================================== -->
-
-        <div class="content-layout">
-
-            <!-- SOL -->
-
-            <section class="latest-section">
+            <section
+                class="featured-section"
+                id="featuredSection">
 
                 <div class="section-title-row">
 
                     <div>
 
                         <span class="section-kicker">
-                            GÜNCEL
+                            ÖNE ÇIKAN
                         </span>
 
-                        <h2>Son Haberler</h2>
+                        <h2>
+                            Günün Öne Çıkan Haberleri
+                        </h2>
 
                     </div>
 
                 </div>
 
                 <div
-                    class="news-grid"
-                    id="latestNews"
-                >
+                    id="featuredNews"
+                    class="featured-grid">
 
-                    <!-- app.js -->
+                    <!--
+                        Eğer app.js featuredNews dolduruyorsa
+                        burası kullanılacak.
+                    -->
 
                 </div>
 
             </section>
 
 
-            <!-- SAĞ -->
+            <!-- =================================================
+                 HABERLER + ÇOK OKUNAN
+            ================================================== -->
 
-            <aside class="popular-sidebar">
+            <div class="content-layout">
 
-                <div class="popular-header">
+
+                <!-- =============================================
+                     SON HABERLER
+                ============================================== -->
+
+                <section class="latest-section">
+
+                    <div class="section-title-row">
+
+                        <div>
+
+                            <span class="section-kicker">
+                                GÜNCEL
+                            </span>
+
+                            <h2>
+                                Son Haberler
+                            </h2>
+
+                        </div>
+
+                        <span class="news-count">
+                            Güncel
+                        </span>
+
+                    </div>
+
+
+                    <!--
+                        ÇOK ÖNEMLİ:
+
+                        Eski:
+                        id="latestNews"
+
+                        app.js:
+                        newsGrid arıyor.
+
+                        Bu yüzden:
+                        id="newsGrid"
+                    -->
+
+                    <div
+                        id="newsGrid"
+                        class="news-grid">
+
+                        <div class="news-loading">
+
+                            <div class="loading-spinner"></div>
+
+                            <span>
+                                Haberler yükleniyor...
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =============================================
+                     EN ÇOK OKUNAN
+                ============================================== -->
+
+                <aside class="popular-section">
+
+                    <div class="section-title-row">
+
+                        <div>
+
+                            <span class="section-kicker">
+                                POPÜLER
+                            </span>
+
+                            <h2>
+                                En Çok Okunan
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+                    <div
+                        id="popularNews"
+                        class="popular-news">
+
+                        <div class="news-loading">
+
+                            <div class="loading-spinner"></div>
+
+                            <span>
+                                Yükleniyor...
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </aside>
+
+            </div>
+
+
+            <!-- =================================================
+                 KATEGORİLER
+            ================================================== -->
+
+            <section class="categories-section">
+
+                <div class="section-title-row">
 
                     <div>
 
                         <span class="section-kicker">
-                            OKUYUCULARIN SEÇİMİ
+                            KEŞFET
                         </span>
 
-                        <h2>Çok Okunanlar</h2>
+                        <h2>
+                            Kategoriler
+                        </h2>
 
                     </div>
 
-                    <span class="popular-icon">
-                        🔥
-                    </span>
+                </div>
+
+
+                <div class="category-grid">
+
+
+                    <a
+                        href="/kategori.html?kategori=Gündem"
+                        class="category-card">
+
+                        <div class="category-icon">
+                            📰
+                        </div>
+
+                        <div>
+                            <h3>Gündem</h3>
+                            <p>Türkiye'den gelişmeler</p>
+                        </div>
+
+                        <span>→</span>
+
+                    </a>
+
+
+                    <a
+                        href="/kategori.html?kategori=Dünya"
+                        class="category-card">
+
+                        <div class="category-icon">
+                            🌍
+                        </div>
+
+                        <div>
+                            <h3>Dünya</h3>
+                            <p>Dünyadan son gelişmeler</p>
+                        </div>
+
+                        <span>→</span>
+
+                    </a>
+
+
+                    <a
+                        href="/kategori.html?kategori=Spor"
+                        class="category-card">
+
+                        <div class="category-icon">
+                            ⚽
+                        </div>
+
+                        <div>
+                            <h3>Spor</h3>
+                            <p>Spor dünyasından haberler</p>
+                        </div>
+
+                        <span>→</span>
+
+                    </a>
+
+
+                    <a
+                        href="/kategori.html?kategori=Ekonomi"
+                        class="category-card">
+
+                        <div class="category-icon">
+                            📈
+                        </div>
+
+                        <div>
+                            <h3>Ekonomi</h3>
+                            <p>Piyasa ve ekonomi</p>
+                        </div>
+
+                        <span>→</span>
+
+                    </a>
+
+
+                    <a
+                        href="/kategori.html?kategori=Teknoloji"
+                        class="category-card">
+
+                        <div class="category-icon">
+                            💻
+                        </div>
+
+                        <div>
+                            <h3>Teknoloji</h3>
+                            <p>Teknoloji dünyası</p>
+                        </div>
+
+                        <span>→</span>
+
+                    </a>
+
+
+                    <a
+                        href="/kategori.html?kategori=Sağlık"
+                        class="category-card">
+
+                        <div class="category-icon">
+                            ❤️
+                        </div>
+
+                        <div>
+                            <h3>Sağlık</h3>
+                            <p>Sağlık haberleri</p>
+                        </div>
+
+                        <span>→</span>
+
+                    </a>
 
                 </div>
 
-                <div
-                    class="popular-list"
-                    id="popularNews"
-                >
+            </section>
 
-                    <!-- app.js -->
-
-                </div>
-
-            </aside>
 
         </div>
-
-
-        <!-- =================================================
-             KATEGORİLER
-        ================================================== -->
-
-        <section class="category-section">
-
-            <div class="section-title-row">
-
-                <div>
-
-                    <span class="section-kicker">
-                        KATEGORİLER
-                    </span>
-
-                    <h2>Kategorilere Göz At</h2>
-
-                </div>
-
-            </div>
-
-            <div class="category-grid">
-
-                <a href="/gundem.html" class="category-card">
-                    <span>📰</span>
-                    <div>
-                        <strong>Gündem</strong>
-                        <small>Türkiye'den gelişmeler</small>
-                    </div>
-                </a>
-
-                <a href="/ekonomi.html" class="category-card">
-                    <span>💰</span>
-                    <div>
-                        <strong>Ekonomi</strong>
-                        <small>Piyasalar ve ekonomi</small>
-                    </div>
-                </a>
-
-                <a href="/spor.html" class="category-card">
-                    <span>⚽</span>
-                    <div>
-                        <strong>Spor</strong>
-                        <small>Son spor haberleri</small>
-                    </div>
-                </a>
-
-                <a href="/dunya.html" class="category-card">
-                    <span>🌍</span>
-                    <div>
-                        <strong>Dünya</strong>
-                        <small>Dünyadan gelişmeler</small>
-                    </div>
-                </a>
-
-                <a href="/teknoloji.html" class="category-card">
-                    <span>💻</span>
-                    <div>
-                        <strong>Teknoloji</strong>
-                        <small>Teknoloji gündemi</small>
-                    </div>
-                </a>
-
-                <a href="/saglik.html" class="category-card">
-                    <span>❤️</span>
-                    <div>
-                        <strong>Sağlık</strong>
-                        <small>Sağlık haberleri</small>
-                    </div>
-                </a>
-
-            </div>
-
-        </section>
 
     </main>
 
@@ -500,7 +727,8 @@
 
     <footer class="site-footer">
 
-        <div class="footer-main">
+        <div class="footer-container">
+
 
             <div class="footer-brand">
 
@@ -508,17 +736,13 @@
 
                     <img
                         src="/images/logo.jpeg"
-                        alt="Haberİsta"
-                    >
-
-                    <span>Haberİsta</span>
+                        alt="Haberİsta">
 
                 </a>
 
                 <p>
-                    Türkiye ve dünyadan son dakika haberleri,
-                    güncel gelişmeler ve gündemin öne çıkan
-                    başlıkları Haberİsta'da.
+                    Türkiye ve dünyadan güncel gelişmeleri
+                    hızlı ve anlaşılır şekilde takip edin.
                 </p>
 
             </div>
@@ -526,20 +750,38 @@
 
             <div class="footer-column">
 
-                <h3>Kategoriler</h3>
+                <h3>
+                    Kategoriler
+                </h3>
 
-                <a href="/gundem.html">Gündem</a>
-                <a href="/ekonomi.html">Ekonomi</a>
-                <a href="/spor.html">Spor</a>
-                <a href="/magazin.html">Magazin</a>
-                <a href="/dunya.html">Dünya</a>
+                <a href="/kategori.html?kategori=Gündem">
+                    Gündem
+                </a>
+
+                <a href="/kategori.html?kategori=Dünya">
+                    Dünya
+                </a>
+
+                <a href="/kategori.html?kategori=Spor">
+                    Spor
+                </a>
+
+                <a href="/kategori.html?kategori=Ekonomi">
+                    Ekonomi
+                </a>
+
+                <a href="/kategori.html?kategori=Teknoloji">
+                    Teknoloji
+                </a>
 
             </div>
 
 
             <div class="footer-column">
 
-                <h3>Haberİsta</h3>
+                <h3>
+                    Haberİsta
+                </h3>
 
                 <a href="/hakkimizda.html">
                     Hakkımızda
@@ -553,7 +795,7 @@
                     Gizlilik Politikası
                 </a>
 
-                <a href="/cerez-politikasi.html">
+                <a href="/cerezler.html">
                     Çerez Politikası
                 </a>
 
@@ -564,36 +806,22 @@
             </div>
 
 
-            <div class="footer-column">
-
-                <h3>Takip Et</h3>
-
-                <a href="#" aria-label="Instagram">
-                    Instagram
-                </a>
-
-                <a href="#" aria-label="X">
-                    X
-                </a>
-
-                <a href="#" aria-label="Facebook">
-                    Facebook
-                </a>
-
-            </div>
-
         </div>
 
 
         <div class="footer-bottom">
 
-            <span>
-                © 2026 Haberİsta. Tüm hakları saklıdır.
-            </span>
+            <div class="footer-bottom-container">
 
-            <span>
-                Güncel • Hızlı • Güvenilir
-            </span>
+                <span>
+                    © 2026 Haberİsta. Tüm hakları saklıdır.
+                </span>
+
+                <span>
+                    Güncel haberlerin adresi
+                </span>
+
+            </div>
 
         </div>
 
@@ -601,299 +829,177 @@
 
 
     <!-- =====================================================
+         MOBİL MENÜ
+    ====================================================== -->
+
+    <div
+        id="mobileOverlay"
+        class="mobile-overlay">
+    </div>
+
+
+    <aside
+        id="mobileMenu"
+        class="mobile-menu"
+        aria-label="Mobil menü">
+
+        <div class="mobile-menu-header">
+
+            <a href="/" class="mobile-logo">
+
+                <img
+                    src="/images/logo.jpeg"
+                    alt="Haberİsta">
+
+            </a>
+
+            <button
+                id="mobileMenuClose"
+                type="button"
+                aria-label="Menüyü kapat">
+
+                ✕
+
+            </button>
+
+        </div>
+
+
+        <nav class="mobile-nav">
+
+            <a href="/">
+                <span>🏠</span>
+                Ana Sayfa
+            </a>
+
+            <a href="/kategori.html?kategori=Gündem">
+                <span>📰</span>
+                Gündem
+            </a>
+
+            <a href="/kategori.html?kategori=Dünya">
+                <span>🌍</span>
+                Dünya
+            </a>
+
+            <a href="/kategori.html?kategori=Spor">
+                <span>⚽</span>
+                Spor
+            </a>
+
+            <a href="/kategori.html?kategori=Ekonomi">
+                <span>📈</span>
+                Ekonomi
+            </a>
+
+            <a href="/kategori.html?kategori=Teknoloji">
+                <span>💻</span>
+                Teknoloji
+            </a>
+
+            <a href="/kategori.html?kategori=Sağlık">
+                <span>❤️</span>
+                Sağlık
+            </a>
+
+        </nav>
+
+
+        <div class="mobile-menu-footer">
+
+            <button
+                id="mobileNotificationBtn"
+                type="button">
+
+                🔔 Bildirimleri Aç
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
          MOBİL ALT MENÜ
     ====================================================== -->
 
-    <nav class="mobile-bottom-nav">
+    <nav
+        class="mobile-bottom-nav"
+        aria-label="Mobil alt menü">
 
-        <a href="/" class="mobile-nav-item active">
+        <a
+            href="/"
+            class="mobile-bottom-item active">
+
             <span>⌂</span>
             <small>Ana Sayfa</small>
+
         </a>
 
-        <a href="/gundem.html" class="mobile-nav-item">
+
+        <a
+            href="/kategori.html?kategori=Gündem"
+            class="mobile-bottom-item">
+
             <span>📰</span>
-            <small>Gündem</small>
+            <small>Haberler</small>
+
         </a>
 
+
         <button
-            type="button"
-            class="mobile-nav-item"
             id="mobileSearchBtn"
-        >
-            <span>🔍</span>
+            class="mobile-bottom-item"
+            type="button">
+
+            <span>⌕</span>
             <small>Ara</small>
+
         </button>
 
-        <button
-            type="button"
-            class="mobile-nav-item"
-            id="mobileNotificationBtn"
-        >
-            <span>🔔</span>
-            <small>Bildirim</small>
-        </button>
 
         <button
-            type="button"
-            class="mobile-nav-item"
             id="mobileMoreBtn"
-        >
+            class="mobile-bottom-item"
+            type="button">
+
             <span>☰</span>
             <small>Daha</small>
+
         </button>
 
     </nav>
 
 
     <!-- =====================================================
-         MOBİL MENÜ
+         BACK TO TOP
     ====================================================== -->
 
-    <div
-        class="mobile-menu-overlay"
-        id="mobileMenuOverlay"
-    ></div>
+    <button
+        id="backToTop"
+        class="back-to-top"
+        type="button"
+        aria-label="Yukarı çık">
 
-    <aside
-        class="mobile-menu"
-        id="mobileMenu"
-    >
+        ↑
 
-        <div class="mobile-menu-header">
-
-            <strong>Haberİsta</strong>
-
-            <button
-                type="button"
-                id="mobileMenuClose"
-            >
-                ×
-            </button>
-
-        </div>
-
-        <a href="/">Ana Sayfa</a>
-        <a href="/gundem.html">Gündem</a>
-        <a href="/ekonomi.html">Ekonomi</a>
-        <a href="/spor.html">Spor</a>
-        <a href="/magazin.html">Magazin</a>
-        <a href="/dunya.html">Dünya</a>
-        <a href="/teknoloji.html">Teknoloji</a>
-        <a href="/saglik.html">Sağlık</a>
-        <a href="/kultur-sanat.html">Kültür Sanat</a>
-
-    </aside>
+    </button>
 
 
     <!-- =====================================================
-         JAVASCRIPT
+         SCRIPTS
     ====================================================== -->
 
+    <!-- Önce haberler -->
     <script src="/js/haberler.js"></script>
+
+    <!-- Sonra uygulama -->
     <script src="/js/app.js"></script>
+
+    <!-- Bildirim sistemi -->
     <script src="/bildirim.js"></script>
 
-
-    <!-- Küçük UI kontrolleri -->
-    <script>
-
-        document.addEventListener("DOMContentLoaded", function () {
-
-            const searchBtn =
-                document.getElementById("searchBtn");
-
-            const searchArea =
-                document.getElementById("searchArea");
-
-            const searchClose =
-                document.getElementById("searchClose");
-
-            const searchInput =
-                document.getElementById("searchInput");
-
-
-            if (searchBtn && searchArea) {
-
-                searchBtn.addEventListener("click", function () {
-
-                    searchArea.classList.toggle("open");
-
-                    if (
-                        searchArea.classList.contains("open")
-                        && searchInput
-                    ) {
-                        setTimeout(() => {
-                            searchInput.focus();
-                        }, 100);
-                    }
-
-                });
-
-            }
-
-
-            if (searchClose && searchArea) {
-
-                searchClose.addEventListener("click", function () {
-
-                    searchArea.classList.remove("open");
-
-                });
-
-            }
-
-
-            /* Mobil menü */
-
-            const mobileMoreBtn =
-                document.getElementById("mobileMoreBtn");
-
-            const mobileMenu =
-                document.getElementById("mobileMenu");
-
-            const mobileOverlay =
-                document.getElementById("mobileMenuOverlay");
-
-            const mobileMenuClose =
-                document.getElementById("mobileMenuClose");
-
-
-            function openMobileMenu() {
-
-                if (mobileMenu) {
-                    mobileMenu.classList.add("open");
-                }
-
-                if (mobileOverlay) {
-                    mobileOverlay.classList.add("open");
-                }
-
-                document.body.classList.add("menu-open");
-
-            }
-
-
-            function closeMobileMenu() {
-
-                if (mobileMenu) {
-                    mobileMenu.classList.remove("open");
-                }
-
-                if (mobileOverlay) {
-                    mobileOverlay.classList.remove("open");
-                }
-
-                document.body.classList.remove("menu-open");
-
-            }
-
-
-            if (mobileMoreBtn) {
-                mobileMoreBtn.addEventListener(
-                    "click",
-                    openMobileMenu
-                );
-            }
-
-
-            if (mobileMenuClose) {
-                mobileMenuClose.addEventListener(
-                    "click",
-                    closeMobileMenu
-                );
-            }
-
-
-            if (mobileOverlay) {
-                mobileOverlay.addEventListener(
-                    "click",
-                    closeMobileMenu
-                );
-            }
-
-
-            /* Mobil arama */
-
-            const mobileSearchBtn =
-                document.getElementById("mobileSearchBtn");
-
-
-            if (mobileSearchBtn) {
-
-                mobileSearchBtn.addEventListener(
-                    "click",
-                    function () {
-
-                        if (searchArea) {
-                            searchArea.classList.add("open");
-                        }
-
-                        if (searchInput) {
-                            setTimeout(() => {
-                                searchInput.focus();
-                            }, 100);
-                        }
-
-                    }
-                );
-
-            }
-
-
-            /* Bildirim */
-
-            const notificationBtn =
-                document.getElementById("notificationBtn");
-
-            const mobileNotificationBtn =
-                document.getElementById(
-                    "mobileNotificationBtn"
-                );
-
-
-            function requestNotification() {
-
-                if (
-                    typeof OneSignal !== "undefined"
-                    && OneSignal.Notifications
-                ) {
-
-                    OneSignal.Notifications.requestPermission();
-
-                } else if (
-                    typeof window.bildirimleriAc === "function"
-                ) {
-
-                    window.bildirimleriAc();
-
-                }
-
-            }
-
-
-            if (notificationBtn) {
-
-                notificationBtn.addEventListener(
-                    "click",
-                    requestNotification
-                );
-
-            }
-
-
-            if (mobileNotificationBtn) {
-
-                mobileNotificationBtn.addEventListener(
-                    "click",
-                    requestNotification
-                );
-
-            }
-
-        });
-
-    </script>
 
 </body>
 </html>
