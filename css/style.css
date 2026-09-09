@@ -8,6 +8,10 @@
     --white: #ffffff;
 }
 
+/* =====================================================
+   RESET
+===================================================== */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -43,22 +47,32 @@ a {
     text-decoration: none;
 }
 
-.container {
-    width: min(1180px, calc(100% - 32px));
-    margin: auto;
+img {
+    max-width: 100%;
 }
 
 
-/* =========================
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.container {
+    width: min(1180px, calc(100% - 32px));
+    margin: 0 auto;
+}
+
+
+/* =====================================================
    HEADER
-========================= */
+===================================================== */
 
 .header {
-    background: var(--white);
-    border-bottom: 1px solid var(--border);
     position: sticky;
     top: 0;
     z-index: 1000;
+
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
 }
 
 .header-top {
@@ -67,8 +81,10 @@ a {
 
 .header-inner {
     height: 70px;
+
     display: flex;
     align-items: center;
+
     gap: 25px;
 }
 
@@ -78,16 +94,21 @@ a {
 .logo {
     display: flex;
     align-items: center;
+
     gap: 9px;
+
     font-size: 23px;
     font-weight: 900;
+
     white-space: nowrap;
 }
 
 .logo img {
     width: 43px;
     height: 43px;
+
     border-radius: 50%;
+
     object-fit: cover;
 }
 
@@ -101,16 +122,21 @@ a {
 .desktop-nav {
     display: flex;
     align-items: center;
+
     gap: 21px;
+
     margin-left: 15px;
+
     flex: 1;
 }
 
 .desktop-nav a {
+    color: #41444a;
+
     font-size: 14px;
     font-weight: 650;
-    color: #41444a;
-    transition: color .2s;
+
+    transition: color .2s ease;
 }
 
 .desktop-nav a:hover {
@@ -118,11 +144,12 @@ a {
 }
 
 
-/* ACTIONS */
+/* HEADER ACTIONS */
 
 .header-actions {
     display: flex;
     align-items: center;
+
     gap: 8px;
 }
 
@@ -130,17 +157,27 @@ a {
 .notification-btn {
     width: 40px;
     height: 40px;
-    border: 1px solid var(--border);
-    background: #fff;
-    border-radius: 10px;
+
     display: grid;
     place-items: center;
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    background: #fff;
+
     font-size: 17px;
+
+    transition:
+        border-color .2s ease,
+        color .2s ease,
+        background .2s ease;
 }
 
 .icon-btn:hover,
 .notification-btn:hover {
     border-color: var(--red);
+    color: var(--red);
 }
 
 
@@ -148,29 +185,40 @@ a {
 
 .menu-btn {
     display: none;
+
     width: 40px;
     height: 40px;
+
     border: 0;
+
     background: transparent;
 }
 
 .menu-btn span {
     display: block;
+
     width: 22px;
     height: 2px;
-    background: var(--dark);
+
     margin: 5px auto;
+
+    background: var(--dark);
 }
 
 
-/* SEARCH */
+/* =====================================================
+   SEARCH
+===================================================== */
 
 .search-box {
     display: none;
+
+    padding: 12px 0;
+
     background: #fff;
+
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
-    padding: 12px 0;
 }
 
 .search-box.active {
@@ -180,10 +228,15 @@ a {
 .search-box input {
     width: 100%;
     height: 44px;
+
+    padding: 0 15px;
+
     border: 1px solid var(--border);
     border-radius: 9px;
-    padding: 0 15px;
+
     outline: none;
+
+    background: #fff;
 }
 
 .search-box input:focus {
@@ -191,11 +244,15 @@ a {
 }
 
 
-/* MOBILE NAV */
+/* =====================================================
+   MOBILE NAV
+===================================================== */
 
 .mobile-nav {
     display: none;
+
     background: #fff;
+
     border-top: 1px solid var(--border);
 }
 
@@ -205,56 +262,75 @@ a {
 
 .mobile-nav a {
     display: block;
+
     padding: 14px 20px;
+
     border-bottom: 1px solid var(--border);
+
     font-weight: 600;
 }
 
 
-/* =========================
+/* =====================================================
    SON DAKİKA
-========================= */
+===================================================== */
 
 .breaking {
     background: var(--dark);
-    color: white;
+    color: #fff;
 }
 
 .breaking-inner {
     height: 42px;
+
     display: flex;
     align-items: center;
 }
 
 .breaking-label {
-    height: 100%;
     min-width: 125px;
+    height: 100%;
+
     display: flex;
     align-items: center;
+
     gap: 8px;
+
     font-size: 12px;
     font-weight: 900;
+
     letter-spacing: .4px;
 }
 
 .breaking-dot {
     width: 8px;
     height: 8px;
-    background: var(--red);
+
+    flex-shrink: 0;
+
     border-radius: 50%;
-    box-shadow: 0 0 0 4px rgba(215,25,32,.15);
+
+    background: var(--red);
+
+    box-shadow:
+        0 0 0 4px rgba(215, 25, 32, .15);
 }
 
 .breaking-window {
-    overflow: hidden;
     flex: 1;
+
+    overflow: hidden;
 }
 
 .breaking-track {
     display: flex;
+
     gap: 40px;
+
     width: max-content;
-    animation: breakingMove 35s linear infinite;
+
+    animation:
+        breakingMove 35s linear infinite;
 }
 
 .breaking-track:hover {
@@ -263,12 +339,14 @@ a {
 
 .breaking-link {
     color: #ddd;
+
     font-size: 13px;
+
     white-space: nowrap;
 }
 
 .breaking-link:hover {
-    color: white;
+    color: #fff;
 }
 
 @keyframes breakingMove {
@@ -282,43 +360,55 @@ a {
 }
 
 
-/* =========================
+/* =====================================================
    MARKET
-========================= */
+===================================================== */
 
 .market {
     background: #fff;
+
     border-bottom: 1px solid var(--border);
 }
 
 .market-inner {
     min-height: 43px;
+
     display: flex;
     align-items: center;
+
     gap: 18px;
 }
 
 .market-title {
+    padding-right: 18px;
+
     color: var(--red);
+
     font-size: 11px;
     font-weight: 900;
+
     border-right: 1px solid var(--border);
-    padding-right: 18px;
 }
 
 .market-items {
     display: flex;
+
     gap: 25px;
-    overflow: hidden;
+
     flex: 1;
+
+    overflow: hidden;
 }
 
 .market-item {
     display: flex;
     align-items: center;
+
     gap: 7px;
-    white-space: nowrap;
+
     font-size: 12px;
+
+    white-space: nowrap;
 }
 
 .market-name {
@@ -348,218 +438,365 @@ a {
 
 .market-updated {
     color: #999;
+
     font-size: 10px;
+
     white-space: nowrap;
 }
 
 
 /* =====================================================
-   HABERİSTA MANŞET — TEK VE KOMPAKT SİSTEM
+   HABERİSTA MANŞET
+   TEK SİSTEM
 ===================================================== */
 
 .hero-section {
     width: 100%;
+
     margin-top: 18px;
 }
 
-.hero-slider {
+
+/*
+   Hem .hero-slider hem .hero destekleniyor.
+   Böylece mevcut HTML yapısı değişse bile
+   manşet boyutu kontrol altında kalır.
+*/
+
+.hero-slider,
+.hero {
     position: relative;
+
     width: 100%;
+
     height: 250px !important;
     min-height: 250px !important;
     max-height: 250px !important;
+
     overflow: hidden;
+
     border-radius: 10px;
+
     background: #15171b;
 }
 
-.hero-main {
+
+/* HERO MAIN */
+
+.hero-slider .hero-main,
+.hero .hero-main {
     width: 100%;
+
     height: 250px !important;
     min-height: 250px !important;
     max-height: 250px !important;
 }
 
-.hero-slide-link {
+
+/* SLIDE */
+
+.hero-slider .hero-slide-link,
+.hero .hero-slide-link {
     position: relative;
+
     display: block;
+
     width: 100%;
+
     height: 250px !important;
+    min-height: 250px !important;
+    max-height: 250px !important;
+
     overflow: hidden;
 }
 
-.hero-image {
+
+/* IMAGE */
+
+.hero-slider .hero-image,
+.hero .hero-image {
     position: absolute;
+
     inset: 0;
+
     display: block;
+
     width: 100% !important;
+
     height: 250px !important;
     min-height: 250px !important;
     max-height: 250px !important;
+
     object-fit: cover;
 }
 
-/* Koyu geçiş */
-.hero-slider::after {
+
+/* =====================================================
+   HERO DARK OVERLAY
+===================================================== */
+
+.hero-slider::after,
+.hero::after {
     content: "";
+
     position: absolute;
+
     inset: 0;
+
     z-index: 1;
+
     pointer-events: none;
+
     background:
         linear-gradient(
             90deg,
-            rgba(0,0,0,.72) 0%,
-            rgba(0,0,0,.38) 48%,
-            rgba(0,0,0,.08) 100%
+            rgba(0, 0, 0, .76) 0%,
+            rgba(0, 0, 0, .42) 45%,
+            rgba(0, 0, 0, .08) 100%
         ),
         linear-gradient(
             0deg,
-            rgba(0,0,0,.72) 0%,
-            transparent 65%
+            rgba(0, 0, 0, .72) 0%,
+            rgba(0, 0, 0, .08) 65%,
+            transparent 100%
         );
 }
 
-/* Yazı */
-.hero-slider .hero-content {
+
+/* =====================================================
+   HERO CONTENT
+===================================================== */
+
+.hero-slider .hero-content,
+.hero .hero-content {
     position: absolute;
+
     z-index: 3;
+
     left: 30px !important;
     right: 100px !important;
-    bottom: 25px !important;
+    bottom: 24px !important;
+
     width: auto !important;
+
     max-width: 620px !important;
+
     color: #fff;
 }
 
-/* Kategori */
-.hero-slider .hero-category {
+
+/* CATEGORY */
+
+.hero-slider .hero-category,
+.hero .hero-category {
     display: inline-block;
+
     padding: 4px 8px !important;
+
     margin-bottom: 7px !important;
+
     border-radius: 4px;
+
     background: var(--red);
+
     color: #fff;
+
     font-size: 10px !important;
     line-height: 1;
+
     font-weight: 800;
 }
 
-/* Başlık */
-.hero-slider .hero-content h1 {
-    margin: 0 0 7px !important;
+
+/* TITLE */
+
+.hero-slider .hero-content h1,
+.hero .hero-content h1 {
     max-width: 620px;
+
+    margin: 0 0 7px !important;
+
     color: #fff;
+
     font-size: 26px !important;
     line-height: 1.12 !important;
+
     letter-spacing: -.4px;
 }
 
-/* Spot */
-.hero-slider .hero-content p {
-    margin: 0 !important;
+
+/* SPOT */
+
+.hero-slider .hero-content p,
+.hero .hero-content p {
     max-width: 500px;
-    color: rgba(255,255,255,.82);
+
+    margin: 0 !important;
+
+    color: rgba(255, 255, 255, .82);
+
     font-size: 12px !important;
     line-height: 1.4 !important;
 
     display: -webkit-box;
+
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
+
     overflow: hidden;
 }
 
-/* Meta */
-.hero-slider .hero-meta {
+
+/* META */
+
+.hero-slider .hero-meta,
+.hero .hero-meta {
     margin-top: 7px !important;
-    color: rgba(255,255,255,.65);
+
+    color: rgba(255, 255, 255, .65);
+
     font-size: 10px !important;
 }
 
+
 /* =====================================================
-   MANŞET OKLARI
+   HERO ARROWS
 ===================================================== */
 
-.hero-slider .hero-arrow {
+.hero-slider .hero-arrow,
+.hero .hero-arrow {
     position: absolute;
+
     z-index: 5;
 
     width: 32px !important;
     height: 32px !important;
 
-    border: 1px solid rgba(255,255,255,.45);
+    display: grid;
+
+    place-items: center;
+
+    border: 1px solid rgba(255, 255, 255, .45);
+
     border-radius: 50%;
 
-    background: rgba(0,0,0,.35);
-    color: #fff;
+    background: rgba(0, 0, 0, .35);
 
-    display: grid;
-    place-items: center;
+    color: #fff;
 
     font-size: 20px !important;
     line-height: 1;
 
-    transition: .2s;
+    transition:
+        background .2s ease,
+        border-color .2s ease;
 }
 
-.hero-slider .hero-arrow:hover {
-    background: var(--red);
+.hero-slider .hero-arrow:hover,
+.hero .hero-arrow:hover {
     border-color: var(--red);
+
+    background: var(--red);
+
     color: #fff;
 }
 
-.hero-slider .hero-prev {
+.hero-slider .hero-prev,
+.hero .hero-prev {
     left: 10px !important;
 }
 
-.hero-slider .hero-next {
+.hero-slider .hero-next,
+.hero .hero-next {
     right: 10px !important;
 }
 
+
 /* =====================================================
-   MANŞET NUMARALARI
+   HERO NUMBERS
 ===================================================== */
 
-.hero-slider .hero-bottom {
+.hero-slider .hero-bottom,
+.hero .hero-bottom {
     position: absolute;
+
     z-index: 6;
+
     left: 50%;
     bottom: -42px;
+
     transform: translateX(-50%);
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 }
 
-.hero-slider .hero-numbers {
+.hero-slider .hero-numbers,
+.hero .hero-numbers {
     display: flex;
+
     gap: 4px !important;
 }
 
-.hero-slider .hero-number {
+.hero-slider .hero-number,
+.hero .hero-number {
     width: 24px !important;
     height: 24px !important;
     min-width: 24px !important;
 
+    display: grid;
+
+    place-items: center;
+
     border: 1px solid var(--border);
+
     border-radius: 50%;
 
     background: #fff;
+
     color: #555;
 
-    display: grid;
-    place-items: center;
-
     font-size: 9px !important;
+
     font-weight: 800;
 }
 
-.hero-slider .hero-number.active {
-    background: var(--red);
+.hero-slider .hero-number:hover,
+.hero .hero-number:hover {
     border-color: var(--red);
+
+    color: var(--red);
+}
+
+.hero-slider .hero-number.active,
+.hero .hero-number.active {
+    border-color: var(--red);
+
+    background: var(--red);
+
     color: #fff;
 }
+
+
+/* =====================================================
+   HERO LOADING
+===================================================== */
+
+.hero-loading {
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+
+    place-items: center;
+
+    color: #aaa;
+
+    font-size: 13px;
+}
+
 
 /* =====================================================
    SON HABERLER
@@ -567,128 +804,170 @@ a {
 
 .latest-section {
     margin-top: 32px;
+
+    padding-bottom: 70px;
 }
+
+.section-header {
+    display: flex;
+
+    align-items: end;
+    justify-content: space-between;
+
+    margin-bottom: 19px;
+}
+
+.section-kicker {
+    color: var(--red);
+
+    font-size: 11px;
+    font-weight: 900;
+
+    letter-spacing: 1px;
+}
+
+.section-header h2 {
+    margin-top: 2px;
+
+    font-size: 26px;
+
+    line-height: 1.15;
+}
+
+.all-news {
+    color: var(--red);
+
+    font-size: 13px;
+    font-weight: 750;
+}
+
 
 /* =====================================================
-   TABLET
+   NEWS GRID
 ===================================================== */
 
-@media (max-width: 900px) {
+.news-grid {
+    display: grid;
 
-    .hero-slider {
-        height: 230px !important;
-        min-height: 230px !important;
-        max-height: 230px !important;
-    }
+    grid-template-columns:
+        repeat(4, 1fr);
 
-    .hero-main,
-    .hero-slide-link,
-    .hero-image {
-        height: 230px !important;
-        min-height: 230px !important;
-        max-height: 230px !important;
-    }
-
-    .hero-slider .hero-content {
-        left: 25px !important;
-        right: 70px !important;
-        bottom: 20px !important;
-    }
-
-    .hero-slider .hero-content h1 {
-        font-size: 23px !important;
-    }
+    gap: 18px;
 }
+
 
 /* =====================================================
-   TELEFON
+   NEWS CARD
 ===================================================== */
 
-@media (max-width: 600px) {
+.news-card {
+    overflow: hidden;
 
-    .hero-section {
-        margin-top: 10px;
-    }
+    border: 1px solid var(--border);
 
-    .hero-slider {
-        height: 195px !important;
-        min-height: 195px !important;
-        max-height: 195px !important;
-        border-radius: 8px;
-    }
+    border-radius: 11px;
 
-    .hero-main,
-    .hero-slide-link,
-    .hero-image {
-        height: 195px !important;
-        min-height: 195px !important;
-        max-height: 195px !important;
-    }
+    background: #fff;
 
-    .hero-slider .hero-content {
-        left: 16px !important;
-        right: 45px !important;
-        bottom: 16px !important;
-    }
-
-    .hero-slider .hero-category {
-        padding: 3px 6px !important;
-        margin-bottom: 5px !important;
-        font-size: 8px !important;
-    }
-
-    .hero-slider .hero-content h1 {
-        margin-bottom: 4px !important;
-        font-size: 18px !important;
-        line-height: 1.12 !important;
-    }
-
-    .hero-slider .hero-content p {
-        display: none !important;
-    }
-
-    .hero-slider .hero-meta {
-        margin-top: 4px !important;
-        font-size: 8px !important;
-    }
-
-    .hero-slider .hero-arrow {
-        width: 28px !important;
-        height: 28px !important;
-        font-size: 17px !important;
-    }
-
-    .hero-slider .hero-prev {
-        left: 7px !important;
-    }
-
-    .hero-slider .hero-next {
-        right: 7px !important;
-    }
-
-    .latest-section {
-        margin-top: 27px;
-    }
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
 }
 
-/* =========================
+.news-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, .07);
+}
+
+.news-card-image {
+    display: block;
+
+    width: 100%;
+    height: 170px;
+
+    object-fit: cover;
+}
+
+.news-card-content {
+    padding: 13px 14px 16px;
+}
+
+.news-card-category {
+    display: inline-block;
+
+    margin-bottom: 6px;
+
+    color: var(--red);
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    text-transform: uppercase;
+}
+
+.news-card h3 {
+    font-size: 16px;
+
+    line-height: 1.3;
+
+    letter-spacing: -.2px;
+}
+
+.news-card-meta {
+    margin-top: 9px;
+
+    color: #999;
+
+    font-size: 10px;
+}
+
+
+/* =====================================================
+   SEARCH RESULT
+===================================================== */
+
+.search-result-info {
+    margin-bottom: 15px;
+
+    color: #777;
+
+    font-size: 13px;
+}
+
+
+/* =====================================================
    COOKIE
-========================= */
+===================================================== */
 
 .cookie-box {
     position: fixed;
+
     left: 20px;
     bottom: 20px;
+
     z-index: 2000;
+
     width: min(420px, calc(100% - 40px));
-    background: white;
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 16px;
-    box-shadow: 0 10px 35px rgba(0,0,0,.12);
+
     display: flex;
+
     align-items: center;
+
     gap: 15px;
+
+    padding: 16px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    background: #fff;
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, .12);
 }
 
 .cookie-box strong {
@@ -696,41 +975,54 @@ a {
 }
 
 .cookie-box p {
-    color: #777;
-    font-size: 11px;
     margin-top: 3px;
+
+    color: #777;
+
+    font-size: 11px;
 }
 
 .cookie-box button {
-    margin-left: auto;
     flex-shrink: 0;
-    background: var(--red);
-    color: white;
-    border: 0;
-    border-radius: 7px;
+
+    margin-left: auto;
+
     padding: 8px 13px;
+
+    border: 0;
+
+    border-radius: 7px;
+
+    background: var(--red);
+
+    color: #fff;
+
     font-size: 12px;
+
     font-weight: 800;
 }
 
 
-/* =========================
-   LOADING
-========================= */
+/* =====================================================
+   MARKET LOADING
+===================================================== */
 
-.hero-loading,
 .market-loading {
-    color: #aaa;
     height: 100%;
+
     display: grid;
+
     place-items: center;
+
+    color: #aaa;
+
     font-size: 13px;
 }
 
 
-/* =========================
-   MOBILE
-========================= */
+/* =====================================================
+   TABLET
+===================================================== */
 
 @media (max-width: 900px) {
 
@@ -750,13 +1042,49 @@ a {
         flex: 1;
     }
 
+
+    /* NEWS */
+
     .news-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns:
+            repeat(2, 1fr);
     }
 
+
+    /* HERO */
+
+    .hero-slider,
     .hero {
-        height: 390px;
+        height: 230px !important;
+        min-height: 230px !important;
+        max-height: 230px !important;
     }
+
+    .hero-slider .hero-main,
+    .hero .hero-main,
+    .hero-slider .hero-slide-link,
+    .hero .hero-slide-link,
+    .hero-slider .hero-image,
+    .hero .hero-image {
+        height: 230px !important;
+        min-height: 230px !important;
+        max-height: 230px !important;
+    }
+
+    .hero-slider .hero-content,
+    .hero .hero-content {
+        left: 25px !important;
+        right: 70px !important;
+        bottom: 20px !important;
+    }
+
+    .hero-slider .hero-content h1,
+    .hero .hero-content h1 {
+        font-size: 23px !important;
+    }
+
+
+    /* MARKET */
 
     .market-updated {
         display: none;
@@ -764,11 +1092,18 @@ a {
 }
 
 
+/* =====================================================
+   TELEFON
+===================================================== */
+
 @media (max-width: 600px) {
 
     .container {
-        width: min(100% - 20px, 1180px);
+        width: calc(100% - 20px);
     }
+
+
+    /* HEADER */
 
     .header-top,
     .header-inner {
@@ -784,24 +1119,27 @@ a {
         height: 38px;
     }
 
-    .notification-btn {
-        width: 37px;
-        height: 37px;
-    }
-
+    .notification-btn,
     .icon-btn {
         width: 37px;
         height: 37px;
     }
 
+
+    /* BREAKING */
+
     .breaking-label {
         min-width: 105px;
+
         font-size: 10px;
     }
 
     .breaking-link {
         font-size: 11px;
     }
+
+
+    /* MARKET */
 
     .market-inner {
         gap: 10px;
@@ -815,52 +1153,133 @@ a {
         gap: 18px;
     }
 
+
+    /* HERO */
+
     .hero-section {
-        margin-top: 12px;
+        margin-top: 10px;
     }
 
+    .hero-slider,
     .hero {
-        height: 360px;
-        border-radius: 10px;
+        height: 195px !important;
+        min-height: 195px !important;
+        max-height: 195px !important;
+
+        border-radius: 8px;
     }
 
-    .hero-content {
-        left: 20px;
-        bottom: 24px;
-        width: calc(100% - 40px);
+    .hero-slider .hero-main,
+    .hero .hero-main,
+    .hero-slider .hero-slide-link,
+    .hero .hero-slide-link,
+    .hero-slider .hero-image,
+    .hero .hero-image {
+        height: 195px !important;
+        min-height: 195px !important;
+        max-height: 195px !important;
     }
 
-    .hero-content h1 {
-        font-size: 25px;
+    .hero-slider .hero-content,
+    .hero .hero-content {
+        left: 16px !important;
+        right: 45px !important;
+        bottom: 16px !important;
+
+        max-width: none !important;
     }
 
-    .hero-content p {
-        font-size: 12px;
+    .hero-slider .hero-category,
+    .hero .hero-category {
+        padding: 3px 6px !important;
+
+        margin-bottom: 5px !important;
+
+        font-size: 8px !important;
     }
 
-    .hero-numbers {
-        max-width: 260px;
+    .hero-slider .hero-content h1,
+    .hero .hero-content h1 {
+        margin-bottom: 4px !important;
+
+        font-size: 18px !important;
+        line-height: 1.12 !important;
     }
+
+    .hero-slider .hero-content p,
+    .hero .hero-content p {
+        display: none !important;
+    }
+
+    .hero-slider .hero-meta,
+    .hero .hero-meta {
+        margin-top: 4px !important;
+
+        font-size: 8px !important;
+    }
+
+
+    /* HERO ARROWS */
+
+    .hero-slider .hero-arrow,
+    .hero .hero-arrow {
+        width: 28px !important;
+        height: 28px !important;
+
+        font-size: 17px !important;
+    }
+
+    .hero-slider .hero-prev,
+    .hero .hero-prev {
+        left: 7px !important;
+    }
+
+    .hero-slider .hero-next,
+    .hero .hero-next {
+        right: 7px !important;
+    }
+
+
+    /* HERO NUMBERS */
+
+    .hero-slider .hero-number,
+    .hero .hero-number {
+        width: 22px !important;
+        height: 22px !important;
+        min-width: 22px !important;
+
+        font-size: 8px !important;
+    }
+
+
+    /* LATEST */
 
     .latest-section {
-        margin-top: 35px;
+        margin-top: 27px;
     }
 
     .section-header h2 {
         font-size: 22px;
     }
 
+
+    /* NEWS */
+
     .news-grid {
         grid-template-columns: 1fr;
+
         gap: 12px;
     }
 
     .news-card {
         display: grid;
-        grid-template-columns: 125px 1fr;
+
+        grid-template-columns:
+            125px 1fr;
     }
 
     .news-card-image {
+        width: 125px;
         height: 125px;
     }
 
@@ -876,297 +1295,80 @@ a {
         margin-top: 5px;
     }
 
+
+    /* COOKIE */
+
     .cookie-box {
         left: 10px;
         bottom: 10px;
+
         width: calc(100% - 20px);
     }
 }
-/* =========================================
-   KOMPAKT MANŞET TASARIMI
-========================================= */
-
-.hero-section {
-    margin-top: 18px;
-}
-
-.hero {
-    height: 280px;
-    border-radius: 10px;
-}
-
-.hero-content {
-    left: 28px;
-    bottom: 24px;
-    width: min(560px, calc(100% - 56px));
-}
-
-.hero-category {
-    padding: 4px 8px;
-    font-size: 10px;
-    margin-bottom: 7px;
-}
-
-.hero-content h1 {
-    font-size: 26px;
-    line-height: 1.15;
-    letter-spacing: -.3px;
-    margin-bottom: 6px;
-}
-
-.hero-content p {
-    font-size: 12px;
-    line-height: 1.4;
-    max-width: 500px;
-
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
-
-.hero-meta {
-    margin-top: 8px;
-    font-size: 10px;
-}
-
-.hero-bottom {
-    margin-top: 8px;
-    gap: 7px;
-}
-
-.hero-number,
-.hero-arrow {
-    width: 27px;
-    height: 27px;
-    font-size: 10px;
-}
 
 
-/* SON HABERLER DAHA YUKARIDA */
+/* =====================================================
+   KÜÇÜK TELEFON
+===================================================== */
 
-.latest-section {
-    margin-top: 35px;
-}
+@media (max-width: 380px) {
 
-
-/* TABLET */
-
-@media (max-width: 900px) {
-
+    .hero-slider,
     .hero {
-        height: 260px;
-    }
-
-    .hero-content h1 {
-        font-size: 24px;
-    }
-}
-
-
-/* TELEFON */
-
-@media (max-width: 600px) {
-
-    .hero-section {
-        margin-top: 10px;
-    }
-
-    .hero {
-        height: 220px;
-        border-radius: 8px;
-    }
-
-    .hero-content {
-        left: 17px;
-        bottom: 17px;
-        width: calc(100% - 34px);
-    }
-
-    .hero-category {
-        font-size: 9px;
-        padding: 3px 7px;
-        margin-bottom: 5px;
-    }
-
-    .hero-content h1 {
-        font-size: 19px;
-        line-height: 1.15;
-        margin-bottom: 4px;
-    }
-
-    .hero-content p {
-        font-size: 10px;
-        -webkit-line-clamp: 1;
-    }
-
-    .hero-meta {
-        margin-top: 5px;
-        font-size: 9px;
-    }
-
-    .hero-number,
-    .hero-arrow {
-        width: 25px;
-        height: 25px;
-        font-size: 9px;
-    }
-
-    .hero-numbers {
-        max-width: 230px;
-        gap: 4px;
-    }
-
-    .latest-section {
-        margin-top: 28px;
-    }
-}
-/* =========================================
-   HABERİSTA - KOMPAKT MANŞET
-   Mevcut .hero-slider yapısı için
-========================================= */
-
-.hero-slider {
-    height: 275px !important;
-    min-height: 275px !important;
-    max-height: 275px !important;
-    border-radius: 10px !important;
-}
-
-/* Manşet görseli */
-.hero-slider .hero-main,
-.hero-slider .hero-slide-link,
-.hero-slider .hero-image {
-    height: 275px !important;
-    min-height: 275px !important;
-    max-height: 275px !important;
-}
-
-/* Yazı alanı */
-.hero-slider .hero-content {
-    left: 28px !important;
-    right: 120px !important;
-    bottom: 25px !important;
-    max-width: 560px !important;
-}
-
-/* Kategori */
-.hero-slider .hero-category {
-    font-size: 10px !important;
-    padding: 4px 8px !important;
-    margin-bottom: 7px !important;
-}
-
-/* Başlık */
-.hero-slider .hero-content h1 {
-    font-size: 25px !important;
-    line-height: 1.15 !important;
-    letter-spacing: -.3px !important;
-    margin: 0 !important;
-}
-
-/* Spot */
-.hero-slider .hero-content p {
-    font-size: 12px !important;
-    line-height: 1.4 !important;
-    margin-top: 7px !important;
-    max-width: 500px !important;
-
-    display: -webkit-box !important;
-    -webkit-line-clamp: 2 !important;
-    -webkit-box-orient: vertical !important;
-    overflow: hidden !important;
-}
-
-/* Tarih */
-.hero-slider .hero-meta {
-    font-size: 10px !important;
-    margin-top: 7px !important;
-}
-
-
-/* Oklar */
-.hero-slider .hero-arrow {
-    width: 34px !important;
-    height: 34px !important;
-    font-size: 23px !important;
-}
-
-.hero-slider .hero-prev {
-    left: 10px !important;
-}
-
-.hero-slider .hero-next {
-    right: 10px !important;
-}
-
-
-/* 1-20 numaraları */
-.hero-slider .hero-numbers {
-    gap: 4px !important;
-}
-
-.hero-slider .hero-number {
-    width: 25px !important;
-    height: 25px !important;
-    min-width: 25px !important;
-    font-size: 9px !important;
-}
-
-
-/* =========================================
-   TELEFON
-========================================= */
-
-@media (max-width: 600px) {
-
-    .hero-slider {
-        height: 215px !important;
-        min-height: 215px !important;
-        max-height: 215px !important;
+        height: 185px !important;
+        min-height: 185px !important;
+        max-height: 185px !important;
     }
 
     .hero-slider .hero-main,
+    .hero .hero-main,
     .hero-slider .hero-slide-link,
-    .hero-slider .hero-image {
-        height: 215px !important;
-        min-height: 215px !important;
-        max-height: 215px !important;
+    .hero .hero-slide-link,
+    .hero-slider .hero-image,
+    .hero .hero-image {
+        height: 185px !important;
+        min-height: 185px !important;
+        max-height: 185px !important;
     }
 
-    .hero-slider .hero-content {
-        left: 16px !important;
-        right: 16px !important;
-        bottom: 17px !important;
-        max-width: none !important;
+    .hero-slider .hero-content h1,
+    .hero .hero-content h1 {
+        font-size: 17px !important;
+    }
+}
+
+
+/* =====================================================
+   ÇOK KÜÇÜK EKRAN
+===================================================== */
+
+@media (max-width: 340px) {
+
+    .hero-slider,
+    .hero {
+        height: 175px !important;
+        min-height: 175px !important;
+        max-height: 175px !important;
     }
 
-    .hero-slider .hero-content h1 {
-        font-size: 19px !important;
-        line-height: 1.15 !important;
+    .hero-slider .hero-main,
+    .hero .hero-main,
+    .hero-slider .hero-slide-link,
+    .hero .hero-slide-link,
+    .hero-slider .hero-image,
+    .hero .hero-image {
+        height: 175px !important;
+        min-height: 175px !important;
+        max-height: 175px !important;
     }
 
-    .hero-slider .hero-content p {
-        display: none !important;
+    .hero-slider .hero-content h1,
+    .hero .hero-content h1 {
+        font-size: 16px !important;
     }
 
-    .hero-slider .hero-category {
-        font-size: 8px !important;
-        padding: 3px 6px !important;
-    }
-
-    .hero-slider .hero-meta {
-        font-size: 9px !important;
-    }
-
-    .hero-slider .hero-arrow {
-        width: 30px !important;
-        height: 30px !important;
-    }
-
-    .hero-slider .hero-number {
-        width: 23px !important;
-        height: 23px !important;
-        min-width: 23px !important;
+    .hero-slider .hero-meta,
+    .hero .hero-meta {
+        display: none;
     }
 }
