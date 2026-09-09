@@ -2,7 +2,7 @@
 
 /* =========================================================
    HABERİSTA - HABER VERİTABANI
-   Birleştirilmiş sürüm
+   PROFESYONEL SÜRÜM
 ========================================================= */
 
 /* =========================================================
@@ -28,12 +28,15 @@ function slugOlustur(metin) {
         .replace(/^-+|-+$/g, "");
 }
 
+
+/* =========================================================
+   HABERLER
+========================================================= */
+
 const haberler = [
 
-
-   
     /* =====================================================
-       33 - MERSİN BOZYAZI ORMAN YANGINI
+       33 - MERSİN BOZYAZI YANGINI
     ===================================================== */
 
     {
@@ -47,69 +50,41 @@ const haberler = [
         kaynak: "HABERİSTA",
         yazar: "Haberİsta Haber Merkezi",
         icerik: `
-            MERSİN BOZYAZI'DA ORMAN YANGINI
+MERSİN BOZYAZI'DA ORMAN YANGINI
 
-            Mersin'in Bozyazı ilçesinde ormanlık alanda
-            yangın çıktı. Yangının fark edilmesinin ardından
-            bölgeye çok sayıda ekip sevk edildi.
+Mersin'in Bozyazı ilçesinde ormanlık alanda yangın çıktı. Yangının ardından bölgeye çok sayıda ekip yönlendirilirken, alevlerin kontrol altına alınması için çalışmalar başlatıldı.
 
-            HAVADAN VE KARADAN MÜDAHALE
+HAVADAN VE KARADAN MÜDAHALE
 
-            Yangına karadan ulaşan ekiplerin yanı sıra
-            havadan da müdahale gerçekleştiriliyor.
+Yangına hem kara ekipleriyle hem de hava araçlarıyla müdahale ediliyor. Ekipler, yangının ilerleyebileceği alanlarda kontrol sağlamak ve alevlerin yayılmasını önlemek için çalışmalarını sürdürüyor.
 
-            Ekipler, alevlerin çevredeki ormanlık alanlara
-            yayılmasını önlemek ve yangını kontrol altına
-            almak için çalışmalarını sürdürüyor.
+EKİPLER BÖLGEDE ÇALIŞIYOR
 
-            EKİPLER BÖLGEYE SEVK EDİLDİ
+Yangın bölgesine sevk edilen ekipler, müdahale çalışmalarını koordineli şekilde yürütüyor. Çalışmalar sırasında çevredeki alanların güvenliği de takip ediliyor.
 
-            İhbar üzerine bölgeye itfaiye, orman ekipleri
-            ve ilgili diğer ekipler yönlendirildi.
+RÜZGAR ÇALIŞMALARI ETKİLEYEBİLİYOR
 
-            Yangının bulunduğu bölgenin arazi şartları
-            nedeniyle ekiplerin çalışmaları zaman zaman
-            güçlüklerle karşılaşabiliyor.
+Bölgede etkili olabilecek rüzgarın yangının seyri üzerinde etkili olabileceği belirtiliyor. Bu nedenle ekipler yangının hareket yönünü ve çevredeki riskli bölgeleri yakından izliyor.
 
-            YANGININ SEYRİ TAKİP EDİLİYOR
+SOĞUTMA ÇALIŞMALARI ÖNEM TAŞIYOR
 
-            Yetkililer tarafından yangının ilerleyişi
-            ve çevrede oluşturabileceği risk yakından
-            takip ediliyor.
+Alevlerin kontrol altına alınmasının ardından yeniden yangın çıkma riskine karşı soğutma çalışmalarının da yürütülmesi bekleniyor.
 
-            RÜZGAR ÇALIŞMALARI ETKİLEYEBİLİYOR
+YETKİLİLERDEN UYARI
 
-            Orman yangınlarında rüzgarın yönü ve şiddeti,
-            alevlerin yayılma hızını etkileyebildiği için
-            ekipler müdahale planlarını bölgedeki koşullara
-            göre sürdürüyor.
+Yetkililer, yangın bölgesine yakın alanlarda bulunan vatandaşların ekiplerin çalışmalarını aksatmaması ve yapılan uyarıları dikkate alması gerektiğini belirtiyor.
 
-            SOĞUTMA ÇALIŞMALARI ÖNEM TAŞIYOR
+GELİŞMELER TAKİP EDİLİYOR
 
-            Yangının kontrol altına alınmasının ardından
-            bölgede soğutma çalışmalarının gerçekleştirilmesi
-            bekleniyor.
+Bozyazı'daki yangına ilişkin gelişmeler ekiplerin çalışmaları ve yetkililerden gelecek açıklamalar doğrultusunda takip ediliyor.
 
-            YETKİLİLERDEN UYARI
-
-            Yangın bölgelerine görevli ekiplerin çalışmasını
-            engelleyecek şekilde yaklaşılmaması ve yetkililerin
-            uyarılarına uyulması önem taşıyor.
-
-            GELİŞMELER TAKİP EDİLİYOR
-
-            Bozyazı'daki yangınla ilgili gelişmeler,
-            ekiplerin çalışmalarına ilişkin açıklamalar
-            geldikçe güncellenecek.
-
-            HABERİSTA Haber Merkezi
+HABERİSTA Haber Merkezi
         `
     },
 
+
     /* =====================================================
-       33 - KKTC GÖRÜŞMESİ
-       NOT: Aynı ID daha önce kullanıldığı için aşağıdaki
-       kayıt daha sonra benzersiz ID ile düzenlenmelidir.
+       57 - BAYRAKTAROĞLU - ÜSTEL
     ===================================================== */
 
     {
@@ -123,42 +98,33 @@ const haberler = [
         kaynak: "HABERİSTA",
         yazar: "Haberİsta Haber Merkezi",
         icerik: `
-            ORGENERAL BAYRAKTAROĞLU KKTC'DE GÖRÜŞME GERÇEKLEŞTİRDİ
+ORGENERAL BAYRAKTAROĞLU KKTC'DE GÖRÜŞME GERÇEKLEŞTİRDİ
 
-            Orgeneral Bayraktaroğlu ile Kuzey Kıbrıs Türk
-            Cumhuriyeti Başbakanı Ünal Üstel arasında
-            görüşme gerçekleştirildi.
+Orgeneral Bayraktaroğlu, Kuzey Kıbrıs Türk Cumhuriyeti'nde gerçekleştirdiği temaslar kapsamında KKTC Başbakanı Ünal Üstel ile bir araya geldi.
 
-            GÜNDEMDE GÜVENLİK VE İŞ BİRLİĞİ
+GÜNDEMDE GÜVENLİK VE İŞ BİRLİĞİ
 
-            Görüşmede Kıbrıs'taki güvenlik durumu,
-            bölgesel gelişmeler ve Türkiye ile KKTC
-            arasındaki iş birliği konularının ele alındığı
-            bildirildi.
+Görüşmede güvenlik başta olmak üzere bölgesel gelişmeler ve Türkiye ile KKTC arasındaki iş birliği konularının değerlendirildiği bildirildi.
 
-            BÖLGESEL GELİŞMELER DEĞERLENDİRİLDİ
+BÖLGESEL GELİŞMELER DEĞERLENDİRİLDİ
 
-            Doğu Akdeniz'deki gelişmelerin yanı sıra
-            bölgesel güvenlik başlıklarının da görüşmede
-            değerlendirildiği belirtildi.
+Doğu Akdeniz'deki gelişmelerin yanı sıra bölgesel güvenlik gündeminin de görüşmede ele alınan başlıklar arasında olduğu belirtildi.
 
-            TÜRKİYE-KKTC İLİŞKİLERİ
+TÜRKİYE-KKTC İLİŞKİLERİ
 
-            Türkiye ile KKTC arasındaki siyasi, ekonomik
-            ve güvenlik alanlarındaki iş birliği
-            çalışmalarının önemine dikkat çekildi.
+Türkiye ile KKTC arasındaki ilişkiler farklı alanlardaki temaslarla devam ederken, güvenlik ve koordinasyon başlıkları da gündemdeki önemini koruyor.
 
-            GÖRÜŞMELER DEVAM EDİYOR
+GÖRÜŞMELER DEVAM EDİYOR
 
-            Yetkililer arasındaki temasların önümüzdeki
-            dönemde de devam etmesi bekleniyor.
+Gerçekleştirilen temasların ardından bölgedeki gelişmeler ve iki taraf arasındaki iş birliğine ilişkin sürecin yakından takip edilmesi bekleniyor.
 
-            HABERİSTA Haber Merkezi
+HABERİSTA Haber Merkezi
         `
     },
 
+
     /* =====================================================
-       31 - PUTİN TRUMP GÖRÜŞMESİ
+       31 - PUTİN TRUMP
     ===================================================== */
 
     {
@@ -172,55 +138,41 @@ const haberler = [
         kaynak: "HABERİSTA",
         yazar: "Haberİsta Dünya Servisi",
         icerik: `
-            PUTİN VE TRUMP TELEFONDA GÖRÜŞTÜ
+PUTİN VE TRUMP TELEFONDA GÖRÜŞTÜ
 
-            Rusya Devlet Başkanı Vladimir Putin ile
-            ABD Başkanı Donald Trump arasında telefon
-            görüşmesi gerçekleştirildi.
+Rusya Devlet Başkanı Vladimir Putin ile ABD Başkanı Donald Trump arasında telefon görüşmesi gerçekleştirildi. Görüşmede Ukrayna savaşı ve bölgedeki gelişmelerin ele alındığı bildirildi.
 
-            UKRAYNA SAVAŞI GÜNDEMDE
+UKRAYNA SAVAŞI GÜNDEMDE
 
-            Görüşmenin ana başlıkları arasında Ukrayna'daki
-            savaş ve çatışmaların sona erdirilmesine yönelik
-            diplomatik girişimler yer aldı.
+Rusya-Ukrayna savaşına ilişkin gelişmeler uluslararası diplomasinin önemli gündem başlıklarından biri olmayı sürdürüyor. Görüşmede savaşın mevcut durumu ve sürece ilişkin değerlendirmelerin yapıldığı belirtildi.
 
-            BARIŞ SÜRECİ ELE ALINDI
+BARIŞ SÜRECİ ELE ALINDI
 
-            Tarafların Ukrayna'daki savaşın sona erdirilmesi
-            için yürütülen diplomatik temasları ve olası
-            müzakere sürecini değerlendirdiği aktarıldı.
+Putin ve Trump arasındaki görüşmede olası barış süreci ve diplomatik girişimlerin de gündeme geldiği ifade edildi.
 
-            ABD-RUSYA TEMASLARI
+ABD-RUSYA TEMASLARI
 
-            Görüşme, Washington ile Moskova arasındaki
-            diplomatik temasların sürdüğünü göstermesi
-            açısından önem taşıyor.
+Washington ile Moskova arasındaki temaslar, savaşın geleceği açısından uluslararası kamuoyu tarafından yakından takip ediliyor.
 
-            BÖLGESEL GELİŞMELER
+BÖLGESEL GELİŞMELER
 
-            Ukrayna savaşının yanı sıra Avrupa güvenliği
-            ve bölgedeki gelişmelerin de görüşmede gündeme
-            geldiği belirtildi.
+Ukrayna'daki savaşın yanı sıra Avrupa güvenliği ve bölgedeki diğer gelişmelerin de diplomatik görüşmeler açısından önem taşıdığı değerlendiriliyor.
 
-            DİPLOMASİ TRAFİĞİ SÜRÜYOR
+DİPLOMASİ TRAFİĞİ SÜRÜYOR
 
-            ABD, Rusya ve Ukrayna arasında savaşın sona
-            erdirilmesine yönelik diplomatik girişimler
-            uluslararası kamuoyunun gündemindeki yerini
-            koruyor.
+Taraflar arasındaki temasların önümüzdeki dönemde devam edip etmeyeceği ve görüşmelerin sahadaki gelişmelere nasıl yansıyacağı yakından izleniyor.
 
-            ÖNÜMÜZDEKİ SÜREÇ
+ÖNÜMÜZDEKİ SÜREÇ
 
-            Görüşmenin ardından tarafların yapacağı
-            açıklamalar ve diplomatik temasların seyri
-            yakından takip edilecek.
+Diplomatik temasların seyri, Ukrayna savaşının geleceği ve olası müzakere süreci açısından önem taşıyor.
 
-            HABERİSTA Dünya Servisi
+HABERİSTA Dünya Servisi
         `
     },
 
+
     /* =====================================================
-       30 - GİRNE AÇIKLARINDA BATAN GEMİ
+       30 - GİRNE'DE GEMİ
     ===================================================== */
 
     {
@@ -234,46 +186,37 @@ const haberler = [
         kaynak: "HABERİSTA",
         yazar: "Haberİsta Haber Merkezi",
         icerik: `
-            GİRNE AÇIKLARINDA GEMİDE ARAMA-KURTARMA
+GİRNE AÇIKLARINDA GEMİDE ARAMA-KURTARMA
 
-            Kuzey Kıbrıs Türk Cumhuriyeti'nin Girne
-            açıklarında meydana gelen deniz kazasının
-            ardından bölgede arama-kurtarma çalışmaları
-            başlatıldı.
+Kuzey Kıbrıs Türk Cumhuriyeti'nin Girne açıklarında batan geminin ardından bölgede arama-kurtarma çalışmaları başlatıldı.
 
-            EKİPLER BÖLGEYE SEVK EDİLDİ
+EKİPLER BÖLGEYE SEVK EDİLDİ
 
-            Olayın ardından deniz ve hava unsurları
-            bölgeye yönlendirilerek çalışmalar başlatıldı.
+Olayın ardından ilgili ekipler bölgeye yönlendirilirken, denizde yürütülen çalışmalar koordineli şekilde devam ediyor.
 
-            DENİZDE ARAMA ÇALIŞMALARI
+DENİZDE ARAMA ÇALIŞMALARI
 
-            Ekipler, olayın meydana geldiği bölgede
-            arama-kurtarma faaliyetlerini sürdürüyor.
+Arama-kurtarma ekipleri deniz üzerinde belirlenen alanlarda çalışmalarını sürdürüyor. Bölgedeki gelişmeler ekipler tarafından yakından takip ediliyor.
 
-            HAVA VE DENİZ KOŞULLARI İZLENİYOR
+HAVA VE DENİZ KOŞULLARI İZLENİYOR
 
-            Arama-kurtarma çalışmalarında bölgedeki
-            hava ve deniz koşulları da dikkate alınıyor.
+Çalışmaların yürütüldüğü bölgede hava ve deniz koşulları ekiplerin faaliyetleri açısından önem taşıyor.
 
-            YETKİLİLERDEN AÇIKLAMA BEKLENİYOR
+YETKİLİLERDEN AÇIKLAMA BEKLENİYOR
 
-            Olayın ayrıntılarına ilişkin yetkili
-            kurumlardan yapılacak açıklamalar takip
-            ediliyor.
+Olayın ayrıntıları ve yürütülen çalışmalara ilişkin resmi açıklamaların kamuoyuyla paylaşılması bekleniyor.
 
-            ÇALIŞMALAR SÜRÜYOR
+ÇALIŞMALAR SÜRÜYOR
 
-            Bölgedeki ekiplerin çalışmalarının,
-            olayla ilgili durum netleşene kadar
-            devam etmesi bekleniyor.
+Arama-kurtarma faaliyetlerinin sonuçları ve olayla ilgili yeni bilgiler yetkili kurumların açıklamaları doğrultusunda takip ediliyor.
 
-            HABERİSTA Haber Merkezi
+HABERİSTA Haber Merkezi
         `
     },
 
+
     /* =====================================================
-       29 - TÜRKİYE'DE GÜNDEM
+       29 - TÜRKİYE GÜNDEMİ
     ===================================================== */
 
     {
@@ -287,47 +230,37 @@ const haberler = [
         kaynak: "HABERİSTA Haber Merkezi",
         yazar: "Haberİsta Haber Merkezi",
         icerik: `
-            TÜRKİYE'DE GÜNDEM YOĞUN
+TÜRKİYE'DE GÜNDEM YOĞUN
 
-            Türkiye'de yeni haftayla birlikte ekonomi,
-            teknoloji, eğitim ve günlük yaşama ilişkin
-            çok sayıda gelişme takip ediliyor.
+Türkiye'de ekonomi, teknoloji, eğitim ve günlük yaşama ilişkin gelişmeler kamuoyunun gündemindeki yerini koruyor.
 
-            EKONOMİ GÜNDEMİ
+EKONOMİ GÜNDEMİ
 
-            Piyasalardaki hareketlilik, fiyat gelişmeleri
-            ve ekonomik göstergeler vatandaşların yakından
-            takip ettiği başlıklar arasında bulunuyor.
+Piyasalardaki hareketlilik, ekonomik göstergeler ve vatandaşların günlük yaşamını etkileyebilecek gelişmeler yakından takip ediliyor.
 
-            TEKNOLOJİDE YENİ GELİŞMELER
+TEKNOLOJİDE YENİ GELİŞMELER
 
-            Yapay zeka, dijital hizmetler ve teknoloji
-            sektöründeki gelişmeler de gündemin önemli
-            başlıkları arasında yer alıyor.
+Dijital teknolojiler ve yeni ürünler teknoloji gündeminin öne çıkan başlıkları arasında yer alıyor. Teknolojideki gelişmeler günlük yaşamın farklı alanlarında etkisini artırıyor.
 
-            EĞİTİM GÜNDEMİ
+EĞİTİM GÜNDEMİ
 
-            Yeni eğitim dönemi yaklaşırken öğrenciler,
-            veliler ve eğitimciler okullara ilişkin
-            gelişmeleri takip ediyor.
+Öğrenciler, veliler ve eğitimciler yeni eğitim dönemine ilişkin gelişmeleri takip ediyor. Eğitim takvimleri ve resmi açıklamalar gündemdeki önemini koruyor.
 
-            GÜNLÜK YAŞAM
+GÜNLÜK YAŞAM
 
-            Ulaşım, hava durumu, kamu hizmetleri ve
-            vatandaşları doğrudan ilgilendiren gelişmeler
-            de gündemdeki yerini koruyor.
+Vatandaşların ulaşım, ekonomi, eğitim ve sosyal yaşamla ilgili gelişmeleri yakından takip ettiği görülüyor.
 
-            YENİ HAFTADA GÜNDEM
+YENİ HAFTADA GÜNDEM
 
-            Önümüzdeki günlerde ekonomi, siyaset,
-            teknoloji ve toplum gündemindeki gelişmelerin
-            yakından takip edilmesi bekleniyor.
+Yeni haftada Türkiye'nin iç gündeminde farklı başlıkların öne çıkması beklenirken, resmi açıklamalar ve güncel gelişmeler takip edilmeye devam ediyor.
 
-            HABERİSTA Haber Merkezi
+HABERİSTA Haber Merkezi
         `
     },
+
+
     /* =====================================================
-       21 - KABİNE TOPLANTISI
+       21 - KABİNE
     ===================================================== */
 
     {
@@ -341,56 +274,41 @@ const haberler = [
         kaynak: "HABERİSTA",
         yazar: "Haberİsta Haber Merkezi",
         icerik: `
-            KABİNE TOPLANTISI BUGÜN GERÇEKLEŞTİRİLİYOR
+KABİNE TOPLANTISI GERÇEKLEŞTİRİLİYOR
 
-            Cumhurbaşkanlığı Kabinesi, Cumhurbaşkanı
-            Recep Tayyip Erdoğan başkanlığında bugün
-            toplanıyor.
+Cumhurbaşkanlığı Kabinesi, Cumhurbaşkanı Recep Tayyip Erdoğan başkanlığında gündemdeki başlıkları değerlendirmek üzere toplanıyor.
 
-            GÜNDEMDE EKONOMİ VAR
+GÜNDEMDE EKONOMİ VAR
 
-            Toplantının önemli başlıkları arasında
-            Türkiye ekonomisindeki son gelişmeler,
-            enflasyonla mücadele, büyüme ve vatandaşların
-            gündemindeki ekonomik konuların bulunması
-            bekleniyor.
+Toplantının önemli başlıkları arasında ekonomi gündeminin yer alması bekleniyor. Ekonomik gelişmeler, fiyat istikrarı ve önümüzdeki döneme ilişkin politikaların değerlendirilmesi öne çıkan konular arasında bulunuyor.
 
-            GÜVENLİK KONULARI ELE ALINACAK
+GÜVENLİK KONULARI ELE ALINACAK
 
-            İç ve dış güvenlik başlıklarının da Kabine
-            toplantısında değerlendirilmesi bekleniyor.
+Türkiye'nin iç ve dış güvenliğine ilişkin gelişmelerin de Kabine toplantısında değerlendirilmesi bekleniyor.
 
-            TERÖRSÜZ TÜRKİYE SÜRECİ
+TERÖRSÜZ TÜRKİYE SÜRECİ
 
-            Türkiye'nin yürüttüğü "Terörsüz Türkiye"
-            sürecine ilişkin gelişmelerin de toplantının
-            gündem maddeleri arasında yer alması bekleniyor.
+'Terörsüz Türkiye' sürecine ilişkin gelişmelerin toplantının gündem maddeleri arasında yer alması bekleniyor. Sürece ilişkin atılabilecek adımlar ve mevcut gelişmelerin değerlendirilmesi öne çıkıyor.
 
-            BÖLGESEL GELİŞMELER
+BÖLGESEL GELİŞMELER
 
-            Türkiye'nin yakın çevresinde yaşanan siyasi
-            ve güvenlik gelişmelerinin de toplantıda
-            değerlendirilmesi bekleniyor.
+Türkiye'nin yakın çevresindeki gelişmeler ve dış politika gündeminin de toplantıda ele alınabilecek başlıklar arasında olduğu değerlendiriliyor.
 
-            TOPLANTI SONRASI AÇIKLAMA
+TOPLANTI SONRASI AÇIKLAMA
 
-            Kabine toplantısının ardından Cumhurbaşkanı
-            Erdoğan'ın kamuoyuna yönelik açıklamalarda
-            bulunması bekleniyor.
+Kabine toplantısının ardından alınan kararlar ve gündeme ilişkin değerlendirmelerin kamuoyuyla paylaşılması bekleniyor.
 
-            VATANDAŞLARIN YAKINDAN TAKİP ETTİĞİ KONULAR
+VATANDAŞLARIN YAKINDAN TAKİP ETTİĞİ KONULAR
 
-            Ekonomi, güvenlik ve dış politika başlıkları
-            başta olmak üzere toplantıdan çıkacak karar
-            ve açıklamalar vatandaşlar tarafından
-            yakından takip ediliyor.
+Ekonomi, güvenlik ve dış politika başlıklarının yanı sıra vatandaşların günlük yaşamını ilgilendiren konulara ilişkin yapılacak açıklamalar da yakından takip ediliyor.
 
-            HABERİSTA Haber Merkezi
+HABERİSTA Haber Merkezi
         `
     },
 
+
     /* =====================================================
-       20 - ABD İRAN TANKERLERİ
+       20 - ABD İRAN
     ===================================================== */
 
     {
@@ -404,60 +322,45 @@ const haberler = [
         kaynak: "Reuters / HABERİSTA",
         yazar: "Haberİsta Dünya Servisi",
         icerik: `
-            ABD İLE İRAN ARASINDA GERİLİM
+ABD İLE İRAN ARASINDA GERİLİM
 
-            ABD ile İran arasındaki gerilim, İran'a ait
-            tankerlerle ilgili gelişmelerin ardından
-            yeniden uluslararası gündemin öne çıkan
-            başlıklarından biri oldu.
+ABD ile İran arasındaki gerilim, İran'a ait olduğu belirtilen üç tankerin hedef alındığına ilişkin gelişmelerin ardından yeniden uluslararası gündemin öne çıkan başlıklarından biri oldu.
 
-            ÜÇ İRAN TANKERİ HEDEF ALINDI
+ÜÇ İRAN TANKERİ HEDEF ALINDI
 
-            ABD tarafından yapılan açıklamalara göre
-            üç İran tankerinin hedef alındığı bildirildi.
+Üç İran tankerinin hedef alındığına ilişkin gelişmeler bölgedeki tansiyonun yeniden yükselmesine neden oldu. Olayın ayrıntıları ve gelişmeler uluslararası kamuoyu tarafından takip ediliyor.
 
-            OLAYIN AYRINTILARI ARAŞTIRILIYOR
+OLAYIN AYRINTILARI ARAŞTIRILIYOR
 
-            Tankerlerle ilgili olayın meydana geliş şekli,
-            hedef alınma gerekçesi ve bölgedeki gelişmeler
-            uluslararası kaynaklar tarafından takip ediliyor.
+Tankerlerle ilgili gelişmelere ilişkin farklı açıklamalar gündeme gelirken, olayın ayrıntılarının netleşmesi için resmi açıklamalar ve güvenilir kaynaklardan gelecek bilgiler bekleniyor.
 
-            ABD'DEN AÇIKLAMA
+ABD'DEN AÇIKLAMA
 
-            ABD yönetimi olayla ilgili açıklamalarında
-            bölgedeki gelişmelere ilişkin değerlendirmelerde
-            bulundu.
+ABD tarafının olaya ilişkin açıklamaları uluslararası kamuoyu tarafından yakından takip ediliyor.
 
-            İRAN'IN TEPKİSİ
+İRAN'IN TEPKİSİ
 
-            Tahran yönetiminin gelişmeye ilişkin açıklamaları
-            ve vereceği tepki, iki ülke arasındaki gerilimin
-            seyri açısından yakından takip ediliyor.
+İran yönetiminin gelişmeye ilişkin vereceği tepki ve yapacağı açıklamalar bölgedeki diplomatik sürecin seyri açısından önem taşıyor.
 
-            BÖLGESEL GERİLİM
+BÖLGESEL GERİLİM
 
-            ABD ile İran arasındaki gerilim yalnızca iki
-            ülkeyi değil, Orta Doğu'daki güvenlik ve enerji
-            piyasalarını da yakından ilgilendiriyor.
+ABD ve İran arasındaki gerilim, Orta Doğu'daki güvenlik ve diplomasi gündemini doğrudan etkileyen başlıklar arasında bulunuyor.
 
-            PETROL PİYASALARI TAKİPTE
+PETROL PİYASALARI TAKİPTE
 
-            Bölgede yaşanan gelişmelerin enerji piyasaları
-            üzerindeki olası etkileri de yatırımcıların
-            takip ettiği başlıklar arasında bulunuyor.
+Bölgede yaşanan gelişmeler enerji piyasaları tarafından da yakından izleniyor. Petrol arzı ve bölgesel risklere ilişkin gelişmeler fiyatlamalar üzerinde etkili olabiliyor.
 
-            DİPLOMASİ TRAFİĞİ ÖNEMLİ
+DİPLOMATİK TEMASLAR ÖNEMLİ
 
-            Taraflar arasındaki diplomatik temasların
-            gelecekteki gelişmeler açısından önem taşıdığı
-            değerlendiriliyor.
+Önümüzdeki süreçte tarafların açıklamaları ve diplomatik temaslar, gerilimin seyrine ilişkin önemli göstergeler arasında olacak.
 
-            HABERİSTA Dünya Servisi
+HABERİSTA Dünya Servisi
         `
     },
 
+
     /* =====================================================
-       19 - ABD 3 İRAN TANKERİNİ VURDU
+       19 - İRAN TANKERLERİ
     ===================================================== */
 
     {
@@ -471,55 +374,45 @@ const haberler = [
         kaynak: "HABERİSTA",
         yazar: "Haberİsta Dünya Servisi",
         icerik: `
-            ABD'DEN İRAN TANKERLERİNE İLİŞKİN AÇIKLAMA
+ABD'DEN İRAN TANKERLERİNE İLİŞKİN AÇIKLAMA
 
-            ABD yönetimi, İran'a ait üç tankerin
-            vurulduğunu açıkladı.
+ABD yönetimi, İran'a ait üç tankerin vurulduğunu açıkladı. Açıklamanın ardından gelişme uluslararası gündemin önemli başlıkları arasında yer aldı.
 
-            GELİŞME DÜNYA GÜNDEMİNDE
+GELİŞME DÜNYA GÜNDEMİNDE
 
-            Açıklamanın ardından olay uluslararası
-            kamuoyunun gündeminde geniş yer buldu.
+Tankerlerle ilgili gelişme, ABD ile İran arasındaki gerilimin yeniden gündeme gelmesine neden oldu.
 
-            ABD-İRAN GERİLİMİ
+ABD-İRAN GERİLİMİ
 
-            Washington ile Tahran arasındaki gerilim,
-            bölgede yaşanan gelişmelerle birlikte
-            yeniden gündemin önemli başlıklarından
-            biri haline geldi.
+İki ülke arasındaki ilişkilerde yaşanan gerilim, bölgedeki güvenlik ve diplomasi gelişmelerinin yakından takip edilmesine neden oluyor.
 
-            BÖLGEDEKİ GELİŞMELER İZLENİYOR
+BÖLGEDEKİ GELİŞMELER İZLENİYOR
 
-            Olayın ardından bölgedeki askeri ve siyasi
-            gelişmeler yakından takip ediliyor.
+Olayın ardından bölgedeki gelişmeler ve taraflardan gelecek yeni açıklamalar uluslararası kamuoyu tarafından takip ediliyor.
 
-            İRAN'IN TEPKİSİ BEKLENİYOR
+İRAN'IN TEPKİSİ BEKLENİYOR
 
-            İran yönetiminin gelişmeye yönelik açıklamaları
-            ve atacağı adımlar uluslararası kamuoyunda
-            merakla takip ediliyor.
+İran yönetiminin gelişmeye ilişkin açıklaması ve vereceği tepkinin bölgedeki diplomatik sürecin seyri açısından önem taşıdığı değerlendiriliyor.
 
-            ENERJİ GÜVENLİĞİ GÜNDEMDE
+ENERJİ GÜVENLİĞİ GÜNDEMDE
 
-            Orta Doğu'daki gerilim, enerji taşımacılığı
-            ve petrol piyasaları açısından da önem taşıyor.
+Orta Doğu'daki gelişmeler enerji güvenliği ve petrol taşımacılığı açısından da yakından izleniyor.
 
-            DİPLOMATİK TEMASLAR
+DİPLOMATİK TEMASLAR
 
-            Bölgede tansiyonun düşürülmesine yönelik
-            diplomatik girişimlerin önemi de artıyor.
+Bölgede tansiyonun düşürülmesine yönelik diplomatik girişimlerin önümüzdeki dönemde önem kazanması bekleniyor.
 
-            GELİŞMELER TAKİP EDİLİYOR
+GELİŞMELER TAKİP EDİLİYOR
 
-            Olayla ilgili yeni açıklamalar geldikçe
-            gelişmeler kamuoyuyla paylaşılacak.
+Olayla ilgili yeni açıklamalar geldikçe gelişmeler uluslararası gündem doğrultusunda takip edilecek.
 
-            HABERİSTA Dünya Servisi
+HABERİSTA Dünya Servisi
         `
     },
 
+
     /* =====================================================
-       18 - EKONOMİDE 3 YILLIK YOL HARİTASI
+       18 - EKONOMİK YOL HARİTASI
     ===================================================== */
 
     {
@@ -533,59 +426,34 @@ const haberler = [
         kaynak: "HABERİSTA",
         yazar: "Haberİsta Ekonomi Servisi",
         icerik: `
-            TÜRKİYE EKONOMİSİNDE YENİ DÖNEM
+TÜRKİYE EKONOMİSİNDE YENİ DÖNEM
 
-            Türkiye ekonomisinin önümüzdeki üç yıllık
-            dönemde izleyeceği politikalara ilişkin
-            çalışmalar gündemde.
+Türkiye ekonomisinin önümüzdeki üç yıllık dönemde izleyeceği politikalara ilişkin hedefler gündemde. Yeni Orta Vadeli Program kapsamında ekonominin farklı alanlarına yönelik planlamaların ortaya konulması bekleniyor.
 
-            Orta Vadeli Program kapsamında büyüme,
-            enflasyon, istihdam ve kamu maliyesi gibi
-            temel ekonomik başlıkların ele alınması
-            bekleniyor.
+ENFLASYONLA MÜCADELE
 
-            ENFLASYONLA MÜCADELE
+Ekonomi politikalarının önemli başlıklarından biri enflasyonla mücadele olmaya devam ediyor. Fiyat istikrarının sağlanmasına yönelik politikaların önümüzdeki dönemde de önemini koruması bekleniyor.
 
-            Ekonomide fiyat istikrarının sağlanması,
-            önümüzdeki dönemin temel hedefleri arasında
-            bulunuyor.
+BÜYÜME VE İSTİHDAM
 
-            Enflasyonla mücadele kapsamında para ve
-            maliye politikalarının koordineli şekilde
-            uygulanması önem taşıyor.
+Ekonomik büyümenin sürdürülebilir şekilde devam ettirilmesi ve istihdamın desteklenmesi programın önemli başlıkları arasında değerlendiriliyor.
 
-            BÜYÜME VE İSTİHDAM
+KAMU MALİYESİ
 
-            Ekonomik büyümenin sürdürülebilir hale
-            getirilmesi ve istihdamın artırılması da
-            planlamanın önemli başlıkları arasında.
+Kamu harcamaları, bütçe dengesi ve mali disiplin de ekonomik planlamanın önemli unsurları arasında bulunuyor.
 
-            Üretim kapasitesinin artırılması ve yatırımların
-            desteklenmesiyle ekonomik aktivitenin güçlü
-            tutulması hedefleniyor.
+YATIRIM VE ÜRETİM
 
-            KAMU MALİYESİ
+Üretim kapasitesinin artırılması, yatırımların desteklenmesi ve ekonomik faaliyetlerin güçlendirilmesine yönelik politikalar da takip ediliyor.
 
-            Kamu harcamalarında disiplin ve bütçe
-            dengesinin korunması da ekonomik programın
-            önemli unsurları arasında yer alıyor.
+PİYASALARIN TAKİBİ
 
-            YATIRIM VE ÜRETİM
+Açıklanacak ekonomik hedeflerin ardından piyasaların göstereceği tepki ve ekonomik verilerin seyri yakından izlenecek.
 
-            Yatırımların artırılması, sanayi üretiminin
-            desteklenmesi ve ihracat kapasitesinin
-            geliştirilmesi ekonominin uzun vadeli
-            hedefleri arasında bulunuyor.
-
-            PİYASALARIN TAKİBİ
-
-            Yeni ekonomik hedeflerin açıklanmasıyla
-            birlikte piyasaların vereceği tepki de
-            yakından takip edilecek.
-
-            HABERİSTA EKONOMİ SERVİSİ
+HABERİSTA Ekonomi Servisi
         `
     },
+
 
     /* =====================================================
        17 - İRAN EKONOMİK SAVAŞ KARARGÂHI
@@ -602,48 +470,34 @@ const haberler = [
         kaynak: "HABERİSTA",
         yazar: "Haberİsta Dünya Servisi",
         icerik: `
-            İRAN'DA YENİ EKONOMİK YAPILANMA
+İRAN'DA YENİ EKONOMİK YAPILANMA
 
-            İran'da ekonomik baskılar ve dış kaynaklı
-            sorunlarla mücadele amacıyla yeni bir
-            koordinasyon mekanizması oluşturulduğu
-            açıklandı.
+İran'da ekonomik baskılara karşı alınacak önlemlerin koordinasyonu amacıyla 'Ekonomik Savaş Karargâhı' adı verilen yeni bir yapılanmanın kurulduğu açıklandı.
 
-            YAPILANMANIN AMACI
+YAPILANMANIN AMACI
 
-            "Ekonomik Savaş Karargâhı" olarak adlandırılan
-            yapının ekonomik faaliyetlerin koordinasyonu
-            ve kritik sektörlerin takibi amacıyla
-            oluşturulduğu bildirildi.
+Yeni yapının ekonomik gelişmelerin daha yakından takip edilmesi ve ilgili kurumlar arasında koordinasyon sağlanması amacıyla oluşturulduğu belirtiliyor.
 
-            KRİTİK SEKTÖRLER TAKİP EDİLECEK
+KRİTİK SEKTÖRLER TAKİP EDİLECEK
 
-            Enerji, ticaret, finans ve temel ihtiyaç
-            ürünleri gibi stratejik alanların yeni
-            yapılanmanın çalışma alanları arasında
-            bulunması bekleniyor.
+Enerji, ticaret ve finans gibi ekonominin kritik alanlarındaki gelişmelerin yeni yapılanma tarafından takip edilmesi bekleniyor.
 
-            DIŞ BASKILAR
+DIŞ BASKILAR
 
-            İran ekonomisi uzun süredir yaptırımlar,
-            döviz hareketleri ve dış ticaret üzerindeki
-            baskılarla mücadele ediyor.
+İran ekonomisi üzerindeki dış baskılar ve yaptırımlar ülkenin ekonomik gündeminde önemli bir yer tutuyor.
 
-            BÖLGESEL GELİŞMELER
+BÖLGESEL GELİŞMELER
 
-            İran'ın ekonomik politikaları bölgedeki
-            siyasi ve güvenlik gelişmelerinden de
-            etkileniyor.
+İran'daki ekonomik gelişmeler, ülkenin bölgesel politikaları ve uluslararası ilişkileriyle birlikte değerlendiriliyor.
 
-            ÖNÜMÜZDEKİ SÜREÇ
+ÖNÜMÜZDEKİ SÜREÇ
 
-            Yeni ekonomik yapılanmanın nasıl çalışacağı
-            ve piyasalara nasıl yansıyacağı önümüzdeki
-            dönemde takip edilecek.
+Yeni yapılanmanın çalışmalarının İran ekonomisi üzerindeki etkisi ve alınacak kararlar önümüzdeki dönemde yakından takip edilecek.
 
-            HABERİSTA Dünya Servisi
+HABERİSTA Dünya Servisi
         `
     },
+
 
     /* =====================================================
        16 - BURSA ZİNCİRLEME KAZA
@@ -660,47 +514,34 @@ const haberler = [
         kaynak: "HABERİSTA",
         yazar: "Haberİsta Haber Merkezi",
         icerik: `
-            BURSA'DA ZİNCİRLEME KAZA
+BURSA'DA ZİNCİRLEME KAZA
 
-            Bursa'da bir tırdan yola dökülen mazot
-            nedeniyle yolun kayganlaşmasının ardından
-            zincirleme trafik kazası meydana geldi.
+Bursa'da yola dökülen mazot nedeniyle kayganlaşan zeminde zincirleme kaza meydana geldi. Kazaya yaklaşık 10 aracın karıştığı bildirildi.
 
-            YOL KAYGANLAŞTI
+YOL KAYGANLAŞTI
 
-            Tırdan yola dökülen mazot, sürücüler için
-            tehlikeli bir zemin oluşturdu.
+Bir tırdan yola dökülen mazot, yol yüzeyinin kayganlaşmasına neden oldu. Bu durum sürücüler açısından ciddi bir trafik riski oluşturdu.
 
-            Kayganlaşan yolda araçların kontrolünün
-            zorlaşmasıyla zincirleme kaza meydana geldi.
+10 ARAÇ KAZAYA KARIŞTI
 
-            10 ARAÇ KAZAYA KARIŞTI
+Kayganlaşan yolda meydana gelen zincirleme kazada yaklaşık 10 aracın birbirine karıştığı bildirildi.
 
-            Kazaya yaklaşık 10 aracın karıştığı
-            bildirildi.
+EKİPLER BÖLGEYE SEVK EDİLDİ
 
-            Olayın ardından bölgede trafik akışının
-            kontrollü şekilde sağlandığı aktarıldı.
+İhbar üzerine bölgeye ilgili ekipler yönlendirilirken, yol güvenliğinin sağlanması ve dökülen maddenin temizlenmesi için çalışma başlatıldı.
 
-            EKİPLER BÖLGEYE SEVK EDİLDİ
+SÜRÜCÜLERE UYARI
 
-            İhbar üzerine bölgeye polis, sağlık ve
-            yol bakım ekipleri sevk edildi.
+Yetkililer, yol yüzeyindeki kayganlık nedeniyle sürücülerin dikkatli olması ve trafik işaretlerine uyması gerektiğini hatırlatıyor.
 
-            SÜRÜCÜLERE UYARI
+İNCELEME BAŞLATILDI
 
-            Yetkililer, yol üzerinde yapılan temizlik
-            ve güvenlik çalışmalarına dikkat edilmesi
-            konusunda sürücüleri uyardı.
+Kazanın meydana geliş şekli ve yola mazot dökülmesine ilişkin ayrıntıların belirlenmesi amacıyla inceleme başlatıldığı bildirildi.
 
-            İNCELEME BAŞLATILDI
-
-            Kazanın meydana geliş nedeninin belirlenmesi
-            amacıyla inceleme başlatıldı.
-
-            HABERİSTA
+HABERİSTA Haber Merkezi
         `
     },
+
 
     /* =====================================================
        15 - SERHAT MUSTAFA KILIÇ
@@ -717,65 +558,49 @@ const haberler = [
         kaynak: "HABERİSTA",
         yazar: "Haberİsta Magazin Servisi",
         icerik: `
-            SERHAT MUSTAFA KILIÇ HAYATINI KAYBETTİ
+SERHAT MUSTAFA KILIÇ HAYATINI KAYBETTİ
 
-            Tiyatro, sinema ve televizyon dünyasının
-            tanınan isimlerinden Serhat Mustafa Kılıç'ın
-            51 yaşında hayatını kaybettiği bildirildi.
+Tiyatro, sinema ve televizyon dünyasının tanınan isimlerinden Serhat Mustafa Kılıç'ın 51 yaşında hayatını kaybettiği öğrenildi.
 
-            OLAYLA İLGİLİ İNCELEME
+OLAYLA İLGİLİ İNCELEME
 
-            Oyuncunun İstanbul Kağıthane'deki evinde
-            yaşamını yitirdiği öğrenildi.
+Oyuncunun İstanbul Kağıthane'deki evinde yaşamını yitirdiği öğrenilirken, olayla ilgili ayrıntıların resmi açıklamalar doğrultusunda netleşmesi bekleniyor.
 
-            Olayın ardından ilgili ekiplerin inceleme
-            yaptığı belirtildi.
+SANAT DÜNYASINDAN BAŞSAĞLIĞI MESAJLARI
 
-            SANAT DÜNYASINDAN BAŞSAĞLIĞI MESAJLARI
+Kılıç'ın vefatının ardından sanat dünyasından çok sayıda başsağlığı ve taziye mesajı paylaşılması bekleniyor.
 
-            Oyuncunun vefat haberinin ardından sanat
-            dünyasından çok sayıda başsağlığı mesajı
-            paylaşılması bekleniyor.
+TİYATRO KARİYERİ
 
-            TİYATRO KARİYERİ
+Serhat Mustafa Kılıç, sanat hayatı boyunca tiyatro sahnesinde çeşitli çalışmalarda yer aldı ve oyunculuk kariyerini farklı projelerle sürdürdü.
 
-            Serhat Mustafa Kılıç, kariyeri boyunca
-            tiyatro sahnesinde çeşitli projelerde yer aldı.
+TELEVİZYON ÇALIŞMALARI
 
-            TELEVİZYON ÇALIŞMALARI
+Oyuncunun televizyon projelerinde de yer aldığı ve geniş bir izleyici kitlesi tarafından tanındığı belirtildi.
 
-            Oyuncu, televizyon projeleriyle de geniş
-            izleyici kitlesine ulaştı.
+SİNEMA KARİYERİ
 
-            SİNEMA KARİYERİ
+Kılıç, sinema alanında da çeşitli yapımlarda rol alarak oyunculuk kariyerini farklı mecralarda sürdürdü.
 
-            Sinema alanında da çeşitli yapımlarda
-            rol alan Kılıç, oyunculuk kariyeri boyunca
-            farklı karakterleri canlandırdı.
+ÖLÜM NEDENİNE İLİŞKİN KESİN BİLGİ BEKLENİYOR
 
-            ÖLÜM NEDENİNE İLİŞKİN KESİN BİLGİ BEKLENİYOR
+Vefatın nedenine ilişkin kesin ve doğrulanmış bilgilerin resmi açıklamalarla netleşmesi bekleniyor.
 
-            Ölüm nedenine ilişkin resmi açıklamalar
-            ve inceleme sonuçlarının takip edilmesi
-            bekleniyor.
+CENAZE PROGRAMI
 
-            CENAZE PROGRAMI
+Cenaze töreninin tarih ve yeriyle ilgili yapılacak resmi açıklamaların takip edilmesi bekleniyor.
 
-            Cenaze törenine ilişkin resmi bilgilerin
-            açıklanmasının ardından kamuoyuyla
-            paylaşılması bekleniyor.
+ÖNEMLİ NOT
 
-            ÖNEMLİ NOT
+Haberİsta, doğrulanmamış iddialar yerine resmi açıklamalar ve güvenilir kaynaklardan elde edilen bilgileri esas almaktadır.
 
-            Haberİsta olarak sanatçının vefatına ilişkin
-            yalnızca resmi ve güvenilir kaynaklardan
-            yapılacak açıklamaları esas alıyoruz.
-
-            HABERİSTA Magazin Servisi
+HABERİSTA Magazin Servisi
         `
     },
+
+
     /* =====================================================
-       14 - 4 İL İÇİN SEL VE HEYELAN UYARISI
+       14 - SEL VE HEYELAN
     ===================================================== */
 
     {
@@ -787,52 +612,36 @@ const haberler = [
         saat: "12:10",
         gorsel: "images/meteroji.jpeg",
         kaynak: "HABERİSTA",
-        yazar: "Haberİsta Haber Merkezi",
+        yazar: "HaberİSTA Haber Merkezi",
         icerik: `
-            4 İL İÇİN SEL VE HEYELAN UYARISI
+4 İL İÇİN SEL VE HEYELAN UYARISI
 
-            Meteoroloji tarafından yapılan değerlendirmelerde
-            bazı bölgelerde kuvvetli yağış beklendiği bildirildi.
+Meteoroloji tarafından dört il için kuvvetli yağış, sel ve heyelan riskine karşı uyarı yapıldı.
 
-            Yağışların özellikle kısa sürede etkili olması
-            halinde sel ve su baskını riskinin artabileceği
-            belirtildi.
+SEL RİSKİNE DİKKAT
 
-            SEL RİSKİNE DİKKAT
+Kuvvetli yağışların bazı bölgelerde kısa sürede su baskınlarına yol açabileceği belirtilirken, vatandaşların dikkatli olması istendi.
 
-            Kuvvetli yağışların dere yatakları, alçak
-            kesimler ve su birikintilerinin oluşabileceği
-            bölgelerde risk oluşturabileceği ifade edildi.
+HEYELAN TEHLİKESİ
 
-            HEYELAN TEHLİKESİ
+Yağışların etkili olduğu eğimli ve toprak yapısının hassas olduğu bölgelerde heyelan riskinin artabileceği değerlendiriliyor.
 
-            Yağışların etkili olacağı eğimli ve dağlık
-            bölgelerde heyelan riskinin de bulunduğu
-            değerlendiriliyor.
+SÜRÜCÜLERE UYARI
 
-            SÜRÜCÜLERE UYARI
+Yağış sırasında görüş mesafesinin azalabileceği ve yolların kayganlaşabileceği belirtilirken, sürücülerin hızlarını yol ve hava şartlarına göre ayarlaması önem taşıyor.
 
-            Yağış sırasında görüş mesafesinin azalabileceği
-            ve yolların kayganlaşabileceği belirtilirken,
-            sürücülerin hızlarını hava ve yol şartlarına
-            göre ayarlamaları istendi.
+VATANDAŞLAR TEDBİRLİ OLMALI
 
-            VATANDAŞLAR TEDBİRLİ OLMALI
+Vatandaşların meteorolojik uyarıları takip etmesi ve riskli bölgelerde gerekli tedbirleri alması isteniyor.
 
-            Yetkililerin uyarılarının takip edilmesi,
-            riskli bölgelerden uzak durulması ve ani
-            su baskınlarına karşı dikkatli olunması önem
-            taşıyor.
+HAVA DURUMU TAKİP EDİLMELİ
 
-            HAVA DURUMU TAKİP EDİLMELİ
+Yağışların seyri ve uyarıların güncellenip güncellenmediği resmi meteoroloji kaynaklarından takip edilmeli.
 
-            Yağışların seyri ve uyarıların güncellenmesi
-            nedeniyle vatandaşların resmi meteorolojik
-            açıklamaları takip etmesi gerekiyor.
-
-            HABERİSTA Haber Merkezi
+HABERİSTA Haber Merkezi
         `
     },
+
 
     /* =====================================================
        13 - SON DEPREMLER
@@ -849,56 +658,41 @@ const haberler = [
         kaynak: "AFAD / Kandilli Rasathanesi",
         yazar: "Haberİsta Haber Merkezi",
         icerik: `
-            SON DEPREMLER LİSTESİ GÜNCELLENİYOR
+SON DEPREMLER LİSTESİ GÜNCELLENİYOR
 
-            Türkiye ve çevresinde meydana gelen depremler,
-            AFAD ve Kandilli Rasathanesi tarafından
-            kaydedilerek kamuoyuyla paylaşılmaya devam ediyor.
+Türkiye'nin farklı bölgelerinde meydana gelen depremlere ilişkin veriler AFAD ve Kandilli Rasathanesi tarafından paylaşılmaya devam ediyor.
 
-            DEPREM VERİLERİ TAKİP EDİLİYOR
+DEPREM VERİLERİ TAKİP EDİLİYOR
 
-            Meydana gelen sarsıntıların merkez üssü,
-            büyüklüğü, derinliği ve gerçekleştiği saat
-            resmi kurumların internet sitelerindeki
-            veriler üzerinden takip edilebiliyor.
+Depremlerin büyüklüğü, derinliği ve merkez üssü gibi bilgiler resmi kurumların yayımladığı veriler üzerinden takip ediliyor.
 
-            AFAD VERİLERİ
+AFAD VERİLERİ
 
-            Afet ve Acil Durum Yönetimi Başkanlığı,
-            Türkiye'de meydana gelen depremlere ilişkin
-            güncel verileri yayımlıyor.
+AFAD tarafından paylaşılan son deprem verileri, meydana gelen sarsıntıların zaman ve konum bilgileriyle birlikte kamuoyuna sunuluyor.
 
-            KANDİLLİ RASATHANESİ
+KANDİLLİ RASATHANESİ
 
-            Kandilli Rasathanesi ve Deprem Araştırma
-            Enstitüsü de Türkiye ve çevresindeki
-            sismik hareketleri izleyerek verileri
-            kamuoyuyla paylaşıyor.
+Kandilli Rasathanesi de Türkiye ve çevresindeki sismik hareketlere ilişkin verileri düzenli olarak yayımlıyor.
 
-            DEPREM SONRASI NE YAPILMALI?
+DEPREM SONRASI NE YAPILMALI?
 
-            Deprem hissedilmesi durumunda panik yapılmaması,
-            güvenli bir alana geçilmesi ve resmi kurumların
-            açıklamalarının takip edilmesi önem taşıyor.
+Deprem sırasında ve sonrasında resmi kurumların uyarılarının takip edilmesi, güvenli alanlara geçilmesi ve gerekli durumlarda acil yardım ekipleriyle iletişim kurulması önem taşıyor.
 
-            ARTÇI SARSINTILAR
+ARTÇI SARSINTILAR
 
-            Büyük depremlerin ardından artçı sarsıntılar
-            meydana gelebileceğinden vatandaşların
-            yetkililerin uyarılarını dikkate alması gerekiyor.
+Depremlerin ardından artçı sarsıntılar meydana gelebileceğinden vatandaşların resmi açıklamaları takip etmesi gerekiyor.
 
-            RESMİ KAYNAKLAR TAKİP EDİLMELİ
+RESMİ KAYNAKLAR TAKİP EDİLMELİ
 
-            Deprem büyüklüğü ve konumuyla ilgili en güncel
-            bilgiler için AFAD ve Kandilli Rasathanesi'nin
-            resmi verilerinin esas alınması gerekiyor.
+Deprem büyüklüğü ve konumuna ilişkin en güncel bilgilerin AFAD ve Kandilli Rasathanesi gibi resmi ve güvenilir kaynaklardan kontrol edilmesi önem taşıyor.
 
-            HABERİSTA Haber Merkezi
+HABERİSTA Haber Merkezi
         `
     },
 
+
     /* =====================================================
-       12 - 2026 KPSS
+       12 - KPSS
     ===================================================== */
 
     {
@@ -912,50 +706,38 @@ const haberler = [
         kaynak: "ÖSYM",
         yazar: "Haberİsta Eğitim Servisi",
         icerik: `
-            2026 KPSS LİSANS SINAVI GERÇEKLEŞTİRİLDİ
+2026 KPSS LİSANS SINAVI GERÇEKLEŞTİRİLDİ
 
-            Kamu Personel Seçme Sınavı'nın 2026 yılı
-            Lisans Genel Yetenek-Genel Kültür oturumu
-            gerçekleştirildi.
+2026 KPSS Lisans Genel Yetenek-Genel Kültür oturumu gerçekleştirildi. Sınava katılan adaylar sınav sürecinin tamamlanmasının ardından sonuç takvimini takip etmeye başladı.
 
-            ADAYLAR SINAVDA TER DÖKTÜ
+ADAYLAR SINAVDA TER DÖKTÜ
 
-            Sınava katılan adaylar, belirlenen sınav
-            merkezlerinde Genel Yetenek ve Genel Kültür
-            testlerini yanıtladı.
+Adaylar sınav merkezlerinde belirlenen saatlerde sınava katılırken, sınav süreci ÖSYM tarafından açıklanan kurallar doğrultusunda yürütüldü.
 
-            SINAV SÜRECİ
+SINAV SÜRECİ
 
-            Sınav öncesinde adayların sınav giriş belgeleri
-            ve kimlik kontrolleri gerçekleştirildi.
+Genel Yetenek ve Genel Kültür oturumunda adaylara ilgili testler uygulanırken, sınavın ardından cevap anahtarı ve değerlendirme sürecine ilişkin açıklamalar takip ediliyor.
 
-            SINAV SONUÇLARI BEKLENİYOR
+SINAV SONUÇLARI BEKLENİYOR
 
-            Sınava giren adaylar sonuçların açıklanacağı
-            tarihi ÖSYM'nin resmi sınav takvimi üzerinden
-            takip edecek.
+Adaylar sınav sonuçlarının açıklanacağı tarihi ÖSYM'nin resmi sınav takvimi üzerinden takip edecek.
 
-            DEĞERLENDİRME SÜRECİ
+DEĞERLENDİRME SÜRECİ
 
-            Sınavın ardından cevapların değerlendirilmesi
-            ve sonuçların hazırlanmasına yönelik süreç
-            ÖSYM tarafından yürütülecek.
+Sınav sonuçlarının değerlendirilmesinin ardından adayların puanları ve başarı sıralamaları açıklanacak.
 
-            PUANLARIN KULLANIMI
+PUANLARIN KULLANIMI
 
-            KPSS puanları, ilgili kamu kurumlarının
-            personel alım süreçlerinde ve mevzuatta
-            belirtilen diğer işlemlerde kullanılabiliyor.
+KPSS puanları, ilgili kurumların personel alım süreçlerinde ve mevzuatta belirtilen şartlar doğrultusunda kullanılabiliyor.
 
-            ADAYLARA BAŞARILAR
+ADAYLARA BAŞARILAR
 
-            Sınava katılan tüm adayların sonuçlarını
-            beklediği süreçte resmi açıklamaları takip
-            etmesi önem taşıyor.
+Haberİsta olarak sınava katılan tüm adaylara sonuç sürecinde başarılar diliyoruz.
 
-            HABERİSTA Eğitim Servisi
+HABERİSTA Eğitim Servisi
         `
     },
+
 
     /* =====================================================
        11 - BEŞİKTAŞ FENERBAHÇE
@@ -972,50 +754,38 @@ const haberler = [
         kaynak: "Spor Servisi",
         yazar: "Haberİsta Spor Servisi",
         icerik: `
-            DERBİDE KAZANAN BEŞİKTAŞ
+DERBİDE KAZANAN BEŞİKTAŞ
 
-            İstanbul'un iki köklü kulübünü karşı karşıya
-            getiren derbide Beşiktaş, Fenerbahçe'yi
-            2-1 mağlup etti.
+İstanbul derbisinde Beşiktaş ile Fenerbahçe karşı karşıya geldi. Mücadeleyi Beşiktaş 2-1'lik skorla kazanarak önemli bir galibiyet elde etti.
 
-            MAÇTA BÜYÜK HEYECAN
+MAÇTA BÜYÜK HEYECAN
 
-            Karşılaşma boyunca iki takım da etkili
-            pozisyonlar üretirken mücadele yüksek
-            tempoda geçti.
+İki takımın karşılaşması boyunca mücadele yüksek tempoda devam ederken, taraftarların ilgisi de dikkat çekti.
 
-            BEŞİKTAŞ'TAN ÖNEMLİ GALİBİYET
+BEŞİKTAŞ'TAN ÖNEMLİ GALİBİYET
 
-            Siyah-beyazlı ekip, karşılaşmadan 2-1'lik
-            skorla ayrılarak taraftarlarına önemli bir
-            galibiyet yaşattı.
+Beşiktaş aldığı üç puanla lig yarışında önemli bir sonuç elde etti. Siyah-beyazlı ekip karşılaşmanın ardından galibiyetin sevincini yaşadı.
 
-            FENERBAHÇE MÜCADELEYİ SÜRDÜRDÜ
+FENERBAHÇE MÜCADELEYİ SÜRDÜRDÜ
 
-            Fenerbahçe, karşılaşma boyunca skoru
-            değiştirmek için çaba gösterse de mücadele
-            Beşiktaş'ın üstünlüğüyle tamamlandı.
+Fenerbahçe sahadan mağlubiyetle ayrılırken sezon hedefleri doğrultusunda mücadelesine devam ediyor.
 
-            TARAFTARLARDAN BÜYÜK İLGİ
+TARAFTARLARDAN BÜYÜK İLGİ
 
-            Derbi öncesinde ve karşılaşma sırasında
-            iki takım taraftarlarının ilgisi dikkat çekti.
+Derbi öncesinde ve karşılaşma sırasında iki takım taraftarlarının ilgisi dikkat çekti. Mücadele spor kamuoyunun da gündeminde önemli yer tuttu.
 
-            LİG YARIŞI
+LİG YARIŞI
 
-            Derbiden alınan üç puanın iki takımın
-            sezon hedefleri açısından önemli olduğu
-            değerlendiriliyor.
+Derbiden alınan üç puanın iki takımın sezon hedefleri açısından önemli olduğu değerlendiriliyor.
 
-            ÖNÜMÜZDEKİ MAÇLAR
+ÖNÜMÜZDEKİ MAÇLAR
 
-            Her iki takım da sezonun kalan bölümünde
-            lig ve diğer organizasyonlardaki mücadelelerine
-            devam edecek.
+Her iki takım da sezonun kalan bölümünde lig ve diğer organizasyonlardaki mücadelelerine devam edecek.
 
-            HABERİSTA Spor Servisi
+HABERİSTA Spor Servisi
         `
     },
+
 
     /* =====================================================
        10 - ALTIN FİYATLARI
@@ -1032,56 +802,41 @@ const haberler = [
         kaynak: "HABERİSTA Ekonomi",
         yazar: "Haberİsta Ekonomi Servisi",
         icerik: `
-            ALTIN FİYATLARINDA HAREKETLİLİK
+ALTIN FİYATLARINDA HAREKETLİLİK
 
-            Altın piyasasındaki fiyat hareketleri
-            yatırımcıların ve vatandaşların gündeminde
-            yer almaya devam ediyor.
+Altın piyasasındaki fiyat hareketleri yatırımcıların ve vatandaşların gündemindeki yerini koruyor. Küresel piyasalardaki gelişmeler ve iç piyasadaki hareketlilik altın fiyatlarının seyri açısından yakından izleniyor.
 
-            GRAM ALTIN TAKİP EDİLİYOR
+GRAM ALTIN TAKİP EDİLİYOR
 
-            Türkiye'de yatırımcıların yakından takip ettiği
-            gram altının fiyatındaki değişimler iç piyasa
-            ve ons altındaki hareketlerden etkilenebiliyor.
+Türkiye'de yatırımcıların yakından takip ettiği gram altın fiyatı, ons altındaki hareketler ve döviz kurundaki değişimlerden etkilenebiliyor.
 
-            ÇEYREK ALTIN
+ÇEYREK ALTIN
 
-            Düğün sezonu ve fiziki altın talebi nedeniyle
-            çeyrek altın fiyatları da vatandaşlar tarafından
-            yakından takip ediliyor.
+Fiziki altın talebi nedeniyle çeyrek altın fiyatları da vatandaşlar tarafından yakından takip ediliyor. Fiyatlar gün içerisinde piyasa koşullarına bağlı olarak değişebiliyor.
 
-            ONS ALTIN
+ONS ALTIN
 
-            Küresel piyasalarda ons altının seyri,
-            altının iç piyasadaki fiyatlaması açısından
-            önemli göstergeler arasında bulunuyor.
+Küresel piyasalarda ons altının seyri, Türkiye'deki altın fiyatlaması açısından önemli göstergeler arasında bulunuyor.
 
-            PİYASALARDA GÖZLER EKONOMİK VERİLERDE
+PİYASALARDA GÖZLER EKONOMİK VERİLERDE
 
-            ABD ekonomisi başta olmak üzere açıklanacak
-            ekonomik veriler ve merkez bankalarının
-            faiz politikaları altın fiyatlarının seyrinde
-            etkili olabiliyor.
+ABD ekonomisine ilişkin açıklanacak veriler ve merkez bankalarının para politikaları altın piyasasının yönü açısından yakından takip ediliyor.
 
-            YATIRIMCILAR TEMKİNLİ
+YATIRIMCILAR TEMKİNLİ
 
-            Uzmanlar yatırım kararlarının yalnızca kısa
-            vadeli fiyat hareketlerine göre verilmemesi
-            gerektiğine dikkat çekiyor.
+Altın fiyatlarındaki kısa vadeli hareketlerin piyasa koşullarına göre değişebileceği belirtilirken, yatırım kararlarının kişisel risk durumu dikkate alınarak değerlendirilmesi önem taşıyor.
 
-            ÖNEMLİ NOT
+ÖNEMLİ NOT
 
-            Altın fiyatları gün içerisinde değişebildiği
-            için işlem öncesinde güncel fiyatların
-            yetkili piyasa ve finans kuruluşlarından
-            kontrol edilmesi gerekiyor.
+Altın fiyatları gün içerisinde değişebildiği için işlem öncesinde güncel fiyatların yetkili piyasa ve finans kuruluşlarından kontrol edilmesi gerekiyor.
 
-            HABERİSTA Ekonomi Servisi
+HABERİSTA Ekonomi Servisi
         `
     },
 
+
     /* =====================================================
-       9 - AKARYAKIT FİYATLARI
+       9 - AKARYAKIT
     ===================================================== */
 
     {
@@ -1095,50 +850,37 @@ const haberler = [
         kaynak: "HABERİSTA Ekonomi",
         yazar: "Haberİsta Ekonomi Servisi",
         icerik: `
-            AKARYAKIT FİYATLARI GÜNDEMDE
+AKARYAKIT FİYATLARI GÜNDEMDE
 
-            Benzin, motorin ve LPG fiyatlarındaki
-            değişimler araç sahipleri tarafından
-            yakından takip ediliyor.
+Benzin, motorin ve LPG fiyatlarındaki değişimler araç sahipleri tarafından yakından takip ediliyor. Fiyatlardaki hareketlilik ulaşım ve taşımacılık maliyetleri açısından da önem taşıyor.
 
-            PETROL FİYATLARI ETKİLİ OLUYOR
+PETROL FİYATLARI ETKİLİ OLUYOR
 
-            Küresel petrol piyasalarında yaşanan
-            hareketlilik akaryakıt fiyatlarının
-            oluşumunda önemli rol oynuyor.
+Küresel petrol piyasalarında yaşanan hareketlilik, akaryakıt fiyatlarının oluşumunda önemli unsurlardan biri olarak öne çıkıyor.
 
-            DÖVİZ KURU DA ÖNEMLİ
+DÖVİZ KURU DA ÖNEMLİ
 
-            Türkiye'de akaryakıt fiyatlarının oluşumunda
-            döviz kuru ve uluslararası petrol fiyatları
-            önemli unsurlar arasında bulunuyor.
+Türkiye'de akaryakıt fiyatlarının oluşumunda döviz kuru ve uluslararası petrol fiyatları önemli faktörler arasında bulunuyor.
 
-            SÜRÜCÜLER GÜNCEL FİYATLARI TAKİP EDİYOR
+SÜRÜCÜLER GÜNCEL FİYATLARI TAKİP EDİYOR
 
-            Akaryakıt istasyonlarındaki fiyatlar şehir,
-            dağıtıcı ve dönemsel fiyat değişikliklerine
-            göre farklılık gösterebiliyor.
+Akaryakıt istasyonlarındaki fiyatlar şehir, dağıtıcı ve dönemsel değişikliklere göre farklılık gösterebiliyor.
 
-            ULAŞIM MALİYETLERİ
+ULAŞIM MALİYETLERİ
 
-            Akaryakıt fiyatlarındaki değişimler yalnızca
-            bireysel araç kullanıcılarını değil,
-            taşımacılık ve lojistik sektörünü de
-            etkileyebiliyor.
+Akaryakıt fiyatlarındaki değişimler bireysel araç kullanıcılarının yanı sıra taşımacılık ve lojistik sektörünü de etkileyebiliyor.
 
-            PİYASALAR İZLENİYOR
+PİYASALAR İZLENİYOR
 
-            Önümüzdeki dönemde petrol fiyatları,
-            döviz hareketleri ve küresel ekonomik
-            gelişmeler akaryakıt piyasasının
-            seyrinde belirleyici olabilir.
+Önümüzdeki dönemde petrol fiyatları, döviz hareketleri ve küresel ekonomik gelişmelerin akaryakıt piyasasının seyri açısından belirleyici olması bekleniyor.
 
-            HABERİSTA Ekonomi Servisi
+HABERİSTA Ekonomi Servisi
         `
     },
 
+
     /* =====================================================
-       8 - RUSYA'DA NAZİ TANKI
+       8 - RUSYA'DA TARİHİ TANK
     ===================================================== */
 
     {
@@ -1152,54 +894,39 @@ const haberler = [
         kaynak: "Dünya Servisi",
         yazar: "Haberİsta Dünya Servisi",
         icerik: `
-            RUSYA'DA TARİHİ BULUNTU
+RUSYA'DA TARİHİ BULUNTU
 
-            Rusya'da gerçekleştirilen çalışmalar sırasında
-            bir üniversite yapısının altında İkinci Dünya
-            Savaşı dönemine ait olduğu değerlendirilen
-            bir tank bulundu.
+Rusya'da gerçekleştirilen çalışmalar sırasında bir üniversite yapısının altında İkinci Dünya Savaşı dönemine ait olduğu değerlendirilen bir tank bulundu.
 
-            TANKIN TARİHİ ARAŞTIRILIYOR
+TANKIN TARİHİ ARAŞTIRILIYOR
 
-            Bulunan askeri aracın hangi dönemde ve
-            hangi koşullarda bölgeye getirildiğine
-            ilişkin araştırmalar yürütülüyor.
+Bulunan askeri aracın hangi dönemde ve hangi koşullarda bölgeye getirildiğine ilişkin araştırmalar yürütülüyor.
 
-            İKİNCİ DÜNYA SAVAŞI DÖNEMİ
+İKİNCİ DÜNYA SAVAŞI DÖNEMİ
 
-            Tankın İkinci Dünya Savaşı yıllarından
-            kaldığının belirlenmesi halinde buluntu,
-            dönemin askeri tarihi açısından dikkat
-            çekici bir örnek oluşturacak.
+Tankın İkinci Dünya Savaşı yıllarından kaldığının belirlenmesi halinde buluntu, dönemin askeri tarihi açısından dikkat çekici bir örnek oluşturacak.
 
-            ÜNİVERSİTE ALTINDA BULUNDU
+ÜNİVERSİTE ALTINDA BULUNDU
 
-            Tankın bir üniversite yapısının altında
-            ortaya çıkarılması buluntunun en dikkat
-            çekici ayrıntılarından biri oldu.
+Tankın bir üniversite yapısının altında ortaya çıkarılması buluntunun en dikkat çekici ayrıntılarından biri oldu.
 
-            UZMANLAR İNCELİYOR
+UZMANLAR İNCELİYOR
 
-            Tarihi askeri araç üzerinde yapılacak
-            incelemelerle modelinin ve geçmişinin
-            daha ayrıntılı şekilde belirlenmesi
-            bekleniyor.
+Tarihi askeri araç üzerinde yapılacak incelemelerle modelinin ve geçmişinin daha ayrıntılı şekilde belirlenmesi bekleniyor.
 
-            TARİHİ ESER NİTELİĞİ
+TARİHİ DEĞERİ ARAŞTIRILIYOR
 
-            Buluntunun korunması ve tarihsel değerinin
-            belirlenmesi için uzmanların değerlendirmesi
-            önem taşıyor.
+Buluntunun korunması ve tarihsel değerinin belirlenmesi için uzmanların değerlendirmesinin önemli olduğu belirtiliyor.
 
-            GELİŞMELER TAKİP EDİLİYOR
+GELİŞMELER TAKİP EDİLİYOR
 
-            Tankın geçmişine ilişkin yeni bilgiler
-            ortaya çıktıkça konuya ilişkin açıklamaların
-            kamuoyuyla paylaşılması bekleniyor.
+Tankın geçmişine ilişkin yeni bilgiler ortaya çıktıkça konuya ilişkin açıklamaların kamuoyuyla paylaşılması bekleniyor.
 
-            HABERİSTA Dünya Servisi
+HABERİSTA Dünya Servisi
         `
     },
+
+
     /* =====================================================
        7 - MXGP AFYON
     ===================================================== */
@@ -1215,53 +942,41 @@ const haberler = [
         kaynak: "Türkiye Motosiklet Federasyonu",
         yazar: "Haberİsta Spor Servisi",
         icerik: `
-            MXGP HEYECANI AFYONKARAHİSAR'DA
+MXGP HEYECANI AFYONKARAHİSAR'DA
 
-            Dünyanın en önemli motokros organizasyonları
-            arasında gösterilen MXGP'nin önemli yarışlarından
-            biri Afyonkarahisar'da gerçekleştiriliyor.
+Dünyanın önemli motokros organizasyonlarından MXGP'nin kritik yarışlarından biri Afyonkarahisar'da gerçekleştiriliyor.
 
-            ŞAMPİYONLUK YARIŞI
+ŞAMPİYONLUK YARIŞI
 
-            Sezon boyunca elde edilen puanların ardından
-            şampiyonluk mücadelesi büyük önem taşıyor.
+Sezon boyunca elde edilen puanların ardından şampiyonluk mücadelesi büyük önem taşıyor. Yarışlarda alınacak sonuçların genel puan durumuna etkisi yakından takip ediliyor.
 
-            SPORCULAR PİSTE ÇIKIYOR
+SPORCULAR PİSTE ÇIKIYOR
 
-            Dünyanın farklı ülkelerinden gelen sporcular,
-            zorlu parkurda derece elde etmek için
-            mücadele ediyor.
+Farklı ülkelerden gelen sporcular zorlu parkurda derece elde etmek için mücadele ediyor.
 
-            AFYONKARAHİSAR'DA BÜYÜK İLGİ
+AFYONKARAHİSAR'DA BÜYÜK İLGİ
 
-            Organizasyonun kentte önemli bir spor
-            etkinliği olarak takip edildiği belirtiliyor.
+Organizasyonun kentte önemli bir spor etkinliği olarak takip edildiği belirtilirken, motosiklet sporuna yönelik ilginin de arttığı görülüyor.
 
-            ZORLU PARKUR
+ZORLU PARKUR
 
-            Afyonkarahisar'daki pist, sürücülere
-            farklı zemin ve viraj özellikleriyle
-            zorlu bir mücadele sunuyor.
+Afyonkarahisar'daki pist, farklı zemin ve viraj özellikleriyle sporculara zorlu bir mücadele sunuyor.
 
-            TÜRKİYE'NİN MOTOSİKLET SPORLARINDAKİ YERİ
+TÜRKİYE'NİN MOTOSİKLET SPORLARINDAKİ YERİ
 
-            Türkiye'nin uluslararası motosiklet
-            organizasyonlarına ev sahipliği yapması,
-            motor sporlarının ülkedeki tanıtımı açısından
-            önem taşıyor.
+Türkiye'nin uluslararası motosiklet organizasyonlarına ev sahipliği yapması, motor sporlarının ülkedeki tanıtımı açısından önem taşıyor.
 
-            ŞAMPİYONLUK İÇİN KRİTİK MÜCADELE
+ŞAMPİYONLUK İÇİN KRİTİK MÜCADELE
 
-            Yarışların ardından sezon puan tablosunun
-            şekillenmesi ve şampiyonluk yarışının
-            daha da netleşmesi bekleniyor.
+Yarışların ardından sezon puan tablosunun şekillenmesi ve şampiyonluk yarışının daha da netleşmesi bekleniyor.
 
-            HABERİSTA Spor Servisi
+HABERİSTA Spor Servisi
         `
     },
 
+
     /* =====================================================
-       6 - AVRUPA SEYAHATLERİNDE SINIR KONTROLLERİ
+       6 - AVRUPA SEYAHATLERİ
     ===================================================== */
 
     {
@@ -1275,60 +990,45 @@ const haberler = [
         kaynak: "Avrupa Birliği",
         yazar: "Haberİsta Dünya Servisi",
         icerik: `
-            AVRUPA SEYAHATLERİNDE YENİ DÖNEM
+AVRUPA SEYAHATLERİNDE YENİ DÖNEM
 
-            Avrupa ülkelerine seyahat eden yolcuları
-            ilgilendiren sınır kontrol uygulamalarında
-            yeni düzenlemeler gündemde.
+Avrupa ülkelerine seyahat eden yolcuları ilgilendiren sınır kontrol uygulamalarında yeni düzenlemeler gündemde.
 
-            SINIR KONTROLLERİ
+SINIR KONTROLLERİ
 
-            Avrupa'ya giriş ve çıkışlarda yolcuların
-            kimlik ve seyahat bilgilerinin kontrol
-            edilmesine yönelik uygulamalar önem taşıyor.
+Avrupa'ya giriş ve çıkışlarda yolcuların kimlik ve seyahat bilgilerinin kontrol edilmesine yönelik uygulamalar önem taşıyor.
 
-            DİJİTAL SİSTEMLER
+DİJİTAL SİSTEMLER
 
-            Avrupa'nın sınır yönetiminde dijital
-            sistemlerin daha fazla kullanılması
-            hedefleniyor.
+Avrupa'nın sınır yönetiminde dijital sistemlerin daha fazla kullanılması hedefleniyor.
 
-            SEYAHAT ÖNCESİ KONTROL
+SEYAHAT ÖNCESİ KONTROL
 
-            Yurt dışına çıkacak kişilerin pasaport,
-            vize ve diğer giriş şartlarını seyahat
-            öncesinde kontrol etmesi gerekiyor.
+Yurt dışına çıkacak kişilerin pasaport, vize ve diğer giriş şartlarını seyahat öncesinde kontrol etmesi gerekiyor.
 
-            YOLCULAR İÇİN ÖNEMLİ
+YOLCULAR İÇİN ÖNEMLİ
 
-            Sınır kapılarında yapılacak kontroller
-            nedeniyle seyahat sürelerinde değişiklik
-            yaşanabileceği değerlendiriliyor.
+Sınır kapılarında yapılacak kontroller nedeniyle seyahat sürelerinde değişiklik yaşanabileceği değerlendiriliyor.
 
-            AVRUPA'DA GÜVENLİK
+AVRUPA'DA GÜVENLİK
 
-            Yeni uygulamaların temel amaçları arasında
-            sınır güvenliğinin güçlendirilmesi ve
-            düzensiz göçle mücadele bulunuyor.
+Yeni uygulamaların temel amaçları arasında sınır güvenliğinin güçlendirilmesi ve düzensiz göçle mücadele bulunuyor.
 
-            KURALLAR ÜLKELERE GÖRE DEĞİŞEBİLİR
+KURALLAR ÜLKELERE GÖRE DEĞİŞEBİLİR
 
-            Avrupa ülkelerine giriş şartlarının
-            vatandaşlığa ve seyahat amacına göre
-            farklılık gösterebileceği unutulmamalı.
+Avrupa ülkelerine giriş şartlarının vatandaşlığa ve seyahat amacına göre farklılık gösterebileceği unutulmamalı.
 
-            RESMİ KAYNAKLAR TAKİP EDİLMELİ
+RESMİ KAYNAKLAR TAKİP EDİLMELİ
 
-            Seyahat edecek kişilerin güncel bilgileri
-            ilgili ülkenin ve Avrupa Birliği kurumlarının
-            resmi kaynaklarından kontrol etmesi önem taşıyor.
+Seyahat edecek kişilerin güncel bilgileri ilgili ülkenin ve Avrupa Birliği kurumlarının resmi kaynaklarından kontrol etmesi önem taşıyor.
 
-            HABERİSTA Dünya Servisi
+HABERİSTA Dünya Servisi
         `
     },
 
+
     /* =====================================================
-       5 - RESMÎ GAZETE
+       5 - RESMİ GAZETE
     ===================================================== */
 
     {
@@ -1342,53 +1042,38 @@ const haberler = [
         kaynak: "Resmî Gazete",
         yazar: "Haberİsta Haber Merkezi",
         icerik: `
-            RESMÎ GAZETE YAYIMLANDI
+RESMÎ GAZETE YAYIMLANDI
 
-            5 Eylül 2026 tarihli Resmî Gazete yayımlandı.
-            Yeni sayıda kamu kurumlarını, vatandaşları
-            ve çeşitli sektörleri ilgilendiren karar ve
-            düzenlemeler yer aldı.
+5 Eylül 2026 tarihli Resmî Gazete yayımlandı. Yeni sayıda kamu kurumlarını, vatandaşları ve çeşitli sektörleri ilgilendiren karar ve düzenlemeler yer aldı.
 
-            YENİ DÜZENLEMELER
+YENİ DÜZENLEMELER
 
-            Resmî Gazete'de yayımlanan yönetmelik,
-            tebliğ ve diğer düzenlemeler ilgili
-            mevzuat kapsamında yürürlüğe giriyor.
+Resmî Gazete'de yayımlanan yönetmelik, tebliğ ve diğer düzenlemeler ilgili mevzuat kapsamında yürürlüğe giriyor.
 
-            ATAMALAR
+ATAMALAR
 
-            Cumhurbaşkanlığı ve çeşitli kamu kurumlarına
-            ilişkin bazı atama kararları da Resmî
-            Gazete'nin gündeminde yer aldı.
+Cumhurbaşkanlığı ve çeşitli kamu kurumlarına ilişkin bazı atama kararları da Resmî Gazete'nin gündeminde yer aldı.
 
-            YARGI KARARLARI
+YARGI KARARLARI
 
-            Sayıda ilgili kurum ve kuruluşları ilgilendiren
-            çeşitli yargı kararları ve düzenlemeler
-            yayımlandı.
+Sayının içeriğinde ilgili kurum ve kuruluşları ilgilendiren çeşitli yargı kararları ve düzenlemeler yayımlandı.
 
-            YÜRÜRLÜĞE GİREN KARARLAR
+YÜRÜRLÜĞE GİREN KARARLAR
 
-            Resmî Gazete'de yayımlanan düzenlemelerin
-            yürürlük tarihleri ilgili karar ve yönetmeliklerde
-            belirtiliyor.
+Resmî Gazete'de yayımlanan düzenlemelerin yürürlük tarihleri ilgili karar ve yönetmeliklerde belirtiliyor.
 
-            VATANDAŞLAR İÇİN ÖNEMLİ
+VATANDAŞLAR İÇİN ÖNEMLİ
 
-            Günlük yaşamı veya çalışma hayatını ilgilendiren
-            yeni düzenlemelerin ayrıntılarının resmi
-            metinlerden takip edilmesi gerekiyor.
+Günlük yaşamı veya çalışma hayatını ilgilendiren yeni düzenlemelerin ayrıntılarının resmi metinlerden takip edilmesi gerekiyor.
 
-            RESMÎ METİNLER ESAS ALINMALI
+RESMİ METİNLER ESAS ALINMALI
 
-            Haberlerde yer alan özet bilgilerin yanı sıra
-            hukuki ve idari işlemlerde Resmî Gazete'de
-            yayımlanan resmi metinlerin esas alınması
-            önem taşıyor.
+Haberlerde yer alan özet bilgilerin yanı sıra hukuki ve idari işlemlerde Resmî Gazete'de yayımlanan resmi metinlerin esas alınması önem taşıyor.
 
-            HABERİSTA Haber Merkezi
+HABERİSTA Haber Merkezi
         `
     },
+
 
     /* =====================================================
        4 - FİLENİN SULTANLARI
@@ -1398,58 +1083,45 @@ const haberler = [
         id: 4,
         kategori: "Spor",
         baslik: "Filenin Sultanları Avrupa şampiyonluğu için sahada! Türkiye-İtalya finali bugün oynanacak",
-        spot: "A Milli Kadın Voleybol Takımı, Avrupa şampiyonluğu için İtalya ile final karşılaşmasına çıkıyor. Milyonlarca voleybolsever tarihi mücadeleyi takip ediyor.",
+        spot: "A Milli Kadın Voleybol Takımı, Avrupa şampiyonluğu için İtalya ile final karşılaşmasına çıkıyor. Voleybolseverler tarihi mücadeleyi takip ediyor.",
         tarih: "6 Eylül 2026",
         saat: "01:30",
         gorsel: "images/AVRUPA.jpeg",
         kaynak: "Türkiye Voleybol Federasyonu",
         yazar: "Haberİsta Spor Servisi",
         icerik: `
-            FİLENİN SULTANLARI AVRUPA ŞAMPİYONLUĞU
-            İÇİN SAHADA
+FİLENİN SULTANLARI AVRUPA ŞAMPİYONLUĞU İÇİN SAHADA
 
-            A Milli Kadın Voleybol Takımı, Avrupa
-            şampiyonluğu için İtalya karşısında
-            önemli bir final mücadelesine çıkıyor.
+A Milli Kadın Voleybol Takımı, Avrupa şampiyonluğu için İtalya karşısında final mücadelesine çıkıyor.
 
-            TÜRKİYE-İTALYA FİNALİ
+TÜRKİYE-İTALYA FİNALİ
 
-            Final karşılaşması voleybolseverler tarafından
-            büyük bir heyecanla bekleniyor.
+Final karşılaşması voleybolseverler tarafından büyük bir heyecanla bekleniyor. İki güçlü takım şampiyonluk için sahada olacak.
 
-            MİLLİ TAKIMIN HEDEFİ ŞAMPİYONLUK
+MİLLİ TAKIMIN HEDEFİ ŞAMPİYONLUK
 
-            Filenin Sultanları, turnuvanın önceki
-            karşılaşmalarında gösterdiği performansın
-            ardından kupayı kazanmak için mücadele ediyor.
+Filenin Sultanları, turnuvada gösterdiği performansın ardından kupayı kazanmak için mücadele ediyor.
 
-            ZORLU RAKİP İTALYA
+ZORLU RAKİP İTALYA
 
-            İtalya, Avrupa voleybolunun güçlü ekipleri
-            arasında yer alırken final karşılaşmasının
-            oldukça çekişmeli geçmesi bekleniyor.
+İtalya, Avrupa voleybolunun güçlü ekipleri arasında yer alırken final karşılaşmasının çekişmeli geçmesi bekleniyor.
 
-            TÜRKİYE'DE BÜYÜK HEYECAN
+TÜRKİYE'DE BÜYÜK HEYECAN
 
-            Milli takımın final karşılaşması öncesinde
-            Türkiye'nin birçok kentinde vatandaşların
-            maçı takip etmek için hazırlık yaptığı
-            bildiriliyor.
+Milli takımın final karşılaşması öncesinde Türkiye genelinde voleybolseverlerin mücadeleye yoğun ilgi göstermesi bekleniyor.
 
-            MİLLİ FORMAYA DESTEK
+MİLLİ FORMAYA DESTEK
 
-            Taraftarların sosyal medya üzerinden
-            milli takıma destek mesajları paylaşması
-            bekleniyor.
+Taraftarların milli takıma destek mesajları paylaşması ve karşılaşmayı yakından takip etmesi bekleniyor.
 
-            AVRUPA ŞAMPİYONLUĞU İÇİN SON MAÇ
+AVRUPA ŞAMPİYONLUĞU İÇİN SON MAÇ
 
-            Final karşılaşması, turnuvanın en önemli
-            mücadelelerinden biri olarak öne çıkıyor.
+Final karşılaşması turnuvanın en önemli mücadelelerinden biri olarak öne çıkıyor.
 
-            HABERİSTA Spor Servisi
+HABERİSTA Spor Servisi
         `
     },
+
 
     /* =====================================================
        3 - PARA PİYASASI FONLARI
@@ -1466,57 +1138,42 @@ const haberler = [
         kaynak: "Ekonomi Servisi",
         yazar: "Haberİsta Ekonomi Servisi",
         icerik: `
-            PARA PİYASASI FONLARINDA YENİ DÖNEM
+PARA PİYASASI FONLARINDA YENİ DÖNEM
 
-            Para piyasası fonlarına ilişkin vergi
-            uygulamasında değişiklik gündeme geldi.
+Para piyasası fonlarına ilişkin vergi uygulamasında değişiklik gündeme geldi. Yeni düzenleme yatırımcıların fon getirilerini değerlendirirken vergi kesintilerini de dikkate almasını gerektiriyor.
 
-            STOPAJ ORANI YÜZDE 10
+STOPAJ ORANI YÜZDE 10
 
-            Yapılan düzenlemeyle para piyasası
-            fonlarında uygulanan stopaj oranının
-            yüzde 10'a çıkarıldığı bildirildi.
+Yapılan düzenlemeyle para piyasası fonlarında uygulanan stopaj oranının yüzde 10'a çıkarıldığı bildirildi.
 
-            YATIRIMCILARIN DİKKATİNDE
+YATIRIMCILARIN DİKKATİNDE
 
-            Düzenlemenin ardından yatırımcıların
-            fon getirilerini değerlendirirken vergi
-            kesintisini de hesaba katması gerekiyor.
+Düzenlemenin ardından yatırımcıların fon getirilerini değerlendirirken vergi kesintisini de hesaba katması gerekiyor.
 
-            FON GETİRİLERİ
+FON GETİRİLERİ
 
-            Para piyasası fonları kısa vadeli yatırım
-            araçlarına yönelen yatırımcılar tarafından
-            sıklıkla tercih ediliyor.
+Para piyasası fonları kısa vadeli yatırım araçlarına yönelen yatırımcılar tarafından tercih ediliyor.
 
-            VERGİ UYGULAMASI
+VERGİ UYGULAMASI
 
-            Stopaj, yatırım araçlarından elde edilen
-            belirli gelirler üzerinden yapılan vergi
-            kesintisini ifade ediyor.
+Stopaj, yatırım araçlarından elde edilen belirli gelirler üzerinden yapılan vergi kesintisini ifade ediyor.
 
-            YATIRIM KARARLARI
+YATIRIM KARARLARI
 
-            Yatırımcıların yalnızca brüt getiriye değil,
-            vergi ve diğer maliyetler sonrasında
-            oluşabilecek net getiriye de dikkat etmesi
-            önem taşıyor.
+Yatırımcıların yalnızca brüt getiriye değil, vergi ve diğer maliyetler sonrasında oluşabilecek net getiriye de dikkat etmesi önem taşıyor.
 
-            GÜNCEL BİLGİLER TAKİP EDİLMELİ
+GÜNCEL BİLGİLER TAKİP EDİLMELİ
 
-            Vergi uygulamalarındaki değişiklikler
-            yatırım kararlarını etkileyebileceğinden
-            resmi açıklamaların takip edilmesi gerekiyor.
+Vergi uygulamalarındaki değişiklikler yatırım kararlarını etkileyebileceğinden resmi açıklamaların takip edilmesi gerekiyor.
 
-            ÖNEMLİ NOT
+ÖNEMLİ NOT
 
-            Bu haber yatırım tavsiyesi değildir.
-            Yatırım kararları kişisel finansal koşullar
-            ve riskler değerlendirilerek verilmelidir.
+Bu haber yatırım tavsiyesi değildir. Yatırım kararları kişisel finansal koşullar ve riskler değerlendirilerek verilmelidir.
 
-            HABERİSTA Ekonomi Servisi
+HABERİSTA Ekonomi Servisi
         `
     },
+
 
     /* =====================================================
        2 - YAŞLI VE ENGELLİ AYLIKLARI
@@ -1533,48 +1190,34 @@ const haberler = [
         kaynak: "HABERİSTA Gündem",
         yazar: "Haberİsta Haber Merkezi",
         icerik: `
-            EYLÜL AYI YAŞLI VE ENGELLİ AYLIKLARI
+EYLÜL AYI YAŞLI VE ENGELLİ AYLIKLARI
 
-            Eylül ayına ilişkin yaşlı ve engelli
-            aylıklarının hak sahiplerinin hesaplarına
-            yatırılmaya başlandığı bildirildi.
+Eylül ayına ilişkin yaşlı ve engelli aylıklarının hak sahiplerinin hesaplarına yatırılmaya başlandığı bildirildi.
 
-            ÖDEMELER HESAPLARA YATIRILIYOR
+ÖDEMELER HESAPLARA YATIRILIYOR
 
-            Sosyal yardım ödemelerinden yararlanan
-            vatandaşların ödemeleri ilgili ödeme
-            takvimi doğrultusunda hesaplarına
-            aktarılıyor.
+Sosyal yardım ödemelerinden yararlanan vatandaşların ödemeleri ilgili ödeme takvimi doğrultusunda hesaplarına aktarılıyor.
 
-            HAK SAHİPLERİ ÖDEMELERİNİ KONTROL EDİYOR
+HAK SAHİPLERİ ÖDEMELERİNİ KONTROL EDİYOR
 
-            Vatandaşlar ödemelerin hesaplarına
-            yansıyıp yansımadığını ilgili bankacılık
-            kanallarından veya resmi sistemlerden
-            kontrol edebiliyor.
+Vatandaşlar ödemelerin hesaplarına yansıyıp yansımadığını ilgili bankacılık kanallarından veya resmi sistemlerden kontrol edebiliyor.
 
-            SOSYAL DESTEKLER
+SOSYAL DESTEKLER
 
-            Yaşlı ve engelli aylıkları, sosyal destek
-            mekanizmaları kapsamında ihtiyaç sahibi
-            vatandaşlara yönelik ödemeler arasında
-            bulunuyor.
+Yaşlı ve engelli aylıkları, sosyal destek mekanizmaları kapsamında ihtiyaç sahibi vatandaşlara yönelik ödemeler arasında bulunuyor.
 
-            ÖDEME TARİHLERİ TAKİP EDİLMELİ
+ÖDEME TARİHLERİ TAKİP EDİLMELİ
 
-            Ödeme dönemlerinde tarih ve uygulamaların
-            resmi kurumların açıklamalarından takip
-            edilmesi önem taşıyor.
+Ödeme dönemlerinde tarih ve uygulamaların resmi kurumların açıklamalarından takip edilmesi önem taşıyor.
 
-            RESMİ KAYNAKLAR ÖNEMLİ
+RESMİ KAYNAKLAR ÖNEMLİ
 
-            Ödeme miktarı, hak sahipliği ve ödeme
-            tarihleriyle ilgili en güncel bilgilerin
-            ilgili kamu kurumlarından alınması gerekiyor.
+Ödeme miktarı, hak sahipliği ve ödeme tarihleriyle ilgili en güncel bilgilerin ilgili kamu kurumlarından alınması gerekiyor.
 
-            HABERİSTA Haber Merkezi
+HABERİSTA Haber Merkezi
         `
     },
+
 
     /* =====================================================
        1 - PISA 2025
@@ -1591,59 +1234,40 @@ const haberler = [
         kaynak: "Eğitim Servisi",
         yazar: "Haberİsta Eğitim Servisi",
         icerik: `
-            PISA 2025 SONUÇLARI İÇİN GERİ SAYIM
+PISA 2025 SONUÇLARI İÇİN GERİ SAYIM
 
-            Ekonomik İşbirliği ve Kalkınma Örgütü
-            OECD tarafından gerçekleştirilen PISA
-            araştırmasının 2025 sonuçları için
-            geri sayım başladı.
+Ekonomik İşbirliği ve Kalkınma Örgütü OECD tarafından gerçekleştirilen PISA araştırmasının 2025 sonuçları için geri sayım başladı.
 
-            SONUÇLAR 8 EYLÜL'DE AÇIKLANACAK
+SONUÇLAR 8 EYLÜL'DE AÇIKLANACAK
 
-            PISA 2025 araştırmasının sonuçlarının
-            8 Eylül tarihinde kamuoyuyla paylaşılması
-            bekleniyor.
+PISA 2025 araştırmasının sonuçlarının 8 Eylül tarihinde kamuoyuyla paylaşılması bekleniyor.
 
-            PISA NEDİR?
+PISA NEDİR?
 
-            PISA, farklı ülkelerdeki 15 yaş grubundaki
-            öğrencilerin okuma becerileri, matematik
-            ve fen alanlarındaki bilgi ve becerilerini
-            değerlendiren uluslararası bir araştırmadır.
+PISA, farklı ülkelerdeki 15 yaş grubundaki öğrencilerin okuma becerileri, matematik ve fen alanlarındaki bilgi ve becerilerini değerlendiren uluslararası bir araştırmadır.
 
-            TÜRKİYE'NİN PERFORMANSI
+TÜRKİYE'NİN PERFORMANSI
 
-            Türkiye'nin PISA 2025 sonuçlarında
-            göstereceği performans öğrenciler,
-            öğretmenler, veliler ve eğitim politikaları
-            açısından yakından takip ediliyor.
+Türkiye'nin PISA 2025 sonuçlarında göstereceği performans öğrenciler, öğretmenler, veliler ve eğitim politikaları açısından yakından takip ediliyor.
 
-            EĞİTİM POLİTİKALARINA KATKI
+EĞİTİM POLİTİKALARINA KATKI
 
-            PISA sonuçları ülkelerin eğitim sistemlerinin
-            güçlü ve geliştirilmesi gereken yönlerinin
-            değerlendirilmesinde kullanılan uluslararası
-            göstergelerden biri olarak öne çıkıyor.
+PISA sonuçları ülkelerin eğitim sistemlerinin güçlü ve geliştirilmesi gereken yönlerinin değerlendirilmesinde kullanılan uluslararası göstergelerden biri olarak öne çıkıyor.
 
-            SONUÇLAR NASIL DEĞERLENDİRİLECEK?
+SONUÇLAR NASIL DEĞERLENDİRİLECEK?
 
-            Sonuçların yalnızca ülke sıralaması üzerinden
-            değil, öğrencilerin farklı alanlardaki
-            performansları ve önceki dönemlerle
-            karşılaştırmalar üzerinden değerlendirilmesi
-            önem taşıyor.
+Sonuçların yalnızca ülke sıralaması üzerinden değil, öğrencilerin farklı alanlardaki performansları ve önceki dönemlerle karşılaştırmalar üzerinden değerlendirilmesi önem taşıyor.
 
-            TÜRKİYE'DE EĞİTİM GÜNDEMİ
+TÜRKİYE'DE EĞİTİM GÜNDEMİ
 
-            Açıklanacak sonuçların Türkiye'deki eğitim
-            politikaları ve öğrencilerin akademik
-            performansına ilişkin tartışmalara da
-            katkı sağlaması bekleniyor.
+Açıklanacak sonuçların Türkiye'deki eğitim politikaları ve öğrencilerin akademik performansına ilişkin değerlendirmelere katkı sağlaması bekleniyor.
 
-            HABERİSTA Eğitim Servisi
+HABERİSTA Eğitim Servisi
         `
     }
-   ];
+
+];
+
 
 /* =========================================================
    OTOMATİK SLUG + URL + TARİH + GÖRÜNTÜLENME
@@ -1651,32 +1275,22 @@ const haberler = [
 
 haberler.forEach(function (haber) {
 
-    /* -----------------------------------------
-       SLUG
-    ----------------------------------------- */
-
+    /* SLUG */
     haber.slug = slugOlustur(haber.baslik);
 
+    /* URL */
     haber.url = "/haber/" + haber.slug;
 
 
-    /* -----------------------------------------
-       YAYIN TARİHİ
-    ----------------------------------------- */
+    /* YAYIN TARİHİ */
 
     if (!haber.publishedAt) {
 
         const tarih =
-            String(haber.tarih || "")
-                .trim();
+            String(haber.tarih || "").trim();
 
         const saat =
-            String(haber.saat || "00:00")
-                .trim();
-
-        /*
-         * Türkiye saati UTC+03:00
-         */
+            String(haber.saat || "00:00").trim();
 
         const parcalar =
             tarih.split(/\s+/);
@@ -1713,9 +1327,7 @@ haberler.forEach(function (haber) {
     }
 
 
-    /* -----------------------------------------
-       DATE MODIFIED
-    ----------------------------------------- */
+    /* DATE MODIFIED */
 
     if (!haber.dateModified) {
 
@@ -1724,9 +1336,7 @@ haberler.forEach(function (haber) {
     }
 
 
-    /* -----------------------------------------
-       GÖRÜNTÜLENME
-    ----------------------------------------- */
+    /* GÖRÜNTÜLENME */
 
     if (
         typeof haber.goruntulenme !== "number"
@@ -1736,9 +1346,7 @@ haberler.forEach(function (haber) {
     }
 
 
-    /* -----------------------------------------
-       YAZAR
-    ----------------------------------------- */
+    /* YAZAR */
 
     if (!haber.yazar) {
 
@@ -1747,9 +1355,7 @@ haberler.forEach(function (haber) {
     }
 
 
-    /* -----------------------------------------
-       KAYNAK
-    ----------------------------------------- */
+    /* KAYNAK */
 
     if (!haber.kaynak) {
 
