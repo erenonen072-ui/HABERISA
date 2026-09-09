@@ -1,334 +1,564 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    "use strict";
-
     const haberListesi = Array.isArray(window.haberler)
         ? window.haberler
         : [];
 
-    /* =====================================================
-       HABER YARDIMCILARI
-       ===================================================== */
-
-    function baslik(haber) {
-        return haber.baslik || haber.title || "Haber";
+    if (!haberListesi.length) {
+        console.error("haberler.js bulunamadı veya haber verisi boş.");
+        return;
     }
 
-    function gorsel(haber) {
-        return haber.gorsel || haber.image || "images/logo.jpeg";
+
+    /* =========================
+       YARDIMCI FONKSİYONLAR
+    ========================= */
+
+    function escapeHTML(value) {
+        return String(value ?? "")
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
     }
 
-    function kategori(haber) {
-        return haber.kategori || haber.category || "Gündem";
+
+    function imageUrl(haber) {
+
+        if (!haber || !haber.gorsel) {
+            return "images/logo.jpeg";
+        }
+
+        return haber.gorsel;
     }
 
-    function temizSlug(metin) {
-
-        return String(metin || "")
-            .toLocaleLowerCase("tr-TR")
-            .normalize("NFD")
-            .replace(/[\u0300-\u036f]/g, "")
-            .replace(/ı/g, "i")
-            .replace(/ğ/g, "g")
-            .replace(/ü/g, "u")
-            .replace(/ş/g, "s")
-            .replace(/ö/g, "o")
-            .replace(/ç/g, "c")
-            .replace(/[^a-z0-9]+/g, "-")
-            .replace(/^-+|-+$/g, "");
-    }
 
     function haberUrl(haber) {
 
+        if (!haber) return "#";
+
         let slug = "";
 
-        if (typeof window.slugOlustur === "function") {
-
-            try {
-                slug = window.slugOlustur(haber);
-            } catch (error) {
-                slug = "";
-            }
+        if (haber.slug && typeof haber.slug === "string") {
+            slug = haber.slug;
         }
 
-        /*
-         * [object Object] ve object-object
-         * kesinlikle URL'ye girmesin.
-         */
-
-        if (
-            !slug ||
-            slug === "[object Object]" ||
-            slug === "object-object"
-        ) {
-            slug = temizSlug(
-                haber.slug ||
-                haber.baslik ||
-                haber.id
-            );
+        if (!slug && typeof window.slugOlustur === "function") {
+            slug = window.slugOlustur(haber.baslik);
         }
 
-        return "haber.html?slug=" +
-            encodeURIComponent(slug);
+        if (!slug) {
+            slug = String(haber.baslik || "")
+                .toLowerCase()
+                .normalize("NFD")
+                .replace(/[\u0300-\u036f]/g, "")
+                .replace(/[^a-z0-9]+/g, "-")
+                .replace(/^-|-$/g, "");
+        }
+
+        return "/haber/" + encodeURIComponent(slug);
     }
 
 
-    /* =====================================================
+    /* =========================
        SON DAKİKA
-       ===================================================== */
+    ========================= */
 
-    const breakingNews =
-        document.getElementById("breakingNews");
+    const breaking = document.getElementById("breakingNews");
 
-    if (breakingNews) {
+    if (breaking) {
 
-        const sonBes =
-            haberListesi.slice(0, 5);
+        const sonBes = haberListesi.slice(0, 5);
 
-        const html =
-            sonBes.map(haber => `
-                <a
-                    href="${haberUrl(haber)}"
-                    title="${baslik(haber)}"
-                >
-                    ${baslik(haber)}
-                </a>
-            `).join("");
+        const liste = [...sonBes, ...sonBes];
 
-        breakingNews.innerHTML = `
-            <div class="breaking-news-track">
-                ${html}
-                ${html}
-            </div>
-        `;
+        breaking.innerHTML = liste.map(haber => `
+            <a
+                class="breaking-link"
+                href="${haberUrl(haber)}"
+            >
+                ${escapeHTML(haber.baslik)}
+            </a>
+        `).join("");
     }
 
 
-    /* =====================================================
-       MANŞET 1-20
-       ===================================================== */
+    /* =========================
+       HERO
+    ========================= */
 
-    const heroMain =
-        document.getElementById("heroMain");
+    const heroMain = document.getElementById("heroMain");
+    const heroNumbers = document.getElementById("heroNumbers");
+    const heroPrev = document.getElementById("heroPrev");
+    const heroNext = document.getElementById("heroNext");
 
-    const heroPrev =
-        document.getElementById("heroPrev");
+    const heroNews = haberListesi.slice(0, 20);
 
-    const heroNext =
-        document.getElementById("heroNext");
-
-    const heroNumbers =
-        document.getElementById("heroNumbers");
-
-    const mansetler =
-        haberListesi.slice(0, 20);
-
-    let aktifManset = 0;
+    let heroIndex = 0;
+    let heroTimer;
 
 
-    function mansetGoster(index) {
+    function renderHero() {
 
-        if (!heroMain || !mansetler.length) {
-            return;
-        }
+        const haber = heroNews[heroIndex];
 
-        if (index < 0) {
-            index = mansetler.length - 1;
-        }
-
-        if (index >= mansetler.length) {
-            index = 0;
-        }
-
-        aktifManset = index;
-
-        const haber =
-            mansetler[index];
+        if (!haber || !heroMain) return;
 
         heroMain.innerHTML = `
             <a
-                class="hero-main-link"
+                class="hero-slide-link"
                 href="${haberUrl(haber)}"
             >
 
                 <img
-                    src="${gorsel(haber)}"
-                    alt="${baslik(haber)}"
-                    loading="${index === 0 ? "eager" : "lazy"}"
+                    class="hero-image"
+                    src="${escapeHTML(imageUrl(haber))}"
+                    alt="${escapeHTML(haber.baslik)}"
+                    loading="${heroIndex === 0 ? "eager" : "lazy"}"
                 >
 
-                <div class="hero-main-content">
+                <div class="hero-content">
 
                     <span class="hero-category">
-                        ${kategori(haber)}
+                        ${escapeHTML(haber.kategori)}
                     </span>
 
-                    <h1 class="hero-title">
-                        ${baslik(haber)}
+                    <h1>
+                        ${escapeHTML(haber.baslik)}
                     </h1>
 
-                    ${
-                        haber.spot
-                        ? `
-                            <p class="hero-description">
-                                ${haber.spot}
-                            </p>
-                        `
-                        : ""
-                    }
+                    <p>
+                        ${escapeHTML(haber.spot || "")}
+                    </p>
+
+                    <div class="hero-meta">
+                        ${escapeHTML(haber.tarih || "")}
+                        ${haber.saat ? " · " + escapeHTML(haber.saat) : ""}
+                    </div>
 
                 </div>
 
             </a>
         `;
 
-        if (heroNumbers) {
-
-            heroNumbers
-                .querySelectorAll("button")
-                .forEach((button, i) => {
-
-                    button.classList.toggle(
-                        "active",
-                        i === index
-                    );
-
-                });
-        }
+        renderHeroNumbers();
     }
 
 
-    if (heroNumbers) {
+    function renderHeroNumbers() {
 
-        heroNumbers.innerHTML = "";
+        if (!heroNumbers) return;
 
-        mansetler.forEach((haber, index) => {
+        heroNumbers.innerHTML = heroNews.map((haber, index) => `
+            <button
+                class="hero-number ${index === heroIndex ? "active" : ""}"
+                data-index="${index}"
+                aria-label="${index + 1}. haber"
+            >
+                ${index + 1}
+            </button>
+        `).join("");
 
-            const button =
-                document.createElement("button");
+        heroNumbers.querySelectorAll(".hero-number")
+            .forEach(button => {
 
-            button.type = "button";
-            button.textContent =
-                String(index + 1);
+                button.addEventListener("click", () => {
 
-            button.setAttribute(
-                "aria-label",
-                `${index + 1}. manşet`
-            );
+                    heroIndex = Number(button.dataset.index);
 
-            button.addEventListener(
-                "click",
-                () => mansetGoster(index)
-            );
+                    renderHero();
+                    restartHeroTimer();
 
-            heroNumbers.appendChild(button);
-        });
+                });
+
+            });
+    }
+
+
+    function nextHero() {
+
+        heroIndex++;
+
+        if (heroIndex >= heroNews.length) {
+            heroIndex = 0;
+        }
+
+        renderHero();
+    }
+
+
+    function previousHero() {
+
+        heroIndex--;
+
+        if (heroIndex < 0) {
+            heroIndex = heroNews.length - 1;
+        }
+
+        renderHero();
+    }
+
+
+    function restartHeroTimer() {
+
+        clearInterval(heroTimer);
+
+        heroTimer = setInterval(() => {
+            nextHero();
+        }, 7000);
     }
 
 
     if (heroPrev) {
-
-        heroPrev.addEventListener(
-            "click",
-            () => mansetGoster(
-                aktifManset - 1
-            )
-        );
+        heroPrev.addEventListener("click", () => {
+            previousHero();
+            restartHeroTimer();
+        });
     }
 
 
     if (heroNext) {
-
-        heroNext.addEventListener(
-            "click",
-            () => mansetGoster(
-                aktifManset + 1
-            )
-        );
+        heroNext.addEventListener("click", () => {
+            nextHero();
+            restartHeroTimer();
+        });
     }
 
 
-    mansetGoster(0);
+    renderHero();
+    restartHeroTimer();
 
 
-    /* =====================================================
-       PİYASA BANDI
-       ===================================================== */
+    /* =========================
+       HABER KARTLARI
+    ========================= */
 
-    const marketItems =
-        document.getElementById("marketItems");
+    const newsGrid = document.getElementById("newsGrid");
 
-    if (marketItems) {
+    function renderNews(list = haberListesi) {
 
-        marketItems.innerHTML = `
+        if (!newsGrid) return;
 
-            <div class="market-item">
-                <span class="market-name">
-                    BIST 100
-                </span>
-                <span class="market-value">
-                    —
-                </span>
-                <span class="market-change">
-                    Bekleniyor
-                </span>
-            </div>
+        newsGrid.innerHTML = list.map(haber => `
 
-            <div class="market-item">
-                <span class="market-name">
-                    DOLAR
-                </span>
-                <span class="market-value">
-                    —
-                </span>
-                <span class="market-change">
-                    Bekleniyor
-                </span>
-            </div>
+            <article class="news-card">
 
-            <div class="market-item">
-                <span class="market-name">
-                    EURO
-                </span>
-                <span class="market-value">
-                    —
-                </span>
-                <span class="market-change">
-                    Bekleniyor
-                </span>
-            </div>
+                <a href="${haberUrl(haber)}">
 
-            <div class="market-item">
-                <span class="market-name">
-                    ALTIN
-                </span>
-                <span class="market-value">
-                    —
-                </span>
-                <span class="market-change">
-                    Bekleniyor
-                </span>
-            </div>
+                    <img
+                        class="news-card-image"
+                        src="${escapeHTML(imageUrl(haber))}"
+                        alt="${escapeHTML(haber.baslik)}"
+                        loading="lazy"
+                    >
 
-            <div class="market-item">
-                <span class="market-name">
-                    BITCOIN
-                </span>
-                <span class="market-value">
-                    —
-                </span>
-                <span class="market-change">
-                    Bekleniyor
-                </span>
-            </div>
+                </a>
 
-        `;
+                <div class="news-card-content">
+
+                    <a
+                        class="news-card-category"
+                        href="kategori.html?kategori=${encodeURIComponent(haber.kategori || "")}"
+                    >
+                        ${escapeHTML(haber.kategori || "Haber")}
+                    </a>
+
+                    <h3>
+                        <a href="${haberUrl(haber)}">
+                            ${escapeHTML(haber.baslik)}
+                        </a>
+                    </h3>
+
+                    <div class="news-card-meta">
+                        ${escapeHTML(haber.tarih || "")}
+                        ${haber.saat ? " · " + escapeHTML(haber.saat) : ""}
+                    </div>
+
+                </div>
+
+            </article>
+
+        `).join("");
+    }
+
+    renderNews();
+
+
+    /* =========================
+       ARAMA
+    ========================= */
+
+    const searchBtn = document.getElementById("searchBtn");
+    const searchBox = document.getElementById("searchBox");
+    const searchInput = document.getElementById("searchInput");
+    const searchResultInfo = document.getElementById("searchResultInfo");
+
+    if (searchBtn) {
+
+        searchBtn.addEventListener("click", () => {
+
+            searchBox?.classList.toggle("active");
+
+            if (searchBox?.classList.contains("active")) {
+                searchInput?.focus();
+            }
+
+        });
+
     }
 
 
-    /* =====================================================
+    if (searchInput) {
+
+        searchInput.addEventListener("input", () => {
+
+            const query = searchInput.value
+                .trim()
+                .toLocaleLowerCase("tr-TR");
+
+            if (!query) {
+
+                renderNews();
+
+                if (searchResultInfo) {
+                    searchResultInfo.textContent = "";
+                }
+
+                return;
+            }
+
+
+            const results = haberListesi.filter(haber => {
+
+                const text = [
+                    haber.baslik,
+                    haber.spot,
+                    haber.kategori,
+                    haber.icerik
+                ]
+                    .filter(Boolean)
+                    .join(" ")
+                    .toLocaleLowerCase("tr-TR");
+
+                return text.includes(query);
+
+            });
+
+
+            renderNews(results);
+
+            if (searchResultInfo) {
+
+                searchResultInfo.textContent =
+                    `"${query}" için ${results.length} haber bulundu.`;
+
+            }
+
+        });
+
+    }
+
+
+    /* =========================
+       MOBİL MENÜ
+    ========================= */
+
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileNav = document.getElementById("mobileNav");
+
+    if (menuBtn) {
+
+        menuBtn.addEventListener("click", () => {
+            mobileNav?.classList.toggle("active");
+        });
+
+    }
+
+
+    /* =========================
+       PİYASA
+    ========================= */
+
+    const marketItems = document.getElementById("marketItems");
+    const marketUpdated = document.getElementById("marketUpdated");
+
+
+    async function piyasaVerileriniGetir() {
+
+        if (!marketItems) return;
+
+        try {
+
+            const response = await fetch("/api/market", {
+                cache: "no-store"
+            });
+
+            if (!response.ok) {
+                throw new Error("Market API hatası");
+            }
+
+            const data = await response.json();
+
+
+            const marketList = [
+                ["USD/TRY", "Dolar", "₺"],
+                ["EUR/TRY", "Euro", "₺"],
+                ["XAU/TRY", "Altın", "₺"],
+                ["BTC/USD", "Bitcoin", "$"],
+                ["BIST100", "BIST 100", ""]
+            ];
+
+
+            marketItems.innerHTML = marketList.map(([key, name, suffix]) => {
+
+                const item = data[key];
+
+                if (!item) return "";
+
+                const price =
+                    typeof item.price === "number"
+                        ? item.price.toLocaleString("tr-TR", {
+                            minimumFractionDigits: key === "BIST100" ? 0 : 2,
+                            maximumFractionDigits: key === "BIST100" ? 0 : 2
+                        })
+                        : "—";
+
+
+                const change =
+                    typeof item.changePercent === "number"
+                        ? item.changePercent
+                        : null;
+
+
+                let changeHTML = "";
+
+                if (change !== null) {
+
+                    const cls =
+                        change > 0
+                            ? "market-up"
+                            : change < 0
+                                ? "market-down"
+                                : "market-neutral";
+
+                    const symbol =
+                        change > 0
+                            ? "▲"
+                            : change < 0
+                                ? "▼"
+                                : "•";
+
+                    changeHTML = `
+                        <span class="market-change ${cls}">
+                            ${symbol} ${Math.abs(change).toFixed(2)}%
+                        </span>
+                    `;
+                }
+
+
+                return `
+                    <div class="market-item">
+
+                        <span class="market-name">
+                            ${name}
+                        </span>
+
+                        <span class="market-price">
+                            ${price}${suffix}
+                        </span>
+
+                        ${changeHTML}
+
+                    </div>
+                `;
+
+            }).join("");
+
+
+            if (marketUpdated) {
+
+                const now = new Date();
+
+                marketUpdated.textContent =
+                    now.toLocaleTimeString("tr-TR", {
+                        hour: "2-digit",
+                        minute: "2-digit"
+                    });
+
+            }
+
+        } catch (error) {
+
+            console.warn("Piyasa verileri alınamadı:", error);
+
+            marketItems.innerHTML = `
+                <div class="market-loading">
+                    Piyasa verileri şu anda alınamıyor.
+                </div>
+            `;
+        }
+    }
+
+
+    piyasaVerileriniGetir();
+
+
+    /* =========================
+       BİLDİRİMLER
+    ========================= */
+
+    const notificationBtn =
+        document.getElementById("notificationBtn");
+
+
+    if (notificationBtn) {
+
+        notificationBtn.addEventListener("click", async () => {
+
+            try {
+
+                if (
+                    window.OneSignal &&
+                    OneSignal.Notifications
+                ) {
+
+                    await OneSignal.Notifications.requestPermission();
+
+                    if (
+                        OneSignal.User &&
+                        OneSignal.User.PushSubscription
+                    ) {
+                        await OneSignal.User.PushSubscription.optIn();
+                    }
+
+                    notificationBtn.textContent = "✓";
+
+                } else {
+
+                    alert(
+                        "Bildirim sistemi şu anda hazır değil."
+                    );
+
+                }
+
+            } catch (error) {
+
+                console.warn(
+                    "Bildirim izni alınamadı:",
+                    error
+                );
+
+            }
+
+        });
+
+    }
+
+
+    /* =========================
        ÇEREZ
-       ===================================================== */
+    ========================= */
 
     const cookieBox =
         document.getElementById("cookieBox");
@@ -336,353 +566,31 @@ document.addEventListener("DOMContentLoaded", () => {
     const cookieAccept =
         document.getElementById("cookieAccept");
 
-    let cookieAccepted = false;
 
-    try {
-        cookieAccepted =
-            localStorage.getItem(
-                "haberista_cookie"
-            ) === "accepted";
-    } catch (error) {
-        cookieAccepted = false;
+    if (localStorage.getItem("haberista_cookie") === "1") {
+
+        if (cookieBox) {
+            cookieBox.style.display = "none";
+        }
+
     }
 
-    if (cookieBox) {
-
-        cookieBox.style.display =
-            cookieAccepted
-                ? "none"
-                : "block";
-    }
 
     if (cookieAccept) {
 
-        cookieAccept.addEventListener(
-            "click",
-            () => {
+        cookieAccept.addEventListener("click", () => {
 
-                try {
+            localStorage.setItem(
+                "haberista_cookie",
+                "1"
+            );
 
-                    localStorage.setItem(
-                        "haberista_cookie",
-                        "accepted"
-                    );
-
-                } catch (error) {}
-
-                cookieBox.style.display =
-                    "none";
+            if (cookieBox) {
+                cookieBox.style.display = "none";
             }
-        );
-    }
 
-
-    /* =====================================================
-       BİLDİRİM İZNİ
-       ===================================================== */
-
-    function bildirimKutusu() {
-
-        if (
-            document.getElementById(
-                "notificationPermission"
-            )
-        ) {
-            return;
-        }
-
-        const box =
-            document.createElement("div");
-
-        box.id =
-            "notificationPermission";
-
-        box.className =
-            "notification-permission";
-
-        box.innerHTML = `
-
-            <h3>
-                🔔 Haber bildirimlerini aç
-            </h3>
-
-            <p>
-                Önemli gelişmeler ve son dakika
-                haberlerinden anında haberdar ol.
-            </p>
-
-            <button
-                id="enableNotifications"
-                type="button"
-            >
-                Bildirimleri Aç
-            </button>
-
-            <button
-                id="closeNotifications"
-                class="notification-close"
-                type="button"
-            >
-                Şimdi Değil
-            </button>
-
-        `;
-
-        document.body.appendChild(box);
-
-
-        const enable =
-            document.getElementById(
-                "enableNotifications"
-            );
-
-        const close =
-            document.getElementById(
-                "closeNotifications"
-            );
-
-
-        if (enable) {
-
-            enable.addEventListener(
-                "click",
-                () => {
-
-                    if (
-                        window.OneSignalDeferred
-                    ) {
-
-                        window.OneSignalDeferred.push(
-                            async function (OneSignal) {
-
-                                try {
-
-                                    await OneSignal.Slidedown
-                                        .promptPush();
-
-                                } catch (error) {
-
-                                    console.log(
-                                        "Bildirim izni:",
-                                        error
-                                    );
-                                }
-                            }
-                        );
-                    }
-
-                    box.remove();
-                }
-            );
-        }
-
-
-        if (close) {
-
-            close.addEventListener(
-                "click",
-                () => box.remove()
-            );
-        }
-    }
-
-
-    setTimeout(
-        bildirimKutusu,
-        700
-    );
-
-
-    /* =====================================================
-       MOBİL MENÜ
-       ===================================================== */
-
-    const menuBtn =
-        document.getElementById("menuBtn");
-
-    const mobileMenu =
-        document.querySelector(".mobile-menu");
-
-    if (menuBtn && mobileMenu) {
-
-        menuBtn.addEventListener(
-            "click",
-            () => {
-
-                mobileMenu.classList.toggle(
-                    "active"
-                );
-            }
-        );
-    }
-
-
-    /* =====================================================
-       ARAMA
-       ===================================================== */
-
-    const searchBtn =
-        document.getElementById("searchBtn");
-
-    const searchBox =
-        document.getElementById("searchBox");
-
-    const searchInput =
-        document.getElementById("searchInput");
-
-    const newsGrid =
-        document.getElementById("newsGrid");
-
-    const searchResultInfo =
-        document.getElementById(
-            "searchResultInfo"
-        );
-
-
-    if (searchBtn && searchBox) {
-
-        searchBtn.addEventListener(
-            "click",
-            () => {
-
-                searchBox.classList.toggle(
-                    "active"
-                );
-
-                if (
-                    searchBox.classList.contains(
-                        "active"
-                    ) &&
-                    searchInput
-                ) {
-                    searchInput.focus();
-                }
-            }
-        );
-    }
-
-
-    function ara() {
-
-        if (!searchInput || !newsGrid) {
-            return;
-        }
-
-        const kelime =
-            searchInput.value
-                .trim()
-                .toLocaleLowerCase("tr-TR");
-
-        if (!kelime) {
-            return;
-        }
-
-        const sonuçlar =
-            haberListesi.filter(haber => {
-
-                const metin = [
-
-                    haber.baslik,
-                    haber.spot,
-                    haber.kategori,
-                    haber.yazar,
-                    haber.kaynak,
-                    haber.seo
-
-                ]
-                    .filter(Boolean)
-                    .join(" ")
-                    .toLocaleLowerCase("tr-TR");
-
-                return metin.includes(kelime);
-            });
-
-
-        newsGrid.innerHTML = "";
-
-
-        sonuçlar.forEach(haber => {
-
-            const card =
-                document.createElement("a");
-
-            card.className =
-                "news-card";
-
-            card.href =
-                haberUrl(haber);
-
-            card.innerHTML = `
-
-                <img
-                    src="${gorsel(haber)}"
-                    alt="${baslik(haber)}"
-                    loading="lazy"
-                >
-
-                <span class="news-card-category">
-                    ${kategori(haber)}
-                </span>
-
-                <h3>
-                    ${baslik(haber)}
-                </h3>
-
-            `;
-
-            newsGrid.appendChild(card);
         });
 
-
-        if (searchResultInfo) {
-
-            searchResultInfo.textContent =
-                `${sonuçlar.length} haber bulundu.`;
-        }
     }
-
-
-    if (searchInput) {
-
-        searchInput.addEventListener(
-            "keydown",
-            event => {
-
-                if (event.key === "Enter") {
-                    ara();
-                }
-            }
-        );
-    }
-
-
-    /* =====================================================
-       MANŞET KLAVYE KONTROLÜ
-       ===================================================== */
-
-    document.addEventListener(
-        "keydown",
-        event => {
-
-            if (
-                document.activeElement &&
-                document.activeElement.tagName === "INPUT"
-            ) {
-                return;
-            }
-
-            if (event.key === "ArrowLeft") {
-                mansetGoster(
-                    aktifManset - 1
-                );
-            }
-
-            if (event.key === "ArrowRight") {
-                mansetGoster(
-                    aktifManset + 1
-                );
-            }
-        }
-    );
 
 });
