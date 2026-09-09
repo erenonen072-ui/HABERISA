@@ -3050,3 +3050,101 @@ body.dark-mode .no-news {
         font-size: 11px !important;
     }
 }
+/* =========================================================
+   HABERİSTA — MANŞET SON AYAR
+   ========================================================= */
+
+.hero-section {
+    width: 100% !important;
+    max-width: 680px !important;
+    margin: 26px auto 30px !important;
+    padding: 0 !important;
+}
+
+.hero-main {
+    width: 100% !important;
+    height: 430px !important;
+    min-height: 430px !important;
+    max-height: none !important;
+    overflow: hidden !important;
+}
+
+.hero-slide,
+.hero-slide-link,
+.hero-image {
+    width: 100% !important;
+    height: 430px !important;
+    min-height: 430px !important;
+    max-height: none !important;
+}
+
+.hero-image {
+    display: block !important;
+    object-fit: cover !important;
+}
+
+.hero-overlay {
+    padding: 30px !important;
+}
+
+.hero-overlay h2 {
+    font-size: 30px !important;
+    line-height: 1.08 !important;
+    font-weight: 900 !important;
+}
+
+/* 20 NUMARA */
+.hero-numbers {
+    width: 100% !important;
+    max-width: 680px !important;
+    margin: 10px auto 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    gap: 5px !important;
+}
+
+.hero-number {
+    width: 29px !important;
+    height: 29px !important;
+    min-width: 29px !important;
+}
+
+/* MOBİL */
+@media (max-width: 700px) {
+    .hero-section {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 10px !important;
+    }
+
+    .hero-main {
+        height: 310px !important;
+        min-height: 310px !important;
+        max-height: none !important;
+    }
+
+    .hero-slide,
+    .hero-slide-link,
+    .hero-image {
+        height: 310px !important;
+        min-height: 310px !important;
+        max-height: none !important;
+    }
+}
+
+@media (max-width: 450px) {
+    .hero-main {
+        height: 280px !important;
+        min-height: 280px !important;
+        max-height: none !important;
+    }
+
+    .hero-slide,
+    .hero-slide-link,
+    .hero-image {
+        height: 280px !important;
+        min-height: 280px !important;
+        max-height: none !important;
+    }
+}
