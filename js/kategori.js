@@ -1,193 +1,309 @@
 "use strict";
 
+/* =========================================================
+   HABERİSTA
+   KATEGORİLER SİSTEMİ
+   ========================================================= */
+
 document.addEventListener("DOMContentLoaded", function () {
 
-    // HTML'den kategori bilgisini al
-    const kategori = document.body.dataset.kategori;
+    const container =
+        document.getElementById("kategori-listesi");
 
-    const newsGrid = document.getElementById("newsGrid");
-    const kategoriBaslik = document.getElementById("kategoriBaslik");
-    const kategoriAciklama = document.getElementById("kategoriAciklama");
+    const countBox =
+        document.getElementById("kategori-count");
 
-    if (!newsGrid || !kategori) return;
 
-    // Kategori başlığı
-    if (kategoriBaslik) {
-        kategoriBaslik.textContent = kategori;
-    }
+    /* =====================================================
+       HABERLERİ AL
+       ===================================================== */
 
-    if (kategoriAciklama) {
-        kategoriAciklama.textContent =
-            `${kategori} kategorisinden en güncel haberler`;
-    }
+    const haberData =
+        Array.isArray(window.haberler)
+            ? window.haberler
+            : [];
 
-    // haberler.js'deki haber verilerini bekle
-    function haberleriYukle() {
 
-        if (!Array.isArray(window.haberler)) {
-            console.error("haberler dizisi bulunamadı.");
-            newsGrid.innerHTML = `
-                <div class="kategori-hata">
-                    Haberler yüklenemedi.
-                </div>
-            `;
-            return;
+    /* =====================================================
+       KATEGORİLER
+       ===================================================== */
+
+    const kategoriler = [
+
+        {
+            ad: "Gündem",
+            slug: "gundem",
+            ikon: "📰",
+            aciklama: "Türkiye gündeminden son gelişmeler",
+            sayfa: "gundem.html"
+        },
+
+        {
+            ad: "Türkiye",
+            slug: "turkiye",
+            ikon: "🇹🇷",
+            aciklama: "Türkiye'nin dört bir yanından haberler",
+            sayfa: "index.html?kategori=Türkiye"
+        },
+
+        {
+            ad: "Dünya",
+            slug: "dunya",
+            ikon: "🌍",
+            aciklama: "Dünyadan son dakika gelişmeleri",
+            sayfa: "dunya.html"
+        },
+
+        {
+            ad: "Ekonomi",
+            slug: "ekonomi",
+            ikon: "📈",
+            aciklama: "Piyasalar, ekonomi ve finans",
+            sayfa: "ekonomi.html"
+        },
+
+        {
+            ad: "Spor",
+            slug: "spor",
+            ikon: "⚽",
+            aciklama: "Futbol ve spor dünyasından haberler",
+            sayfa: "spor.html"
+        },
+
+        {
+            ad: "Eğitim",
+            slug: "egitim",
+            ikon: "🎓",
+            aciklama: "Eğitim, sınav ve öğrenci gündemi",
+            sayfa: "index.html?kategori=Eğitim"
+        },
+
+        {
+            ad: "Magazin",
+            slug: "magazin",
+            ikon: "✨",
+            aciklama: "Magazin ve ünlüler dünyasından gelişmeler",
+            sayfa: "magazin.html"
+        },
+
+        {
+            ad: "Teknoloji",
+            slug: "teknoloji",
+            ikon: "💻",
+            aciklama: "Teknoloji dünyasından yeni gelişmeler",
+            sayfa: "teknoloji.html"
+        },
+
+        {
+            ad: "Kültür Sanat",
+            slug: "kultur-sanat",
+            ikon: "🎨",
+            aciklama: "Kültür, sanat, sinema ve yaşam",
+            sayfa: "kultur-sanat.html"
+        },
+
+        {
+            ad: "Sağlık",
+            slug: "saglik",
+            ikon: "❤️",
+            aciklama: "Sağlık dünyasından güncel bilgiler",
+            sayfa: "saglik.html"
         }
 
-        // SADECE BU KATEGORİ
-        const kategoriHaberleri = window.haberler.filter(haber => {
+    ];
 
-            return String(haber.kategori || "")
-                .trim()
-                .toLocaleLowerCase("tr-TR") ===
-                kategori.trim().toLocaleLowerCase("tr-TR");
 
-        });
+    /* =====================================================
+       CONTAINER KONTROL
+       ===================================================== */
 
-        console.log(
-            `${kategori}: ${kategoriHaberleri.length} haber bulundu.`
+    if (!container) {
+        console.error(
+            "HABERİSTA: kategori-listesi bulunamadı."
         );
 
-        if (kategoriHaberleri.length === 0) {
-
-            newsGrid.innerHTML = `
-                <div class="kategori-bos">
-                    <div class="kategori-bos-icon">📰</div>
-                    <h3>Henüz haber bulunamadı</h3>
-                    <p>
-                        Bu kategoride şu anda yayınlanmış haber bulunmuyor.
-                    </p>
-                </div>
-            `;
-
-            return;
-        }
-
-        newsGrid.innerHTML = kategoriHaberleri
-            .map(haber => haberKartiOlustur(haber))
-            .join("");
+        return;
     }
 
-    function haberKartiOlustur(haber) {
 
-        const baslik = haber.baslik || "Başlıksız haber";
+    /* =====================================================
+       KARTLARI OLUŞTUR
+       ===================================================== */
 
-        const spot =
-            haber.spot ||
-            haber.aciklama ||
-            "";
+    kategoriler.forEach(function (kategori) {
 
-        const tarih =
-            haber.tarih ||
-            haber.date ||
-            "";
 
-        const resim =
-            haber.resim ||
-            haber.gorsel ||
-            haber.image ||
-            haber.foto ||
-            "images/logo.jpeg";
+        /* -------------------------------------------------
+           KATEGORİ HABERLERİ
+           ------------------------------------------------- */
 
-        const url =
-            haber.url ||
-            haber.link ||
-            `/haber/${slugOlustur(baslik)}`;
+        const kategoriHaberleri =
+            haberData.filter(function (haber) {
 
-        return `
-            <article class="kategori-haber-card">
+                return String(
+                    haber.kategori || ""
+                )
+                .trim()
+                .toLocaleLowerCase("tr-TR")
+                ===
+                kategori.ad
+                    .trim()
+                    .toLocaleLowerCase("tr-TR");
 
-                <a href="${url}" class="kategori-haber-image">
+            });
 
-                    <img
-                        src="${resim}"
-                        alt="${baslik}"
-                        loading="lazy"
-                        onerror="this.src='images/logo.jpeg'"
-                    >
 
-                    <span class="kategori-etiket">
-                        ${kategori}
-                    </span>
+        /* -------------------------------------------------
+           SON HABERİ BUL
+           ------------------------------------------------- */
 
-                </a>
+        const sonHaber =
+            kategoriHaberleri.length > 0
+                ? kategoriHaberleri
+                    .slice()
+                    .sort(function (a, b) {
 
-                <div class="kategori-haber-content">
+                        const tarihA =
+                            `${a.tarih || ""} ${a.saat || ""}`;
 
-                    ${
-                        tarih
-                            ? `<div class="kategori-haber-tarih">
-                                ${tarih}
-                               </div>`
-                            : ""
-                    }
+                        const tarihB =
+                            `${b.tarih || ""} ${b.saat || ""}`;
 
-                    <h3>
-                        <a href="${url}">
-                            ${baslik}
-                        </a>
-                    </h3>
+                        return (
+                            String(tarihB)
+                                .localeCompare(
+                                    String(tarihA),
+                                    "tr"
+                                )
+                        );
 
-                    ${
-                        spot
-                            ? `<p>${spot}</p>`
-                            : ""
-                    }
+                    })[0]
+                : null;
 
-                    <a href="${url}" class="devamini-oku">
-                        Haberin Devamı →
-                    </a>
 
+        /* -------------------------------------------------
+           GÖRSEL
+           ------------------------------------------------- */
+
+        let gorsel =
+            "images/default.jpg";
+
+
+        if (
+            sonHaber &&
+            sonHaber.gorsel
+        ) {
+
+            gorsel =
+                sonHaber.gorsel;
+
+        }
+
+
+        /* -------------------------------------------------
+           KART
+           ------------------------------------------------- */
+
+        const card =
+            document.createElement("a");
+
+
+        card.className =
+            "kategori-card " +
+            kategori.slug;
+
+
+        card.href =
+            kategori.sayfa;
+
+
+        /* -------------------------------------------------
+           HABER SAYISI
+           ------------------------------------------------- */
+
+        const haberSayisi =
+            kategoriHaberleri.length;
+
+
+        const haberMetni =
+            haberSayisi === 1
+                ? "1 haber"
+                : `${haberSayisi} haber`;
+
+
+        /* -------------------------------------------------
+           HTML
+           ------------------------------------------------- */
+
+        card.innerHTML = `
+
+            <div class="kategori-card-image">
+
+                <img
+                    src="${escapeHtml(gorsel)}"
+                    alt="${escapeHtml(kategori.ad)}"
+                    loading="lazy"
+                    onerror="this.style.opacity='0'"
+                >
+
+            </div>
+
+
+            <div class="kategori-info">
+
+                <div class="kategori-icon">
+                    ${kategori.ikon}
                 </div>
 
-            </article>
+                <h3>
+                    ${escapeHtml(kategori.ad)}
+                </h3>
+
+                <p>
+                    ${escapeHtml(kategori.aciklama)}
+                    •
+                    ${haberMetni}
+                </p>
+
+            </div>
+
         `;
+
+
+        /* -------------------------------------------------
+           SAYFAYA EKLE
+           ------------------------------------------------- */
+
+        container.appendChild(card);
+
+    });
+
+
+    /* =====================================================
+       SAYI
+       ===================================================== */
+
+    if (countBox) {
+
+        countBox.textContent =
+            `${kategoriler.length} kategori • ${haberData.length} haber`;
+
     }
 
-    function slugOlustur(metin) {
 
-        return String(metin || "")
-            .toLocaleLowerCase("tr-TR")
-            .replace(/ğ/g, "g")
-            .replace(/ü/g, "u")
-            .replace(/ş/g, "s")
-            .replace(/ı/g, "i")
-            .replace(/ö/g, "o")
-            .replace(/ç/g, "c")
-            .replace(/[^a-z0-9\s-]/g, "")
-            .trim()
-            .replace(/\s+/g, "-")
-            .replace(/-+/g, "-");
+    /* =====================================================
+       GÜVENLİ HTML
+       ===================================================== */
+
+    function escapeHtml(value) {
+
+        return String(value ?? "")
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+
     }
-
-    // haberler.js biraz geç yüklenirse bekle
-    let deneme = 0;
-
-    const interval = setInterval(function () {
-
-        deneme++;
-
-        if (Array.isArray(window.haberler)) {
-
-            clearInterval(interval);
-            haberleriYukle();
-
-        }
-
-        if (deneme >= 30) {
-
-            clearInterval(interval);
-
-            if (!Array.isArray(window.haberler)) {
-
-                console.error(
-                    "haberler.js 15 saniye içinde yüklenemedi."
-                );
-
-            }
-
-        }
-
-    }, 500);
 
 });
