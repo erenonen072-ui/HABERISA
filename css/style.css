@@ -1376,3 +1376,579 @@ main.container {
         max-width: 210px;
     }
 }
+/* =========================================================
+   HABERİSTA PREMIUM FOOTER
+   ========================================================= */
+
+.site-footer {
+    position: relative;
+    margin-top: 80px;
+    background:
+        radial-gradient(
+            circle at 10% 0%,
+            rgba(215, 25, 32, 0.13),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 90% 30%,
+            rgba(215, 25, 32, 0.06),
+            transparent 30%
+        ),
+        #090b0e;
+
+    color: #ffffff;
+    overflow: hidden;
+}
+
+
+/* ÜST KIRMIZI IŞIK */
+
+.site-footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            #d71920 25%,
+            #ff3038 50%,
+            #d71920 75%,
+            transparent 100%
+        );
+}
+
+
+/* ANA FOOTER */
+
+.footer-main {
+    padding: 65px 0 55px;
+}
+
+
+.footer-inner {
+    display: grid;
+
+    grid-template-columns:
+        1.6fr
+        1fr
+        1fr
+        1.1fr;
+
+    gap: 55px;
+
+    align-items: start;
+}
+
+
+/* =========================================================
+   MARKA
+   ========================================================= */
+
+.footer-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+
+    color: #ffffff;
+    text-decoration: none;
+}
+
+
+.footer-brand img {
+    width: 58px;
+    height: 58px;
+
+    object-fit: cover;
+
+    border-radius: 15px;
+
+    display: block;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.35);
+}
+
+
+.footer-brand span {
+    font-size: 29px;
+    font-weight: 900;
+    letter-spacing: -0.8px;
+}
+
+
+.footer-description {
+    max-width: 410px;
+
+    margin: 20px 0 18px;
+
+    color: #9299a3;
+
+    font-size: 14px;
+    line-height: 1.85;
+}
+
+
+/* DURUM */
+
+.footer-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    color: #b8bec7;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+.footer-status-dot {
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #d71920;
+
+    box-shadow:
+        0 0 0 4px rgba(215, 25, 32, 0.12),
+        0 0 15px rgba(215, 25, 32, 0.35);
+
+    animation: footerPulse 2s infinite;
+}
+
+
+@keyframes footerPulse {
+
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.55;
+        transform: scale(0.85);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+
+/* =========================================================
+   FOOTER BAŞLIKLARI
+   ========================================================= */
+
+.footer-title {
+    position: relative;
+
+    display: inline-block;
+
+    margin: 4px 0 20px;
+
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    letter-spacing: 0.8px;
+
+    text-transform: uppercase;
+}
+
+
+.footer-title::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -8px;
+
+    width: 28px;
+    height: 2px;
+
+    border-radius: 10px;
+
+    background: #d71920;
+}
+
+
+/* =========================================================
+   FOOTER LİNKLERİ
+   ========================================================= */
+
+.footer-links {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+
+.footer-links li {
+    margin-bottom: 11px;
+}
+
+
+.footer-links a {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+
+    color: #9299a3;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.footer-links a::before {
+    content: "›";
+
+    margin-right: 0;
+
+    width: 0;
+
+    overflow: hidden;
+
+    color: #d71920;
+
+    font-size: 17px;
+
+    transition:
+        width 0.2s ease,
+        margin-right 0.2s ease;
+}
+
+
+.footer-links a:hover {
+    color: #ffffff;
+
+    transform: translateX(3px);
+}
+
+
+.footer-links a:hover::before {
+    width: 12px;
+    margin-right: 3px;
+}
+
+
+/* =========================================================
+   SOSYAL MEDYA
+   ========================================================= */
+
+.footer-social {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 42px);
+
+    gap: 10px;
+
+    margin-top: 2px;
+}
+
+
+.footer-social-btn {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.09);
+
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.045);
+
+    color: #c6cad0;
+
+    text-decoration: none;
+
+    font-size: 19px;
+    font-weight: 700;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.footer-social-btn:hover {
+    background: #d71920;
+
+    border-color: #d71920;
+
+    color: #ffffff;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 20px rgba(215, 25, 32, 0.22);
+}
+
+
+.footer-social-description {
+    max-width: 220px;
+
+    margin: 17px 0 0;
+
+    color: #7f8791;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   AYIRICI
+   ========================================================= */
+
+.footer-divider {
+    width: 100%;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.10),
+            transparent
+        );
+}
+
+
+/* =========================================================
+   ALT FOOTER
+   ========================================================= */
+
+.footer-bottom {
+    background: rgba(0, 0, 0, 0.24);
+}
+
+
+.footer-bottom-inner {
+    min-height: 75px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 25px;
+}
+
+
+.footer-copyright {
+    color: #737b85;
+
+    font-size: 13px;
+}
+
+
+.footer-copyright strong {
+    color: #ffffff;
+
+    font-weight: 700;
+}
+
+
+/* YASAL LİNKLER */
+
+.footer-legal {
+    display: flex;
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    justify-content: flex-end;
+
+    gap: 22px;
+}
+
+
+.footer-legal a {
+    color: #737b85;
+
+    text-decoration: none;
+
+    font-size: 12px;
+    font-weight: 500;
+
+    transition: color 0.2s ease;
+}
+
+
+.footer-legal a:hover {
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 950px) {
+
+    .footer-inner {
+        grid-template-columns:
+            1.4fr
+            1fr
+            1fr;
+
+        gap: 40px;
+    }
+
+    .footer-social-column {
+        grid-column: 1 / -1;
+    }
+
+    .footer-social-description {
+        max-width: 350px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBİL
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+    .site-footer {
+        margin-top: 55px;
+    }
+
+    .footer-main {
+        padding: 45px 0 38px;
+    }
+
+    .footer-inner {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 35px 25px;
+    }
+
+    .footer-brand-area {
+        grid-column: 1 / -1;
+    }
+
+    .footer-description {
+        max-width: 100%;
+
+        margin-top: 16px;
+
+        font-size: 13px;
+        line-height: 1.75;
+    }
+
+    .footer-brand img {
+        width: 50px;
+        height: 50px;
+        border-radius: 13px;
+    }
+
+    .footer-brand span {
+        font-size: 25px;
+    }
+
+    .footer-title {
+        font-size: 13px;
+        margin-bottom: 18px;
+    }
+
+    .footer-links li {
+        margin-bottom: 9px;
+    }
+
+    .footer-links a {
+        font-size: 13px;
+    }
+
+    .footer-social-column {
+        grid-column: 1 / -1;
+    }
+
+    .footer-social {
+        margin-top: 3px;
+    }
+
+    .footer-bottom-inner {
+        min-height: auto;
+
+        padding: 20px 0;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+    .footer-legal {
+        justify-content: flex-start;
+
+        gap: 12px 18px;
+    }
+
+}
+
+
+/* =========================================================
+   KÜÇÜK TELEFON
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+    .footer-inner {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 30px 18px;
+    }
+
+    .footer-brand-area,
+    .footer-social-column {
+        grid-column: 1 / -1;
+    }
+
+    .footer-social {
+        grid-template-columns:
+            repeat(4, 40px);
+    }
+
+    .footer-social-btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    .footer-legal {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 8px;
+    }
+
+}
