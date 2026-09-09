@@ -3,10 +3,6 @@
 
 <head>
 
-    <!-- ==============================
-         TEMEL META
-    =============================== -->
-
     <meta charset="UTF-8">
 
     <meta
@@ -41,7 +37,6 @@
         content="telephone=no"
     >
 
-    <!-- Canonical -->
     <link
         rel="canonical"
         href="https://haberisa.vercel.app/"
@@ -52,10 +47,6 @@
         hreflang="tr"
         href="https://haberisa.vercel.app/"
     >
-
-    <!-- ==============================
-         FAVICON
-    =============================== -->
 
     <link
         rel="icon"
@@ -68,18 +59,16 @@
         href="images/logo.jpeg"
     >
 
-    <!-- ==============================
-         GOOGLE SEARCH CONSOLE
-    =============================== -->
+
+    <!-- GOOGLE SEARCH CONSOLE -->
 
     <meta
         name="google-site-verification"
         content="vQ7jx3fnqLHiLgqgLDnPluUm6fbkhSsjTq1CCeI2vGc"
     >
 
-    <!-- ==============================
-         GOOGLE ADSENSE
-    =============================== -->
+
+    <!-- GOOGLE ADSENSE -->
 
     <script
         async
@@ -87,9 +76,8 @@
         crossorigin="anonymous">
     </script>
 
-    <!-- ==============================
-         GOOGLE ANALYTICS
-    =============================== -->
+
+    <!-- GOOGLE ANALYTICS -->
 
     <script
         async
@@ -97,20 +85,28 @@
     </script>
 
     <script>
-        window.dataLayer = window.dataLayer || [];
+
+        window.dataLayer =
+            window.dataLayer || [];
 
         function gtag() {
             dataLayer.push(arguments);
         }
 
-        gtag("js", new Date());
+        gtag(
+            "js",
+            new Date()
+        );
 
-        gtag("config", "G-H6TTCSCZR2");
+        gtag(
+            "config",
+            "G-H6TTCSCZR2"
+        );
+
     </script>
 
-    <!-- ==============================
-         OPEN GRAPH
-    =============================== -->
+
+    <!-- OPEN GRAPH -->
 
     <meta
         property="og:type"
@@ -157,9 +153,8 @@
         content="image/jpeg"
     >
 
-    <!-- ==============================
-         TWITTER / X
-    =============================== -->
+
+    <!-- TWITTER -->
 
     <meta
         name="twitter:card"
@@ -186,9 +181,8 @@
         content="Haberİsta Haber Sitesi Logosu"
     >
 
-    <!-- ==============================
-         PERFORMANCE
-    =============================== -->
+
+    <!-- PERFORMANCE -->
 
     <link
         rel="preconnect"
@@ -200,20 +194,19 @@
         href="https://pagead2.googlesyndication.com"
     >
 
-    <!-- ==============================
-         CSS
-    =============================== -->
+
+    <!-- CSS -->
 
     <link
         rel="stylesheet"
         href="css/style.css"
     >
 
-    <!-- ==============================
-         WEBSITE STRUCTURED DATA
-    =============================== -->
+
+    <!-- WEBSITE STRUCTURED DATA -->
 
     <script type="application/ld+json">
+
     {
         "@context": "https://schema.org",
         "@type": "WebSite",
@@ -232,23 +225,16 @@
                 "@type": "ImageObject",
                 "url": "https://haberisa.vercel.app/images/logo.jpeg"
             }
-        },
-        "potentialAction": {
-            "@type": "SearchAction",
-            "target": {
-                "@type": "EntryPoint",
-                "urlTemplate": "https://haberisa.vercel.app/?q={search_term_string}"
-            },
-            "query-input": "required name=search_term_string"
         }
     }
+
     </script>
 
-    <!-- ==============================
-         ORGANIZATION STRUCTURED DATA
-    =============================== -->
+
+    <!-- ORGANIZATION -->
 
     <script type="application/ld+json">
+
     {
         "@context": "https://schema.org",
         "@type": "NewsMediaOrganization",
@@ -266,11 +252,11 @@
             "https://x.com/HABER_ISTA"
         ]
     }
+
     </script>
 
-    <!-- ==============================
-         ONESIGNAL
-    =============================== -->
+
+    <!-- ONESIGNAL -->
 
     <script
         src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js"
@@ -278,6 +264,7 @@
     </script>
 
     <script>
+
         window.OneSignalDeferred =
             window.OneSignalDeferred || [];
 
@@ -285,7 +272,9 @@
             async function(OneSignal) {
 
                 await OneSignal.init({
-                    appId: "7d85b114-8807-4eea-8a34-3518fc2d76e3",
+
+                    appId:
+                        "7d85b114-8807-4eea-8a34-3518fc2d76e3",
 
                     safari_web_id:
                         "web.onesignal.auto.6a2e4cfc-4f7f-4e0a-b787-2d0bd3e78806",
@@ -293,13 +282,16 @@
                     notifyButton: {
                         enable: false
                     }
+
                 });
 
                 console.log(
                     "OneSignal başarıyla başlatıldı."
                 );
+
             }
         );
+
     </script>
 
 </head>
@@ -308,9 +300,7 @@
 <body>
 
 
-    <!-- ==============================
-         HEADER
-    =============================== -->
+    <!-- HEADER -->
 
     <header class="site-header">
 
@@ -318,12 +308,14 @@
 
             <div class="container header-inner">
 
+
                 <!-- MOBİL MENÜ -->
 
                 <button
                     id="menuBtn"
                     class="menu-btn"
                     aria-label="Menüyü aç"
+                    aria-expanded="false"
                     type="button"
                 >
                     ☰
@@ -333,7 +325,7 @@
                 <!-- LOGO -->
 
                 <a
-                    href="index.html"
+                    href="/"
                     class="brand"
                     aria-label="Haberİsta ana sayfa"
                 >
@@ -378,7 +370,7 @@
 
 
                     <div
-                        id="searchBox"
+                        id="searchPanel"
                         class="search-box"
                     >
 
@@ -390,6 +382,14 @@
                             autocomplete="off"
                         >
 
+                        <button
+                            id="closeSearch"
+                            type="button"
+                            aria-label="Aramayı kapat"
+                        >
+                            ×
+                        </button>
+
                     </div>
 
                 </div>
@@ -399,9 +399,7 @@
         </div>
 
 
-        <!-- ==============================
-             KATEGORİ NAVİGASYONU
-        =============================== -->
+        <!-- NAV -->
 
         <nav
             class="category-nav"
@@ -412,44 +410,44 @@
 
                 <a
                     class="active"
-                    href="index.html"
+                    href="/"
                 >
                     Ana Sayfa
                 </a>
 
-                <a href="son-dakika.html">
+                <a href="/son-dakika.html">
                     Son Dakika
                 </a>
 
-                <a href="gundem.html">
+                <a href="/gundem.html">
                     Gündem
                 </a>
 
-                <a href="ekonomi.html">
+                <a href="/ekonomi.html">
                     Ekonomi
                 </a>
 
-                <a href="spor.html">
+                <a href="/spor.html">
                     Spor
                 </a>
 
-                <a href="magazin.html">
+                <a href="/magazin.html">
                     Magazin
                 </a>
 
-                <a href="dunya.html">
+                <a href="/dunya.html">
                     Dünya
                 </a>
 
-                <a href="teknoloji.html">
+                <a href="/teknoloji.html">
                     Teknoloji
                 </a>
 
-                <a href="saglik.html">
+                <a href="/saglik.html">
                     Sağlık
                 </a>
 
-                <a href="kultur-sanat.html">
+                <a href="/kultur-sanat.html">
                     Kültür Sanat
                 </a>
 
@@ -460,9 +458,59 @@
     </header>
 
 
-    <!-- ==============================
-         PİYASA
-    =============================== -->
+
+    <!-- MOBİL MENÜ -->
+
+    <div
+        id="mobileMenu"
+        class="mobile-menu"
+    >
+
+        <a href="/">
+            Ana Sayfa
+        </a>
+
+        <a href="/son-dakika.html">
+            Son Dakika
+        </a>
+
+        <a href="/gundem.html">
+            Gündem
+        </a>
+
+        <a href="/ekonomi.html">
+            Ekonomi
+        </a>
+
+        <a href="/spor.html">
+            Spor
+        </a>
+
+        <a href="/magazin.html">
+            Magazin
+        </a>
+
+        <a href="/dunya.html">
+            Dünya
+        </a>
+
+        <a href="/teknoloji.html">
+            Teknoloji
+        </a>
+
+        <a href="/saglik.html">
+            Sağlık
+        </a>
+
+        <a href="/kultur-sanat.html">
+            Kültür Sanat
+        </a>
+
+    </div>
+
+
+
+    <!-- PİYASA -->
 
     <section
         class="market-bar"
@@ -512,9 +560,8 @@
     </section>
 
 
-    <!-- ==============================
-         SON DAKİKA
-    =============================== -->
+
+    <!-- SON DAKİKA -->
 
     <div class="breaking-bar">
 
@@ -533,24 +580,20 @@
                 id="breakingNews"
                 class="breaking-news"
                 aria-live="polite"
-            >
-
-                <!-- BUILD TARAFINDAN DOLDURULUR -->
-
-            </div>
+            ></div>
 
         </div>
 
     </div>
 
 
-    <!-- ==============================
-         ANA İÇERİK
-    =============================== -->
+
+    <!-- ANA İÇERİK -->
 
     <main class="container">
 
-        <!-- SEO / ANA BAŞLIK -->
+
+        <!-- BAŞLIK -->
 
         <header class="homepage-heading">
 
@@ -561,9 +604,8 @@
         </header>
 
 
-        <!-- ==============================
-             MANŞET
-        =============================== -->
+
+        <!-- MANŞET -->
 
         <section
             class="hero-slider"
@@ -583,11 +625,7 @@
             <div
                 id="heroMain"
                 class="hero-main"
-            >
-
-                <!-- BUILD TARAFINDAN DOLDURULUR -->
-
-            </div>
+            ></div>
 
 
             <button
@@ -604,18 +642,13 @@
                 id="heroNumbers"
                 class="hero-numbers"
                 aria-label="Manşet haber navigasyonu"
-            >
-
-                <!-- BUILD TARAFINDAN DOLDURULUR -->
-
-            </div>
+            ></div>
 
         </section>
 
 
-        <!-- ==============================
-             SON HABERLER
-        =============================== -->
+
+        <!-- SON HABERLER -->
 
         <section
             class="latest-section"
@@ -643,34 +676,94 @@
             <div
                 id="newsGrid"
                 class="news-grid"
-            >
-
-                <!-- BUILD TARAFINDAN DOLDURULUR -->
-
-            </div>
+            ></div>
 
         </section>
 
 
 
+        <!-- ÇOK OKUNANLAR -->
+
+        <section
+            class="popular-section"
+            aria-labelledby="popularTitle"
+        >
+
+            <div class="section-title">
+
+                <h2 id="popularTitle">
+                    Çok Okunan Haberler
+                </h2>
+
+                <div></div>
+
+            </div>
 
 
-    <!-- ==============================
-         FOOTER
-    =============================== -->
+            <div
+                id="popularNews"
+                class="popular-news"
+            ></div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- DETAY MODALI -->
+
+    <div
+        id="detailOverlay"
+        class="detail-overlay"
+        aria-hidden="true"
+    >
+
+        <div
+            class="detail-modal"
+            role="dialog"
+            aria-modal="true"
+        >
+
+            <button
+                id="detailClose"
+                class="detail-close"
+                type="button"
+                aria-label="Kapat"
+            >
+                ×
+            </button>
+
+
+            <div
+                id="detailContent"
+                class="detail-content"
+            ></div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- FOOTER -->
 
     <footer class="site-footer">
 
         <div class="container footer-inner">
 
 
-            <!-- HAKKIMIZDA -->
-
             <div>
 
                 <div class="footer-logo">
-                    <span>Haber</span>İsta
+
+                    <span>
+                        Haber
+                    </span>İsta
+
                 </div>
+
 
                 <p>
                     Türkiye ve dünyadan güncel haberler.
@@ -679,7 +772,6 @@
             </div>
 
 
-            <!-- KATEGORİLER -->
 
             <div>
 
@@ -687,34 +779,33 @@
                     Kategoriler
                 </h4>
 
-                <a href="gundem.html">
+                <a href="/gundem.html">
                     Gündem
                 </a>
 
-                <a href="ekonomi.html">
+                <a href="/ekonomi.html">
                     Ekonomi
                 </a>
 
-                <a href="spor.html">
+                <a href="/spor.html">
                     Spor
                 </a>
 
-                <a href="dunya.html">
+                <a href="/dunya.html">
                     Dünya
                 </a>
 
-                <a href="teknoloji.html">
+                <a href="/teknoloji.html">
                     Teknoloji
                 </a>
 
-                <a href="saglik.html">
+                <a href="/saglik.html">
                     Sağlık
                 </a>
 
             </div>
 
 
-            <!-- HABERİSTA -->
 
             <div>
 
@@ -722,35 +813,40 @@
                     Haberİsta
                 </h4>
 
-                <a href="hakkimizda.html">
+                <a href="/hakkimizda.html">
                     Hakkımızda
                 </a>
 
-                <a href="iletisim.html">
+                <a href="/iletisim.html">
                     İletişim
                 </a>
 
-                <a href="gizlilik.html">
+                <a href="/gizlilik.html">
                     Gizlilik
                 </a>
 
-                <a href="cerez-politikasi.html">
+                <a href="/cerez-politikasi.html">
                     Çerez Politikası
                 </a>
-            <a href="/kullanim-sartlari.html">Kullanım Şartları</a>
 
-<a href="/sorumluluk-reddi.html">Sorumluluk Reddi</a>
+                <a href="/kullanim-sartlari.html">
+                    Kullanım Şartları
+                </a>
+
+                <a href="/sorumluluk-reddi.html">
+                    Sorumluluk Reddi
+                </a>
 
             </div>
 
 
-            <!-- SOSYAL MEDYA -->
 
             <div class="footer-social">
 
                 <h4>
                     Bizi Takip Et
                 </h4>
+
 
                 <div class="social-links">
 
@@ -763,6 +859,7 @@
                         🎵 TikTok
                     </a>
 
+
                     <a
                         href="https://www.instagram.com/haber_ista"
                         target="_blank"
@@ -771,6 +868,7 @@
                     >
                         📷 Instagram
                     </a>
+
 
                     <a
                         href="https://x.com/HABER_ISTA"
@@ -798,13 +896,963 @@
     </footer>
 
 
-  
 
-    <!-- ==============================
-         JAVASCRIPT
-    =============================== -->
+    <!-- HABER VERİTABANI -->
 
     <script src="js/haberler.js"></script>
+
+
+
+    <!-- ANA SAYFA HABER MOTORU -->
+
+    <script>
+
+    "use strict";
+
+    (() => {
+
+        let heroIndex = 0;
+
+        let heroItems = [];
+
+        let heroTimer = null;
+
+
+        const $ = selector =>
+            document.querySelector(selector);
+
+
+        const $$ = selector =>
+            [...document.querySelectorAll(selector)];
+
+
+        function escapeHTML(value) {
+
+            if (
+                value === undefined ||
+                value === null
+            ) {
+                return "";
+            }
+
+            return String(value)
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+
+        }
+
+
+        function getNewsUrl(haber) {
+
+            if (haber.url) {
+                return haber.url;
+            }
+
+            if (haber.slug) {
+                return "/haber/" + haber.slug;
+            }
+
+            return "#";
+
+        }
+
+
+        function getImage(haber) {
+
+            if (!haber.gorsel) {
+                return "/images/logo.jpeg";
+            }
+
+            let image =
+                String(haber.gorsel);
+
+
+            if (
+                image.startsWith(
+                    "http://"
+                ) ||
+                image.startsWith(
+                    "https://"
+                ) ||
+                image.startsWith("/")
+            ) {
+                return image;
+            }
+
+
+            image =
+                image.replace(
+                    /^\.?\//,
+                    ""
+                );
+
+
+            if (
+                !image.startsWith(
+                    "images/"
+                )
+            ) {
+                image =
+                    "images/" + image;
+            }
+
+
+            return "/" + image;
+
+        }
+
+
+        function renderHero() {
+
+            const container =
+                $("#heroMain");
+
+            if (!container) {
+                return;
+            }
+
+
+            if (
+                !Array.isArray(
+                    window.haberler
+                ) ||
+                !window.haberler.length
+            ) {
+
+                container.innerHTML =
+                    "<p>Haber bulunamadı.</p>";
+
+                return;
+
+            }
+
+
+            heroItems =
+                window.haberler.slice(
+                    0,
+                    Math.min(
+                        5,
+                        window.haberler.length
+                    )
+                );
+
+
+            heroIndex =
+                Math.max(
+                    0,
+                    Math.min(
+                        heroIndex,
+                        heroItems.length - 1
+                    )
+                );
+
+
+            const haber =
+                heroItems[heroIndex];
+
+
+            container.innerHTML = `
+
+                <a
+                    class="hero-card"
+                    href="${escapeHTML(
+                        getNewsUrl(haber)
+                    )}"
+                >
+
+                    <img
+                        src="${escapeHTML(
+                            getImage(haber)
+                        )}"
+                        alt="${escapeHTML(
+                            haber.baslik
+                        )}"
+                        loading="eager"
+                        decoding="async"
+                    >
+
+                    <div class="hero-overlay">
+
+                        <span class="hero-category">
+                            ${escapeHTML(
+                                haber.kategori
+                            )}
+                        </span>
+
+                        <h2>
+                            ${escapeHTML(
+                                haber.baslik
+                            )}
+                        </h2>
+
+                        <p>
+                            ${escapeHTML(
+                                haber.spot
+                            )}
+                        </p>
+
+                        <div class="hero-meta">
+
+                            <span>
+                                ${escapeHTML(
+                                    haber.tarih
+                                )}
+                            </span>
+
+                            <span>
+                                ${escapeHTML(
+                                    haber.saat
+                                )}
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+            `;
+
+
+            renderHeroNumbers();
+
+        }
+
+
+        function renderHeroNumbers() {
+
+            const container =
+                $("#heroNumbers");
+
+            if (!container) {
+                return;
+            }
+
+
+            container.innerHTML =
+                heroItems.map(
+                    (haber, index) => `
+
+                        <button
+                            type="button"
+                            class="${
+                                index === heroIndex
+                                    ? "active"
+                                    : ""
+                            }"
+                            data-hero-index="${index}"
+                            aria-label="${
+                                index + 1
+                            }. manşet"
+                        >
+                            ${index + 1}
+                        </button>
+
+                    `
+                ).join("");
+
+
+            $$(
+                "[data-hero-index]"
+            ).forEach(
+                button => {
+
+                    button.addEventListener(
+                        "click",
+                        () => {
+
+                            heroIndex =
+                                Number(
+                                    button.dataset
+                                        .heroIndex
+                                );
+
+                            renderHero();
+
+                            startHeroTimer();
+
+                        }
+                    );
+
+                }
+            );
+
+        }
+
+
+        function nextHero() {
+
+            if (
+                !heroItems.length
+            ) {
+                return;
+            }
+
+
+            heroIndex =
+                (
+                    heroIndex + 1
+                ) %
+                heroItems.length;
+
+
+            renderHero();
+
+        }
+
+
+        function previousHero() {
+
+            if (
+                !heroItems.length
+            ) {
+                return;
+            }
+
+
+            heroIndex =
+                (
+                    heroIndex -
+                    1 +
+                    heroItems.length
+                ) %
+                heroItems.length;
+
+
+            renderHero();
+
+        }
+
+
+        function startHeroTimer() {
+
+            clearInterval(
+                heroTimer
+            );
+
+
+            heroTimer =
+                setInterval(
+                    nextHero,
+                    6000
+                );
+
+        }
+
+
+        function renderNews(newsList) {
+
+            const grid =
+                $("#newsGrid");
+
+            if (!grid) {
+                return;
+            }
+
+
+            const list =
+                Array.isArray(newsList)
+                    ? newsList
+                    : [];
+
+
+            if (!list.length) {
+
+                grid.innerHTML = `
+
+                    <div class="no-news">
+
+                        <h3>
+                            Haber bulunamadı
+                        </h3>
+
+                        <p>
+                            Aramanızla eşleşen bir haber bulunamadı.
+                        </p>
+
+                    </div>
+
+                `;
+
+                updateSearchInfo(
+                    0
+                );
+
+                return;
+
+            }
+
+
+            grid.innerHTML =
+                list.map(
+                    haber => `
+
+                        <article
+                            class="news-card"
+                            data-id="${escapeHTML(
+                                haber.id
+                            )}"
+                        >
+
+                            <a
+                                href="${escapeHTML(
+                                    getNewsUrl(haber)
+                                )}"
+                                class="news-card-link"
+                            >
+
+                                <div class="news-image">
+
+                                    <img
+                                        src="${escapeHTML(
+                                            getImage(haber)
+                                        )}"
+                                        alt="${escapeHTML(
+                                            haber.baslik
+                                        )}"
+                                        loading="lazy"
+                                        decoding="async"
+                                    >
+
+                                </div>
+
+
+                                <div class="news-card-content">
+
+                                    <span class="news-category">
+
+                                        ${escapeHTML(
+                                            haber.kategori
+                                        )}
+
+                                    </span>
+
+
+                                    <h3>
+
+                                        ${escapeHTML(
+                                            haber.baslik
+                                        )}
+
+                                    </h3>
+
+
+                                    <p>
+
+                                        ${escapeHTML(
+                                            haber.spot
+                                        )}
+
+                                    </p>
+
+
+                                    <div class="news-meta">
+
+                                        <span>
+                                            ${escapeHTML(
+                                                haber.tarih
+                                            )}
+                                        </span>
+
+                                        <span>
+                                            ${escapeHTML(
+                                                haber.saat
+                                            )}
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </a>
+
+                        </article>
+
+                    `
+                ).join("");
+
+
+            updateSearchInfo(
+                list.length
+            );
+
+
+            if (
+                window.HaberIsta &&
+                typeof window.HaberIsta.refresh ===
+                    "function"
+            ) {
+
+                setTimeout(
+                    () => {
+
+                        /*
+                         * app.js içindeki image/reveal
+                         * sistemlerini yeniden çalıştır.
+                         */
+
+                        window.HaberIsta.refresh();
+
+                    },
+                    0
+                );
+
+            }
+
+        }
+
+
+        function updateSearchInfo(
+            count
+        ) {
+
+            const info =
+                $("#searchResultInfo");
+
+            if (!info) {
+                return;
+            }
+
+
+            info.textContent =
+                `${count} haber gösteriliyor.`;
+
+        }
+
+
+        function renderPopular() {
+
+            const container =
+                $("#popularNews");
+
+            if (!container) {
+                return;
+            }
+
+
+            const list =
+                window.haberler
+                    .slice()
+                    .sort(
+                        (
+                            a,
+                            b
+                        ) =>
+                            (
+                                Number(
+                                    b.goruntulenme
+                                ) || 0
+                            ) -
+                            (
+                                Number(
+                                    a.goruntulenme
+                                ) || 0
+                            )
+                    )
+                    .slice(
+                        0,
+                        5
+                    );
+
+
+            container.innerHTML =
+                list.map(
+                    (
+                        haber,
+                        index
+                    ) => `
+
+                        <a
+                            href="${escapeHTML(
+                                getNewsUrl(haber)
+                            )}"
+                            class="popular-item"
+                            data-id="${escapeHTML(
+                                haber.id
+                            )}"
+                        >
+
+                            <span class="popular-number">
+                                ${index + 1}
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    ${escapeHTML(
+                                        haber.baslik
+                                    )}
+                                </strong>
+
+                                <small>
+                                    ${escapeHTML(
+                                        haber.kategori
+                                    )}
+                                    ·
+                                    ${escapeHTML(
+                                        haber.tarih
+                                    )}
+                                </small>
+
+                            </div>
+
+                        </a>
+
+                    `
+                ).join("");
+
+        }
+
+
+        function renderBreaking() {
+
+            const container =
+                $("#breakingNews");
+
+            if (!container) {
+                return;
+            }
+
+
+            const list =
+                window.haberler
+                    .slice(
+                        0,
+                        6
+                    );
+
+
+            container.innerHTML =
+                list.map(
+                    haber => `
+
+                        <a
+                            href="${escapeHTML(
+                                getNewsUrl(haber)
+                            )}"
+                        >
+                            ${escapeHTML(
+                                haber.baslik
+                            )}
+                        </a>
+
+                    `
+                ).join(
+                    '<span class="breaking-separator">•</span>'
+                );
+
+        }
+
+
+        function filterCategory(
+            category
+        ) {
+
+            if (
+                !Array.isArray(
+                    window.haberler
+                )
+            ) {
+                return;
+            }
+
+
+            const results =
+                window.haberler.filter(
+                    haber =>
+                        String(
+                            haber.kategori
+                        ).toLocaleLowerCase(
+                            "tr-TR"
+                        ) ===
+                        String(
+                            category
+                        ).toLocaleLowerCase(
+                            "tr-TR"
+                        )
+                );
+
+
+            renderNews(
+                results
+            );
+
+        }
+
+
+        function openDetail(
+            id
+        ) {
+
+            const haber =
+                window.haberler.find(
+                    item =>
+                        Number(
+                            item.id
+                        ) ===
+                        Number(id)
+                );
+
+
+            if (!haber) {
+                return;
+            }
+
+
+            /*
+             * Haber kartlarına doğrudan link verdik.
+             * Modal sistemi varsa onu da destekliyoruz.
+             */
+
+            const overlay =
+                $("#detailOverlay");
+
+            const content =
+                $("#detailContent");
+
+
+            if (
+                !overlay ||
+                !content
+            ) {
+
+                window.location.href =
+                    getNewsUrl(
+                        haber
+                    );
+
+                return;
+
+            }
+
+
+            content.innerHTML = `
+
+                <img
+                    src="${escapeHTML(
+                        getImage(haber)
+                    )}"
+                    alt="${escapeHTML(
+                        haber.baslik
+                    )}"
+                >
+
+                <span>
+                    ${escapeHTML(
+                        haber.kategori
+                    )}
+                </span>
+
+                <h2>
+                    ${escapeHTML(
+                        haber.baslik
+                    )}
+                </h2>
+
+                <p>
+                    ${escapeHTML(
+                        haber.spot
+                    )}
+                </p>
+
+                <a
+                    href="${escapeHTML(
+                        getNewsUrl(haber)
+                    )}"
+                >
+                    Haberin tamamını oku →
+                </a>
+
+            `;
+
+
+            overlay.classList.add(
+                "open"
+            );
+
+            overlay.setAttribute(
+                "aria-hidden",
+                "false"
+            );
+
+            document.body.classList.add(
+                "detail-open"
+            );
+
+        }
+
+
+        /*
+         * app.js'nin kullandığı global fonksiyonlar.
+         */
+
+        window.renderHero =
+            renderHero;
+
+        window.renderNews =
+            renderNews;
+
+        window.renderPopular =
+            renderPopular;
+
+        window.renderBreaking =
+            renderBreaking;
+
+        window.filterCategory =
+            filterCategory;
+
+        window.openDetail =
+            openDetail;
+
+
+        /*
+         * Sayfa hazır olduğunda haberleri bas.
+         */
+
+        function initHomepage() {
+
+            if (
+                !Array.isArray(
+                    window.haberler
+                )
+            ) {
+
+                console.error(
+                    "Haberİsta: haberler dizisi bulunamadı."
+                );
+
+                return;
+
+            }
+
+
+            console.log(
+                "Haberİsta: Ana sayfa haber motoru başlatıldı.",
+                window.haberler.length,
+                "haber"
+            );
+
+
+            renderHero();
+
+            renderNews(
+                window.haberler
+            );
+
+            renderPopular();
+
+            renderBreaking();
+
+            startHeroTimer();
+
+
+            $("#heroNext")?.addEventListener(
+                "click",
+                () => {
+
+                    nextHero();
+
+                    startHeroTimer();
+
+                }
+            );
+
+
+            $("#heroPrev")?.addEventListener(
+                "click",
+                () => {
+
+                    previousHero();
+
+                    startHeroTimer();
+
+                }
+            );
+
+
+            /*
+             * Bildirim butonu
+             */
+
+            $("#notificationBtn")?.addEventListener(
+                "click",
+                async () => {
+
+                    try {
+
+                        if (
+                            window.OneSignalDeferred
+                        ) {
+
+                            OneSignalDeferred.push(
+                                async function(
+                                    OneSignal
+                                ) {
+
+                                    try {
+
+                                        await OneSignal
+                                            .Notifications
+                                            .requestPermission();
+
+                                    } catch (error) {
+
+                                        console.warn(
+                                            "Bildirim izni alınamadı:",
+                                            error
+                                        );
+
+                                    }
+
+                                }
+                            );
+
+                        }
+
+                    } catch (error) {
+
+                        console.warn(
+                            "Bildirim sistemi:",
+                            error
+                        );
+
+                    }
+
+                }
+            );
+
+        }
+
+
+        if (
+            document.readyState ===
+            "loading"
+        ) {
+
+            document.addEventListener(
+                "DOMContentLoaded",
+                initHomepage,
+                {
+                    once: true
+                }
+            );
+
+        } else {
+
+            initHomepage();
+
+        }
+
+    })();
+
+    </script>
+
+
+
+    <!-- APP -->
 
     <script src="js/app.js"></script>
 
