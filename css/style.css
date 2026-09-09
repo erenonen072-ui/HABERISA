@@ -2539,3 +2539,207 @@ body.dark-mode .no-news {
         min-width: 40px !important;
     }
 }
+/* =========================================================
+   HABERİSTA — YENİ KOMPAKT MANŞET
+   ========================================================= */
+
+.hero-section {
+    width: 100% !important;
+    max-width: 1120px !important;
+    margin: 24px auto 28px !important;
+    padding: 0 10px !important;
+}
+
+/* Ana manşet kutusu */
+.hero-main {
+    position: relative !important;
+    width: 100% !important;
+    height: 270px !important;
+    min-height: 270px !important;
+    max-height: 270px !important;
+    border-radius: 16px !important;
+    overflow: hidden !important;
+    background: #11151c !important;
+    box-shadow: 0 12px 35px rgba(0,0,0,.12) !important;
+}
+
+/* Görsel */
+.hero-slide,
+.hero-slide-link {
+    width: 100% !important;
+    height: 270px !important;
+    min-height: 270px !important;
+    max-height: 270px !important;
+}
+
+.hero-image {
+    width: 100% !important;
+    height: 270px !important;
+    min-height: 270px !important;
+    max-height: 270px !important;
+    object-fit: cover !important;
+    display: block !important;
+}
+
+/* Görselin üzerine daha kaliteli geçiş */
+.hero-main::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.72) 0%,
+            rgba(0,0,0,.40) 38%,
+            rgba(0,0,0,.08) 75%,
+            rgba(0,0,0,.18) 100%
+        );
+    z-index: 1;
+}
+
+/* Manşet yazı alanı */
+.hero-overlay {
+    position: absolute !important;
+    z-index: 2 !important;
+    inset: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-end !important;
+    align-items: flex-start !important;
+    padding: 28px 34px !important;
+}
+
+/* Kategori */
+.hero-category {
+    display: inline-flex !important;
+    align-items: center !important;
+    width: fit-content !important;
+    margin-bottom: 10px !important;
+    padding: 6px 10px !important;
+    border-radius: 5px !important;
+    background: #e11d48 !important;
+    color: #fff !important;
+    font-size: 10px !important;
+    line-height: 1 !important;
+    font-weight: 900 !important;
+    text-transform: uppercase !important;
+    letter-spacing: .3px !important;
+}
+
+/* Manşet başlığı */
+.hero-overlay h2 {
+    max-width: 620px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: #fff !important;
+    font-size: clamp(23px, 3vw, 34px) !important;
+    line-height: 1.08 !important;
+    font-weight: 900 !important;
+    letter-spacing: -.7px !important;
+    text-shadow: 0 2px 12px rgba(0,0,0,.35) !important;
+}
+
+/* 1-20 numaralar */
+.hero-numbers {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    margin-top: 12px !important;
+    padding: 0 !important;
+}
+
+.hero-number {
+    width: 30px !important;
+    height: 30px !important;
+    min-width: 30px !important;
+    border: 1px solid #dfe3e8 !important;
+    border-radius: 8px !important;
+    background: #fff !important;
+    color: #20242a !important;
+    font-size: 11px !important;
+    font-weight: 850 !important;
+    cursor: pointer !important;
+    transition: .2s ease !important;
+}
+
+.hero-number:hover {
+    background: #e11d48 !important;
+    border-color: #e11d48 !important;
+    color: #fff !important;
+    transform: translateY(-2px) !important;
+}
+
+.hero-number.active {
+    background: #e11d48 !important;
+    border-color: #e11d48 !important;
+    color: #fff !important;
+}
+
+
+/* =========================================================
+   MANŞET MOBİL
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .hero-section {
+        margin: 16px auto 22px !important;
+        padding: 0 8px !important;
+    }
+
+    .hero-main,
+    .hero-slide,
+    .hero-slide-link,
+    .hero-image {
+        height: 205px !important;
+        min-height: 205px !important;
+        max-height: 205px !important;
+    }
+
+    .hero-overlay {
+        padding: 20px !important;
+    }
+
+    .hero-overlay h2 {
+        max-width: 92% !important;
+        font-size: 22px !important;
+        line-height: 1.08 !important;
+    }
+
+    .hero-category {
+        margin-bottom: 7px !important;
+        padding: 5px 8px !important;
+        font-size: 9px !important;
+    }
+
+    .hero-numbers {
+        justify-content: flex-start !important;
+        overflow-x: auto !important;
+        padding-bottom: 5px !important;
+    }
+
+    .hero-number {
+        flex-shrink: 0 !important;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .hero-main,
+    .hero-slide,
+    .hero-slide-link,
+    .hero-image {
+        height: 180px !important;
+        min-height: 180px !important;
+        max-height: 180px !important;
+    }
+
+    .hero-overlay {
+        padding: 16px !important;
+    }
+
+    .hero-overlay h2 {
+        font-size: 19px !important;
+    }
+}
