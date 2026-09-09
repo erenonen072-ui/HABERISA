@@ -1711,3 +1711,8 @@ haberler.forEach(function (haber) {
         haber.url
     );
 });
+/* =========================================================
+   HABERİSTA - GLOBAL HABER VERİSİ
+========================================================= */
+
+window.haberler = haberler;
