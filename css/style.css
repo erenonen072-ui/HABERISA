@@ -2743,3 +2743,50 @@ body.dark-mode .no-news {
         font-size: 19px !important;
     }
 }
+/* =========================================================
+   HABERİSTA — ÜST KATEGORİ MENÜSÜ
+   ========================================================= */
+
+.main-nav a {
+    position: relative !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    height: 42px !important;
+    padding: 0 13px !important;
+    color: #34383f !important;
+    font-size: 13px !important;
+    font-weight: 750 !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+    transition: color .2s ease !important;
+}
+
+.main-nav a::after {
+    content: "";
+    position: absolute;
+    left: 13px;
+    right: 13px;
+    bottom: 2px;
+    height: 2px;
+    border-radius: 10px;
+    background: #e11d48;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform .2s ease;
+}
+
+.main-nav a:hover {
+    color: #e11d48 !important;
+}
+
+.main-nav a:hover::after {
+    transform: scaleX(1);
+}
+
+.main-nav a.active {
+    color: #e11d48 !important;
+}
+
+.main-nav a.active::after {
+    transform: scaleX(1);
+}
