@@ -1570,3 +1570,516 @@ table {
     overflow-x: auto;
     display: block;
 }
+/* =========================================================
+   HABERİSTA — GÜVENLİ PROFESYONEL TASARIM EKİ
+   Mevcut CSS'nin altına eklenmelidir.
+========================================================= */
+
+/* Genel */
+html {
+    overflow-x: hidden;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/* =========================================================
+   SON DAKİKA
+========================================================= */
+
+.breaking-bar {
+    margin: 18px auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+}
+
+.breaking-inner {
+    min-height: 54px;
+    display: flex;
+    align-items: center;
+}
+
+.breaking-title {
+    min-height: 54px;
+    padding: 0 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e30613;
+    color: #fff;
+    font-weight: 800;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+#breakingNews {
+    min-width: 0;
+    overflow: hidden;
+}
+
+/* Son dakika kartları */
+#breakingNews a,
+#breakingNews .breaking-card {
+    transition: all .2s ease;
+}
+
+#breakingNews a:hover,
+#breakingNews .breaking-card:hover {
+    color: #e30613;
+}
+
+/* =========================================================
+   MANŞET
+========================================================= */
+
+.hero-slider {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+}
+
+#heroMain {
+    overflow: hidden;
+    border-radius: 16px;
+}
+
+#heroMain img {
+    transition: transform .5s ease;
+}
+
+#heroMain:hover img {
+    transform: scale(1.025);
+}
+
+/* Manşet numaraları */
+#heroNumbers {
+    z-index: 20;
+}
+
+#heroNumbers button {
+    transition: all .2s ease;
+    cursor: pointer;
+}
+
+#heroNumbers button:hover {
+    transform: translateY(-2px);
+}
+
+#heroNumbers button.active {
+    background: #e30613;
+    color: white;
+    border-color: #e30613;
+}
+
+/* Önceki / sonraki */
+#heroPrev,
+#heroNext {
+    z-index: 20;
+    transition: all .2s ease;
+}
+
+#heroPrev:hover,
+#heroNext:hover {
+    background: #e30613;
+    color: white;
+    transform: translateY(-50%) scale(1.05);
+}
+
+/* =========================================================
+   HABER KARTLARI
+========================================================= */
+
+#newsGrid {
+    align-items: stretch;
+}
+
+#newsGrid > *,
+.category-grid > * {
+    min-width: 0;
+}
+
+.news-card {
+    overflow: hidden;
+    border-radius: 14px;
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .10);
+}
+
+.news-card img {
+    transition: transform .45s ease;
+}
+
+.news-card:hover img {
+    transform: scale(1.035);
+}
+
+/* =========================================================
+   KATEGORİLER
+========================================================= */
+
+.category-section {
+    margin-top: 42px;
+}
+
+.category-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 16px;
+}
+
+.category-header h2 {
+    position: relative;
+    font-weight: 800;
+}
+
+.category-header a {
+    color: #e30613;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.category-header a:hover {
+    text-decoration: underline;
+}
+
+/* =========================================================
+   MOBİL
+========================================================= */
+
+@media (max-width: 768px) {
+
+    /* Sayfa kenar boşlukları */
+    .breaking-bar,
+    .hero-slider,
+    #newsGrid,
+    .category-section,
+    .homepage-heading {
+        width: calc(100% - 24px);
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Header */
+    header {
+        width: 100%;
+    }
+
+    /* Navigasyon taşmasın */
+    nav {
+        overflow: hidden;
+    }
+
+    nav ul {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    nav ul::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Piyasa */
+    .market-bar {
+        overflow: hidden;
+    }
+
+    #marketItems {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        white-space: nowrap;
+    }
+
+    #marketItems::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Son dakika */
+    .breaking-bar {
+        margin-top: 12px;
+        margin-bottom: 14px;
+        border-radius: 10px;
+    }
+
+    .breaking-inner {
+        min-height: 48px;
+    }
+
+    .breaking-title {
+        min-height: 48px;
+        padding: 0 13px;
+        font-size: 11px;
+    }
+
+    #breakingNews {
+        overflow-x: auto;
+        overflow-y: hidden;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    #breakingNews::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Manşet */
+    .hero-slider {
+        border-radius: 13px;
+    }
+
+    #heroMain {
+        min-height: 310px;
+        height: 310px;
+        border-radius: 13px;
+    }
+
+    #heroMain img {
+        width: 100%;
+        height: 310px;
+        object-fit: cover;
+    }
+
+    .hero-content {
+        padding: 75px 17px 45px;
+    }
+
+    .hero-content h2 {
+        font-size: 21px;
+        line-height: 1.18;
+    }
+
+    .hero-content p {
+        font-size: 12px;
+        line-height: 1.45;
+    }
+
+    #heroPrev,
+    #heroNext {
+        width: 34px;
+        height: 34px;
+    }
+
+    #heroPrev {
+        left: 8px;
+    }
+
+    #heroNext {
+        right: 8px;
+    }
+
+    #heroNumbers {
+        bottom: 9px;
+        gap: 5px;
+    }
+
+    #heroNumbers button {
+        width: 29px;
+        height: 29px;
+        font-size: 11px;
+    }
+
+    /* Haberler */
+    #newsGrid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .news-card {
+        border-radius: 11px;
+    }
+
+    .news-card img {
+        height: 145px;
+    }
+
+    /* Kategori */
+    .category-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+}
+
+/* =========================================================
+   KÜÇÜK TELEFONLAR
+========================================================= */
+
+@media (max-width: 500px) {
+
+    /* Header */
+    .header-inner {
+        gap: 7px;
+    }
+
+    /* Arama alanı */
+    #searchInput {
+        max-width: 150px;
+    }
+
+    /* Manşet */
+    #heroMain,
+    #heroMain img {
+        height: 285px;
+        min-height: 285px;
+    }
+
+    .hero-content {
+        padding: 65px 14px 43px;
+    }
+
+    .hero-content h2 {
+        font-size: 19px;
+    }
+
+    /* Haberleri mobilde daha okunaklı yap */
+    #newsGrid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .news-card {
+        display: grid;
+        grid-template-columns: 115px minmax(0, 1fr);
+        min-height: 125px;
+    }
+
+    .news-card img {
+        width: 115px;
+        height: 125px;
+        object-fit: cover;
+    }
+
+    .news-card-content {
+        padding: 11px;
+    }
+
+    .news-card h3 {
+        font-size: 14px;
+        line-height: 1.3;
+    }
+
+    /* Kategori kartları */
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Başlıklar */
+    .homepage-heading {
+        margin-top: 20px;
+        margin-bottom: 12px;
+    }
+
+    .homepage-heading h1,
+    .homepage-heading h2 {
+        font-size: 20px;
+    }
+
+    .category-header h2 {
+        font-size: 19px;
+    }
+
+    /* Footer */
+    .footer-inner {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================================================
+   380PX VE ALTI
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .breaking-title {
+        padding: 0 10px;
+        font-size: 10px;
+    }
+
+    #heroMain,
+    #heroMain img {
+        height: 260px;
+        min-height: 260px;
+    }
+
+    .hero-content h2 {
+        font-size: 18px;
+    }
+
+    .hero-content p {
+        font-size: 11px;
+    }
+
+    #heroNumbers button {
+        width: 26px;
+        height: 26px;
+        font-size: 10px;
+    }
+
+    .news-card {
+        grid-template-columns: 105px minmax(0, 1fr);
+    }
+
+    .news-card img {
+        width: 105px;
+        height: 120px;
+    }
+
+    .news-card h3 {
+        font-size: 13px;
+    }
+}
+
+/* =========================================================
+   DOKUNMATİK EKRANLAR
+========================================================= */
+
+@media (hover: none) {
+
+    .news-card:hover {
+        transform: none;
+    }
+
+    .news-card:hover img {
+        transform: none;
+    }
+
+    #heroMain:hover img {
+        transform: none;
+    }
+}
+
+/* =========================================================
+   PERFORMANS / GÖRSEL KALİTE
+========================================================= */
+
+img {
+    image-rendering: auto;
+}
+
+a,
+button {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* =========================================================
+   YATAY TAŞMA KORUMASI
+========================================================= */
+
+#heroMain,
+#newsGrid,
+.category-grid,
+.breaking-inner,
+.market-bar,
+footer {
+    max-width: 100%;
+}
