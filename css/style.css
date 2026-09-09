@@ -1715,3 +1715,375 @@ body.dark-mode .no-news {
     background: #111827;
     border-color: #263244;
 }
+/* =========================================================
+   HABERİSTA — SON DAKİKA / MANŞET / HABER GÖRSELLERİ
+   ========================================================= */
+
+/* SON DAKİKA BANDI */
+.breaking-bar {
+    height: 38px !important;
+    min-height: 38px !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+}
+
+.breaking-inner {
+    height: 38px !important;
+    min-height: 38px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+}
+
+.breaking-label {
+    height: 24px !important;
+    min-width: 92px !important;
+    padding: 0 10px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 12px !important;
+    font-weight: 900 !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+}
+
+.breaking-label::before {
+    width: 6px !important;
+    height: 6px !important;
+    margin-right: 6px !important;
+}
+
+.breaking-track {
+    height: 38px !important;
+    display: flex !important;
+    align-items: center !important;
+    overflow: hidden !important;
+    flex: 1 !important;
+}
+
+.breaking-track-inner {
+    height: 38px !important;
+    display: flex !important;
+    align-items: center !important;
+    width: max-content !important;
+    animation: breakingMove 38s linear infinite !important;
+}
+
+.breaking-item {
+    display: inline-flex !important;
+    align-items: center !important;
+    height: 38px !important;
+    margin-right: 34px !important;
+    color: #fff !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    white-space: nowrap !important;
+    text-decoration: none !important;
+}
+
+.breaking-item:hover {
+    color: #fff !important;
+    opacity: .8 !important;
+}
+
+@keyframes breakingMove {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+
+/* =========================================================
+   MANŞET — KISA VE KOMPAKT
+   ========================================================= */
+
+.hero-section {
+    margin-top: 18px !important;
+    margin-bottom: 22px !important;
+}
+
+.hero-main {
+    height: 250px !important;
+    min-height: 250px !important;
+    max-height: 250px !important;
+    border-radius: 14px !important;
+    overflow: hidden !important;
+}
+
+.hero-slide,
+.hero-slide-link {
+    height: 250px !important;
+    min-height: 250px !important;
+}
+
+.hero-image {
+    width: 100% !important;
+    height: 250px !important;
+    object-fit: cover !important;
+}
+
+.hero-overlay {
+    padding: 22px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-end !important;
+}
+
+.hero-category {
+    font-size: 11px !important;
+    font-weight: 800 !important;
+    margin-bottom: 7px !important;
+}
+
+.hero-overlay h2 {
+    max-width: 700px !important;
+    margin: 0 !important;
+    font-size: clamp(20px, 2.4vw, 30px) !important;
+    line-height: 1.08 !important;
+    font-weight: 850 !important;
+    letter-spacing: -.5px !important;
+}
+
+
+/* 1-20 MANŞET NUMARALARI */
+.hero-numbers {
+    margin-top: 9px !important;
+    gap: 5px !important;
+}
+
+.hero-number {
+    width: 30px !important;
+    height: 30px !important;
+    min-width: 30px !important;
+    border-radius: 7px !important;
+    font-size: 11px !important;
+    font-weight: 800 !important;
+}
+
+
+/* =========================================================
+   HABER KARTLARI
+   ========================================================= */
+
+.news-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 16px !important;
+}
+
+.news-card {
+    height: 235px !important;
+    min-height: 235px !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+}
+
+.news-card-link {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+    text-decoration: none !important;
+}
+
+.news-card-image {
+    width: 100% !important;
+    height: 175px !important;
+    min-height: 175px !important;
+    overflow: hidden !important;
+    background: #e5e7eb !important;
+}
+
+.news-card-image img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    transition: transform .35s ease !important;
+}
+
+.news-card:hover .news-card-image img {
+    transform: scale(1.04) !important;
+}
+
+.news-card-content {
+    height: 60px !important;
+    min-height: 60px !important;
+    padding: 9px 11px !important;
+    display: flex !important;
+    align-items: center !important;
+    background: #fff !important;
+}
+
+.news-card-content h3 {
+    margin: 0 !important;
+    display: -webkit-box !important;
+    -webkit-box-orient: vertical !important;
+    -webkit-line-clamp: 2 !important;
+    overflow: hidden !important;
+    font-size: 14px !important;
+    line-height: 1.22 !important;
+    font-weight: 750 !important;
+}
+
+
+/* =========================================================
+   MOBİL
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .breaking-bar,
+    .breaking-inner,
+    .breaking-track,
+    .breaking-track-inner {
+        height: 36px !important;
+    }
+
+    .breaking-label {
+        min-width: 82px !important;
+        height: 23px !important;
+        font-size: 10px !important;
+    }
+
+    .breaking-item {
+        height: 36px !important;
+        font-size: 12px !important;
+        margin-right: 25px !important;
+    }
+
+    .hero-main,
+    .hero-slide,
+    .hero-slide-link,
+    .hero-image {
+        height: 210px !important;
+        min-height: 210px !important;
+        max-height: 210px !important;
+    }
+
+    .hero-overlay {
+        padding: 16px !important;
+    }
+
+    .hero-overlay h2 {
+        font-size: 21px !important;
+        line-height: 1.1 !important;
+    }
+
+    .news-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 11px !important;
+    }
+
+    .news-card {
+        height: 205px !important;
+        min-height: 205px !important;
+    }
+
+    .news-card-image {
+        height: 150px !important;
+        min-height: 150px !important;
+    }
+
+    .news-card-content {
+        height: 55px !important;
+        min-height: 55px !important;
+        padding: 7px 9px !important;
+    }
+
+    .news-card-content h3 {
+        font-size: 12px !important;
+    }
+
+    .hero-numbers {
+        overflow-x: auto !important;
+        flex-wrap: nowrap !important;
+        padding-bottom: 3px !important;
+    }
+
+    .hero-number {
+        flex-shrink: 0 !important;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .breaking-label {
+        min-width: 76px !important;
+        padding: 0 7px !important;
+        font-size: 9px !important;
+    }
+
+    .breaking-item {
+        font-size: 11px !important;
+    }
+
+    .hero-main,
+    .hero-slide,
+    .hero-slide-link,
+    .hero-image {
+        height: 190px !important;
+        min-height: 190px !important;
+        max-height: 190px !important;
+    }
+
+    .hero-overlay h2 {
+        font-size: 18px !important;
+    }
+
+    .news-grid {
+        gap: 9px !important;
+    }
+
+    .news-card {
+        height: 180px !important;
+        min-height: 180px !important;
+    }
+
+    .news-card-image {
+        height: 130px !important;
+        min-height: 130px !important;
+    }
+
+    .news-card-content {
+        height: 50px !important;
+        min-height: 50px !important;
+    }
+
+    .news-card-content h3 {
+        font-size: 11.5px !important;
+    }
+}
+
+
+/* =========================================================
+   GÖRSEL YÜKLENEMEDİĞİNDE
+   ========================================================= */
+
+.news-card-image img,
+.hero-image {
+    background: #eef0f3 !important;
+}
+
+.news-card-image {
+    position: relative !important;
+}
+
+.news-card-image img[src=""],
+.news-card-image img:not([src]) {
+    display: none !important;
+}
+
+
+/* DARK MODE */
+.dark-mode .news-card-content {
+    background: #151922 !important;
+}
+
+.dark-mode .news-card-content h3 {
+    color: #fff !important;
+}
