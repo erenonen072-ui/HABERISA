@@ -939,3 +939,152 @@ a {
         margin-top: 28px;
     }
 }
+/* =========================================
+   HABERİSTA - KOMPAKT MANŞET
+   Mevcut .hero-slider yapısı için
+========================================= */
+
+.hero-slider {
+    height: 275px !important;
+    min-height: 275px !important;
+    max-height: 275px !important;
+    border-radius: 10px !important;
+}
+
+/* Manşet görseli */
+.hero-slider .hero-main,
+.hero-slider .hero-slide-link,
+.hero-slider .hero-image {
+    height: 275px !important;
+    min-height: 275px !important;
+    max-height: 275px !important;
+}
+
+/* Yazı alanı */
+.hero-slider .hero-content {
+    left: 28px !important;
+    right: 120px !important;
+    bottom: 25px !important;
+    max-width: 560px !important;
+}
+
+/* Kategori */
+.hero-slider .hero-category {
+    font-size: 10px !important;
+    padding: 4px 8px !important;
+    margin-bottom: 7px !important;
+}
+
+/* Başlık */
+.hero-slider .hero-content h1 {
+    font-size: 25px !important;
+    line-height: 1.15 !important;
+    letter-spacing: -.3px !important;
+    margin: 0 !important;
+}
+
+/* Spot */
+.hero-slider .hero-content p {
+    font-size: 12px !important;
+    line-height: 1.4 !important;
+    margin-top: 7px !important;
+    max-width: 500px !important;
+
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+}
+
+/* Tarih */
+.hero-slider .hero-meta {
+    font-size: 10px !important;
+    margin-top: 7px !important;
+}
+
+
+/* Oklar */
+.hero-slider .hero-arrow {
+    width: 34px !important;
+    height: 34px !important;
+    font-size: 23px !important;
+}
+
+.hero-slider .hero-prev {
+    left: 10px !important;
+}
+
+.hero-slider .hero-next {
+    right: 10px !important;
+}
+
+
+/* 1-20 numaraları */
+.hero-slider .hero-numbers {
+    gap: 4px !important;
+}
+
+.hero-slider .hero-number {
+    width: 25px !important;
+    height: 25px !important;
+    min-width: 25px !important;
+    font-size: 9px !important;
+}
+
+
+/* =========================================
+   TELEFON
+========================================= */
+
+@media (max-width: 600px) {
+
+    .hero-slider {
+        height: 215px !important;
+        min-height: 215px !important;
+        max-height: 215px !important;
+    }
+
+    .hero-slider .hero-main,
+    .hero-slider .hero-slide-link,
+    .hero-slider .hero-image {
+        height: 215px !important;
+        min-height: 215px !important;
+        max-height: 215px !important;
+    }
+
+    .hero-slider .hero-content {
+        left: 16px !important;
+        right: 16px !important;
+        bottom: 17px !important;
+        max-width: none !important;
+    }
+
+    .hero-slider .hero-content h1 {
+        font-size: 19px !important;
+        line-height: 1.15 !important;
+    }
+
+    .hero-slider .hero-content p {
+        display: none !important;
+    }
+
+    .hero-slider .hero-category {
+        font-size: 8px !important;
+        padding: 3px 6px !important;
+    }
+
+    .hero-slider .hero-meta {
+        font-size: 9px !important;
+    }
+
+    .hero-slider .hero-arrow {
+        width: 30px !important;
+        height: 30px !important;
+    }
+
+    .hero-slider .hero-number {
+        width: 23px !important;
+        height: 23px !important;
+        min-width: 23px !important;
+    }
+}
