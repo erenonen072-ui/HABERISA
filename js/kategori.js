@@ -1,157 +1,232 @@
 "use strict";
 
 /* =========================================================
-   HABERİSTA - KATEGORİ HABERLERİ
+   HABERİSTA
+   KATEGORİ SAYFASI SİSTEMİ
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    const container = document.getElementById("kategori-listesi");
+    console.log("HABERİSTA kategori sistemi başlatıldı.");
 
-    if (!container) {
-        console.error("kategori-listesi bulunamadı.");
-        return;
-    }
+    /* =====================================================
+       HABERLER KONTROL
+    ===================================================== */
 
-    if (!Array.isArray(window.haberler)) {
-        console.error("haberler.js yüklenmemiş.");
-        container.innerHTML = `
-            <div class="kategori-bos">
-                <h2>Haberler yüklenemedi</h2>
-                <p>haberler.js dosyasını kontrol edin.</p>
-            </div>
-        `;
+    if (!window.haberler || !Array.isArray(window.haberler)) {
+
+        console.error("haberler.js yüklenemedi.");
+
         return;
     }
 
     /* =====================================================
-       BODY'DEN KATEGORİYİ AL
+       AKTİF KATEGORİ
     ===================================================== */
 
-    const aktifKategori = document.body.dataset.kategori;
+    const aktifKategori =
+        document.body.getAttribute("data-kategori");
 
     if (!aktifKategori) {
-        console.error("body üzerinde data-kategori yok.");
+
+        console.error(
+            "data-kategori bulunamadı."
+        );
+
         return;
     }
 
-    console.log("Aktif kategori:", aktifKategori);
+    console.log(
+        "Aktif kategori:",
+        aktifKategori
+    );
 
     /* =====================================================
        TÜRKÇE KARŞILAŞTIRMA
     ===================================================== */
 
     function normalize(metin) {
+
         return String(metin || "")
             .trim()
             .toLocaleLowerCase("tr-TR");
+
     }
 
     /* =====================================================
-       SADECE BU KATEGORİNİN HABERLERİNİ AL
+       KATEGORİ HABERLERİNİ FİLTRELE
     ===================================================== */
 
-    const filtrelenmisHaberler = window.haberler.filter(function (haber) {
+    const kategoriHaberleri =
+        window.haberler.filter(function (haber) {
 
-        if (!haber) return false;
+            return normalize(haber.kategori) ===
+                   normalize(aktifKategori);
 
-        return normalize(haber.kategori) === normalize(aktifKategori);
-
-    });
+        });
 
     console.log(
         aktifKategori +
-        " kategorisindeki haber sayısı:",
-        filtrelenmisHaberler.length
+        " haberleri:",
+        kategoriHaberleri
     );
 
     /* =====================================================
        BAŞLIK
     ===================================================== */
 
-    const baslik = document.querySelector("[data-kategori-baslik]");
+    const baslik =
+        document.getElementById("kategoriBaslik");
 
     if (baslik) {
-        baslik.textContent = aktifKategori;
+
+        baslik.textContent =
+            aktifKategori;
+
     }
 
-    const aciklama = document.querySelector("[data-kategori-aciklama]");
+    /* =====================================================
+       AÇIKLAMA
+    ===================================================== */
+
+    const aciklama =
+        document.getElementById("kategoriAciklama");
 
     if (aciklama) {
 
         const aciklamalar = {
 
             "Gündem":
-                "Türkiye gündeminden son gelişmeler ve önemli haberler.",
-
-            "Türkiye":
-                "Türkiye'nin dört bir yanından güncel gelişmeler.",
+                "Türkiye gündeminden en güncel gelişmeler.",
 
             "Dünya":
-                "Dünyadan son dakika gelişmeleri ve uluslararası haberler.",
+                "Dünyadan son dakika gelişmeleri ve önemli haberler.",
 
             "Ekonomi":
-                "Ekonomi, finans, piyasalar ve para gündeminden gelişmeler.",
+                "Ekonomi ve finans dünyasından güncel gelişmeler.",
 
             "Spor":
-                "Futbol ve spor dünyasından son dakika gelişmeleri.",
-
-            "Eğitim":
-                "Eğitim, okullar, sınavlar ve öğrencilerden güncel haberler.",
+                "Spor dünyasından son dakika haberleri.",
 
             "Magazin":
-                "Magazin dünyasından son gelişmeler ve gündem.",
+                "Magazin dünyasından güncel gelişmeler.",
 
             "Teknoloji":
-                "Teknoloji, yapay zeka, telefon ve dijital dünyadan haberler.",
-
-            "Kültür Sanat":
-                "Kültür, sanat, sinema, müzik ve etkinlik haberleri.",
+                "Teknoloji dünyasından en yeni gelişmeler.",
 
             "Sağlık":
-                "Sağlık dünyasından güncel ve bilgilendirici haberler."
+                "Sağlık dünyasından güncel haberler.",
+
+            "Kültür Sanat":
+                "Kültür, sanat, sinema ve müzik dünyasından gelişmeler.",
+
+            "Türkiye":
+                "Türkiye'nin dört bir yanından güncel haberler.",
+
+            "Eğitim":
+                "Eğitim dünyasından güncel gelişmeler."
 
         };
 
         aciklama.textContent =
             aciklamalar[aktifKategori] ||
-            `${aktifKategori} kategorisinden güncel haberler.`;
+            `${aktifKategori} kategorisinden en güncel haberler.`;
+
     }
 
     /* =====================================================
-       HABER SAYISI
+       SAYFA BAŞLIĞINI DEĞİŞTİR
     ===================================================== */
 
-    const sayac =
-        document.querySelector("[data-haber-sayisi]");
+    document.title =
+        `${aktifKategori} Haberleri - Haberİsta`;
 
-    if (sayac) {
-        sayac.textContent =
-            `${filtrelenmisHaberler.length} Haber`;
+    /* =====================================================
+       SECTION BAŞLIĞI
+    ===================================================== */
+
+    const sectionBaslik =
+        document.querySelector(".section-title h2");
+
+    if (sectionBaslik) {
+
+        sectionBaslik.textContent =
+            `${aktifKategori} Haberleri`;
+
+    }
+
+    /* =====================================================
+       AKTİF MENÜ
+    ===================================================== */
+
+    const menuLinkleri =
+        document.querySelectorAll(".category-nav a");
+
+    menuLinkleri.forEach(function (link) {
+
+        link.classList.remove("active");
+
+        const yazi =
+            link.textContent.trim();
+
+        if (
+            normalize(yazi) ===
+            normalize(aktifKategori)
+        ) {
+
+            link.classList.add("active");
+
+        }
+
+    });
+
+    /* =====================================================
+       HABER ALANI
+    ===================================================== */
+
+    const newsGrid =
+        document.getElementById("newsGrid");
+
+    if (!newsGrid) {
+
+        console.error(
+            "newsGrid bulunamadı."
+        );
+
+        return;
     }
 
     /* =====================================================
        HABER YOKSA
     ===================================================== */
 
-    if (filtrelenmisHaberler.length === 0) {
+    if (kategoriHaberleri.length === 0) {
 
-        container.innerHTML = `
+        newsGrid.innerHTML = `
+
             <div class="kategori-bos">
 
-                <div class="bos-ikon">📰</div>
+                <div class="bos-ikon">
+                    📰
+                </div>
 
-                <h2>${aktifKategori}</h2>
+                <h2>
+                    ${aktifKategori}
+                </h2>
 
                 <p>
                     Bu kategoride henüz haber bulunmuyor.
                 </p>
 
-                <a href="index.html" class="bos-btn">
+                <a
+                    href="index.html"
+                    class="bos-btn"
+                >
                     Ana Sayfaya Dön
                 </a>
 
             </div>
+
         `;
 
         return;
@@ -161,21 +236,24 @@ document.addEventListener("DOMContentLoaded", function () {
        HTML GÜVENLİĞİ
     ===================================================== */
 
-    function escapeHTML(text) {
+    function escapeHTML(metin) {
 
-        return String(text || "")
+        return String(metin || "")
             .replace(/&/g, "&amp;")
             .replace(/</g, "&lt;")
             .replace(/>/g, "&gt;")
             .replace(/"/g, "&quot;")
             .replace(/'/g, "&#039;");
+
     }
 
     /* =====================================================
-       HABER KARTI
+       HABER KARTLARI
     ===================================================== */
 
-    function haberKarti(haber, buyuk) {
+    let html = "";
+
+    kategoriHaberleri.forEach(function (haber) {
 
         const id =
             encodeURIComponent(haber.id);
@@ -193,114 +271,78 @@ document.addEventListener("DOMContentLoaded", function () {
             );
 
         const tarih =
-            escapeHTML(haber.tarih || "");
+            escapeHTML(
+                haber.tarih || ""
+            );
 
         const saat =
-            escapeHTML(haber.saat || "");
+            escapeHTML(
+                haber.saat || ""
+            );
 
-        if (buyuk) {
+        html += `
 
-            return `
-                <article class="kategori-one-cikan">
-
-                    <a href="haber.html?id=${id}">
-                        <img
-                            src="${gorsel}"
-                            alt="${baslik}"
-                            loading="eager"
-                        >
-                    </a>
-
-                    <div class="one-cikan-icerik">
-
-                        <span class="haber-kategori">
-                            ${escapeHTML(aktifKategori)}
-                        </span>
-
-                        <h2>
-                            <a href="haber.html?id=${id}">
-                                ${baslik}
-                            </a>
-                        </h2>
-
-                        <p>
-                            ${spot}
-                        </p>
-
-                        <div class="haber-meta">
-                            ${tarih}
-                            ${saat ? " • " + saat : ""}
-                        </div>
-
-                        <a
-                            href="haber.html?id=${id}"
-                            class="haberi-oku"
-                        >
-                            Haberin tamamını oku →
-                        </a>
-
-                    </div>
-
-                </article>
-            `;
-        }
-
-        return `
-            <article class="kategori-haber-card">
+            <article class="news-card">
 
                 <a
                     href="haber.html?id=${id}"
-                    class="kategori-haber-gorsel"
+                    class="news-card-image"
                 >
+
                     <img
                         src="${gorsel}"
                         alt="${baslik}"
                         loading="lazy"
                     >
+
                 </a>
 
-                <div class="kategori-haber-icerik">
+                <div class="news-card-content">
 
-                    <span class="haber-kategori">
-                        ${escapeHTML(aktifKategori)}
+                    <span class="news-card-category">
+                        ${escapeHTML(haber.kategori)}
                     </span>
 
                     <h3>
+
                         <a href="haber.html?id=${id}">
                             ${baslik}
                         </a>
+
                     </h3>
 
                     <p>
                         ${spot}
                     </p>
 
-                    <div class="haber-meta">
+                    <div class="news-card-meta">
+
                         ${tarih}
-                        ${saat ? " • " + saat : ""}
+
+                        ${
+                            saat
+                                ? ` • ${saat}`
+                                : ""
+                        }
+
                     </div>
 
                 </div>
 
             </article>
+
         `;
-    }
-
-    /* =====================================================
-       HABERLERİ EKRANA BAS
-    ===================================================== */
-
-    let html = "";
-
-    filtrelenmisHaberler.forEach(function (haber, index) {
-
-        html += haberKarti(
-            haber,
-            index === 0
-        );
 
     });
 
-    container.innerHTML = html;
+    /* =====================================================
+       EKRANA BAS
+    ===================================================== */
+
+    newsGrid.innerHTML = html;
+
+    console.log(
+        `${kategoriHaberleri.length} adet ${aktifKategori} haberi gösterildi.`
+    );
 
 });
