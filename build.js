@@ -1,2059 +1,1222 @@
-"use strict";
-
-const fs = require("fs");
-const path = require("path");
-const vm = require("vm");
-
-const ROOT = __dirname;
-const INDEX_HTML = path.join(ROOT, "index.html");
-const HABER_HTML = path.join(ROOT, "haber.html");
-const HABERLER_JS = path.join(ROOT, "js", "haberler.js");
-const OUTPUT_DIR = path.join(ROOT, "haber");
-
-const SITE_URL = "https://haberisa.vercel.app";
-const SITE_NAME = "HABERİSTA";
-const LOGO_URL = `${SITE_URL}/images/logo.jpeg`;
-
-/* =========================================================
-   YARDIMCI FONKSİYONLAR
-========================================================= */
-
-function escapeHTML(value) {
-    return String(value ?? "")
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#39;");
-}
-
-function stripHTML(value) {
-    return String(value ?? "")
-        .replace(/<[^>]*>/g, " ")
-        .replace(/\s+/g, " ")
-        .trim();
-}
-
-function slugOlustur(metin) {
-    return String(metin || "")
-        .toLocaleLowerCase("tr-TR")
-        .replace(/ğ/g, "g")
-        .replace(/ü/g, "u")
-        .replace(/ş/g, "s")
-        .replace(/ı/g, "i")
-        .replace(/ö/g, "o")
-        .replace(/ç/g, "c")
-        .replace(/â/g, "a")
-        .replace(/î/g, "i")
-        .replace(/û/g, "u")
-        .replace(/[^a-z0-9]+/g, "-")
-        .replace(/^-+|-+$/g, "");
-}
-
-/* =========================================================
-   HABER ALANLARI
-========================================================= */
-
-function getTitle(haber) {
-    return haber.baslik || haber.title || "Haber";
-}
-
-function getCategory(haber) {
-    return haber.kategori || haber.category || "Haber";
-}
-
-function getSpot(haber) {
-    return haber.spot || haber.ozet || haber.description || "";
-}
-
-function getContent(haber) {
-    return haber.icerik || haber.content || haber.metin || "";
-}
-
-function getImage(haber) {
-    return (
-        haber.gorsel ||
-        haber.görsel ||
-        haber.resim ||
-        haber.image ||
-        haber.foto ||
-        haber.fotograf ||
-        haber.photo ||
-        haber.thumbnail ||
-        haber.img ||
-        ""
-    );
-}
-
-function getDate(haber) {
-    return (
-        haber.tarih ||
-        haber.date ||
-        haber.yayinTarihi ||
-        ""
-    );
-}
-
-function getTime(haber) {
-    return haber.saat || haber.time || "";
-}
-
-function getSource(haber) {
-    return haber.kaynak || haber.source || "HABERİSTA";
-}
-
-function getAuthor(haber) {
-    return (
-        haber.yazar ||
-        haber.author ||
-        "Haberİsta Haber Merkezi"
-    );
-}
-
-function getViews(haber) {
-    return haber.goruntulenme ?? haber.views ?? 0;
-}
-
-function getSlug(haber) {
-    return haber.slug || slugOlustur(getTitle(haber));
-}
-
-function getNewsURL(haber) {
-    return `${SITE_URL}/haber/${encodeURIComponent(getSlug(haber))}`;
-}
-
-/* =========================================================
-   GÖRSEL URL
-========================================================= */
-
-function getImageURL(image) {
-    if (!image) {
-        return "";
-    }
-
-    const value = String(image).trim();
-
-    if (/^https?:\/\//i.test(value)) {
-        return value;
-    }
-
-    if (value.startsWith("data:")) {
-        return "";
-    }
-
-    if (value.startsWith("//")) {
-        return `https:${value}`;
-    }
-
-    if (value.startsWith("/")) {
-        return `${SITE_URL}${value}`;
-    }
-
-    return `${SITE_URL}/${value.replace(/^\/+/, "")}`;
-}
-
-/* =========================================================
-   TARİH
-========================================================= */
-
-function getISODate(haber) {
-    const directDate =
-        haber.publishedAt ||
-        haber.published_at ||
-        haber.datePublished;
-
-    if (directDate) {
-        const date = new Date(directDate);
-
-        if (!Number.isNaN(date.getTime())) {
-            return date.toISOString();
-        }
-
-        if (
-            typeof directDate === "string" &&
-            /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}/.test(directDate)
-        ) {
-            return directDate;
-        }
-    }
-
-    const tarih = getDate(haber);
-
-    const aylar = {
-        "Ocak": "01",
-        "Şubat": "02",
-        "Mart": "03",
-        "Nisan": "04",
-        "Mayıs": "05",
-        "Haziran": "06",
-        "Temmuz": "07",
-        "Ağustos": "08",
-        "Eylül": "09",
-        "Ekim": "10",
-        "Kasım": "11",
-        "Aralık": "12"
-    };
-
-    const match = String(tarih).match(
-        /(\d{1,2})\s+([A-Za-zÇçĞğİıÖöŞşÜü]+)\s+(\d{4})/
-    );
-
-    if (!match) {
-        return "";
-    }
-
-    const gun = String(match[1]).padStart(2, "0");
-    const ay = aylar[match[2]];
-    const yil = match[3];
-
-    if (!ay) {
-        return "";
-    }
-
-    let saat = getTime(haber) || "00:00";
-
-    const saatMatch = String(saat).match(
-        /(\d{1,2}):(\d{2})(?::(\d{2}))?/
-    );
-
-    let saatISO = "00:00:00";
-
-    if (saatMatch) {
-        saatISO =
-            String(saatMatch[1]).padStart(2, "0") +
-            ":" +
-            saatMatch[2] +
-            ":" +
-            (saatMatch[3] || "00");
-    }
-
-    return `${yil}-${ay}-${gun}T${saatISO}+03:00`;
-}
-
-/* =========================================================
-   SON GÜNCELLEME TARİHİ
-========================================================= */
-
-function getModifiedDate(haber) {
-    const modified =
-        haber.guncellendi ||
-        haber.updatedAt ||
-        haber.dateModified;
-
-    if (modified) {
-        const date = new Date(modified);
-
-        if (!Number.isNaN(date.getTime())) {
-            return date.toISOString();
-        }
-
-        if (
-            typeof modified === "string" &&
-            /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}/.test(modified)
-        ) {
-            return modified;
-        }
-    }
-
-    return getISODate(haber);
-}
-
-/* =========================================================
-   SEO AÇIKLAMASI
-========================================================= */
-
-function getDescription(haber) {
-    let description =
-        getSpot(haber) ||
-        stripHTML(getContent(haber));
-
-    description = String(description)
-        .replace(/\s+/g, " ")
-        .trim();
-
-    if (!description) {
-        description =
-            "Türkiye ve dünyadan güncel haberleri HABERİSTA'da takip edin.";
-    }
-
-    if (description.length > 160) {
-        description =
-            description.substring(0, 157).trim() + "...";
-    }
-
-    return description;
-}
-
-/* =========================================================
-   HABER İÇERİĞİ
-========================================================= */
-
-function renderContent(content) {
-    if (!content) {
-        return `
-            <p>
-                Bu haberin detayları yakında güncellenecektir.
-            </p>
-        `;
-    }
-
-    const value = String(content).trim();
-
-    if (/<[a-z][^>]*>/i.test(value)) {
-        return value;
-    }
-
-    return value
-        .split(/\n+/)
-        .map(text => text.trim())
-        .filter(Boolean)
-        .map(text => `<p>${escapeHTML(text)}</p>`)
-        .join("\n");
-}
-
-/* =========================================================
-   HABERLER.JS OKU
-========================================================= */
-
-function loadNews() {
-    if (!fs.existsSync(HABERLER_JS)) {
-        throw new Error("js/haberler.js bulunamadı.");
-    }
-
-    const code = fs.readFileSync(
-        HABERLER_JS,
-        "utf8"
-    );
-
-    const context = {
-        console,
-        window: {}
-    };
-
-    vm.createContext(context);
-
-    vm.runInContext(
-        code,
-        context,
-        {
-            filename: HABERLER_JS
-        }
-    );
-
-    const haberler = context.window.haberler;
-
-    if (!Array.isArray(haberler)) {
-        throw new Error(
-            "window.haberler bulunamadı veya dizi değil."
-        );
-    }
-
-    return haberler;
-}
-
-/* =========================================================
-   HABER VERİ KONTROLÜ
-========================================================= */
-
-function validateNews(haberler) {
-    if (!haberler.length) {
-        console.warn("⚠️ Haber listesi boş.");
-        return;
-    }
-
-    for (const haber of haberler) {
-        const title = getTitle(haber);
-        const slug = getSlug(haber);
-
-        if (!title || title === "Haber") {
-            console.warn(
-                "⚠️ Başlığı eksik haber:",
-                haber.id
-            );
-        }
-
-        if (!slug) {
-            console.warn(
-                "⚠️ Slug oluşturulamadı:",
-                title
-            );
-        }
-
-        if (!getDate(haber)) {
-            console.warn(
-                "⚠️ Tarihi eksik haber:",
-                title
-            );
-        }
-
-        if (!getSpot(haber)) {
-            console.warn(
-                "⚠️ Spotu eksik haber:",
-                title
-            );
-        }
-
-        if (!getContent(haber)) {
-            console.warn(
-                "⚠️ İçeriği eksik haber:",
-                title
-            );
-        }
-
-        if (!getImage(haber)) {
-            console.warn(
-                "⚠️ Görseli eksik haber:",
-                title
-            );
-        }
-    }
-}
-
-/* =========================================================
-   BREAKING NEWS
-========================================================= */
-
-function createStaticBreakingNews(haberler) {
-    const breaking = haberler.slice(0, 5);
-
-    if (!breaking.length) {
-        return `
-            <div class="breaking-track">
-                <span class="breaking-link">
-                    Haberİsta'dan son gelişmeler...
-                </span>
-            </div>
-        `;
-    }
-
-    const links = breaking
-        .map(haber => `
-            <a
-                href="/haber/${escapeHTML(getSlug(haber))}"
-                class="breaking-link"
-            >
-                ${escapeHTML(getTitle(haber))}
-            </a>
-        `)
-        .join("");
-
-    return `
-        <div class="breaking-track">
-            ${links}
-            ${links}
-        </div>
-    `;
-}
-
-/* =========================================================
-   MANŞET
-========================================================= */
-
-function createStaticHero(haberler) {
-    const haber = haberler[0];
-
-    if (!haber) {
-        return `
-            <div class="hero-empty">
-                Henüz haber bulunmuyor.
-            </div>
-        `;
-    }
-
-    const imageURL = getImageURL(getImage(haber));
-    const slug = getSlug(haber);
-
-    return `
-        <a
-            href="/haber/${escapeHTML(slug)}"
-            class="hero-slide-link"
-        >
-            ${
-                imageURL
-                    ? `
-                        <img
-                            src="${escapeHTML(imageURL)}"
-                            alt="${escapeHTML(getTitle(haber))}"
-                            class="hero-image"
-                            loading="eager"
-                            fetchpriority="high"
-                            decoding="async"
-                            width="1200"
-                            height="675"
-                        >
-                    `
-                    : `
-                        <div class="hero-image hero-image-empty">
-                            Haberİsta
-                        </div>
-                    `
-            }
-
-            <div class="hero-overlay"></div>
-
-            <div class="hero-content">
-                <span class="hero-category">
-                    ${escapeHTML(getCategory(haber))}
-                </span>
-
-                <h2>
-                    ${escapeHTML(getTitle(haber))}
-                </h2>
-
-                <p>
-                    ${escapeHTML(getSpot(haber))}
-                </p>
-
-                <div class="hero-meta">
-                    ${escapeHTML(getDate(haber))}
-
-                    ${
-                        getTime(haber)
-                            ? `
-                                <span>•</span>
-                                ${escapeHTML(getTime(haber))}
-                            `
-                            : ""
-                    }
-                </div>
-            </div>
-        </a>
-    `;
-}
-
-/* =========================================================
-   MANŞET NUMARALARI
-========================================================= */
-
-function createStaticHeroNumbers(haberler) {
-    return haberler
-        .slice(0, 5)
-        .map((_, index) => `
-            <button
-                type="button"
-                class="hero-number ${index === 0 ? "active" : ""}"
-                data-index="${index}"
-                aria-label="${index + 1}. haber"
-            >
-                ${index + 1}
-            </button>
-        `)
-        .join("");
-}
-
-/* =========================================================
-   HABER KARTLARI
-========================================================= */
-
-function createStaticNewsGrid(haberler) {
-    if (!haberler.length) {
-        return `
-            <div class="no-news">
-                <div class="no-news-icon">
-                    📰
-                </div>
-
-                <h3>
-                    Haber bulunamadı
-                </h3>
-
-                <p>
-                    Henüz yayınlanmış haber bulunmuyor.
-                </p>
-            </div>
-        `;
-    }
-
-    return haberler
-        .map(haber => {
-            const imageURL =
-                getImageURL(getImage(haber));
-
-            const slug =
-                getSlug(haber);
-
-            const title =
-                getTitle(haber);
-
-            const views =
-                getViews(haber);
-
-            return `
-                <article
-                    class="news-card"
-                    data-id="${escapeHTML(haber.id)}"
-                >
-                    <a
-                        href="/haber/${escapeHTML(slug)}"
-                        class="news-card-link"
-                    >
-                        <div class="news-card-image">
-
-                            ${
-                                imageURL
-                                    ? `
-                                        <img
-                                            src="${escapeHTML(imageURL)}"
-                                            alt="${escapeHTML(title)}"
-                                            loading="lazy"
-                                            decoding="async"
-                                            width="800"
-                                            height="450"
-                                        >
-                                    `
-                                    : `
-                                        <div class="image-placeholder">
-                                            Haberİsta
-                                        </div>
-                                    `
-                            }
-
-                            <span class="news-category">
-                                ${escapeHTML(
-                                    getCategory(haber)
-                                )}
-                            </span>
-                        </div>
-
-                        <div class="news-card-content">
-
-                            <div class="news-card-meta">
-                                <span>
-                                    ${escapeHTML(
-                                        getDate(haber)
-                                    )}
-                                </span>
-
-                                ${
-                                    getTime(haber)
-                                        ? `
-                                            <span>•</span>
-                                            <span>
-                                                ${escapeHTML(
-                                                    getTime(haber)
-                                                )}
-                                            </span>
-                                        `
-                                        : ""
-                                }
-                            </div>
-
-                            <h3>
-                                ${escapeHTML(title)}
-                            </h3>
-
-                            <p>
-                                ${escapeHTML(
-                                    getSpot(haber)
-                                )}
-                            </p>
-
-                            <div class="news-card-bottom">
-
-                                <span class="read-more">
-                                    Haberi Oku →
-                                </span>
-
-                                ${
-                                    views
-                                        ? `
-                                            <span class="views">
-                                                👁
-                                                ${Number(
-                                                    views
-                                                ).toLocaleString("tr-TR")}
-                                            </span>
-                                        `
-                                        : ""
-                                }
-
-                            </div>
-                        </div>
-                    </a>
-                </article>
-            `;
-        })
-        .join("\n");
-}
-
-/* =========================================================
-   HTML ELEMENT DEĞİŞTİRME
-========================================================= */
-
-function replaceElementById(html, id, newElement) {
-    const escapedId =
-        String(id).replace(
-            /[.*+?^${}()|[\]\\]/g,
-            "\\$&"
-        );
-
-    const idRegex =
-        new RegExp(
-            `id=["']${escapedId}["']`,
-            "i"
-        );
-
-    const idMatch =
-        html.match(idRegex);
-
-    if (!idMatch) {
-        throw new Error(
-            `${id} elementi bulunamadı.`
-        );
-    }
-
-    const idIndex =
-        idMatch.index;
-
-    const startIndex =
-        html.lastIndexOf("<", idIndex);
-
-    if (startIndex === -1) {
-        throw new Error(
-            `${id} elementinin başlangıcı bulunamadı.`
-        );
-    }
-
-    const openingTagEnd =
-        html.indexOf(">", idIndex);
-
-    if (openingTagEnd === -1) {
-        throw new Error(
-            `${id} elementinin açılış etiketi bozuk.`
-        );
-    }
-
-    const openingTag =
-        html.substring(
-            startIndex,
-            openingTagEnd + 1
-        );
-
-    const tagNameMatch =
-        openingTag.match(
-            /^<([a-zA-Z0-9]+)/
-        );
-
-    if (!tagNameMatch) {
-        throw new Error(
-            `${id} elementinin etiketi bulunamadı.`
-        );
-    }
-
-    const tagName =
-        tagNameMatch[1];
-
-    if (/\/>$/.test(openingTag)) {
-        return (
-            html.slice(0, startIndex) +
-            newElement +
-            html.slice(openingTagEnd + 1)
-        );
-    }
-
-    const tagRegex =
-        new RegExp(
-            `<\\/?${tagName}\\b[^>]*>`,
-            "gi"
-        );
-
-    tagRegex.lastIndex =
-        openingTagEnd + 1;
-
-    let depth = 1;
-    let match;
-
-    while (
-        (match = tagRegex.exec(html))
-    ) {
-        const tag = match[0];
-
-        if (
-            new RegExp(
-                `^<\\/${tagName}\\b`,
-                "i"
-            ).test(tag)
-        ) {
-            depth--;
-        } else if (
-            new RegExp(
-                `^<${tagName}\\b`,
-                "i"
-            ).test(tag) &&
-            !/\/>$/.test(tag)
-        ) {
-            depth++;
-        }
-
-        if (depth === 0) {
-            const endIndex =
-                tagRegex.lastIndex;
-
-            return (
-                html.slice(0, startIndex) +
-                newElement +
-                html.slice(endIndex)
-            );
-        }
-    }
-
-    throw new Error(
-        `${id} elementi düzgün kapanmıyor.`
-    );
-}
-
-/* =========================================================
-   ANA SAYFA
-========================================================= */
-
-function buildHomepage(template, haberler) {
-    let html = template;
-
-    const hero =
-        createStaticHero(haberler);
-
-    const heroNumbers =
-        createStaticHeroNumbers(haberler);
-
-    const breaking =
-        createStaticBreakingNews(haberler);
-
-    const newsGrid =
-        createStaticNewsGrid(haberler);
-
-    /* SON DAKİKA */
-
-    html = replaceElementById(
-        html,
-        "breakingNews",
-        `
-        <div
-            id="breakingNews"
-            class="breaking-news"
-        >
-            ${breaking}
-        </div>
-        `
-    );
-
-    /* MANŞET */
-
-    html = replaceElementById(
-        html,
-        "heroMain",
-        `
-        <div
-            id="heroMain"
-            class="hero-main"
-        >
-            ${hero}
-        </div>
-        `
-    );
-
-    /* MANŞET NUMARALARI */
-
-    html = replaceElementById(
-        html,
-        "heroNumbers",
-        `
-        <div
-            id="heroNumbers"
-            class="hero-numbers"
-        >
-            ${heroNumbers}
-        </div>
-        `
-    );
-
-    /* HABER KARTLARI */
-
-    html = replaceElementById(
-        html,
-        "newsGrid",
-        `
-        <div
-            id="newsGrid"
-            class="news-grid"
-        >
-            ${newsGrid}
-        </div>
-        `
-    );
-
-    /* =====================================================
-       HOMEPAGE SCHEMA
-    ===================================================== */
-
-    const itemList =
-        haberler.map(
-            (haber, index) => ({
-                "@type": "ListItem",
-                "position": index + 1,
-                "url": getNewsURL(haber),
-                "name": getTitle(haber)
-            })
-        );
-
-    const homepageSchema = {
-        "@context": "https://schema.org",
-        "@graph": [
-            {
-                "@type": "WebSite",
-                "@id": `${SITE_URL}/#website`,
-                "name": SITE_NAME,
-                "url": `${SITE_URL}/`,
-                "inLanguage": "tr-TR",
-                "publisher": {
-                    "@type": "Organization",
-                    "@id": `${SITE_URL}/#organization`,
-                    "name": SITE_NAME,
-                    "url": SITE_URL,
-                    "logo": {
-                        "@type": "ImageObject",
-                        "url": LOGO_URL
-                    }
-                }
-            },
-            {
-                "@type": "CollectionPage",
-                "@id": `${SITE_URL}/#collectionpage`,
-                "name": "Haberİsta - Son Dakika Haberleri",
-                "url": `${SITE_URL}/`,
-                "inLanguage": "tr-TR",
-                "isPartOf": {
-                    "@id": `${SITE_URL}/#website`
-                },
-                "mainEntity": {
-                    "@type": "ItemList",
-                    "numberOfItems": itemList.length,
-                    "itemListElement": itemList
-                }
-            }
-        ]
-    };
-
-    /* Eski schema temizle */
-
-    html = html.replace(
-        /<script[^>]*id=["']homepageSchema["'][^>]*>[\s\S]*?<\/script>/gi,
-        ""
-    );
-
-    /* Yeni schema */
-
-    const schemaTag = `
-<script
-    id="homepageSchema"
-    type="application/ld+json"
->
-${JSON.stringify(homepageSchema, null, 4)}
-</script>
-`;
-
-    html = html.replace(
-        /<\/head>/i,
-        `${schemaTag}</head>`
-    );
-
-    /* STATIC NEWS FLAG */
-
-    html = html.replace(
-        /<body\b([^>]*)>/i,
-        (match, attrs) => {
-            const cleanAttrs =
-                attrs.replace(
-                    /\sdata-static-news=["'][^"']*["']/gi,
-                    ""
-                );
-
-            return `<body${cleanAttrs} data-static-news="true">`;
-        }
-    );
-
-    return html;
-}
-
-/* =========================================================
-   HABER HTML
-========================================================= */
-
-function createArticleHTML(haber) {
-    const title =
-        getTitle(haber);
-
-    const category =
-        getCategory(haber);
-
-    const spot =
-        getSpot(haber);
-
-    const content =
-        getContent(haber);
-
-    const imageURL =
-        getImageURL(getImage(haber));
-
-    const date =
-        getDate(haber);
-
-    const time =
-        getTime(haber);
-
-    const source =
-        getSource(haber);
-
-    const author =
-        getAuthor(haber);
-
-    const views =
-        getViews(haber);
-
-    return `
-<div class="article-layout">
-
-    <article
-        class="article-main"
-        itemscope
-        itemtype="https://schema.org/NewsArticle"
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
     >
 
-        <header class="article-header">
+    <title>Haber Detayı | Haberİsta</title>
 
-            <div
-                class="article-category"
-                itemprop="articleSection"
-            >
-                ${escapeHTML(category)}
-            </div>
+    <meta
+        name="description"
+        content="Haberİsta haber detay sayfası. Türkiye ve dünyadan güncel gelişmeler."
+    >
 
-            <div class="article-title">
-                <h1 itemprop="headline">
-                    ${escapeHTML(title)}
-                </h1>
-            </div>
+    <meta
+        name="robots"
+        content="index, follow"
+    >
 
-            ${
-                spot
-                    ? `
-                        <div class="article-spot">
-                            <p itemprop="description">
-                                ${escapeHTML(
-                                    stripHTML(spot)
-                                )}
-                            </p>
-                        </div>
-                    `
-                    : ""
-            }
+    <meta
+        name="author"
+        content="Haberİsta Haber Merkezi"
+    >
 
-            <div class="article-meta">
+    <!-- CANONICAL -->
+    <link
+        id="canonicalLink"
+        rel="canonical"
+        href="https://haberisa.vercel.app/"
+    >
 
-                <span>
-                    📅 ${escapeHTML(date)}
-                </span>
+    <!-- OPEN GRAPH -->
 
-                ${
-                    time
-                        ? `
-                            <span>
-                                🕒 ${escapeHTML(time)}
-                            </span>
-                        `
-                        : ""
-                }
+    <meta
+        property="og:type"
+        content="article"
+    >
 
-                <span>
-                    👁️ ${escapeHTML(views)}
-                </span>
+    <meta
+        id="ogTitle"
+        property="og:title"
+        content="Haber Detayı | Haberİsta"
+    >
 
-                <span>
-                    📰 ${escapeHTML(source)}
-                </span>
+    <meta
+        id="ogDescription"
+        property="og:description"
+        content="Türkiye ve dünyadan güncel haberler."
+    >
 
-                <span>
-                    ✍️ ${escapeHTML(author)}
-                </span>
+    <meta
+        id="ogUrl"
+        property="og:url"
+        content="https://haberisa.vercel.app/"
+    >
 
-            </div>
+    <meta
+        id="ogImage"
+        property="og:image"
+        content=""
+    >
 
-        </header>
+    <meta
+        property="og:site_name"
+        content="HABERİSTA"
+    >
 
-        <div class="mini-voice-reader">
+    <!-- TWITTER -->
 
-            <button
-                id="voiceStart"
-                class="mini-voice-btn"
-                onclick="startVoiceReader()"
-                title="Haberi sesli oku"
-                type="button"
-            >
-                🔊 Oku
-            </button>
+    <meta
+        name="twitter:card"
+        content="summary_large_image"
+    >
 
-            <button
-                id="voicePause"
-                class="mini-control"
-                onclick="pauseVoiceReader()"
-                title="Duraklat"
-                type="button"
-            >
-                ⏸
-            </button>
+    <meta
+        id="twitterTitle"
+        name="twitter:title"
+        content="Haber Detayı | Haberİsta"
+    >
 
-            <button
-                id="voiceResume"
-                class="mini-control"
-                onclick="resumeVoiceReader()"
-                title="Devam et"
-                type="button"
-            >
-                ▶
-            </button>
+    <meta
+        id="twitterDescription"
+        name="twitter:description"
+        content="Türkiye ve dünyadan güncel haberler."
+    >
 
-            <button
-                id="voiceStop"
-                class="mini-control"
-                onclick="stopVoiceReader()"
-                title="Durdur"
-                type="button"
-            >
-                ⏹
-            </button>
+    <meta
+        id="twitterImage"
+        name="twitter:image"
+        content=""
+    >
 
-            <span id="voiceStatus">
-                Haberi dinle
-            </span>
+    <!-- ARTICLE META -->
 
-        </div>
+    <meta
+        id="articlePublishedTime"
+        property="article:published_time"
+        content=""
+    >
 
-        ${
-            imageURL
-                ? `
-                    <div class="article-image-wrap">
+    <meta
+        id="articleModifiedTime"
+        property="article:modified_time"
+        content=""
+    >
 
-                        <img
-                            class="article-image"
-                            src="${escapeHTML(imageURL)}"
-                            alt="${escapeHTML(title)}"
-                            title="${escapeHTML(title)}"
-                            itemprop="image"
-                            loading="eager"
-                            fetchpriority="high"
-                            decoding="async"
-                            width="1200"
-                            height="675"
-                        >
+    <meta
+        id="articleSection"
+        property="article:section"
+        content=""
+    >
 
-                    </div>
-                `
-                : ""
+    <link
+        rel="stylesheet"
+        href="/css/style.css"
+    >
+
+    <style>
+
+        /* =====================================================
+           HABERİSTA
+           HABER DETAY SAYFASI
+        ===================================================== */
+
+        .haber-detail-page {
+            width: 100%;
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 28px 20px 70px;
         }
 
-        <div
-            id="articleContent"
-            class="article-content"
-            itemprop="articleBody"
+        /* =====================================================
+           BREADCRUMB
+        ===================================================== */
+
+        .haber-breadcrumb {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 22px;
+            color: #7b8491;
+            font-size: 14px;
+        }
+
+        .haber-breadcrumb a {
+            color: inherit;
+            text-decoration: none;
+            transition: .2s ease;
+        }
+
+        .haber-breadcrumb a:hover {
+            color: #111827;
+        }
+
+        .haber-breadcrumb span {
+            opacity: .55;
+        }
+
+        /* =====================================================
+           ANA HABER
+        ===================================================== */
+
+        .haber-article {
+            width: 100%;
+            background: #fff;
+            border: 1px solid rgba(15, 23, 42, .06);
+            border-radius: 22px;
+            overflow: hidden;
+            box-shadow:
+                0 10px 35px rgba(15, 23, 42, .08);
+        }
+
+        /* =====================================================
+           HABER BAŞLIK
+        ===================================================== */
+
+        .haber-header {
+            padding: 36px 42px 30px;
+        }
+
+        .haber-category {
+            display: inline-flex;
+            align-items: center;
+            padding: 7px 13px;
+            margin-bottom: 17px;
+            border-radius: 999px;
+            background: #f1f5f9;
+            color: #2563eb;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: .2px;
+        }
+
+        .haber-title {
+            margin: 0;
+            max-width: 1000px;
+            color: #111827;
+            font-size: clamp(30px, 4vw, 50px);
+            line-height: 1.1;
+            letter-spacing: -.9px;
+            font-weight: 900;
+        }
+
+        .haber-spot {
+            max-width: 900px;
+            margin: 19px 0 0;
+            color: #5b6472;
+            font-size: 18px;
+            line-height: 1.65;
+            font-weight: 500;
+        }
+
+        /* =====================================================
+           META
+        ===================================================== */
+
+        .haber-meta {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid #edf0f3;
+            color: #697386;
+            font-size: 13px;
+        }
+
+        .haber-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .haber-meta-dot {
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: #cbd5e1;
+        }
+
+        .haber-author {
+            color: #374151;
+            font-weight: 800;
+        }
+
+        /* =====================================================
+           GÖRSEL
+        ===================================================== */
+
+        .haber-image-wrapper {
+            width: 100%;
+            background: #f1f5f9;
+        }
+
+        .haber-image {
+            display: block;
+            width: 100%;
+            max-height: 620px;
+            object-fit: cover;
+        }
+
+        /* =====================================================
+           İÇERİK
+        ===================================================== */
+
+        .haber-content-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 42px 42px 50px;
+        }
+
+        .haber-content {
+            color: #293241;
+            font-size: 18px;
+            line-height: 1.9;
+        }
+
+        .haber-content p {
+            margin: 0 0 24px;
+        }
+
+        .haber-content p:first-child {
+            color: #374151;
+            font-size: 20px;
+            line-height: 1.8;
+            font-weight: 500;
+        }
+
+        .haber-content h2 {
+            margin: 38px 0 15px;
+            color: #111827;
+            font-size: 27px;
+            line-height: 1.3;
+            letter-spacing: -.3px;
+            font-weight: 850;
+        }
+
+        .haber-content h3 {
+            margin: 30px 0 12px;
+            color: #111827;
+            font-size: 22px;
+            line-height: 1.4;
+            font-weight: 800;
+        }
+
+        .haber-content strong {
+            color: #111827;
+            font-weight: 800;
+        }
+
+        .haber-content ul,
+        .haber-content ol {
+            margin: 20px 0 28px;
+            padding-left: 28px;
+        }
+
+        .haber-content li {
+            margin-bottom: 10px;
+            padding-left: 5px;
+        }
+
+        .haber-content blockquote {
+            margin: 30px 0;
+            padding: 22px 25px;
+            border-left: 4px solid #2563eb;
+            border-radius: 0 12px 12px 0;
+            background: #f8fafc;
+            color: #4b5563;
+            font-size: 18px;
+            font-style: italic;
+        }
+
+        .haber-content a {
+            color: #2563eb;
+            font-weight: 700;
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 3px;
+        }
+
+        .haber-content img {
+            display: block;
+            width: 100%;
+            height: auto;
+            margin: 30px 0;
+            border-radius: 16px;
+        }
+
+        /* =====================================================
+           KAYNAK
+        ===================================================== */
+
+        .haber-source-box {
+            margin-top: 38px;
+            padding: 20px 22px;
+            border: 1px solid #e7ebf0;
+            border-radius: 14px;
+            background: #f8fafc;
+            color: #64748b;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .haber-source-box strong {
+            color: #374151;
+        }
+
+        /* =====================================================
+           PAYLAŞ
+        ===================================================== */
+
+        .haber-share {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 42px 35px;
+        }
+
+        .haber-share-title {
+            margin-bottom: 12px;
+            color: #374151;
+            font-size: 14px;
+            font-weight: 800;
+        }
+
+        .haber-share-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+        }
+
+        .haber-share-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 38px;
+            padding: 0 15px;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            background: #fff;
+            color: #374151;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 750;
+            cursor: pointer;
+            transition:
+                transform .2s ease,
+                box-shadow .2s ease;
+        }
+
+        .haber-share-button:hover {
+            transform: translateY(-2px);
+            box-shadow:
+                0 7px 18px rgba(15, 23, 42, .08);
+        }
+
+        /* =====================================================
+           HATA
+        ===================================================== */
+
+        .haber-error {
+            max-width: 700px;
+            margin: 80px auto;
+            padding: 45px 25px;
+            text-align: center;
+            background: #fff;
+            border-radius: 20px;
+            box-shadow:
+                0 10px 35px rgba(15, 23, 42, .08);
+        }
+
+        .haber-error h1 {
+            margin: 0 0 10px;
+            color: #111827;
+        }
+
+        .haber-error p {
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        /* =====================================================
+           GERİ
+        ===================================================== */
+
+        .haber-back {
+            margin-top: 22px;
+        }
+
+        .haber-back a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 11px 16px;
+            border-radius: 11px;
+            background: #111827;
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 800;
+            transition: .2s ease;
+        }
+
+        .haber-back a:hover {
+            transform: translateY(-2px);
+        }
+
+        /* =====================================================
+           MOBİL
+        ===================================================== */
+
+        @media (max-width: 768px) {
+
+            .haber-detail-page {
+                padding: 18px 12px 45px;
+            }
+
+            .haber-article {
+                border-radius: 15px;
+            }
+
+            .haber-header {
+                padding: 25px 20px 22px;
+            }
+
+            .haber-title {
+                font-size: 31px;
+                letter-spacing: -.5px;
+            }
+
+            .haber-spot {
+                font-size: 16px;
+                line-height: 1.6;
+            }
+
+            .haber-meta {
+                gap: 9px;
+            }
+
+            .haber-meta-dot {
+                display: none;
+            }
+
+            .haber-image {
+                max-height: 400px;
+            }
+
+            .haber-content-wrapper {
+                padding: 28px 20px 35px;
+            }
+
+            .haber-content {
+                font-size: 17px;
+                line-height: 1.8;
+            }
+
+            .haber-content p:first-child {
+                font-size: 18px;
+            }
+
+            .haber-content h2 {
+                margin-top: 31px;
+                font-size: 23px;
+            }
+
+            .haber-content h3 {
+                font-size: 20px;
+            }
+
+            .haber-content blockquote {
+                padding: 17px 18px;
+                font-size: 16px;
+            }
+
+            .haber-share {
+                padding: 0 20px 28px;
+            }
+
+            .haber-share-button {
+                flex: 1 1 auto;
+            }
+        }
+
+        @media (max-width: 430px) {
+
+            .haber-title {
+                font-size: 27px;
+            }
+
+            .haber-category {
+                font-size: 12px;
+            }
+
+            .haber-content {
+                font-size: 16px;
+            }
+
+            .haber-image {
+                max-height: 300px;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header id="site-header"></header>
+
+    <main class="haber-detail-page">
+
+        <!-- =================================================
+             BREADCRUMB
+        ================================================== -->
+
+        <nav
+            class="haber-breadcrumb"
+            aria-label="Breadcrumb"
         >
 
-            ${renderContent(content)}
+            <a href="/">
+                Ana Sayfa
+            </a>
 
-            <div class="article-share">
+            <span>
+                ›
+            </span>
 
-                <button
-                    class="share-button"
-                    onclick="shareArticle()"
-                    type="button"
-                >
-                    📤 Paylaş
-                </button>
+            <span id="breadcrumb-category">
+                Haber
+            </span>
 
-                <button
-                    class="share-button"
-                    onclick="copyArticleLink()"
-                    type="button"
-                >
-                    🔗 Linki Kopyala
-                </button>
+            <span>
+                ›
+            </span>
+
+            <span>
+                Haber Detayı
+            </span>
+
+        </nav>
+
+        <!-- =================================================
+             ÖNEMLİ
+
+             build.js BU ID'Yİ ARIYOR.
+             DEĞİŞTİRME.
+        ================================================== -->
+
+        <article
+            id="articleContainer"
+            class="haber-article"
+        >
+
+            <div class="haber-error">
+
+                <h1>
+                    Haber yükleniyor...
+                </h1>
+
+                <p>
+                    Haber içeriği hazırlanıyor,
+                    lütfen bekleyin.
+                </p>
 
             </div>
 
-        </div>
+        </article>
 
-    </article>
+    </main>
 
-    <aside class="article-sidebar">
+    <!-- =====================================================
+         HABER VERİLERİ
+    ====================================================== -->
 
-        <div class="sidebar-box">
+    <script src="/js/haberler.js"></script>
 
-            <h3>
-                Haber Bilgileri
-            </h3>
+    <script>
 
-            <div class="sidebar-info">
-                <strong>Kategori</strong>
-                <span>
-                    ${escapeHTML(category)}
-                </span>
-            </div>
+        "use strict";
 
-            <div class="sidebar-info">
-                <strong>Tarih</strong>
-                <span>
-                    ${escapeHTML(date)}
-                </span>
-            </div>
+        /* =================================================
+           STATİK HABER SAYFASI KONTROLÜ
 
-            ${
-                time
-                    ? `
-                        <div class="sidebar-info">
-                            <strong>Saat</strong>
-                            <span>
-                                ${escapeHTML(time)}
-                            </span>
+           build.js haberleri HTML içine zaten koyuyor.
+
+           Eğer sayfa:
+           data-static-article="true"
+
+           ise aşağıdaki dinamik haber arama sistemi
+           ÇALIŞMAYACAK.
+
+           Böylece "Haber bulunamadı" hatası oluşmaz.
+        ================================================== */
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+                const body =
+                    document.body;
+
+                const isStaticArticle =
+                    body &&
+                    body.getAttribute(
+                        "data-static-article"
+                    ) === "true";
+
+                if (isStaticArticle) {
+
+                    /*
+                     * Haber zaten build.js tarafından
+                     * HTML içine yerleştirildi.
+                     *
+                     * Sadece paylaşım butonlarını
+                     * hazırlıyoruz.
+                     */
+
+                    prepareStaticShare();
+
+                    return;
+                }
+
+                /*
+                 * Normal haber.html?id=33 gibi
+                 * dinamik kullanım için devam et.
+                 */
+
+                loadDynamicArticle();
+
+            }
+        );
+
+        /* =================================================
+           DİNAMİK HABER
+        ================================================== */
+
+        function loadDynamicArticle() {
+
+            const container =
+                document.getElementById(
+                    "articleContainer"
+                );
+
+            if (!container) {
+
+                console.error(
+                    "Haberİsta: articleContainer bulunamadı."
+                );
+
+                return;
+            }
+
+            const params =
+                new URLSearchParams(
+                    window.location.search
+                );
+
+            const id =
+                params.get("id");
+
+            /*
+             * ID yoksa hata göstermeden
+             * statik sayfa ihtimalini kontrol et.
+             */
+
+            if (!id) {
+
+                return;
+            }
+
+            let haberListesi = [];
+
+            if (
+                typeof haberler !== "undefined" &&
+                Array.isArray(haberler)
+            ) {
+
+                haberListesi =
+                    haberler;
+
+            } else if (
+                typeof window.haberler !== "undefined" &&
+                Array.isArray(window.haberler)
+            ) {
+
+                haberListesi =
+                    window.haberler;
+            }
+
+            const haber =
+                haberListesi.find(
+                    function (item) {
+
+                        return String(item.id) ===
+                            String(id);
+
+                    }
+                );
+
+            if (!haber) {
+
+                container.innerHTML = `
+
+                    <div class="haber-error">
+
+                        <h1>
+                            Haber bulunamadı
+                        </h1>
+
+                        <p>
+                            Aradığınız haber mevcut değil
+                            veya kaldırılmış olabilir.
+                        </p>
+
+                        <div class="haber-back">
+
+                            <a href="/">
+                                ← Ana Sayfaya Dön
+                            </a>
+
                         </div>
-                    `
-                    : ""
+
+                    </div>
+
+                `;
+
+                return;
             }
 
-            <div class="sidebar-info">
-                <strong>Görüntülenme</strong>
-                <span>
-                    ${escapeHTML(views)}
-                </span>
-            </div>
-
-            <div class="sidebar-info">
-                <strong>Yazar</strong>
-                <span>
-                    ${escapeHTML(author)}
-                </span>
-            </div>
-
-            <div class="sidebar-info">
-                <strong>Kaynak</strong>
-                <span>
-                    ${escapeHTML(source)}
-                </span>
-            </div>
-
-        </div>
-
-        <div class="sidebar-box">
-
-            <h3>
-                HABERİSTA
-            </h3>
-
-            <p
-                style="
-                    margin:0;
-                    color:#555;
-                    font-size:14px;
-                    line-height:1.7;
-                "
-            >
-                Türkiye ve dünyadan güncel haberleri
-                hızlı, anlaşılır ve güvenilir şekilde
-                takip edin.
-            </p>
-
-        </div>
-
-    </aside>
-
-</div>
-`;
-}
-
-/* =========================================================
-   NEWSARTICLE SCHEMA
-========================================================= */
-
-function createArticleSchema(haber, canonical) {
-    const title =
-        getTitle(haber);
-
-    const description =
-        getDescription(haber);
-
-    const image =
-        getImageURL(getImage(haber));
-
-    const category =
-        getCategory(haber);
-
-    const author =
-        getAuthor(haber);
-
-    const isoDate =
-        getISODate(haber);
-
-    const modifiedDate =
-        getModifiedDate(haber);
-
-    const authorIsDefault =
-        !haber.yazar &&
-        !haber.author;
-
-    const schema = {
-        "@context": "https://schema.org",
-        "@type": "NewsArticle",
-        "@id": `${canonical}#article`,
-
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": canonical
-        },
-
-        "headline": title,
-        "description": description,
-        "url": canonical,
-
-        "inLanguage": "tr-TR",
-        "articleSection": category,
-        "isAccessibleForFree": true,
-
-        "author": {
-            "@type": authorIsDefault
-                ? "Organization"
-                : "Person",
-            "name": author
-        },
-
-        "publisher": {
-            "@type": "Organization",
-            "@id": `${SITE_URL}/#organization`,
-            "name": SITE_NAME,
-            "url": SITE_URL,
-            "logo": {
-                "@type": "ImageObject",
-                "url": LOGO_URL
-            }
-        }
-    };
-
-    if (image) {
-        schema.image = [image];
-    }
-
-    if (isoDate) {
-        schema.datePublished = isoDate;
-    }
-
-    if (modifiedDate) {
-        schema.dateModified = modifiedDate;
-    }
-
-    return JSON.stringify(
-        schema,
-        null,
-        4
-    );
-}
-
-/* =========================================================
-   HABER SAYFASI
-========================================================= */
-
-function buildArticlePage(template, haber) {
-    const title =
-        getTitle(haber);
-
-    const category =
-        getCategory(haber);
-
-    const description =
-        getDescription(haber);
-
-    const imageURL =
-        getImageURL(getImage(haber));
-
-    const slug =
-        getSlug(haber);
-
-    const canonical =
-        `${SITE_URL}/haber/${slug}`;
-
-    const isoDate =
-        getISODate(haber);
-
-    const modifiedDate =
-        getModifiedDate(haber);
-
-    let html =
-        template;
-
-    /* TITLE */
-
-    html = html.replace(
-        /<title>[\s\S]*?<\/title>/i,
-        `<title>${escapeHTML(title)} | ${SITE_NAME}</title>`
-    );
-
-    /* DESCRIPTION */
-
-    html = html.replace(
-        /(<meta\s+name="description"\s+content=")[^"]*(")/i,
-        `$1${escapeHTML(description)}$2`
-    );
-
-    /* AUTHOR */
-
-    html = html.replace(
-        /(<meta\s+name="author"\s+content=")[^"]*(")/i,
-        `$1${escapeHTML(getAuthor(haber))}$2`
-    );
-
-    /* CANONICAL */
-
-    html = html.replace(
-        /(<link\s+id="canonicalLink"\s+rel="canonical"\s+href=")[^"]*(")/i,
-        `$1${canonical}$2`
-    );
-
-    /* OG TITLE */
-
-    html = html.replace(
-        /(<meta\s+id="ogTitle"[\s\S]*?content=")[^"]*(")/i,
-        `$1${escapeHTML(title)} | ${SITE_NAME}$2`
-    );
-
-    /* OG DESCRIPTION */
-
-    html = html.replace(
-        /(<meta\s+id="ogDescription"[\s\S]*?content=")[^"]*(")/i,
-        `$1${escapeHTML(description)}$2`
-    );
-
-    /* OG URL */
-
-    html = html.replace(
-        /(<meta\s+id="ogUrl"[\s\S]*?content=")[^"]*(")/i,
-        `$1${canonical}$2`
-    );
-
-    /* OG IMAGE */
-
-    if (imageURL) {
-        html = html.replace(
-            /(<meta\s+id="ogImage"[\s\S]*?content=")[^"]*(")/i,
-            `$1${escapeHTML(imageURL)}$2`
-        );
-    }
-
-    /* TWITTER TITLE */
-
-    html = html.replace(
-        /(<meta\s+id="twitterTitle"[\s\S]*?content=")[^"]*(")/i,
-        `$1${escapeHTML(title)} | ${SITE_NAME}$2`
-    );
-
-    /* TWITTER DESCRIPTION */
-
-    html = html.replace(
-        /(<meta\s+id="twitterDescription"[\s\S]*?content=")[^"]*(")/i,
-        `$1${escapeHTML(description)}$2`
-    );
-
-    /* TWITTER IMAGE */
-
-    if (imageURL) {
-        html = html.replace(
-            /(<meta\s+id="twitterImage"[\s\S]*?content=")[^"]*(")/i,
-            `$1${escapeHTML(imageURL)}$2`
-        );
-    }
-
-    /* ARTICLE PUBLISHED */
-
-    if (isoDate) {
-        html = html.replace(
-            /(<meta\s+id="articlePublishedTime"[\s\S]*?content=")[^"]*(")/i,
-            `$1${escapeHTML(isoDate)}$2`
-        );
-    }
-
-    /* ARTICLE MODIFIED */
-
-    if (modifiedDate) {
-        html = html.replace(
-            /(<meta\s+id="articleModifiedTime"[\s\S]*?content=")[^"]*(")/i,
-            `$1${escapeHTML(modifiedDate)}$2`
-        );
-    }
-
-    /* ARTICLE SECTION */
-
-    html = html.replace(
-        /(<meta\s+id="articleSection"[\s\S]*?content=")[^"]*(")/i,
-        `$1${escapeHTML(category)}$2`
-    );
-
-    /* =====================================================
-       STATİK HABER İÇERİĞİ
-    ===================================================== */
-
-    const articleHTML =
-        createArticleHTML(haber);
-
-    html = replaceElementById(
-        html,
-        "articleContainer",
-        `
-        <div id="articleContainer">
-            ${articleHTML}
-        </div>
-        `
-    );
-
-    /* STATIC ARTICLE FLAG */
-
-    html = html.replace(
-        /<body\b([^>]*)>/i,
-        (match, attrs) => {
-            const cleanAttrs =
-                attrs.replace(
-                    /\sdata-static-article=["'][^"']*["']/gi,
-                    ""
-                );
-
-            return `<body${cleanAttrs} data-static-article="true">`;
-        }
-    );
-
-    /* ESKİ SCHEMA TEMİZLE */
-
-    html = html.replace(
-        /<script[^>]*id=["']newsArticleSchema["'][^>]*>[\s\S]*?<\/script>/gi,
-        ""
-    );
-
-    /* NEWSARTICLE SCHEMA */
-
-    const schema =
-        createArticleSchema(
-            haber,
-            canonical
-        );
-
-    const schemaTag = `
-<script
-    id="newsArticleSchema"
-    type="application/ld+json"
->
-${schema}
-</script>
-`;
-
-    html = html.replace(
-        /<\/head>/i,
-        `${schemaTag}</head>`
-    );
-
-    return html;
-}
-
-/* =========================================================
-   HABER KLASÖRÜNÜ TEMİZLE
-========================================================= */
-
-function cleanOutputDirectory() {
-    if (!fs.existsSync(OUTPUT_DIR)) {
-        fs.mkdirSync(
-            OUTPUT_DIR,
-            {
-                recursive: true
-            }
-        );
-
-        return;
-    }
-
-    const entries =
-        fs.readdirSync(
-            OUTPUT_DIR,
-            {
-                withFileTypes: true
-            }
-        );
-
-    for (const entry of entries) {
-        const fullPath =
-            path.join(
-                OUTPUT_DIR,
-                entry.name
-            );
-
-        fs.rmSync(
-            fullPath,
-            {
-                recursive: true,
-                force: true
-            }
-        );
-    }
-}
-
-/* =========================================================
-   SITEMAP
-========================================================= */
-
-function buildSitemap(haberler) {
-    const urls = [
-        {
-            loc: `${SITE_URL}/`
-        },
-        {
-            loc: `${SITE_URL}/son-dakika.html`
-        },
-        {
-            loc: `${SITE_URL}/gundem.html`
-        },
-        {
-            loc: `${SITE_URL}/ekonomi.html`
-        },
-        {
-            loc: `${SITE_URL}/spor.html`
-        },
-        {
-            loc: `${SITE_URL}/magazin.html`
-        },
-        {
-            loc: `${SITE_URL}/dunya.html`
-        },
-        {
-            loc: `${SITE_URL}/teknoloji.html`
-        },
-        {
-            loc: `${SITE_URL}/saglik.html`
-        },
-        {
-            loc: `${SITE_URL}/kultur-sanat.html`
-        },
-        {
-            loc: `${SITE_URL}/hakkimizda.html`
-        },
-        {
-            loc: `${SITE_URL}/iletisim.html`
-        },
-        {
-            loc: `${SITE_URL}/gizlilik.html`
-        },
-        {
-            loc: `${SITE_URL}/cerez-politikasi.html`
-        }
-    ];
-
-    for (const haber of haberler) {
-        const lastmod =
-            getModifiedDate(haber);
-
-        urls.push({
-            loc: getNewsURL(haber),
-            lastmod: lastmod || undefined
-        });
-    }
-
-    const uniqueUrls =
-        new Map();
-
-    for (const item of urls) {
-        if (!uniqueUrls.has(item.loc)) {
-            uniqueUrls.set(
-                item.loc,
-                item
-            );
-        }
-    }
-
-    const items =
-        [...uniqueUrls.values()]
-            .map(item => `
-    <url>
-        <loc>${escapeHTML(item.loc)}</loc>
-        ${
-            item.lastmod
-                ? `<lastmod>${escapeHTML(item.lastmod)}</lastmod>`
-                : ""
-        }
-    </url>
-`)
-            .join("\n");
-
-    return `<?xml version="1.0" encoding="UTF-8"?>
-<urlset
-    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
->
-${items}
-</urlset>
-`;
-}
-
-/* =========================================================
-   ROBOTS
-========================================================= */
-
-function buildRobots() {
-    return `User-agent: *
-Allow: /
-
-Sitemap: ${SITE_URL}/sitemap.xml
-`;
-}
-
-/* =========================================================
-   BUILD
-========================================================= */
-
-function main() {
-    console.log("");
-    console.log("========================================");
-    console.log(" HABERİSTA - STATIC SEO BUILD");
-    console.log("========================================");
-    console.log("");
-
-    /* DOSYA KONTROLLERİ */
-
-    if (!fs.existsSync(INDEX_HTML)) {
-        throw new Error(
-            "index.html bulunamadı."
-        );
-    }
-
-    if (!fs.existsSync(HABER_HTML)) {
-        throw new Error(
-            "haber.html bulunamadı."
-        );
-    }
-
-    if (!fs.existsSync(HABERLER_JS)) {
-        throw new Error(
-            "js/haberler.js bulunamadı."
-        );
-    }
-
-    /* TEMPLATE'LER */
-
-    const indexTemplate =
-        fs.readFileSync(
-            INDEX_HTML,
-            "utf8"
-        );
-
-    const articleTemplate =
-        fs.readFileSync(
-            HABER_HTML,
-            "utf8"
-        );
-
-    /* HABERLER */
-
-    const haberler =
-        loadNews();
-
-    console.log(
-        `Toplam haber: ${haberler.length}`
-    );
-
-    console.log("");
-
-    /* VERİ KONTROLÜ */
-
-    validateNews(haberler);
-
-    /* =====================================================
-       DUPLICATE ID
-    ===================================================== */
-
-    const ids =
-        new Map();
-
-    for (const haber of haberler) {
-        if (
-            haber.id !== undefined &&
-            haber.id !== null
-        ) {
-            if (ids.has(haber.id)) {
-                console.warn("");
-                console.warn(
-                    "⚠️ DUPLICATE ID"
-                );
-                console.warn(
-                    `ID: ${haber.id}`
-                );
-                console.warn(
-                    `Eski: ${ids.get(haber.id)}`
-                );
-                console.warn(
-                    `Yeni: ${getTitle(haber)}`
-                );
-            } else {
-                ids.set(
-                    haber.id,
-                    getTitle(haber)
-                );
-            }
-        }
-    }
-
-    /* =====================================================
-       DUPLICATE SLUG
-    ===================================================== */
-
-    const slugs =
-        new Map();
-
-    const duplicateSlugs = [];
-
-    for (const haber of haberler) {
-        const slug =
-            getSlug(haber);
-
-        if (!slug) {
-            continue;
-        }
-
-        if (slugs.has(slug)) {
-            console.error("");
-            console.error(
-                "❌ DUPLICATE SLUG"
-            );
-            console.error(
-                `Slug: ${slug}`
-            );
-            console.error(
-                `Eski: ${slugs.get(slug)}`
-            );
-            console.error(
-                `Yeni: ${getTitle(haber)}`
-            );
-
-            duplicateSlugs.push(slug);
-        } else {
-            slugs.set(
-                slug,
-                getTitle(haber)
-            );
-        }
-    }
-
-    if (duplicateSlugs.length) {
-        throw new Error(
-            "Duplicate slug bulundu. Haberler.js içindeki slug değerlerini düzeltin."
-        );
-    }
-
-    /* =====================================================
-       ANA SAYFA
-    ===================================================== */
-
-    console.log(
-        "Ana sayfa oluşturuluyor..."
-    );
-
-    const homepage =
-        buildHomepage(
-            indexTemplate,
-            haberler
-        );
-
-    fs.writeFileSync(
-        INDEX_HTML,
-        homepage,
-        "utf8"
-    );
-
-    console.log(
-        "✓ index.html statik haberlerle oluşturuldu."
-    );
-
-    /* =====================================================
-       HABER SAYFALARI
-    ===================================================== */
-
-    console.log("");
-    console.log(
-        "Haber sayfaları oluşturuluyor..."
-    );
-
-    cleanOutputDirectory();
-
-    let generated = 0;
-
-    const generatedSlugs =
-        new Set();
-
-    for (const haber of haberler) {
-        const title =
-            getTitle(haber);
-
-        const slug =
-            getSlug(haber);
-
-        if (!slug) {
-            console.warn(
-                `⚠️ Slug oluşturulamadı: ${title}`
-            );
-
-            continue;
-        }
-
-        if (
-            generatedSlugs.has(slug)
-        ) {
-            throw new Error(
-                `Duplicate slug nedeniyle build durduruldu: ${slug}`
-            );
-        }
-
-        generatedSlugs.add(slug);
-
-        const articleDir =
-            path.join(
-                OUTPUT_DIR,
-                slug
-            );
-
-        fs.mkdirSync(
-            articleDir,
-            {
-                recursive: true
-            }
-        );
-
-        const articlePage =
-            buildArticlePage(
-                articleTemplate,
+            renderDynamicArticle(
+                container,
                 haber
             );
+        }
 
-        fs.writeFileSync(
-            path.join(
-                articleDir,
-                "index.html"
-            ),
-            articlePage,
-            "utf8"
-        );
+        /* =================================================
+           DİNAMİK HABER RENDER
+        ================================================== */
 
-        generated++;
+        function renderDynamicArticle(
+            container,
+            haber
+        ) {
 
-        console.log(
-            `✓ ${generated}. ${title}`
-        );
-    }
+            document.title =
+                (haber.baslik || "Haber") +
+                " | Haberİsta";
 
-    /* =====================================================
-       SITEMAP
-    ===================================================== */
+            const breadcrumbCategory =
+                document.getElementById(
+                    "breadcrumb-category"
+                );
 
-    console.log("");
+            if (breadcrumbCategory) {
 
-    fs.writeFileSync(
-        path.join(
-            ROOT,
-            "sitemap.xml"
-        ),
-        buildSitemap(haberler),
-        "utf8"
-    );
+                breadcrumbCategory.textContent =
+                    haber.kategori ||
+                    "Haber";
+            }
 
-    console.log(
-        "✓ sitemap.xml oluşturuldu."
-    );
+            const description =
+                haber.spot ||
+                haber.baslik ||
+                "Haberİsta güncel haberler.";
 
-    /* =====================================================
-       ROBOTS
-    ===================================================== */
+            const metaDescription =
+                document.querySelector(
+                    'meta[name="description"]'
+                );
 
-    fs.writeFileSync(
-        path.join(
-            ROOT,
-            "robots.txt"
-        ),
-        buildRobots(),
-        "utf8"
-    );
+            if (metaDescription) {
 
-    console.log(
-        "✓ robots.txt oluşturuldu."
-    );
+                metaDescription.setAttribute(
+                    "content",
+                    description
+                );
+            }
 
-    /* =====================================================
-       SONUÇ
-    ===================================================== */
+            const image =
+                haber.gorsel ||
+                haber.görsel ||
+                haber.resim ||
+                haber.image ||
+                "";
 
-    console.log("");
+            const tarih =
+                haber.tarih ||
+                "";
 
-    console.log(
-        "========================================"
-    );
+            const saat =
+                haber.saat ||
+                "";
 
-    console.log(
-        `✓ ${generated} statik haber sayfası hazır.`
-    );
+            const yazar =
+                haber.yazar ||
+                "Haberİsta Haber Merkezi";
 
-    console.log(
-        "✓ Ana sayfa statik haberlerle hazır."
-    );
+            const kaynak =
+                haber.kaynak ||
+                "HABERİSTA";
 
-    console.log(
-        "✓ Haber içerikleri ilk HTML içinde."
-    );
+            const icerik =
+                haber.icerik ||
+                haber.metin ||
+                haber.content ||
+                "<p>Bu haber için içerik bulunamadı.</p>";
 
-    console.log(
-        "✓ NewsArticle Schema oluşturuldu."
-    );
+            const imageHTML =
+                image
+                    ? `
+                        <div class="haber-image-wrapper">
 
-    console.log(
-        "✓ WebSite + CollectionPage + ItemList Schema oluşturuldu."
-    );
+                            <img
+                                class="haber-image"
+                                src="${escapeHTML(image)}"
+                                alt="${escapeHTML(
+                                    haber.baslik ||
+                                    "Haber görseli"
+                                )}"
+                                loading="eager"
+                            >
 
-    console.log(
-        "✓ Sitemap oluşturuldu."
-    );
+                        </div>
+                    `
+                    : "";
 
-    console.log(
-        "✓ Robots oluşturuldu."
-    );
+            const saatHTML =
+                saat
+                    ? `
 
-    console.log(
-        "✓ Görsel URL'leri mutlak URL olarak oluşturuldu."
-    );
+                        <span class="haber-meta-dot">
+                        </span>
 
-    console.log(
-        "✓ Duplicate slug kontrolü yapıldı."
-    );
+                        <div class="haber-meta-item">
 
-    console.log(
-        "✓ Google taraması için statik HTML hazır."
-    );
+                            <span>
+                                🕐
+                            </span>
 
-    console.log(
-        "========================================"
-    );
+                            <span>
+                                ${escapeHTML(saat)}
+                            </span>
 
-    console.log("");
-}
+                        </div>
 
-/* =========================================================
-   ÇALIŞTIR
-========================================================= */
+                    `
+                    : "";
 
-try {
-    main();
-} catch (error) {
-    console.error("");
-    console.error(
-        "❌ BUILD HATASI"
-    );
-    console.error(
-        error.stack ||
-        error.message
-    );
-    console.error("");
+            container.innerHTML = `
 
-    process.exit(1);
-}
+                <header class="haber-header">
+
+                    <div class="haber-category">
+
+                        ${escapeHTML(
+                            haber.kategori ||
+                            "HABER"
+                        )}
+
+                    </div>
+
+                    <h1 class="haber-title">
+
+                        ${escapeHTML(
+                            haber.baslik ||
+                            "Haber"
+                        )}
+
+                    </h1>
+
+                    <p class="haber-spot">
+
+                        ${escapeHTML(
+                            haber.spot ||
+                            ""
+                        )}
+
+                    </p>
+
+                    <div class="haber-meta">
+
+                        <div class="haber-meta-item">
+
+                            <span>
+                                ✍️
+                            </span>
+
+                            <span class="haber-author">
+
+                                ${escapeHTML(
+                                    yazar
+                                )}
+
+                            </span>
+
+                        </div>
+
+                        <span class="haber-meta-dot">
+                        </span>
+
+                        <div class="haber-meta-item">
+
+                            <span>
+                                📅
+                            </span>
+
+                            <span>
+                                ${escapeHTML(
+                                    tarih
+                                )}
+                            </span>
+
+                        </div>
+
+                        ${saatHTML}
+
+                    </div>
+
+                </header>
+
+                ${imageHTML}
+
+                <div class="haber-content-wrapper">
+
+                    <div class="haber-content">
+
+                        ${icerik}
+
+                    </div>
+
+                    <div class="haber-source-box">
+
+                        <strong>
+                            Kaynak:
+                        </strong>
+
+                        ${escapeHTML(
+                            kaynak
+                        )}
+
+                        <br>
+
+                        <strong>
+                            Yayın:
+                        </strong>
+
+                        Haberİsta
+
+                    </div>
+
+                </div>
+
+                <div class="haber-share">
+
+                    <div class="haber-share-title">
+                        Bu haberi paylaş
+                    </div>
+
+                    <div class="haber-share-buttons">
+
+                        <button
+                            class="haber-share-button"
+                            onclick="copyHaberLink()"
+                            type="button"
+                        >
+                            🔗 Bağlantıyı Kopyala
+                        </button>
+
+                        <a
+                            class="haber-share-button"
+                            id="whatsapp-share"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            WhatsApp
+                        </a>
+
+                    </div>
+
+                </div>
+
+            `;
+
+            prepareStaticShare();
+        }
+
+        /* =================================================
+           STATİK SAYFADA PAYLAŞIM
+        ================================================== */
+
+        function prepareStaticShare() {
+
+            const whatsapp =
+                document.getElementById(
+                    "whatsapp-share"
+                );
+
+            if (!whatsapp) {
+                return;
+            }
+
+            const currentURL =
+                window.location.href;
+
+            const pageTitle =
+                document.title
+                    .replace(
+                        " | Haberİsta",
+                        ""
+                    )
+                    .trim();
+
+            whatsapp.href =
+                "https://wa.me/?text=" +
+                encodeURIComponent(
+                    pageTitle +
+                    " - " +
+                    currentURL
+                );
+        }
+
+        /* =================================================
+           HTML ESCAPE
+        ================================================== */
+
+        function escapeHTML(value) {
+
+            return String(value ?? "")
+                .replace(
+                    /&/g,
+                    "&amp;"
+                )
+                .replace(
+                    /</g,
+                    "&lt;"
+                )
+                .replace(
+                    />/g,
+                    "&gt;"
+                )
+                .replace(
+                    /"/g,
+                    "&quot;"
+                )
+                .replace(
+                    /'/g,
+                    "&#039;"
+                );
+        }
+
+        /* =================================================
+           LINK KOPYALA
+        ================================================== */
+
+        function copyHaberLink() {
+
+            const url =
+                window.location.href;
+
+            if (
+                navigator.clipboard &&
+                navigator.clipboard.writeText
+            ) {
+
+                navigator.clipboard
+                    .writeText(url)
+                    .then(
+                        function () {
+
+                            alert(
+                                "Haber bağlantısı kopyalandı."
+                            );
+
+                        }
+                    )
+                    .catch(
+                        function () {
+
+                            fallbackCopy(url);
+
+                        }
+                    );
+
+            } else {
+
+                fallbackCopy(url);
+
+            }
+        }
+
+        /* =================================================
+           ESKİ TARAYICI KOPYALAMA
+        ================================================== */
+
+        function fallbackCopy(text) {
+
+            const textarea =
+                document.createElement(
+                    "textarea"
+                );
+
+            textarea.value =
+                text;
+
+            textarea.style.position =
+                "fixed";
+
+            textarea.style.left =
+                "-9999px";
+
+            textarea.style.top =
+                "0";
+
+            document.body.appendChild(
+                textarea
+            );
+
+            textarea.focus();
+            textarea.select();
+
+            try {
+
+                document.execCommand(
+                    "copy"
+                );
+
+                alert(
+                    "Haber bağlantısı kopyalandı."
+                );
+
+            } catch (error) {
+
+                console.error(
+                    "Kopyalama hatası:",
+                    error
+                );
+
+                alert(
+                    "Bağlantı kopyalanamadı."
+                );
+            }
+
+            document.body.removeChild(
+                textarea
+            );
+        }
+
+    </script>
+
+</body>
+</html>
