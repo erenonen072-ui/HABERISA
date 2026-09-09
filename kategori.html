@@ -1,150 +1,86 @@
 <!DOCTYPE html>
 <html lang="tr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Haberİsta</title>
+    <title>Kategoriler | HABERİSTA</title>
+    <meta name="description" content="HABERİSTA haber kategorileri">
 
-    <meta
-        name="description"
-        content="Haberİsta kategori haberleri"
-    >
-
-    <link rel="stylesheet" href="/css/kategori.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/kategori.css">
 </head>
 
 <body>
 
-<header class="category-header">
-
+<header class="site-header">
     <div class="header-inner">
 
-        <a href="/" class="logo">
-            <span>Haber</span>İsta
+        <a href="index.html" class="logo">
+            HABER<span>İSTA</span>
         </a>
 
-        <a href="/" class="home-button">
-            ← Ana Sayfa
-        </a>
+        <nav class="main-nav">
+            <a href="index.html">Ana Sayfa</a>
+            <a href="son-dakika.html">Son Dakika</a>
+            <a href="kategori.html" class="active">Kategoriler</a>
+            <a href="gundem.html">Gündem</a>
+            <a href="spor.html">Spor</a>
+            <a href="dunya.html">Dünya</a>
+            <a href="ekonomi.html">Ekonomi</a>
+        </nav>
 
     </div>
-
 </header>
 
 
-<nav class="category-menu">
+<main class="kategori-page">
 
-    <a href="/son-dakika.html">Son Dakika</a>
-    <a href="/gundem.html">Gündem</a>
-    <a href="/ekonomi.html">Ekonomi</a>
-    <a href="/spor.html">Spor</a>
-    <a href="/magazin.html">Magazin</a>
-    <a href="/dunya.html">Dünya</a>
-    <a href="/teknoloji.html">Teknoloji</a>
-    <a href="/saglik.html">Sağlık</a>
-    <a href="/kultur-sanat.html">Kültür Sanat</a>
-
-</nav>
-
-
-<main class="category-container">
-
-    <div class="category-heading">
-
+    <section class="kategori-hero">
         <div>
-            <div class="category-label">
-                HABERİSTA
-            </div>
-
-            <h1 id="categoryTitle">
-                Haberler
-            </h1>
-
-            <p id="categoryDescription">
-                Güncel haberler
+            <span class="hero-mini">HABERİSTA</span>
+            <h1>Haber Kategorileri</h1>
+            <p>
+                Türkiye'den dünyaya, ekonomiden spora kadar
+                tüm gelişmeleri kategorilerine göre keşfedin.
             </p>
         </div>
 
-        <div class="category-count">
-            <strong id="newsCount">0</strong>
-            <span>Haber</span>
+        <div class="hero-decoration">
+            <span>NEWS</span>
+        </div>
+    </section>
+
+
+    <section class="kategori-content">
+
+        <div class="section-title">
+            <div>
+                <span>KEŞFET</span>
+                <h2>Tüm Kategoriler</h2>
+            </div>
+
+            <div id="kategori-count"></div>
         </div>
 
-    </div>
 
+        <div id="kategori-listesi" class="kategori-grid"></div>
 
-    <div
-        id="categoryNews"
-        class="category-news-grid"
-    ></div>
-
-
-    <div
-        id="emptyState"
-        class="empty-state"
-        style="display:none;"
-    >
-
-        <div class="empty-icon">
-            📰
-        </div>
-
-        <h2>Henüz haber yok</h2>
-
-        <p>
-            Bu kategoride henüz haber yayınlanmamış.
-        </p>
-
-        <a href="/">
-            Ana Sayfaya Dön
-        </a>
-
-    </div>
+    </section>
 
 </main>
 
 
-<footer class="category-footer">
-
-    <div class="footer-logo">
-        <span>Haber</span>İsta
+<footer class="site-footer">
+    <div class="footer-inner">
+        <strong>HABERİSTA</strong>
+        <span>© 2026 HABERİSTA — Güncel haberin adresi.</span>
     </div>
-
-    <p>
-        Türkiye ve dünyadan güncel gelişmeler.
-    </p>
-
-    <div class="footer-links">
-
-        <a href="/hakkimizda.html">
-            Hakkımızda
-        </a>
-
-        <a href="/iletisim.html">
-            İletişim
-        </a>
-
-        <a href="/gizlilik.html">
-            Gizlilik
-        </a>
-
-        <a href="/cerez-politikasi.html">
-            Çerez Politikası
-        </a>
-
-    </div>
-
-    <div class="copyright">
-        © 2026 Haberİsta. Tüm hakları saklıdır.
-    </div>
-
 </footer>
 
 
-<script src="/js/haberler.js"></script>
-<script src="/js/kategori.js"></script>
+<script src="js/haberler.js"></script>
+<script src="js/kategori.js"></script>
 
 </body>
 </html>
