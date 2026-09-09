@@ -2,9 +2,6 @@
 <html lang="tr">
 
 <head>
-<link rel="icon" href="/images/logo.jpeg" type="image/jpeg">
-<link rel="apple-touch-icon" href="/images/logo.jpeg">
-
     <meta charset="UTF-8">
 
     <meta
@@ -14,6 +11,22 @@
 
     <title>Haberİsta - Son Dakika Haberleri</title>
 
+    <!-- Favicon -->
+    <link
+        rel="icon"
+        href="/images/logo.jpeg"
+        type="image/jpeg"
+    >
+
+    <link
+        rel="apple-touch-icon"
+        href="/images/logo.jpeg"
+    >
+
+    <!-- ==============================
+         SEO TEMEL
+    ============================== -->
+
     <meta
         name="description"
         content="Haberİsta; Türkiye ve dünyadan son dakika haberleri, gündem, ekonomi, spor, dünya, teknoloji, sağlık, magazin ve kültür sanat gelişmelerini takip edebileceğiniz güncel haber platformudur."
@@ -21,6 +34,11 @@
 
     <meta
         name="robots"
+        content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    >
+
+    <meta
+        name="googlebot"
         content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
     >
 
@@ -34,26 +52,15 @@
         content="#e11d48"
     >
 
+    <!-- CANONICAL -->
     <link
         rel="canonical"
         href="https://haberisa.vercel.app/"
     >
 
-    <link
-        rel="icon"
-        type="image/jpeg"
-        href="/images/logo.jpeg"
-    >
-
-    <link
-        rel="apple-touch-icon"
-        href="/images/logo.jpeg"
-    >
-
-
-    <!-- =====================================================
+    <!-- ==============================
          OPEN GRAPH
-    ====================================================== -->
+    ============================== -->
 
     <meta
         property="og:type"
@@ -62,7 +69,7 @@
 
     <meta
         property="og:site_name"
-        content="HABERİSTA"
+        content="Haberİsta"
     >
 
     <meta
@@ -77,7 +84,7 @@
 
     <meta
         property="og:description"
-        content="Türkiye ve dünyadan son dakika haberleri, gündem, ekonomi, spor, dünya, teknoloji, sağlık ve daha fazlası."
+        content="Türkiye ve dünyadan son dakika haberleri, gündem, ekonomi, spor, dünya, teknoloji, sağlık ve güncel gelişmeler."
     >
 
     <meta
@@ -90,10 +97,14 @@
         content="https://haberisa.vercel.app/images/logo.jpeg"
     >
 
+    <meta
+        property="og:image:alt"
+        content="Haberİsta Logo"
+    >
 
-    <!-- =====================================================
-         TWITTER
-    ====================================================== -->
+    <!-- ==============================
+         TWITTER / X
+    ============================== -->
 
     <meta
         name="twitter:card"
@@ -107,7 +118,7 @@
 
     <meta
         name="twitter:description"
-        content="Türkiye ve dünyadan son dakika haberleri."
+        content="Türkiye ve dünyadan son dakika haberleri ve güncel gelişmeler."
     >
 
     <meta
@@ -115,24 +126,20 @@
         content="https://haberisa.vercel.app/images/logo.jpeg"
     >
 
-
-
-    <!-- =====================================================
+    <!-- ==============================
          CSS
-    ====================================================== -->
+    ============================== -->
 
     <link
         rel="stylesheet"
         href="/css/style.css"
     >
 
-
-    <!-- =====================================================
-         STRUCTURED DATA
-    ====================================================== -->
+    <!-- ==============================
+         WEBSITE STRUCTURED DATA
+    ============================== -->
 
     <script type="application/ld+json">
-
     {
         "@context": "https://schema.org",
         "@type": "WebSite",
@@ -142,26 +149,42 @@
         "alternateName": "HABERİSTA",
         "description": "Türkiye ve dünyadan güncel haberleri takip edebileceğiniz Haberİsta haber platformu.",
         "inLanguage": "tr-TR",
-
         "publisher": {
             "@type": "Organization",
             "@id": "https://haberisa.vercel.app/#organization",
             "name": "Haberİsta",
             "url": "https://haberisa.vercel.app/",
-
             "logo": {
                 "@type": "ImageObject",
                 "url": "https://haberisa.vercel.app/images/logo.jpeg"
             }
         }
     }
-
     </script>
 
+    <!-- ==============================
+         ORGANIZATION STRUCTURED DATA
+    ============================== -->
 
-    <!-- =====================================================
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "@id": "https://haberisa.vercel.app/#organization",
+        "name": "Haberİsta",
+        "url": "https://haberisa.vercel.app/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://haberisa.vercel.app/images/logo.jpeg",
+            "width": 512,
+            "height": 512
+        }
+    }
+    </script>
+
+    <!-- ==============================
          ONESIGNAL
-    ====================================================== -->
+    ============================== -->
 
     <script
         src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js"
@@ -169,17 +192,13 @@
     ></script>
 
     <script>
-
         window.OneSignalDeferred =
             window.OneSignalDeferred || [];
 
         OneSignalDeferred.push(
             async function (OneSignal) {
-
                 try {
-
                     await OneSignal.init({
-
                         appId:
                             "7d85b114-8807-4eea-8a34-3518fc2d76e3",
 
@@ -189,7 +208,6 @@
                         notifyButton: {
                             enable: false
                         }
-
                     });
 
                     console.log(
@@ -204,14 +222,11 @@
                     );
 
                 }
-
             }
         );
-
     </script>
 
 </head>
-
 
 <body>
 
