@@ -86,8 +86,6 @@
         content="https://haberisa.vercel.app/images/default-news.jpg"
     >
 
-    <!-- Favicon -->
-
     <link
         rel="icon"
         href="/favicon.ico"
@@ -101,10 +99,6 @@
     >
 
     <style>
-
-        /* =====================================================
-           HABERİSTA - HABER DETAY
-           ===================================================== */
 
         * {
             box-sizing: border-box;
@@ -138,35 +132,45 @@
             max-width: 100%;
         }
 
-        /* =====================================================
-           ANA SAYFA ALANI
-           ===================================================== */
+        /* =========================================
+           ANA ALAN
+        ========================================= */
 
         .haber-detail-page {
-            width: min(1280px, calc(100% - 32px));
+            width: min(
+                1280px,
+                calc(100% - 32px)
+            );
+
             margin: 0 auto;
-            padding: 28px 0 70px;
+
+            padding:
+                28px
+                0
+                70px;
         }
 
-        /* =====================================================
+        /* =========================================
            BREADCRUMB
-           ===================================================== */
+        ========================================= */
 
         .haber-breadcrumb {
             display: flex;
             align-items: center;
             flex-wrap: wrap;
+
             gap: 9px;
 
             margin-bottom: 22px;
 
             font-size: 14px;
+
             color: #6b7280;
         }
 
         .haber-breadcrumb a {
             color: #1769e0;
-            font-weight: 600;
+            font-weight: 700;
         }
 
         .haber-breadcrumb a:hover {
@@ -177,71 +181,91 @@
             color: #9ca3af;
         }
 
-        /* =====================================================
+        /* =========================================
            ARTICLE CONTAINER
-           ===================================================== */
+        ========================================= */
 
         #articleContainer {
             width: 100%;
         }
 
-        /* =====================================================
+        /* =========================================
            LAYOUT
-           ===================================================== */
+        ========================================= */
 
         .article-layout {
             display: grid;
+
             grid-template-columns:
                 minmax(0, 1fr)
                 330px;
 
             gap: 28px;
+
             align-items: start;
         }
 
-        /* =====================================================
-           MAIN ARTICLE
-           ===================================================== */
+        /* =========================================
+           ARTICLE
+        ========================================= */
 
         .article-main {
             min-width: 0;
 
             background: #ffffff;
 
-            border: 1px solid #e5e7eb;
+            border:
+                1px solid
+                #e5e7eb;
+
             border-radius: 20px;
 
             overflow: hidden;
 
             box-shadow:
-                0 8px 30px rgba(15, 23, 42, 0.06);
+                0 8px 30px
+                rgba(
+                    15,
+                    23,
+                    42,
+                    0.06
+                );
         }
 
-        /* =====================================================
+        /* =========================================
            HEADER
-           ===================================================== */
+        ========================================= */
 
         .article-header {
-            padding: 32px 34px 26px;
+            padding:
+                32px
+                34px
+                26px;
         }
 
         .article-category {
             display: inline-flex;
+
             align-items: center;
 
-            padding: 7px 12px;
+            padding:
+                7px
+                12px;
 
             margin-bottom: 16px;
 
             border-radius: 999px;
 
             background: #eaf2ff;
+
             color: #1769e0;
 
             font-size: 13px;
+
             font-weight: 800;
 
             text-transform: uppercase;
+
             letter-spacing: .3px;
         }
 
@@ -250,36 +274,44 @@
 
             color: #101828;
 
-            font-size: clamp(
-                32px,
-                4vw,
-                52px
-            );
+            font-size:
+                clamp(
+                    32px,
+                    4vw,
+                    52px
+                );
 
             line-height: 1.08;
+
             letter-spacing: -1.5px;
 
             font-weight: 850;
         }
 
         .article-spot {
-            margin: 20px 0 0;
+            margin:
+                20px
+                0
+                0;
 
             color: #667085;
 
             font-size: 19px;
+
             line-height: 1.65;
 
             font-weight: 450;
         }
 
-        /* =====================================================
+        /* =========================================
            META
-           ===================================================== */
+        ========================================= */
 
         .article-meta {
             display: flex;
+
             align-items: center;
+
             flex-wrap: wrap;
 
             gap: 10px;
@@ -294,20 +326,23 @@
         .article-meta span,
         .article-meta time {
             display: inline-flex;
+
             align-items: center;
 
             min-height: 30px;
 
-            padding: 5px 10px;
+            padding:
+                5px
+                10px;
 
             background: #f5f7fa;
 
             border-radius: 8px;
         }
 
-        /* =====================================================
+        /* =========================================
            IMAGE
-           ===================================================== */
+        ========================================= */
 
         .article-image-wrap {
             margin: 0;
@@ -326,39 +361,53 @@
         }
 
         .article-image-wrap figcaption {
-            padding: 10px 20px;
+            padding:
+                10px
+                20px;
 
             color: #667085;
 
             background: #f8fafc;
 
             font-size: 12px;
+
             line-height: 1.5;
         }
 
-        /* =====================================================
+        /* =========================================
            CONTENT
-           ===================================================== */
+        ========================================= */
 
         .article-content {
-            padding: 32px 34px 36px;
+            padding:
+                32px
+                34px
+                36px;
 
             color: #263241;
 
             font-size: 18px;
+
             line-height: 1.9;
         }
 
         .article-content p {
-            margin: 0 0 22px;
+            margin:
+                0
+                0
+                22px;
         }
 
         .article-content h2 {
-            margin: 38px 0 17px;
+            margin:
+                38px
+                0
+                17px;
 
             color: #101828;
 
             font-size: 27px;
+
             line-height: 1.25;
 
             font-weight: 800;
@@ -367,11 +416,15 @@
         }
 
         .article-content h3 {
-            margin: 30px 0 14px;
+            margin:
+                30px
+                0
+                14px;
 
             color: #101828;
 
             font-size: 22px;
+
             line-height: 1.3;
         }
 
@@ -382,7 +435,11 @@
 
         .article-content ul,
         .article-content ol {
-            margin: 0 0 24px;
+            margin:
+                0
+                0
+                24px;
+
             padding-left: 25px;
         }
 
@@ -391,34 +448,43 @@
         }
 
         .article-content blockquote {
-            margin: 30px 0;
+            margin:
+                30px
+                0;
 
-            padding: 20px 24px;
+            padding:
+                20px
+                24px;
 
-            border-left: 4px solid #1769e0;
+            border-left:
+                4px solid
+                #1769e0;
 
             background: #f4f8ff;
 
-            border-radius: 0 12px 12px 0;
+            border-radius:
+                0
+                12px
+                12px
+                0;
 
             color: #344054;
 
             font-style: italic;
         }
 
-        .article-empty {
-            color: #667085;
-        }
-
-        /* =====================================================
+        /* =========================================
            SHARE
-           ===================================================== */
+        ========================================= */
 
         .article-share {
             margin-top: 42px;
+
             padding-top: 25px;
 
-            border-top: 1px solid #e5e7eb;
+            border-top:
+                1px solid
+                #e5e7eb;
         }
 
         .article-share > strong {
@@ -433,24 +499,31 @@
 
         .article-share-buttons {
             display: flex;
+
             flex-wrap: wrap;
+
             gap: 10px;
         }
 
         .article-share-buttons a {
             display: inline-flex;
+
             align-items: center;
+
             justify-content: center;
 
             min-height: 42px;
 
-            padding: 0 16px;
+            padding:
+                0
+                16px;
 
             border-radius: 10px;
 
             color: #ffffff;
 
             font-size: 14px;
+
             font-weight: 750;
 
             transition:
@@ -459,7 +532,9 @@
         }
 
         .article-share-buttons a:hover {
-            transform: translateY(-2px);
+            transform:
+                translateY(-2px);
+
             opacity: .9;
         }
 
@@ -475,16 +550,23 @@
             background: #20b958;
         }
 
-        /* =====================================================
-           SOURCE BOX
-           ===================================================== */
+        /* =========================================
+           SOURCE
+        ========================================= */
 
         .article-source-box {
-            margin: 0 34px 34px;
+            margin:
+                0
+                34px
+                34px;
 
-            padding: 20px 22px;
+            padding:
+                20px
+                22px;
 
-            border: 1px solid #e2e8f0;
+            border:
+                1px solid
+                #e2e8f0;
 
             background: #f8fafc;
 
@@ -507,12 +589,13 @@
             color: #667085;
 
             font-size: 13px;
+
             line-height: 1.6;
         }
 
-        /* =====================================================
+        /* =========================================
            SIDEBAR
-           ===================================================== */
+        ========================================= */
 
         .article-sidebar {
             position: sticky;
@@ -522,39 +605,57 @@
         .sidebar-box {
             background: #ffffff;
 
-            border: 1px solid #e5e7eb;
+            border:
+                1px solid
+                #e5e7eb;
 
             border-radius: 18px;
 
             padding: 21px;
 
             box-shadow:
-                0 8px 30px rgba(15, 23, 42, 0.05);
+                0 8px 30px
+                rgba(
+                    15,
+                    23,
+                    42,
+                    0.05
+                );
         }
 
         .sidebar-box h2 {
-            margin: 0 0 18px;
+            margin:
+                0
+                0
+                18px;
 
             padding-bottom: 15px;
 
-            border-bottom: 1px solid #edf0f3;
+            border-bottom:
+                1px solid
+                #edf0f3;
 
             color: #101828;
 
             font-size: 20px;
+
             font-weight: 800;
         }
 
         .sidebar-news-list {
             display: flex;
+
             flex-direction: column;
+
             gap: 14px;
         }
 
         .sidebar-news-item {
             display: grid;
 
-            grid-template-columns: 90px minmax(0, 1fr);
+            grid-template-columns:
+                90px
+                minmax(0, 1fr);
 
             gap: 12px;
 
@@ -562,7 +663,9 @@
 
             padding-bottom: 14px;
 
-            border-bottom: 1px solid #edf0f3;
+            border-bottom:
+                1px solid
+                #edf0f3;
         }
 
         .sidebar-news-item:last-child {
@@ -585,12 +688,15 @@
             color: #1d2939;
 
             font-size: 14px;
+
             line-height: 1.45;
 
             font-weight: 700;
 
             display: -webkit-box;
+
             -webkit-line-clamp: 3;
+
             -webkit-box-orient: vertical;
 
             overflow: hidden;
@@ -600,30 +706,42 @@
             color: #1769e0;
         }
 
-        /* =====================================================
+        /* =========================================
            ERROR
-           ===================================================== */
+        ========================================= */
 
         .haber-error {
             width: 100%;
 
-            padding: 80px 25px;
+            padding:
+                80px
+                25px;
 
             text-align: center;
 
             background: #ffffff;
 
             border:
-                1px solid #e5e7eb;
+                1px solid
+                #e5e7eb;
 
             border-radius: 20px;
 
             box-shadow:
-                0 8px 30px rgba(15, 23, 42, 0.05);
+                0 8px 30px
+                rgba(
+                    15,
+                    23,
+                    42,
+                    0.05
+                );
         }
 
         .haber-error h1 {
-            margin: 0 0 12px;
+            margin:
+                0
+                0
+                12px;
 
             color: #101828;
 
@@ -643,7 +761,9 @@
 
             margin-top: 20px;
 
-            padding: 12px 18px;
+            padding:
+                12px
+                18px;
 
             background: #1769e0;
 
@@ -654,14 +774,15 @@
             font-weight: 700;
         }
 
-        /* =====================================================
+        /* =========================================
            TABLET
-           ===================================================== */
+        ========================================= */
 
         @media (max-width: 1050px) {
 
             .article-layout {
-                grid-template-columns: minmax(0, 1fr);
+                grid-template-columns:
+                    minmax(0, 1fr);
             }
 
             .article-sidebar {
@@ -672,30 +793,28 @@
                 display: grid;
 
                 grid-template-columns:
-                    repeat(2, minmax(0, 1fr));
+                    repeat(
+                        2,
+                        minmax(0, 1fr)
+                    );
 
                 gap: 14px;
             }
 
-            .sidebar-news-item {
-                padding: 0 0 14px;
-            }
-
         }
 
-        /* =====================================================
+        /* =========================================
            MOBILE
-           ===================================================== */
+        ========================================= */
 
         @media (max-width: 700px) {
 
             .haber-detail-page {
-                width: min(
-                    100% - 20px,
-                    1280px
-                );
+                width:
+                    calc(100% - 20px);
 
                 padding-top: 16px;
+
                 padding-bottom: 40px;
             }
 
@@ -710,13 +829,18 @@
             }
 
             .article-header {
-                padding: 23px 19px 20px;
+                padding:
+                    23px
+                    19px
+                    20px;
             }
 
             .article-category {
                 margin-bottom: 13px;
 
-                padding: 6px 10px;
+                padding:
+                    6px
+                    10px;
 
                 font-size: 11px;
             }
@@ -749,7 +873,9 @@
             .article-meta time {
                 min-height: 27px;
 
-                padding: 4px 8px;
+                padding:
+                    4px
+                    8px;
             }
 
             .article-image {
@@ -757,13 +883,18 @@
             }
 
             .article-image-wrap figcaption {
-                padding: 8px 14px;
+                padding:
+                    8px
+                    14px;
 
                 font-size: 11px;
             }
 
             .article-content {
-                padding: 24px 19px 27px;
+                padding:
+                    24px
+                    19px
+                    27px;
 
                 font-size: 16.5px;
 
@@ -792,7 +923,10 @@
                 display: grid;
 
                 grid-template-columns:
-                    repeat(3, 1fr);
+                    repeat(
+                        3,
+                        1fr
+                    );
 
                 gap: 7px;
             }
@@ -800,13 +934,18 @@
             .article-share-buttons a {
                 min-height: 40px;
 
-                padding: 0 6px;
+                padding:
+                    0
+                    6px;
 
                 font-size: 12px;
             }
 
             .article-source-box {
-                margin: 0 19px 22px;
+                margin:
+                    0
+                    19px
+                    22px;
 
                 padding: 16px;
             }
@@ -823,7 +962,8 @@
 
             .sidebar-news-item {
                 grid-template-columns:
-                    100px minmax(0, 1fr);
+                    100px
+                    minmax(0, 1fr);
             }
 
             .sidebar-news-item img {
@@ -833,9 +973,9 @@
 
         }
 
-        /* =====================================================
+        /* =========================================
            SMALL MOBILE
-           ===================================================== */
+        ========================================= */
 
         @media (max-width: 420px) {
 
@@ -861,23 +1001,19 @@
 
 </head>
 
-
 <body>
 
-    <!-- =====================================================
-         SİTE HEADER
-         ===================================================== -->
+    <!-- =========================================
+         SITE HEADER
+    ========================================= -->
 
     <header id="site-header"></header>
 
-
-    <!-- =====================================================
+    <!-- =========================================
          ANA İÇERİK
-         ===================================================== -->
+    ========================================= -->
 
     <main class="haber-detail-page">
-
-        <!-- BREADCRUMB -->
 
         <nav
             class="haber-breadcrumb"
@@ -902,10 +1038,9 @@
 
         </nav>
 
-
-        <!-- =================================================
+        <!-- =========================================
              BUILD.JS BURAYI DEĞİŞTİRİR
-             ================================================= -->
+        ========================================= -->
 
         <div id="articleContainer">
 
@@ -932,17 +1067,15 @@
 
     </main>
 
-
-    <!-- =====================================================
+    <!-- =========================================
          HABER VERİLERİ
-         ===================================================== -->
+    ========================================= -->
 
     <script src="/js/haberler.js"></script>
 
-
-    <!-- =====================================================
+    <!-- =========================================
          DİNAMİK FALLBACK
-         ===================================================== -->
+    ========================================= -->
 
     <script>
 
@@ -953,17 +1086,16 @@
             function () {
 
                 /*
-                 * ÇOK ÖNEMLİ:
+                 * ÇOK ÖNEMLİ
                  *
-                 * build.js statik haber sayfası oluşturduğunda
-                 * body'ye:
+                 * build.js statik sayfalara:
                  *
                  * data-static-article="true"
                  *
-                 * ekliyor.
+                 * ekler.
                  *
-                 * Bu durumda aşağıdaki eski dinamik sistem
-                 * statik haberi EZMEMELİ.
+                 * Statik sayfadaysak hiçbir şekilde
+                 * aşağıdaki dinamik sistem çalışmaz.
                  */
 
                 if (
@@ -972,62 +1104,41 @@
                     return;
                 }
 
-
-                /* =========================================
-                   ELEMENTLER
-                   ========================================= */
-
                 const container =
                     document.getElementById(
                         "haber-container"
                     );
-
 
                 const breadcrumbCategory =
                     document.getElementById(
                         "breadcrumb-category"
                     );
 
-
                 if (!container) {
                     return;
                 }
 
-
-                /* =========================================
-                   HABER LİSTESİ
-                   ========================================= */
-
                 const haberListesi =
-                    Array.isArray(window.haberler)
+                    Array.isArray(
+                        window.haberler
+                    )
                         ? window.haberler
                         : [];
-
-
-                /* =========================================
-                   URL
-                   ========================================= */
 
                 const params =
                     new URLSearchParams(
                         window.location.search
                     );
 
-
                 const id =
                     params.get("id");
-
 
                 const slug =
                     params.get("slug");
 
-
-                /* =========================================
-                   HABER BUL
-                   ========================================= */
-
                 let haber = null;
 
+                /* ID ile bul */
 
                 if (id) {
 
@@ -1035,20 +1146,17 @@
                         haberListesi.find(
                             function (item) {
 
-                                return String(
-                                    item.id
-                                ) === String(id);
+                                return (
+                                    String(item.id) ===
+                                    String(id)
+                                );
 
                             }
                         );
 
                 }
 
-
-                /*
-                 * Eğer slug gönderilmişse
-                 * slug üzerinden de ara.
-                 */
+                /* Slug ile bul */
 
                 if (!haber && slug) {
 
@@ -1056,19 +1164,19 @@
                         haberListesi.find(
                             function (item) {
 
-                                return String(
-                                    item.slug || ""
-                                ) === String(slug);
+                                return (
+                                    String(
+                                        item.slug || ""
+                                    ) ===
+                                    String(slug)
+                                );
 
                             }
                         );
 
                 }
 
-
-                /* =========================================
-                   HABER YOK
-                   ========================================= */
+                /* Haber bulunamadı */
 
                 if (!haber) {
 
@@ -1096,14 +1204,11 @@
                     return;
                 }
 
-
-                /* =========================================
-                   HTML ESCAPE
-                   ========================================= */
-
                 function escapeHTML(value) {
 
-                    return String(value ?? "")
+                    return String(
+                        value ?? ""
+                    )
                         .replace(
                             /&/g,
                             "&amp;"
@@ -1127,53 +1232,45 @@
 
                 }
 
-
-                /* =========================================
-                   DEĞERLER
-                   ========================================= */
-
                 const title =
                     escapeHTML(
-                        haber.baslik || "Haber"
+                        haber.baslik ||
+                        "Haber"
                     );
-
 
                 const category =
                     escapeHTML(
-                        haber.kategori || "Gündem"
+                        haber.kategori ||
+                        "Gündem"
                     );
-
 
                 const spot =
                     escapeHTML(
-                        haber.spot || ""
+                        haber.spot ||
+                        ""
                     );
-
 
                 const date =
                     escapeHTML(
-                        haber.tarih || ""
+                        haber.tarih ||
+                        ""
                     );
-
 
                 const time =
                     escapeHTML(
-                        haber.saat || ""
+                        haber.saat ||
+                        ""
                     );
-
 
                 const image =
                     haber.gorsel ||
                     "/images/default-news.jpg";
 
-
                 const content =
-                    haber.icerik || "";
+                    haber.icerik ||
+                    "";
 
-
-                /* =========================================
-                   BREADCRUMB
-                   ========================================= */
+                /* Breadcrumb */
 
                 if (breadcrumbCategory) {
 
@@ -1183,18 +1280,12 @@
 
                 }
 
-
-                /* =========================================
-                   BAŞLIK
-                   ========================================= */
+                /* Başlık */
 
                 document.title =
                     `${haber.baslik} | Haberİsta`;
 
-
-                /* =========================================
-                   İÇERİK RENDER
-                   ========================================= */
+                /* İçerik */
 
                 function renderContent(text) {
 
@@ -1218,14 +1309,11 @@
 
                     }
 
-
                     return temiz
                         .split("\n")
                         .filter(
                             function (line) {
-
                                 return line.trim();
-
                             }
                         )
                         .map(
@@ -1233,7 +1321,6 @@
 
                                 const value =
                                     line.trim();
-
 
                                 if (
                                     value.length > 3 &&
@@ -1248,18 +1335,21 @@
                                 ) {
 
                                     return `
+
                                         <h2>
                                             ${escapeHTML(value)}
                                         </h2>
+
                                     `;
 
                                 }
 
-
                                 return `
+
                                     <p>
                                         ${escapeHTML(value)}
                                     </p>
+
                                 `;
 
                             }
@@ -1268,14 +1358,8 @@
 
                 }
 
-
-                /* =========================================
-                   PAYLAŞIM
-                   ========================================= */
-
                 const currentURL =
                     window.location.href;
-
 
                 const shareText =
                     encodeURIComponent(
@@ -1283,16 +1367,12 @@
                         "Haberİsta"
                     );
 
-
                 const shareURL =
                     encodeURIComponent(
                         currentURL
                     );
 
-
-                /* =========================================
-                   HABERİ OLUŞTUR
-                   ========================================= */
+                /* Haber oluştur */
 
                 container.innerHTML = `
 
@@ -1314,7 +1394,6 @@
                                     ${category}
                                 </div>
 
-
                                 <h1
                                     class="article-title"
                                     itemprop="headline"
@@ -1322,20 +1401,20 @@
                                     ${title}
                                 </h1>
 
-
                                 ${
                                     spot
                                         ? `
+
                                             <p
                                                 class="article-spot"
                                                 itemprop="description"
                                             >
                                                 ${spot}
                                             </p>
+
                                         `
                                         : ""
                                 }
-
 
                                 <div
                                     class="article-meta"
@@ -1344,26 +1423,28 @@
                                     ${
                                         date
                                             ? `
+
                                                 <time
                                                     itemprop="datePublished"
                                                 >
                                                     ${date}
                                                 </time>
+
                                             `
                                             : ""
                                     }
-
 
                                     ${
                                         time
                                             ? `
+
                                                 <span>
                                                     ${time}
                                                 </span>
+
                                             `
                                             : ""
                                     }
-
 
                                     <span>
                                         Haberİsta
@@ -1372,7 +1453,6 @@
                                 </div>
 
                             </header>
-
 
                             <figure
                                 class="article-image-wrap"
@@ -1391,7 +1471,6 @@
 
                             </figure>
 
-
                             <div
                                 id="articleContent"
                                 class="article-content"
@@ -1400,7 +1479,6 @@
 
                                 ${renderContent(content)}
 
-
                                 <div
                                     class="article-share"
                                 >
@@ -1408,7 +1486,6 @@
                                     <strong>
                                         Bu haberi paylaş
                                     </strong>
-
 
                                     <div
                                         class="article-share-buttons"
@@ -1423,7 +1500,6 @@
                                             Facebook
                                         </a>
 
-
                                         <a
                                             class="share-twitter"
                                             href="https://twitter.com/intent/tweet?text=${shareText}&url=${shareURL}"
@@ -1432,7 +1508,6 @@
                                         >
                                             X
                                         </a>
-
 
                                         <a
                                             class="share-whatsapp"
@@ -1448,7 +1523,6 @@
                                 </div>
 
                             </div>
-
 
                             <div
                                 class="article-source-box"
@@ -1477,25 +1551,6 @@
             }
 
         );
-
-    </script>
-
-
-    <!-- =====================================================
-         GENEL HEADER / SİTE SCRIPTİ İÇİN ALAN
-         ===================================================== -->
-
-    <script>
-
-        /*
-         * Burada ekstra bir header oluşturulmuyor.
-         *
-         * Projedeki mevcut header sistemi:
-         *
-         * <header id="site-header"></header>
-         *
-         * üzerinden çalışmaya devam eder.
-         */
 
     </script>
 
