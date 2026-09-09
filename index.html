@@ -1,10 +1,7 @@
 <!DOCTYPE html>
 <html lang="tr">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Haberİsta - Son Dakika Haberleri</title>
@@ -20,10 +17,12 @@
     >
 
     <meta name="author" content="Haberİsta Haber Merkezi">
-
     <meta name="theme-color" content="#e11d48">
 
-    <link rel="canonical" href="https://haberisa.vercel.app/">
+    <link
+        rel="canonical"
+        href="https://haberisa.vercel.app/"
+    >
 
     <link
         rel="icon"
@@ -36,33 +35,26 @@
         href="/images/logo.jpeg"
     >
 
-
     <!-- GOOGLE SEARCH CONSOLE -->
-
     <meta
         name="google-site-verification"
         content="vQ7jx3fnqLHiLgqgLDnPluUm6fbkhSsjTq1CCeI2vGc"
     >
 
-
     <!-- ADSENSE -->
-
     <script
         async
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6348449846402791"
         crossorigin="anonymous">
     </script>
 
-
     <!-- GOOGLE ANALYTICS -->
-
     <script
         async
         src="https://www.googletagmanager.com/gtag/js?id=G-H6TTCSCZR2">
     </script>
 
     <script>
-
         window.dataLayer = window.dataLayer || [];
 
         function gtag() {
@@ -70,18 +62,12 @@
         }
 
         gtag("js", new Date());
-
         gtag("config", "G-H6TTCSCZR2");
-
     </script>
 
-
     <!-- OPEN GRAPH -->
-
     <meta property="og:type" content="website">
-
     <meta property="og:site_name" content="HABERİSTA">
-
     <meta property="og:locale" content="tr_TR">
 
     <meta
@@ -104,9 +90,7 @@
         content="https://haberisa.vercel.app/images/logo.jpeg"
     >
 
-
     <!-- TWITTER -->
-
     <meta
         name="twitter:card"
         content="summary_large_image"
@@ -127,19 +111,14 @@
         content="https://haberisa.vercel.app/images/logo.jpeg"
     >
 
-
     <!-- CSS -->
-
     <link
         rel="stylesheet"
         href="/css/style.css"
     >
 
-
     <!-- STRUCTURED DATA -->
-
     <script type="application/ld+json">
-
     {
         "@context": "https://schema.org",
         "@type": "WebSite",
@@ -160,64 +139,54 @@
             }
         }
     }
-
     </script>
 
-
     <!-- ONESIGNAL -->
-
     <script
         src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js"
         defer>
     </script>
 
     <script>
-
         window.OneSignalDeferred =
             window.OneSignalDeferred || [];
 
         OneSignalDeferred.push(
-            async function(OneSignal) {
+            async function (OneSignal) {
+                try {
+                    await OneSignal.init({
+                        appId: "7d85b114-8807-4eea-8a34-3518fc2d76e3",
+                        safari_web_id: "web.onesignal.auto.6a2e4cfc-4f7f-4e0a-b787-2d0bd3e78806",
+                        notifyButton: {
+                            enable: false
+                        }
+                    });
 
-                await OneSignal.init({
-
-                    appId:
-                        "7d85b114-8807-4eea-8a34-3518fc2d76e3",
-
-                    safari_web_id:
-                        "web.onesignal.auto.6a2e4cfc-4f7f-4e0a-b787-2d0bd3e78806",
-
-                    notifyButton: {
-                        enable: false
-                    }
-
-                });
-
-                console.log(
-                    "OneSignal başarıyla başlatıldı."
-                );
-
+                    console.log(
+                        "OneSignal başarıyla başlatıldı."
+                    );
+                } catch (error) {
+                    console.warn(
+                        "OneSignal başlatılamadı:",
+                        error
+                    );
+                }
             }
         );
-
     </script>
-
 </head>
-
 
 <body>
 
-
-<!-- ==================================================
+<!-- =====================================================
      HEADER
-================================================== -->
+===================================================== -->
 
 <header class="site-header">
 
     <div class="top-header">
 
         <div class="container header-inner">
-
 
             <button
                 id="menuBtn"
@@ -229,13 +198,11 @@
                 ☰
             </button>
 
-
             <a
                 href="/"
                 class="brand"
                 aria-label="Haberİsta ana sayfa"
             >
-
                 <img
                     src="/images/logo.jpeg"
                     alt="Haberİsta Logo"
@@ -245,9 +212,7 @@
                 >
 
                 <span>Haberİsta</span>
-
             </a>
-
 
             <div class="search-area">
 
@@ -260,7 +225,6 @@
                     🔍
                 </button>
 
-
                 <button
                     id="notificationBtn"
                     class="notification-menu-btn"
@@ -269,7 +233,6 @@
                 >
                     🔔 Bildirimleri Aç
                 </button>
-
 
                 <div
                     id="searchPanel"
@@ -300,7 +263,6 @@
 
     </div>
 
-
     <!-- NAVIGATION -->
 
     <nav
@@ -310,7 +272,10 @@
 
         <div class="container nav-inner">
 
-            <a class="active" href="/">
+            <a
+                class="active"
+                href="/"
+            >
                 Ana Sayfa
             </a>
 
@@ -357,61 +322,57 @@
 </header>
 
 
-<!-- ==================================================
+<!-- =====================================================
      MOBİL MENÜ
-================================================== -->
+===================================================== -->
 
 <div
     id="mobileMenu"
     class="mobile-menu"
 >
 
-    <a href="/">
-        Ana Sayfa
-    </a>
-
-    <a href="/son-dakika.html">
-        Son Dakika
-    </a>
-
-    <a href="/gundem.html">
-        Gündem
-    </a>
-
-    <a href="/ekonomi.html">
-        Ekonomi
-    </a>
-
-    <a href="/spor.html">
-        Spor
-    </a>
-
-    <a href="/magazin.html">
-        Magazin
-    </a>
-
-    <a href="/dunya.html">
-        Dünya
-    </a>
-
-    <a href="/teknoloji.html">
-        Teknoloji
-    </a>
-
-    <a href="/saglik.html">
-        Sağlık
-    </a>
-
-    <a href="/kultur-sanat.html">
-        Kültür Sanat
-    </a>
+    <a href="/">Ana Sayfa</a>
+    <a href="/son-dakika.html">Son Dakika</a>
+    <a href="/gundem.html">Gündem</a>
+    <a href="/ekonomi.html">Ekonomi</a>
+    <a href="/spor.html">Spor</a>
+    <a href="/magazin.html">Magazin</a>
+    <a href="/dunya.html">Dünya</a>
+    <a href="/teknoloji.html">Teknoloji</a>
+    <a href="/saglik.html">Sağlık</a>
+    <a href="/kultur-sanat.html">Kültür Sanat</a>
 
 </div>
 
 
-<!-- ==================================================
-     PİYASA
-================================================== -->
+<!-- =====================================================
+     SON DAKİKA
+===================================================== -->
+
+<div class="breaking-bar">
+
+    <div class="container breaking-inner">
+
+        <div class="breaking-title">
+            <span aria-hidden="true"></span>
+            SON DAKİKA
+        </div>
+
+        <div
+            id="breakingNews"
+            class="breaking-news"
+            aria-live="polite"
+        ></div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     EKONOMİ / PİYASA
+     SON DAKİKA'NIN HEMEN ALTINDA
+===================================================== -->
 
 <section
     class="market-bar"
@@ -433,7 +394,6 @@
 
             </div>
 
-
             <div
                 id="marketItems"
                 class="market-items"
@@ -444,7 +404,6 @@
                 </div>
 
             </div>
-
 
             <div
                 id="marketUpdated"
@@ -460,42 +419,11 @@
 </section>
 
 
-<!-- ==================================================
-     SON DAKİKA
-================================================== -->
-
-<div class="breaking-bar">
-
-    <div class="container breaking-inner">
-
-        <div class="breaking-title">
-
-            <span aria-hidden="true"></span>
-
-            SON DAKİKA
-
-        </div>
-
-
-        <div
-            id="breakingNews"
-            class="breaking-news"
-            aria-live="polite"
-        ></div>
-
-    </div>
-
-</div>
-
-
-<!-- ==================================================
+<!-- =====================================================
      ANA İÇERİK
-================================================== -->
+===================================================== -->
 
 <main class="container">
-
-
-    <!-- BAŞLIK -->
 
     <header class="homepage-heading">
 
@@ -506,8 +434,8 @@
     </header>
 
 
-    <!-- ==================================================
-         MANŞET
+    <!-- =================================================
+         KÜÇÜK MANŞET
     ================================================== -->
 
     <section
@@ -524,12 +452,10 @@
             ‹
         </button>
 
-
         <div
             id="heroMain"
             class="hero-main"
         ></div>
-
 
         <button
             id="heroNext"
@@ -540,16 +466,18 @@
             ›
         </button>
 
+        <!-- 20 MANŞET NUMARASI -->
 
         <div
             id="heroNumbers"
             class="hero-numbers"
+            aria-label="Manşet haber seçimi"
         ></div>
 
     </section>
 
 
-    <!-- ==================================================
+    <!-- =================================================
          SON HABERLER
     ================================================== -->
 
@@ -568,13 +496,11 @@
 
         </div>
 
-
         <div
             id="searchResultInfo"
             class="search-result-info"
             aria-live="polite"
         ></div>
-
 
         <div
             id="newsGrid"
@@ -584,7 +510,7 @@
     </section>
 
 
-    <!-- ==================================================
+    <!-- =================================================
          ÇOK OKUNANLAR
     ================================================== -->
 
@@ -603,7 +529,6 @@
 
         </div>
 
-
         <div
             id="popularNews"
             class="popular-news"
@@ -614,25 +539,23 @@
 </main>
 
 
-<!-- ==================================================
+<!-- =====================================================
      FOOTER
-================================================== -->
+===================================================== -->
 
 <footer class="site-footer">
 
     <div class="container footer-inner">
 
-
         <div>
 
             <div class="footer-logo">
-
-                <span>Haber</span>İsta
-
+                Haber<span>İsta</span>
             </div>
 
             <p>
-                Türkiye ve dünyadan güncel haberler.
+                Türkiye ve dünyadan güncel haberleri
+                hızlı ve güvenilir şekilde takip edin.
             </p>
 
         </div>
@@ -642,29 +565,12 @@
 
             <h4>Kategoriler</h4>
 
-            <a href="/gundem.html">
-                Gündem
-            </a>
-
-            <a href="/ekonomi.html">
-                Ekonomi
-            </a>
-
-            <a href="/spor.html">
-                Spor
-            </a>
-
-            <a href="/dunya.html">
-                Dünya
-            </a>
-
-            <a href="/teknoloji.html">
-                Teknoloji
-            </a>
-
-            <a href="/saglik.html">
-                Sağlık
-            </a>
+            <a href="/gundem.html">Gündem</a>
+            <a href="/ekonomi.html">Ekonomi</a>
+            <a href="/spor.html">Spor</a>
+            <a href="/dunya.html">Dünya</a>
+            <a href="/teknoloji.html">Teknoloji</a>
+            <a href="/saglik.html">Sağlık</a>
 
         </div>
 
@@ -739,24 +645,28 @@
 
     <div class="footer-bottom">
 
-        © 2026 Haberİsta.
-        Tüm hakları saklıdır.
+        <div class="container">
+
+            © 2026 Haberİsta.
+            Tüm hakları saklıdır.
+
+        </div>
 
     </div>
 
 </footer>
 
 
-<!-- ==================================================
+<!-- =====================================================
      HABER VERİTABANI
-================================================== -->
+===================================================== -->
 
 <script src="/js/haberler.js"></script>
 
 
-<!-- ==================================================
+<!-- =====================================================
      ANA SAYFA HABER MOTORU
-================================================== -->
+===================================================== -->
 
 <script>
 
@@ -765,11 +675,13 @@
 (function () {
 
     let heroIndex = 0;
-
     let heroItems = [];
-
     let heroTimer = null;
 
+
+    /* =================================================
+       YARDIMCI
+    ================================================= */
 
     function $id(id) {
         return document.getElementById(id);
@@ -791,9 +703,12 @@
             .replace(/>/g, "&gt;")
             .replace(/"/g, "&quot;")
             .replace(/'/g, "&#039;");
-
     }
 
+
+    /* =================================================
+       HABER URL
+    ================================================= */
 
     function getNewsUrl(haber) {
 
@@ -806,49 +721,70 @@
         }
 
         return "#";
-
     }
 
 
+    /* =================================================
+       GÖRSEL
+       haberler.js'deki images/... YOLLARINI KORUR
+    ================================================= */
+
     function getImage(haber) {
 
-        if (!haber.gorsel) {
+        if (!haber || !haber.gorsel) {
             return "/images/logo.jpeg";
         }
 
         let image =
             String(haber.gorsel).trim();
 
+        /* Tam URL */
 
         if (
             image.startsWith("http://") ||
-            image.startsWith("https://") ||
-            image.startsWith("/")
+            image.startsWith("https://")
         ) {
             return image;
         }
 
+        /* Zaten /images/... */
+
+        if (image.startsWith("/images/")) {
+            return image;
+        }
+
+        /* images/... */
+
+        if (
+            image.startsWith("images/")
+        ) {
+            return "/" + image;
+        }
+
+        /* ./images/... */
 
         image =
             image.replace(/^\.?\//, "");
 
-
         if (
-            !image.startsWith("images/")
+            image.startsWith("images/")
         ) {
-            image =
-                "images/" + image;
+            return "/" + image;
         }
 
+        /*
+         * haberler.js'de sadece dosya adı varsa
+         * /images/ ekle
+         */
 
-        return "/" + image;
-
+        return "/images/" + image;
     }
 
 
-    /* ==================================================
+    /* =================================================
        MANŞET
-    ================================================== */
+       20 HABER
+    ================================================= */
 
     function renderHero() {
 
@@ -859,29 +795,29 @@
             return;
         }
 
-
         if (
-            !Array.isArray(
-                window.haberler
-            ) ||
+            !Array.isArray(window.haberler) ||
             !window.haberler.length
         ) {
 
-            hero.innerHTML =
-                "<div class='no-news'>Haber bulunamadı.</div>";
+            hero.innerHTML = `
+                <div class="no-news">
+                    Haber bulunamadı.
+                </div>
+            `;
 
             return;
-
         }
 
+
+        /*
+         * İLK 20 HABER MANŞETTE
+         */
 
         heroItems =
             window.haberler.slice(
                 0,
-                Math.min(
-                    5,
-                    window.haberler.length
-                )
+                20
             );
 
 
@@ -899,13 +835,14 @@
         hero.innerHTML = `
 
             <a
-                class="hero-card"
+                class="hero-slide-link"
                 href="${escapeHTML(
                     getNewsUrl(haber)
                 )}"
             >
 
                 <img
+                    class="hero-image"
                     src="${escapeHTML(
                         getImage(haber)
                     )}"
@@ -916,51 +853,19 @@
                     decoding="async"
                 >
 
-
                 <div class="hero-overlay">
 
                     <span class="hero-category">
-
                         ${escapeHTML(
                             haber.kategori
                         )}
-
                     </span>
 
-
                     <h2>
-
                         ${escapeHTML(
                             haber.baslik
                         )}
-
                     </h2>
-
-
-                    <p>
-
-                        ${escapeHTML(
-                            haber.spot
-                        )}
-
-                    </p>
-
-
-                    <div class="hero-meta">
-
-                        <span>
-                            ${escapeHTML(
-                                haber.tarih
-                            )}
-                        </span>
-
-                        <span>
-                            ${escapeHTML(
-                                haber.saat
-                            )}
-                        </span>
-
-                    </div>
 
                 </div>
 
@@ -974,6 +879,10 @@
     }
 
 
+    /* =================================================
+       20 MANŞET NUMARASI
+    ================================================= */
+
     function renderHeroNumbers() {
 
         const numbers =
@@ -986,7 +895,10 @@
 
         numbers.innerHTML =
             heroItems.map(
-                function (haber, index) {
+                function (
+                    haber,
+                    index
+                ) {
 
                     return `
 
@@ -998,6 +910,9 @@
                                     : ""
                             }"
                             data-hero-index="${index}"
+                            aria-label="${
+                                index + 1
+                            }. manşet"
                         >
                             ${index + 1}
                         </button>
@@ -1038,6 +953,10 @@
     }
 
 
+    /* =================================================
+       SONRAKİ MANŞET
+    ================================================= */
+
     function nextHero() {
 
         if (!heroItems.length) {
@@ -1054,6 +973,10 @@
 
     }
 
+
+    /* =================================================
+       ÖNCEKİ MANŞET
+    ================================================= */
 
     function previousHero() {
 
@@ -1074,22 +997,29 @@
     }
 
 
+    /* =================================================
+       MANŞET OTOMATİK
+    ================================================= */
+
     function startHeroTimer() {
 
-        clearInterval(heroTimer);
+        clearInterval(
+            heroTimer
+        );
 
         heroTimer =
             setInterval(
                 nextHero,
-                6000
+                5000
             );
 
     }
 
 
-    /* ==================================================
-       SON HABERLER
-    ================================================== */
+    /* =================================================
+       20 SON HABER
+       SADECE FOTOĞRAF + BAŞLIK
+    ================================================= */
 
     function renderNews(list) {
 
@@ -1123,12 +1053,22 @@
             `;
 
             return;
-
         }
 
 
+        /*
+         * HER ZAMAN EN FAZLA 20 HABER
+         */
+
+        const newsList =
+            list.slice(
+                0,
+                20
+            );
+
+
         grid.innerHTML =
-            list.map(
+            newsList.map(
                 function (haber) {
 
                     return `
@@ -1147,7 +1087,7 @@
                                 )}"
                             >
 
-                                <div class="news-image">
+                                <div class="news-card-image">
 
                                     <img
                                         src="${escapeHTML(
@@ -1165,52 +1105,11 @@
 
                                 <div class="news-card-content">
 
-                                    <span class="news-category">
-
-                                        ${escapeHTML(
-                                            haber.kategori
-                                        )}
-
-                                    </span>
-
-
                                     <h3>
-
                                         ${escapeHTML(
                                             haber.baslik
                                         )}
-
                                     </h3>
-
-
-                                    <p>
-
-                                        ${escapeHTML(
-                                            haber.spot
-                                        )}
-
-                                    </p>
-
-
-                                    <div class="news-meta">
-
-                                        <span>
-
-                                            ${escapeHTML(
-                                                haber.tarih
-                                            )}
-
-                                        </span>
-
-                                        <span>
-
-                                            ${escapeHTML(
-                                                haber.saat
-                                            )}
-
-                                        </span>
-
-                                    </div>
 
                                 </div>
 
@@ -1230,7 +1129,7 @@
         if (resultInfo) {
 
             resultInfo.textContent =
-                list.length +
+                newsList.length +
                 " haber gösteriliyor.";
 
         }
@@ -1238,9 +1137,9 @@
     }
 
 
-    /* ==================================================
+    /* =================================================
        ÇOK OKUNANLAR
-    ================================================== */
+    ================================================= */
 
     function renderPopular() {
 
@@ -1252,11 +1151,23 @@
         }
 
 
+        if (
+            !Array.isArray(
+                window.haberler
+            )
+        ) {
+            return;
+        }
+
+
         const list =
             window.haberler
                 .slice()
                 .sort(
-                    function (a, b) {
+                    function (
+                        a,
+                        b
+                    ) {
 
                         return (
                             Number(
@@ -1279,7 +1190,10 @@
 
         container.innerHTML =
             list.map(
-                function (haber, index) {
+                function (
+                    haber,
+                    index
+                ) {
 
                     return `
 
@@ -1291,35 +1205,21 @@
                         >
 
                             <span class="popular-number">
-
                                 ${index + 1}
-
                             </span>
 
-
-                            <div>
+                            <div class="popular-content">
 
                                 <strong>
-
                                     ${escapeHTML(
                                         haber.baslik
                                     )}
-
                                 </strong>
 
-
                                 <small>
-
                                     ${escapeHTML(
                                         haber.kategori
                                     )}
-
-                                    ·
-
-                                    ${escapeHTML(
-                                        haber.tarih
-                                    )}
-
                                 </small>
 
                             </div>
@@ -1334,9 +1234,9 @@
     }
 
 
-    /* ==================================================
-       SON DAKİKA
-    ================================================== */
+    /* =================================================
+       SON DAKİKA KAYAN BANDI
+    ================================================= */
 
     function renderBreaking() {
 
@@ -1348,44 +1248,81 @@
         }
 
 
+        if (
+            !Array.isArray(
+                window.haberler
+            )
+        ) {
+            return;
+        }
+
+
         const list =
             window.haberler.slice(
                 0,
-                6
+                10
             );
 
 
-        container.innerHTML =
-            list.map(
-                function (haber) {
+        /*
+         * İKİ KOPYA
+         * CSS MARQUEE SÜREKLİ KAYDIRABİLİR
+         */
 
-                    return `
+        const createItems =
+            function () {
 
-                        <a
-                            href="${escapeHTML(
-                                getNewsUrl(haber)
-                            )}"
-                        >
+                return list.map(
+                    function (haber) {
 
-                            ${escapeHTML(
-                                haber.baslik
-                            )}
+                        return `
 
-                        </a>
+                            <a
+                                href="${escapeHTML(
+                                    getNewsUrl(haber)
+                                )}"
+                                class="breaking-item"
+                            >
+                                ${escapeHTML(
+                                    haber.baslik
+                                )}
+                            </a>
 
-                    `;
+                            <span
+                                class="breaking-separator"
+                            >
+                                •
+                            </span>
 
-                }
-            ).join(
-                '<span class="breaking-separator">•</span>'
-            );
+                        `;
+
+                    }
+                ).join("");
+
+            };
+
+
+        container.innerHTML = `
+
+            <div class="breaking-track">
+
+                <div class="breaking-track-inner">
+
+                    ${createItems()}
+                    ${createItems()}
+
+                </div>
+
+            </div>
+
+        `;
 
     }
 
 
-    /* ==================================================
-       KATEGORİ FİLTRE
-    ================================================== */
+    /* =================================================
+       KATEGORİ
+    ================================================= */
 
     function filterCategory(
         category
@@ -1406,27 +1343,226 @@
 
                     return String(
                         haber.kategori || ""
-                    ).toLocaleLowerCase(
-                        "tr-TR"
-                    ) ===
-                    String(
-                        category || ""
-                    ).toLocaleLowerCase(
-                        "tr-TR"
-                    );
+                    )
+                        .toLocaleLowerCase(
+                            "tr-TR"
+                        ) ===
+                        String(
+                            category || ""
+                        )
+                            .toLocaleLowerCase(
+                                "tr-TR"
+                            );
 
                 }
             );
 
 
-        renderNews(results);
+        renderNews(
+            results
+        );
 
     }
 
 
-    /* ==================================================
+    /* =================================================
+       ARAMA
+    ================================================= */
+
+    function initHomepageSearch() {
+
+        const input =
+            $id("searchInput");
+
+        if (!input) {
+            return;
+        }
+
+
+        let resultBox =
+            $id(
+                "haberAramaSonuclari"
+            );
+
+
+        if (!resultBox) {
+
+            resultBox =
+                document.createElement(
+                    "div"
+                );
+
+            resultBox.id =
+                "haberAramaSonuclari";
+
+            resultBox.className =
+                "haber-arama-sonuclari";
+
+            input.parentElement
+                .appendChild(
+                    resultBox
+                );
+
+        }
+
+
+        input.addEventListener(
+            "input",
+            function () {
+
+                const query =
+                    String(
+                        input.value || ""
+                    )
+                        .trim()
+                        .toLocaleLowerCase(
+                            "tr-TR"
+                        );
+
+
+                if (!query) {
+
+                    resultBox.innerHTML = "";
+
+                    resultBox.classList.remove(
+                        "active"
+                    );
+
+                    return;
+
+                }
+
+
+                const results =
+                    window.haberler
+                        .filter(
+                            function (haber) {
+
+                                const text = [
+
+                                    haber.baslik,
+
+                                    haber.spot,
+
+                                    haber.kategori,
+
+                                    haber.icerik
+
+                                ]
+                                    .filter(Boolean)
+                                    .join(" ")
+                                    .toLocaleLowerCase(
+                                        "tr-TR"
+                                    );
+
+
+                                return text.includes(
+                                    query
+                                );
+
+                            }
+                        )
+                        .slice(
+                            0,
+                            8
+                        );
+
+
+                if (!results.length) {
+
+                    resultBox.innerHTML = `
+
+                        <div class="search-empty">
+                            Bu aramayla eşleşen haber bulunamadı.
+                        </div>
+
+                    `;
+
+                } else {
+
+                    resultBox.innerHTML =
+                        results.map(
+                            function (
+                                haber
+                            ) {
+
+                                return `
+
+                                    <a
+                                        href="${escapeHTML(
+                                            getNewsUrl(haber)
+                                        )}"
+                                        class="search-result-item"
+                                    >
+
+                                        <img
+                                            src="${escapeHTML(
+                                                getImage(haber)
+                                            )}"
+                                            alt=""
+                                            loading="lazy"
+                                        >
+
+                                        <div>
+
+                                            <strong>
+                                                ${escapeHTML(
+                                                    haber.baslik
+                                                )}
+                                            </strong>
+
+                                            <small>
+                                                ${escapeHTML(
+                                                    haber.kategori
+                                                )}
+                                            </small>
+
+                                        </div>
+
+                                    </a>
+
+                                `;
+
+                            }
+                        ).join("");
+
+                }
+
+
+                resultBox.classList.add(
+                    "active"
+                );
+
+            }
+        );
+
+
+        document.addEventListener(
+            "click",
+            function (event) {
+
+                if (
+                    !input.parentElement
+                        .contains(
+                            event.target
+                        )
+                ) {
+
+                    resultBox.classList.remove(
+                        "active"
+                    );
+
+                }
+
+            }
+        );
+
+    }
+
+
+    /* =================================================
        GLOBAL FONKSİYONLAR
-    ================================================== */
+    ================================================= */
 
     window.renderHero =
         renderHero;
@@ -1444,9 +1580,9 @@
         filterCategory;
 
 
-    /* ==================================================
+    /* =================================================
        BAŞLAT
-    ================================================== */
+    ================================================= */
 
     function initHomepage() {
 
@@ -1472,19 +1608,50 @@
         );
 
 
+        /*
+         * MANŞET
+         */
+
         renderHero();
 
+
+        /*
+         * SON HABERLER
+         * 20 ADET
+         */
+
         renderNews(
-            window.haberler
+            window.haberler.slice(
+                0,
+                20
+            )
         );
 
+
+        /*
+         * ÇOK OKUNANLAR
+         */
+
         renderPopular();
+
+
+        /*
+         * SON DAKİKA
+         */
 
         renderBreaking();
 
 
+        /*
+         * MANŞET OTOMATİK
+         */
+
         startHeroTimer();
 
+
+        /*
+         * MANŞET BUTONLARI
+         */
 
         const next =
             $id("heroNext");
@@ -1523,6 +1690,13 @@
 
         }
 
+
+        /*
+         * ARAMA
+         */
+
+        initHomepageSearch();
+
     }
 
 
@@ -1550,11 +1724,11 @@
 </script>
 
 
-<!-- APP -->
+<!-- =====================================================
+     APP
+===================================================== -->
 
 <script src="/js/app.js"></script>
 
-
 </body>
-
 </html>
