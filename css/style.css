@@ -4627,3 +4627,144 @@ body.dark-mode .no-news {
         justify-content: flex-start;
     }
 }
+/* =========================================
+   HABER KARTLARI - GÖRSELİ BÜYÜT
+========================================= */
+
+#newsGrid {
+    gap: 24px !important;
+}
+
+/* Kart */
+#newsGrid .news-card {
+    min-height: 0 !important;
+    height: auto !important;
+    border-radius: 18px !important;
+    overflow: hidden !important;
+}
+
+/* Büyük haber görseli */
+#newsGrid .news-image-wrap {
+    height: 260px !important;
+    min-height: 260px !important;
+    overflow: hidden !important;
+}
+
+#newsGrid .news-card img,
+#newsGrid .news-image {
+    width: 100% !important;
+    height: 260px !important;
+    min-height: 260px !important;
+    display: block !important;
+    object-fit: cover !important;
+    transition: transform .35s ease !important;
+}
+
+/* Görsel üzerine gelince hafif zoom */
+#newsGrid .news-card:hover .news-image {
+    transform: scale(1.04) !important;
+}
+
+/* Beyaz alanı azalt */
+#newsGrid .news-content {
+    padding: 16px 18px 18px !important;
+}
+
+/* Tarih */
+#newsGrid .news-date {
+    margin-bottom: 7px !important;
+    font-size: 12px !important;
+}
+
+/* Başlık */
+#newsGrid .news-title {
+    margin: 0 0 8px !important;
+    font-size: 19px !important;
+    line-height: 1.35 !important;
+}
+
+/* Spot */
+#newsGrid .news-spot {
+    margin: 0 0 10px !important;
+    font-size: 13.5px !important;
+    line-height: 1.5 !important;
+}
+
+/* Devamı */
+#newsGrid .news-read-more {
+    font-size: 13px !important;
+}
+
+/* =========================================
+   BÜYÜK EKRAN
+========================================= */
+
+@media (min-width: 1200px) {
+
+    #newsGrid {
+        gap: 28px !important;
+    }
+
+    #newsGrid .news-image-wrap {
+        height: 280px !important;
+        min-height: 280px !important;
+    }
+
+    #newsGrid .news-card img,
+    #newsGrid .news-image {
+        height: 280px !important;
+        min-height: 280px !important;
+    }
+
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    #newsGrid {
+        gap: 18px !important;
+    }
+
+    #newsGrid .news-image-wrap {
+        height: 230px !important;
+        min-height: 230px !important;
+    }
+
+    #newsGrid .news-card img,
+    #newsGrid .news-image {
+        height: 230px !important;
+        min-height: 230px !important;
+    }
+
+}
+
+/* =========================================
+   MOBİL
+========================================= */
+
+@media (max-width: 600px) {
+
+    #newsGrid {
+        grid-template-columns: 1fr !important;
+        gap: 18px !important;
+    }
+
+    #newsGrid .news-image-wrap {
+        height: 245px !important;
+        min-height: 245px !important;
+    }
+
+    #newsGrid .news-card img,
+    #newsGrid .news-image {
+        height: 245px !important;
+        min-height: 245px !important;
+    }
+
+    #newsGrid .news-content {
+        padding: 15px 16px 17px !important;
+    }
+
+}
