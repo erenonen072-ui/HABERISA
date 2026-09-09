@@ -1631,3 +1631,93 @@ main.container {
         gap: 8px;
     }
 }
+/* =========================================================
+   HABERİSTA - MANŞET NUMARALARI
+   ========================================================= */
+
+#heroNumbers {
+    width: 100%;
+    min-height: 50px;
+    margin: 0 auto 20px;
+    padding: 8px 10px;
+
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-top: 0;
+    border-radius: 0 0 14px 14px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    position: relative;
+    z-index: 20;
+
+    scrollbar-width: thin;
+}
+
+#heroNumbers .hero-number {
+    flex: 0 0 34px;
+
+    width: 34px;
+    height: 34px;
+
+    display: grid !important;
+    place-items: center;
+
+    padding: 0;
+    margin: 0;
+
+    border: 1px solid #d9d9d9;
+    border-radius: 9px;
+
+    background: #f7f7f7;
+    color: #444;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        background .2s ease,
+        color .2s ease,
+        border-color .2s ease,
+        transform .2s ease;
+}
+
+#heroNumbers .hero-number:hover {
+    background: #eeeeee;
+    transform: translateY(-1px);
+}
+
+#heroNumbers .hero-number.active {
+    background: #d71920;
+    color: #fff;
+    border-color: #d71920;
+
+    box-shadow: 0 4px 10px rgba(215, 25, 32, .25);
+}
+
+@media (max-width: 700px) {
+
+    #heroNumbers {
+        justify-content: flex-start;
+        gap: 6px;
+        padding: 8px;
+        margin-bottom: 15px;
+    }
+
+    #heroNumbers .hero-number {
+        flex-basis: 32px;
+        width: 32px;
+        height: 32px;
+        font-size: 12px;
+    }
+}
