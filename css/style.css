@@ -1952,3 +1952,47 @@ main.container {
     }
 
 }
+/* =========================================================
+   HABERİSTA - HABER GÖRSELLERİ BOYUT DÜZELTME
+   ========================================================= */
+
+.news-card-image {
+    width: 100% !important;
+    height: 180px !important;
+    max-height: 180px !important;
+    overflow: hidden !important;
+}
+
+.news-card-image img {
+    width: 100% !important;
+    height: 180px !important;
+    max-height: 180px !important;
+    display: block !important;
+    object-fit: cover !important;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+    .news-card-image {
+        height: 150px !important;
+        max-height: 150px !important;
+    }
+
+    .news-card-image img {
+        height: 150px !important;
+        max-height: 150px !important;
+    }
+}
+
+/* Telefon */
+@media (max-width: 600px) {
+    .news-card-image {
+        height: 115px !important;
+        max-height: 115px !important;
+    }
+
+    .news-card-image img {
+        height: 115px !important;
+        max-height: 115px !important;
+    }
+}
