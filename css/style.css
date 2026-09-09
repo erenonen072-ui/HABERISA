@@ -2087,3 +2087,157 @@ body.dark-mode .no-news {
 .dark-mode .news-card-content h3 {
     color: #fff !important;
 }
+/* =========================================================
+   SON DAKİKA — TEK SATIR, İNCE BANT
+   ========================================================= */
+
+.breaking-bar {
+    height: 34px !important;
+    min-height: 34px !important;
+    padding: 0 !important;
+}
+
+.breaking-inner {
+    height: 34px !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+.breaking-label {
+    height: 22px !important;
+    min-width: 88px !important;
+    font-size: 11px !important;
+    font-weight: 900 !important;
+    padding: 0 8px !important;
+    flex-shrink: 0 !important;
+}
+
+.breaking-track {
+    height: 34px !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+}
+
+.breaking-track-inner {
+    height: 34px !important;
+    display: flex !important;
+    align-items: center !important;
+    width: max-content !important;
+    white-space: nowrap !important;
+    animation: breakingMove 45s linear infinite !important;
+}
+
+.breaking-item {
+    display: inline-flex !important;
+    align-items: center !important;
+    height: 34px !important;
+    line-height: 34px !important;
+    margin-right: 45px !important;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    white-space: nowrap !important;
+}
+
+
+/* =========================================================
+   MANŞET — KÜÇÜK ALAN
+   ========================================================= */
+
+.hero-section {
+    width: 100% !important;
+    max-width: 900px !important;
+    margin: 18px auto 24px !important;
+}
+
+.hero-main {
+    height: 190px !important;
+    min-height: 190px !important;
+    max-height: 190px !important;
+    border-radius: 12px !important;
+}
+
+.hero-slide,
+.hero-slide-link,
+.hero-image {
+    height: 190px !important;
+    min-height: 190px !important;
+    max-height: 190px !important;
+}
+
+.hero-overlay {
+    padding: 18px !important;
+}
+
+.hero-overlay h2 {
+    max-width: 580px !important;
+    font-size: 21px !important;
+    line-height: 1.12 !important;
+    font-weight: 850 !important;
+    margin: 0 !important;
+}
+
+.hero-category {
+    font-size: 10px !important;
+    margin-bottom: 5px !important;
+}
+
+.hero-numbers {
+    justify-content: center !important;
+    margin-top: 8px !important;
+}
+
+
+/* =========================================================
+   MOBİL MANŞET
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .breaking-bar,
+    .breaking-inner,
+    .breaking-track,
+    .breaking-track-inner {
+        height: 32px !important;
+    }
+
+    .breaking-label {
+        min-width: 75px !important;
+        height: 21px !important;
+        font-size: 9px !important;
+    }
+
+    .breaking-item {
+        height: 32px !important;
+        line-height: 32px !important;
+        font-size: 11px !important;
+        margin-right: 30px !important;
+    }
+
+    .hero-section {
+        max-width: 100% !important;
+        margin: 14px auto 20px !important;
+    }
+
+    .hero-main,
+    .hero-slide,
+    .hero-slide-link,
+    .hero-image {
+        height: 165px !important;
+        min-height: 165px !important;
+        max-height: 165px !important;
+    }
+
+    .hero-overlay {
+        padding: 14px !important;
+    }
+
+    .hero-overlay h2 {
+        font-size: 18px !important;
+        max-width: 90% !important;
+    }
+
+    .hero-numbers {
+        overflow-x: auto !important;
+        justify-content: flex-start !important;
+    }
+}
