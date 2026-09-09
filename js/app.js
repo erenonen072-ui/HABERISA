@@ -594,3 +594,42 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 });
+// ==========================================
+// KOMPAKT MANŞET - ZORUNLU BOYUT
+// ==========================================
+
+function kompaktManset() {
+
+    const hero = document.querySelector(".hero-slider");
+    const heroMain = document.querySelector(".hero-main");
+
+    if (!hero) return;
+
+    const mobil = window.innerWidth <= 600;
+
+    const yukseklik = mobil ? "220px" : "280px";
+
+    hero.style.setProperty("height", yukseklik, "important");
+    hero.style.setProperty("min-height", yukseklik, "important");
+    hero.style.setProperty("max-height", yukseklik, "important");
+
+    if (heroMain) {
+        heroMain.style.setProperty("height", yukseklik, "important");
+    }
+
+    const slide = hero.querySelector(".hero-slide-link");
+
+    if (slide) {
+        slide.style.setProperty("height", yukseklik, "important");
+    }
+
+    const image = hero.querySelector(".hero-image");
+
+    if (image) {
+        image.style.setProperty("height", yukseklik, "important");
+    }
+}
+
+kompaktManset();
+
+window.addEventListener("resize", kompaktManset);
