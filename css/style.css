@@ -800,3 +800,142 @@ a {
         width: calc(100% - 20px);
     }
 }
+/* =========================================
+   KOMPAKT MANŞET TASARIMI
+========================================= */
+
+.hero-section {
+    margin-top: 18px;
+}
+
+.hero {
+    height: 280px;
+    border-radius: 10px;
+}
+
+.hero-content {
+    left: 28px;
+    bottom: 24px;
+    width: min(560px, calc(100% - 56px));
+}
+
+.hero-category {
+    padding: 4px 8px;
+    font-size: 10px;
+    margin-bottom: 7px;
+}
+
+.hero-content h1 {
+    font-size: 26px;
+    line-height: 1.15;
+    letter-spacing: -.3px;
+    margin-bottom: 6px;
+}
+
+.hero-content p {
+    font-size: 12px;
+    line-height: 1.4;
+    max-width: 500px;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.hero-meta {
+    margin-top: 8px;
+    font-size: 10px;
+}
+
+.hero-bottom {
+    margin-top: 8px;
+    gap: 7px;
+}
+
+.hero-number,
+.hero-arrow {
+    width: 27px;
+    height: 27px;
+    font-size: 10px;
+}
+
+
+/* SON HABERLER DAHA YUKARIDA */
+
+.latest-section {
+    margin-top: 35px;
+}
+
+
+/* TABLET */
+
+@media (max-width: 900px) {
+
+    .hero {
+        height: 260px;
+    }
+
+    .hero-content h1 {
+        font-size: 24px;
+    }
+}
+
+
+/* TELEFON */
+
+@media (max-width: 600px) {
+
+    .hero-section {
+        margin-top: 10px;
+    }
+
+    .hero {
+        height: 220px;
+        border-radius: 8px;
+    }
+
+    .hero-content {
+        left: 17px;
+        bottom: 17px;
+        width: calc(100% - 34px);
+    }
+
+    .hero-category {
+        font-size: 9px;
+        padding: 3px 7px;
+        margin-bottom: 5px;
+    }
+
+    .hero-content h1 {
+        font-size: 19px;
+        line-height: 1.15;
+        margin-bottom: 4px;
+    }
+
+    .hero-content p {
+        font-size: 10px;
+        -webkit-line-clamp: 1;
+    }
+
+    .hero-meta {
+        margin-top: 5px;
+        font-size: 9px;
+    }
+
+    .hero-number,
+    .hero-arrow {
+        width: 25px;
+        height: 25px;
+        font-size: 9px;
+    }
+
+    .hero-numbers {
+        max-width: 230px;
+        gap: 4px;
+    }
+
+    .latest-section {
+        margin-top: 28px;
+    }
+}
