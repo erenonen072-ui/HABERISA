@@ -553,3 +553,267 @@
         font-size: 11.5px;
     }
 }
+/* =========================================================
+   HABERİSTA - KATEGORİ SAYFALARI
+   ANA SAYFA KARTLARIYLA UYUMLU
+   ========================================================= */
+
+.category-page {
+    padding: 30px 0 60px;
+}
+
+/* Kategori başlığı */
+
+.category-header {
+    margin-bottom: 25px;
+    padding: 22px 24px;
+    background: #fff;
+    border-radius: 14px;
+    border: 1px solid #e8e8e8;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, .05);
+}
+
+.category-header h1 {
+    position: relative;
+    padding-left: 14px;
+    font-size: 28px;
+    line-height: 1.2;
+    font-weight: 800;
+}
+
+.category-header h1::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 1px;
+    width: 5px;
+    height: calc(100% - 2px);
+    background: #d71920;
+    border-radius: 5px;
+}
+
+.category-header p {
+    margin-top: 7px;
+    padding-left: 14px;
+    color: #777;
+    font-size: 14px;
+}
+
+/* =========================================================
+   KATEGORİ HABER GRID
+   ========================================================= */
+
+.category-news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+/* =========================================================
+   KATEGORİ KARTI
+   ========================================================= */
+
+.category-news-card {
+    background: #fff;
+    border: 1px solid #e7e7e7;
+    border-radius: 12px;
+    overflow: hidden;
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease,
+        border-color .2s ease;
+}
+
+.category-news-card:hover {
+    transform: translateY(-4px);
+    border-color: #ddd;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .10);
+}
+
+.category-news-card a {
+    display: block;
+}
+
+/* Görsel */
+
+.category-news-image {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    background: #eee;
+}
+
+.category-news-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .35s ease;
+}
+
+.category-news-card:hover .category-news-image img {
+    transform: scale(1.045);
+}
+
+/* İçerik */
+
+.category-news-content {
+    padding: 12px 14px 15px;
+}
+
+.category-news-category,
+.category-news-date,
+.category-news-spot {
+    display: none;
+}
+
+.category-news-content h2,
+.category-news-content h3 {
+    margin: 0;
+    color: #171717;
+    font-size: 17px;
+    line-height: 1.35;
+    font-weight: 750;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+/* =========================================================
+   KATEGORİ ÜSTÜNDEKİ SON DAKİKA / MANŞET ALANI
+   ========================================================= */
+
+.category-page .breaking-news {
+    margin-bottom: 0;
+}
+
+/* =========================================================
+   HABER SAYISI
+   ========================================================= */
+
+.category-count {
+    margin-bottom: 16px;
+    color: #777;
+    font-size: 13px;
+}
+
+.category-count strong {
+    color: #d71920;
+}
+
+/* =========================================================
+   SONUÇ YOK
+   ========================================================= */
+
+.category-empty {
+    grid-column: 1 / -1;
+    padding: 65px 20px;
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    border-radius: 14px;
+    text-align: center;
+}
+
+.category-empty-icon {
+    margin-bottom: 12px;
+    font-size: 42px;
+}
+
+.category-empty h2 {
+    margin-bottom: 5px;
+    font-size: 21px;
+}
+
+.category-empty p {
+    color: #777;
+    font-size: 14px;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .category-news-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
+    }
+
+    .category-news-image {
+        height: 165px;
+    }
+
+    .category-news-content {
+        padding: 10px 12px 13px;
+    }
+
+    .category-news-content h2,
+    .category-news-content h3 {
+        font-size: 16px;
+    }
+
+    .category-header {
+        padding: 19px 20px;
+    }
+
+    .category-header h1 {
+        font-size: 25px;
+    }
+}
+
+/* =========================================================
+   TELEFON
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .category-page {
+        padding-top: 20px;
+    }
+
+    .category-header {
+        margin-bottom: 16px;
+        padding: 16px;
+        border-radius: 11px;
+    }
+
+    .category-header h1 {
+        font-size: 22px;
+    }
+
+    .category-header p {
+        font-size: 12px;
+    }
+
+    .category-news-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .category-news-card {
+        border-radius: 9px;
+    }
+
+    .category-news-image {
+        height: 115px;
+    }
+
+    .category-news-content {
+        padding: 8px 9px 10px;
+    }
+
+    .category-news-content h2,
+    .category-news-content h3 {
+        font-size: 14px;
+        line-height: 1.3;
+        -webkit-line-clamp: 2;
+    }
+
+    .category-count {
+        margin-bottom: 10px;
+        font-size: 12px;
+    }
+}
