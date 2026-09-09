@@ -2148,3 +2148,78 @@ body.dark-mode .no-news {
         font-size: 10px;
     }
 }
+/* MANŞET HABER NUMARASI */
+
+.hero-news-number {
+    position: absolute;
+
+    top: 16px;
+    left: 16px;
+
+    z-index: 20;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
+
+    background: rgba(17, 24, 39, .90);
+
+    border: 1px solid rgba(255,255,255,.30);
+
+    color: #fff !important;
+
+    font-size: 17px;
+    font-weight: 900;
+
+    line-height: 1;
+
+    box-shadow:
+        0 5px 18px rgba(0,0,0,.28);
+
+    backdrop-filter: blur(8px);
+
+    transition: .2s ease;
+}
+
+.hero-news-number::before {
+    content: "#";
+
+    margin-right: 1px;
+
+    color: rgba(255,255,255,.65);
+
+    font-size: 11px;
+}
+
+.hero-slide-link:hover
+.hero-news-number {
+    background: #e11d48;
+
+    border-color: #e11d48;
+
+    transform: translateY(-2px);
+}
+
+@media (max-width: 700px) {
+
+    .hero-news-number {
+        top: 12px;
+        left: 12px;
+
+        width: 36px;
+        height: 36px;
+
+        border-radius: 8px;
+
+        font-size: 14px;
+    }
+
+    .hero-news-number::before {
+        font-size: 9px;
+    }
+}
