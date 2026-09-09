@@ -937,3 +937,77 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
 });
+/* =========================================================
+   HABERİSTA - KATEGORİ MENÜSÜ
+   ========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const categoryLinks = document.querySelectorAll(
+        ".category-nav a, .mobile-menu a"
+    );
+
+    if (!categoryLinks.length) return;
+
+    const currentPath = window.location.pathname
+        .replace(/\/+$/, "") || "/";
+
+    categoryLinks.forEach(function (link) {
+
+        const href = link.getAttribute("href");
+
+        if (!href) return;
+
+        const linkPath = href
+            .split("?")[0]
+            .replace(/\/+$/, "") || "/";
+
+        /*
+         * Mevcut sayfayı aktif yap
+         */
+        if (linkPath === currentPath) {
+            link.classList.add("active");
+        } else {
+            link.classList.remove("active");
+        }
+
+        /*
+         * Kategoriye tıklanınca normal şekilde sayfaya git
+         */
+        link.addEventListener("click", function (e) {
+
+            const target = this.getAttribute("href");
+
+            if (!target || target === "#") return;
+
+            /*
+             * Aynı sayfadaysa tekrar yükleme
+             */
+            if (
+                target.split("?")[0].replace(/\/+$/, "") ===
+                currentPath
+            ) {
+                e.preventDefault();
+                return;
+            }
+
+            /*
+             * Mobil menüyü kapat
+             */
+            const mobileMenu = document.getElementById("mobileMenu");
+
+            if (mobileMenu) {
+                mobileMenu.classList.remove("open");
+                mobileMenu.classList.remove("active");
+            }
+
+            /*
+             * Sayfaya git
+             */
+            window.location.href = target;
+
+        });
+
+    });
+
+});
