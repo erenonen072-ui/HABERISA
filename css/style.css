@@ -1721,3 +1721,211 @@ main.container {
         font-size: 12px;
     }
 }
+/* =========================================================
+   HABERİSTA — YENİ PREMIUM HABER KARTLARI
+   APP.JS İLE UYUMLU
+   ========================================================= */
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.news-card {
+    min-width: 0;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid #e6e8ec;
+    border-radius: 16px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, .06);
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        border-color .25s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-6px);
+    border-color: #d71920;
+    box-shadow: 0 16px 35px rgba(0, 0, 0, .13);
+}
+
+.news-card-link {
+    display: block;
+    height: 100%;
+}
+
+.news-card-image {
+    position: relative;
+    width: 100%;
+    height: 225px;
+    overflow: hidden;
+    background: #e9eaed;
+}
+
+.news-card-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, .25),
+        transparent 45%
+    );
+    pointer-events: none;
+}
+
+.news-card-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform .4s ease;
+}
+
+.news-card:hover .news-card-image img {
+    transform: scale(1.06);
+}
+
+.news-card-content {
+    padding: 17px 18px 18px;
+}
+
+/* ARTIK GİZLENMEYECEK */
+.news-card-category {
+    display: inline-block !important;
+    margin-bottom: 8px;
+    padding: 5px 9px;
+    background: #d71920;
+    color: #fff;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.news-card-content h3 {
+    margin: 0;
+    color: #171717;
+    font-size: 19px;
+    line-height: 1.35;
+    font-weight: 800;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.news-card-spot {
+    display: -webkit-box !important;
+    margin-top: 9px;
+    color: #666;
+    font-size: 13px;
+    line-height: 1.5;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.news-card-meta {
+    display: block !important;
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+    color: #999;
+    font-size: 11px;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 950px) {
+
+    .news-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    .news-card-image {
+        height: 200px;
+    }
+
+    .news-card-content h3 {
+        font-size: 17px;
+    }
+
+}
+
+/* =========================================================
+   TELEFON
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .news-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .news-card {
+        border-radius: 11px;
+    }
+
+    .news-card-image {
+        height: 145px;
+    }
+
+    .news-card-content {
+        padding: 10px 11px 12px;
+    }
+
+    .news-card-category {
+        margin-bottom: 6px;
+        padding: 4px 7px;
+        border-radius: 5px;
+        font-size: 9px;
+    }
+
+    .news-card-content h3 {
+        font-size: 14px;
+        line-height: 1.32;
+        -webkit-line-clamp: 3;
+    }
+
+    .news-card-spot {
+        display: none !important;
+    }
+
+    .news-card-meta {
+        display: block !important;
+        margin-top: 8px;
+        padding-top: 7px;
+        font-size: 9px;
+    }
+
+}
+
+/* =========================================================
+   ÇOK KÜÇÜK TELEFON
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+    .news-grid {
+        gap: 9px;
+    }
+
+    .news-card-image {
+        height: 125px;
+    }
+
+    .news-card-content {
+        padding: 8px 9px 10px;
+    }
+
+    .news-card-content h3 {
+        font-size: 13px;
+    }
+
+}
