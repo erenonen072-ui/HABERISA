@@ -3,7 +3,8 @@
 /* =========================================================
    HABERİSTA - APP.JS
    PROFESYONEL ANA SAYFA + KATEGORİ SİSTEMİ
-   20 MANŞET SEÇİMİ
+   20 MANŞET + ARAMA + SON DAKİKA + ÇOK OKUNAN
+   MOBİL MENÜ + BİLDİRİM + YUKARI ÇIK
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -25,14 +26,12 @@ document.addEventListener("DOMContentLoaded", function () {
        ========================================================= */
 
     function escapeHTML(value) {
-
         return String(value ?? "")
             .replace(/&/g, "&amp;")
             .replace(/</g, "&lt;")
             .replace(/>/g, "&gt;")
             .replace(/"/g, "&quot;")
             .replace(/'/g, "&#039;");
-
     }
 
 
@@ -41,17 +40,18 @@ document.addEventListener("DOMContentLoaded", function () {
        ========================================================= */
 
     function normalizeCategory(value) {
-
         return String(value || "")
             .trim()
             .toLocaleLowerCase("tr-TR");
-
     }
 
 
     /* =========================================================
        ELEMENTLER
        ========================================================= */
+
+    const heroSlider =
+        document.querySelector(".hero-slider");
 
     const heroMain =
         document.getElementById("heroMain");
@@ -97,6 +97,52 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const notificationBtn =
         document.getElementById("notificationBtn");
+
+
+    /* =========================================================
+       MANŞET NUMARALARINI MANŞETTEN AYIR
+       ========================================================= */
+
+    function separateHeroNumbers() {
+
+        if (!heroNumbers || !heroSlider) {
+            return;
+        }
+
+        /*
+         * Eğer #heroNumbers yanlışlıkla .hero-slider'ın
+         * içinde bulunuyorsa dışarı çıkarıyoruz.
+         *
+         * Böylece:
+         *
+         * MANŞET
+         * ↓
+         * MANŞET NUMARALARI
+         * ↓
+         * HABER KARTLARI
+         *
+         * şeklinde ayrı alanlar olur.
+         */
+
+        if (heroSlider.contains(heroNumbers)) {
+
+            const parent =
+                heroSlider.parentNode;
+
+            if (parent) {
+
+                parent.insertBefore(
+                    heroNumbers,
+                    heroSlider.nextSibling
+                );
+
+            }
+
+        }
+
+    }
+
+    separateHeroNumbers();
 
 
     /* =========================================================
@@ -150,7 +196,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
         }
 
-        const slug = getSlug(haber);
+        /*
+         * Slug sistemi varsa onu da destekle.
+         */
+
+        const slug =
+            getSlug(haber);
 
         if (slug) {
             return "haber.html?slug=" +
@@ -165,6 +216,8 @@ document.addEventListener("DOMContentLoaded", function () {
     function getImage(haber) {
 
         return haber.gorsel ||
+            haber.image ||
+            haber.resim ||
             "/images/logo.jpeg";
 
     }
@@ -173,6 +226,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function getCategory(haber) {
 
         return haber.kategori ||
+            haber.category ||
             "Gündem";
 
     }
@@ -181,6 +235,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function getTitle(haber) {
 
         return haber.baslik ||
+            haber.title ||
             "Haberİsta";
 
     }
@@ -188,7 +243,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function getSpot(haber) {
 
-        return haber.spot || "";
+        return haber.spot ||
+            haber.aciklama ||
+            haber.description ||
+            "";
 
     }
 
@@ -209,9 +267,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         if (haber.tarih) {
-
             return haber.tarih;
-
         }
 
         if (haber.publishedAt) {
@@ -439,7 +495,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =========================================================
-       KATEGORİ SAYFASI BAŞLIK BİLGİLERİ
+       KATEGORİ BAŞLIK BİLGİLERİ
        ========================================================= */
 
     if (aktifKategori) {
@@ -526,7 +582,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =========================================================
-       MANŞET
+       HERO - 20 MANŞET
        ========================================================= */
 
     let currentHero = 0;
@@ -542,77 +598,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 heroSource.length
             )
         );
-
-
-    /* =========================================================
-       MANŞET NUMARALARINI MANŞETTEN AYIR
-       ========================================================= */
-
-    function separateHeroNumbers() {
-
-        if (
-            !heroMain ||
-            !heroNumbers
-        ) {
-            return;
-        }
-
-        const heroSlider =
-            heroMain.closest(
-                ".hero-slider"
-            );
-
-        if (!heroSlider) {
-            return;
-        }
-
-        /*
-         * heroNumbers yanlışlıkla slider'ın
-         * içinde ise slider'ın dışına çıkar.
-         */
-
-        if (
-            heroNumbers.parentElement ===
-            heroSlider
-        ) {
-
-            heroSlider.insertAdjacentElement(
-                "afterend",
-                heroNumbers
-            );
-
-        }
-
-        /*
-         * heroNumbers bir container'ın içinde
-         * bulunuyorsa yine slider'ın hemen
-         * sonrasına taşımaya çalış.
-         */
-
-        const heroContainer =
-            heroSlider.parentElement;
-
-        if (
-            heroContainer &&
-            heroNumbers.parentElement !==
-            heroContainer
-        ) {
-
-            heroContainer.appendChild(
-                heroNumbers
-            );
-
-            heroSlider.insertAdjacentElement(
-                "afterend",
-                heroNumbers
-            );
-
-        }
-
-    }
-
-
-    separateHeroNumbers();
 
 
     /* =========================================================
@@ -896,10 +881,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* =========================================================
-       HERO İLK GÖSTERİM
-       ========================================================= */
-
     renderHero();
 
 
@@ -929,6 +910,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         stopHeroTimer();
 
+
         if (
             heroNews.length <= 1
         ) {
@@ -936,6 +918,7 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
 
         }
+
 
         heroTimer =
             setInterval(
@@ -965,7 +948,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =========================================================
-       MANŞET ÜZERİNDE DURUNCA OTOMATİK GEÇİŞ DUR
+       MANŞET ÜZERİNDE DURDUR
        ========================================================= */
 
     if (heroMain) {
@@ -1046,15 +1029,18 @@ document.addEventListener("DOMContentLoaded", function () {
                 .join("");
 
 
+        /*
+         * Ticker'ın kesintisiz dönmesi için
+         * listeyi iki kez oluşturuyoruz.
+         */
+
         breakingNews.innerHTML = `
 
             <div class="breaking-inner">
 
                 <div class="breaking-heading">
 
-                    <span
-                        class="breaking-pulse"
-                    ></span>
+                    <span class="breaking-pulse"></span>
 
                     <strong>
                         SON DAKİKA
@@ -1066,6 +1052,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     <div class="breaking-list">
 
+                        ${items}
                         ${items}
 
                     </div>
@@ -1214,30 +1201,52 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         /*
-         * Kartların tamamını eşit yükseklikte
-         * tutmak için CSS ile birlikte
-         * minimum içerik yüksekliği uygula.
+         * Kartların içerik yüksekliğini eşitle.
+         * CSS yapısını bozmadan yalnızca JS tarafında
+         * kartları aynı yükseklikte tutar.
          */
 
-        const cards =
-            newsGrid.querySelectorAll(
-                ".news-card"
-            );
+        requestAnimationFrame(function () {
 
-        cards.forEach(
-            function (card) {
+            const cards =
+                newsGrid.querySelectorAll(
+                    ".news-card"
+                );
+
+            if (!cards.length) {
+                return;
+            }
+
+            cards.forEach(function (card) {
+                card.style.height = "auto";
+            });
+
+            let maxHeight = 0;
+
+            cards.forEach(function (card) {
+
+                maxHeight =
+                    Math.max(
+                        maxHeight,
+                        card.offsetHeight
+                    );
+
+            });
+
+            cards.forEach(function (card) {
 
                 card.style.height =
-                    "100%";
+                    maxHeight + "px";
 
-            }
-        );
+            });
+
+        });
 
     }
 
 
     /* =========================================================
-       HABERLER
+       ANA HABERLER
        ========================================================= */
 
     renderNews(pageNews);
@@ -1250,34 +1259,44 @@ document.addEventListener("DOMContentLoaded", function () {
     function getPopularNews() {
 
         /*
-         * Görüntülenme sayısı varsa ona göre,
-         * yoksa haber sırasına göre çalışır.
+         * Görüntülenme varsa ona göre,
+         * yoksa haber sırasına göre göster.
          */
 
         return [...pageNews]
             .sort(
                 function (a, b) {
 
-                    const viewA =
+                    const goruntulenmeA =
                         Number(
-                            a.goruntulenme || 0
+                            a.goruntulenme ||
+                            a.views ||
+                            a.goruntulenmeSayisi ||
+                            0
                         );
 
-                    const viewB =
+                    const goruntulenmeB =
                         Number(
-                            b.goruntulenme || 0
+                            b.goruntulenme ||
+                            b.views ||
+                            b.goruntulenmeSayisi ||
+                            0
                         );
 
                     if (
-                        viewA !== viewB
+                        goruntulenmeA !==
+                        goruntulenmeB
                     ) {
 
-                        return viewB - viewA;
+                        return (
+                            goruntulenmeB -
+                            goruntulenmeA
+                        );
 
                     }
 
                     return getNewsTime(b) -
-                        getNewsTime(a);
+                           getNewsTime(a);
 
                 }
             )
@@ -1382,23 +1401,44 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         /*
-         * Çok okunan kartlarının yüksekliklerini
-         * eşitle.
+         * Çok okunan kartlarını da eşitle.
          */
 
-        const popularItems =
-            popularNews.querySelectorAll(
-                ".popular-item"
-            );
+        requestAnimationFrame(function () {
 
-        popularItems.forEach(
-            function (item) {
+            const cards =
+                popularNews.querySelectorAll(
+                    ".popular-item"
+                );
 
-                item.style.height =
-                    "100%";
-
+            if (!cards.length) {
+                return;
             }
-        );
+
+            cards.forEach(function (card) {
+                card.style.height = "auto";
+            });
+
+            let maxHeight = 0;
+
+            cards.forEach(function (card) {
+
+                maxHeight =
+                    Math.max(
+                        maxHeight,
+                        card.offsetHeight
+                    );
+
+            });
+
+            cards.forEach(function (card) {
+
+                card.style.height =
+                    maxHeight + "px";
+
+            });
+
+        });
 
     }
 
@@ -1407,7 +1447,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =========================================================
-       ARAMA
+       ARAMA AÇ
        ========================================================= */
 
     function openSearch() {
@@ -1426,9 +1466,7 @@ document.addEventListener("DOMContentLoaded", function () {
             function () {
 
                 if (searchInput) {
-
                     searchInput.focus();
-
                 }
 
             },
@@ -1437,6 +1475,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
+
+    /* =========================================================
+       ARAMA KAPAT
+       ========================================================= */
 
     function closeSearchPanel() {
 
@@ -1451,9 +1493,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         if (searchInput) {
-
             searchInput.value = "";
-
         }
 
 
@@ -1474,7 +1514,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
         searchBtn.addEventListener(
             "click",
-            openSearch
+            function (event) {
+
+                event.stopPropagation();
+
+                if (
+                    searchPanel &&
+                    searchPanel.classList.contains(
+                        "active"
+                    )
+                ) {
+
+                    closeSearchPanel();
+
+                } else {
+
+                    openSearch();
+
+                }
+
+            }
         );
 
     }
@@ -1489,6 +1548,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
+
+    /* =========================================================
+       ARAMA
+       ========================================================= */
 
     if (searchInput) {
 
@@ -1513,9 +1576,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     }
 
-                    renderNews(
-                        pageNews
-                    );
+                    renderNews(pageNews);
 
                     return;
 
@@ -1529,6 +1590,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             const title =
                                 String(
                                     haber.baslik ||
+                                    haber.title ||
                                     ""
                                 ).toLocaleLowerCase(
                                     "tr-TR"
@@ -1538,6 +1600,8 @@ document.addEventListener("DOMContentLoaded", function () {
                             const spot =
                                 String(
                                     haber.spot ||
+                                    haber.aciklama ||
+                                    haber.description ||
                                     ""
                                 ).toLocaleLowerCase(
                                     "tr-TR"
@@ -1547,6 +1611,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             const category =
                                 String(
                                     haber.kategori ||
+                                    haber.category ||
                                     ""
                                 ).toLocaleLowerCase(
                                     "tr-TR"
@@ -1556,6 +1621,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             const content =
                                 String(
                                     haber.icerik ||
+                                    haber.content ||
                                     ""
                                 ).toLocaleLowerCase(
                                     "tr-TR"
@@ -1563,18 +1629,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
                             return (
+
                                 title.includes(
                                     query
                                 ) ||
+
                                 spot.includes(
                                     query
                                 ) ||
+
                                 category.includes(
                                     query
                                 ) ||
+
                                 content.includes(
                                     query
                                 )
+
                             );
 
                         }
@@ -1602,9 +1673,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
 
 
-                renderNews(
-                    results
-                );
+                renderNews(results);
 
             }
         );
@@ -1615,8 +1684,7 @@ document.addEventListener("DOMContentLoaded", function () {
             function (event) {
 
                 if (
-                    event.key ===
-                    "Escape"
+                    event.key === "Escape"
                 ) {
 
                     closeSearchPanel();
@@ -1625,8 +1693,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
                 if (
-                    event.key ===
-                    "Enter"
+                    event.key === "Enter"
                 ) {
 
                     const query =
@@ -1744,7 +1811,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         menuBtn.addEventListener(
             "click",
-            function () {
+            function (event) {
+
+                event.stopPropagation();
 
                 if (
                     mobileMenu &&
@@ -1843,18 +1912,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 if (
                     href === "#" ||
-                    href.startsWith(
-                        "http://"
-                    ) ||
-                    href.startsWith(
-                        "https://"
-                    ) ||
-                    href.startsWith(
-                        "mailto:"
-                    ) ||
-                    href.startsWith(
-                        "javascript:"
-                    )
+                    href.startsWith("http://") ||
+                    href.startsWith("https://") ||
+                    href.startsWith("mailto:") ||
+                    href.startsWith("javascript:")
                 ) {
 
                     return;
@@ -1966,8 +2027,7 @@ document.addEventListener("DOMContentLoaded", function () {
         function (event) {
 
             if (
-                event.key !==
-                "Escape"
+                event.key !== "Escape"
             ) {
 
                 return;
@@ -2058,6 +2118,32 @@ document.addEventListener("DOMContentLoaded", function () {
 
             }
         );
+
+    }
+
+
+    /* =========================================================
+       BİLDİRİM DURUMUNU KONTROL ET
+       ========================================================= */
+
+    if (
+        notificationBtn &&
+        "Notification" in window
+    ) {
+
+        if (
+            Notification.permission ===
+            "granted"
+        ) {
+
+            notificationBtn
+                .classList
+                .add("enabled");
+
+            notificationBtn.innerHTML =
+                "🔔 Bildirimler Açık";
+
+        }
 
     }
 
@@ -2174,14 +2260,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (
                 element &&
-                element.tagName ===
-                    "IMG" &&
-                !element.dataset
-                    .fallback
+                element.tagName === "IMG" &&
+                !element.dataset.fallback
             ) {
 
-                element.dataset
-                    .fallback =
+                element.dataset.fallback =
                     "true";
 
 
@@ -2196,90 +2279,122 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =========================================================
-       KART EŞİTLEME
+       EŞİT KART YÜKSEKLİĞİ
        ========================================================= */
 
-    function equalizeNewsCards() {
-
-        if (!newsGrid) {
-            return;
-        }
-
-        const cards =
-            newsGrid.querySelectorAll(
-                ".news-card"
-            );
-
-        if (!cards.length) {
-            return;
-        }
+    function equalizeCards() {
 
         /*
-         * Önce sabitlenen yükseklikleri temizle.
+         * Ana haber kartları
          */
 
-        cards.forEach(
-            function (card) {
+        if (newsGrid) {
 
-                card.style.height =
-                    "auto";
+            const cards =
+                newsGrid.querySelectorAll(
+                    ".news-card"
+                );
 
-            }
-        );
+            if (cards.length) {
 
-        /*
-         * Tarayıcının grid yapısı
-         * doğal olarak eşitlesin.
-         */
+                cards.forEach(
+                    function (card) {
+                        card.style.height =
+                            "auto";
+                    }
+                );
 
-        requestAnimationFrame(
-            function () {
+                let maxHeight = 0;
+
+                cards.forEach(
+                    function (card) {
+
+                        maxHeight =
+                            Math.max(
+                                maxHeight,
+                                card.offsetHeight
+                            );
+
+                    }
+                );
 
                 cards.forEach(
                     function (card) {
 
                         card.style.height =
-                            "100%";
+                            `${maxHeight}px`;
 
                     }
                 );
 
             }
-        );
 
-    }
-
-
-    function equalizePopularCards() {
-
-        if (!popularNews) {
-            return;
         }
 
-        const cards =
-            popularNews.querySelectorAll(
-                ".popular-item"
-            );
 
-        if (!cards.length) {
-            return;
-        }
+        /*
+         * Çok okunan kartları
+         */
 
-        cards.forEach(
-            function (card) {
+        if (popularNews) {
 
-                card.style.height =
-                    "100%";
+            const popularCards =
+                popularNews.querySelectorAll(
+                    ".popular-item"
+                );
+
+            if (popularCards.length) {
+
+                popularCards.forEach(
+                    function (card) {
+                        card.style.height =
+                            "auto";
+                    }
+                );
+
+                let maxPopularHeight = 0;
+
+                popularCards.forEach(
+                    function (card) {
+
+                        maxPopularHeight =
+                            Math.max(
+                                maxPopularHeight,
+                                card.offsetHeight
+                            );
+
+                    }
+                );
+
+                popularCards.forEach(
+                    function (card) {
+
+                        card.style.height =
+                            `${maxPopularHeight}px`;
+
+                    }
+                );
 
             }
-        );
+
+        }
 
     }
 
 
-    /* =========================================================
-       RESIZE
-       ========================================================= */
+    /*
+     * İlk yükleme sonrası
+     */
+
+    requestAnimationFrame(
+        equalizeCards
+    );
+
+
+    /*
+     * Ekran boyutu değişince
+     * tekrar eşitle.
+     */
 
     let resizeTimer = null;
 
@@ -2293,25 +2408,34 @@ document.addEventListener("DOMContentLoaded", function () {
 
             resizeTimer =
                 setTimeout(
-                    function () {
-
-                        equalizeNewsCards();
-
-                        equalizePopularCards();
-
-                        separateHeroNumbers();
-
-                    },
-                    100
+                    equalizeCards,
+                    150
                 );
 
         }
     );
 
 
-    equalizeNewsCards();
+    /* =========================================================
+       GÖRSEL YÜKLENDİKTEN SONRA KARTLARI EŞİTLE
+       ========================================================= */
 
-    equalizePopularCards();
+    document.addEventListener(
+        "load",
+        function (event) {
+
+            if (
+                event.target &&
+                event.target.tagName === "IMG"
+            ) {
+
+                equalizeCards();
+
+            }
+
+        },
+        true
+    );
 
 
     /* =========================================================
