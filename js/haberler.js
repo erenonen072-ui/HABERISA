@@ -214,7 +214,7 @@ const haberler = [
 
         <p>Ekonomi yönetiminin atacağı yeni adımlar ve Merkez Bankası'nın para politikası kararları da piyasaların yönü açısından önemini koruyacak.</p>
     `
-}
+},
     {
         id: 33,
         kategori: "Gündem",
