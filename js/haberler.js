@@ -35,6 +35,186 @@ const haberler = [
     /* =====================================================
        33 - MERSİN BOZYAZI YANGINI
     ===================================================== */
+{
+    id: 64,
+    kategori: "Ekonomi",
+    baslik: "Merkez Bankası faiz kararını açıkladı: Piyasaların gözü yeni dönemde",
+    spot: "Türkiye Cumhuriyet Merkez Bankası'nın faiz kararı ekonomi gündeminin en önemli başlıklarından biri oldu. Kararın ardından piyasaların yönü ve para politikasının önümüzdeki dönemde nasıl şekilleneceği takip ediliyor.",
+    tarih: "10 Eylül 2026",
+    saat: "14:30",
+    gorsel: "images/merkez-bankasi.jpeg",
+    kaynak: "HABERİSTA",
+    yazar: "Haberİsta Ekonomi Servisi",
+    icerik: `
+        <h2>Ekonomide gözler Merkez Bankası kararındaydı</h2>
+
+        <p>Türkiye ekonomisinin geleceği açısından yakından takip edilen Türkiye Cumhuriyet Merkez Bankası Para Politikası Kurulu toplantısı gerçekleştirildi. Toplantının ardından açıklanan faiz kararı, piyasaların ve ekonomi çevrelerinin en önemli gündem maddelerinden biri oldu.</p>
+
+        <p>Merkez Bankası'nın para politikası kararları; enflasyon, kredi koşulları, iç talep ve finansal piyasalar açısından önemli sonuçlar doğurabiliyor. Bu nedenle açıklanan karar yalnızca finans sektöründe değil, şirketler ve vatandaşlar tarafından da yakından takip ediliyor.</p>
+
+        <h2>Enflasyon görünümü yakından izleniyor</h2>
+
+        <p>Türkiye ekonomisinde son dönemde en önemli başlıklardan biri fiyat istikrarının sağlanması olmaya devam ediyor. Enflasyondaki gelişmeler, para politikasının geleceğine ilişkin beklentilerin şekillenmesinde belirleyici unsurlar arasında bulunuyor.</p>
+
+        <p>Merkez Bankası'nın karar metninde enflasyonun seyri, iç talep koşulları ve finansal gelişmeler gibi göstergelerin değerlendirilmesi, önümüzdeki dönem için önemli mesajlar verebiliyor.</p>
+
+        <h2>Piyasalar kararı nasıl değerlendirecek?</h2>
+
+        <p>Faiz kararının ardından döviz kuru, tahvil piyasası ve Borsa İstanbul'daki hareketlilik yatırımcılar tarafından yakından izleniyor. Küresel piyasalardaki gelişmeler de Türkiye'deki finansal varlıkların fiyatlamasında etkili olmaya devam ediyor.</p>
+
+        <p>Ekonomi yönetiminin enflasyonla mücadele ve fiyat istikrarı konusunda atacağı adımlar da piyasaların gelecek dönem beklentileri açısından önem taşıyor.</p>
+
+        <h2>Yeni dönemde hangi başlıklar izlenecek?</h2>
+
+        <p>Önümüzdeki süreçte enflasyon verileri, ekonomik büyüme, kredi hacmi, tüketici talebi ve küresel merkez bankalarının kararları Türkiye'deki para politikası açısından önemini koruyacak.</p>
+
+        <p>Uzman değerlendirmelerinde ise tek bir faiz kararından ziyade kararların bir bütün olarak değerlendirilmesi ve ekonomik göstergelerin birlikte takip edilmesi gerektiğine dikkat çekiliyor.</p>
+    `
+},
+
+{
+    id: 65,
+    kategori: "Gündem",
+    baslik: "Türkiye'nin gündeminde kritik başlıklar: Güvenlik ve ekonomi yakından takip ediliyor",
+    spot: "Türkiye'de siyaset, güvenlik, ekonomi ve dış politika başlıkları yoğun gündem oluşturuyor. Yetkililerin açıklamaları ve yeni gelişmeler kamuoyunun yakın takibinde.",
+    tarih: "10 Eylül 2026",
+    saat: "18:45",
+    gorsel: "images/turkiye-gundem.jpeg",
+    kaynak: "HABERİSTA",
+    yazar: "Haberİsta Gündem Servisi",
+    icerik: `
+        <h2>Türkiye'de yoğun gündem</h2>
+
+        <p>Türkiye, yeni güne siyaset, ekonomi, güvenlik ve dış politika başlıklarının öne çıktığı yoğun bir gündemle başladı. Gün içerisinde gerçekleştirilen toplantılar ve yapılan resmi açıklamalar yakından takip edildi.</p>
+
+        <p>Ülke gündeminde ekonomik gelişmelerin yanı sıra güvenlik politikaları ve bölgesel gelişmeler de önemli yer tutuyor. Ankara'dan gelen açıklamalar, önümüzdeki dönemde izlenecek politikalar açısından önem taşıyor.</p>
+
+        <h2>Güvenlik politikaları gündemin önemli başlıklarından</h2>
+
+        <p>Türkiye'nin güvenlik gündeminde terörle mücadele, sınır güvenliği ve bölgesel istikrar konuları öne çıkıyor. Yetkililer tarafından yapılan açıklamalarda Türkiye'nin güvenlik politikalarının kararlılıkla sürdürüleceği vurgulanıyor.</p>
+
+        <p>Bölgedeki gelişmelerin Türkiye'nin güvenliği üzerindeki olası etkileri de ilgili kurumlar tarafından takip ediliyor.</p>
+
+        <h2>Ekonomik gelişmeler de izleniyor</h2>
+
+        <p>Gündemin bir diğer önemli başlığını ekonomi oluşturuyor. Enflasyon, faiz politikası, üretim, istihdam ve yatırım ortamına ilişkin gelişmeler vatandaşlar ve iş dünyası açısından önem taşıyor.</p>
+
+        <p>Ekonomi yönetiminin açıklamaları ve yeni dönemde atılacak adımların piyasalardaki beklentiler üzerinde etkili olması bekleniyor.</p>
+
+        <h2>Dış politikada diplomasi trafiği</h2>
+
+        <p>Türkiye'nin dış politika gündeminde ise bölgesel gelişmeler ve diplomatik temaslar öne çıkıyor. Türkiye, çevresindeki krizlerin çözümünde diplomatik girişimlerini sürdürürken güvenlik ve ekonomik çıkarlarını da gözetiyor.</p>
+
+        <p>Önümüzdeki günlerde yapılacak resmi görüşmeler ve açıklamalar, dış politika gündeminin yönünü belirleyecek başlıklar arasında bulunuyor.</p>
+    `
+},
+
+{
+    id: 66,
+    kategori: "Dünya",
+    baslik: "Orta Doğu'da gerilim sürüyor: Diplomatik girişimler yakından izleniyor",
+    spot: "Orta Doğu'daki gelişmeler uluslararası gündemin merkezinde kalmaya devam ediyor. Bölgede yaşanan gerilim ve ateşkes sürecine ilişkin gelişmeler diplomatik çevreler tarafından takip ediliyor.",
+    tarih: "10 Eylül 2026",
+    saat: "17:20",
+    gorsel: "images/ortadogu.jpeg",
+    kaynak: "HABERİSTA",
+    yazar: "Haberİsta Dünya Servisi",
+    icerik: `
+        <h2>Bölgedeki gelişmeler dünya gündeminde</h2>
+
+        <p>Orta Doğu'da devam eden siyasi ve güvenlik gelişmeleri uluslararası kamuoyunun gündemindeki yerini koruyor. Bölgede yaşanan gelişmeler yalnızca ilgili ülkeleri değil, enerji piyasalarından uluslararası diplomasiye kadar birçok alanı etkiliyor.</p>
+
+        <p>Gazze'deki ateşkes süreci ve bölgedeki diğer gelişmeler konusunda uluslararası toplumun açıklamaları yakından takip ediliyor.</p>
+
+        <h2>Ateşkes sürecine ilişkin temaslar sürüyor</h2>
+
+        <p>Bölgede kalıcı bir ateşkes sağlanması ve insani yardımın sürdürülebilmesi için diplomatik girişimler devam ediyor. Farklı ülkeler ve uluslararası kuruluşlar, çatışmaların sona erdirilmesi konusunda görüşmeler yürütüyor.</p>
+
+        <p>Ancak sahadaki gelişmeler diplomatik sürecin ilerlemesini zorlaştıran unsurlar arasında yer alıyor.</p>
+
+        <h2>Enerji piyasaları da gelişmeleri izliyor</h2>
+
+        <p>Orta Doğu'daki jeopolitik gelişmeler enerji piyasaları açısından da önem taşıyor. Bölgede yaşanabilecek yeni bir gerilimin enerji arzı ve taşımacılık üzerinde oluşturabileceği etkiler uluslararası piyasalar tarafından değerlendiriliyor.</p>
+
+        <h2>Türkiye'nin diplomasi trafiği</h2>
+
+        <p>Türkiye de bölgedeki gelişmeleri yakından takip eden ülkeler arasında bulunuyor. Ankara, diplomatik temaslar ve uluslararası platformlardaki girişimleri aracılığıyla bölgesel istikrarın sağlanmasına yönelik mesajlarını sürdürüyor.</p>
+
+        <p>Bölgede önümüzdeki günlerde yaşanacak gelişmeler, hem diplomatik süreç hem de uluslararası piyasalar açısından belirleyici olacak.</p>
+    `
+},
+
+{
+    id: 67,
+    kategori: "Gündem",
+    baslik: "İstanbul açıklarında batan gemiyle ilgili arama kurtarma çalışmaları sürüyor",
+    spot: "Silivri açıklarında iki Türk bayraklı ticari geminin çarpışmasının ardından batan geminin bulunduğu bölgede arama kurtarma çalışmalarına ilişkin gelişmeler takip ediliyor.",
+    tarih: "10 Eylül 2026",
+    saat: "16:40",
+    gorsel: "images/gemi.jpeg",
+    kaynak: "HABERİSTA",
+    yazar: "Haberİsta Haber Merkezi",
+    icerik: `
+        <h2>Silivri açıklarında deniz kazası</h2>
+
+        <p>İstanbul'un Silivri ilçesi açıklarında iki Türk bayraklı ticari geminin çarpışması sonucu meydana gelen kazanın ardından bölgede arama kurtarma çalışmaları yürütülüyor.</p>
+
+        <p>Deniz kazasının ardından ilgili kurumlar bölgeye ekiplerini sevk ederken, olayla ilgili gelişmeler yetkili makamlar tarafından takip ediliyor.</p>
+
+        <h2>Arama kurtarma çalışmaları devam ediyor</h2>
+
+        <p>Batan geminin bulunduğu bölgede yürütülen çalışmaların temel amacı olası can kayıplarını önlemek ve kazaya ilişkin tüm detayları ortaya çıkarmak. Deniz koşulları ve görüş mesafesi gibi faktörler çalışmalarda önem taşıyor.</p>
+
+        <p>Yetkililerden gelecek yeni açıklamalar, kazanın nasıl meydana geldiğine ilişkin daha ayrıntılı bilgilerin ortaya çıkmasını sağlayacak.</p>
+
+        <h2>Deniz trafiği takip ediliyor</h2>
+
+        <p>Kazanın ardından bölgedeki deniz trafiğinin güvenli şekilde devam ettirilmesi için gerekli koordinasyonun sağlanması önem taşıyor.</p>
+
+        <p>Denizcilik kurumları tarafından yapılan çalışmalar kapsamında olayın nedenleri ve gemilerin seyir durumları da inceleniyor.</p>
+
+        <h2>Soruşturmanın sonuçları bekleniyor</h2>
+
+        <p>Kazayla ilgili inceleme ve soruşturmanın tamamlanmasının ardından olayın meydana geliş şekline ilişkin daha kapsamlı bilgilerin paylaşılması bekleniyor.</p>
+
+        <p>Haberİsta olarak resmi kurumlardan yapılacak açıklamaları takip ediyor ve yeni bilgiler geldikçe okuyucularımıza aktarıyoruz.</p>
+    `
+},
+
+{
+    id: 68,
+    kategori: "Ekonomi",
+    baslik: "Ekonomide yeni veriler açıklanıyor: Sanayi üretimi ve finansal piyasalar takipte",
+    spot: "Türkiye ekonomisinde açıklanan yeni veriler, üretim ve finansal görünüm açısından yakından takip ediliyor. Piyasaların odağında sanayi üretimi, faiz politikası ve finansal göstergeler bulunuyor.",
+    tarih: "10 Eylül 2026",
+    saat: "12:50",
+    gorsel: "images/ekonomi.jpeg",
+    kaynak: "HABERİSTA",
+    yazar: "Haberİsta Ekonomi Servisi",
+    icerik: `
+        <h2>Ekonomide veri gündemi yoğun</h2>
+
+        <p>Türkiye ekonomisinde yeni verilerin açıklanmasıyla birlikte piyasaların gündemi hareketlendi. Sanayi üretimi, finansal yatırım araçları ve bankacılık sektörüne ilişkin göstergeler ekonominin genel görünümü açısından takip ediliyor.</p>
+
+        <p>Ekonomik veriler, üretim faaliyetlerinin ne yönde ilerlediğini ve şirketlerin ekonomik koşullara nasıl tepki verdiğini değerlendirmek açısından önemli bir gösterge olarak kabul ediliyor.</p>
+
+        <h2>Sanayi üretimi önemli gösterge</h2>
+
+        <p>Sanayi üretimindeki değişim, Türkiye ekonomisinin üretim kapasitesi ve büyüme görünümü hakkında önemli bilgiler sağlıyor. Özellikle imalat sanayisindeki hareketlilik, ekonomik aktivitenin temel göstergeleri arasında yer alıyor.</p>
+
+        <p>Üretimdeki artış veya gerileme; istihdam, ihracat ve şirket yatırımları gibi birçok alan üzerinde doğrudan veya dolaylı etki oluşturabiliyor.</p>
+
+        <h2>Finansal piyasalar verileri izliyor</h2>
+
+        <p>Yatırımcılar açısından faiz kararları ve finansal piyasalara ilişkin yeni veriler de önem taşıyor. Küresel piyasalardaki hareketlilik ile Türkiye'deki ekonomik göstergeler birlikte değerlendiriliyor.</p>
+
+        <h2>Önümüzdeki dönem belirleyici olacak</h2>
+
+        <p>Türkiye ekonomisinin önümüzdeki dönemdeki görünümünde enflasyon, üretim, tüketim, istihdam ve dış ticaret verilerinin birlikte değerlendirilmesi bekleniyor.</p>
+
+        <p>Ekonomi yönetiminin atacağı yeni adımlar ve Merkez Bankası'nın para politikası kararları da piyasaların yönü açısından önemini koruyacak.</p>
+    `
+}
     {
         id: 33,
         kategori: "Gündem",
