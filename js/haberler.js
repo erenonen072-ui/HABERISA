@@ -2,7 +2,7 @@
 
 /* =========================================================
    HABERİSTA - HABER VERİTABANI
-   PROFESYONEL SÜRÜM
+   PROFESYONEL / GELİŞTİRİLMİŞ SÜRÜM
 ========================================================= */
 
 /* =========================================================
@@ -45,60 +45,55 @@ const haberler = [
         gorsel: "images/bozyazi-orman-yangini.jpeg",
         kaynak: "HABERİSTA",
         yazar: "Haberİsta Haber Merkezi",
+
         icerik: `
 MERSİN BOZYAZI'DA ORMAN YANGINI
 
-Mersin'in Bozyazı ilçesinde ormanlık alanda yangın çıktı. Yangının fark edilmesinin ardından bölgeye ilgili ekipler yönlendirilirken, alevlerin kontrol altına alınması amacıyla müdahale çalışmaları başlatıldı.
+Mersin'in Bozyazı ilçesinde ormanlık alanda yangın çıktı. Yangının fark edilmesinin ardından ilgili ekipler bölgeye sevk edilirken, alevlerin kontrol altına alınması için müdahale başlatıldı.
 
-Ormanlık alanda meydana gelen yangın nedeniyle ekipler, alevlerin mevcut durumunu ve ilerleme yönünü yakından takip ediyor. Yangının daha geniş bir alana yayılmasının önlenmesi için farklı noktalarda çalışmalar yürütülüyor.
+Yangın, özellikle ormanlık alanlarda kısa sürede farklı noktalara ilerleyebilmesi nedeniyle ekiplerin yoğun çalışma yürüttüğü olaylar arasında yer alıyor. Bozyazı'daki yangında da ekiplerin önceliği alevlerin yayılmasını sınırlandırmak ve yangını kontrol altına almak oldu.
 
-HAVADAN VE KARADAN MÜDAHALE
+HAVADAN VE KARADAN MÜDAHALE SÜRÜYOR
 
-Yangına hem kara ekipleriyle hem de hava araçlarıyla müdahale ediliyor. Kara ekipleri yangının çevresinde çalışmalarını sürdürürken, hava araçları ulaşılması daha zor bölgelere müdahale edilmesine katkı sağlıyor.
+Yangına hem kara ekipleri hem de hava araçlarıyla müdahale ediliyor. Kara ekipleri yangın çevresinde çalışmalarını sürdürürken, hava araçları ulaşılması daha zor bölümlerde yürütülen müdahaleye destek veriyor.
 
-Havadan ve karadan yürütülen çalışmaların koordineli şekilde devam ettiği belirtiliyor. Ekiplerin temel hedefleri arasında yangının kontrol altına alınması, çevredeki riskli alanların korunması ve alevlerin ilerlemesinin önüne geçilmesi bulunuyor.
+Havadan ve karadan yapılan çalışmaların aynı anda yürütülmesi, yangının farklı bölümlerinin kontrol altında tutulması açısından önem taşıyor. Ekipler sahadaki duruma göre müdahale noktalarını ve çalışma planını değerlendiriyor.
 
-EKİPLER BÖLGEDE ÇALIŞIYOR
+YANGININ SEYRİNDE HAVA KOŞULLARI ÖNEMLİ
 
-Yangın ihbarının ardından bölgeye sevk edilen ekipler, söndürme çalışmalarını sürdürüyor. Çalışmalar sırasında yangının bulunduğu alanın yanı sıra çevredeki riskli noktalar da kontrol altında tutuluyor.
+Orman yangınlarında hava sıcaklığı, rüzgarın yönü ve hızı ile arazinin yapısı müdahalenin seyrini etkileyebiliyor.
 
-Orman yangınlarında arazinin yapısı, bitki örtüsü ve hava koşulları müdahalenin seyrini etkileyebiliyor. Bu nedenle ekipler sahadaki gelişmeleri sürekli değerlendirerek çalışmalarını sürdürüyor.
+Özellikle rüzgarın yön değiştirmesi, alevlerin ilerleme yönünün kısa sürede değişmesine neden olabildiğinden ekipler meteorolojik koşulları da dikkate alıyor. Bu nedenle söndürme çalışmaları yalnızca mevcut alevlere müdahaleden değil, yangının ilerleyebileceği alanların değerlendirilmesinden de oluşuyor.
 
-RÜZGAR YANGININ SEYRİNİ ETKİLEYEBİLİYOR
+EKİPLER RİSKLİ NOKTALARI KONTROL EDİYOR
 
-Yangınlarla mücadelede rüzgarın yönü ve hızı önemli unsurlar arasında bulunuyor. Rüzgarın yön değiştirmesi, alevlerin farklı noktalara ilerlemesine neden olabileceğinden ekipler hava koşullarını da yakından takip ediyor.
+Yangınla mücadelede alevlerin bulunduğu bölgenin yanı sıra çevredeki riskli alanların kontrol edilmesi de önem taşıyor.
 
-Bozyazı'daki yangında da bölgedeki hava şartlarının müdahale çalışmalarının planlanması açısından önem taşıdığı değerlendiriliyor. Ekipler olası risklere karşı çalışmalarını sürdürüyor.
+Ekipler, yangının yayılma ihtimali bulunan bölgelerde gerekli çalışmaları yürütürken, müdahale sırasında saha koşullarını sürekli değerlendiriyor. Arazinin yapısı ve ulaşım imkanları, kara ekiplerinin çalışmalarında dikkate alınan unsurlar arasında bulunuyor.
 
-YANGININ YAYILMASINI ÖNLEMEK İÇİN ÇALIŞMA
+VATANDAŞLARIN DİKKATLİ OLMASI İSTENİYOR
 
-Yangın söndürme çalışmalarında mevcut alevlere müdahale edilmesinin yanı sıra yangının çevredeki alanlara yayılmasının önlenmesi de büyük önem taşıyor.
+Yangın bölgesine yakın alanlarda bulunan vatandaşların ekiplerin çalışmalarını aksatabilecek davranışlardan kaçınması gerekiyor.
 
-Ekipler yangının ilerleyebileceği bölgeleri takip ederken, riskli alanlarda kontrol sağlamaya çalışıyor. Yangının seyriyle ilgili yeni gelişmeler sahadaki çalışmalar doğrultusunda belirleniyor.
+Özellikle yangın söndürme araçlarının geçiş güzergahlarının açık tutulması ve hava araçlarının çalıştığı bölgelerde güvenlik kurallarına uyulması önem taşıyor. Vatandaşların yangınla ilgili bilgileri resmi kurumlardan takip etmesi gerekiyor.
 
-SOĞUTMA ÇALIŞMALARI ÖNEM TAŞIYOR
+SOĞUTMA ÇALIŞMALARI DA ÖNEM TAŞIYOR
 
-Alevlerin kontrol altına alınmasının ardından soğutma çalışmalarının yürütülmesi de önem taşıyor. Yangının tamamen söndürülmesinin ardından bölgede yeniden alevlenme ihtimaline karşı alanın kontrol edilmesi gerekiyor.
+Yangının kontrol altına alınmasının ardından çalışmaların yalnızca alevlerin söndürülmesiyle sona ermesi beklenmiyor. Yangın bölgesinde sıcak noktaların kontrol edilmesi ve yeniden alevlenme ihtimaline karşı alanın izlenmesi gerekiyor.
 
-Soğutma çalışmaları sırasında yangından etkilenen bölgeler yeniden incelenirken, sıcak noktaların kontrol altına alınması amaçlanıyor.
+Bu nedenle söndürme çalışmalarının ardından yapılacak soğutma faaliyetleri, yangının tamamen kontrol altına alınması açısından önemli bir aşama oluşturuyor.
 
-VATANDAŞLARA UYARI
+ORMAN YANGINLARINDA ERKEN MÜDAHALE ÖNEMLİ
 
-Yetkililer, yangın bölgesine yakın alanlarda bulunan vatandaşların ekiplerin çalışmalarını aksatmaması gerektiğini belirtiyor.
+Orman yangınlarında yangının erken fark edilmesi ve ekiplerin kısa sürede bölgeye ulaşması, alevlerin daha geniş alanlara yayılmasının önlenmesi açısından önem taşıyor.
 
-Yangın söndürme araçlarının ve hava araçlarının güvenli şekilde faaliyet gösterebilmesi için vatandaşların güvenlik uyarılarına uyması önem taşıyor. Vatandaşların resmi kurumlardan yapılacak açıklamaları takip etmesi gerekiyor.
+Sıcak ve kuru hava koşullarının etkili olduğu dönemlerde ormanlık alanlarda daha dikkatli olunması gerekiyor. Yangına neden olabilecek davranışlardan kaçınılması ve şüpheli bir durum görüldüğünde ilgili kurumlara haber verilmesi büyük önem taşıyor.
 
-ORMAN YANGINLARINDA TEDBİRİN ÖNEMİ
+BOZYAZI'DAKİ ÇALIŞMALAR SÜRÜYOR
 
-Orman yangınlarında erken tespit ve hızlı müdahale, yangının daha geniş alanlara yayılmasının önlenmesi açısından önem taşıyor.
+Bozyazı'daki yangına ilişkin müdahale çalışmaları ekiplerin sahadaki değerlendirmeleri doğrultusunda devam ediyor.
 
-Özellikle sıcak ve kuru hava koşullarının yaşandığı dönemlerde ormanlık alanlarda yangın riski daha dikkatli takip ediliyor. Vatandaşların ormanlık bölgelerde yangına neden olabilecek davranışlardan kaçınması ve şüpheli durumlarda ilgili kurumlara bilgi vermesi önem taşıyor.
-
-GELİŞMELER TAKİP EDİLİYOR
-
-Mersin'in Bozyazı ilçesindeki yangına ilişkin gelişmeler, ekiplerin sahadaki çalışmaları ve yetkili kurumlardan gelecek açıklamalar doğrultusunda takip ediliyor.
-
-Yangının kontrol altına alınıp alınmadığı ve müdahale çalışmalarının hangi aşamada olduğu konusunda yapılacak resmi açıklamalar kamuoyu tarafından yakından izleniyor.
+Yangının kontrol altına alınıp alınmadığı, çalışmaların hangi aşamada olduğu ve bölgenin son durumu konusunda yapılacak resmi açıklamalar gelişmelerin seyri açısından belirleyici olacak.
 
 HABERİSTA Haber Merkezi
         `
@@ -117,54 +112,49 @@ HABERİSTA Haber Merkezi
         gorsel: "images/bayraktaroglu-ustel-gorusmesi.jpeg",
         kaynak: "HABERİSTA",
         yazar: "Haberİsta Haber Merkezi",
+
         icerik: `
-ORGENERAL BAYRAKTAROĞLU KKTC'DE GÖRÜŞME GERÇEKLEŞTİRDİ
+BAYRAKTAROĞLU VE ÜSTEL BİR ARAYA GELDİ
 
-Orgeneral Bayraktaroğlu, Kuzey Kıbrıs Türk Cumhuriyeti'nde gerçekleştirdiği temaslar kapsamında KKTC Başbakanı Ünal Üstel ile bir araya geldi.
+Orgeneral Bayraktaroğlu, Kuzey Kıbrıs Türk Cumhuriyeti'nde gerçekleştirdiği temaslar kapsamında KKTC Başbakanı Ünal Üstel ile görüştü.
 
-Gerçekleştirilen görüşme, Türkiye ile Kuzey Kıbrıs Türk Cumhuriyeti arasındaki temasların yanı sıra bölgesel güvenlik gündemi açısından da takip edilen gelişmeler arasında yer aldı.
+Türkiye ile KKTC arasındaki siyasi ve güvenlik temasları açısından takip edilen görüşmede bölgesel gelişmeler ile iki taraf arasındaki iş birliğinin ele alındığı bildirildi.
 
-GÜNDEMDE GÜVENLİK VE İŞ BİRLİĞİ
+GÜNDEMİN ÖNEMLİ BAŞLIKLARINDAN BİRİ GÜVENLİK
 
-Görüşmede güvenlik başta olmak üzere bölgesel gelişmeler ve Türkiye ile KKTC arasındaki iş birliği konularının değerlendirildiği bildirildi.
+Görüşmede güvenlik konularının yanı sıra bölgedeki güncel gelişmelerin değerlendirildiği belirtildi.
 
-Güvenlik alanındaki gelişmelerin yanı sıra iki taraf arasındaki koordinasyonun sürdürülmesine ilişkin konuların da görüşmede gündeme geldiği belirtildi.
+Doğu Akdeniz'deki gelişmeler, Kıbrıs çevresindeki güvenlik gündemi ve bölgedeki siyasi hareketlilik Türkiye ve KKTC'nin yakından takip ettiği başlıklar arasında bulunuyor.
+
+Görüşmelerde bu gelişmelerin değerlendirilmesi, tarafların mevcut durum hakkındaki görüşlerini paylaşmasına imkan sağlıyor.
+
+TÜRKİYE-KKTC İŞ BİRLİĞİ
+
+Türkiye ile KKTC arasındaki ilişkiler farklı alanlarda sürdürülen temaslarla devam ediyor.
+
+Siyasi ilişkilerin yanında güvenlik, ekonomi, eğitim ve sosyal alanlarda gerçekleştirilen çalışmalar da iki taraf arasındaki ilişkilerin önemli parçalarını oluşturuyor.
+
+Üst düzey yetkililer arasında gerçekleştirilen görüşmeler, mevcut iş birliğinin değerlendirilmesi ve yeni gelişmeler hakkında karşılıklı bilgi paylaşılması açısından önem taşıyor.
 
 DOĞU AKDENİZ GÜNDEMİ
 
-Doğu Akdeniz'deki gelişmeler bölgesel güvenlik ve dış politika açısından önemini koruyor. Bölgedeki siyasi ve güvenlik gelişmeleri Türkiye ve KKTC tarafından yakından takip ediliyor.
+Doğu Akdeniz, enerji kaynakları, deniz yetki alanları, güvenlik ve bölgesel diplomasi açısından uluslararası gündemde önemli bir yere sahip.
 
-Görüşmede bölgesel gelişmelerin değerlendirilmesi, yaşanan gelişmelerin güvenlik açısından ele alınması ve mevcut temasların sürdürülmesi açısından önem taşıyor.
+Bölgede yaşanan siyasi ve güvenlik gelişmeleri Türkiye, KKTC ve diğer bölge ülkeleri tarafından yakından izleniyor.
 
-TÜRKİYE-KKTC İLİŞKİLERİ
+Bu nedenle Türkiye ile KKTC arasında gerçekleştirilen üst düzey temaslarda bölgesel gelişmelerin değerlendirilmesi önem taşıyor.
 
-Türkiye ile KKTC arasındaki ilişkiler siyasi, ekonomik, sosyal ve güvenlik alanlarında gerçekleştirilen temaslarla devam ediyor.
+KOORDİNASYONUN SÜRDÜRÜLMESİ
 
-İki taraf arasında düzenli olarak gerçekleştirilen görüşmelerde bölgesel gelişmelerin yanı sıra ortak çalışma alanları ve karşılıklı iş birliği konuları da değerlendiriliyor.
+Güvenlik alanında koordinasyon, bölgesel gelişmelerin hızlı şekilde değerlendirilmesi açısından önem taşıyor.
 
-GÜVENLİK VE KOORDİNASYON
+Tarafların gerçekleştirdiği temaslar sayesinde bölgedeki gelişmeler hakkında karşılıklı değerlendirme yapılırken, mevcut iş birliği alanlarının da ele alınması mümkün oluyor.
 
-Bölgedeki güvenlik gelişmeleri, Türkiye ve KKTC arasındaki temasların önemli başlıklarından biri olarak öne çıkıyor.
+GÖRÜŞMENİN ARDINDAN GÖZLER YENİ AÇIKLAMALARDA
 
-Yetkililerin gerçekleştirdiği görüşmelerin, bölgesel gelişmeler hakkında karşılıklı değerlendirme yapılmasına ve koordinasyonun devam ettirilmesine katkı sağlaması bekleniyor.
+Bayraktaroğlu ile Üstel arasındaki görüşmenin ardından Türkiye-KKTC ilişkileri ve Doğu Akdeniz'deki gelişmeler gündemde kalmaya devam edecek.
 
-BÖLGESEL GELİŞMELER TAKİP EDİLİYOR
-
-Doğu Akdeniz'deki gelişmeler ve bölgedeki siyasi gündem uluslararası kamuoyu tarafından da yakından takip ediliyor.
-
-Türkiye ve KKTC'nin bölgesel gelişmelere ilişkin değerlendirmeleri önümüzdeki dönemde yapılacak açıklamalarla daha net şekilde ortaya çıkacak.
-
-GÖRÜŞMELERİN ÖNEMİ
-
-Gerçekleştirilen temaslar, Türkiye ile KKTC arasındaki ilişkilerin farklı alanlarda sürdürülmesi açısından önem taşıyor.
-
-Özellikle güvenlik ve bölgesel gelişmeler konusunda yapılan görüşmeler, tarafların gelişmelere ilişkin değerlendirmelerini paylaşmasına imkan sağlıyor.
-
-ÖNÜMÜZDEKİ SÜREÇ
-
-Görüşmenin ardından Türkiye-KKTC ilişkileri, bölgesel güvenlik gündemi ve Doğu Akdeniz'deki gelişmeler takip edilmeye devam edilecek.
-
-Taraflardan gelecek yeni açıklamalar ve gerçekleştirilecek temasların bölgesel gündem açısından önemini koruması bekleniyor.
+Tarafların önümüzdeki dönemde yapacağı yeni açıklamalar ve gerçekleştireceği temaslar, bölgesel güvenlik gündeminin değerlendirilmesi açısından önem taşıyacak.
 
 HABERİSTA Haber Merkezi
         `
@@ -183,54 +173,57 @@ HABERİSTA Haber Merkezi
         gorsel: "images/putin-trump-telefon-gorusmesi.jpeg",
         kaynak: "HABERİSTA",
         yazar: "Haberİsta Dünya Servisi",
+
         icerik: `
-PUTİN VE TRUMP TELEFONDA GÖRÜŞTÜ
+PUTİN VE TRUMP TELEFON GÖRÜŞMESİ GERÇEKLEŞTİ
 
-Rusya Devlet Başkanı Vladimir Putin ile ABD Başkanı Donald Trump arasında telefon görüşmesi gerçekleştirildi. Görüşmede Ukrayna savaşı ve bölgedeki gelişmelerin ele alındığı bildirildi.
+Rusya Devlet Başkanı Vladimir Putin ile ABD Başkanı Donald Trump arasında telefon görüşmesi gerçekleştirildi.
 
-ABD ile Rusya arasındaki diplomatik temaslar, Ukrayna savaşının geleceği ve olası barış görüşmeleri açısından uluslararası kamuoyu tarafından yakından takip ediliyor.
+Görüşmenin merkezinde Ukrayna savaşı ve savaşın sona erdirilmesine yönelik diplomatik girişimler yer aldı. ABD ile Rusya arasındaki temaslar, savaşın geleceği ve olası müzakere süreci açısından uluslararası kamuoyunun dikkatle izlediği başlıklardan biri.
 
-UKRAYNA SAVAŞI GÜNDEMDE
+UKRAYNA SAVAŞI GÜNDEMİN MERKEZİNDE
 
-Rusya-Ukrayna savaşı, Avrupa güvenliği ve uluslararası diplomasinin önemli gündem başlıklarından biri olmayı sürdürüyor.
+Rusya-Ukrayna savaşı, Avrupa güvenliği ve uluslararası diplomasi açısından önemini koruyor.
 
-Görüşmede savaşın mevcut durumu, sahadaki gelişmeler ve tarafların önümüzdeki döneme ilişkin değerlendirmelerinin ele alındığı belirtildi.
+Savaşın sahadaki seyri kadar, taraflar arasında yürütülen diplomatik temaslar da sürecin geleceği açısından önem taşıyor. ABD ve Rusya arasında gerçekleştirilen üst düzey görüşmeler bu nedenle uluslararası kamuoyunda yakından takip ediliyor.
 
-BARIŞ SÜRECİ ELE ALINDI
+BARIŞ SÜRECİ İÇİN DİPLOMATİK TEMASLAR
 
-Putin ve Trump arasındaki görüşmede olası barış süreci ve diplomatik girişimlerin de gündeme geldiği ifade edildi.
+Putin ve Trump arasındaki görüşmede olası barış sürecinin de ele alındığı bildirildi.
 
-Savaşın sona erdirilmesine yönelik diplomatik temasların hangi yönde ilerleyeceği, tarafların açıklamaları ve gerçekleştirilecek yeni görüşmelerle daha fazla netlik kazanacak.
+Savaşın sona erdirilmesi konusunda atılabilecek adımların ne olacağı, tarafların birbirinden beklentileri ve müzakere ihtimali önümüzdeki dönemin önemli gündem maddeleri arasında bulunuyor.
 
-ABD-RUSYA TEMASLARI
+Diplomatik temasların sonuç üretip üretmeyeceği ise yapılacak yeni açıklamalar ve görüşmelerle daha net ortaya çıkacak.
 
-Washington ile Moskova arasındaki temaslar, Ukrayna savaşının yanı sıra uluslararası güvenlik gündemi açısından da önem taşıyor.
+ABD-RUSYA İLİŞKİLERİ
 
-İki ülke arasında gerçekleştirilen üst düzey temaslar, tarafların farklı konulardaki görüşlerini doğrudan paylaşmasına imkan sağlıyor.
+Washington ile Moskova arasındaki ilişkiler yalnızca Ukrayna savaşı açısından değil, uluslararası güvenlik bakımından da önem taşıyor.
 
-AVRUPA GÜVENLİĞİ GÜNDEMDE
+İki ülke arasındaki temasların düzeyi, farklı bölgesel krizler ve güvenlik başlıkları üzerinde de etkili olabiliyor.
 
-Ukrayna'daki savaşın etkileri Avrupa güvenliği açısından da yakından takip ediliyor.
+Bu nedenle Putin-Trump görüşmesi, iki ülkenin doğrudan iletişim kanallarını sürdürmesi açısından da dikkat çekiyor.
 
-Savaşın seyri, bölgedeki güvenlik politikaları ve uluslararası diplomatik girişimler Avrupa ülkelerinin gündeminde önemli yer tutuyor.
+AVRUPA GÜVENLİĞİ
 
-DİPLOMASİ TRAFİĞİ SÜRÜYOR
+Ukrayna'daki savaşın Avrupa güvenliği üzerindeki etkileri, savaşın başladığı dönemden bu yana uluslararası gündemin önemli başlıkları arasında bulunuyor.
 
-Ukrayna savaşı konusunda farklı ülkeler tarafından diplomatik girişimler yürütülürken, ABD ve Rusya arasındaki temaslar da sürecin önemli parçalarından biri olarak değerlendiriliyor.
+Savaşın seyri, Avrupa ülkelerinin güvenlik politikaları ve NATO-Rusya ilişkileri gibi konularla birlikte değerlendiriliyor.
 
-Önümüzdeki dönemde yapılabilecek yeni görüşmeler ve tarafların açıklamaları, diplomatik sürecin yönü açısından önem taşıyacak.
+Diplomatik çözüm ihtimali, Avrupa'nın gelecekteki güvenlik ortamı açısından da yakından izleniyor.
 
-SAHADAKİ GELİŞMELER YAKINDAN İZLENİYOR
+SAHA VE DİPLOMASİ BİRLİKTE İZLENİYOR
 
-Diplomatik temasların yanı sıra Ukrayna'daki sahadaki gelişmeler de uluslararası kamuoyu tarafından takip ediliyor.
+Ukrayna'daki askeri gelişmeler ile diplomatik görüşmeler birbirinden bağımsız değerlendirilmiyor.
 
-Askeri gelişmeler ile diplomatik görüşmelerin birbirini nasıl etkileyeceği, savaşın geleceği açısından önemli başlıklar arasında bulunuyor.
+Sahadaki durum, tarafların müzakere pozisyonlarını etkileyebildiği gibi diplomatik girişimlerin başarısı da savaşın geleceği açısından önem taşıyor.
+
+Bu nedenle uluslararası kamuoyu hem cephedeki gelişmeleri hem de siyasi temasları birlikte takip ediyor.
 
 ÖNÜMÜZDEKİ SÜREÇ
 
-Putin ve Trump arasındaki telefon görüşmesinin ardından ABD-Rusya ilişkileri, Ukrayna savaşı ve olası barış görüşmeleri gündemde kalmaya devam edecek.
+Putin ve Trump arasındaki telefon görüşmesinin ardından ABD-Rusya temaslarının nasıl ilerleyeceği merak konusu.
 
-Taraflardan gelecek yeni açıklamalar ve diplomatik temaslar, uluslararası kamuoyunun yakın takibinde olacak.
+Yeni görüşmeler, resmi açıklamalar ve Ukrayna'daki gelişmeler, barış sürecinin yönünü anlamak açısından önemli göstergeler olacak.
 
 HABERİSTA Dünya Servisi
         `
@@ -249,48 +242,53 @@ HABERİSTA Dünya Servisi
         gorsel: "images/girne-gemi-arama-kurtarma.jpeg",
         kaynak: "HABERİSTA",
         yazar: "Haberİsta Haber Merkezi",
+
         icerik: `
-GİRNE AÇIKLARINDA GEMİDE ARAMA-KURTARMA
+GİRNE AÇIKLARINDA GEMİ BATTI
 
-Kuzey Kıbrıs Türk Cumhuriyeti'nin Girne açıklarında batan geminin ardından bölgede arama-kurtarma çalışmaları başlatıldı.
+Kuzey Kıbrıs Türk Cumhuriyeti'nin Girne açıklarında bir geminin batmasının ardından bölgede arama-kurtarma çalışmaları başlatıldı.
 
-Olayın ardından ilgili ekipler bölgeye yönlendirilirken, denizde yürütülen çalışmaların koordineli şekilde sürdürüldüğü bildirildi.
+Olayın bildirilmesi üzerine ilgili ekipler denizde çalışma yürütmek üzere bölgeye yönlendirildi. Arama faaliyetlerinde olayın meydana geldiği alan ve çevresindeki deniz koşulları dikkate alınıyor.
 
-EKİPLER BÖLGEYE SEVK EDİLDİ
+ARAMA-KURTARMA EKİPLERİ BÖLGEDE
 
-İhbarın ardından arama-kurtarma ekipleri olayın meydana geldiği bölgeye yönlendirildi.
+Ekipler, belirlenen arama alanlarında çalışmalarını sürdürüyor.
 
-Ekipler, denizde belirlenen alanlarda çalışma yürütürken olayın ayrıntılarının ortaya çıkarılması ve varsa ulaşılması gereken kişilere yönelik arama faaliyetlerinin sürdürülmesi için çalışmalarına devam ediyor.
+Denizde yürütülen operasyonlarda arama bölgesinin doğru şekilde belirlenmesi, ekipler arasındaki iletişim ve hava koşullarının değerlendirilmesi büyük önem taşıyor.
 
-DENİZDE ARAMA ÇALIŞMALARI
+Çalışmaların amacı olayla ilgili mümkün olan en fazla bilgiye ulaşmak ve arama-kurtarma sürecini güvenli şekilde yürütmek.
 
-Arama-kurtarma ekipleri deniz üzerinde belirlenen alanlarda çalışmalarını sürdürüyor.
+DENİZ KOŞULLARI ÇALIŞMALARI ETKİLEYEBİLİYOR
 
-Çalışmalar sırasında bölgedeki gelişmeler ve deniz koşulları yakından takip ediliyor. Arama faaliyetlerinin güvenli şekilde gerçekleştirilebilmesi için ekipler koordineli hareket ediyor.
+Denizde gerçekleştirilen arama-kurtarma faaliyetlerinde rüzgar, dalga yüksekliği ve görüş mesafesi operasyonların planlanmasında önemli rol oynuyor.
 
-HAVA VE DENİZ KOŞULLARI İZLENİYOR
+Hava koşullarının değişmesi halinde ekiplerin çalışma yöntemi veya arama alanları yeniden değerlendirilebiliyor.
 
-Deniz üzerinde yürütülen arama-kurtarma çalışmalarında hava ve deniz koşulları önemli bir faktör oluşturuyor.
+Bu nedenle bölgede yürütülen çalışmalar sırasında meteorolojik koşulların sürekli takip edilmesi gerekiyor.
 
-Rüzgar, dalga yüksekliği ve görüş koşulları ekiplerin çalışma planlamasında dikkate alınması gereken unsurlar arasında bulunuyor.
+FARKLI EKİPLERİN KOORDİNASYONU ÖNEMLİ
 
-YETKİLİLERDEN AÇIKLAMA BEKLENİYOR
+Deniz kazalarında arama-kurtarma çalışmalarının etkili şekilde yürütülebilmesi için görevli ekiplerin koordinasyonu gerekiyor.
 
-Olayın meydana geliş şekli ve geminin batmasına ilişkin ayrıntıların resmi açıklamalarla netleşmesi bekleniyor.
+Arama alanının belirlenmesi, elde edilen bilgilerin paylaşılması ve denizdeki ekiplerin güvenliğinin sağlanması operasyonun önemli aşamalarını oluşturuyor.
 
-Yetkili kurumlar tarafından paylaşılacak bilgiler, olayın kapsamının ve yürütülen çalışmaların daha ayrıntılı şekilde anlaşılması açısından önem taşıyor.
+OLAYIN AYRINTILARI ARAŞTIRILIYOR
 
-ARAMA-KURTARMA ÇALIŞMALARINDA KOORDİNASYON
+Geminin neden battığı ve olayın hangi koşullarda meydana geldiğine ilişkin ayrıntıların resmi incelemeler sonucunda netleşmesi bekleniyor.
 
-Deniz kazalarında farklı kurum ve ekiplerin koordineli şekilde çalışması büyük önem taşıyor.
+Olayın ardından yetkili kurumların açıklamaları, kamuoyunun gelişmeleri doğru şekilde takip edebilmesi açısından önem taşıyor.
 
-Arama alanının belirlenmesi, deniz koşullarının değerlendirilmesi ve elde edilen bilgilerin ekipler arasında paylaşılması çalışmaların etkin şekilde yürütülmesine katkı sağlıyor.
+DENİZ TRAFİĞİNDE GÜVENLİK
 
-GELİŞMELER YAKINDAN TAKİP EDİLİYOR
+Deniz ulaşımında hava koşulları, gemilerin teknik durumu, seyir şartları ve deniz trafiği güvenlik açısından önem taşıyan unsurlar arasında bulunuyor.
 
-Girne açıklarında meydana gelen olayla ilgili gelişmeler, bölgede yürütülen arama-kurtarma çalışmaları ve yetkili kurumlardan gelecek açıklamalar doğrultusunda takip ediliyor.
+Yaşanan kazaların ardından yapılacak incelemeler, olayın nedenlerinin belirlenmesine ve benzer durumların değerlendirilmesine katkı sağlayabiliyor.
 
-Çalışmaların sonucuna ilişkin yeni bilgilerin resmi açıklamalarla kamuoyuna aktarılması bekleniyor.
+GİRNE'DEKİ ÇALIŞMALAR DEVAM EDİYOR
+
+Girne açıklarında yürütülen arama-kurtarma faaliyetlerinin sonucu ve olayın ayrıntıları, yetkili kurumların açıklamaları doğrultusunda netleşecek.
+
+Bölgedeki ekiplerin çalışmaları sürerken, yeni bilgilerin resmi açıklamalarla kamuoyuna aktarılması bekleniyor.
 
 HABERİSTA Haber Merkezi
         `
@@ -309,48 +307,49 @@ HABERİSTA Haber Merkezi
         gorsel: "images/gundem.jpeg",
         kaynak: "HABERİSTA Haber Merkezi",
         yazar: "Haberİsta Haber Merkezi",
+
         icerik: `
-TÜRKİYE'DE GÜNDEM YOĞUN
+TÜRKİYE'DE GÜNDEMİN ÖNE ÇIKAN BAŞLIKLARI
 
-Türkiye'de ekonomi, teknoloji, eğitim ve günlük yaşama ilişkin gelişmeler kamuoyunun gündemindeki yerini koruyor.
+Türkiye'de yeni haftayla birlikte ekonomi, eğitim, teknoloji, kamu hizmetleri ve günlük yaşama ilişkin farklı gelişmeler kamuoyunun gündeminde yer alıyor.
 
-Yeni haftayla birlikte farklı alanlarda açıklanan gelişmeler vatandaşlar tarafından yakından takip edilirken, resmi kurumların duyuruları da gündemin önemli kaynakları arasında bulunuyor.
+Vatandaşların gündemini doğrudan ilgilendiren gelişmelerin yanı sıra resmi kurumlar tarafından yayımlanan duyurular da takip ediliyor.
 
 EKONOMİ GÜNDEMİ
 
-Piyasalardaki hareketlilik, ekonomik göstergeler ve vatandaşların günlük yaşamını etkileyebilecek gelişmeler yakından takip ediliyor.
+Ekonomide fiyat hareketleri, enflasyon, döviz piyasası ve ekonomik politikalar vatandaşların yakından takip ettiği başlıklar arasında bulunuyor.
 
-Enflasyon, fiyatlar, döviz hareketleri ve ekonomik politikalar kamuoyunun gündeminde yer alırken, açıklanan ekonomik veriler piyasalardaki beklentiler açısından önem taşıyor.
+Ekonomik göstergelerde meydana gelen değişiklikler hem işletmelerin maliyetlerini hem de hane halkının harcamalarını etkileyebiliyor. Bu nedenle açıklanan ekonomik veriler yalnızca finans piyasaları açısından değil, günlük yaşam açısından da önem taşıyor.
 
-TEKNOLOJİDE YENİ GELİŞMELER
+TEKNOLOJİ GÜNDEMİ
 
-Dijital teknolojiler ve yeni ürünler teknoloji gündeminin öne çıkan başlıkları arasında bulunuyor.
+Yapay zeka, dijital hizmetler, mobil cihazlar ve internet teknolojilerindeki gelişmeler günlük yaşamın önemli bir parçası haline geliyor.
 
-Yapay zeka, dijital hizmetler, mobil teknolojiler ve internet kullanımındaki gelişmeler günlük yaşamın farklı alanlarında etkisini artırıyor.
+Kamu ve özel sektörde dijital hizmetlerin yaygınlaşması, vatandaşların birçok işlemi internet üzerinden gerçekleştirmesine imkan sağlıyor.
 
 EĞİTİM GÜNDEMİ
 
-Öğrenciler, veliler ve eğitimciler yeni eğitim dönemine ilişkin gelişmeleri takip ediyor.
+Öğrenciler, veliler ve öğretmenler eğitim takvimi, sınavlar ve yeni eğitim dönemine ilişkin açıklamaları takip ediyor.
 
-Eğitim takvimleri, sınavlar, okul süreçleri ve resmi açıklamalar eğitim gündeminin önemli başlıkları arasında yer alıyor.
+Eğitim alanında yapılacak yeni düzenlemeler öğrencilerin okul hayatını, sınav süreçlerini ve eğitim planlamasını doğrudan etkileyebiliyor.
 
-GÜNLÜK YAŞAMI İLGİLENDİREN GELİŞMELER
+GÜNLÜK YAŞAMI İLGİLENDİREN KARARLAR
 
-Vatandaşların ulaşım, ekonomi, eğitim ve sosyal yaşamla ilgili gelişmeleri yakından takip ettiği görülüyor.
+Ulaşım, sosyal destekler, kamu hizmetleri ve çeşitli idari düzenlemeler de vatandaşların günlük yaşamında karşılık bulan başlıklar arasında yer alıyor.
 
-Gün içerisinde açıklanan yeni kararlar veya düzenlemeler vatandaşların günlük yaşamını doğrudan ya da dolaylı olarak etkileyebiliyor.
+Özellikle resmi kurumların açıkladığı yeni uygulamalarda yürürlük tarihleri ve başvuru şartlarının dikkatle incelenmesi gerekiyor.
 
-RESMİ AÇIKLAMALAR ÖNEM TAŞIYOR
+RESMİ KAYNAKLAR NEDEN ÖNEMLİ?
 
-Gündemde yer alan gelişmelerle ilgili en doğru bilgilerin resmi kurumlar tarafından yapılan açıklamalardan takip edilmesi önem taşıyor.
+Gündeme ilişkin bilgilerin hızlı şekilde yayılması, doğrulanmamış bilgilerin de sosyal medya üzerinden paylaşılmasına neden olabiliyor.
 
-Özellikle ekonomik veriler, kamu düzenlemeleri ve vatandaşları ilgilendiren uygulamalarda güncel bilgilerin kontrol edilmesi gerekiyor.
+Vatandaşların özellikle ekonomik kararlar, kamu düzenlemeleri, eğitim ve sosyal destekler konusunda resmi kurumların açıklamalarını esas alması önem taşıyor.
 
 YENİ HAFTADA GÜNDEM
 
-Yeni haftada Türkiye'nin iç gündeminde farklı başlıkların öne çıkması bekleniyor.
+Türkiye'de önümüzdeki günlerde ekonomi, eğitim, teknoloji ve kamu gündeminin yanı sıra uluslararası gelişmelerin iç politikaya ve ekonomiye yansımaları da takip edilecek.
 
-Ekonomi, eğitim, teknoloji, kamu hizmetleri ve günlük yaşamla ilgili gelişmelerin yanı sıra uluslararası gelişmelerin de Türkiye gündemindeki yansımaları takip edilecek.
+Yeni kararlar ve resmi açıklamalar geldikçe vatandaşların günlük yaşamını ilgilendiren başlıklar daha net şekilde ortaya çıkacak.
 
 HABERİSTA Haber Merkezi
         `
@@ -369,50 +368,53 @@ HABERİSTA Haber Merkezi
         gorsel: "images/WhatsApp Image 2026-09-07 at 16.15.05.jpeg",
         kaynak: "HABERİSTA",
         yazar: "Haberİsta Haber Merkezi",
+
         icerik: `
-KABİNE TOPLANTISI GERÇEKLEŞTİRİLİYOR
+KABİNE TOPLANTISI GÜNDEMİ
 
 Cumhurbaşkanlığı Kabinesi, Cumhurbaşkanı Recep Tayyip Erdoğan başkanlığında gündemdeki başlıkları değerlendirmek üzere toplanıyor.
 
-Toplantıda Türkiye'nin ekonomi, güvenlik, dış politika ve iç gündemine ilişkin çeşitli konuların ele alınması bekleniyor.
+Toplantıda ekonomi, güvenlik, dış politika ve Türkiye'nin iç gündemine ilişkin konuların ele alınması bekleniyor.
 
-GÜNDEMDE EKONOMİ VAR
+EKONOMİ ÖNE ÇIKAN BAŞLIKLAR ARASINDA
 
-Toplantının önemli başlıkları arasında ekonomi gündeminin yer alması bekleniyor.
+Kabine toplantısında ekonomi gündeminin önemli başlıklardan biri olması bekleniyor.
 
-Ekonomik gelişmeler, fiyat istikrarı, kamu maliyesi ve önümüzdeki döneme ilişkin ekonomi politikalarının değerlendirilmesi gündemin önemli başlıkları arasında bulunuyor.
+Fiyat istikrarı, ekonomik büyüme, kamu maliyesi ve önümüzdeki dönemde uygulanabilecek ekonomi politikaları toplantının takip edilen başlıkları arasında bulunuyor.
 
-Ekonomiye ilişkin alınabilecek kararlar ve toplantı sonrasında yapılacak açıklamalar piyasalar ve vatandaşlar tarafından yakından takip edilecek.
+Kabine toplantısından çıkacak değerlendirmeler, özellikle vatandaşların günlük yaşamını etkileyebilecek ekonomik gelişmeler açısından önem taşıyor.
 
-GÜVENLİK KONULARI ELE ALINACAK
+GÜVENLİK GÜNDEMİ
 
-Türkiye'nin iç ve dış güvenliğine ilişkin gelişmelerin de Kabine toplantısında değerlendirilmesi bekleniyor.
+Türkiye'nin iç ve dış güvenliğine ilişkin gelişmelerin de toplantıda değerlendirilmesi bekleniyor.
 
-Bölgesel güvenlik gelişmeleri, Türkiye'nin yakın çevresindeki gelişmeler ve güvenlik politikaları toplantının gündeminde yer alabilecek başlıklar arasında bulunuyor.
+Türkiye'nin yakın çevresinde yaşanan gelişmeler, bölgesel güvenlik ortamı ve ilgili kurumların çalışmaları güvenlik gündeminin başlıkları arasında yer alıyor.
 
 TERÖRSÜZ TÜRKİYE SÜRECİ
 
-'Terörsüz Türkiye' sürecine ilişkin gelişmelerin toplantının gündem maddeleri arasında yer alması bekleniyor.
+Toplantının dikkat çeken başlıklarından birinin de "Terörsüz Türkiye" süreci olması bekleniyor.
 
-Sürece ilişkin atılabilecek adımlar, mevcut gelişmeler ve ilgili kurumların değerlendirmelerinin toplantıda ele alınması öne çıkan başlıklar arasında bulunuyor.
+Sürece ilişkin gelişmeler, güvenlik politikaları ve ilgili kurumların değerlendirmelerinin toplantıda ele alınması gündemde bulunuyor.
 
-BÖLGESEL GELİŞMELER
+Bu konuda yapılacak açıklamalar, sürecin bundan sonraki aşamalarının anlaşılması açısından önem taşıyacak.
 
-Türkiye'nin yakın çevresinde yaşanan gelişmeler ve dış politika gündeminin de toplantıda değerlendirilebilecek konular arasında olduğu belirtiliyor.
+DIŞ POLİTİKA VE BÖLGESEL GELİŞMELER
 
-Orta Doğu, Doğu Akdeniz ve Türkiye'nin dış politika gündemini ilgilendiren gelişmelerin toplantı kapsamında ele alınması bekleniyor.
+Türkiye'nin yakın çevresinde yaşanan siyasi ve güvenlik gelişmelerinin de Kabine gündeminde değerlendirilmesi bekleniyor.
 
-TOPLANTI SONRASI AÇIKLAMA
+Orta Doğu ve Doğu Akdeniz'deki gelişmelerin yanı sıra Türkiye'nin dış politika gündemini ilgilendiren konular toplantının önemli başlıkları arasında bulunuyor.
+
+TOPLANTI SONRASI AÇIKLAMA BEKLENİYOR
 
 Kabine toplantısının ardından alınan kararlar ve gündeme ilişkin değerlendirmelerin kamuoyuyla paylaşılması bekleniyor.
 
-Toplantı sonrasında yapılacak açıklamalar, ekonomi ve güvenlik başta olmak üzere vatandaşları ilgilendiren konular açısından önem taşıyor.
+Yapılacak açıklamalarda ekonomi, güvenlik ve dış politika başta olmak üzere vatandaşları ilgilendiren çeşitli başlıklara ilişkin değerlendirmelerin yer alması bekleniyor.
 
-VATANDAŞLARIN YAKINDAN TAKİP ETTİĞİ KONULAR
+GÖZLER TOPLANTI SONRASINDA
 
-Ekonomi, güvenlik ve dış politika başlıklarının yanı sıra vatandaşların günlük yaşamını ilgilendiren konulara ilişkin yapılacak açıklamalar da yakından takip ediliyor.
+Kabine toplantısında ele alınan konular ve toplantı sonrasında yapılacak açıklamalar önümüzdeki dönemin gündeminin anlaşılması açısından önem taşıyor.
 
-Toplantıda ele alınan konular ve sonrasında açıklanacak kararların önümüzdeki dönemdeki politikaların şekillenmesine katkı sağlaması bekleniyor.
+Özellikle ekonomi ve güvenlik alanındaki değerlendirmeler, kamuoyu tarafından yakından takip edilecek.
 
 HABERİSTA Haber Merkezi
         `
@@ -431,58 +433,55 @@ HABERİSTA Haber Merkezi
         gorsel: "images/6.jpeg",
         kaynak: "Reuters / HABERİSTA",
         yazar: "Haberİsta Dünya Servisi",
+
         icerik: `
-ABD İLE İRAN ARASINDA GERİLİM
+ABD-İRAN GERİLİMİNDE YENİ GELİŞME
 
-ABD ile İran arasındaki gerilim, İran'a ait olduğu belirtilen üç tankerin hedef alındığına ilişkin gelişmelerin ardından yeniden uluslararası gündemin öne çıkan başlıklarından biri oldu.
+ABD ile İran arasındaki gerilim, İran'a ait olduğu belirtilen üç tankerin hedef alındığına ilişkin gelişmelerin ardından yeniden uluslararası gündemin merkezine taşındı.
 
-İki ülke arasındaki ilişkilerde yaşanan gelişmeler, Orta Doğu'daki güvenlik dengeleri ve enerji piyasaları açısından da yakından takip ediliyor.
+Deniz taşımacılığıyla ilgili yaşanan gelişme, yalnızca iki ülke arasındaki ilişkiler açısından değil, Orta Doğu'daki güvenlik ortamı ve enerji piyasaları bakımından da dikkat çekti.
 
 ÜÇ İRAN TANKERİ HEDEF ALINDI
 
-Üç İran tankerinin hedef alındığına ilişkin gelişmeler bölgedeki tansiyonun yeniden yükselmesine neden oldu.
+Üç İran tankerinin hedef alındığına ilişkin haberler sonrasında olayın ayrıntıları uluslararası kamuoyunun gündemine geldi.
 
-Olayın ayrıntıları, tankerlerin durumu ve gelişmenin bölgedeki güvenlik ortamına etkileri uluslararası kamuoyu tarafından takip ediliyor.
+Tankerlerin durumu, olayın hangi koşullarda gerçekleştiği ve sonrasında bölgede ne tür gelişmeler yaşanacağı konusunda farklı açıklamalar bulunurken, resmi kaynaklardan gelecek bilgiler önem taşıyor.
 
-OLAYIN AYRINTILARI ARAŞTIRILIYOR
+ABD'DEN AÇIKLAMALAR TAKİP EDİLİYOR
 
-Tankerlerle ilgili gelişmelere ilişkin farklı açıklamalar gündeme gelirken, olayın ayrıntılarının netleşmesi için resmi açıklamalar ve güvenilir kaynaklardan gelecek bilgiler bekleniyor.
+ABD yönetiminin olaya ilişkin açıklamaları, gelişmenin gerekçesinin ve Washington'ın bölgedeki yaklaşımının anlaşılması açısından önem taşıyor.
 
-Olayın nasıl gerçekleştiği ve sonrasında hangi adımların atılacağı konusunda yapılacak açıklamalar sürecin anlaşılması açısından önem taşıyor.
+ABD'nin İran'a yönelik politikası, bölgesel güvenlik ve deniz taşımacılığı açısından uzun süredir uluslararası kamuoyunun takip ettiği başlıklar arasında bulunuyor.
 
-ABD'DEN AÇIKLAMA
+İRAN'IN TUTUMU ÖNEMLİ
 
-ABD tarafının olaya ilişkin açıklamaları uluslararası kamuoyu tarafından yakından takip ediliyor.
+İran yönetiminin yaşanan gelişmeye ilişkin açıklamaları da sürecin geleceği açısından yakından takip ediliyor.
 
-Washington yönetiminin açıklamaları, gelişmenin gerekçesi ve bölgedeki güvenlik politikası açısından önemli görülüyor.
+İran'ın vereceği siyasi veya diplomatik tepkinin, ABD ile ilişkilerin bundan sonraki seyrine etkisi olabileceği değerlendiriliyor.
 
-İRAN'IN TEPKİSİ
+BÖLGESEL GÜVENLİK ENDİŞESİ
 
-İran yönetiminin gelişmeye ilişkin vereceği tepki ve yapacağı açıklamalar bölgedeki diplomatik sürecin seyri açısından önem taşıyor.
+ABD ile İran arasındaki gerilim, Orta Doğu'daki diğer ülkelerin güvenlik politikalarını da yakından ilgilendiriyor.
 
-İran'ın atacağı olası diplomatik veya siyasi adımlar, ABD ile ilişkilerin geleceği açısından da takip edilecek.
+Bölgede meydana gelen yeni olaylar, deniz ticareti, enerji taşımacılığı ve uluslararası diplomasi açısından farklı sonuçlar doğurabiliyor.
 
-BÖLGESEL GERİLİM
+ENERJİ PİYASALARI DA İZLİYOR
 
-ABD ve İran arasındaki gerilim, Orta Doğu'daki güvenlik ve diplomasi gündemini doğrudan etkileyen başlıklar arasında bulunuyor.
+Orta Doğu'daki güvenlik gelişmeleri petrol ve enerji piyasaları açısından da önem taşıyor.
 
-Bölgede yaşanan her yeni gelişme, farklı ülkelerin güvenlik politikaları ve diplomatik ilişkileri açısından yakından değerlendiriliyor.
+Petrol taşımacılığında yaşanabilecek güvenlik sorunları, arz güvenliği ve taşıma maliyetleri üzerinde etkili olabiliyor. Bu nedenle bölgedeki gelişmeler enerji piyasalarında da yakından takip ediliyor.
 
-PETROL PİYASALARI TAKİPTE
+DİPLOMASİ TRAFİĞİ ÖNEM KAZANIYOR
 
-Orta Doğu'daki gelişmeler enerji piyasaları tarafından da yakından izleniyor.
+Gerilimin daha fazla yükselmemesi açısından diplomatik temaslar önem taşıyor.
 
-Petrol arzı, taşımacılık güzergahları ve bölgesel risklere ilişkin gelişmeler enerji piyasalarında beklentileri etkileyebiliyor.
+ABD ve İran'dan gelecek yeni açıklamalar ile bölgedeki diğer ülkelerin tutumu, olayın siyasi sonuçlarının anlaşılması açısından belirleyici olabilir.
 
-DİPLOMATİK TEMASLAR ÖNEMLİ
+ÖNÜMÜZDEKİ SÜREÇ
 
-Önümüzdeki süreçte ABD ve İran tarafından yapılacak açıklamalar ile diplomatik temaslar, gerilimin seyrine ilişkin önemli göstergeler arasında olacak.
+Tankerlerle ilgili gelişmenin ardından gözler ABD ve İran'ın açıklamalarına çevrildi.
 
-Uluslararası aktörlerin bölgedeki gelişmelere ilişkin tutumları da diplomatik sürecin yönü açısından takip edilecek.
-
-GELİŞMELER TAKİP EDİLİYOR
-
-ABD ile İran arasındaki gerilime ilişkin yeni açıklamalar ve bölgedeki gelişmeler uluslararası kamuoyu tarafından yakından takip ediliyor.
+Olayın ayrıntılarının resmi kaynaklarla netleşmesi ve bölgede yeni bir gelişme yaşanıp yaşanmayacağı uluslararası kamuoyu tarafından yakından takip edilecek.
 
 HABERİSTA Dünya Servisi
         `
@@ -501,52 +500,49 @@ HABERİSTA Dünya Servisi
         gorsel: "images/ChatGPT Image 6 Eyl 2026 19_44_18.png",
         kaynak: "HABERİSTA",
         yazar: "Haberİsta Dünya Servisi",
+
         icerik: `
 ABD'DEN İRAN TANKERLERİNE İLİŞKİN AÇIKLAMA
 
-ABD yönetimi, İran'a ait üç tankerin vurulduğunu açıkladı. Açıklamanın ardından gelişme uluslararası gündemin önemli başlıkları arasında yer aldı.
+ABD yönetimi, İran'a ait üç tankerin vurulduğunu açıkladı.
 
-Tankerlerle ilgili gelişme, ABD ile İran arasındaki gerilimin yeniden gündeme gelmesine neden olurken, bölgedeki güvenlik durumu da yakından takip edilmeye başlandı.
+Açıklamanın ardından gelişme, ABD ile İran arasındaki ilişkiler ve Orta Doğu'daki güvenlik gündemi açısından uluslararası kamuoyunun dikkatini çekti.
 
-GELİŞME DÜNYA GÜNDEMİNDE
+OLAYIN AYRINTILARI MERAK EDİLİYOR
 
-Tankerlerle ilgili gelişme, ABD ile İran arasındaki ilişkilerde yeni bir gerilim başlığı oluşturdu.
+Tankerlerin hangi koşullarda hedef alındığı ve olayın ardından bölgede ne gibi gelişmeler yaşanacağı merak konusu oldu.
 
-Olayın ardından bölgedeki siyasi ve diplomatik gelişmelerin yanı sıra enerji piyasalarındaki olası etkiler de uluslararası kamuoyunun gündeminde bulunuyor.
+Yaşanan gelişmeyle ilgili ayrıntıların farklı resmi açıklamalar ve güvenilir kaynaklar üzerinden netleşmesi bekleniyor.
 
 ABD-İRAN GERİLİMİ
 
-ABD ve İran arasındaki ilişkilerde yaşanan gerilim, Orta Doğu'daki güvenlik ve diplomasi gelişmelerinin yakından takip edilmesine neden oluyor.
+ABD ile İran arasındaki ilişkiler uzun süredir bölgesel ve uluslararası siyasetin önemli başlıklarından biri.
 
-İki ülke arasındaki açıklamalar ve karşılıklı mesajlar, bölgede tansiyonun nasıl ilerleyeceğine ilişkin önemli göstergeler arasında değerlendiriliyor.
+İki ülke arasındaki gerilim yalnızca diplomatik ilişkileri değil, Orta Doğu'daki güvenlik ortamını ve enerji taşımacılığını da etkileyebilecek gelişmeler arasında değerlendiriliyor.
 
-BÖLGEDEKİ GELİŞMELER İZLENİYOR
+DENİZ TAŞIMACILIĞI GÜNDEMDE
 
-Olayın ardından bölgedeki gelişmeler ve taraflardan gelecek yeni açıklamalar uluslararası kamuoyu tarafından takip ediliyor.
+Tankerlerin hedef alındığına ilişkin açıklama, deniz taşımacılığının güvenliği konusunu da yeniden gündeme getirdi.
 
-Bölgedeki güvenlik durumu, deniz taşımacılığı ve enerji akışına ilişkin gelişmeler de dikkatle izleniyor.
+Bölgede meydana gelebilecek güvenlik sorunları, ticari gemilerin kullandığı güzergahlar ve enerji taşımacılığı açısından önem taşıyor.
 
 İRAN'IN TEPKİSİ BEKLENİYOR
 
-İran yönetiminin gelişmeye ilişkin açıklaması ve vereceği tepkinin bölgedeki diplomatik sürecin seyri açısından önem taşıdığı değerlendiriliyor.
+İran yönetiminin gelişmeye ilişkin açıklaması ve vereceği tepki, olayın diplomatik sonuçlarının anlaşılması açısından önem taşıyor.
 
-İran tarafından yapılacak açıklamaların ardından gelişmenin nasıl bir siyasi sonuç doğuracağı daha net şekilde ortaya çıkabilir.
+Taraflardan gelecek açıklamalar, gerilimin siyasi boyutunun nasıl şekilleneceği konusunda yeni bilgiler sağlayabilir.
 
-ENERJİ GÜVENLİĞİ GÜNDEMDE
+ENERJİ PİYASALARI GELİŞMELERİ İZLİYOR
 
-Orta Doğu'daki gelişmeler enerji güvenliği ve petrol taşımacılığı açısından da yakından izleniyor.
+Orta Doğu'daki güvenlik gelişmeleri petrol ve enerji piyasaları açısından da yakından takip ediliyor.
 
-Deniz taşımacılığında yaşanabilecek güvenlik sorunları enerji arzı ve uluslararası ticaret açısından önem taşıyor.
+Bölgede enerji taşımacılığının güvenliğiyle ilgili yaşanabilecek sorunlar, uluslararası enerji piyasalarında beklentileri etkileyebiliyor.
 
-DİPLOMATİK TEMASLAR
+DİPLOMATİK TEMASLAR ÖNEMLİ
 
-Bölgede tansiyonun düşürülmesine yönelik diplomatik girişimlerin önümüzdeki dönemde önem kazanması bekleniyor.
+ABD ile İran arasındaki gerilimin daha fazla yükselmesini önlemek amacıyla diplomatik kanalların açık tutulması önem taşıyor.
 
-Uluslararası aktörlerin açıklamaları ve taraflar arasındaki temasların gerilimin geleceği açısından belirleyici olması bekleniyor.
-
-GELİŞMELER TAKİP EDİLİYOR
-
-Olayla ilgili yeni açıklamalar geldikçe gelişmeler uluslararası gündem doğrultusunda takip edilecek.
+Uluslararası aktörlerin açıklamaları ve taraflar arasında kurulabilecek temaslar, bölgedeki gelişmelerin geleceği açısından yakından izlenecek.
 
 HABERİSTA Dünya Servisi
         `
@@ -565,54 +561,59 @@ HABERİSTA Dünya Servisi
         gorsel: "images/ChatGPT Image 6 Eyl 2026 19_45_31.png",
         kaynak: "HABERİSTA",
         yazar: "Haberİsta Ekonomi Servisi",
+
         icerik: `
-TÜRKİYE EKONOMİSİNDE YENİ DÖNEM
+TÜRKİYE EKONOMİSİNDE ÜÇ YILLIK PLAN
 
 Türkiye ekonomisinin önümüzdeki üç yıllık dönemde izleyeceği politikalara ilişkin hedefler gündemde.
 
-Yeni Orta Vadeli Program kapsamında ekonominin farklı alanlarına yönelik planlamaların ortaya konulması bekleniyor. Program kapsamında büyüme, enflasyon, istihdam ve kamu maliyesine ilişkin hedefler öne çıkıyor.
+Yeni Orta Vadeli Program kapsamında büyüme, enflasyon, istihdam ve kamu maliyesi gibi ekonominin temel alanlarına ilişkin hedeflerin ortaya konulması bekleniyor.
 
-ENFLASYONLA MÜCADELE
+ENFLASYONLA MÜCADELE ÖNCELİKLİ BAŞLIKLARDAN
 
-Ekonomi politikalarının önemli başlıklarından biri enflasyonla mücadele olmaya devam ediyor.
+Ekonomik programların en önemli başlıklarından biri fiyat istikrarının sağlanması.
 
-Fiyat istikrarının sağlanmasına yönelik politikaların önümüzdeki dönemde de önemini koruması bekleniyor. Enflasyonun seyri, vatandaşların satın alma gücü ve işletmelerin maliyetleri açısından yakından takip ediliyor.
+Enflasyonun seyri, vatandaşların satın alma gücünü ve işletmelerin maliyetlerini doğrudan etkileyebildiği için açıklanan ekonomik hedefler kamuoyu tarafından yakından takip ediliyor.
 
-BÜYÜME VE İSTİHDAM
+Enflasyonla mücadelede uygulanacak politikaların sonuçları ise açıklanacak yeni ekonomik veriler üzerinden değerlendirilecek.
 
-Ekonomik büyümenin sürdürülebilir şekilde devam ettirilmesi ve istihdamın desteklenmesi programın önemli başlıkları arasında değerlendiriliyor.
+BÜYÜME VE ÜRETİM
 
-Üretim kapasitesinin korunması ve ekonomik faaliyetlerin devamlılığının sağlanması, büyüme politikalarının temel unsurları arasında bulunuyor.
+Ekonomik büyümenin sürdürülebilir olması, üç yıllık planlamanın temel konuları arasında bulunuyor.
+
+Üretimin devam etmesi, yatırımların desteklenmesi ve ekonomik faaliyetlerin korunması büyüme açısından önem taşıyor.
+
+Büyüme rakamlarının tek başına değerlendirilmesi yerine istihdam, üretim ve yatırım göstergeleriyle birlikte ele alınması ekonominin genel görünümünün daha doğru anlaşılmasını sağlayabilir.
+
+İSTİHDAM GÜNDEMİ
+
+Ekonomik büyümenin vatandaşlara yansıyan önemli göstergelerinden biri istihdam.
+
+İş gücü piyasasındaki gelişmeler, işsizlik oranları ve yeni istihdam alanlarının oluşturulması önümüzdeki dönemin ekonomik gündeminde önemli yer tutacak.
 
 KAMU MALİYESİ
 
-Kamu harcamaları, bütçe dengesi ve mali disiplin ekonomik planlamanın önemli unsurları arasında bulunuyor.
+Bütçe dengesi, kamu harcamaları ve mali disiplin de ekonomik yol haritasının önemli başlıkları arasında.
 
-Kamu maliyesindeki gelişmeler, ekonominin genel görünümü ve önümüzdeki dönemde uygulanacak politikalar açısından yakından takip ediliyor.
+Kamu gelirleri ile harcamalar arasındaki dengenin korunması, ekonomik programların sürdürülebilirliği açısından önem taşıyor.
 
-YATIRIM VE ÜRETİM
+YATIRIM VE İHRACAT
 
-Üretim kapasitesinin artırılması, yatırımların desteklenmesi ve ekonomik faaliyetlerin güçlendirilmesine yönelik politikalar da gündemde.
+Üretim kapasitesinin artırılması ve yatırımların desteklenmesi ekonominin uzun vadeli büyümesi açısından önem taşıyor.
 
-Yatırım ortamının geliştirilmesi ve üretimin desteklenmesi, ekonomik büyümenin sürdürülebilirliği açısından önemli başlıklar arasında yer alıyor.
+Bunun yanında ihracatın artırılması ve dış ticaret dengesinin geliştirilmesi de Türkiye ekonomisinin önümüzdeki dönemde takip edeceği başlıklardan biri olacak.
 
-İHRACAT VE DIŞ TİCARET
+KÜRESEL EKONOMİ DE ETKİLİ
 
-Türkiye ekonomisinin dış ticaret performansı da ekonomik gündemin önemli unsurlarından biri olarak öne çıkıyor.
+Türkiye'nin ekonomik performansı yalnızca iç politikalarla belirlenmiyor.
 
-İhracatın artırılması, dış ticaret dengesinin geliştirilmesi ve küresel ekonomik gelişmelerin takip edilmesi önümüzdeki dönemin ekonomik gündeminde önem taşıyor.
+Küresel büyüme, enerji fiyatları, uluslararası faiz oranları ve dış ticaret koşulları Türkiye ekonomisinin görünümünü etkileyebilecek faktörler arasında bulunuyor.
 
-PİYASALARIN TAKİBİ
+HEDEFLERİN GERÇEKLEŞME DURUMU TAKİP EDİLECEK
 
-Açıklanacak ekonomik hedeflerin ardından piyasaların göstereceği tepki ve ekonomik verilerin seyri yakından izlenecek.
+Üç yıllık ekonomik yol haritasında yer alacak hedeflerin gerçekleşme durumu, dönem içerisinde açıklanacak ekonomik verilerle değerlendirilecek.
 
-Enflasyon, büyüme, istihdam ve kamu maliyesine ilişkin veriler, ekonominin genel görünümünü değerlendirmek açısından önem taşıyor.
-
-ÖNÜMÜZDEKİ ÜÇ YIL
-
-Yeni ekonomik yol haritasının önümüzdeki üç yıllık dönemde uygulanacak politikalar açısından önemli bir çerçeve oluşturması bekleniyor.
-
-Programda yer alacak hedeflerin gerçekleşme durumu, açıklanacak ekonomik veriler ve uygulanan politikaların sonuçları üzerinden takip edilecek.
+Enflasyon, büyüme, istihdam ve bütçe verilerinin birlikte incelenmesi, programın uygulanma sürecinin daha sağlıklı değerlendirilmesine imkan sağlayacak.
 
 HABERİSTA Ekonomi Servisi
         `
@@ -631,48 +632,55 @@ HABERİSTA Ekonomi Servisi
         gorsel: "images/ChatGPT Image 6 Eyl 2026 19_46_53.png",
         kaynak: "HABERİSTA",
         yazar: "Haberİsta Dünya Servisi",
+
         icerik: `
-İRAN'DA YENİ EKONOMİK YAPILANMA
+İRAN'DA EKONOMİK SAVAŞ KARARGÂHI KURULDU
 
-İran'da ekonomik baskılara karşı alınacak önlemlerin koordinasyonu amacıyla 'Ekonomik Savaş Karargâhı' adı verilen yeni bir yapılanmanın kurulduğu açıklandı.
+İran'da ekonomik baskılara karşı alınabilecek önlemlerin koordinasyonu amacıyla "Ekonomik Savaş Karargâhı" adı verilen yeni bir yapılanmanın kurulduğu açıklandı.
 
-Yeni yapılanmanın İran ekonomisindeki gelişmelerin daha yakından takip edilmesi ve ilgili kurumlar arasında koordinasyon sağlanması amacıyla oluşturulduğu belirtiliyor.
+Yeni yapılanmanın ekonomik gelişmelerin daha yakından takip edilmesi ve ilgili kurumlar arasında koordinasyon sağlanması amacıyla oluşturulduğu bildirildi.
 
-YAPILANMANIN AMACI
+EKONOMİK BASKILAR GÜNDEMDE
 
-Yeni yapının ekonomik gelişmelerin daha yakından takip edilmesi, karar alma süreçlerinin koordinasyonunun sağlanması ve ekonomik baskılara karşı alınabilecek önlemlerin değerlendirilmesi amacıyla çalışması bekleniyor.
+İran ekonomisi uzun süredir yaptırımlar, dış ticaret koşulları ve uluslararası finans sistemine erişim gibi çeşitli baskılarla karşı karşıya bulunuyor.
 
-Ekonomik koşulların değiştiği dönemlerde kurumlar arasında koordinasyonun artırılması, alınabilecek önlemlerin daha hızlı değerlendirilmesine imkan sağlayabiliyor.
+Bu durum özellikle ticaret, enerji ve finans alanlarındaki gelişmelerin ülke ekonomisi açısından daha yakından izlenmesine neden oluyor.
 
-KRİTİK SEKTÖRLER TAKİP EDİLECEK
+YENİ YAPILANMANIN AMACI
 
-Enerji, ticaret ve finans gibi ekonominin kritik alanlarındaki gelişmelerin yeni yapılanma tarafından takip edilmesi bekleniyor.
+Ekonomik Savaş Karargâhı'nın temel amaçlarından biri ekonomik gelişmeler hakkında kurumlar arasında koordinasyon sağlamak.
 
-Bu sektörlerde meydana gelebilecek gelişmelerin İran ekonomisi üzerindeki etkileri, ülkenin ekonomik gündemi açısından önem taşıyor.
+Ekonomik koşulların hızlı şekilde değiştiği dönemlerde kurumlar arasındaki bilgi akışının güçlendirilmesi, alınabilecek önlemlerin daha hızlı değerlendirilmesine imkan sağlayabiliyor.
 
-DIŞ BASKILAR
+KRİTİK SEKTÖRLER ÖN PLANDA
 
-İran ekonomisi üzerindeki dış baskılar ve yaptırımlar ülkenin ekonomik gündeminde önemli bir yer tutuyor.
+Enerji, finans, ticaret ve üretim gibi alanlar İran ekonomisinin önemli parçaları arasında bulunuyor.
 
-Uluslararası yaptırımların ticaret, finans ve enerji sektörleri üzerindeki etkileri uzun süredir İran'ın ekonomik politikalarında dikkate alınan başlıklar arasında bulunuyor.
+Bu sektörlerde yaşanabilecek gelişmelerin ülke ekonomisi üzerindeki etkileri nedeniyle ekonomik karar alma süreçlerinde kritik sektörlerin durumunun yakından takip edilmesi önem taşıyor.
+
+YAPTIRIMLARIN ETKİSİ
+
+Uluslararası yaptırımlar İran ekonomisinin dış ticaret ve finans alanındaki hareket alanını etkileyen temel unsurlar arasında yer alıyor.
+
+Yaptırımların kapsamı ve uluslararası gelişmeler, İran'ın ekonomik politikalarında dikkate alınan başlıklar arasında bulunuyor.
+
+ENERJİ SEKTÖRÜNÜN ROLÜ
+
+İran ekonomisinde enerji sektörü önemli bir yere sahip.
+
+Petrol ve enerji ticaretindeki gelişmeler, ülkenin dış gelirleri ve ekonomik görünümü açısından önem taşıyor. Küresel enerji piyasalarındaki değişiklikler de İran ekonomisinin geleceği açısından yakından izleniyor.
 
 BÖLGESEL GELİŞMELER
 
-İran'daki ekonomik gelişmeler, ülkenin bölgesel politikaları ve uluslararası ilişkileriyle birlikte değerlendiriliyor.
+İran'ın ekonomik görünümü, Orta Doğu'daki siyasi ve güvenlik gelişmeleriyle de bağlantılı.
 
-Orta Doğu'daki siyasi ve güvenlik gelişmeleri de İran ekonomisinin geleceği açısından yakından takip edilen konular arasında bulunuyor.
-
-ENERJİ SEKTÖRÜNÜN ÖNEMİ
-
-İran ekonomisinde enerji sektörü önemli bir yere sahip bulunuyor. Petrol ve enerji ticaretine ilişkin gelişmeler ülkenin ekonomik görünümü açısından yakından izleniyor.
-
-Enerji piyasalarındaki küresel gelişmeler ve bölgesel güvenlik koşulları İran'ın ekonomik gündemini etkileyebilecek unsurlar arasında yer alıyor.
+Bölgede yaşanan gerilimlerin ticaret yolları, enerji taşımacılığı ve yatırım ortamı üzerinde oluşturabileceği etkiler İran ekonomisi açısından önem taşıyor.
 
 ÖNÜMÜZDEKİ SÜREÇ
 
-Yeni yapılanmanın çalışmaları, alınacak kararlar ve İran ekonomisi üzerindeki olası etkileri önümüzdeki dönemde yakından takip edilecek.
+Yeni yapılanmanın hangi kararları alacağı ve İran ekonomisine yönelik hangi politikaların uygulanacağı önümüzdeki dönemin önemli başlıkları arasında olacak.
 
-İran yönetiminin ekonomik baskılara karşı uygulayacağı politikalar ve uluslararası gelişmeler sürecin önemli başlıkları arasında olacak.
+İran yönetiminin açıklayacağı ekonomik tedbirler ve uluslararası gelişmeler, yeni yapılanmanın rolünün daha net anlaşılmasını sağlayacak.
 
 HABERİSTA Dünya Servisi
         `
@@ -691,54 +699,55 @@ HABERİSTA Dünya Servisi
         gorsel: "images/ChatGPT Image 6 Eyl 2026 19_48_08.png",
         kaynak: "HABERİSTA",
         yazar: "Haberİsta Haber Merkezi",
+
         icerik: `
 BURSA'DA ZİNCİRLEME KAZA
 
-Bursa'da yola dökülen mazot nedeniyle kayganlaşan zeminde zincirleme kaza meydana geldi.
+Bursa'da bir tırdan yola dökülen mazot nedeniyle kayganlaşan zeminde zincirleme kaza meydana geldi.
 
-Kazaya yaklaşık 10 aracın karıştığı bildirilirken, olayın ardından bölgeye ilgili ekipler sevk edildi. Ekipler hem yol güvenliğinin sağlanması hem de kaygan zeminin temizlenmesi için çalışma başlattı.
+Yaklaşık 10 aracın karıştığı bildirilen kazanın ardından bölgeye ilgili ekipler sevk edildi. Yol güvenliğinin sağlanması ve mazotun temizlenmesi için çalışma başlatıldı.
 
-YOL KAYGANLAŞTI
+MAZOT YOLU KAYGANLAŞTIRDI
 
-Bir tırdan yola dökülen mazot, yol yüzeyinin kayganlaşmasına neden oldu.
+Yol yüzeyine dökülen mazot, araçların lastikleri ile zemin arasındaki tutunmayı azaltabiliyor.
 
-Mazot gibi maddelerin yol yüzeyine dökülmesi, araçların yol tutuşunu olumsuz etkileyebiliyor. Özellikle sürücülerin ani fren veya manevra yapması gereken durumlarda kaygan zemin kaza riskini artırabiliyor.
+Özellikle sürücülerin fren yaptığı veya yön değiştirdiği anlarda kaygan zemin araçların kontrolünü zorlaştırabiliyor. Bu nedenle yola yakıt veya yağ dökülmesi trafik güvenliği açısından önemli bir risk oluşturuyor.
 
-10 ARAÇ KAZAYA KARIŞTI
+YAKLAŞIK 10 ARAÇ KAZAYA KARIŞTI
 
-Kayganlaşan yolda meydana gelen zincirleme kazada yaklaşık 10 aracın birbirine karıştığı bildirildi.
+Kayganlaşan yolda meydana gelen zincirleme kazaya yaklaşık 10 aracın karıştığı bildirildi.
 
-Olayın ardından trafik akışında aksama yaşanırken, ekipler bölgedeki güvenlik önlemlerini artırdı.
+Birden fazla aracın aynı olay içerisinde yer alması nedeniyle ekipler bölgede hem trafik güvenliğini sağlamaya hem de kazaya karışan araçların güvenli şekilde kaldırılmasına yönelik çalışma yürüttü.
 
 EKİPLER BÖLGEYE SEVK EDİLDİ
 
-İhbar üzerine bölgeye ilgili ekipler yönlendirilirken, yol güvenliğinin sağlanması ve dökülen maddenin temizlenmesi için çalışma başlatıldı.
+İhbarın ardından olay yerine ilgili ekipler yönlendirilirken, yol üzerinde oluşan tehlikenin giderilmesi için çalışmalar başlatıldı.
 
-Kaza bölgesinde araçların güvenli şekilde kaldırılması ve yolun yeniden trafiğe uygun hale getirilmesi için çalışmalar yürütüldü.
+Yola dökülen mazotun temizlenmesi, yeni kazaların önlenmesi açısından olay sonrası yapılması gereken önemli işlemlerden biri oldu.
 
-SÜRÜCÜLERE UYARI
+SÜRÜCÜLERİN DİKKAT ETMESİ GEREKİYOR
 
-Yetkililer, yol yüzeyindeki kayganlık nedeniyle sürücülerin dikkatli olması gerektiğini hatırlatıyor.
+Kaygan yol koşullarında sürücülerin hızlarını düşürmesi ve takip mesafesini artırması önem taşıyor.
 
-Özellikle yağışlı hava veya yola dökülen yağ ve yakıt gibi maddelerin bulunduğu bölgelerde sürücülerin hızlarını azaltması ve takip mesafesini koruması önem taşıyor.
+Ani fren ve ani direksiyon hareketleri kaygan zeminde araç kontrolünü zorlaştırabileceğinden sürücülerin daha kontrollü hareket etmesi gerekiyor.
 
-TRAFİK GÜVENLİĞİ
+YOL GÜVENLİĞİNİN ÖNEMİ
 
-Karayollarında güvenli ulaşım için yol koşullarının takip edilmesi büyük önem taşıyor.
+Karayollarında güvenli ulaşım yalnızca sürücü davranışlarına değil, yol koşullarına da bağlı.
 
-Yola dökülen yakıt veya benzeri maddelerin kısa sürede temizlenmesi, yeni kazaların meydana gelme riskinin azaltılması açısından önemli bir güvenlik adımı olarak değerlendiriliyor.
+Yakıt, yağ veya başka kayganlaştırıcı maddelerin yola dökülmesi durumunda hızlı müdahale edilmesi, bölgede yeni kazaların meydana gelme ihtimalini azaltabiliyor.
 
-İNCELEME BAŞLATILDI
+KAZANIN AYRINTILARI İNCELENİYOR
 
-Kazanın meydana geliş şekli ve yola mazot dökülmesine ilişkin ayrıntıların belirlenmesi amacıyla inceleme başlatıldığı bildirildi.
+Kazanın meydana geliş şekli ve yola mazot dökülmesine ilişkin ayrıntıların belirlenmesi amacıyla inceleme yürütülüyor.
 
-Kazayla ilgili resmi kurumların yapacağı açıklamalar olayın ayrıntılarının netleşmesi açısından önem taşıyor.
+Resmi incelemelerin ardından kazanın oluşumuna ilişkin daha ayrıntılı bilgilerin ortaya çıkması bekleniyor.
 
-YOL TRAFİĞE AÇILDIKTAN SONRA DA DİKKAT GEREKİYOR
+TRAFİK AKIŞINDA GÜVENLİK
 
-Yolun temizlenmesi ve trafik akışının yeniden sağlanmasının ardından sürücülerin bölgede dikkatli olması gerekiyor.
+Kazanın ardından bölgede trafik akışının güvenli şekilde devam ettirilmesi için gerekli çalışmalar yürütüldü.
 
-Yetkililerin trafik işaretleri ve yönlendirmelerine uyulması, olası yeni kazaların önlenmesine katkı sağlayabilir.
+Sürücülerin olay yerindeki trafik işaretleri, ekiplerin yönlendirmeleri ve geçici düzenlemelere uyması önem taşıyor.
 
 HABERİSTA Haber Merkezi
         `
@@ -757,64 +766,63 @@ HABERİSTA Haber Merkezi
         gorsel: "images/SERHAT.jpeg",
         kaynak: "HABERİSTA",
         yazar: "Haberİsta Magazin Servisi",
+
         icerik: `
 SERHAT MUSTAFA KILIÇ HAYATINI KAYBETTİ
 
 Tiyatro, sinema ve televizyon dünyasının tanınan isimlerinden Serhat Mustafa Kılıç'ın 51 yaşında hayatını kaybettiği öğrenildi.
 
-Oyuncunun İstanbul Kağıthane'deki evinde yaşamını yitirdiği bilgisi gündeme gelirken, olayla ilgili ayrıntıların resmi açıklamalar doğrultusunda netleşmesi bekleniyor.
+Oyuncunun İstanbul Kağıthane'deki evinde yaşamını yitirdiği bilgisi gündeme gelirken, vefatın ayrıntıları konusunda resmi açıklamaların esas alınması gerektiği belirtiliyor.
 
 SANAT DÜNYASINDA ÜZÜNTÜ
 
 Kılıç'ın vefat haberi sanat dünyasında üzüntüyle karşılandı.
 
-Tiyatro, televizyon ve sinema alanlarında çalışmalar gerçekleştiren oyuncunun vefatının ardından sanat camiasından taziye mesajlarının paylaşılması bekleniyor.
+Tiyatro, televizyon ve sinema alanlarında çalışmalar yapan oyuncunun vefatının ardından sanat dünyasında taziye mesajlarının paylaşılması bekleniyor.
 
-TİYATRO KARİYERİ
+TİYATRO SAHNESİNDEKİ ÇALIŞMALARI
 
-Serhat Mustafa Kılıç, sanat hayatı boyunca tiyatro sahnesinde çeşitli çalışmalarda yer aldı.
+Tiyatro, oyunculuk kariyerinin önemli alanlarından biri olarak öne çıkıyor.
 
-Tiyatro oyunculuğu, sahne disiplini ve canlı performans gerektiren yapısıyla sanatçıların kariyerlerinde önemli bir yere sahip olurken, Kılıç da oyunculuk çalışmalarını farklı projelerle sürdürdü.
+Sahne oyunculuğu, canlı performans gerektirmesi ve oyuncunun izleyiciyle doğrudan iletişim kurması bakımından televizyon ve sinemadan farklı bir çalışma alanı oluşturuyor.
 
-TELEVİZYON ÇALIŞMALARI
+Kılıç'ın da sanat kariyerinde tiyatro çalışmalarına yer verdiği belirtiliyor.
 
-Oyuncunun televizyon projelerinde de yer aldığı ve geniş bir izleyici kitlesi tarafından tanındığı belirtildi.
+TELEVİZYON PROJELERİ
 
-Televizyon yapımları sayesinde farklı karakterleri canlandıran oyuncu, ekran çalışmalarını sanat kariyerinin önemli bölümlerinden biri olarak sürdürdü.
+Oyuncunun televizyon yapımlarında da rol aldığı ve ekran çalışmalarıyla izleyiciler tarafından tanındığı ifade ediliyor.
 
-SİNEMA KARİYERİ
+Televizyon projeleri, oyuncuların farklı karakterleri geniş bir izleyici kitlesine ulaştırmasına imkan sağlayan önemli alanlardan biri.
 
-Kılıç, sinema alanında da çeşitli yapımlarda rol alarak oyunculuk kariyerini farklı mecralarda sürdürdü.
+SİNEMA ÇALIŞMALARI
 
-Sinema ve televizyon projelerinde yer almak, oyuncuların farklı anlatım biçimleri ve karakterlerle izleyici karşısına çıkmasını sağlıyor.
+Kılıç'ın sinema alanında da çalışmalar gerçekleştirdiği belirtiliyor.
 
-OYUNCULUK KARİYERİ
+Sinema oyunculuğunda karakterin hikaye içerisindeki konumu, filmin anlatım dili ve yönetmenin yaklaşımı oyuncunun performansını şekillendiren unsurlar arasında bulunuyor.
 
-Sanat dünyasında uzun yıllar çalışan oyuncular, tiyatro sahnesinden televizyon ekranlarına ve sinemaya kadar farklı alanlarda izleyiciyle buluşabiliyor.
+VEFAT HABERİNİN ARDINDAN MERAK EDİLENLER
 
-Serhat Mustafa Kılıç'ın da kariyerinde farklı sanat alanlarında çalışmalar yaptığı ve oyunculuk faaliyetlerini sürdürdüğü ifade edildi.
+Bir sanatçının vefat haberinin ardından hem kariyeri hem de geçmişte yer aldığı projeler yeniden gündeme gelebiliyor.
 
-ÖLÜM NEDENİNE İLİŞKİN KESİN BİLGİ BEKLENİYOR
+Kılıç'ın geçmiş çalışmalarına ilişkin bilgiler de vefat haberinin ardından sanatseverler tarafından araştırılmaya başlandı.
 
-Vefatın nedenine ilişkin kesin ve doğrulanmış bilgilerin resmi açıklamalarla netleşmesi bekleniyor.
+ÖLÜM NEDENİ KONUSUNDA RESMİ BİLGİ ÖNEMLİ
 
-Haberİsta olarak doğrulanmamış iddiaların kesin bilgi gibi aktarılmaması gerektiğini, özellikle vefat haberlerinde resmi açıklamaların esas alınmasının önem taşıdığını belirtiyoruz.
+Vefatın nedenine ilişkin doğrulanmış ve resmi bir bilgi bulunmadığı sürece çeşitli iddiaların kesin bilgi gibi aktarılmaması gerekiyor.
+
+Özellikle vefat haberlerinde resmi açıklamalar ve güvenilir kaynaklar esas alınmalı.
 
 CENAZE PROGRAMI
 
-Cenaze töreninin tarih ve yeriyle ilgili yapılacak resmi açıklamaların takip edilmesi bekleniyor.
+Cenaze töreninin tarih ve yeriyle ilgili bilgilerin resmi açıklamalarla netleşmesi bekleniyor.
 
-Cenaze programına ilişkin bilgiler kesinleştiğinde sanat dünyası ve sevenleri tarafından yakından takip edilecek.
+Program kesinleştiğinde sanat dünyası ve sevenleri tarafından takip edilecek.
 
-SANAT DÜNYASINDAN TAZİYE
+SANAT DÜNYASINDAN TAZİYE MESAJLARI
 
-Kılıç'ın vefatının ardından meslektaşlarının, sanat dünyasından isimlerin ve sevenlerinin başsağlığı mesajları paylaşması bekleniyor.
+Oyuncunun vefatının ardından meslektaşları ve sanat dünyasından isimlerin başsağlığı mesajları paylaşması bekleniyor.
 
-Oyuncunun kariyerine ilişkin bilgiler ve geçmiş çalışmalarının da vefat haberinin ardından yeniden gündeme gelmesi bekleniyor.
-
-ÖNEMLİ NOT
-
-Haberİsta, doğrulanmamış iddialar yerine resmi açıklamalar ve güvenilir kaynaklardan elde edilen bilgileri esas almaktadır.
+Serhat Mustafa Kılıç'ın kariyerine ilişkin geçmiş çalışmalarının da önümüzdeki günlerde yeniden gündeme gelmesi bekleniyor.
 
 HABERİSTA Magazin Servisi
         `
@@ -833,54 +841,59 @@ HABERİSTA Magazin Servisi
         gorsel: "images/meteroji.jpeg",
         kaynak: "HABERİSTA",
         yazar: "HaberİSTA Haber Merkezi",
+
         icerik: `
-4 İL İÇİN SEL VE HEYELAN UYARISI
+4 İL İÇİN KUVVETLİ YAĞIŞ UYARISI
 
 Meteoroloji tarafından dört il için kuvvetli yağış, sel ve heyelan riskine karşı uyarı yapıldı.
 
-Kuvvetli yağış beklentisi nedeniyle vatandaşların hava durumunu yakından takip etmesi ve özellikle riskli bölgelerde dikkatli olması istendi.
+Yağışların etkili olabileceği bölgelerde vatandaşların hava durumunu takip etmesi ve özellikle riskli alanlarda dikkatli olması istendi.
 
-SEL RİSKİNE DİKKAT
+SEL RİSKİ NEDEN ARTIYOR?
 
-Kuvvetli yağışların bazı bölgelerde kısa sürede su baskınlarına yol açabileceği belirtiliyor.
+Kuvvetli yağışlar kısa süre içerisinde büyük miktarda suyun birikmesine neden olabiliyor.
 
-Dere yatakları, su birikintilerinin oluşabileceği bölgeler ve altyapının yetersiz kalabileceği alanlarda vatandaşların daha dikkatli olması önem taşıyor.
+Dere yatakları, alçak bölgeler ve yağmur suyunun tahliyesinin zor olduğu alanlar sel açısından daha riskli hale gelebiliyor.
+
+Bu nedenle meteorolojik uyarı yapılan bölgelerde vatandaşların riskli alanlardan uzak durması önem taşıyor.
 
 HEYELAN TEHLİKESİ
 
-Yağışların etkili olduğu eğimli ve toprak yapısının hassas olduğu bölgelerde heyelan riskinin artabileceği değerlendiriliyor.
+Yoğun yağış, eğimli arazilerde toprağın suya doymasına neden olarak heyelan riskini artırabiliyor.
 
-Özellikle yamaç ve eğimli bölgelerde yaşayan vatandaşların meteorolojik uyarıları takip etmesi ve yetkililerin yönlendirmelerine uyması gerekiyor.
+Özellikle yamaçlarda ve eğimli bölgelerde yaşayanların resmi uyarıları takip etmesi gerekiyor.
 
-SÜRÜCÜLERE UYARI
+Yollarda da toprak ve kaya parçalarının ulaşımı etkileyebilmesi nedeniyle sürücülerin dikkatli olması önem taşıyor.
 
-Yağış sırasında görüş mesafesi azalabilir ve yollar kayganlaşabilir.
+SÜRÜCÜLER DİKKATLİ OLMALI
 
-Sürücülerin hızlarını yol ve hava şartlarına göre ayarlaması, takip mesafesini koruması ve ani manevralardan kaçınması önem taşıyor.
+Kuvvetli yağış sırasında görüş mesafesi azalabilir, yollar kayganlaşabilir ve su birikintileri oluşabilir.
 
-HAVA DURUMU YAKINDAN TAKİP EDİLMELİ
+Sürücülerin hızlarını hava ve yol şartlarına göre ayarlaması, takip mesafesini koruması ve suyla kaplı yollarda dikkatli ilerlemesi gerekiyor.
 
-Meteorolojik koşullar kısa süre içerisinde değişebildiği için vatandaşların güncel hava durumu bilgilerini takip etmesi gerekiyor.
+HAVA DURUMU TAKİP EDİLMELİ
 
-Resmi meteoroloji uyarılarının düzenli şekilde kontrol edilmesi, olası risklere karşı zamanında tedbir alınmasına yardımcı olabilir.
+Meteorolojik koşullar kısa süre içerisinde değişebildiğinden vatandaşların güncel uyarıları takip etmesi önem taşıyor.
 
-VATANDAŞLAR TEDBİRLİ OLMALI
-
-Vatandaşların meteorolojik uyarıları takip etmesi ve riskli bölgelerde gerekli tedbirleri alması isteniyor.
-
-Özellikle kuvvetli yağış sırasında zorunlu olmadıkça riskli bölgelerde bulunulmaması ve güvenlik uyarılarına uyulması önem taşıyor.
+Özellikle kuvvetli yağış uyarılarında yalnızca günlük hava tahminine değil, resmi meteorolojik uyarı seviyelerine de dikkat edilmesi gerekiyor.
 
 ULAŞIMDA AKSAMALAR YAŞANABİLİR
 
-Kuvvetli yağışların bazı bölgelerde ulaşım üzerinde de etkili olabileceği değerlendiriliyor.
+Kuvvetli yağışların etkili olduğu bölgelerde su baskınları, taşkınlar veya heyelan nedeniyle ulaşımda geçici aksamalar yaşanabiliyor.
 
-Su birikintileri, taşkınlar veya heyelan nedeniyle bazı yolların geçici olarak etkilenmesi mümkün olduğundan sürücülerin yol ve hava durumunu kontrol ederek hareket etmesi gerekiyor.
+Yola çıkacak kişilerin hava ve yol durumunu kontrol ederek hareket etmesi güvenlik açısından önem taşıyor.
 
-RESMİ UYARILAR TAKİP EDİLMELİ
+VATANDAŞLAR TEDBİRLİ OLMALI
 
-Yağışların seyri ve uyarıların güncellenip güncellenmediği resmi meteoroloji kaynaklarından takip edilmeli.
+Riskli bölgelerde yaşayan vatandaşların yetkililerin yönlendirmelerine uyması gerekiyor.
 
-Yetkililer tarafından yapılabilecek yeni açıklamalar, vatandaşların alacağı tedbirler açısından önem taşıyor.
+Sel sırasında su basmış yollardan geçmeye çalışmak yerine güvenli alanlarda bulunmak ve resmi uyarıları takip etmek önem taşıyor.
+
+RESMİ UYARILAR ESAS ALINMALI
+
+Yağışların şiddeti, etkili olacağı bölgeler ve uyarıların geçerlilik süreleri değişebileceğinden güncel bilgiler resmi meteoroloji kaynaklarından kontrol edilmeli.
+
+Yeni uyarılar yayımlandıkça vatandaşların planlarını güncel hava koşullarına göre düzenlemesi gerekiyor.
 
 HABERİSTA Haber Merkezi
         `
@@ -899,52 +912,55 @@ HABERİSTA Haber Merkezi
         gorsel: "images/deprem.jpeg",
         kaynak: "AFAD / Kandilli Rasathanesi",
         yazar: "Haberİsta Haber Merkezi",
+
         icerik: `
 SON DEPREMLER LİSTESİ GÜNCELLENİYOR
 
-Türkiye'nin farklı bölgelerinde meydana gelen depremlere ilişkin veriler AFAD ve Kandilli Rasathanesi tarafından paylaşılmaya devam ediyor.
+Türkiye'nin farklı bölgelerinde meydana gelen sarsıntılara ilişkin deprem verileri AFAD ve Kandilli Rasathanesi tarafından yayımlanıyor.
 
-Deprem verileri arasında sarsıntının meydana geldiği bölge, büyüklüğü, derinliği ve zamanı gibi bilgiler yer alıyor.
+Listelerde depremin meydana geldiği bölge, zamanı, büyüklüğü ve derinliği gibi bilgiler yer alıyor.
 
-DEPREM VERİLERİ TAKİP EDİLİYOR
+DEPREM VERİLERİ NASIL OKUNMALI?
 
-Depremlerin büyüklüğü, derinliği ve merkez üssü gibi bilgiler resmi kurumların yayımladığı veriler üzerinden takip ediliyor.
+Deprem listelerinde yer alan büyüklük, derinlik ve merkez üssü bilgileri sarsıntının özelliklerini anlamak açısından önem taşıyor.
 
-Deprem ölçümlerinde farklı kurumların kullandığı yöntemler nedeniyle bazı değerlerde değişiklik görülebileceğinden, vatandaşların resmi kurumların güncel verilerini esas alması önem taşıyor.
+Farklı kurumların ölçüm yöntemleri nedeniyle ilk açıklanan değerlerde daha sonra küçük değişiklikler yapılabilmesi mümkün olduğundan güncel verilerin takip edilmesi gerekiyor.
 
 AFAD VERİLERİ
 
-AFAD tarafından paylaşılan son deprem verileri, meydana gelen sarsıntıların zaman ve konum bilgileriyle birlikte kamuoyuna sunuluyor.
+AFAD, Türkiye ve çevresinde meydana gelen depremlere ilişkin verileri kamuoyuyla paylaşıyor.
 
-AFAD'ın deprem bilgilendirme sistemi, Türkiye ve çevresinde meydana gelen sismik hareketlerin takip edilmesi açısından önemli kaynaklardan biri olarak kullanılıyor.
+Depremin zamanı, konumu ve büyüklüğü gibi bilgiler resmi sistemler üzerinden takip edilebiliyor.
 
-KANDİLLİ RASATHANESİ
+KANDİLLİ RASATHANESİ VERİLERİ
 
-Kandilli Rasathanesi de Türkiye ve çevresindeki sismik hareketlere ilişkin verileri düzenli olarak yayımlıyor.
+Kandilli Rasathanesi de Türkiye ve çevresindeki sismik hareketlere ilişkin verileri yayımlayan önemli kurumlardan biri.
 
-Vatandaşlar meydana gelen depremlere ilişkin büyüklük, derinlik ve merkez üssü gibi bilgileri ilgili kurumların sistemlerinden takip edebiliyor.
+Vatandaşlar meydana gelen sarsıntıların merkez üssü ve diğer teknik bilgilerini ilgili sistemlerden kontrol edebiliyor.
 
-DEPREM SONRASI NE YAPILMALI?
+DEPREM SONRASINDA NE YAPILMALI?
 
-Deprem sırasında ve sonrasında resmi kurumların uyarılarının takip edilmesi önem taşıyor.
+Deprem sonrasında vatandaşların öncelikle kendi güvenliğini sağlaması gerekiyor.
 
-Vatandaşların güvenli alanlara geçmesi, hasarlı yapılardan uzak durması ve gerekli durumlarda acil yardım ekipleriyle iletişim kurması gerekiyor.
+Hasar görmüş binalara yeniden girilmemesi, resmi ekiplerin uyarılarının takip edilmesi ve gerekli durumlarda acil yardım ekiplerinden destek alınması önem taşıyor.
 
-ARTÇI SARSINTILAR
+ARTÇI SARSINTILARA DİKKAT
 
-Depremlerin ardından artçı sarsıntılar meydana gelebileceğinden vatandaşların resmi açıklamaları takip etmesi gerekiyor.
+Depremlerin ardından artçı sarsıntılar meydana gelebiliyor.
 
-Özellikle hasar görmüş yapılara yeniden girilmemesi ve yetkili ekiplerin değerlendirmelerinin beklenmesi güvenlik açısından önem taşıyor.
+Bu nedenle hasarlı yapılardan uzak durulması ve özellikle bina güvenliği konusunda yetkili ekiplerin değerlendirmelerinin beklenmesi gerekiyor.
 
-DEPREM BİLİNCİ ÖNEMLİ
+DEPREME HAZIRLIK
 
-Deprem riski bulunan bölgelerde yaşayan vatandaşların deprem öncesinde, sırasında ve sonrasında yapılması gerekenler konusunda bilgi sahibi olması büyük önem taşıyor.
+Deprem riski bulunan bölgelerde afet öncesinde hazırlık yapılması önem taşıyor.
 
-Acil durum planlarının bilinmesi ve resmi kurumların hazırladığı bilgilendirmelerin takip edilmesi afetlere hazırlık açısından fayda sağlayabilir.
+Aile içinde acil durumda buluşma noktalarının belirlenmesi, temel acil durum malzemelerinin hazır tutulması ve deprem sırasında yapılması gerekenlerin önceden öğrenilmesi hazırlık açısından fayda sağlayabilir.
 
 RESMİ KAYNAKLAR TAKİP EDİLMELİ
 
-Deprem büyüklüğü ve konumuna ilişkin en güncel bilgilerin AFAD ve Kandilli Rasathanesi gibi resmi ve güvenilir kaynaklardan kontrol edilmesi önem taşıyor.
+Depremin büyüklüğü, konumu ve derinliği hakkında en güncel bilgilerin AFAD ve Kandilli Rasathanesi gibi güvenilir kaynaklardan kontrol edilmesi gerekiyor.
+
+Sosyal medyada paylaşılan doğrulanmamış deprem bilgileri yerine resmi verilerin esas alınması önem taşıyor.
 
 HABERİSTA Haber Merkezi
         `
@@ -963,52 +979,53 @@ HABERİSTA Haber Merkezi
         gorsel: "images/kpss.jpeg",
         kaynak: "ÖSYM",
         yazar: "Haberİsta Eğitim Servisi",
+
         icerik: `
 2026 KPSS LİSANS SINAVI GERÇEKLEŞTİRİLDİ
 
 2026 KPSS Lisans Genel Yetenek-Genel Kültür oturumu gerçekleştirildi.
 
-Sınava katılan adaylar sınav sürecinin tamamlanmasının ardından sonuç takvimini ve ÖSYM tarafından yapılacak açıklamaları takip etmeye başladı.
+Sınava katılan adaylar sınav sürecinin tamamlanmasının ardından sonuçların açıklanacağı tarihi ve ÖSYM tarafından yapılacak duyuruları takip etmeye başladı.
 
-ADAYLAR SINAVDA TER DÖKTÜ
+KPSS NEDEN ÖNEMLİ?
 
-Adaylar sınav merkezlerinde belirlenen saatlerde sınava katılırken, sınav süreci ÖSYM tarafından açıklanan kurallar doğrultusunda yürütüldü.
+KPSS, kamu kurumlarında görev almak isteyen adayların katıldığı önemli sınavlardan biri.
 
-KPSS, kamu kurumlarında görev almak isteyen adaylar açısından önemli sınavlardan biri olarak öne çıkıyor.
+Sınav sonuçları, ilgili kurumların personel alım süreçlerinde ve mevzuatta belirtilen şartlar doğrultusunda kullanılabiliyor.
 
-SINAV SÜRECİ
+GENEL YETENEK VE GENEL KÜLTÜR OTURUMU
 
-Genel Yetenek ve Genel Kültür oturumunda adaylara ilgili testler uygulanırken, sınavın ardından cevap anahtarı ve değerlendirme sürecine ilişkin açıklamalar takip ediliyor.
+Genel Yetenek ve Genel Kültür oturumunda adayların ilgili testlerdeki performansları değerlendiriliyor.
 
-Adayların sınav sonrasında sonuçların açıklanacağı tarihi ve ÖSYM'nin duyurularını takip etmesi gerekiyor.
+Sınavın ardından cevap anahtarı, sonuçların açıklanma tarihi ve değerlendirme süreciyle ilgili ÖSYM duyuruları önem taşıyor.
 
-SINAV SONUÇLARI BEKLENİYOR
+ADAYLAR SONUÇLARI BEKLİYOR
 
-Adaylar sınav sonuçlarının açıklanacağı tarihi ÖSYM'nin resmi sınav takvimi üzerinden takip edecek.
+Sınava giren adayların en çok merak ettiği konuların başında sonuçların açıklanacağı tarih geliyor.
 
-Sonuçların açıklanmasının ardından adaylar kendi puanlarını ve ilgili sınav sonuç bilgilerini ÖSYM sistemi üzerinden görüntüleyebilecek.
+Sonuçlar açıklandığında adaylar puan bilgilerini ÖSYM'nin ilgili sistemi üzerinden görüntüleyebilecek.
 
 DEĞERLENDİRME SÜRECİ
 
-Sınav sonuçlarının değerlendirilmesinin ardından adayların puanları ve başarı sıralamaları açıklanacak.
+Sınav sonuçlarının değerlendirilmesi ÖSYM tarafından belirlenen kurallar çerçevesinde gerçekleştirilecek.
 
-Değerlendirme işlemleri ÖSYM tarafından belirlenen kurallar ve sınav sistemi kapsamında gerçekleştirilecek.
+Adayların puanlarının oluşmasının ardından ilgili personel alımlarında hangi puan türlerinin kullanılacağı kurumların ilanlarında belirtiliyor.
 
-PUANLARIN KULLANIMI
+TERCİH VE BAŞVURU SÜRECİ
 
-KPSS puanları, ilgili kurumların personel alım süreçlerinde ve mevzuatta belirtilen şartlar doğrultusunda kullanılabiliyor.
+KPSS puanının tek başına bir kamu görevine yerleşme anlamına gelmediği unutulmamalı.
 
-Adayların tercih veya başvuru yapmadan önce ilgili kurum tarafından açıklanan başvuru şartlarını dikkatli şekilde incelemesi önem taşıyor.
+Adayların tercih veya başvuru dönemlerinde ilgili kurumun ilanında belirtilen eğitim, yaş, puan ve diğer şartları ayrıca kontrol etmesi gerekiyor.
 
-SONUÇLAR İÇİN RESMİ KAYNAK
+ÖSYM DUYURULARI TAKİP EDİLMELİ
 
-Sınav sonuçları ve sınav takvimiyle ilgili en güncel bilgilerin ÖSYM'nin resmi duyurularından takip edilmesi gerekiyor.
+Sonuç tarihi, cevap anahtarı, sınav sonuçları ve diğer işlemlerle ilgili en güncel bilgilerin ÖSYM'nin resmi duyurularından takip edilmesi gerekiyor.
 
-Sosyal medya veya doğrulanmamış internet kaynaklarında yayılan bilgilerin yerine resmi açıklamaların esas alınması önem taşıyor.
+Sosyal medya üzerinden yayılan doğrulanmamış bilgilerin yerine resmi sınav takviminin esas alınması önem taşıyor.
 
 ADAYLARA BAŞARILAR
 
-Haberİsta olarak 2026 KPSS Lisans Genel Yetenek-Genel Kültür oturumuna katılan tüm adaylara sonuç sürecinde başarılar diliyoruz.
+2026 KPSS Lisans Genel Yetenek-Genel Kültür oturumuna katılan tüm adayların sonuç sürecini sağlıklı şekilde tamamlaması ve hedeflerine ulaşması temenni ediliyor.
 
 HABERİSTA Eğitim Servisi
         `
@@ -1027,48 +1044,49 @@ HABERİSTA Eğitim Servisi
         gorsel: "images/bjkfb.jpeg",
         kaynak: "Spor Servisi",
         yazar: "Haberİsta Spor Servisi",
+
         icerik: `
 DERBİDE KAZANAN BEŞİKTAŞ
 
 İstanbul derbisinde Beşiktaş ile Fenerbahçe karşı karşıya geldi.
 
-Mücadeleyi Beşiktaş 2-1'lik skorla kazanarak önemli bir galibiyet elde etti. Karşılaşmanın sonucu spor kamuoyunda geniş şekilde takip edildi.
+Mücadeleyi Beşiktaş 2-1'lik skorla kazanarak üç puanın sahibi oldu. Derbiden çıkan sonuç, iki takımın sezon hedefleri açısından spor gündeminin öne çıkan başlıklarından biri haline geldi.
 
-MAÇTA BÜYÜK HEYECAN
+BEŞİKTAŞ'TAN DEĞERLİ ÜÇ PUAN
 
-İki takımın karşılaşması boyunca mücadele yüksek tempoda devam ederken, taraftarların ilgisi de dikkat çekti.
+Siyah-beyazlı ekip, derbiden galibiyetle ayrılarak hanesine üç puan yazdırdı.
 
-Derbi karşılaşmaları iki takımın lig hedefleri açısından olduğu kadar taraftarlar ve futbol kamuoyu açısından da büyük önem taşıyor.
+Derbi maçlarında alınan sonuçlar yalnızca puan tablosu açısından değil, takımın moral ve motivasyonu açısından da önem taşıyor.
 
-BEŞİKTAŞ'TAN ÖNEMLİ GALİBİYET
+FENERBAHÇE SAHADAN MAĞLUBİYETLE AYRILDI
 
-Beşiktaş aldığı üç puanla lig yarışında önemli bir sonuç elde etti.
+Fenerbahçe, karşılaşmayı 2-1 kaybetti.
 
-Siyah-beyazlı ekip karşılaşmanın ardından galibiyetin sevincini yaşarken, elde edilen sonuç takımın sezon hedefleri açısından da değerlendirildi.
+Sarı-lacivertli ekip açısından derbinin ardından önündeki maçlarda alınacak sonuçlar önem kazanırken, takımın sezon hedefleri doğrultusunda mücadelesi devam edecek.
 
-FENERBAHÇE MÜCADELEYİ SÜRDÜRDÜ
+DERBİ HEYECANI
 
-Fenerbahçe sahadan mağlubiyetle ayrılırken sezon hedefleri doğrultusunda mücadelesine devam ediyor.
+Beşiktaş-Fenerbahçe karşılaşmaları Türk futbolunun en fazla ilgi gören derbileri arasında bulunuyor.
 
-Sarı-lacivertli takımın önümüzdeki karşılaşmalarda alacağı sonuçlar lig yarışındaki konumu açısından önem taşıyacak.
+İki takımın taraftarları için büyük önem taşıyan mücadeleler, maç öncesinden başlayarak spor gündeminin merkezinde yer alıyor.
 
-TARAFTARLARDAN BÜYÜK İLGİ
+MAÇ SONUCUNUN LİG YARIŞINA ETKİSİ
 
-Derbi öncesinde ve karşılaşma sırasında iki takım taraftarlarının ilgisi dikkat çekti.
+Derbiden alınan üç puan Beşiktaş açısından lig yarışında önemli bir kazanım oluştururken, Fenerbahçe için puan kaybı anlamına geldi.
 
-İstanbul derbileri Türk futbolunun en fazla takip edilen karşılaşmaları arasında yer alırken, maç sonucu spor gündeminin önemli başlıklarından biri oldu.
+Ancak sezon uzun bir maraton olduğu için tek bir maçın ardından lig yarışının tamamı hakkında kesin değerlendirme yapmak mümkün değil.
 
-LİG YARIŞI
+ÖNÜMÜZDEKİ KARŞILAŞMALAR
 
-Derbiden alınan üç puanın iki takımın sezon hedefleri açısından önemli olduğu değerlendiriliyor.
+Beşiktaş'ın galibiyetin ardından önündeki maçlarda aynı performansı sürdürmesi hedeflenirken, Fenerbahçe de yaşanan puan kaybının ardından yeniden galibiyet serisi oluşturmak isteyecek.
 
-Lig yarışının uzun bir maraton olması nedeniyle takımların önümüzdeki haftalarda elde edeceği sonuçlar puan tablosunun şekillenmesinde belirleyici olacak.
+İki takımın bundan sonraki karşılaşmalarında elde edeceği sonuçlar puan tablosunun şekillenmesi açısından önem taşıyacak.
 
-ÖNÜMÜZDEKİ MAÇLAR
+TARAFTARLARIN İLGİSİ
 
-Her iki takım da sezonun kalan bölümünde lig ve diğer organizasyonlardaki mücadelelerine devam edecek.
+Derbi karşılaşmasına taraftarların ilgisi de yüksek oldu.
 
-Beşiktaş galibiyetin ardından formunu sürdürmek isterken, Fenerbahçe de önündeki karşılaşmalarda yeniden puan toplamayı hedefleyecek.
+İstanbul derbileri, Türkiye'de futbol kültürünün en dikkat çeken karşılaşmaları arasında yer alırken, maç sonuçları günler boyunca spor kamuoyunda değerlendirilebiliyor.
 
 HABERİSTA Spor Servisi
         `
@@ -1087,52 +1105,57 @@ HABERİSTA Spor Servisi
         gorsel: "images/altın.jpeg",
         kaynak: "HABERİSTA Ekonomi",
         yazar: "Haberİsta Ekonomi Servisi",
+
         icerik: `
-ALTIN FİYATLARINDA HAREKETLİLİK
+ALTIN PİYASASINDA YENİ HAFTA
 
-Altın piyasasındaki fiyat hareketleri yatırımcıların ve vatandaşların gündemindeki yerini koruyor.
+Altın fiyatları yeni haftanın başında yatırımcıların ve vatandaşların takip ettiği piyasa başlıkları arasında yer alıyor.
 
-Küresel piyasalardaki gelişmeler ve iç piyasadaki hareketlilik altın fiyatlarının seyri açısından yakından izleniyor.
+Gram altın, çeyrek altın ve ons altındaki hareketler farklı piyasa dinamiklerinden etkilenebildiği için fiyatların değerlendirilmesinde birden fazla gösterge önem taşıyor.
 
-GRAM ALTIN TAKİP EDİLİYOR
+GRAM ALTIN NASIL HAREKET EDİYOR?
 
-Türkiye'de yatırımcıların yakından takip ettiği gram altın fiyatı, ons altındaki hareketler ve döviz kurundaki değişimlerden etkilenebiliyor.
+Türkiye'de en çok takip edilen altın türlerinden biri gram altın.
 
-Bu nedenle gram altın fiyatını takip eden vatandaşların yalnızca tek bir göstergeye değil, küresel ve yerel piyasalardaki gelişmelere birlikte bakması gerekiyor.
+Gram altın fiyatı, uluslararası piyasalarda ons altının değerinin yanı sıra dolar/TL kurundaki değişimlerden de etkilenebiliyor.
 
-ÇEYREK ALTIN
+Bu nedenle gram altın fiyatını takip edenlerin yalnızca ons altına değil, döviz piyasasındaki gelişmelere de bakması gerekiyor.
 
-Fiziki altın talebi nedeniyle çeyrek altın fiyatları da vatandaşlar tarafından yakından takip ediliyor.
+ÇEYREK ALTIN FİYATI
 
-Çeyrek altının fiyatı gün içerisinde piyasa koşullarına bağlı olarak değişebiliyor. Kuyumcu ve piyasa fiyatları arasında dönemsel farklılıklar görülebileceği için işlem öncesinde güncel fiyatın kontrol edilmesi önem taşıyor.
+Çeyrek altın özellikle fiziki altın alan vatandaşların yakından takip ettiği ürünlerden biri.
 
-ONS ALTIN
+Kuyumcu fiyatları ile piyasa ekranlarında görülen fiyatlar arasında dönemsel farklılıklar bulunabileceğinden işlem yapılmadan önce güncel fiyatın kontrol edilmesi önem taşıyor.
 
-Küresel piyasalarda ons altının seyri, Türkiye'deki altın fiyatlaması açısından önemli göstergeler arasında bulunuyor.
+ONS ALTIN NEDEN ÖNEMLİ?
 
-Ons altının hareketi, doların seyri ve küresel ekonomik beklentiler altın piyasasında yatırımcıların takip ettiği başlıca unsurlar arasında yer alıyor.
+Ons altın, küresel altın piyasasının temel göstergelerinden biri.
 
-PİYASALARDA GÖZLER EKONOMİK VERİLERDE
+ABD ekonomisine ilişkin veriler, faiz beklentileri, doların seyri ve küresel risk algısı ons altın fiyatı üzerinde etkili olabilen unsurlar arasında bulunuyor.
 
-ABD ekonomisine ilişkin açıklanacak veriler ve merkez bankalarının para politikaları altın piyasasının yönü açısından yakından takip ediliyor.
+FAİZ BEKLENTİLERİ ALTINI ETKİLEYEBİLİYOR
 
-Faiz beklentileri, küresel ekonomik görünüm ve piyasalardaki risk algısı altına yönelik yatırımcı davranışlarını etkileyebiliyor.
+Merkez bankalarının faiz politikalarına ilişkin beklentiler, yatırımcıların altın tercihlerini etkileyebiliyor.
 
-ALTIN NEDEN TAKİP EDİLİYOR?
+Özellikle ABD Merkez Bankası'nın para politikasıyla ilgili beklentiler küresel piyasalarda yakından takip ediliyor.
 
-Altın, Türkiye'de hem yatırım amacıyla hem de fiziki birikim aracı olarak vatandaşlar tarafından uzun süredir takip ediliyor.
+KÜRESEL GELİŞMELER DE İZLENİYOR
 
-Gram altın, çeyrek altın ve diğer altın türlerinin fiyatları farklı piyasa koşullarına göre değişiklik gösterebiliyor.
+Jeopolitik riskler, ekonomik belirsizlikler ve küresel piyasalardaki hareketlilik altına yönelik talebi etkileyebiliyor.
 
-YATIRIMCILAR TEMKİNLİ
+Bu nedenle altın fiyatlarını değerlendirirken yalnızca Türkiye'deki fiyatlara değil, küresel piyasalardaki gelişmelere de bakmak gerekiyor.
 
-Altın fiyatlarındaki kısa vadeli hareketlerin piyasa koşullarına göre değişebileceği belirtiliyor.
+FİYATLAR GÜN İÇİNDE DEĞİŞEBİLİR
 
-Yatırım kararlarının kişisel finansal koşullar ve risk durumu dikkate alınarak değerlendirilmesi önem taşıyor.
+Altın fiyatları gün içerisinde piyasa koşullarına bağlı olarak değişebiliyor.
 
-ÖNEMLİ NOT
+Ayrıca fiziki altın alım satımında ürünün türüne ve işlem yapılan yere göre fiyat farklılıkları görülebiliyor.
 
-Altın fiyatları gün içerisinde değişebildiği için işlem öncesinde güncel fiyatların yetkili piyasa ve finans kuruluşlarından kontrol edilmesi gerekiyor.
+YATIRIMCILAR İÇİN ÖNEMLİ NOT
+
+Altın fiyatındaki kısa vadeli hareketler gelecekteki fiyatı kesin olarak göstermiyor.
+
+Yatırım kararlarında kişinin kendi finansal koşullarını ve risk durumunu dikkate alması gerekiyor.
 
 Bu içerik yatırım tavsiyesi niteliğinde değildir.
 
@@ -1153,48 +1176,53 @@ HABERİSTA Ekonomi Servisi
         gorsel: "images/yakıt.jpeg",
         kaynak: "HABERİSTA Ekonomi",
         yazar: "Haberİsta Ekonomi Servisi",
+
         icerik: `
-AKARYAKIT FİYATLARI GÜNDEMDE
+AKARYAKIT FİYATLARINDA HAREKETLİLİK
 
-Benzin, motorin ve LPG fiyatlarındaki değişimler araç sahipleri tarafından yakından takip ediliyor.
+Benzin, motorin ve LPG fiyatlarındaki değişimler araç sahiplerinin günlük olarak takip ettiği ekonomik konular arasında bulunuyor.
 
-Akaryakıt fiyatlarındaki hareketlilik yalnızca bireysel araç kullanıcılarını değil, taşımacılık ve lojistik sektörünü de yakından ilgilendiriyor.
+Akaryakıt fiyatları yalnızca bireysel sürücüleri değil, taşımacılık, lojistik ve farklı sektörlerde faaliyet gösteren işletmeleri de doğrudan ilgilendiriyor.
 
-PETROL FİYATLARI ETKİLİ OLUYOR
+PETROL FİYATLARI ÖNEMLİ BİR ETKEN
 
-Küresel petrol piyasalarında yaşanan hareketlilik, akaryakıt fiyatlarının oluşumunda önemli unsurlardan biri olarak öne çıkıyor.
+Küresel petrol fiyatları akaryakıt piyasasının temel göstergelerinden biri.
 
-Uluslararası petrol fiyatlarında meydana gelen değişiklikler, enerji piyasaları ve akaryakıt maliyetleri açısından takip edilen göstergeler arasında bulunuyor.
+Petrol fiyatlarında meydana gelen değişiklikler, enerji maliyetlerinin yanı sıra akaryakıt fiyatları üzerinde de etkili olabiliyor.
 
-DÖVİZ KURU DA ÖNEMLİ
+Ancak pompa fiyatlarının oluşumunda yalnızca petrol fiyatı değil, farklı ekonomik unsurlar da rol oynuyor.
 
-Türkiye'de akaryakıt fiyatlarının oluşumunda döviz kuru ve uluslararası petrol fiyatları önemli faktörler arasında bulunuyor.
+DÖVİZ KURU DA ETKİLİ
 
-Döviz kurundaki hareketlilik ile küresel enerji fiyatlarının birlikte değerlendirilmesi, akaryakıt piyasasındaki değişimlerin anlaşılması açısından önem taşıyor.
+Türkiye'de akaryakıt fiyatlarının oluşumunda döviz kuru da önemli bir faktör.
 
-SÜRÜCÜLER GÜNCEL FİYATLARI TAKİP EDİYOR
+Döviz kurundaki değişimler ile uluslararası petrol fiyatlarının birlikte hareket etmesi, akaryakıt maliyetlerinin yönünü etkileyebiliyor.
 
-Akaryakıt istasyonlarındaki fiyatlar şehir, dağıtıcı ve dönemsel değişikliklere göre farklılık gösterebiliyor.
+SÜRÜCÜLER GÜNCEL FİYATLARI KONTROL EDİYOR
 
-Bu nedenle araç sahiplerinin yakıt alımı öncesinde güncel istasyon fiyatlarını kontrol etmesi önem taşıyor.
+Akaryakıt fiyatları istasyona, dağıtıcı firmaya ve bölgesel koşullara göre farklılık gösterebiliyor.
 
-ULAŞIM MALİYETLERİ
+Bu nedenle araç sahiplerinin yakıt alımı öncesinde bulunduğu bölgedeki güncel pompa fiyatını kontrol etmesi önem taşıyor.
 
-Akaryakıt fiyatlarındaki değişimler bireysel araç kullanıcılarının yanı sıra taşımacılık ve lojistik sektörünü de etkileyebiliyor.
+ULAŞIM MALİYETLERİNE ETKİSİ
 
-Yakıt maliyetlerinin artması veya azalması, ürün ve hizmetlerin taşınma maliyetleri üzerinde de etkili olabiliyor.
+Yakıt maliyetlerindeki değişiklikler taşımacılık sektörünü doğrudan etkileyebiliyor.
 
-TOPLU TAŞIMA VE GÜNLÜK YAŞAM
+Nakliye maliyetlerinin yükselmesi veya düşmesi, bazı ürün ve hizmetlerin taşıma giderleri üzerinde değişiklik oluşturabiliyor.
 
-Akaryakıt fiyatlarındaki değişimler ulaşım maliyetleri açısından vatandaşların günlük yaşamını da ilgilendiren konular arasında bulunuyor.
+Bu nedenle akaryakıt fiyatları ekonominin farklı alanlarıyla bağlantılı bir konu olarak öne çıkıyor.
 
-Özellikle şehirler arası ulaşım ve taşımacılık faaliyetlerinde yakıt maliyetleri önemli gider kalemlerinden biri olarak öne çıkıyor.
+VATANDAŞLARIN GÜNLÜK YAŞAMINA YANSIMASI
 
-PİYASALAR İZLENİYOR
+Özel araç kullanan vatandaşlar için yakıt giderleri aylık bütçenin önemli kalemlerinden biri olabiliyor.
 
-Önümüzdeki dönemde petrol fiyatları, döviz hareketleri ve küresel ekonomik gelişmelerin akaryakıt piyasasının seyri açısından belirleyici olması bekleniyor.
+Bunun yanında şehirler arası taşımacılık ve ticari ulaşımda kullanılan yakıt maliyetleri de ekonomik faaliyetlerin bir parçasını oluşturuyor.
 
-Vatandaşların güncel fiyatları güvenilir kaynaklardan takip etmesi önem taşıyor.
+PİYASALARDA GÖZLER YENİ FİYATLARDA
+
+Petrol piyasası, döviz kuru ve küresel ekonomik gelişmeler akaryakıt fiyatlarının gelecekteki seyrini etkileyebilecek başlıklar arasında.
+
+Vatandaşların fiyat değişikliklerini güvenilir ve güncel kaynaklardan takip etmesi önem taşıyor.
 
 HABERİSTA Ekonomi Servisi
         `
@@ -1213,46 +1241,47 @@ HABERİSTA Ekonomi Servisi
         gorsel: "images/rusya ünüversite.jpeg",
         kaynak: "Dünya Servisi",
         yazar: "Haberİsta Dünya Servisi",
+
         icerik: `
-RUSYA'DA TARİHİ BULUNTU
+RUSYA'DA DİKKAT ÇEKEN TARİHİ BULUNTU
 
-Rusya'da gerçekleştirilen çalışmalar sırasında bir üniversite yapısının altında İkinci Dünya Savaşı dönemine ait olduğu değerlendirilen bir tank bulundu.
+Rusya'da yapılan çalışmalar sırasında bir üniversite yapısının altında İkinci Dünya Savaşı dönemine ait olduğu değerlendirilen bir tank bulundu.
 
-Buluntunun ortaya çıkarılması, bölgenin geçmişine ve tankın bulunduğu alandaki tarihi gelişmelere ilişkin araştırmaların yeniden gündeme gelmesine neden oldu.
+Beklenmedik şekilde ortaya çıkan tarihi araç, bölgenin geçmişine ilişkin araştırmaların yeniden gündeme gelmesine neden oldu.
 
-TANKIN TARİHİ ARAŞTIRILIYOR
+TANKIN GEÇMİŞİ ARAŞTIRILIYOR
 
-Bulunan askeri aracın hangi dönemde ve hangi koşullarda bölgeye getirildiğine ilişkin araştırmalar yürütülüyor.
+Bulunan tankın hangi dönemde ve hangi koşullarda bölgeye getirildiği araştırılıyor.
 
-Tankın modelinin, üretim döneminin ve geçmişte hangi amaçla kullanıldığının belirlenmesi için yapılacak incelemelerin buluntunun tarihsel öneminin ortaya çıkarılmasına katkı sağlaması bekleniyor.
+Aracın modeli, üretim dönemi ve kullanım geçmişi hakkında yapılacak incelemeler, tankın tarihsel değerinin daha iyi anlaşılmasına yardımcı olabilir.
 
 İKİNCİ DÜNYA SAVAŞI DÖNEMİ
 
-Tankın İkinci Dünya Savaşı yıllarından kaldığının belirlenmesi halinde buluntu, dönemin askeri tarihi açısından dikkat çekici bir örnek oluşturacak.
+Tankın İkinci Dünya Savaşı dönemine ait olduğunun kesinleşmesi halinde buluntu, dönemin askeri tarihi açısından dikkat çekici bir örnek oluşturacak.
 
-İkinci Dünya Savaşı sırasında kullanılan askeri araçlar, savaş döneminin teknolojisi ve askeri hareketliliği hakkında önemli bilgiler sağlayabiliyor.
+İkinci Dünya Savaşı'nda kullanılan askeri araçlar, dönemin teknoloji seviyesinin ve savaş koşullarının anlaşılması açısından önemli tarihi materyaller arasında bulunuyor.
 
-ÜNİVERSİTE ALTINDA BULUNDU
+ÜNİVERSİTE YAPISININ ALTINDA BULUNMASI DİKKAT ÇEKTİ
 
-Tankın bir üniversite yapısının altında ortaya çıkarılması buluntunun en dikkat çekici ayrıntılarından biri oldu.
+Buluntunun bir üniversite yapısının altında ortaya çıkarılması olayın en dikkat çekici ayrıntılarından biri oldu.
 
-Bir yapının altında tarihi askeri aracın bulunması, aracın bölgeye nasıl getirildiği ve daha sonra neden bulunduğu yerde kaldığı konusunda araştırma yapılmasını gerektiriyor.
+Tankın bulunduğu yere nasıl getirildiği, neden burada kaldığı ve yapının inşası sırasında nasıl korunabildiği gibi soruların araştırılması gerekiyor.
 
-UZMANLAR İNCELİYOR
+UZMANLARIN İNCELEMESİ BEKLENİYOR
 
-Tarihi askeri araç üzerinde yapılacak incelemelerle modelinin ve geçmişinin daha ayrıntılı şekilde belirlenmesi bekleniyor.
+Tarihi askeri araçlarda yapılacak teknik incelemeler, aracın modeli ve üretim tarihi hakkında daha fazla bilgi sağlayabiliyor.
 
-Uzmanların yapacağı araştırmalar, tankın üretim tarihi ve kullanım geçmişine ilişkin yeni bilgilerin ortaya çıkmasına yardımcı olabilir.
+Ayrıca araç üzerindeki işaretler, üretim özellikleri ve mevcut durumu da geçmişinin araştırılmasında kullanılabilecek unsurlar arasında bulunuyor.
 
-TARİHİ DEĞERİ ARAŞTIRILIYOR
+TARİHİ ARAÇLARIN KORUNMASI
 
-Tarihi askeri araçların korunması, geçmiş dönemlere ilişkin bilgilerin gelecek nesillere aktarılması açısından önem taşıyor.
+Savaş dönemlerinden kalan askeri araçlar yalnızca askeri tarih açısından değil, dönemin sanayi ve teknoloji tarihinin anlaşılması bakımından da önem taşıyor.
 
-Buluntunun korunması ve tarihsel değerinin belirlenmesi için uzmanların değerlendirmesinin önemli olduğu belirtiliyor.
+Bu tür buluntuların korunması, gelecek nesillerin tarihi olayları somut materyaller üzerinden inceleyebilmesine imkan sağlıyor.
 
-GELİŞMELER TAKİP EDİLİYOR
+YENİ BİLGİLER BEKLENİYOR
 
-Tankın geçmişine ilişkin yeni bilgiler ortaya çıktıkça konuya ilişkin açıklamaların kamuoyuyla paylaşılması bekleniyor.
+Tankın geçmişine ilişkin araştırmalar tamamlandıkça buluntunun ne zaman ve nasıl kullanıldığına ilişkin daha ayrıntılı bilgilerin ortaya çıkması bekleniyor.
 
 HABERİSTA Dünya Servisi
         `
@@ -1271,48 +1300,49 @@ HABERİSTA Dünya Servisi
         gorsel: "images/mxgp yarışması.jpeg",
         kaynak: "Türkiye Motosiklet Federasyonu",
         yazar: "Haberİsta Spor Servisi",
+
         icerik: `
 MXGP HEYECANI AFYONKARAHİSAR'DA
 
 Dünyanın önemli motokros organizasyonlarından MXGP'nin kritik yarışlarından biri Afyonkarahisar'da gerçekleştiriliyor.
 
-Uluslararası motosiklet sporunun önemli organizasyonlarından biri olan MXGP, farklı ülkelerden sporcuların katılımıyla büyük bir mücadeleye sahne oluyor.
+Uluslararası motosiklet sporunun önemli organizasyonlarından olan yarış, sezonun genel sıralaması açısından dikkatle takip ediliyor.
 
-ŞAMPİYONLUK YARIŞI
+ŞAMPİYONLUK YARIŞI KIZIŞIYOR
 
-Sezon boyunca elde edilen puanların ardından şampiyonluk mücadelesi büyük önem taşıyor.
+Sezon boyunca toplanan puanlar şampiyonluk mücadelesinin şekillenmesinde önemli rol oynuyor.
 
-Yarışlarda alınacak sonuçların genel puan durumuna etkisi yakından takip edilirken, sporcular sezon hedeflerine ulaşmak için mücadele ediyor.
+Afyonkarahisar'daki yarışta alınacak dereceler, sezonun genel puan tablosu açısından değer taşıyor.
 
-SPORCULAR PİSTE ÇIKIYOR
+SPORCULAR ZORLU PARKURDA MÜCADELE EDİYOR
 
-Farklı ülkelerden gelen sporcular zorlu parkurda derece elde etmek için mücadele ediyor.
+Motokros yarışlarında sporcular yalnızca rakipleriyle değil, aynı zamanda parkurun zorlu koşullarıyla da mücadele ediyor.
 
-Motokros yarışlarında sürüş becerisinin yanı sıra parkurun yapısı, virajlar, zemin koşulları ve yarış stratejisi de sonuç üzerinde etkili olabiliyor.
+Virajlar, zemin yapısı, sıçrama noktaları ve yarış temposu sürücülerin performansını etkileyebilen unsurlar arasında bulunuyor.
 
-AFYONKARAHİSAR'DA BÜYÜK İLGİ
+AFYONKARAHİSAR'DA MOTOR SPORLARI İLGİSİ
 
-Organizasyonun kentte önemli bir spor etkinliği olarak takip edildiği belirtiliyor.
+MXGP'nin Afyonkarahisar'da düzenlenmesi, kentin uluslararası spor organizasyonları açısından görünürlüğünü artırıyor.
 
-Uluslararası bir motosiklet organizasyonunun Afyonkarahisar'da düzenlenmesi, kentte motor sporlarına yönelik ilginin artmasına da katkı sağlıyor.
+Büyük organizasyonlar aynı zamanda motosiklet sporlarının daha geniş kitlelere ulaşmasına ve gençlerin bu alana ilgi göstermesine katkı sağlayabiliyor.
 
-ZORLU PARKUR
+YARIŞ STRATEJİSİ ÖNEMLİ
 
-Afyonkarahisar'daki pist, farklı zemin ve viraj özellikleriyle sporculara zorlu bir mücadele sunuyor.
+Motokrosta yalnızca hızlı olmak yeterli olmayabiliyor.
 
-Parkurun özellikleri yarışların seyri açısından önemli olurken, sporcuların değişen koşullara uyum sağlaması gerekiyor.
+Sürücülerin lastik kullanımı, zemin koşulları, rakiplerle mücadele ve yarış içerisinde oluşabilecek değişikliklere göre strateji geliştirmesi gerekiyor.
 
-TÜRKİYE'NİN MOTOSİKLET SPORLARINDAKİ YERİ
+TÜRKİYE'NİN MOTOR SPORLARINDAKİ YERİ
 
-Türkiye'nin uluslararası motosiklet organizasyonlarına ev sahipliği yapması, motor sporlarının ülkedeki tanıtımı açısından önem taşıyor.
+Türkiye'nin uluslararası motosiklet yarışlarına ev sahipliği yapması, ülkenin motor sporları alanındaki organizasyon kapasitesini göstermesi açısından önem taşıyor.
 
-Bu tür organizasyonlar Türkiye'deki motosiklet sporlarının uluslararası düzeyde tanınmasına katkı sağlarken, genç sporcuların da bu alana ilgisini artırabiliyor.
+Bu tür etkinlikler hem profesyonel sporcuların Türkiye'ye gelmesini hem de yerel düzeyde motosiklet sporlarına olan ilginin artmasını sağlayabiliyor.
 
-ŞAMPİYONLUK İÇİN KRİTİK MÜCADELE
+ŞAMPİYONLUK İÇİN KRİTİK AŞAMA
 
-Yarışların ardından sezon puan tablosunun şekillenmesi ve şampiyonluk yarışının daha da netleşmesi bekleniyor.
+Afyonkarahisar'daki yarışın ardından sezon puan tablosunda önemli değişiklikler yaşanabilir.
 
-Sporcuların elde edeceği dereceler sezonun genel sıralamasında önemli değişikliklere yol açabilir.
+Yarış sonuçları, şampiyonluk mücadelesinin son bölümüne girilirken sporcuların konumunu belirleyecek önemli göstergelerden biri olacak.
 
 HABERİSTA Spor Servisi
         `
@@ -1331,54 +1361,55 @@ HABERİSTA Spor Servisi
         gorsel: "images/asrupa seyhat.jpeg",
         kaynak: "Avrupa Birliği",
         yazar: "Haberİsta Dünya Servisi",
+
         icerik: `
 AVRUPA SEYAHATLERİNDE YENİ DÖNEM
 
-Avrupa ülkelerine seyahat eden yolcuları ilgilendiren sınır kontrol uygulamalarında yeni düzenlemeler gündemde.
+Avrupa'ya seyahat edecek kişileri ilgilendiren sınır kontrol uygulamalarında yeni düzenlemeler gündemde.
 
-Seyahat edecek kişilerin giriş koşulları, sınır kontrolleri ve gerekli belgeler konusunda güncel bilgileri kontrol etmesi önem taşıyor.
+Seyahat planı yapan yolcuların pasaport, vize ve giriş şartlarının yanı sıra sınır kontrol prosedürlerini de yolculuk öncesinde kontrol etmesi önem taşıyor.
 
-SINIR KONTROLLERİ
+SINIR KONTROLLERİ NEDEN ÖNEMLİ?
 
-Avrupa'ya giriş ve çıkışlarda yolcuların kimlik ve seyahat bilgilerinin kontrol edilmesine yönelik uygulamalar önem taşıyor.
+Avrupa ülkelerine giriş ve çıkışlarda yolcuların kimlik ve seyahat belgeleri kontrol edilebiliyor.
 
-Sınır kapılarındaki kontrollerin kapsamı ve uygulanma şekli ülkelere ve seyahat koşullarına göre değişebiliyor.
+Uygulamaların kapsamı, yolcunun vatandaşlığına, seyahat amacına ve gidilen ülkeye göre değişebiliyor.
 
-DİJİTAL SİSTEMLER
+DİJİTAL SİSTEMLER KULLANILIYOR
 
-Avrupa'nın sınır yönetiminde dijital sistemlerin daha fazla kullanılması hedefleniyor.
+Avrupa'nın sınır yönetiminde dijital teknolojilerin kullanımının artırılması hedefleniyor.
 
-Dijital sistemlerin sınır kontrollerinde kullanılması, yolcu bilgilerinin daha düzenli şekilde işlenmesine ve sınır güvenliği uygulamalarının geliştirilmesine yönelik çalışmaların bir parçası olarak değerlendiriliyor.
+Dijital sistemler, yolcu bilgilerinin işlenmesi, sınır güvenliği ve giriş-çıkış işlemlerinin daha düzenli şekilde yürütülmesi amacıyla kullanılabiliyor.
 
-SEYAHAT ÖNCESİ KONTROL
+SEYAHATTEN ÖNCE BELGELER KONTROL EDİLMELİ
 
-Yurt dışına çıkacak kişilerin pasaport, vize ve diğer giriş şartlarını seyahat öncesinde kontrol etmesi gerekiyor.
+Yurt dışına çıkacak kişilerin seyahat öncesinde pasaportlarının geçerlilik süresini ve gerekiyorsa vize şartlarını kontrol etmesi gerekiyor.
 
-Seyahat belgelerinin geçerlilik süreleri, vize şartları ve ülkeye giriş koşulları yolculuk öncesinde ilgili resmi kaynaklardan kontrol edilmeli.
+Bunun yanında gidilecek ülkenin özel giriş şartları da ayrıca incelenmeli.
 
-YOLCULAR İÇİN ÖNEMLİ
+YOLCULUK SÜRESİNE DİKKAT
 
-Sınır kapılarında yapılacak kontroller nedeniyle seyahat sürelerinde değişiklik yaşanabileceği değerlendiriliyor.
+Sınır kapılarındaki kontroller, özellikle yoğun dönemlerde yolcuların bekleme süresini etkileyebiliyor.
 
-Özellikle yoğun seyahat dönemlerinde sınır kapılarındaki işlem süreleri değişebileceğinden yolcuların seyahat planlarını buna göre yapması önem taşıyor.
+Bu nedenle seyahat planı yapan kişilerin ulaşım bağlantıları ve sınır geçiş süreleri konusunda yeterli zaman bırakması faydalı olabilir.
 
-AVRUPA'DA GÜVENLİK
+KURALLAR HER ÜLKEDE AYNI DEĞİL
 
-Yeni uygulamaların temel amaçları arasında sınır güvenliğinin güçlendirilmesi ve düzensiz göçle mücadele bulunuyor.
+Avrupa ülkelerinde uygulanabilecek giriş şartları her yolcu için aynı olmayabilir.
 
-Sınır yönetiminde kullanılan yeni yöntemler, Avrupa ülkelerinin güvenlik politikalarının önemli parçaları arasında yer alıyor.
+Turistik ziyaret, eğitim, çalışma veya transit geçiş gibi farklı seyahat amaçlarında farklı kurallar uygulanabileceğinden resmi kaynakların kontrol edilmesi gerekiyor.
 
-KURALLAR ÜLKELERE GÖRE DEĞİŞEBİLİR
+GÜVENLİK VE SINIR YÖNETİMİ
 
-Avrupa ülkelerine giriş şartlarının vatandaşlığa ve seyahat amacına göre farklılık gösterebileceği unutulmamalı.
+Sınır kontrol sistemlerinin geliştirilmesinde güvenlik, düzensiz göçle mücadele ve yolcu hareketlerinin daha düzenli takip edilmesi gibi amaçlar bulunuyor.
 
-Turistik seyahat, eğitim, çalışma veya transit geçiş gibi farklı seyahat amaçlarında farklı şartlar uygulanabileceğinden seyahat öncesinde resmi kaynakların kontrol edilmesi gerekiyor.
+Yeni sistemlerin uygulanmasıyla birlikte yolcuların sınır geçişlerinde karşılaşabileceği prosedürlerin de değişmesi mümkün.
 
-RESMİ KAYNAKLAR TAKİP EDİLMELİ
+RESMİ KAYNAKLAR KONTROL EDİLMELİ
 
-Seyahat edecek kişilerin güncel bilgileri ilgili ülkenin ve Avrupa Birliği kurumlarının resmi kaynaklarından kontrol etmesi önem taşıyor.
+Seyahat kuralları zaman içerisinde değişebildiği için yolcuların eski internet içeriklerine güvenmek yerine seyahat tarihine yakın güncel resmi bilgileri kontrol etmesi gerekiyor.
 
-Kurallarda değişiklik yaşanabileceği için seyahatten hemen önce bilgilerin yeniden kontrol edilmesi tavsiye ediliyor.
+Özellikle vize ve giriş şartlarında gidilecek ülkenin resmi kaynakları esas alınmalı.
 
 HABERİSTA Dünya Servisi
         `
@@ -1397,54 +1428,55 @@ HABERİSTA Dünya Servisi
         gorsel: "images/ChatGPT Image 5 Eyl 2026 15_25_02.png",
         kaynak: "Resmî Gazete",
         yazar: "Haberİsta Haber Merkezi",
+
         icerik: `
-RESMÎ GAZETE YAYIMLANDI
+5 EYLÜL 2026 TARİHLİ RESMÎ GAZETE YAYIMLANDI
 
 5 Eylül 2026 tarihli Resmî Gazete yayımlandı.
 
-Yeni sayıda kamu kurumlarını, vatandaşları ve çeşitli sektörleri ilgilendiren karar ve düzenlemeler yer aldı. Resmî Gazete'de yayımlanan düzenlemeler, ilgili mevzuat kapsamında yürürlüğe giren veya yürürlüğe girecek hükümler açısından önem taşıyor.
+Yeni sayıda kamu kurumlarını, vatandaşları ve farklı sektörleri ilgilendiren çeşitli kararlar, düzenlemeler ve resmi metinler yer aldı.
+
+RESMÎ GAZETE NEDİR?
+
+Resmî Gazete, devlet tarafından yayımlanan karar, yönetmelik, tebliğ ve çeşitli hukuki metinlerin kamuoyuna duyurulduğu resmi yayın organı.
+
+Yayımlanan düzenlemelerin yürürlük tarihleri ve kapsamları ilgili metinlerde ayrıntılı şekilde belirtiliyor.
 
 YENİ DÜZENLEMELER
 
-Resmî Gazete'de yayımlanan yönetmelik, tebliğ ve diğer düzenlemeler ilgili mevzuat kapsamında yürürlüğe giriyor.
+Resmî Gazete'de yayımlanan yönetmelik, tebliğ ve diğer düzenlemeler belirli alanlarda yeni kurallar veya mevcut kurallarda değişiklikler getirebiliyor.
 
-Düzenlemelerin kapsamı, yürürlük tarihi ve hangi kurum veya kişileri ilgilendirdiği resmi metinlerde ayrıntılı olarak belirtiliyor.
+Bir düzenlemenin kimleri ilgilendirdiği ve ne zaman yürürlüğe girdiği, yayımlanan resmi metnin içerisinde yer alıyor.
 
-ATAMALAR
+ATAMA KARARLARI
 
-Cumhurbaşkanlığı ve çeşitli kamu kurumlarına ilişkin bazı atama kararları da Resmî Gazete'nin gündeminde yer aldı.
+Kamu kurumları ve çeşitli görev alanlarına ilişkin atama kararları da Resmî Gazete'de yayımlanabiliyor.
 
-Kamu görevlerine ilişkin atama kararları, ilgili kurumların çalışma düzeni ve yönetim yapısı açısından önem taşıyor.
+Atama kararlarının kapsamı ve görevlendirilen kişiler resmi metinlerde açık şekilde belirtiliyor.
 
-YARGI KARARLARI
+YARGI KARARLARI VE HUKUKİ METİNLER
 
-Sayının içeriğinde ilgili kurum ve kuruluşları ilgilendiren çeşitli yargı kararları ve düzenlemeler yayımlandı.
+Resmî Gazete'de yayımlanan hukuki metinler arasında çeşitli yargı kararları ve mevzuata ilişkin düzenlemeler de bulunabiliyor.
 
-Yargı kararlarının kapsamı ve hukuki sonuçları ilgili resmi metinler üzerinden değerlendirilmesi gerekiyor.
+Bu metinlerin hukuki sonuçlarının doğru şekilde anlaşılması için yalnızca haber özetlerine değil, resmi kararın tamamına bakılması gerekiyor.
 
-YÜRÜRLÜĞE GİREN KARARLAR
+YÜRÜRLÜK TARİHLERİNE DİKKAT
 
-Resmî Gazete'de yayımlanan düzenlemelerin yürürlük tarihleri ilgili karar ve yönetmeliklerde belirtiliyor.
+Her düzenleme yayımlandığı gün yürürlüğe girmeyebilir.
 
-Bazı düzenlemeler yayımlandığı tarihte yürürlüğe girerken, bazı kararların yürürlük tarihi farklı bir tarih olarak belirlenebiliyor.
+Bazı karar ve yönetmeliklerde yürürlük tarihi ayrıca belirtilirken, bazı düzenlemeler yayımlandığı tarihte yürürlüğe girebiliyor.
 
-VATANDAŞLAR İÇİN ÖNEMLİ
+VATANDAŞLAR İÇİN NEDEN ÖNEMLİ?
 
-Günlük yaşamı veya çalışma hayatını ilgilendiren yeni düzenlemelerin ayrıntılarının resmi metinlerden takip edilmesi gerekiyor.
+Resmî Gazete'de yayımlanan bazı kararlar doğrudan vatandaşların günlük hayatını, çalışma koşullarını veya kamu hizmetlerinden yararlanma biçimini etkileyebiliyor.
 
-Vatandaşların kendilerini ilgilendiren bir düzenleme bulunması halinde ilgili kararın tamamını incelemesi ve yürürlük tarihine dikkat etmesi önem taşıyor.
+Bu nedenle vatandaşların kendilerini ilgilendiren bir düzenleme olduğunda resmi metni dikkatle incelemesi önem taşıyor.
 
-RESMİ METİNLER ESAS ALINMALI
+RESMİ METİN ESAS ALINMALI
 
-Haberlerde yer alan özet bilgilerin yanı sıra hukuki ve idari işlemlerde Resmî Gazete'de yayımlanan resmi metinlerin esas alınması önem taşıyor.
+Haber sitelerinde yayımlanan özetler bilgi edinmek açısından yararlı olsa da hukuki işlemlerde Resmî Gazete'de yayımlanan metnin tamamı esas alınmalı.
 
-Özellikle mevzuat değişiklikleriyle ilgili değerlendirme yapılırken yalnızca haber özetlerine değil, yayımlanan resmi düzenlemenin tamamına bakılması gerekiyor.
-
-GÜNCEL SAYILAR TAKİP EDİLMELİ
-
-Resmî Gazete her gün yayımlanan karar ve düzenlemelerle kamu gündeminin önemli kaynaklarından biri olmayı sürdürüyor.
-
-Vatandaşlar kendilerini ilgilendiren yeni kararları resmi yayın üzerinden takip edebiliyor.
+Özellikle mevzuat değişikliklerinde kapsam, istisnalar ve yürürlük tarihleri ayrıntılı şekilde incelenmeli.
 
 HABERİSTA Haber Merkezi
         `
@@ -1463,54 +1495,49 @@ HABERİSTA Haber Merkezi
         gorsel: "images/AVRUPA.jpeg",
         kaynak: "Türkiye Voleybol Federasyonu",
         yazar: "Haberİsta Spor Servisi",
+
         icerik: `
 FİLENİN SULTANLARI AVRUPA ŞAMPİYONLUĞU İÇİN SAHADA
 
 A Milli Kadın Voleybol Takımı, Avrupa şampiyonluğu için İtalya karşısında final mücadelesine çıkıyor.
 
-Turnuvanın en önemli karşılaşmalarından biri olan final öncesinde milli takımın performansı voleybolseverler tarafından yakından takip ediliyor.
+Turnuvanın en önemli karşılaşması olan final öncesinde milli takımın performansı Türkiye'deki voleybolseverler tarafından yakından takip ediliyor.
 
 TÜRKİYE-İTALYA FİNALİ
 
-Final karşılaşması voleybolseverler tarafından büyük bir heyecanla bekleniyor.
+Final karşılaşmasında Türkiye ile İtalya karşı karşıya gelecek.
 
-İki güçlü takımın karşı karşıya geleceği finalde alınacak sonuç turnuvanın şampiyonunu belirleyecek.
+Şampiyonluk maçlarında yalnızca takımın genel performansı değil, servis kalitesi, savunma organizasyonu, blok ve hücum verimliliği gibi birçok unsur sonucu etkileyebiliyor.
 
-MİLLİ TAKIMIN HEDEFİ ŞAMPİYONLUK
+MİLLİ TAKIMIN HEDEFİ KUPA
 
-Filenin Sultanları, turnuvada gösterdiği performansın ardından kupayı kazanmak için mücadele ediyor.
+Filenin Sultanları turnuvanın final aşamasına ulaşarak şampiyonluk için son maçına çıkıyor.
 
-Milli takımın final karşılaşmasında ortaya koyacağı oyun ve elde edeceği sonuç Türkiye'deki spor gündeminin önemli başlıklarından biri olacak.
+Final karşılaşmasından alınacak sonuç, turnuvanın şampiyonunu belirleyecek.
 
-ZORLU RAKİP İTALYA
+İTALYA GÜÇLÜ RAKİP
 
-İtalya, Avrupa voleybolunun güçlü ekipleri arasında yer alırken final karşılaşmasının çekişmeli geçmesi bekleniyor.
+İtalya kadın voleybolunun güçlü ekiplerinden biri olarak bilinirken, finalin iki takım açısından da zorlu geçmesi bekleniyor.
 
-Finalde iki takımın servis, savunma, hücum ve blok performansları karşılaşmanın sonucunda önemli rol oynayacak.
+Böyle karşılaşmalarda servis karşılamadaki istikrar ve kritik rallilerde yapılan doğru tercihler maçın kaderini değiştirebiliyor.
+
+TAKIM OYUNU BELİRLEYİCİ OLACAK
+
+Voleybolda bir oyuncunun bireysel performansı kadar takımın birlikte hareket etmesi de büyük önem taşıyor.
+
+Hücum organizasyonu, savunma yerleşimi ve blok performansı finalde Türkiye'nin en önemli kozları arasında bulunacak.
 
 TÜRKİYE'DE BÜYÜK HEYECAN
 
-Milli takımın final karşılaşması öncesinde Türkiye genelinde voleybolseverlerin mücadeleye yoğun ilgi göstermesi bekleniyor.
+Milli takımın final karşılaşması Türkiye'de spor gündeminin en önemli başlıklarından biri.
 
-Filenin Sultanları'nın uluslararası organizasyonlardaki performansı, kadın voleyboluna yönelik ilgiyi de artırıyor.
+Voleybolseverler, Filenin Sultanları'nın Avrupa şampiyonluğu mücadelesini yakından takip ederken, milli takımın uluslararası turnuvalardaki performansı kadın voleyboluna olan ilgiyi de artırıyor.
 
-MİLLİ FORMAYA DESTEK
+FİNALİN ARDINDAN
 
-Taraftarların milli takıma destek mesajları paylaşması ve karşılaşmayı yakından takip etmesi bekleniyor.
+Final karşılaşmasının tamamlanmasıyla turnuvanın şampiyonu belli olacak.
 
-Final karşılaşması, milli takımın turnuvadaki performansının değerlendirilmesi açısından da önemli bir mücadele olacak.
-
-AVRUPA ŞAMPİYONLUĞU İÇİN SON MAÇ
-
-Final karşılaşması turnuvanın en önemli mücadelelerinden biri olarak öne çıkıyor.
-
-Maçın sonucuyla birlikte şampiyon belli olacak ve turnuvanın genel değerlendirmesi yapılacak.
-
-TÜRK VOLEYBOLU İÇİN ÖNEMLİ KARŞILAŞMA
-
-Milli takımın Avrupa şampiyonluğu için sahaya çıkması, Türkiye'deki voleybol gündeminin de en önemli başlıklarından biri olarak öne çıkıyor.
-
-Karşılaşmanın ardından oyuncuların performansı, teknik ekibin tercihleri ve turnuvanın genel sonuçları spor kamuoyu tarafından değerlendirilecek.
+Maçın ardından milli takımın turnuva boyunca gösterdiği performans, oyuncuların katkısı ve teknik ekibin tercihleri spor kamuoyunda değerlendirilecek.
 
 HABERİSTA Spor Servisi
         `
@@ -1529,54 +1556,55 @@ HABERİSTA Spor Servisi
         gorsel: "images/EKENOMİ.jpeg",
         kaynak: "Ekonomi Servisi",
         yazar: "Haberİsta Ekonomi Servisi",
+
         icerik: `
 PARA PİYASASI FONLARINDA YENİ DÖNEM
 
 Para piyasası fonlarına ilişkin vergi uygulamasında değişiklik gündeme geldi.
 
-Yeni düzenleme, para piyasası fonlarını değerlendiren yatırımcıların elde edebilecekleri getiriyi hesaplarken vergi kesintilerini de dikkate almasını gerektiriyor.
+Yeni düzenleme, bu fonları değerlendiren yatırımcıların getirilerini hesaplarken vergi kesintisini de dikkate almasını gerektiriyor.
 
 STOPAJ ORANI YÜZDE 10
 
 Yapılan düzenlemeyle para piyasası fonlarında uygulanan stopaj oranının yüzde 10'a çıkarıldığı bildirildi.
 
-Stopaj oranındaki değişiklik, fon yatırımcılarının net getiri hesaplamalarında dikkate alması gereken önemli unsurlardan biri haline geliyor.
+Stopaj oranındaki değişiklik, yatırımcıların brüt getiri ile vergi sonrası oluşabilecek net getiri arasındaki farkı daha dikkatli değerlendirmesini gerektiriyor.
 
-YATIRIMCILARIN DİKKATİNDE
+STOPAJ NEDİR?
 
-Düzenlemenin ardından yatırımcıların fon getirilerini değerlendirirken vergi kesintisini de hesaba katması gerekiyor.
+Stopaj, belirli gelirler üzerinden gelir elde edilmeden veya ödeme sırasında yapılan vergi kesintisini ifade ediyor.
 
-Bir yatırım aracının brüt getirisi ile yatırımcının eline geçebilecek net tutar arasında vergi uygulamalarından kaynaklanan farklılıklar oluşabiliyor.
+Yatırım araçlarında uygulanan stopaj oranının değişmesi, yatırımcının eline geçebilecek net tutarı etkileyebiliyor.
 
-FON GETİRİLERİ
+BRÜT VE NET GETİRİ FARKI
 
-Para piyasası fonları kısa vadeli yatırım araçlarına yönelen yatırımcılar tarafından tercih ediliyor.
+Bir yatırım aracının açıklanan getirisi ile vergi sonrasında yatırımcının elde edeceği tutar aynı olmayabilir.
 
-Bu fonların getirileri piyasa koşullarına, faiz oranlarına ve fonun yatırım yaptığı araçların performansına bağlı olarak değişebiliyor.
+Bu nedenle yatırımcıların yalnızca brüt kazanca bakmak yerine vergi kesintilerini de hesaba katması gerekiyor.
 
-VERGİ UYGULAMASI
+PARA PİYASASI FONLARI NEDİR?
 
-Stopaj, yatırım araçlarından elde edilen belirli gelirler üzerinden yapılan vergi kesintisini ifade ediyor.
+Para piyasası fonları, kısa vadeli ve likiditesi yüksek para piyasası araçlarına yatırım yapan fon türleri arasında bulunuyor.
 
-Vergi uygulamalarındaki değişiklikler yatırımcıların net getiri hesaplamalarını etkileyebildiğinden, yatırımcıların güncel mevzuatı takip etmesi önem taşıyor.
+Bu fonların getirileri faiz oranları, piyasa koşulları ve fonun yatırım yaptığı araçların performansı gibi faktörlerden etkilenebiliyor.
 
-NET GETİRİ HESAPLAMASI
+DÜZENLEME YATIRIMCILARI NASIL İLGİLENDİRİYOR?
 
-Yatırımcıların yalnızca brüt getiriye değil, vergi ve diğer maliyetler sonrasında oluşabilecek net getiriye de dikkat etmesi gerekiyor.
+Stopaj oranındaki değişiklik, özellikle kısa vadeli getiri hesaplamalarında önem taşıyor.
 
-Farklı yatırım araçlarının karşılaştırılmasında vergi uygulamaları önemli bir değerlendirme unsuru olarak öne çıkıyor.
+Aynı brüt getiri oranına sahip farklı yatırım araçlarında vergi uygulaması nedeniyle yatırımcının elde edeceği net tutar farklılaşabiliyor.
 
-GÜNCEL BİLGİLER TAKİP EDİLMELİ
+GÜNCEL MEVZUAT TAKİP EDİLMELİ
 
-Vergi uygulamalarındaki değişiklikler yatırım kararlarını etkileyebileceğinden resmi açıklamaların takip edilmesi gerekiyor.
+Vergi uygulamaları zaman içerisinde değişebildiği için yatırımcıların güncel mevzuatı ve fonun kendi koşullarını kontrol etmesi gerekiyor.
 
-Yatırımcıların işlem yapmadan önce güncel oranları ve ilgili fonun koşullarını yetkili finans kuruluşlarından kontrol etmesi önem taşıyor.
+İşlem öncesinde finans kuruluşlarından güncel vergi uygulaması ve fon bilgileri hakkında bilgi alınması önem taşıyor.
 
 ÖNEMLİ NOT
 
-Bu haber yatırım tavsiyesi değildir.
+Bu içerik yatırım tavsiyesi değildir.
 
-Yatırım kararları kişisel finansal koşullar, risk durumu ve yatırım hedefleri değerlendirilerek verilmelidir.
+Yatırım araçlarının getirileri ve vergi uygulamaları değişebileceğinden yatırımcıların kendi finansal koşullarını ve risk durumunu dikkate alması gerekiyor.
 
 HABERİSTA Ekonomi Servisi
         `
@@ -1595,48 +1623,51 @@ HABERİSTA Ekonomi Servisi
         gorsel: "images/GÜNDEM.jpeg",
         kaynak: "HABERİSTA Gündem",
         yazar: "Haberİsta Haber Merkezi",
+
         icerik: `
-EYLÜL AYI YAŞLI VE ENGELLİ AYLIKLARI
+EYLÜL AYI YAŞLI VE ENGELLİ AYLIKLARI ÖDENİYOR
 
 Eylül ayına ilişkin yaşlı ve engelli aylıklarının hak sahiplerinin hesaplarına yatırılmaya başlandığı bildirildi.
 
-Sosyal destek ödemelerinden yararlanan vatandaşlar, ödemelerin hesaplarına yansıyıp yansımadığını ilgili kanallar üzerinden kontrol edebiliyor.
+Sosyal destek ödemelerinden yararlanan vatandaşlar, ödemelerin hesaplarına geçip geçmediğini ilgili bankacılık kanalları ve resmi sistemler üzerinden kontrol edebiliyor.
 
-ÖDEMELER HESAPLARA YATIRILIYOR
+ÖDEMELERİN HESAPLARA GEÇİŞİ
 
-Sosyal yardım ödemelerinden yararlanan vatandaşların ödemeleri ilgili ödeme takvimi doğrultusunda hesaplarına aktarılıyor.
+Sosyal yardım ödemeleri belirlenen ödeme takvimi doğrultusunda hak sahiplerine ulaştırılıyor.
 
-Ödemelerin hesaplara geçiş zamanı, ilgili ödeme sistemi ve banka işlemlerine bağlı olarak değişiklik gösterebileceğinden vatandaşların resmi açıklamaları takip etmesi önem taşıyor.
+Ancak ödemenin hesapta görünme zamanı bankacılık işlemlerine veya ödeme sistemlerine bağlı olarak farklılık gösterebiliyor.
 
-HAK SAHİPLERİ ÖDEMELERİNİ KONTROL EDİYOR
+Bu nedenle vatandaşların yalnızca sosyal medya paylaşımlarına değil, resmi duyurulara göre hareket etmesi önem taşıyor.
 
-Vatandaşlar ödemelerin hesaplarına yansıyıp yansımadığını ilgili bankacılık kanallarından veya resmi sistemlerden kontrol edebiliyor.
+YAŞLI AYLIĞI KİMLERİ İLGİLENDİRİYOR?
 
-Ödeme görünmüyorsa vatandaşların ilgili kamu kurumlarının resmi bilgilendirmelerini takip etmesi gerekiyor.
+Yaşlı aylıkları, ilgili mevzuatta belirtilen şartları sağlayan vatandaşlara yönelik sosyal destek mekanizmalarından biri.
 
-SOSYAL DESTEKLER
+Hak sahipliği ve ödeme koşulları ilgili kamu kurumlarının değerlendirmeleri doğrultusunda belirleniyor.
 
-Yaşlı ve engelli aylıkları, sosyal destek mekanizmaları kapsamında ihtiyaç sahibi vatandaşlara yönelik ödemeler arasında bulunuyor.
+ENGELLİ AYLIKLARI
 
-Bu ödemelerden yararlanma şartları ilgili mevzuat kapsamında belirlenirken, hak sahipliği konusunda resmi kurumların değerlendirmeleri esas alınıyor.
+Engelli aylıkları da mevzuatta belirtilen şartları karşılayan hak sahiplerine yönelik sosyal destek ödemeleri arasında bulunuyor.
 
-ÖDEME TARİHLERİ TAKİP EDİLMELİ
+Ödeme miktarı, hak sahipliği koşulları ve diğer ayrıntılar dönemsel düzenlemelere göre değişebildiği için güncel bilgilerin resmi kaynaklardan kontrol edilmesi gerekiyor.
 
-Ödeme dönemlerinde tarih ve uygulamaların resmi kurumların açıklamalarından takip edilmesi önem taşıyor.
+ÖDEME GÖRÜNMÜYORSA NE YAPILMALI?
 
-Özellikle ödeme takvimlerinde meydana gelebilecek değişiklikler için vatandaşların resmi duyuruları kontrol etmesi gerekiyor.
+Vatandaşların öncelikle ilgili bankacılık kanallarından hesap hareketlerini kontrol etmesi gerekiyor.
 
-ÖDEME MİKTARI VE HAK SAHİPLİĞİ
+Ödemenin görünmemesi halinde ilgili kamu kurumlarının resmi bilgilendirmeleri takip edilmeli ve gerekirse yetkili kanallardan bilgi alınmalı.
 
-Ödeme miktarı, hak sahipliği ve ödeme koşulları dönemsel düzenlemelere ve ilgili mevzuata göre değişebiliyor.
+ÖDEME MİKTARI DEĞİŞEBİLİR
 
-Bu nedenle vatandaşların güncel bilgileri ilgili kamu kurumlarından öğrenmesi önem taşıyor.
+Sosyal yardım ödemelerinin miktarı ve hak sahipliği şartları mevzuat değişikliklerine bağlı olarak farklılık gösterebilir.
 
-RESMİ KAYNAKLAR ÖNEMLİ
+Bu nedenle geçmiş dönemlerdeki ödeme tutarlarının güncel dönem için kesin ölçü olarak kullanılmaması gerekiyor.
 
-Ödeme miktarı, hak sahipliği ve ödeme tarihleriyle ilgili en güncel bilgilerin ilgili kamu kurumlarından alınması gerekiyor.
+RESMİ AÇIKLAMALAR TAKİP EDİLMELİ
 
-Vatandaşların sosyal medyada veya doğrulanmamış kaynaklarda yayılan bilgileri resmi açıklamalarla karşılaştırması önem taşıyor.
+Ödeme tarihleri, miktarları ve hak sahipliğiyle ilgili en güncel bilgilerin ilgili kamu kurumlarının resmi kanallarından kontrol edilmesi önem taşıyor.
+
+Vatandaşların doğrulanmamış sosyal medya paylaşımlarındaki bilgilere karşı dikkatli olması gerekiyor.
 
 HABERİSTA Haber Merkezi
         `
@@ -1655,60 +1686,63 @@ HABERİSTA Haber Merkezi
         gorsel: "images/PISA.jpeg",
         kaynak: "Eğitim Servisi",
         yazar: "Haberİsta Eğitim Servisi",
+
         icerik: `
 PISA 2025 SONUÇLARI İÇİN GERİ SAYIM
 
-Ekonomik İşbirliği ve Kalkınma Örgütü OECD tarafından gerçekleştirilen PISA araştırmasının 2025 sonuçları için geri sayım başladı.
+OECD tarafından gerçekleştirilen PISA araştırmasının 2025 sonuçları için geri sayım başladı.
 
-Uluslararası eğitim araştırması olan PISA, farklı ülkelerdeki öğrencilerin belirli alanlardaki bilgi ve becerilerini değerlendirmesi nedeniyle eğitim dünyasında yakından takip ediliyor.
+Uluslararası eğitim araştırması olan PISA, farklı ülkelerdeki öğrencilerin bilgi ve becerilerini belirli alanlarda karşılaştırmalı olarak değerlendirmesi nedeniyle eğitim dünyasında yakından takip ediliyor.
 
-SONUÇLAR 8 EYLÜL'DE AÇIKLANACAK
+SONUÇLAR 8 EYLÜL'DE
 
-PISA 2025 araştırmasının sonuçlarının 8 Eylül tarihinde kamuoyuyla paylaşılması bekleniyor.
+PISA 2025 sonuçlarının 8 Eylül tarihinde kamuoyuyla paylaşılması bekleniyor.
 
-Açıklanacak sonuçlarda Türkiye'nin performansı da yer alacak. Sonuçların ardından öğrencilerin performansı, eğitim sistemi ve önceki araştırmalarla karşılaştırmalar üzerinden çeşitli değerlendirmeler yapılması bekleniyor.
+Açıklanacak sonuçlarda Türkiye'nin performansına ilişkin veriler de yer alacak. Sonuçların açıklanmasının ardından Türkiye'nin farklı alanlardaki performansı uluslararası verilerle karşılaştırılabilecek.
 
 PISA NEDİR?
 
-PISA, farklı ülkelerdeki 15 yaş grubundaki öğrencilerin okuma becerileri, matematik ve fen alanlarındaki bilgi ve becerilerini değerlendiren uluslararası bir araştırmadır.
+PISA, 15 yaş grubundaki öğrencilerin okuma becerileri, matematik ve fen alanlarındaki bilgi ve becerilerini değerlendiren uluslararası bir araştırma.
 
-Araştırmanın temel amacı öğrencilerin yalnızca okulda öğrendikleri bilgileri değil, bu bilgileri gerçek yaşamda kullanabilme becerilerini de değerlendirmektir.
+Araştırmanın dikkat çeken yönlerinden biri, öğrencilerin yalnızca teorik bilgilerini değil, sahip oldukları bilgileri gerçek yaşamda kullanabilme becerilerini de değerlendirmeye çalışması.
 
-TÜRKİYE'NİN PERFORMANSI
+TÜRKİYE'NİN PERFORMANSI NEDEN ÖNEMLİ?
 
-Türkiye'nin PISA 2025 sonuçlarında göstereceği performans öğrenciler, öğretmenler, veliler ve eğitim politikaları açısından yakından takip ediliyor.
+Türkiye'nin PISA sonuçları öğrenciler, öğretmenler, veliler ve eğitim politikaları açısından önemli bir veri kaynağı oluşturuyor.
 
-Sonuçların Türkiye'nin eğitim sistemindeki güçlü alanların ve geliştirilmesi gereken noktaların değerlendirilmesine katkı sağlaması bekleniyor.
+Sonuçlar Türkiye'deki öğrencilerin hangi alanlarda daha güçlü olduğunu ve hangi alanlarda geliştirilmesi gereken noktaların bulunduğunu değerlendirmek için kullanılabiliyor.
 
-EĞİTİM POLİTİKALARINA KATKI
+SADECE SIRALAMAYA BAKMAK YETERLİ DEĞİL
 
-PISA sonuçları ülkelerin eğitim sistemlerinin güçlü ve geliştirilmesi gereken yönlerinin değerlendirilmesinde kullanılan uluslararası göstergelerden biri olarak öne çıkıyor.
+PISA sonuçları açıklanırken yalnızca ülkelerin sıralamasına odaklanmak, araştırmanın tamamını anlamak için yeterli değil.
 
-Sonuçlar, eğitim politikalarının oluşturulması ve eğitim sistemlerinin farklı ülkelerle karşılaştırılması sırasında başvurulan veriler arasında bulunuyor.
+Matematik, fen ve okuma alanlarındaki ayrı sonuçlar, önceki araştırmalarla karşılaştırmalar ve öğrencilerin performans dağılımı birlikte değerlendirilerek daha kapsamlı bir tablo ortaya çıkarılabiliyor.
 
-SONUÇLAR NASIL DEĞERLENDİRİLECEK?
+EĞİTİM POLİTİKALARINA KATKI SAĞLIYOR
 
-Sonuçların yalnızca ülke sıralaması üzerinden değil, öğrencilerin farklı alanlardaki performansları ve önceki dönemlerle karşılaştırmalar üzerinden değerlendirilmesi önem taşıyor.
+PISA sonuçları, ülkelerin eğitim sistemlerini uluslararası ölçekte değerlendirmesine yardımcı olan göstergelerden biri.
 
-Matematik, fen ve okuma alanlarındaki sonuçların ayrı ayrı incelenmesi, eğitim sisteminin hangi alanlarda gelişme gösterdiğini anlamak açısından daha kapsamlı bir değerlendirme yapılmasına imkan sağlayabilir.
+Sonuçlar doğrudan tek başına bir eğitim politikasının başarılı veya başarısız olduğunu göstermese de eğitim sistemindeki eğilimlerin incelenmesine katkı sağlayabiliyor.
 
-TÜRKİYE'DE EĞİTİM GÜNDEMİ
+ÖĞRENCİLERİN BİREYSEL SINAVI DEĞİL
 
-Açıklanacak sonuçların Türkiye'deki eğitim politikaları ve öğrencilerin akademik performansına ilişkin değerlendirmelere katkı sağlaması bekleniyor.
+PISA'nın bireysel öğrencilerin karne veya merkezi sınav sonucu gibi değerlendirilmemesi gerekiyor.
 
-PISA sonuçları sonrasında eğitim uzmanları, öğretmenler ve politika yapıcılar tarafından çeşitli değerlendirmelerin yapılması beklenirken, verilerin uzun vadeli eğitim politikaları açısından da önem taşıdığı belirtiliyor.
+Araştırma daha geniş bir perspektifle ülkelerdeki öğrencilerin genel performansını incelemek amacıyla gerçekleştiriliyor.
 
-ÖĞRENCİLER VE VELİLER İÇİN ÖNEMİ
+VELİLER VE ÖĞRENCİLER İÇİN NE ANLAMA GELİYOR?
 
-PISA doğrudan bireysel öğrencilerin karne veya sınav sonucu gibi değerlendirilmesi anlamına gelmiyor.
+PISA sonuçları doğrudan bir öğrencinin okul notunu veya gelecekteki sınav sonucunu belirlemiyor.
 
-Araştırmanın sonuçları daha çok ülkelerin eğitim sistemlerini ve öğrencilerin belirli alanlardaki genel performanslarını değerlendirmek amacıyla kullanılıyor.
+Bunun yerine eğitim sisteminin genel durumunu değerlendirmek, ülkeler arasındaki farklılıkları incelemek ve uzun vadeli eğitim politikalarına ilişkin fikir oluşturmak amacıyla kullanılıyor.
 
-SONUÇLAR TAKİP EDİLECEK
+SONUÇLAR AÇIKLANDIĞINDA NELERE BAKILACAK?
 
-PISA 2025 sonuçlarının açıklanmasının ardından Türkiye'nin performansına ilişkin ayrıntılı verilerin ve uluslararası karşılaştırmaların gündeme gelmesi bekleniyor.
+Sonuçların açıklanmasının ardından Türkiye'nin matematik, fen ve okuma alanlarındaki performansı incelenecek.
 
-Sonuçların eğitim politikaları açısından nasıl yorumlanacağı ve hangi alanlarda yeni çalışmalar yapılabileceği önümüzdeki dönemin önemli eğitim gündemlerinden biri olacak.
+Ayrıca önceki PISA araştırmalarıyla karşılaştırmalar yapılarak performanstaki değişimler değerlendirilecek.
+
+Bu verilerin eğitim politikaları ve eğitim sisteminin geleceğine ilişkin tartışmalarda önemli bir kaynak olması bekleniyor.
 
 HABERİSTA Eğitim Servisi
         `
@@ -1841,7 +1875,9 @@ function haberSlugIleBul(slug) {
 function haberIdIleBul(id) {
 
     return haberler.find(function (haber) {
+
         return String(haber.id) === String(id);
+
     }) || null;
 }
 
@@ -2131,5 +2167,7 @@ haberler.forEach(function (haber) {
 ========================================================= */
 
 if (typeof window !== "undefined") {
-    window.haberler = haberler;
+
+    window.haberler =
+        haberler;
 }
